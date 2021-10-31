@@ -771,9 +771,9 @@ char *UnicodeGet( int aValue );
 void UnicodeAdd( char **apString, int aValue );
 
 /*************** START GMCP ***************/
-extern const char GoAheadStr[];
-extern const char iac_sb_gmcp[];
-extern const char iac_se[];
+extern const unsigned char GoAheadStr[];
+extern const unsigned char iac_sb_gmcp[];
+extern const unsigned char iac_se[];
 extern void SendUpdatedGMCP( descriptor_t *apDescriptor );
 extern void UpdateGMCPString( descriptor_t *apDescriptor, GMCP_VARIABLE var, const char *string );
 extern void UpdateGMCPNumber( descriptor_t *apDescriptor, GMCP_VARIABLE var, const long long number );

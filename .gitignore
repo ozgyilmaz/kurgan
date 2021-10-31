@@ -1,2 +1,4 @@
-
-.DS_Store
+src/*.o
+area/kurgan
+src/kurgan
+player/Ozgur

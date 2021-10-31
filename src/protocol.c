@@ -3009,9 +3009,9 @@ static char *AllocString( const char *apString )
 }
 
 /*************** START GMCP ***************/
-const char GoAheadStr[] = { IAC, GA, '\0' };
-const char iac_sb_gmcp[] = { IAC, SB, TELOPT_GMCP, '\0' };
-const char iac_se[] = { IAC, SE, '\0' };
+const unsigned char GoAheadStr[] = { IAC, GA, '\0' };
+const unsigned char iac_sb_gmcp[] = { IAC, SB, TELOPT_GMCP, '\0' };
+const unsigned char iac_se[] = { IAC, SE, '\0' };
 
 const struct gmcp_receive_struct GMCPReceiveTable[GMCP_RECEIVE_MAX+1] =
 {

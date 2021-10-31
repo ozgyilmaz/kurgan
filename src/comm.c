@@ -1299,7 +1299,7 @@ bool process_output( DESCRIPTOR_DATA *d, bool fPrompt )
             bust_a_prompt( d->character );
 
 		if ( !d->pProtocol->bSGA )
-			write_to_buffer( d, GoAheadStr, 0 );
+			write_to_buffer( d, (const char*)GoAheadStr, 0 );
 
 	if (IS_SET(ch->comm,COMM_TELNET_GA))
 	    write_to_buffer(d,go_ahead_str,0);
