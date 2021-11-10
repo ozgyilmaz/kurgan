@@ -3149,26 +3149,27 @@ int number_fuzzy( int number )
 /*
  * New number_range() function to solve modula problem.
  */
- int number_range( int from, int to )
- {
-   int x;
-   int fark;
+int number_range( int from, int to )
+{
+	int x;
+	int diff;
+	bugf("number range %d - %d.\n\r", from, to);
+	diff = to - from;
 
-   fark = to - from;
+	// in case "to" is lower than "from".
+	if( diff <= 0 )
+	{
+		return from;
+	}
 
-   if( fark == 0 )
-   {
-     return from;
-   }
+	do {
+	x = random();
+	} while (x >= (RAND_MAX - (RAND_MAX % (diff+1))));
 
-   do {
-     x = random();
-   } while (x >= (RAND_MAX - (RAND_MAX % (fark+1))));
+	x %= (diff+1);
 
-   x %= (fark+1);
-
-   return x + from;
- }
+	return x + from;
+}
 
 
 
