@@ -1029,7 +1029,45 @@ void do_look( CHAR_DATA *ch, char *argument )
     if ( arg1[0] == '\0' || !str_cmp( arg1, "auto" ) )
     {
 	/* 'look' or 'look auto' */
-	send_to_char( ch->in_room->name, ch );
+	printf_to_char( ch, "%s%s%s", CLR_SIENNA, ch->in_room->name, CLR_RESET );
+	switch(ch->in_room->sector_type)
+    {
+      case SECT_INSIDE:
+      printf_to_char(ch," [Inside]");
+      break;
+      case SECT_CITY:
+      printf_to_char(ch," [City]");
+      break;
+      case SECT_FIELD:
+      printf_to_char(ch," [Field]");
+      break;
+      case SECT_FOREST:
+      printf_to_char(ch," [Forest]");
+      break;
+      case SECT_HILLS:
+      printf_to_char(ch," [Hills]");
+      break;
+      case SECT_MOUNTAIN:
+      printf_to_char(ch," [Mountain]");
+      break;
+      case SECT_WATER_SWIM:
+      case SECT_WATER_NOSWIM:
+      printf_to_char(ch," [Water]");
+      break;
+      case SECT_AIR:
+      printf_to_char(ch," [Air]");
+      break;
+      case SECT_DESERT:
+      printf_to_char(ch," [Desert]");
+      break;
+      case SECT_MAX:
+      printf_to_char(ch," [Hard]");
+      break;
+      default:
+      printf_to_char(ch," [Unknown]");
+      break;
+    }
+	printf_to_char(ch," [%s]",ch->in_room->area->name);
 
 	if (IS_IMMORTAL(ch) && (IS_NPC(ch) || IS_SET(ch->act,PLR_HOLYLIGHT)))
 	{
@@ -1046,10 +1084,12 @@ void do_look( CHAR_DATA *ch, char *argument )
 	    send_to_char( ch->in_room->description, ch );
 	}
 
-        if ( !IS_NPC(ch) && IS_SET(ch->act, PLR_AUTOEXIT) )
+    if ( !IS_NPC(ch) && IS_SET(ch->act, PLR_AUTOEXIT) )
 	{
 	    send_to_char("\n\r",ch);
-            do_function(ch, &do_exits, (char*)"auto" );
+		send_to_char(CLR_ORANGE,ch);
+        do_function(ch, &do_exits, (char*)"auto" );
+		send_to_char(CLR_RESET,ch);
 	}
 
 	show_list_to_char( ch->in_room->contents, ch, FALSE, FALSE );

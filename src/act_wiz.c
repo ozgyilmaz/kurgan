@@ -80,72 +80,74 @@ void do_wiznet( CHAR_DATA *ch, char *argument )
 	return;
     }
 
-    /* show wiznet status */
-    if (!str_prefix(argument,"status"))
-    {
-	buf[0] = '\0';
-
-	if (!IS_SET(ch->wiznet,WIZ_ON))
-	    strcat(buf,"off ");
-
-	for (flag = 0; wiznet_table[flag].name != NULL; flag++)
-	    if (IS_SET(ch->wiznet,wiznet_table[flag].flag))
-	    {
-		strcat(buf,wiznet_table[flag].name);
-		strcat(buf," ");
-	    }
-
-	strcat(buf,"\n\r");
-
-	send_to_char("Wiznet status:\n\r",ch);
-	send_to_char(buf,ch);
-	return;
-    }
-
-    if (!str_prefix(argument,"show"))
-    /* list of all wiznet options */
-    {
-	buf[0] = '\0';
-
-	for (flag = 0; wiznet_table[flag].name != NULL; flag++)
+	/* show wiznet status */
+	if (!str_prefix(argument,"status"))
 	{
-	    if (wiznet_table[flag].level <= get_trust(ch))
-	    {
-	    	strcat(buf,wiznet_table[flag].name);
-	    	strcat(buf," ");
-	    }
+		buf[0] = '\0';
+
+		if (!IS_SET(ch->wiznet,WIZ_ON))
+		{
+			strcat(buf,"off ");
+		}
+
+		for (flag = 0; wiznet_table[flag].name != NULL; flag++)
+		{
+			if (IS_SET(ch->wiznet,wiznet_table[flag].flag))
+			{
+				strcat(buf,wiznet_table[flag].name);
+				strcat(buf," ");
+			}
+		}
+
+		strcat(buf,"\n\r");
+
+		send_to_char("Wiznet status:\n\r",ch);
+		send_to_char(buf,ch);
+		return;
 	}
 
-	strcat(buf,"\n\r");
+	/* list of all wiznet options */
+    if (!str_prefix(argument,"show"))
+    {
+		buf[0] = '\0';
 
-	send_to_char("Wiznet options available to you are:\n\r",ch);
-	send_to_char(buf,ch);
-	return;
+		for (flag = 0; wiznet_table[flag].name != NULL; flag++)
+		{
+			if (wiznet_table[flag].level <= get_trust(ch))
+			{
+				strcat(buf,wiznet_table[flag].name);
+				strcat(buf," ");
+			}
+		}
+
+		strcat(buf,"\n\r");
+
+		send_to_char("Wiznet options available to you are:\n\r",ch);
+		send_to_char(buf,ch);
+		return;
     }
 
     flag = wiznet_lookup(argument);
 
     if (flag == -1 || get_trust(ch) < wiznet_table[flag].level)
     {
-	send_to_char("No such option.\n\r",ch);
-	return;
+		send_to_char("No such option.\n\r",ch);
+		return;
     }
 
     if (IS_SET(ch->wiznet,wiznet_table[flag].flag))
     {
-	sprintf(buf,"You will no longer see %s on wiznet.\n\r",
-	        wiznet_table[flag].name);
-	send_to_char(buf,ch);
-	REMOVE_BIT(ch->wiznet,wiznet_table[flag].flag);
-    	return;
+		sprintf(buf,"You will no longer see %s on wiznet.\n\r", wiznet_table[flag].name);
+		send_to_char(buf,ch);
+		REMOVE_BIT(ch->wiznet,wiznet_table[flag].flag);
+		return;
     }
     else
     {
-    	sprintf(buf,"You will now see %s on wiznet.\n\r",
-		wiznet_table[flag].name);
-	send_to_char(buf,ch);
+    	sprintf(buf,"You will now see %s on wiznet.\n\r", wiznet_table[flag].name);
+		send_to_char(buf,ch);
     	SET_BIT(ch->wiznet,wiznet_table[flag].flag);
-	return;
+		return;
     }
 
 }

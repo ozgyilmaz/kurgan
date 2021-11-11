@@ -1353,6 +1353,7 @@ void reset_area( AREA_DATA *pArea )
     mob 	= NULL;
     last	= TRUE;
     level	= 0;
+	
     for ( pReset = pArea->reset_first; pReset != NULL; pReset = pReset->next )
     {
 	ROOM_INDEX_DATA *pRoomIndex;
@@ -3153,7 +3154,7 @@ int number_range( int from, int to )
 {
 	int x;
 	int diff;
-	bugf("number range %d - %d.\n\r", from, to);
+
 	diff = to - from;
 
 	// in case "to" is lower than "from".
@@ -3574,7 +3575,7 @@ void mysql_log_communication( char *channel , CHAR_DATA *ch, CHAR_DATA *victim ,
 
  strftime(datetime, sizeof(datetime), "%Y-%m-%d %X", localtime(&current_time));
 
- sprintf( query , "INSERT INTO `pc_communication` VALUES( '' , '%s' , '%s' , '%s' ,'%s' , '%d' , '%s' )" , \
+ sprintf( query , "INSERT INTO `pc_communication` VALUES( NULL , '%s' , '%s' , '%s' ,'%s' , '%d' , '%s' )" , \
   (char*)datetime , channel , (ch!=NULL)?ch->name:(char*)"" , (victim!=NULL)?victim->name:(char*)"",room_vnum , data );
 
  mysql_execute_query(query,0);
@@ -3597,7 +3598,7 @@ void mysql_write_help( HELP_DATA *pHelp )
  mysql_escape_string(pHelp->keyword,arg1);
  mysql_escape_string(pHelp->text,arg2);
 
- sprintf( query , "INSERT INTO `help` VALUES( '' , '%d' , '%s' , '%s' )" , \
+ sprintf( query , "INSERT INTO `help` VALUES( NULL , '%d' , '%s' , '%s' )" , \
  pHelp->level, arg1, arg2 );
 
  mysql_execute_query(query,0);
@@ -3641,7 +3642,7 @@ void mysql_write_social( char *name, char *char_no_arg, char *others_no_arg, cha
  mysql_escape_string(char_auto,arg8);
  mysql_escape_string(others_auto,arg9);
 
- sprintf( query , "INSERT INTO `social` VALUES( '' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' )" , \
+ sprintf( query , "INSERT INTO `social` VALUES( NULL , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' )" , \
  arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9 );
 
  mysql_execute_query(query,0);
@@ -3670,7 +3671,7 @@ void mysql_write_area( AREA_DATA *pArea )
  mysql_escape_string(pArea->writer,arg3);
  mysql_escape_string(pArea->credits,arg4);
 
- sprintf( query , "INSERT INTO `area` VALUES( '' , '%s' , '%s' , '%s' , '%s' ,'%d' , '%d' , '%d' , '%d' )" , arg1 , arg2 , arg3 , arg4 , pArea->low_range ,pArea->high_range , pArea->min_vnum , pArea->max_vnum );
+ sprintf( query , "INSERT INTO `area` VALUES( NULL , '%s' , '%s' , '%s' , '%s' ,'%d' , '%d' , '%d' , '%d' )" , arg1 , arg2 , arg3 , arg4 , pArea->low_range ,pArea->high_range , pArea->min_vnum , pArea->max_vnum );
 
  mysql_execute_query(query,0);
 
@@ -3695,7 +3696,7 @@ void mysql_write_room( ROOM_INDEX_DATA *pRoomIndex )
  mysql_escape_string(pRoomIndex->description,arg2);
  mysql_escape_string(pRoomIndex->owner,arg3);
 
- sprintf( query , "INSERT INTO `room` VALUES( '' , '%s' , '%d' , '%s' , '%s' , '%s' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' )" , \
+ sprintf( query , "INSERT INTO `room` VALUES( NULL , '%s' , '%d' , '%s' , '%s' , '%s' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' )" , \
  pRoomIndex->area->file_name,pRoomIndex->vnum, arg1, arg2, arg3, pRoomIndex->room_flags,
  pRoomIndex->light, pRoomIndex->sector_type, pRoomIndex->heal_rate, pRoomIndex->mana_rate, pRoomIndex->clan );
 
@@ -3719,7 +3720,7 @@ void mysql_write_exit( EXIT_DATA *pexit, int room_vnum, int door )
  mysql_escape_string(pexit->description,arg1);
  mysql_escape_string(pexit->keyword,arg2);
 
- sprintf( query , "INSERT INTO `room_exit` VALUES( '' , '%d' , '%d' , '%s' , '%s' , '%d' , '%d' , '%d' )" , \
+ sprintf( query , "INSERT INTO `room_exit` VALUES( NULL , '%d' , '%d' , '%s' , '%s' , '%d' , '%d' , '%d' )" , \
  room_vnum, door, arg1, arg2, pexit->exit_info, pexit->key, pexit->u1.vnum );
 
  mysql_execute_query(query,0);
@@ -3742,7 +3743,7 @@ void mysql_write_room_extra_description( EXTRA_DESCR_DATA *ed, int room_vnum )
  mysql_escape_string(ed->keyword,arg1);
  mysql_escape_string(ed->description,arg2);
 
- sprintf( query , "INSERT INTO `room_extra_description` VALUES( '' , '%d' , '%s' , '%s' )" , \
+ sprintf( query , "INSERT INTO `room_extra_description` VALUES( NULL , '%d' , '%s' , '%s' )" , \
  room_vnum, arg1, arg2 );
 
  mysql_execute_query(query,0);
@@ -3757,7 +3758,7 @@ void mysql_write_shop( SHOP_DATA *pShop )
 {
  char query[ MAX_STRING_LENGTH ];
 
- sprintf( query , "INSERT INTO `shop` VALUES( '' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' )" , \
+ sprintf( query , "INSERT INTO `shop` VALUES( NULL , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' )" , \
  pShop->keeper, pShop->buy_type[0], pShop->buy_type[1], pShop->buy_type[2], pShop->buy_type[3], pShop->buy_type[4],
    pShop->profit_buy, pShop->profit_sell , pShop->open_hour, pShop->close_hour );
 
@@ -3773,8 +3774,8 @@ void mysql_write_reset( RESET_DATA *pReset )
 {
  char query[ MAX_STRING_LENGTH ];
 
- sprintf( query , "INSERT INTO `reset` VALUES( '' , '%c' , '%d' , '%d' , '%d' , '%d' )" , \
- pReset->command, pReset->arg1, pReset->arg2, pReset->arg3, pReset->arg4 );
+ sprintf( query , "INSERT INTO `reset` VALUES( NULL , '%s' , '%c' , '%d' , '%d' , '%d' , '%d' )" , \
+ area_last->file_name, pReset->command, pReset->arg1, pReset->arg2, pReset->arg3, pReset->arg4 );
 
  mysql_execute_query(query,0);
 
@@ -3805,7 +3806,7 @@ void mysql_write_mobile( MOB_INDEX_DATA *pMobIndex , AREA_DATA *pArea )
  mysql_escape_string(pMobIndex->description,arg4);
  mysql_escape_string(pMobIndex->material,arg5);
 
- sprintf( query , "INSERT INTO `mobile` VALUES( '' , '%s' , '%d' , '%d' , '%d' , '%s' , '%s' , '%s' , '%s' , \
+ sprintf( query , "INSERT INTO `mobile` VALUES( NULL , '%s' , '%d' , '%d' , '%d' , '%s' , '%s' , '%s' , '%s' , \
  '%ld' , '%ld' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , \
  '%d' , '%d' , '%d' , '%d' , '%d' , '%ld' , '%ld' , '%ld' , '%ld' , '%d' , '%d' , '%d' , '%d' , '%ld' , \
  '%ld' , '%ld' , '%d' , '%s' , '' )" , \
@@ -3829,7 +3830,7 @@ void mysql_write_object_affect_data( AFFECT_DATA *paf, int object_vnum  )
 {
  char query[ MAX_STRING_LENGTH ];
 
- sprintf( query , "INSERT INTO `object_affect_data` VALUES( '' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' )" , \
+ sprintf( query , "INSERT INTO `object_affect_data` VALUES( NULL , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' )" , \
  object_vnum, paf->valid, paf->where, paf->type, paf->level, paf->duration, paf->location, paf->modifier, paf->bitvector );
 
  mysql_execute_query(query,0);
@@ -3852,7 +3853,7 @@ void mysql_write_object_extra_description( EXTRA_DESCR_DATA *ed, int object_vnum
  mysql_escape_string(ed->keyword,arg1);
  mysql_escape_string(ed->description,arg2);
 
- sprintf( query , "INSERT INTO `object_extra_description` VALUES( '' , '%d' , '%s' , '%s' )" , \
+ sprintf( query , "INSERT INTO `object_extra_description` VALUES( NULL , '%d' , '%s' , '%s' )" , \
  object_vnum, arg1, arg2 );
 
  mysql_execute_query(query,0);
@@ -3881,7 +3882,7 @@ void mysql_write_object( OBJ_INDEX_DATA *pObjIndex , AREA_DATA *pArea )
  mysql_escape_string(pObjIndex->description,arg3);
  mysql_escape_string(pObjIndex->material,arg4);
 
- sprintf( query , "INSERT INTO `object` VALUES( '' , '%s' , '%d' , '%d' , '%s' , '%s' , '%s' , '%d' , '%s' , \
+ sprintf( query , "INSERT INTO `object` VALUES( NULL , '%s' , '%d' , '%d' , '%s' , '%s' , '%s' , '%d' , '%s' , \
  '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d' , '%d')" , \
  pArea->file_name, pObjIndex->vnum, pObjIndex->new_format, arg1, arg2, arg3, pObjIndex->reset_num,
    arg4, pObjIndex->item_type, pObjIndex->extra_flags, pObjIndex->wear_flags, pObjIndex->level, pObjIndex->condition,
@@ -4688,6 +4689,7 @@ void mysql_load_reset(MYSQL_ROW row)
   ROOM_INDEX_DATA *pRoomIndex;
   EXIT_DATA *pexit;
   OBJ_INDEX_DATA *temp_index;
+  AREA_DATA *pArea;
 
   if ( area_last == NULL )
   {
@@ -4696,12 +4698,11 @@ exit( 1 );
   }
 
   pReset		= (RESET_DATA *)alloc_perm( sizeof(*pReset) );
-
-  pReset->command = mysql_fread_string((char*)row[1])[0];
-  pReset->arg1	= atoi((char*)row[2]);
-	pReset->arg2	= atoi((char*)row[3]);
-  pReset->arg3	= atoi((char*)row[4]);
-  pReset->arg4	= atoi((char*)row[5]);
+  pReset->command = mysql_fread_string((char*)row[2])[0];
+  pReset->arg1	= atoi((char*)row[3]);
+	pReset->arg2	= atoi((char*)row[4]);
+  pReset->arg3	= atoi((char*)row[5]);
+  pReset->arg4	= atoi((char*)row[6]);
 
   /*
 	 * Validate parameters.
@@ -4769,12 +4770,14 @@ exit( 1 );
 	    break;
 	}
 
-  if ( area_last->reset_first == NULL )
-      area_last->reset_first	= pReset;
-  if ( area_last->reset_last  != NULL )
-      area_last->reset_last->next	= pReset;
+	pArea = area_lookup((char*)row[1]);
 
-  area_last->reset_last	= pReset;
+  if ( pArea->reset_first == NULL )
+      pArea->reset_first	= pReset;
+  if ( pArea->reset_last  != NULL )
+      pArea->reset_last->next	= pReset;
+
+  pArea->reset_last	= pReset;
   pReset->next		= NULL;
   top_reset++;
 
