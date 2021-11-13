@@ -186,7 +186,6 @@ void fwrite_char( CHAR_DATA *ch, FILE *fp )
     if (ch->clan)
     	fprintf( fp, "Clan %s~\n",clan_table[ch->clan].name);
     fprintf( fp, "Sex  %d\n",	ch->sex			);
-    fprintf( fp, "Cla  %d\n",	ch->iclass		);
     fprintf( fp, "Levl %d\n",	ch->level		);
     if (ch->trust != 0)
 	fprintf( fp, "Tru  %d\n",	ch->trust	);
@@ -656,14 +655,6 @@ bool load_char_obj( DESCRIPTOR_DATA *d, char *name )
 
 	
     /* RT initialize skills */
-
-    if (found && ch->version < 2)  /* need to add the new skills */
-    {
-	group_add(ch,"rom basics",FALSE);
-	group_add(ch,class_table[ch->iclass].base_group,FALSE);
-	group_add(ch,class_table[ch->iclass].default_group,TRUE);
-	ch->pcdata->learned[gsn_recall] = 50;
-    }
  
     /* fix levels */
     if (found && ch->version < 3 && (ch->level > 35 || ch->trust > 35))
@@ -883,8 +874,6 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
 	    break;
 
 	case 'C':
-	    KEY( "Class",	ch->iclass,		fread_number( fp ) );
-	    KEY( "Cla",		ch->iclass,		fread_number( fp ) );
 	    KEY( "Clan",	ch->clan,	clan_lookup(fread_string(fp)));
 
 	    if ( !str_cmp( word, "Condition" ) || !str_cmp(word,"Cond"))

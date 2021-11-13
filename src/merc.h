@@ -229,9 +229,7 @@ struct	weather_data
 #define CON_CONFIRM_NEW_PASSWORD	 5
 #define CON_GET_NEW_RACE		 6
 #define CON_GET_NEW_SEX			 7
-#define CON_GET_NEW_CLASS		 8
 #define CON_GET_ALIGNMENT		 9
-#define CON_DEFAULT_CHOICE		10
 #define CON_GEN_GROUPS			11
 #define CON_PICK_WEAPON			12
 #define CON_READ_IMOTD			13
@@ -356,22 +354,6 @@ struct	shop_data
 #define STAT_DEX	3
 #define STAT_CON	4
 
-struct	class_type
-{
-    const char *	name;			/* the full name of the class */
-    char 	who_name	[4];	/* Three-letter name for 'who'	*/
-    sh_int	attr_prime;		/* Prime attribute		*/
-    sh_int	weapon;			/* First weapon			*/
-    sh_int	guild[MAX_GUILD];	/* Vnum of guild rooms		*/
-    sh_int	skill_adept;		/* Maximum skill level		*/
-    sh_int	thac0_00;		/* Thac0 for level  0		*/
-    sh_int	thac0_32;		/* Thac0 for level 32		*/
-    sh_int	hp_min;			/* Min hp gained on leveling	*/
-    sh_int	hp_max;			/* Max hp gained on leveling	*/
-    bool	fMana;			/* Class gains mana on level	*/
-    const char *	base_group;		/* base skills gained		*/
-    const char *	default_group;		/* default skills gained	*/
-};
 
 struct item_type
 {
@@ -421,7 +403,6 @@ struct pc_race_type  /* additional data for pc races */
     const char *	name;			/* MUST be in race_type */
     const char 	who_name[6];
     sh_int	points;			/* cost in points of the race */
-    sh_int	class_mult[MAX_CLASS];	/* exp multiplier for class, * 100 */
     const char *	skills[5];		/* bonus skills for the race */
     sh_int 	stats[MAX_STATS];	/* starting stats */
     sh_int	max_stats[MAX_STATS];	/* maximum stats */
@@ -1028,7 +1009,6 @@ struct	kill_data
 #define APPLY_WIS		      4
 #define APPLY_CON		      5
 #define APPLY_SEX		      6
-#define APPLY_CLASS		      7
 #define APPLY_LEVEL		      8
 #define APPLY_AGE		      9
 #define APPLY_HEIGHT		     10
@@ -1388,7 +1368,6 @@ struct	char_data
     sh_int		group;
     sh_int		clan;
     sh_int		sex;
-    sh_int		iclass;
     sh_int		race;
     sh_int		level;
     sh_int		trust;
@@ -1708,8 +1687,7 @@ struct	room_index_data
 struct	skill_type
 {
     const char *	name;			/* Name of skill		*/
-    sh_int	skill_level[MAX_CLASS];	/* Level needed by class	*/
-    sh_int	rating[MAX_CLASS];	/* How hard it is to learn	*/
+    sh_int	rating;	/* How hard it is to learn	*/
     SPELL_FUN *	spell_fun;		/* Spell pointer (for spells)	*/
     sh_int	target;			/* Legal targets		*/
     sh_int	minimum_position;	/* Position for caster / user	*/
@@ -1720,13 +1698,6 @@ struct	skill_type
     const char *	noun_damage;		/* Damage message		*/
     const char *	msg_off;		/* Wear off message		*/
     const char *	msg_obj;		/* Wear off message for obects	*/
-};
-
-struct  group_type
-{
-    const char *	name;
-    sh_int	rating[MAX_CLASS];
-    const char *	spells[MAX_IN_GROUP];
 };
 
 
@@ -1890,7 +1861,6 @@ extern	const	struct	wis_app_type	wis_app		[26];
 extern	const	struct	dex_app_type	dex_app		[26];
 extern	const	struct	con_app_type	con_app		[26];
 
-extern	const	struct	class_type	class_table	[MAX_CLASS];
 extern	const	struct	weapon_type	weapon_table	[];
 extern  const   struct  item_type	item_table	[];
 extern	const	struct	wiznet_type	wiznet_table	[];
@@ -1902,7 +1872,7 @@ extern	const	struct	liq_type	liq_table	[];
 extern	const	struct	skill_type	skill_table	[MAX_SKILL];
 extern  const   struct  group_type      group_table	[MAX_GROUP];
 extern          struct social_type      social_table	[MAX_SOCIALS];
-extern	const char *			title_table	[MAX_CLASS]
+extern	const char *			title_table	[4]
 							[MAX_LEVEL+1]
 							[2];
 extern   const char *   dir_name        [];
@@ -2246,7 +2216,6 @@ char	*item_name	args( ( int item_type) );
 int	attack_lookup	args( ( const char *name) );
 int	race_lookup	args( ( const char *name) );
 long	wiznet_lookup	args( ( const char *name) );
-int	class_lookup	args( ( const char *name) );
 bool	is_clan		args( (CHAR_DATA *ch) );
 bool	is_same_clan	args( (CHAR_DATA *ch, CHAR_DATA *victim));
 bool	is_old_mob	args ( (CHAR_DATA *ch) );

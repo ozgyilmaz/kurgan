@@ -1578,7 +1578,7 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
     CHAR_DATA *ch;
     char *pwdnew;
     char *p;
-    int iClass,race,i,weapon;
+    int race,i,weapon;
     bool fOld;
 
     while ( isspace(*argument) )
@@ -1912,30 +1912,6 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
 	    return;
 	}
 
-	strcpy( buf, "Select a class [" );
-	for ( iClass = 0; iClass < MAX_CLASS; iClass++ )
-	{
-	    if ( iClass > 0 )
-		strcat( buf, " " );
-	    strcat( buf, class_table[iClass].name );
-	}
-	strcat( buf, "]: " );
-	write_to_buffer( d, buf, 0 );
-	d->connected = CON_GET_NEW_CLASS;
-	break;
-
-    case CON_GET_NEW_CLASS:
-	iClass = class_lookup(argument);
-
-	if ( iClass == -1 )
-	{
-	    write_to_buffer( d,
-		"That's not a class.\n\rWhat IS your class? ", 0 );
-	    return;
-	}
-
-        ch->iclass = iClass;
-
 	sprintf( log_buf, "%s@%s new player.", ch->name, d->host );
 	log_string( log_buf );
 	wiznet((char*)"Newbie alert!  $N sighted.",ch,NULL,WIZ_NEWBIE,0,0);
@@ -1961,50 +1937,18 @@ case CON_GET_ALIGNMENT:
 
 	write_to_buffer(d,"\n\r",0);
 
-        group_add(ch,"rom basics",FALSE);
-        group_add(ch,class_table[ch->iclass].base_group,FALSE);
-        ch->pcdata->learned[gsn_recall] = 50;
-	write_to_buffer(d,"Do you wish to customize this character?\n\r",0);
-	write_to_buffer(d,"Customization takes time, but allows a wider range of skills and abilities.\n\r",0);
-	write_to_buffer(d,"Customize (Y/N)? ",0);
-	d->connected = CON_DEFAULT_CHOICE;
-	break;
-
-case CON_DEFAULT_CHOICE:
-	write_to_buffer(d,"\n\r",2);
-        switch ( argument[0] )
-        {
-        case 'y': case 'Y':
-	    ch->gen_data = new_gen_data();
-	    ch->gen_data->points_chosen = ch->pcdata->points;
-	    do_function(ch, &do_help, (char*)"group header");
-	    list_group_costs(ch);
-	    write_to_buffer(d,"You already have the following skills:\n\r",0);
-	    do_function(ch, &do_skills, (char*)"");
-	    do_function(ch, &do_help, (char*)"menu choice");
-	    d->connected = CON_GEN_GROUPS;
-	    break;
-        case 'n': case 'N':
-	    group_add(ch,class_table[ch->iclass].default_group,TRUE);
-            write_to_buffer( d, "\n\r", 2 );
-	    write_to_buffer(d,
-		"Please pick a weapon from the following choices:\n\r",0);
-	    buf[0] = '\0';
-	    for ( i = 0; weapon_table[i].name != NULL; i++)
-		if (ch->pcdata->learned[*weapon_table[i].gsn] > 0)
-		{
-		    strcat(buf,weapon_table[i].name);
-		    strcat(buf," ");
-		}
-	    strcat(buf,"\n\rYour choice? ");
-	    write_to_buffer(d,buf,0);
-            d->connected = CON_PICK_WEAPON;
-            break;
-        default:
-            write_to_buffer( d, "Please answer (Y/N)? ", 0 );
-            return;
-        }
-	break;
+    write_to_buffer(d,
+	"Please pick a weapon from the following choices:\n\r",0);
+    buf[0] = '\0';
+    for ( i = 0; weapon_table[i].name != NULL; i++)
+	if (ch->pcdata->learned[*weapon_table[i].gsn] > 0)
+	{
+	    strcat(buf,weapon_table[i].name);
+	    strcat(buf," ");
+	}
+    strcat(buf,"\n\rYour choice? ");
+    write_to_buffer(d,buf,0);
+        d->connected = CON_PICK_WEAPON;
 
     case CON_PICK_WEAPON:
 	write_to_buffer(d,"\n\r",2);
@@ -2110,8 +2054,6 @@ case CON_DEFAULT_CHOICE:
 	if ( ch->level == 0 )
 	{
 
-	    ch->perm_stat[class_table[ch->iclass].attr_prime] += 3;
-
 	    ch->level	= 1;
 	    ch->exp	= exp_per_level(ch,ch->pcdata->points);
 	    ch->hit	= ch->max_hit;
@@ -2119,9 +2061,7 @@ case CON_DEFAULT_CHOICE:
 	    ch->move	= ch->max_move;
 	    ch->train	 = 3;
 	    ch->practice = 5;
-	    sprintf( buf, "the %s",
-		title_table [ch->iclass] [ch->level]
-		[ch->sex == SEX_FEMALE ? 1 : 0] );
+	    sprintf( buf, "the beginner");
 	    set_title( ch, buf );
 
 	    do_function (ch, &do_outfit,(char*)"");

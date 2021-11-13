@@ -233,21 +233,6 @@ long wiznet_lookup (const char *name)
     return -1;
 }
 
-/* returns class number */
-int class_lookup (const char *name)
-{
-   int iclass;
-
-   for ( iclass = 0; iclass < MAX_CLASS; iclass++)
-   {
-        if (LOWER(name[0]) == LOWER(class_table[iclass].name[0])
-        &&  !str_prefix( name,class_table[iclass].name))
-            return iclass;
-   }
-
-   return -1;
-}
-
 /* for immunity, vulnerabiltiy, and resistant
    the 'globals' (magic and weapons) may be overriden
    three other cases -- wood, silver, and iron -- are checked in fight.c */
@@ -366,9 +351,6 @@ int get_skill(CHAR_DATA *ch, int sn)
 
     else if (!IS_NPC(ch))
     {
-	if (ch->level < skill_table[sn].skill_level[ch->iclass])
-	    skill = 0;
-	else
 	    skill = ch->pcdata->learned[sn];
     }
 
@@ -737,10 +719,7 @@ int get_curr_stat( CHAR_DATA *ch, int stat )
     else
     {
 	max = pc_race_table[ch->race].max_stats[stat] + 4;
-
-	if (class_table[ch->iclass].attr_prime == stat)
-	    max += 2;
-
+	
 	if ( ch->race == race_lookup("human"))
 	    max += 1;
 
@@ -759,12 +738,6 @@ int get_max_train( CHAR_DATA *ch, int stat )
 	return 25;
 
     max = pc_race_table[ch->race].max_stats[stat];
-    if (class_table[ch->iclass].attr_prime == stat)
-    {	if (ch->race == race_lookup("human"))
-	   max += 3;
-	else
-	   max += 2;
-    }
 
     return UMIN(max,25);
 }
@@ -952,7 +925,6 @@ void affect_modify( CHAR_DATA *ch, AFFECT_DATA *paf, bool fAdd )
     case APPLY_WIS:           ch->mod_stat[STAT_WIS]	+= mod;	break;
     case APPLY_CON:           ch->mod_stat[STAT_CON]	+= mod;	break;
     case APPLY_SEX:           ch->sex			+= mod;	break;
-    case APPLY_CLASS:						break;
     case APPLY_LEVEL:						break;
     case APPLY_AGE:						break;
     case APPLY_HEIGHT:						break;
@@ -2552,7 +2524,6 @@ char *affect_loc_name( int location )
     case APPLY_WIS:		return (char*)"wisdom";
     case APPLY_CON:		return (char*)"constitution";
     case APPLY_SEX:		return (char*)"sex";
-    case APPLY_CLASS:		return (char*)"class";
     case APPLY_LEVEL:		return (char*)"level";
     case APPLY_AGE:		return (char*)"age";
     case APPLY_MANA:		return (char*)"mana";

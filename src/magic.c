@@ -86,8 +86,6 @@ int find_spell( CHAR_DATA *ch, const char *name )
 	{
 	    if ( found == -1)
 		found = sn;
-	    if (ch->level >= skill_table[sn].skill_level[ch->iclass]
-	    &&  ch->pcdata->learned[sn] > 0)
 		    return sn;
 	}
     }
@@ -200,8 +198,7 @@ void say_spell( CHAR_DATA *ch, int sn )
     for ( rch = ch->in_room->people; rch; rch = rch->next_in_room )
     {
 	if ( rch != ch )
-	    act((!IS_NPC(rch) && ch->iclass==rch->iclass) ? buf : buf2,
-	        ch, NULL, rch, TO_VICT );
+	    act(buf2,ch, NULL, rch, TO_VICT );
     }
 
     return;
@@ -228,8 +225,6 @@ bool saves_spell( int level, CHAR_DATA *victim, int dam_type )
 	case IS_VULNERABLE:	save -= 2;	break;
     }
 
-    if (!IS_NPC(victim) && class_table[victim->iclass].fMana)
-	save = 9 * save / 10;
     save = URANGE( 5, save, 95 );
     return number_percent( ) < save;
 }
@@ -322,7 +317,6 @@ void do_cast( CHAR_DATA *ch, char *argument )
 
     if ((sn = find_spell(ch,arg1)) < 1
     ||  skill_table[sn].spell_fun == spell_null
-    || (!IS_NPC(ch) && (ch->level < skill_table[sn].skill_level[ch->iclass]
     ||   		 ch->pcdata->learned[sn] == 0)))
     {
 	send_to_char( "You don't know any spells of that name.\n\r", ch );
@@ -335,12 +329,9 @@ void do_cast( CHAR_DATA *ch, char *argument )
 	return;
     }
 
-    if (ch->level + 2 == skill_table[sn].skill_level[ch->iclass])
-	mana = 50;
-    else
     	mana = UMAX(
 	    skill_table[sn].min_mana,
-	    100 / ( 2 + ch->level - skill_table[sn].skill_level[ch->iclass] ) );
+	    100 / ( 2 + ch->level ) );
 
     /*
      * Locate targets.
@@ -545,11 +536,7 @@ void do_cast( CHAR_DATA *ch, char *argument )
     else
     {
         ch->mana -= mana;
-        if (IS_NPC(ch) || class_table[ch->iclass].fMana)
-	/* class has spells */
-            (*skill_table[sn].spell_fun) ( sn, ch->level, ch, vo,target);
-        else
-            (*skill_table[sn].spell_fun) (sn, 3 * ch->level/4, ch, vo,target);
+        (*skill_table[sn].spell_fun) (sn, 3 * ch->level/4, ch, vo,target);
         check_improve(ch,sn,TRUE,1);
     }
 

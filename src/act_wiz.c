@@ -1587,9 +1587,8 @@ void do_mstat( CHAR_DATA *ch, char *argument )
     send_to_char( buf, ch );
 
     sprintf( buf,
-	"Lv: %d  Class: %s  Align: %d  Gold: %ld  Silver: %ld  Exp: %d\n\r",
+	"Lv: %d  Align: %d  Gold: %ld  Silver: %ld  Exp: %d\n\r",
 	victim->level,
-	IS_NPC(victim) ? "mobile" : class_table[victim->iclass].name,
 	victim->alignment,
 	victim->gold, victim->silver, victim->exp );
     send_to_char( buf, ch );
@@ -3342,7 +3341,7 @@ void do_mset( CHAR_DATA *ch, char *argument )
 	send_to_char("Syntax:\n\r",ch);
 	send_to_char("  set char <name> <field> <value>\n\r",ch);
 	send_to_char( "  Field being one of:\n\r",			ch );
-	send_to_char( "    str int wis dex con sex class level\n\r",	ch );
+	send_to_char( "    str int wis dex con sex level\n\r",	ch );
 	send_to_char( "    race group gold silver hp mana move prac\n\r",ch);
 	send_to_char( "    align train thirst hunger drunk full\n\r",	ch );
 	return;
@@ -3449,38 +3448,6 @@ void do_mset( CHAR_DATA *ch, char *argument )
 	victim->sex = value;
 	if (!IS_NPC(victim))
 	    victim->pcdata->true_sex = value;
-	return;
-    }
-
-    if ( !str_prefix( arg2, "class" ) )
-    {
-	int iclass;
-
-	if (IS_NPC(victim))
-	{
-	    send_to_char("Mobiles have no class.\n\r",ch);
-	    return;
-	}
-
-	iclass = class_lookup(arg3);
-	if ( iclass == -1 )
-	{
-	    char buf[MAX_STRING_LENGTH];
-
-        	strcpy( buf, "Possible classes are: " );
-        	for ( iclass = 0; iclass < MAX_CLASS; iclass++ )
-        	{
-            	    if ( iclass > 0 )
-                    	strcat( buf, " " );
-            	    strcat( buf, class_table[iclass].name );
-        	}
-            strcat( buf, ".\n\r" );
-
-	    send_to_char(buf,ch);
-	    return;
-	}
-
-	victim->iclass = iclass;
 	return;
     }
 

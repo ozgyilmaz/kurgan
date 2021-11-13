@@ -1531,7 +1531,7 @@ void reset_area( AREA_DATA *pArea )
 		    {
 			if (pObjIndex->value[i] > 0)
 			{
-		    	    for (j = 0; j < MAX_CLASS; j++)
+		    	    for (j = 0; j < 4; j++)
 			    {
 				olevel = UMIN(olevel,
 				         skill_table[pObjIndex->value[i]].
@@ -1891,7 +1891,6 @@ void clone_mobile(CHAR_DATA *parent, CHAR_DATA *clone)
     clone->description	= str_dup(parent->description);
     clone->group	= parent->group;
     clone->sex		= parent->sex;
-    clone->iclass	= parent->iclass;
     clone->race		= parent->race;
     clone->level	= parent->level;
     clone->trust	= 0;
