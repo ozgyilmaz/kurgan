@@ -172,7 +172,6 @@ int	listen		args( ( int s, int backlog ) );
 */
 
 int	close		args( ( int fd ) );
-int	gettimeofday	args( ( struct timeval *tp, struct timezone *tzp ) );
 int	read		args( ( int fd, char *buf, int nbyte ) );
 int	select		args( ( int width, fd_set *readfds, fd_set *writefds,
 			    fd_set *exceptfds, struct timeval *timeout ) );
@@ -862,7 +861,7 @@ void init_descriptor( int control )
     struct sockaddr_in sock;
     struct hostent *from;
     int desc;
-    int size;
+    socklen_t size;
 
     size = sizeof(sock);
     getsockname( control, (struct sockaddr *) &sock, &size );
@@ -2394,28 +2393,28 @@ void show_string(struct descriptor_data *d, char *input)
 
     for (scan = buffer; ; scan++, d->showstr_point++)
     {
-	if (((*scan = *d->showstr_point) == '\n' || *scan == '\r')
-	    && (toggle = -toggle) < 0)
-	    lines++;
-
-	else if (!*scan || (show_lines > 0 && lines >= show_lines))
-	{
-	    *scan = '\0';
-	    write_to_buffer(d,buffer,strlen(buffer));
-	    for (chk = d->showstr_point; isspace(*chk); chk++);
-	    {
-		if (!*chk)
+		if (((*scan = *d->showstr_point) == '\n' || *scan == '\r') && (toggle = -toggle) < 0)
 		{
-		    if (d->showstr_head)
-        	    {
-            		free_mem(d->showstr_head,strlen(d->showstr_head));
-            		d->showstr_head = 0;
-        	    }
-        	    d->showstr_point  = 0;
-    		}
-	    }
-	    return;
-	}
+			lines++;
+		}
+		
+		else if (!*scan || (show_lines > 0 && lines >= show_lines))
+		{
+			*scan = '\0';
+			write_to_buffer(d,buffer,strlen(buffer));
+			for (chk = d->showstr_point; isspace(*chk); chk++)
+			;
+			if (!*chk)
+			{
+				if (d->showstr_head)
+					{
+						free_mem(d->showstr_head,strlen(d->showstr_head));
+						d->showstr_head = 0;
+					}
+					d->showstr_point  = 0;
+			}
+			return;
+		}
     }
     return;
 }

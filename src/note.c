@@ -52,7 +52,7 @@ void load_thread(char *name, NOTE_DATA **list, int type, time_t free_time);
 void parse_note(CHAR_DATA *ch, char *argument, int type);
 bool hide_note(CHAR_DATA *ch, NOTE_DATA *pnote);
 
-NOTE_DATA *note_list;
+extern NOTE_DATA *note_list;
 NOTE_DATA *idea_list;
 NOTE_DATA *penalty_list;
 NOTE_DATA *news_list;

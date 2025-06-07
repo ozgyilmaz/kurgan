@@ -155,19 +155,25 @@ void ban_site(CHAR_DATA *ch, char *argument, bool fPerm)
 	buffer = new_buf();
 
         add_buf(buffer,"Banned sites  level  type     status\n\r");
-        for (pban = ban_list;pban != NULL;pban = pban->next)
+
+        for (pban = ban_list; pban != NULL; pban = pban->next)
         {
-	    sprintf(buf2,"%s%s%s",
-		IS_SET(pban->ban_flags,BAN_PREFIX) ? "*" : "",
-		pban->name,
-		IS_SET(pban->ban_flags,BAN_SUFFIX) ? "*" : "");
-	    sprintf(buf,"%-12s    %-3d  %-7s  %s\n\r",
-		buf2, pban->level,
-		IS_SET(pban->ban_flags,BAN_NEWBIES) ? "newbies" :
-		IS_SET(pban->ban_flags,BAN_PERMIT)  ? "permit"  :
-		IS_SET(pban->ban_flags,BAN_ALL)     ? "all"	: "",
-	    	IS_SET(pban->ban_flags,BAN_PERMANENT) ? "perm" : "temp");
-	    add_buf(buffer,buf);
+            // buf2'yi güvenli yaz, 60 karakter sınırı örnek
+            snprintf(buf2, sizeof(buf2), "%s%s%s",
+                IS_SET(pban->ban_flags,BAN_PREFIX) ? "*" : "",
+                pban->name,
+                IS_SET(pban->ban_flags,BAN_SUFFIX) ? "*" : "");
+
+            // buf2'yi 12 karaktere sınırla, hizalama ile
+            snprintf(buf, sizeof(buf), "%-12.12s    %-3d  %-7s  %s\n\r",
+                buf2,
+                pban->level,
+                IS_SET(pban->ban_flags,BAN_NEWBIES) ? "newbies" :
+                IS_SET(pban->ban_flags,BAN_PERMIT)  ? "permit"  :
+                IS_SET(pban->ban_flags,BAN_ALL)     ? "all"	: "",
+                IS_SET(pban->ban_flags,BAN_PERMANENT) ? "perm" : "temp");
+
+            add_buf(buffer, buf);
         }
 
         page_to_char( buf_string(buffer), ch );

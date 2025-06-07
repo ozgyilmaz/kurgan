@@ -2812,8 +2812,8 @@ void do_dump( CHAR_DATA *ch, char *argument )
     aff_count = 0;
 
     /* mobile prototypes */
-    fprintf(fp,"MobProt	%4d (%8d bytes)\n",
-	top_mob_index, top_mob_index * (sizeof(*pMobIndex))); 
+    fprintf(fp,"MobProt %4d (%8zu bytes)\n",
+        top_mob_index, (size_t)(top_mob_index * sizeof(*pMobIndex)));
 
     /* mobs */
     count = 0;  count2 = 0;
@@ -2828,16 +2828,16 @@ void do_dump( CHAR_DATA *ch, char *argument )
     for (fch = char_free; fch != NULL; fch = fch->next)
 	count2++;
 
-    fprintf(fp,"Mobs	%4d (%8d bytes), %2d free (%d bytes)\n",
-	count, count * (sizeof(*fch)), count2, count2 * (sizeof(*fch)));
+    fprintf(fp,"Mobs    %4d (%8zu bytes), %2d free (%zu bytes)\n",
+        count, (size_t)(count * sizeof(*fch)), count2, (size_t)(count2 * sizeof(*fch)));
 
     /* pcdata */
     count = 0;
     for (pc = pcdata_free; pc != NULL; pc = pc->next)
 	count++; 
 
-    fprintf(fp,"Pcdata	%4d (%8d bytes), %2d free (%d bytes)\n",
-	num_pcs, num_pcs * (sizeof(*pc)), count, count * (sizeof(*pc)));
+    fprintf(fp,"Pcdata  %4d (%8zu bytes), %2d free (%zu bytes)\n",
+        num_pcs, (size_t)(num_pcs * sizeof(*pc)), count, (size_t)(count * sizeof(*pc)));
 
     /* descriptors */
     count = 0; count2 = 0;
@@ -2846,20 +2846,21 @@ void do_dump( CHAR_DATA *ch, char *argument )
     for (d= descriptor_free; d != NULL; d = d->next)
 	count2++;
 
-    fprintf(fp, "Descs	%4d (%8d bytes), %2d free (%d bytes)\n",
-	count, count * (sizeof(*d)), count2, count2 * (sizeof(*d)));
+    fprintf(fp, "Descs  %4d (%8zu bytes), %2d free (%zu bytes)\n",
+        count, (size_t)(count * sizeof(*d)), count2, (size_t)(count2 * sizeof(*d)));
 
     /* object prototypes */
-    for ( vnum = 0; nMatch < top_obj_index; vnum++ )
-        if ( ( pObjIndex = get_obj_index( vnum ) ) != NULL )
-        {
-	    for (af = pObjIndex->affected; af != NULL; af = af->next)
-		aff_count++;
-            nMatch++;
-        }
+	for (vnum = 0; nMatch < top_obj_index; vnum++) {
+		if ((pObjIndex = get_obj_index(vnum)) != NULL) {
+			for (af = pObjIndex->affected; af != NULL; af = af->next) {
+				aff_count++;
+			}
+			nMatch++;
+		}
+	}
 
-    fprintf(fp,"ObjProt	%4d (%8d bytes)\n",
-	top_obj_index, top_obj_index * (sizeof(*pObjIndex)));
+	fprintf(fp,"ObjProt %4d (%8zu bytes)\n",
+			top_obj_index, (size_t)(top_obj_index * sizeof(*pObjIndex)));
 
 
     /* objects */
@@ -2873,24 +2874,24 @@ void do_dump( CHAR_DATA *ch, char *argument )
     for (obj = obj_free; obj != NULL; obj = obj->next)
 	count2++;
 
-    fprintf(fp,"Objs	%4d (%8d bytes), %2d free (%d bytes)\n",
-	count, count * (sizeof(*obj)), count2, count2 * (sizeof(*obj)));
+    fprintf(fp,"Objs    %4d (%8zu bytes), %2d free (%zu bytes)\n",
+        count, (size_t)(count * sizeof(*obj)), count2, (size_t)(count2 * sizeof(*obj)));
 
     /* affects */
     count = 0;
     for (af = affect_free; af != NULL; af = af->next)
 	count++;
 
-    fprintf(fp,"Affects	%4d (%8d bytes), %2d free (%d bytes)\n",
-	aff_count, aff_count * (sizeof(*af)), count, count * (sizeof(*af)));
+    fprintf(fp,"Affects %4d (%8zu bytes), %2d free (%zu bytes)\n",
+        aff_count, (size_t)(aff_count * sizeof(*af)), count, (size_t)(count * sizeof(*af)));
 
     /* rooms */
-    fprintf(fp,"Rooms	%4d (%8d bytes)\n",
-	top_room, top_room * (sizeof(*room)));
+    fprintf(fp,"Rooms   %4d (%8zu bytes)\n",
+        top_room, (size_t)(top_room * sizeof(*room)));
 
      /* exits */
-    fprintf(fp,"Exits	%4d (%8d bytes)\n",
-	top_exit, top_exit * (sizeof(*exit)));
+	fprintf(fp,"Exits   %4d (%8zu bytes)\n",
+        top_exit, (size_t)(top_exit * sizeof(*exit)));
 
     fclose(fp);
 

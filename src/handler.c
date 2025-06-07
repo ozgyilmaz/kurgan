@@ -563,10 +563,12 @@ void reset_char(CHAR_DATA *ch)
 	ch->pcdata->perm_move	= ch->max_move;
 	ch->pcdata->last_level	= ch->played/3600;
 	if (ch->pcdata->true_sex < 0 || ch->pcdata->true_sex > 2)
-		if (ch->sex > 0 && ch->sex < 3)
-	    	    ch->pcdata->true_sex	= ch->sex;
+	{
+		if (ch->sex >= 1 && ch->sex <= 2)
+			ch->pcdata->true_sex = ch->sex;
 		else
-		    ch->pcdata->true_sex 	= 0;
+			ch->pcdata->true_sex = 0;
+	}
 
     }
 
@@ -759,10 +761,12 @@ int get_max_train( CHAR_DATA *ch, int stat )
 
     max = pc_race_table[ch->race].max_stats[stat];
     if (class_table[ch->class].attr_prime == stat)
-	if (ch->race == race_lookup("human"))
-	   max += 3;
-	else
-	   max += 2;
+    {
+        if (ch->race == race_lookup("human"))
+            max += 3;
+        else
+            max += 2;
+    }
 
     return UMIN(max,25);
 }
@@ -1044,32 +1048,36 @@ void affect_check(CHAR_DATA *ch,int where,int vector)
 
     for (obj = ch->carrying; obj != NULL; obj = obj->next_content)
     {
-	if (obj->wear_loc == -1)
-	    continue;
+	    if (obj->wear_loc == -1)
+        {
+	        continue;
+        }
 
-            for (paf = obj->affected; paf != NULL; paf = paf->next)
-            if (paf->where == where && paf->bitvector == vector)
+        for (paf = obj->affected; paf != NULL; paf = paf->next)
+        if (paf->where == where && paf->bitvector == vector)
+        {
+            switch (where)
             {
-                switch (where)
-                {
-                    case TO_AFFECTS:
-                        SET_BIT(ch->affected_by,vector);
-                        break;
-                    case TO_IMMUNE:
-                        SET_BIT(ch->imm_flags,vector);
-                        break;
-                    case TO_RESIST:
-                        SET_BIT(ch->res_flags,vector);
-                        break;
-                    case TO_VULN:
-                        SET_BIT(ch->vuln_flags,vector);
-                  
-                }
-                return;
+                case TO_AFFECTS:
+                    SET_BIT(ch->affected_by,vector);
+                    break;
+                case TO_IMMUNE:
+                    SET_BIT(ch->imm_flags,vector);
+                    break;
+                case TO_RESIST:
+                    SET_BIT(ch->res_flags,vector);
+                    break;
+                case TO_VULN:
+                    SET_BIT(ch->vuln_flags,vector);
+                
             }
+            return;
+        }
 
         if (obj->enchanted)
-	    continue;
+	    {
+	        continue;
+        }
 
         for (paf = obj->pIndexData->affected; paf != NULL; paf = paf->next)
             if (paf->where == where && paf->bitvector == vector)
@@ -1298,14 +1306,13 @@ bool is_affected( CHAR_DATA *ch, int sn )
 void affect_join( CHAR_DATA *ch, AFFECT_DATA *paf )
 {
     AFFECT_DATA *paf_old;
-    bool found;
 
-    found = FALSE;
     for ( paf_old = ch->affected; paf_old != NULL; paf_old = paf_old->next )
     {
 	if ( paf_old->type == paf->type )
 	{
-	    paf->level = (paf->level += paf_old->level) / 2;
+        paf->level += paf_old->level;
+        paf->level /= 2;
 	    paf->duration += paf_old->duration;
 	    paf->modifier += paf_old->modifier;
 	    affect_remove( ch, paf_old );
@@ -1643,18 +1650,19 @@ void unequip_char( CHAR_DATA *ch, OBJ_DATA *obj )
 
     if (!obj->enchanted)
 	for ( paf = obj->pIndexData->affected; paf != NULL; paf = paf->next )
+    {
 	    if ( paf->location == APPLY_SPELL_AFFECT )
 	    {
 	        for ( lpaf = ch->affected; lpaf != NULL; lpaf = lpaf_next )
 	        {
-		    lpaf_next = lpaf->next;
-		    if ((lpaf->type == paf->type) &&
-		        (lpaf->level == paf->level) &&
-		        (lpaf->location == APPLY_SPELL_AFFECT))
-		    {
-		        affect_remove( ch, lpaf );
-			lpaf_next = NULL;
-		    }
+                lpaf_next = lpaf->next;
+                if ((lpaf->type == paf->type) &&
+                    (lpaf->level == paf->level) &&
+                    (lpaf->location == APPLY_SPELL_AFFECT))
+                {
+                    affect_remove( ch, lpaf );
+                lpaf_next = NULL;
+                }
 	        }
 	    }
 	    else
@@ -1662,6 +1670,7 @@ void unequip_char( CHAR_DATA *ch, OBJ_DATA *obj )
 	        affect_modify( ch, paf, FALSE );
 		affect_check(ch,paf->where,paf->bitvector);
 	    }
+    }
 
     for ( paf = obj->affected; paf != NULL; paf = paf->next )
 	if ( paf->location == APPLY_SPELL_AFFECT )

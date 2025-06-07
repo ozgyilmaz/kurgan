@@ -131,7 +131,7 @@ int slot_lookup( int slot )
 void say_spell( CHAR_DATA *ch, int sn )
 {
     char buf  [MAX_STRING_LENGTH];
-    char buf2 [MAX_STRING_LENGTH];
+    char buf2[MAX_STRING_LENGTH + 32];
     CHAR_DATA *rch;
     char *pName;
     int iSyl;
@@ -194,8 +194,8 @@ void say_spell( CHAR_DATA *ch, int sn )
 	    length = 1;
     }
 
-    sprintf( buf2, "$n utters the words, '%s'.", buf );
-    sprintf( buf,  "$n utters the words, '%s'.", skill_table[sn].name );
+    snprintf(buf2, sizeof(buf2), "$n utters the words, '%s'.", buf);
+    snprintf(buf, sizeof(buf), "$n utters the words, '%s'.", skill_table[sn].name);
 
     for ( rch = ch->in_room->people; rch; rch = rch->next_in_room )
     {
@@ -640,14 +640,18 @@ void obj_cast_spell( int sn, int level, CHAR_DATA *ch, CHAR_DATA *victim, OBJ_DA
 	break;
 
     case TAR_OBJ_CHAR_OFF:
-        if ( victim == NULL && obj == NULL)
-	    if (ch->fighting != NULL)
-		victim = ch->fighting;
-	    else
-	    {
-		send_to_char("You can't do that.\n\r",ch);
-		return;
-	    }
+        if (victim == NULL && obj == NULL)
+        {
+            if (ch->fighting != NULL)
+            {
+                victim = ch->fighting;
+            }
+            else
+            {
+                send_to_char("You can't do that.\n\r", ch);
+                return;
+            }
+        }
 
 	    if (victim != NULL)
 	    {
@@ -2179,9 +2183,13 @@ void spell_dispel_magic( int sn, int level, CHAR_DATA *ch, void *vo,int target )
     }
  
     if (found)
-        send_to_char("Ok.\n\r",ch);
+    {
+        send_to_char("You successfully cast the spell.\n\r", ch);
+    }
     else
-        send_to_char("Spell failed.\n\r",ch);
+    {
+        send_to_char("Your spell fizzles and fails.\n\r", ch);
+    }
 	return;
 }
 
@@ -2200,11 +2208,17 @@ void spell_earthquake( int sn, int level, CHAR_DATA *ch, void *vo,int target )
 	    continue;
 	if ( vch->in_room == ch->in_room )
 	{
-	    if ( vch != ch && !is_safe_spell(ch,vch,TRUE))
-		if (IS_AFFECTED(vch,AFF_FLYING))
-		    damage(ch,vch,0,sn,DAM_BASH,TRUE);
-		else
-		    damage( ch,vch,level + dice(2, 8), sn, DAM_BASH,TRUE);
+        if (vch != ch && !is_safe_spell(ch, vch, TRUE))
+        {
+            if (IS_AFFECTED(vch, AFF_FLYING))
+            {
+                damage(ch, vch, 0, sn, DAM_BASH, TRUE);
+            }
+            else
+            {
+                damage(ch, vch, level + dice(2, 8), sn, DAM_BASH, TRUE);
+            }
+        }
 	    continue;
 	}
 
