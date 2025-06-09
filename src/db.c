@@ -239,7 +239,7 @@ void boot_db( void )
     {
 	if ( ( string_space = calloc( 1, MAX_STRING ) ) == NULL )
 	{
-	    bug( "Boot_db: can't alloc %d string space.", MAX_STRING );
+	    bugf("Boot_db: can't alloc %d string space.", MAX_STRING );
 	    exit( 1 );
 	}
 	top_string	= string_space;
@@ -338,7 +338,7 @@ void boot_db( void )
 
 		if ( fread_letter( fpArea ) != '#' )
 		{
-		    bug( "Boot_db: # not found.", 0 );
+		    bugf("Boot_db: # not found.");
 		    exit( 1 );
 		}
 
@@ -358,7 +358,7 @@ void boot_db( void )
 		else if ( !str_cmp( word, "SPECIALS" ) ) load_specials(fpArea);
 		else
 		{
-		    bug( "Boot_db: bad section name.", 0 );
+		    bugf("Boot_db: bad section name.");
 		    exit( 1 );
 		}
 	    }
@@ -475,7 +475,7 @@ void load_old_mob( FILE *fp )
 	letter				= fread_letter( fp );
 	if ( letter != '#' )
 	{
-	    bug( "Load_mobiles: # not found.", 0 );
+	    bugf("Load_mobiles: # not found.");
 	    exit( 1 );
 	}
 
@@ -486,7 +486,7 @@ void load_old_mob( FILE *fp )
 	fBootDb = FALSE;
 	if ( get_mob_index( vnum ) != NULL )
 	{
-	    bug( "Load_mobiles: vnum %d duplicated.", vnum );
+	    bugf("Load_mobiles: vnum %d duplicated.", vnum );
 	    exit( 1 );
 	}
 	fBootDb = TRUE;
@@ -569,7 +569,7 @@ void load_old_mob( FILE *fp )
 
 	if ( letter != 'S' )
 	{
-	    bug( "Load_mobiles: vnum %d non-S.", vnum );
+	    bugf("Load_mobiles: vnum %d non-S.", vnum );
 	    exit( 1 );
 	}
 
@@ -599,7 +599,7 @@ void load_old_obj( FILE *fp )
 	letter				= fread_letter( fp );
 	if ( letter != '#' )
 	{
-	    bug( "Load_objects: # not found.", 0 );
+	    bugf("Load_objects: # not found.");
 	    exit( 1 );
 	}
 
@@ -610,7 +610,7 @@ void load_old_obj( FILE *fp )
 	fBootDb = FALSE;
 	if ( get_obj_index( vnum ) != NULL )
 	{
-	    bug( "Load_objects: vnum %d duplicated.", vnum );
+	    bugf("Load_objects: vnum %d duplicated.", vnum );
 	    exit( 1 );
 	}
 	fBootDb = TRUE;
@@ -742,7 +742,7 @@ void load_resets( FILE *fp )
 
     if ( area_last == NULL )
     {
-	bug( "Load_resets: no #AREA seen yet.", 0 );
+	bugf("Load_resets: no #AREA seen yet.");
 	exit( 1 );
     }
 
@@ -780,7 +780,7 @@ void load_resets( FILE *fp )
 	switch ( letter )
 	{
 	default:
-	    bug( "Load_resets: bad command '%c'.", letter );
+	    bugf("Load_resets: bad command '%c'.", letter );
 	    exit( 1 );
 	    break;
 
@@ -815,13 +815,13 @@ void load_resets( FILE *fp )
 	    || ( pexit = pRoomIndex->exit[pReset->arg2] ) == NULL
 	    || !IS_SET( pexit->exit_info, EX_ISDOOR ) )
 	    {
-		bug( "Load_resets: 'D': exit %d not door.", pReset->arg2 );
+		bugf("Load_resets: 'D': exit %d not door.", pReset->arg2 );
 		exit( 1 );
 	    }
 
 	    if ( pReset->arg3 < 0 || pReset->arg3 > 2 )
 	    {
-		bug( "Load_resets: 'D': bad 'locks': %d.", pReset->arg3 );
+		bugf("Load_resets: 'D': bad 'locks': %d.", pReset->arg3 );
 		exit( 1 );
 	    }
 
@@ -832,7 +832,7 @@ void load_resets( FILE *fp )
 
 	    if ( pReset->arg2 < 0 || pReset->arg2 > 6 )
 	    {
-		bug( "Load_resets: 'R': bad exit %d.", pReset->arg2 );
+		bugf("Load_resets: 'R': bad exit %d.", pReset->arg2 );
 		exit( 1 );
 	    }
 
@@ -863,7 +863,7 @@ void load_rooms( FILE *fp )
 
     if ( area_last == NULL )
     {
-	bug( "Load_resets: no #AREA seen yet.", 0 );
+	bugf("Load_resets: no #AREA seen yet.");
 	exit( 1 );
     }
 
@@ -877,7 +877,7 @@ void load_rooms( FILE *fp )
 	letter				= fread_letter( fp );
 	if ( letter != '#' )
 	{
-	    bug( "Load_rooms: # not found.", 0 );
+	    bugf("Load_rooms: # not found.");
 	    exit( 1 );
 	}
 
@@ -888,7 +888,7 @@ void load_rooms( FILE *fp )
 	fBootDb = FALSE;
 	if ( get_room_index( vnum ) != NULL )
 	{
-	    bug( "Load_rooms: vnum %d duplicated.", vnum );
+	    bugf("Load_rooms: vnum %d duplicated.", vnum );
 	    exit( 1 );
 	}
 	fBootDb = TRUE;
@@ -933,7 +933,7 @@ void load_rooms( FILE *fp )
 	   {
 		if (pRoomIndex->clan)
 	  	{
-		    bug("Load_rooms: duplicate clan fields.",0);
+		    bugf("Load_rooms: duplicate clan fields.");
 		    exit(1);
 		}
 		pRoomIndex->clan = clan_lookup(fread_string(fp));
@@ -948,7 +948,7 @@ void load_rooms( FILE *fp )
 		door = fread_number( fp );
 		if ( door < 0 || door > 5 )
 		{
-		    bug( "Fread_rooms: vnum %d has bad door number.", vnum );
+		    bugf("Fread_rooms: vnum %d has bad door number.", vnum );
 		    exit( 1 );
 		}
 
@@ -989,7 +989,7 @@ void load_rooms( FILE *fp )
 	    {
 		if (pRoomIndex->owner[0] != '\0')
 		{
-		    bug("Load_rooms: duplicate owner.",0);
+		    bugf("Load_rooms: duplicate owner.");
 		    exit(1);
 		}
 
@@ -998,7 +998,7 @@ void load_rooms( FILE *fp )
 
 	    else
 	    {
-		bug( "Load_rooms: vnum %d has flag not 'DES'.", vnum );
+		bugf("Load_rooms: vnum %d has flag not 'DES'.", vnum );
 		exit( 1 );
 	    }
 	}
@@ -1067,7 +1067,7 @@ void load_specials( FILE *fp )
 	switch ( letter = fread_letter( fp ) )
 	{
 	default:
-	    bug( "Load_specials: letter '%c' not *MS.", letter );
+	    bugf("Load_specials: letter '%c' not *MS.", letter );
 	    exit( 1 );
 
 	case 'S':
@@ -1081,7 +1081,7 @@ void load_specials( FILE *fp )
 	    pMobIndex->spec_fun	= spec_lookup	( fread_word   ( fp ) );
 	    if ( pMobIndex->spec_fun == 0 )
 	    {
-		bug( "Load_specials: 'M': vnum %d.", pMobIndex->vnum );
+		bugf("Load_specials: 'M': vnum %d.", pMobIndex->vnum );
 		exit( 1 );
 	    }
 	    break;
@@ -1155,7 +1155,7 @@ void fix_exits( void )
 			to_room->vnum,    rev_dir[door],
 			(pexit_rev->u1.to_room == NULL)
 			    ? 0 : pexit_rev->u1.to_room->vnum );
-		    bug( buf, 0 );
+		    bugf( buf);
 		}
 	    }
 	}
@@ -1234,19 +1234,19 @@ void reset_area( AREA_DATA *pArea )
 	switch ( pReset->command )
 	{
 	default:
-	    bug( "Reset_area: bad command %c.", pReset->command );
+	    bugf("Reset_area: bad command %c.", pReset->command );
 	    break;
 
 	case 'M':
 	    if ( ( pMobIndex = get_mob_index( pReset->arg1 ) ) == NULL )
 	    {
-		bug( "Reset_area: 'M': bad vnum %d.", pReset->arg1 );
+		bugf("Reset_area: 'M': bad vnum %d.", pReset->arg1 );
 		continue;
 	    }
 
 	    if ( ( pRoomIndex = get_room_index( pReset->arg3 ) ) == NULL )
 	    {
-		bug( "Reset_area: 'R': bad vnum %d.", pReset->arg3 );
+		bugf("Reset_area: 'R': bad vnum %d.", pReset->arg3 );
 		continue;
 	    }
 
@@ -1295,13 +1295,13 @@ void reset_area( AREA_DATA *pArea )
 	case 'O':
 	    if ( ( pObjIndex = get_obj_index( pReset->arg1 ) ) == NULL )
 	    {
-		bug( "Reset_area: 'O': bad vnum %d.", pReset->arg1 );
+		bugf("Reset_area: 'O': bad vnum %d.", pReset->arg1 );
 		continue;
 	    }
 
 	    if ( ( pRoomIndex = get_room_index( pReset->arg3 ) ) == NULL )
 	    {
-		bug( "Reset_area: 'R': bad vnum %d.", pReset->arg3 );
+		bugf("Reset_area: 'R': bad vnum %d.", pReset->arg3 );
 		continue;
 	    }
 
@@ -1322,13 +1322,13 @@ void reset_area( AREA_DATA *pArea )
 	case 'P':
 	    if ( ( pObjIndex = get_obj_index( pReset->arg1 ) ) == NULL )
 	    {
-		bug( "Reset_area: 'P': bad vnum %d.", pReset->arg1 );
+		bugf("Reset_area: 'P': bad vnum %d.", pReset->arg1 );
 		continue;
 	    }
 
 	    if ( ( pObjToIndex = get_obj_index( pReset->arg3 ) ) == NULL )
 	    {
-		bug( "Reset_area: 'P': bad vnum %d.", pReset->arg3 );
+		bugf("Reset_area: 'P': bad vnum %d.", pReset->arg3 );
 		continue;
 	    }
 
@@ -1367,7 +1367,7 @@ void reset_area( AREA_DATA *pArea )
 	case 'E':
 	    if ( ( pObjIndex = get_obj_index( pReset->arg1 ) ) == NULL )
 	    {
-		bug( "Reset_area: 'E' or 'G': bad vnum %d.", pReset->arg1 );
+		bugf("Reset_area: 'E' or 'G': bad vnum %d.", pReset->arg1 );
 		continue;
 	    }
 
@@ -1376,8 +1376,7 @@ void reset_area( AREA_DATA *pArea )
 
 	    if ( mob == NULL )
 	    {
-		bug( "Reset_area: 'E' or 'G': null mob for vnum %d.",
-		    pReset->arg1 );
+		bugf( "Reset_area: 'E' or 'G': null mob for vnum %d.",pReset->arg1 );
 		last = FALSE;
 		break;
 	    }
@@ -1454,7 +1453,7 @@ void reset_area( AREA_DATA *pArea )
 	case 'D':
 	    if ( ( pRoomIndex = get_room_index( pReset->arg1 ) ) == NULL )
 	    {
-		bug( "Reset_area: 'D': bad vnum %d.", pReset->arg1 );
+		bugf("Reset_area: 'D': bad vnum %d.", pReset->arg1 );
 		continue;
 	    }
 
@@ -1485,7 +1484,7 @@ void reset_area( AREA_DATA *pArea )
 	case 'R':
 	    if ( ( pRoomIndex = get_room_index( pReset->arg1 ) ) == NULL )
 	    {
-		bug( "Reset_area: 'R': bad vnum %d.", pReset->arg1 );
+		bugf("Reset_area: 'R': bad vnum %d.", pReset->arg1 );
 		continue;
 	    }
 
@@ -1523,7 +1522,7 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 
     if ( pMobIndex == NULL )
     {
-	bug( "Create_mobile: NULL pMobIndex.", 0 );
+	bugf("Create_mobile: NULL pMobIndex.");
 	exit( 1 );
     }
 
@@ -1829,7 +1828,7 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
 
     if ( pObjIndex == NULL )
     {
-	bug( "Create_object: NULL pObjIndex.", 0 );
+	bugf("Create_object: NULL pObjIndex.");
 	exit( 1 );
     }
 
@@ -1871,7 +1870,7 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
     switch ( obj->item_type )
     {
     default:
-	bug( "Read_object: vnum %d bad type.", pObjIndex->vnum );
+	bugf("Read_object: vnum %d bad type.", pObjIndex->vnum );
 	break;
 
     case ITEM_LIGHT:
@@ -2079,7 +2078,7 @@ MOB_INDEX_DATA *get_mob_index( int vnum )
 
     if ( fBootDb )
     {
-	bug( "Get_mob_index: bad vnum %d.", vnum );
+	bugf("Get_mob_index: bad vnum %d.", vnum );
 	exit( 1 );
     }
 
@@ -2106,7 +2105,7 @@ OBJ_INDEX_DATA *get_obj_index( int vnum )
 
     if ( fBootDb )
     {
-	bug( "Get_obj_index: bad vnum %d.", vnum );
+	bugf("Get_obj_index: bad vnum %d.", vnum );
 	exit( 1 );
     }
 
@@ -2133,7 +2132,7 @@ ROOM_INDEX_DATA *get_room_index( int vnum )
 
     if ( fBootDb )
     {
-	bug( "Get_room_index: bad vnum %d.", vnum );
+	bugf("Get_room_index: bad vnum %d.", vnum );
 	exit( 1 );
     }
 
@@ -2190,7 +2189,7 @@ int fread_number( FILE *fp )
 
     if ( !isdigit(c) )
     {
-	bug( "Fread_number: bad format.", 0 );
+	bugf("Fread_number: bad format.");
 	exit( 1 );
     }
 
@@ -2298,7 +2297,7 @@ char *fread_string( FILE *fp )
     plast = top_string + sizeof(char *);
     if ( plast > &string_space[MAX_STRING - MAX_STRING_LENGTH] )
     {
-	bug( "Fread_string: MAX_STRING %d exceeded.", MAX_STRING );
+	bugf("Fread_string: MAX_STRING %d exceeded.", MAX_STRING );
 	exit( 1 );
     }
 
@@ -2331,7 +2330,7 @@ char *fread_string( FILE *fp )
  
         case EOF:
 	/* temp fix */
-            bug( "Fread_string: EOF", 0 );
+            bugf("Fread_string: EOF");
 	    return NULL;
             /* exit( 1 ); */
             break;
@@ -2410,7 +2409,7 @@ char *fread_string_eol( FILE *fp )
     plast = top_string + sizeof(char *);
     if ( plast > &string_space[MAX_STRING - MAX_STRING_LENGTH] )
     {
-        bug( "Fread_string: MAX_STRING %d exceeded.", MAX_STRING );
+        bugf("Fread_string: MAX_STRING %d exceeded.", MAX_STRING );
         exit( 1 );
     }
  
@@ -2438,7 +2437,7 @@ char *fread_string_eol( FILE *fp )
             break;
  
         case EOF:
-            bug( "Fread_string_eol  EOF", 0 );
+            bugf("Fread_string_eol  EOF");
             exit( 1 );
             break;
  
@@ -2556,7 +2555,7 @@ char *fread_word( FILE *fp )
 	}
     }
 
-    bug( "Fread_word: word too long.", 0 );
+    bugf("Fread_word: word too long.");
     exit( 1 );
     return NULL;
 }
@@ -2581,7 +2580,7 @@ void *alloc_mem( int sMem )
 
     if ( iList == MAX_MEM_LIST )
     {
-        bug( "Alloc_mem: size %d too large.", sMem );
+        bugf("Alloc_mem: size %d too large.", sMem );
         exit( 1 );
     }
 
@@ -2618,8 +2617,8 @@ void free_mem( void *pMem, int sMem )
 
     if (*magic != MAGIC_NUM)
     {
-        bug("Attempt to recyle invalid memory of size %d.",sMem);
-        bug((char*) pMem + sizeof(*magic),0);
+        bugf("Attempt to recyle invalid memory of size %d.", sMem);
+        bugf((char*) pMem + sizeof(*magic));
         return;
     }
 
@@ -2634,7 +2633,7 @@ void free_mem( void *pMem, int sMem )
 
     if ( iList == MAX_MEM_LIST )
     {
-        bug( "Free_mem: size %d too large.", sMem );
+        bugf("Free_mem: size %d too large.", sMem );
         exit( 1 );
     }
 
@@ -2660,7 +2659,7 @@ void *alloc_perm( int sMem )
 	sMem++;
     if ( sMem > MAX_PERM_BLOCK )
     {
-	bug( "Alloc_perm: %d too large.", sMem );
+	bugf("Alloc_perm: %d too large.", sMem );
 	exit( 1 );
     }
 
@@ -3091,13 +3090,13 @@ bool str_cmp( const char *astr, const char *bstr )
 {
     if ( astr == NULL )
     {
-	bug( "Str_cmp: null astr.", 0 );
+	bugf("Str_cmp: null astr.");
 	return TRUE;
     }
 
     if ( bstr == NULL )
     {
-	bug( "Str_cmp: null bstr.", 0 );
+	bugf("Str_cmp: null bstr.");
 	return TRUE;
     }
 
@@ -3121,13 +3120,13 @@ bool str_prefix( const char *astr, const char *bstr )
 {
     if ( astr == NULL )
     {
-	bug( "Strn_cmp: null astr.", 0 );
+	bugf("Strn_cmp: null astr.");
 	return TRUE;
     }
 
     if ( bstr == NULL )
     {
-	bug( "Strn_cmp: null bstr.", 0 );
+	bugf("Strn_cmp: null bstr.");
 	return TRUE;
     }
 

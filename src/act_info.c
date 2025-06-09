@@ -2334,7 +2334,7 @@ void set_title( CHAR_DATA *ch, char *title )
 
     if ( IS_NPC(ch) )
     {
-	bug( "Set_title: NPC.", 0 );
+	bugf("Set_title: NPC.");
 	return;
     }
 

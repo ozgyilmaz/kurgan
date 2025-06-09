@@ -689,7 +689,7 @@ bool damage(CHAR_DATA *ch,CHAR_DATA *victim,int dam,int dt,int dam_type,
      */
     if ( dam > 1200 && dt >= TYPE_HIT)
     {
-	bug( "Damage: %d: more than 1200 points!", dam );
+	bugf("Damage: %d: more than 1200 points!", dam );
 	dam = 1200;
 	if (!IS_IMMORTAL(ch))
 	{
@@ -1217,7 +1217,7 @@ void check_killer( CHAR_DATA *ch, CHAR_DATA *victim )
 
 	    sprintf( buf, "Check_killer: %s bad AFF_CHARM",
 		IS_NPC(ch) ? ch->short_descr : ch->name );
-	    bug( buf, 0 );
+	    bugf( buf);
 	    affect_strip( ch, gsn_charm_person );
 	    REMOVE_BIT( ch->affected_by, AFF_CHARM );
 	    return;
@@ -1382,7 +1382,7 @@ void set_fighting( CHAR_DATA *ch, CHAR_DATA *victim )
 {
     if ( ch->fighting != NULL )
     {
-	bug( "Set_fighting: already fighting", 0 );
+	bugf("Set_fighting: already fighting");
 	return;
     }
 
@@ -1716,7 +1716,7 @@ void group_gain( CHAR_DATA *ch, CHAR_DATA *victim )
 
     if ( members == 0 )
     {
-	bug( "Group_gain: members.", members );
+	bugf( "Group_gain: members." );
 	members = 1;
 	group_levels = ch->level ;
     }
@@ -2009,7 +2009,7 @@ void dam_message( CHAR_DATA *ch, CHAR_DATA *victim,int dam,int dt,bool immune )
 	    attack	= attack_table[dt - TYPE_HIT].noun;
 	else
 	{
-	    bug( "Dam_message: bad dt %d.", dt );
+	    bugf("Dam_message: bad dt %d.", dt );
 	    dt  = TYPE_HIT;
 	    attack  = attack_table[0].name;
 	}

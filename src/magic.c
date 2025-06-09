@@ -116,7 +116,7 @@ int slot_lookup( int slot )
 
     if ( fBootDb )
     {
-	bug( "Slot_lookup: bad slot %d.", slot );
+	bugf("Slot_lookup: bad slot %d.", slot );
 	abort( );
     }
 
@@ -353,7 +353,7 @@ void do_cast( CHAR_DATA *ch, char *argument )
     switch ( skill_table[sn].target )
     {
     default:
-	bug( "Do_cast: bad target for sn %d.", sn );
+	bugf("Do_cast: bad target for sn %d.", sn );
 	return;
 
     case TAR_IGNORE:
@@ -588,14 +588,14 @@ void obj_cast_spell( int sn, int level, CHAR_DATA *ch, CHAR_DATA *victim, OBJ_DA
 
     if ( sn >= MAX_SKILL || skill_table[sn].spell_fun == 0 )
     {
-	bug( "Obj_cast_spell: bad sn %d.", sn );
+	bugf("Obj_cast_spell: bad sn %d.", sn );
 	return;
     }
 
     switch ( skill_table[sn].target )
     {
     default:
-	bug( "Obj_cast_spell: bad target for sn %d.", sn );
+	bugf("Obj_cast_spell: bad target for sn %d.", sn );
 	return;
 
     case TAR_IGNORE:

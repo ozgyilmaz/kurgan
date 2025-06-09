@@ -588,7 +588,7 @@ void do_disconnect( CHAR_DATA *ch, char *argument )
 	}
     }
 
-    bug( "Do_disconnect: desc not found.", 0 );
+    bugf("Do_disconnect: desc not found.");
     printf_to_char(ch, "Descriptor not found!\n\r");
     return;
 }

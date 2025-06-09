@@ -1025,7 +1025,7 @@ void close_socket( DESCRIPTOR_DATA *dclose )
 	if ( d != NULL )
 	    d->next = dclose->next;
 	else
-	    bug( "Close_socket: dclose not found.", 0 );
+	    bugf("Close_socket: dclose not found.");
     }
 
     close( dclose->descriptor );
@@ -1490,7 +1490,7 @@ void write_to_buffer( DESCRIPTOR_DATA *d, const char *txt, int length )
 
         if (d->outsize >= 32000)
 	{
-	    bug("Buffer overflow. Closing.\n\r",0);
+	    bugf("Buffer overflow. Closing.\n\r");
 	    close_socket(d);
 	    return;
  	}
@@ -1566,7 +1566,7 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
     {
 
     default:
-	bug( "Nanny: bad d->connected %d.", d->connected );
+	bugf("Nanny: bad d->connected %d.", d->connected );
 	close_socket( d );
 	return;
 
@@ -2365,7 +2365,7 @@ void bugf(char *fmt, ...)
     vsnprintf(buf, sizeof(buf), fmt, args);
     va_end(args);
 
-    bug(buf, 0);
+    bugf(buf);
 }
 
 /*
@@ -2487,7 +2487,7 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
     {
         if ( vch == NULL )
         {
-            bug( "Act: null vch with TO_VICT.", 0 );
+            bugf("Act: null vch with TO_VICT.");
             return;
         }
 
@@ -2524,14 +2524,14 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
  
             if ( arg2 == NULL && *str >= 'A' && *str <= 'Z' )
             {
-                bug( "Act: missing arg2 for code %d.", *str );
+                bugf("Act: missing arg2 for code %d.", *str );
                 i = " <@@@> ";
             }
             else
             {
                 switch ( *str )
                 {
-                default:  bug( "Act: bad code %d.", *str );
+                default:  bugf("Act: bad code %d.", *str );
                           i = " <@@@> ";                                break;
                 /* Thx alex for 't' idea */
                 case 't': i = (char *) arg1;                            break;

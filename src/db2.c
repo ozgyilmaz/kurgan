@@ -197,7 +197,7 @@ void load_mobiles( FILE *fp )
         letter                          = fread_letter( fp );
         if ( letter != '#' )
         {
-            bug( "Load_mobiles: # not found.", 0 );
+            bugf("Load_mobiles: # not found.");
             exit( 1 );
         }
  
@@ -208,7 +208,7 @@ void load_mobiles( FILE *fp )
         fBootDb = FALSE;
         if ( get_mob_index( vnum ) != NULL )
         {
-            bug( "Load_mobiles: vnum %d duplicated.", vnum );
+            bugf("Load_mobiles: vnum %d duplicated.", vnum );
             exit( 1 );
         }
         fBootDb = TRUE;
@@ -320,7 +320,7 @@ void load_mobiles( FILE *fp )
 		    REMOVE_BIT(pMobIndex->parts,vector);
 		else
 		{
-		    bug("Flag remove: flag not found.",0);
+		    bugf("Flag remove: flag not found.");
 		    exit(1);
 		}
 	     }
@@ -357,7 +357,7 @@ void load_objects( FILE *fp )
         letter                          = fread_letter( fp );
         if ( letter != '#' )
         {
-            bug( "Load_objects: # not found.", 0 );
+            bugf("Load_objects: # not found.");
             exit( 1 );
         }
  
@@ -368,7 +368,7 @@ void load_objects( FILE *fp )
         fBootDb = FALSE;
         if ( get_obj_index( vnum ) != NULL )
         {
-            bug( "Load_objects: vnum %d duplicated.", vnum );
+            bugf("Load_objects: vnum %d duplicated.", vnum );
             exit( 1 );
         }
         fBootDb = TRUE;
@@ -497,7 +497,7 @@ void load_objects( FILE *fp )
 		    paf->where		= TO_VULN;
 		    break;
 		default:
-            	    bug( "Load_objects: Bad where on flag set.", 0 );
+            	    bugf("Load_objects: Bad where on flag set.");
             	   exit( 1 );
 		}
                 paf->type               = -1;

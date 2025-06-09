@@ -276,7 +276,7 @@ void load_thread(char *name, NOTE_DATA **list, int type, time_t free_time)
  
     strcpy( strArea, NOTE_FILE );
     fpArea = fp;
-    bug( "Load_notes: bad key word.", 0 );
+    bugf("Load_notes: bad key word.");
     exit( 1 );
     return;
 }
@@ -454,7 +454,7 @@ void note_remove( CHAR_DATA *ch, NOTE_DATA *pnote, bool delete)
 
 	if ( prev == NULL )
 	{
-	    bug( "Note_remove: pnote not found.", 0 );
+	    bugf("Note_remove: pnote not found.");
 	    return;
 	}
 

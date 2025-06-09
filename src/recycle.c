@@ -559,7 +559,7 @@ BUFFER *new_buf_size(int size)
     buffer->size        = get_size(size);
     if (buffer->size == -1)
     {
-        bug("new_buf: buffer size %d too large.",size);
+        bugf("new_buf: buffer size %d too large.", size);
         exit(1);
     }
     buffer->string      = alloc_mem(buffer->size);
@@ -608,7 +608,7 @@ bool add_buf(BUFFER *buffer, char *string)
 	    {
 		buffer->size = oldsize;
 		buffer->state = BUFFER_OVERFLOW;
-		bug("buffer overflow past size %d",buffer->size);
+		bugf("buffer overflow past size %d", buffer->size);
 		return FALSE;
 	    }
   	}

@@ -167,7 +167,7 @@ void load_songs(void)
 
     if ((fp = fopen(MUSIC_FILE,"r")) == NULL)
     {
-	bug("Couldn't open music file, no songs available.",0);
+	bugf("Couldn't open music file, no songs available.");
 	fclose(fp);
 	return;
     }
@@ -205,7 +205,7 @@ void load_songs(void)
 		
 	    if (lines >= MAX_LINES)
    	    {
-		bug("Too many lines in a song -- limit is  %d.",MAX_LINES);
+		bugf("Too many lines in a song -- limit is  %d.", MAX_LINES);
 		break;
 	    }
 

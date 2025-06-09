@@ -72,7 +72,7 @@ void move_char( CHAR_DATA *ch, int door, bool follow )
 
     if ( door < 0 || door > 5 )
     {
-	bug( "Do_move: bad door %d.", door );
+	bugf("Do_move: bad door %d.", door );
 	return;
     }
 

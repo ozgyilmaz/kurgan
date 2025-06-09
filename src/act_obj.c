@@ -1183,7 +1183,7 @@ void do_drink( CHAR_DATA *ch, char *argument )
     case ITEM_FOUNTAIN:
         if ( ( liquid = obj->value[2] )  < 0 )
         {
-            bug( "Do_drink: bad liquid number %d.", liquid );
+            bugf("Do_drink: bad liquid number %d.", liquid );
             liquid = obj->value[2] = 0;
         }
 	amount = liq_table[liquid].liq_affect[4] * 3;
@@ -1198,7 +1198,7 @@ void do_drink( CHAR_DATA *ch, char *argument )
 
 	if ( ( liquid = obj->value[2] )  < 0 )
 	{
-	    bug( "Do_drink: bad liquid number %d.", liquid );
+	    bugf("Do_drink: bad liquid number %d.", liquid );
 	    liquid = obj->value[2] = 0;
 	}
 
@@ -1424,7 +1424,7 @@ void wear_obj( CHAR_DATA *ch, OBJ_DATA *obj, bool fReplace )
 	    return;
 	}
 
-	bug( "Wear_obj: no free finger.", 0 );
+	bugf("Wear_obj: no free finger.");
 	printf_to_char(ch, "You already wear two rings.\n\r");
 	return;
     }
@@ -1453,7 +1453,7 @@ void wear_obj( CHAR_DATA *ch, OBJ_DATA *obj, bool fReplace )
 	    return;
 	}
 
-	bug( "Wear_obj: no free neck.", 0 );
+	bugf("Wear_obj: no free neck.");
 	printf_to_char(ch, "You already wear two neck items.\n\r");
 	return;
     }
@@ -1566,7 +1566,7 @@ void wear_obj( CHAR_DATA *ch, OBJ_DATA *obj, bool fReplace )
 	    return;
 	}
 
-	bug( "Wear_obj: no free wrist.", 0 );
+	bugf("Wear_obj: no free wrist.");
 	printf_to_char(ch, "You already wear two wrist items.\n\r");
 	return;
     }
@@ -1971,7 +1971,7 @@ void do_brandish( CHAR_DATA *ch, char *argument )
     ||   sn >= MAX_SKILL
     ||   skill_table[sn].spell_fun == 0 )
     {
-	bug( "Do_brandish: bad sn %d.", sn );
+	bugf("Do_brandish: bad sn %d.", sn );
 	return;
     }
 
@@ -1996,7 +1996,7 @@ void do_brandish( CHAR_DATA *ch, char *argument )
 	    switch ( skill_table[sn].target )
 	    {
 	    default:
-		bug( "Do_brandish: bad target for sn %d.", sn );
+		bugf("Do_brandish: bad target for sn %d.", sn );
 		return;
 
 	    case TAR_IGNORE:
@@ -2533,7 +2533,7 @@ void do_buy( CHAR_DATA *ch, char *argument )
 	    pRoomIndexNext = get_room_index( ch->in_room->vnum + 1 );
 	if ( pRoomIndexNext == NULL )
 	{
-	    bug( "Do_buy: bad pet shop at vnum %d.", ch->in_room->vnum );
+	    bugf("Do_buy: bad pet shop at vnum %d.", ch->in_room->vnum );
 	    printf_to_char(ch, "Sorry, you can't buy that here.\n\r");
 	    return;
 	}
@@ -2757,7 +2757,7 @@ void do_list( CHAR_DATA *ch, char *argument )
 
 	if ( pRoomIndexNext == NULL )
 	{
-	    bug( "Do_list: bad pet shop at vnum %d.", ch->in_room->vnum );
+	    bugf("Do_list: bad pet shop at vnum %d.", ch->in_room->vnum );
 	    printf_to_char(ch, "You can't do that here.\n\r");
 	    return;
 	}

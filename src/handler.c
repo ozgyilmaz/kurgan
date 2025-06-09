@@ -360,7 +360,7 @@ int get_skill(CHAR_DATA *ch, int sn)
 
     else if (sn < -1 || sn > MAX_SKILL)
     {
-	bug("Bad sn %d in get_skill.",sn);
+	bugf("Bad sn %d in get_skill.", sn);
 	skill = 0;
     }
 
@@ -944,7 +944,7 @@ void affect_modify( CHAR_DATA *ch, AFFECT_DATA *paf, bool fAdd )
     switch ( paf->location )
     {
     default:
-	bug( "Affect_modify: unknown location %d.", paf->location );
+	bugf("Affect_modify: unknown location %d.", paf->location );
 	return;
 
     case APPLY_NONE:						break;
@@ -1163,7 +1163,7 @@ void affect_remove( CHAR_DATA *ch, AFFECT_DATA *paf )
 
     if ( ch->affected == NULL )
     {
-	bug( "Affect_remove: no affect.", 0 );
+	bugf("Affect_remove: no affect.");
 	return;
     }
 
@@ -1190,7 +1190,7 @@ void affect_remove( CHAR_DATA *ch, AFFECT_DATA *paf )
 
 	if ( prev == NULL )
 	{
-	    bug( "Affect_remove: cannot find paf.", 0 );
+	    bugf("Affect_remove: cannot find paf.");
 	    return;
 	}
     }
@@ -1206,7 +1206,7 @@ void affect_remove_obj( OBJ_DATA *obj, AFFECT_DATA *paf)
     int where, vector;
     if ( obj->affected == NULL )
     {
-        bug( "Affect_remove_object: no affect.", 0 );
+        bugf("Affect_remove_object: no affect.");
         return;
     }
 
@@ -1248,7 +1248,7 @@ void affect_remove_obj( OBJ_DATA *obj, AFFECT_DATA *paf)
 
         if ( prev == NULL )
         {
-            bug( "Affect_remove_object: cannot find paf.", 0 );
+            bugf("Affect_remove_object: cannot find paf.");
             return;
         }
     }
@@ -1335,7 +1335,7 @@ void char_from_room( CHAR_DATA *ch )
 
     if ( ch->in_room == NULL )
     {
-	bug( "Char_from_room: NULL.", 0 );
+	bugf("Char_from_room: NULL.");
 	return;
     }
 
@@ -1366,7 +1366,7 @@ void char_from_room( CHAR_DATA *ch )
 	}
 
 	if ( prev == NULL )
-	    bug( "Char_from_room: ch not found.", 0 );
+	    bugf("Char_from_room: ch not found.");
     }
 
     ch->in_room      = NULL;
@@ -1388,7 +1388,7 @@ void char_to_room( CHAR_DATA *ch, ROOM_INDEX_DATA *pRoomIndex )
     {
 	ROOM_INDEX_DATA *room;
 
-	bug( "Char_to_room: NULL.", 0 );
+	bugf("Char_to_room: NULL.");
 	
 	if ((room = get_room_index(ROOM_VNUM_TEMPLE)) != NULL)
 	    char_to_room(ch,room);
@@ -1487,7 +1487,7 @@ void obj_from_char( OBJ_DATA *obj )
 
     if ( ( ch = obj->carried_by ) == NULL )
     {
-	bug( "Obj_from_char: null ch.", 0 );
+	bugf("Obj_from_char: null ch.");
 	return;
     }
 
@@ -1512,7 +1512,7 @@ void obj_from_char( OBJ_DATA *obj )
 	}
 
 	if ( prev == NULL )
-	    bug( "Obj_from_char: obj not in list.", 0 );
+	    bugf("Obj_from_char: obj not in list.");
     }
 
     obj->carried_by	 = NULL;
@@ -1586,7 +1586,7 @@ void equip_char( CHAR_DATA *ch, OBJ_DATA *obj, int iWear )
 
     if ( get_eq_char( ch, iWear ) != NULL )
     {
-	bug( "Equip_char: already equipped (%d).", iWear );
+	bugf("Equip_char: already equipped (%d).", iWear );
 	return;
     }
 
@@ -1640,7 +1640,7 @@ void unequip_char( CHAR_DATA *ch, OBJ_DATA *obj )
 
     if ( obj->wear_loc == WEAR_NONE )
     {
-	bug( "Unequip_char: already unequipped.", 0 );
+	bugf("Unequip_char: already unequipped.");
 	return;
     }
 
@@ -1675,7 +1675,7 @@ void unequip_char( CHAR_DATA *ch, OBJ_DATA *obj )
     for ( paf = obj->affected; paf != NULL; paf = paf->next )
 	if ( paf->location == APPLY_SPELL_AFFECT )
 	{
-	    bug ( "Norm-Apply: %d", 0 );
+	    bugf("Norm-Apply: %d", 0 );
 	    for ( lpaf = ch->affected; lpaf != NULL; lpaf = lpaf_next )
 	    {
 		lpaf_next = lpaf->next;
@@ -1683,8 +1683,8 @@ void unequip_char( CHAR_DATA *ch, OBJ_DATA *obj )
 		    (lpaf->level == paf->level) &&
 		    (lpaf->location == APPLY_SPELL_AFFECT))
 		{
-		    bug ( "location = %d", lpaf->location );
-		    bug ( "type = %d", lpaf->type );
+		    bugf("location = %d", lpaf->location );
+		    bugf("type = %d", lpaf->type );
 		    affect_remove( ch, lpaf );
 		    lpaf_next = NULL;
 		}
@@ -1737,7 +1737,7 @@ void obj_from_room( OBJ_DATA *obj )
 
     if ( ( in_room = obj->in_room ) == NULL )
     {
-	bug( "obj_from_room: NULL.", 0 );
+	bugf("obj_from_room: NULL.");
 	return;
     }
 
@@ -1764,7 +1764,7 @@ void obj_from_room( OBJ_DATA *obj )
 
 	if ( prev == NULL )
 	{
-	    bug( "Obj_from_room: obj not found.", 0 );
+	    bugf("Obj_from_room: obj not found.");
 	    return;
 	}
     }
@@ -1828,7 +1828,7 @@ void obj_from_obj( OBJ_DATA *obj )
 
     if ( ( obj_from = obj->in_obj ) == NULL )
     {
-	bug( "Obj_from_obj: null obj_from.", 0 );
+	bugf("Obj_from_obj: null obj_from.");
 	return;
     }
 
@@ -1851,7 +1851,7 @@ void obj_from_obj( OBJ_DATA *obj )
 
 	if ( prev == NULL )
 	{
-	    bug( "Obj_from_obj: obj not found.", 0 );
+	    bugf("Obj_from_obj: obj not found.");
 	    return;
 	}
     }
@@ -1914,7 +1914,7 @@ void extract_obj( OBJ_DATA *obj )
 
 	if ( prev == NULL )
 	{
-	    bug( "Extract_obj: obj %d not found.", obj->pIndexData->vnum );
+	    bugf("Extract_obj: obj %d not found.", obj->pIndexData->vnum );
 	    return;
 	}
     }
@@ -1938,7 +1938,7 @@ void extract_char( CHAR_DATA *ch, bool fPull )
     /* doesn't seem to be necessary
     if ( ch->in_room == NULL )
     {
-	bug( "Extract_char: NULL.", 0 );
+	bugf("Extract_char: NULL.");
 	return;
     }
     */
@@ -2002,7 +2002,7 @@ void extract_char( CHAR_DATA *ch, bool fPull )
 
 	if ( prev == NULL )
 	{
-	    bug( "Extract_char: char not found.", 0 );
+	    bugf("Extract_char: char not found.");
 	    return;
 	}
     }
@@ -2240,12 +2240,12 @@ void deduct_cost(CHAR_DATA *ch, int cost)
 
     if (ch->gold < 0)
     {
-	bug("deduct costs: gold %d < 0",ch->gold);
+	bugf("deduct costs: gold %d < 0", ch->gold);
 	ch->gold = 0;
     }
     if (ch->silver < 0)
     {
-	bug("deduct costs: silver %d < 0",ch->silver);
+	bugf("deduct costs: silver %d < 0", ch->silver);
 	ch->silver = 0;
     }
 }   
@@ -2259,7 +2259,7 @@ OBJ_DATA *create_money( int gold, int silver )
 
     if ( gold < 0 || silver < 0 || (gold == 0 && silver == 0) )
     {
-	bug( "Create_money: zero or negative money.",UMIN(gold,silver));
+	bugf( "Create_money: zero or negative money.");
 	gold = UMAX(1,gold);
 	silver = UMAX(1,silver);
     }
@@ -2578,7 +2578,7 @@ char *affect_loc_name( int location )
     case APPLY_SPELL_AFFECT:	return "none";
     }
 
-    bug( "Affect_location_name: unknown location %d.", location );
+    bugf("Affect_location_name: unknown location %d.", location );
     return "(unknown)";
 }
 
