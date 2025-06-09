@@ -341,6 +341,15 @@ void	read_from_buffer	args( ( DESCRIPTOR_DATA *d ) );
 void	stop_idling		args( ( CHAR_DATA *ch ) );
 void    bust_a_prompt           args( ( CHAR_DATA *ch ) );
 
+// prool's modif for isprint
+// prool here: http://mud.kharkov.org proolix@gmail.com
+int isutf8(char c)
+{
+if ((c<32)&&(c>=0)) return 0;
+if (c==-1) return 0;
+if (c==-3) return 0;
+return 1;
+}
 
 int main( int argc, char **argv )
 {
@@ -1142,7 +1151,7 @@ void read_from_buffer( DESCRIPTOR_DATA *d )
 
 	if ( d->inbuf[i] == '\b' && k > 0 )
 	    --k;
-	else if ( isascii(d->inbuf[i]) && isprint(d->inbuf[i]) )
+	else if ( isutf8(d->inbuf[i]) )
 	    d->incomm[k++] = d->inbuf[i];
     }
 

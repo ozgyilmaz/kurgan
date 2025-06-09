@@ -11,3 +11,4 @@
 - number_mm() removed.
 - number_range() modernised. Bias problem resolved.
 - number_bits() removed and it's usage replaced with number_range()
+- UTF8 character support for argument and command input (by Prool http://mud.kharkov.org, proolix@gmail.com)

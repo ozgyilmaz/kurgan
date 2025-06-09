@@ -400,7 +400,7 @@ void interpret( CHAR_DATA *ch, char *argument )
      *   also no spaces needed after punctuation.
      */
     strcpy( logline, argument );
-    if ( !isalpha(argument[0]) && !isdigit(argument[0]) )
+    if ( !isutf8(argument[0]) )
     {
 	command[0] = argument[0];
 	command[1] = '\0';
