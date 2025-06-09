@@ -25,6 +25,7 @@
 *	ROM license, in the file Rom24/doc/rom.license			   *
 ***************************************************************************/
 
+#include "color.h"
 
 /*
  * Accommodate old non-Ansi compilers.

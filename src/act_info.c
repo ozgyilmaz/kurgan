@@ -2059,8 +2059,10 @@ void do_who( CHAR_DATA *ch, char *argument )
 	/*
 	 * Format it up.
 	 */
-	sprintf( buf, "[%2d %6s %s] %s%s%s%s%s%s%s%s\n\r",
-	    wch->level,
+	sprintf( buf, "[%s%2d%s %6s %s] %s%s%s%s%s%s%s%s\n\r",
+	    CLR_DARK_GOLDEN_ROD,
+        wch->level,
+        CLR_RESET,
 	    wch->race < MAX_PC_RACE ? pc_race_table[wch->race].who_name 
 				    : "     ",
 	    class,
