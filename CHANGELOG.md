@@ -6,3 +6,8 @@
 
 ## 08.06.2025
 - Correction of compilation errors and warnings.
+
+## 09.06.2025
+- number_mm() removed.
+- number_range() modernised. Bias problem resolved.
+- number_bits() removed and it's usage replaced with number_range()

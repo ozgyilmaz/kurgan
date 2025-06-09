@@ -2938,7 +2938,7 @@ void do_dump( CHAR_DATA *ch, char *argument )
  */
 int number_fuzzy( int number )
 {
-    switch ( number_bits( 2 ) )
+    switch ( number_range(0, 3) )
     {
     case 0:  number -= 1; break;
     case 3:  number += 1; break;
@@ -2950,26 +2950,27 @@ int number_fuzzy( int number )
 
 
 /*
- * Generate a random number.
+ * New number_range() function.
+ * Resolves modula problem.
  */
 int number_range( int from, int to )
 {
-    int power;
-    int number;
 
-    if (from == 0 && to == 0)
-	return 0;
+  int x;
+  int difference;
 
-    if ( ( to = to - from + 1 ) <= 1 )
-	return from;
+  difference = to - from;
+  if( difference == 0 ) {
+    return from;
+  }
 
-    for ( power = 2; power < to; power <<= 1 )
-	;
+  do {
+    x = random();
+  } while (x >= (RAND_MAX - (RAND_MAX % (difference + 1))));
 
-    while ( ( number = number_mm() & (power -1 ) ) >= to )
-	;
+  x %= (difference + 1);
 
-    return from + number;
+  return x + from;
 }
 
 
@@ -2979,12 +2980,7 @@ int number_range( int from, int to )
  */
 int number_percent( void )
 {
-    int percent;
-
-    while ( (percent = number_mm() & (128-1) ) > 99 )
-	;
-
-    return 1 + percent;
+    return number_range(1,100);
 }
 
 
@@ -2994,21 +2990,8 @@ int number_percent( void )
  */
 int number_door( void )
 {
-    int door;
-
-    while ( ( door = number_mm() & (8-1) ) > 5)
-	;
-
-    return door;
+    return number_range(0,5);
 }
-
-int number_bits( int width )
-{
-    return number_mm( ) & ( ( 1 << width ) - 1 );
-}
-
-
-
 
 /*
  * I've gotten too many bad reports on OS-supplied random number generators.
@@ -3047,34 +3030,6 @@ void init_mm( )
     srandom(time(NULL)^getpid());
 #endif
     return;
-}
- 
- 
- 
-long number_mm( void )
-{
-#if defined (OLD_RAND)
-    int *piState;
-    int iState1;
-    int iState2;
-    int iRand;
- 
-    piState             = &rgiState[2];
-    iState1             = piState[-2];
-    iState2             = piState[-1];
-    iRand               = (piState[iState1] + piState[iState2])
-                        & ((1 << 30) - 1);
-    piState[iState1]    = iRand;
-    if ( ++iState1 == 55 )
-        iState1 = 0;
-    if ( ++iState2 == 55 )
-        iState2 = 0;
-    piState[-2]         = iState1;
-    piState[-1]         = iState2;
-    return iRand >> 6;
-#else
-    return random() >> 6;
-#endif
 }
 
 

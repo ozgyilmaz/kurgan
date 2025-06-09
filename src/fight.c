@@ -151,7 +151,7 @@ void check_assist(CHAR_DATA *ch,CHAR_DATA *victim)
 		    CHAR_DATA *target;
 		    int number;
 
-		    if (number_bits(1) == 0)
+		    if (number_range(0, 1) == 0)
 			continue;
 		
 		    target = NULL;
@@ -494,7 +494,7 @@ void one_hit( CHAR_DATA *ch, CHAR_DATA *victim, int dt )
     /*
      * The moment of excitement!
      */
-    while ( ( diceroll = number_bits( 5 ) ) >= 20 )
+    while ( ( diceroll = number_range(0, 31) ) >= 20 )
 	;
 
     if ( diceroll == 0
@@ -970,7 +970,7 @@ bool damage(CHAR_DATA *ch,CHAR_DATA *victim,int dam,int dt,int dam_type,
      */
     if ( IS_NPC(victim) && dam > 0 && victim->wait < PULSE_VIOLENCE / 2)
     {
-	if ( ( IS_SET(victim->act, ACT_WIMPY) && number_bits( 2 ) == 0
+	if ( ( IS_SET(victim->act, ACT_WIMPY) && number_range(0, 3) == 0
 	&&   victim->hit < victim->max_hit / 5) 
 	||   ( IS_AFFECTED(victim, AFF_CHARM) && victim->master != NULL
 	&&     victim->master->in_room != victim->in_room ) )
@@ -1553,7 +1553,7 @@ void death_cry( CHAR_DATA *ch )
     vnum = 0;
     msg = "You hear $n's death cry.";
 
-    switch ( number_bits(4))
+    switch ( number_range(0, 15))
     {
     case  0: msg  = "$n hits the ground ... DEAD.";			break;
     case  1: 

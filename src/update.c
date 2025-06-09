@@ -411,7 +411,7 @@ void mobile_update( void )
 	/* Scavenge */
 	if ( IS_SET(ch->act, ACT_SCAVENGER)
 	&&   ch->in_room->contents != NULL
-	&&   number_bits( 6 ) == 0 )
+	&&   number_range(0, 63) == 0 )
 	{
 	    OBJ_DATA *obj;
 	    OBJ_DATA *obj_best;
@@ -439,8 +439,8 @@ void mobile_update( void )
 
 	/* Wander */
 	if ( !IS_SET(ch->act, ACT_SENTINEL) 
-	&& number_bits(3) == 0
-	&& ( door = number_bits( 5 ) ) <= 5
+	&& number_range(0, 7) == 0
+	&& ( door = number_range(0, 31) ) <= 5
 	&& ( pexit = ch->in_room->exit[door] ) != NULL
 	&&   pexit->u1.to_room != NULL
 	&&   !IS_SET(pexit->exit_info, EX_CLOSED)
@@ -537,7 +537,7 @@ void weather_update( void )
 
     case SKY_CLOUDLESS:
 	if ( weather_info.mmhg <  990
-	|| ( weather_info.mmhg < 1010 && number_bits( 2 ) == 0 ) )
+	|| ( weather_info.mmhg < 1010 && number_range(0, 3) == 0 ) )
 	{
 	    strcat( buf, "The sky is getting cloudy.\n\r" );
 	    weather_info.sky = SKY_CLOUDY;
@@ -546,13 +546,13 @@ void weather_update( void )
 
     case SKY_CLOUDY:
 	if ( weather_info.mmhg <  970
-	|| ( weather_info.mmhg <  990 && number_bits( 2 ) == 0 ) )
+	|| ( weather_info.mmhg <  990 && number_range(0, 3) == 0 ) )
 	{
 	    strcat( buf, "It starts to rain.\n\r" );
 	    weather_info.sky = SKY_RAINING;
 	}
 
-	if ( weather_info.mmhg > 1030 && number_bits( 2 ) == 0 )
+	if ( weather_info.mmhg > 1030 && number_range(0, 3) == 0 )
 	{
 	    strcat( buf, "The clouds disappear.\n\r" );
 	    weather_info.sky = SKY_CLOUDLESS;
@@ -560,14 +560,14 @@ void weather_update( void )
 	break;
 
     case SKY_RAINING:
-	if ( weather_info.mmhg <  970 && number_bits( 2 ) == 0 )
+	if ( weather_info.mmhg <  970 && number_range(0, 3) == 0 )
 	{
 	    strcat( buf, "Lightning flashes in the sky.\n\r" );
 	    weather_info.sky = SKY_LIGHTNING;
 	}
 
 	if ( weather_info.mmhg > 1030
-	|| ( weather_info.mmhg > 1010 && number_bits( 2 ) == 0 ) )
+	|| ( weather_info.mmhg > 1010 && number_range(0, 3) == 0 ) )
 	{
 	    strcat( buf, "The rain stopped.\n\r" );
 	    weather_info.sky = SKY_CLOUDY;
@@ -576,7 +576,7 @@ void weather_update( void )
 
     case SKY_LIGHTNING:
 	if ( weather_info.mmhg > 1010
-	|| ( weather_info.mmhg >  990 && number_bits( 2 ) == 0 ) )
+	|| ( weather_info.mmhg >  990 && number_range(0, 3) == 0 ) )
 	{
 	    strcat( buf, "The lightning has stopped.\n\r" );
 	    weather_info.sky = SKY_RAINING;
@@ -777,7 +777,7 @@ void char_update( void )
             {
                 if (!saves_spell(plague.level - 2,vch,DAM_DISEASE) 
 		&&  !IS_IMMORTAL(vch)
-            	&&  !IS_AFFECTED(vch,AFF_PLAGUE) && number_bits(4) == 0)
+            	&&  !IS_AFFECTED(vch,AFF_PLAGUE) && number_range(0, 15) == 0)
             	{
             	    send_to_char("You feel hot and feverish.\n\r",vch);
             	    act("$n shivers and looks very ill.",vch,NULL,NULL,TO_ROOM);
@@ -1034,7 +1034,7 @@ void aggr_update( void )
 	    ||   !IS_AWAKE(ch)
 	    ||   ( IS_SET(ch->act, ACT_WIMPY) && IS_AWAKE(wch) )
 	    ||   !can_see( ch, wch ) 
-	    ||   number_bits(1) == 0)
+	    ||   number_range(0, 1) == 0)
 		continue;
 
 	    /*

@@ -1447,7 +1447,7 @@ void char_to_room( CHAR_DATA *ch, ROOM_INDEX_DATA *pRoomIndex )
         {
             if (!saves_spell(plague.level - 2,vch,DAM_DISEASE) 
 	    &&  !IS_IMMORTAL(vch) &&
-            	!IS_AFFECTED(vch,AFF_PLAGUE) && number_bits(6) == 0)
+            	!IS_AFFECTED(vch,AFF_PLAGUE) && number_range(0, 63) == 0)
             {
             	send_to_char("You feel hot and feverish.\n\r",vch);
             	act("$n shivers and looks very ill.",vch,NULL,NULL,TO_ROOM);
