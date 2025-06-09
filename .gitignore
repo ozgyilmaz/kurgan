@@ -1,4 +1,6 @@
 src/*.d
 src/*.o
 area/kurgan
-player/Deneme
+src/kurgan
+player/Xera
+gods/Xera

@@ -90,6 +90,11 @@ char *format_obj_to_char( OBJ_DATA *obj, CHAR_DATA *ch, bool fShort )
 
     buf[0] = '\0';
 
+    if (IS_IMMORTAL(ch) && !IS_NPC(ch) && IS_SET(ch->act, PLR_HOLYLIGHT))
+    {
+        sprintf(buf,"[Obj %d]",obj->pIndexData->vnum);
+    }
+
     if ((fShort && (obj->short_descr == NULL || obj->short_descr[0] == '\0'))
     ||  (obj->description == NULL || obj->description[0] == '\0'))
 	return buf;
@@ -245,6 +250,11 @@ void show_char_to_char_0( CHAR_DATA *victim, CHAR_DATA *ch )
     char buf[MAX_STRING_LENGTH],message[MAX_STRING_LENGTH];
 
     buf[0] = '\0';
+
+    if (IS_IMMORTAL(ch) && !IS_NPC(ch) && IS_SET(ch->act, PLR_HOLYLIGHT) && IS_NPC(victim))
+    {
+        sprintf(buf, " [Mob %d]", victim->pIndexData->vnum);
+    }
 
     if ( IS_SET(victim->comm,COMM_AFK	  )   ) strcat( buf, "[AFK] "	     );
     if ( IS_AFFECTED(victim, AFF_INVISIBLE)   ) strcat( buf, "(Invis) "      );
@@ -1027,7 +1037,7 @@ void do_look( CHAR_DATA *ch, char *argument )
 	/* 'look' or 'look auto' */
 	send_to_char( ch->in_room->name, ch );
 
-	if (IS_IMMORTAL(ch) && (IS_NPC(ch) || IS_SET(ch->act,PLR_HOLYLIGHT)))
+	if (IS_IMMORTAL(ch) && !IS_NPC(ch) && IS_SET(ch->act, PLR_HOLYLIGHT))
 	{
 	    sprintf(buf," [Room %d]",ch->in_room->vnum);
 	    send_to_char(buf,ch);
