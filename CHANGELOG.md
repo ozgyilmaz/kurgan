@@ -15,3 +15,4 @@
 - RGB 8-bit color codes are implemented. Check do_who() for "wch->level" coloring. Color names are taken from: https://www.w3schools.com/colors/
 - Immortal characters can see Room, Mob, Object VNUMs when Holylight is active.
 - Autoexit setting removed. From now on exits will always be shown.
+- Compact mode (COMM_COMPACT) removed.

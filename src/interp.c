@@ -155,7 +155,6 @@ const	struct	cmd_type	cmd_table	[] =
     { "brief",		do_brief,	POS_DEAD,        0,  LOG_NORMAL, 1 },
 /*  { "channels",	do_channels,	POS_DEAD,	 0,  LOG_NORMAL, 1 }, */
     { "combine",	do_combine,	POS_DEAD,        0,  LOG_NORMAL, 1 },
-    { "compact",	do_compact,	POS_DEAD,        0,  LOG_NORMAL, 1 },
     { "description",	do_description,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "delet",		do_delet,	POS_DEAD,	 0,  LOG_ALWAYS, 0 },
     { "delete",		do_delete,	POS_STANDING,	 0,  LOG_ALWAYS, 1 },

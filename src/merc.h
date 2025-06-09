@@ -1253,7 +1253,6 @@ struct	kill_data
 #define COMM_SHOUTSOFF		(J)
 
 /* display flags */
-#define COMM_COMPACT		(L)
 #define COMM_BRIEF		(M)
 #define COMM_PROMPT		(N)
 #define COMM_COMBINE		(O)

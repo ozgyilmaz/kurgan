@@ -99,7 +99,6 @@ DECLARE_DO_FUN( do_clone	);
 DECLARE_DO_FUN(	do_close	);
 DECLARE_DO_FUN(	do_commands	);
 DECLARE_DO_FUN( do_combine	);
-DECLARE_DO_FUN( do_compact	);
 DECLARE_DO_FUN(	do_compare	);
 DECLARE_DO_FUN(	do_consider	);
 DECLARE_DO_FUN( do_count	);

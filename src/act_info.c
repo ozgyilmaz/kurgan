@@ -685,12 +685,6 @@ void do_autolist(CHAR_DATA *ch, char *argument)
     else
         send_to_char("OFF\n\r",ch);
 
-    send_to_char("compact mode   ",ch);
-    if (IS_SET(ch->comm,COMM_COMPACT))
-        send_to_char("ON\n\r",ch);
-    else
-        send_to_char("OFF\n\r",ch);
-
     send_to_char("prompt         ",ch);
     if (IS_SET(ch->comm,COMM_PROMPT))
 	send_to_char("ON\n\r",ch);
@@ -815,20 +809,6 @@ void do_brief(CHAR_DATA *ch, char *argument)
     {
       send_to_char("Short descriptions activated.\n\r",ch);
       SET_BIT(ch->comm,COMM_BRIEF);
-    }
-}
-
-void do_compact(CHAR_DATA *ch, char *argument)
-{
-    if (IS_SET(ch->comm,COMM_COMPACT))
-    {
-      send_to_char("Compact mode removed.\n\r",ch);
-      REMOVE_BIT(ch->comm,COMM_COMPACT);
-    }
-    else
-    {
-      send_to_char("Compact mode set.\n\r",ch);
-      SET_BIT(ch->comm,COMM_COMPACT);
     }
 }
 

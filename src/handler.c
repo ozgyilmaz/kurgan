@@ -2718,7 +2718,6 @@ char *comm_bit_name(int comm_flags)
     if (comm_flags & COMM_NOQUESTION	) strcat(buf, " no_question");
     if (comm_flags & COMM_NOMUSIC	) strcat(buf, " no_music");
     if (comm_flags & COMM_NOQUOTE	) strcat(buf, " no_quote");
-    if (comm_flags & COMM_COMPACT	) strcat(buf, " compact");
     if (comm_flags & COMM_BRIEF		) strcat(buf, " brief");
     if (comm_flags & COMM_PROMPT	) strcat(buf, " prompt");
     if (comm_flags & COMM_COMBINE	) strcat(buf, " combine");

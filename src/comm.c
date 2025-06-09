@@ -1275,12 +1275,9 @@ bool process_output( DESCRIPTOR_DATA *d, bool fPrompt )
 
 
 	ch = d->original ? d->original : d->character;
-	if (!IS_SET(ch->comm, COMM_COMPACT) )
-	    write_to_buffer( d, "\n\r", 2 );
 
-
-        if ( IS_SET(ch->comm, COMM_PROMPT) )
-            bust_a_prompt( d->character );
+	if ( IS_SET(ch->comm, COMM_PROMPT) )
+		bust_a_prompt( d->character );
 
 	if (IS_SET(ch->comm,COMM_TELNET_GA))
 	    write_to_buffer(d,go_ahead_str,0);
