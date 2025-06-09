@@ -285,7 +285,7 @@ bool spec_patrolman(CHAR_DATA *ch)
 
             if (vch->in_room != ch->in_room 
 	    &&  vch->in_room->area == ch->in_room->area)
-            	send_to_char( "You hear a shrill whistling sound.\n\r", vch );
+            	printf_to_char(vch, "You hear a shrill whistling sound.\n\r");
     	}
     }
 

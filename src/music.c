@@ -230,13 +230,13 @@ void do_play(CHAR_DATA *ch, char *argument)
 
     if (argument[0] == '\0')
     {
-	send_to_char("Play what?\n\r",ch);
+	printf_to_char(ch, "Play what?\n\r");
 	return;
     }
 
     if (juke == NULL)
     {
-	send_to_char("You see nothing to play.\n\r",ch);
+	printf_to_char(ch, "You see nothing to play.\n\r");
 	return;
     }
 
@@ -295,14 +295,14 @@ void do_play(CHAR_DATA *ch, char *argument)
 
     if (argument[0] == '\0')
     {
-        send_to_char("Play what?\n\r",ch);
+        printf_to_char(ch, "Play what?\n\r");
         return;
     }
 
     if ((global && channel_songs[MAX_GLOBAL] > -1) 
     ||  (!global && juke->value[4] > -1))
     {
-        send_to_char("The jukebox is full up right now.\n\r",ch);
+        printf_to_char(ch, "The jukebox is full up right now.\n\r");
         return;
     }
 
@@ -310,7 +310,7 @@ void do_play(CHAR_DATA *ch, char *argument)
     {
 	if (song_table[song].name == NULL)
 	{
-	    send_to_char("That song isn't available.\n\r",ch);
+	    printf_to_char(ch, "That song isn't available.\n\r");
 	    return;
 	}
 	if (!str_prefix(argument,song_table[song].name))
@@ -319,11 +319,11 @@ void do_play(CHAR_DATA *ch, char *argument)
 
     if (song >= MAX_SONGS)
     {
-	send_to_char("That song isn't available.\n\r",ch);
+	printf_to_char(ch, "That song isn't available.\n\r");
 	return;
     }
 
-    send_to_char("Coming right up.\n\r",ch);
+    printf_to_char(ch, "Coming right up.\n\r");
 
     if (global)
     {

@@ -2732,7 +2732,7 @@ void do_areas( CHAR_DATA *ch, char *argument )
 
     if (argument[0] != '\0')
     {
-	send_to_char("No argument is used with this command.\n\r",ch);
+	printf_to_char(ch, "No argument is used with this command.\n\r");
 	return;
     }
 
@@ -2746,7 +2746,7 @@ void do_areas( CHAR_DATA *ch, char *argument )
     {
 	sprintf( buf, "%-39s%-39s\n\r",
 	    pArea1->credits, (pArea2 != NULL) ? pArea2->credits : "" );
-	send_to_char( buf, ch );
+	printf_to_char(ch, buf);
 	pArea1 = pArea1->next;
 	if ( pArea2 != NULL )
 	    pArea2 = pArea2->next;
@@ -2761,28 +2761,28 @@ void do_memory( CHAR_DATA *ch, char *argument )
 {
     char buf[MAX_STRING_LENGTH];
 
-    sprintf( buf, "Affects %5d\n\r", top_affect    ); send_to_char( buf, ch );
-    sprintf( buf, "Areas   %5d\n\r", top_area      ); send_to_char( buf, ch );
-    sprintf( buf, "ExDes   %5d\n\r", top_ed        ); send_to_char( buf, ch );
-    sprintf( buf, "Exits   %5d\n\r", top_exit      ); send_to_char( buf, ch );
-    sprintf( buf, "Helps   %5d\n\r", top_help      ); send_to_char( buf, ch );
-    sprintf( buf, "Socials %5d\n\r", social_count  ); send_to_char( buf, ch );
+    sprintf( buf, "Affects %5d\n\r", top_affect    ); printf_to_char(ch, buf);
+    sprintf( buf, "Areas   %5d\n\r", top_area      ); printf_to_char(ch, buf);
+    sprintf( buf, "ExDes   %5d\n\r", top_ed        ); printf_to_char(ch, buf);
+    sprintf( buf, "Exits   %5d\n\r", top_exit      ); printf_to_char(ch, buf);
+    sprintf( buf, "Helps   %5d\n\r", top_help      ); printf_to_char(ch, buf);
+    sprintf( buf, "Socials %5d\n\r", social_count  ); printf_to_char(ch, buf);
     sprintf( buf, "Mobs    %5d(%d new format)\n\r", top_mob_index,newmobs ); 
-    send_to_char( buf, ch );
-    sprintf( buf, "(in use)%5d\n\r", mobile_count  ); send_to_char( buf, ch );
+    printf_to_char(ch, buf);
+    sprintf( buf, "(in use)%5d\n\r", mobile_count  ); printf_to_char(ch, buf);
     sprintf( buf, "Objs    %5d(%d new format)\n\r", top_obj_index,newobjs ); 
-    send_to_char( buf, ch );
-    sprintf( buf, "Resets  %5d\n\r", top_reset     ); send_to_char( buf, ch );
-    sprintf( buf, "Rooms   %5d\n\r", top_room      ); send_to_char( buf, ch );
-    sprintf( buf, "Shops   %5d\n\r", top_shop      ); send_to_char( buf, ch );
+    printf_to_char(ch, buf);
+    sprintf( buf, "Resets  %5d\n\r", top_reset     ); printf_to_char(ch, buf);
+    sprintf( buf, "Rooms   %5d\n\r", top_room      ); printf_to_char(ch, buf);
+    sprintf( buf, "Shops   %5d\n\r", top_shop      ); printf_to_char(ch, buf);
 
     sprintf( buf, "Strings %5d strings of %7d bytes (max %d).\n\r",
 	nAllocString, sAllocString, MAX_STRING );
-    send_to_char( buf, ch );
+    printf_to_char(ch, buf);
 
     sprintf( buf, "Perms   %5d blocks  of %7d bytes.\n\r",
 	nAllocPerm, sAllocPerm );
-    send_to_char( buf, ch );
+    printf_to_char(ch, buf);
 
     return;
 }
@@ -3221,7 +3221,7 @@ void append_file( CHAR_DATA *ch, char *file, char *str )
     if ( ( fp = fopen( file, "a" ) ) == NULL )
     {
 	perror( file );
-	send_to_char( "Could not open the file!\n\r", ch );
+	printf_to_char(ch, "Could not open the file!\n\r");
     }
     else
     {

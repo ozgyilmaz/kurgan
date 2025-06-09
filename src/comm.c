@@ -56,6 +56,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdarg.h>
 
 #include "merc.h"
 #include "interp.h"
@@ -1338,13 +1339,13 @@ void bust_a_prompt( CHAR_DATA *ch )
     {
         sprintf( buf, "<%dhp %dm %dmv> %s",
 	    ch->hit,ch->mana,ch->move,ch->prefix);
-	send_to_char(buf,ch);
+	printf_to_char(ch, buf);
 	return;
     }
 
    if (IS_SET(ch->comm,COMM_AFK))
    {
-	send_to_char("<AFK> ",ch);
+	printf_to_char(ch, "<AFK> ");
 	return;
    }
 
@@ -2006,13 +2007,13 @@ case CON_DEFAULT_CHOICE:
 	break;
 
     case CON_GEN_GROUPS:
-	send_to_char("\n\r",ch);
+	printf_to_char(ch, "\n\r");
 
        	if (!str_cmp(argument,"done"))
        	{
 	    if (ch->pcdata->points == pc_race_table[ch->race].points)
 	    {
-	        send_to_char("You didn't pick anything.\n\r",ch);
+	        printf_to_char(ch, "You didn't pick anything.\n\r");
 		break;
 	    }
 
@@ -2021,19 +2022,19 @@ case CON_DEFAULT_CHOICE:
 		sprintf(buf,
 		    "You must take at least %d points of skills and groups",
 		    40 + pc_race_table[ch->race].points);
-		send_to_char(buf, ch);
+		printf_to_char(ch, buf);
 		break;
 	    }
 
 	    sprintf(buf,"Creation points: %d\n\r",ch->pcdata->points);
-	    send_to_char(buf,ch);
+	    printf_to_char(ch, buf);
 	    sprintf(buf,"Experience per level: %d\n\r",
 	            exp_per_level(ch,ch->gen_data->points_chosen));
 	    if (ch->pcdata->points < 40)
 		ch->train = (40 - ch->pcdata->points + 1) / 2;
 	    free_gen_data(ch->gen_data);
 	    ch->gen_data = NULL;
-	    send_to_char(buf,ch);
+	    printf_to_char(ch, buf);
             write_to_buffer( d, "\n\r", 2 );
             write_to_buffer(d,
                 "Please pick a weapon from the following choices:\n\r",0);
@@ -2051,9 +2052,7 @@ case CON_DEFAULT_CHOICE:
         }
 
         if (!parse_gen_groups(ch,argument))
-        send_to_char(
-        "Choices are: list,learned,premise,add,drop,info,help, and done.\n\r"
-        ,ch);
+        printf_to_char(ch, "Choices are: list,learned,premise,add,drop,info,help, and done.\n\r");
 
         do_function(ch, &do_help, "menu choice");
         break;
@@ -2102,9 +2101,9 @@ case CON_DEFAULT_CHOICE:
 	    obj_to_char(create_object(get_obj_index(OBJ_VNUM_MAP),0),ch);
 
 	    char_to_room( ch, get_room_index( ROOM_VNUM_SCHOOL ) );
-	    send_to_char("\n\r",ch);
+	    printf_to_char(ch, "\n\r");
 	    do_function(ch, &do_help, "newbie info");
-	    send_to_char("\n\r",ch);
+	    printf_to_char(ch, "\n\r");
 	}
 	else if ( ch->in_room != NULL )
 	{
@@ -2270,8 +2269,7 @@ bool check_reconnect( DESCRIPTOR_DATA *d, char *name, bool fConn )
 		d->character = ch;
 		ch->desc	 = d;
 		ch->timer	 = 0;
-		send_to_char(
-		    "Reconnecting. Type replay to see missed tells.\n\r", ch );
+		printf_to_char(ch, "Reconnecting. Type replay to see missed tells.\n\r");
 		act( "$n has reconnected.", ch, NULL, NULL, TO_ROOM );
 
 		sprintf( log_buf, "%s@%s reconnected.", ch->name, d->host );
@@ -2346,6 +2344,30 @@ void send_to_char( const char *txt, CHAR_DATA *ch )
     return;
 }
 
+void printf_to_char(CHAR_DATA *ch, const char *fmt, ...)
+{
+    char buf[MAX_STRING_LENGTH];
+    va_list args;
+
+    va_start(args, fmt);
+    vsnprintf(buf, sizeof(buf), fmt, args);
+    va_end(args);
+
+    printf_to_char(ch, buf);
+}
+
+void bugf(char *fmt, ...)
+{
+    char buf[2 * MAX_STRING_LENGTH];
+    va_list args;
+
+    va_start(args, fmt);
+    vsnprintf(buf, sizeof(buf), fmt, args);
+    va_end(args);
+
+    bug(buf, 0);
+}
+
 /*
  * Send a page to one char.
  */
@@ -2356,12 +2378,12 @@ void page_to_char( const char *txt, CHAR_DATA *ch )
 
     if (ch->lines == 0 )
     {
-	send_to_char(txt,ch);
+	printf_to_char(ch, txt);
 	return;
     }
 	
 #if defined(macintosh)
-	send_to_char(txt,ch);
+	printf_to_char(ch, txt);
 #else
     ch->desc->showstr_head = alloc_mem(strlen(txt) + 1);
     strcpy(ch->desc->showstr_head,txt);

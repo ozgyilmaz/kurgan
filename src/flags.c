@@ -60,31 +60,31 @@ void do_flag(CHAR_DATA *ch, char *argument)
 
     if (arg1[0] == '\0')
     {
-	send_to_char("Syntax:\n\r",ch);
-	send_to_char("  flag mob  <name> <field> <flags>\n\r",ch);
-	send_to_char("  flag char <name> <field> <flags>\n\r",ch);
-	send_to_char("  mob  flags: act,aff,off,imm,res,vuln,form,part\n\r",ch);
-	send_to_char("  char flags: plr,comm,aff,imm,res,vuln,\n\r",ch);
-	send_to_char("  +: add flag, -: remove flag, = set equal to\n\r",ch);
-	send_to_char("  otherwise flag toggles the flags listed.\n\r",ch);
+	printf_to_char(ch, "Syntax:\n\r");
+	printf_to_char(ch, "  flag mob  <name> <field> <flags>\n\r");
+	printf_to_char(ch, "  flag char <name> <field> <flags>\n\r");
+	printf_to_char(ch, "  mob  flags: act,aff,off,imm,res,vuln,form,part\n\r");
+	printf_to_char(ch, "  char flags: plr,comm,aff,imm,res,vuln,\n\r");
+	printf_to_char(ch, "  +: add flag, -: remove flag, = set equal to\n\r");
+	printf_to_char(ch, "  otherwise flag toggles the flags listed.\n\r");
 	return;
     }
 
     if (arg2[0] == '\0')
     {
-	send_to_char("What do you wish to set flags on?\n\r",ch);
+	printf_to_char(ch, "What do you wish to set flags on?\n\r");
 	return;
     }
 
     if (arg3[0] == '\0')
     {
-	send_to_char("You need to specify a flag to set.\n\r",ch);
+	printf_to_char(ch, "You need to specify a flag to set.\n\r");
 	return;
     }
 
     if (argument[0] == '\0')
     {
-	send_to_char("Which flags do you wish to change?\n\r",ch);
+	printf_to_char(ch, "Which flags do you wish to change?\n\r");
 	return;
     }
 
@@ -93,7 +93,7 @@ void do_flag(CHAR_DATA *ch, char *argument)
 	victim = get_char_world(ch,arg2);
 	if (victim == NULL)
 	{
-	    send_to_char("You can't find them.\n\r",ch);
+	    printf_to_char(ch, "You can't find them.\n\r");
 	    return;
 	}
 
@@ -102,7 +102,7 @@ void do_flag(CHAR_DATA *ch, char *argument)
 	{
 	    if (!IS_NPC(victim))
 	    {
-		send_to_char("Use plr for PCs.\n\r",ch);
+		printf_to_char(ch, "Use plr for PCs.\n\r");
 		return;
 	    }
 
@@ -114,7 +114,7 @@ void do_flag(CHAR_DATA *ch, char *argument)
 	{
 	    if (IS_NPC(victim))
 	    {
-		send_to_char("Use act for NPCs.\n\r",ch);
+		printf_to_char(ch, "Use act for NPCs.\n\r");
 		return;
 	    }
 
@@ -150,7 +150,7 @@ void do_flag(CHAR_DATA *ch, char *argument)
 	{
 	    if (!IS_NPC(victim))
 	    {
-	 	send_to_char("Form can't be set on PCs.\n\r",ch);
+	 	printf_to_char(ch, "Form can't be set on PCs.\n\r");
 		return;
 	    }
 
@@ -162,7 +162,7 @@ void do_flag(CHAR_DATA *ch, char *argument)
 	{
 	    if (!IS_NPC(victim))
 	    {
-		send_to_char("Parts can't be set on PCs.\n\r",ch);
+		printf_to_char(ch, "Parts can't be set on PCs.\n\r");
 		return;
 	    }
 
@@ -174,7 +174,7 @@ void do_flag(CHAR_DATA *ch, char *argument)
 	{
 	    if (IS_NPC(victim))
 	    {
-		send_to_char("Comm can't be set on NPCs.\n\r",ch);
+		printf_to_char(ch, "Comm can't be set on NPCs.\n\r");
 		return;
 	    }
 
@@ -184,7 +184,7 @@ void do_flag(CHAR_DATA *ch, char *argument)
 
 	else 
 	{
-	    send_to_char("That's not an acceptable flag.\n\r",ch);
+	    printf_to_char(ch, "That's not an acceptable flag.\n\r");
 	    return;
 	}
 
@@ -205,7 +205,7 @@ void do_flag(CHAR_DATA *ch, char *argument)
 	    pos = flag_lookup(word,flag_table);
 	    if (pos == 0)
 	    {
-		send_to_char("That flag doesn't exist!\n\r",ch);
+		printf_to_char(ch, "That flag doesn't exist!\n\r");
 		return;
 	    }
 	    else

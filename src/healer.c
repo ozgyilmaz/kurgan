@@ -55,7 +55,7 @@ void do_heal(CHAR_DATA *ch, char *argument)
  
     if ( mob == NULL )
     {
-        send_to_char( "You can't do that here.\n\r", ch );
+        printf_to_char(ch, "You can't do that here.\n\r");
         return;
     }
 
@@ -65,17 +65,17 @@ void do_heal(CHAR_DATA *ch, char *argument)
     {
         /* display price list */
 	act("$N says 'I offer the following spells:'",ch,NULL,mob,TO_CHAR);
-	send_to_char("  light: cure light wounds      10 gold\n\r",ch);
-	send_to_char("  serious: cure serious wounds  15 gold\n\r",ch);
-	send_to_char("  critic: cure critical wounds  25 gold\n\r",ch);
-	send_to_char("  heal: healing spell	      50 gold\n\r",ch);
-	send_to_char("  blind: cure blindness         20 gold\n\r",ch);
-	send_to_char("  disease: cure disease         15 gold\n\r",ch);
-	send_to_char("  poison:  cure poison	      25 gold\n\r",ch); 
-	send_to_char("  uncurse: remove curse	      50 gold\n\r",ch);
-	send_to_char("  refresh: restore movement      5 gold\n\r",ch);
-	send_to_char("  mana:  restore mana	      10 gold\n\r",ch);
-	send_to_char(" Type heal <type> to be healed.\n\r",ch);
+	printf_to_char(ch, "  light: cure light wounds      10 gold\n\r");
+	printf_to_char(ch, "  serious: cure serious wounds  15 gold\n\r");
+	printf_to_char(ch, "  critic: cure critical wounds  25 gold\n\r");
+	printf_to_char(ch, "  heal: healing spell	      50 gold\n\r");
+	printf_to_char(ch, "  blind: cure blindness         20 gold\n\r");
+	printf_to_char(ch, "  disease: cure disease         15 gold\n\r");
+	printf_to_char(ch, "  poison:  cure poison	      25 gold\n\r"); 
+	printf_to_char(ch, "  uncurse: remove curse	      50 gold\n\r");
+	printf_to_char(ch, "  refresh: restore movement      5 gold\n\r");
+	printf_to_char(ch, "  mana:  restore mana	      10 gold\n\r");
+	printf_to_char(ch, " Type heal <type> to be healed.\n\r");
 	return;
     }
 
@@ -185,7 +185,7 @@ void do_heal(CHAR_DATA *ch, char *argument)
     {
 	ch->mana += dice(2,8) + mob->level / 3;
 	ch->mana = UMIN(ch->mana,ch->max_mana);
-	send_to_char("A warm glow passes through you.\n\r",ch);
+	printf_to_char(ch, "A warm glow passes through you.\n\r");
 	return;
      }
 

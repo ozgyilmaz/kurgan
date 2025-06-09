@@ -108,7 +108,7 @@ void advance_level( CHAR_DATA *ch, bool hide )
 	    "You gain %d hit point%s, %d mana, %d move, and %d practice%s.\n\r",
 	    add_hp, add_hp == 1 ? "" : "s", add_mana, add_move,
 	    add_prac, add_prac == 1 ? "" : "s");
-	send_to_char( buf, ch );
+	printf_to_char(ch, buf);
     }
     return;
 }   
@@ -126,7 +126,7 @@ void gain_exp( CHAR_DATA *ch, int gain )
     while ( ch->level < LEVEL_HERO && ch->exp >= 
 	exp_per_level(ch,ch->pcdata->points) * (ch->level+1) )
     {
-	send_to_char( "You raise a level!!  ", ch );
+	printf_to_char(ch, "You raise a level!!  ");
 	ch->level += 1;
 	sprintf(buf,"%s gained level %d",ch->name,ch->level);
 	log_string(buf);
@@ -347,16 +347,16 @@ void gain_condition( CHAR_DATA *ch, int iCond, int value )
 	switch ( iCond )
 	{
 	case COND_HUNGER:
-	    send_to_char( "You are hungry.\n\r",  ch );
+	    printf_to_char(ch, "You are hungry.\n\r");
 	    break;
 
 	case COND_THIRST:
-	    send_to_char( "You are thirsty.\n\r", ch );
+	    printf_to_char(ch, "You are thirsty.\n\r");
 	    break;
 
 	case COND_DRUNK:
 	    if ( condition != 0 )
-		send_to_char( "You are sober.\n\r", ch );
+		printf_to_char(ch, "You are sober.\n\r");
 	    break;
 	}
     }
@@ -592,7 +592,7 @@ void weather_update( void )
 	    if ( d->connected == CON_PLAYING
 	    &&   IS_OUTSIDE(d->character)
 	    &&   IS_AWAKE(d->character) )
-		send_to_char( buf, d->character );
+		printf_to_char(d->character, buf);
 	}
     }
 
@@ -690,7 +690,7 @@ void char_update( void )
 			stop_fighting( ch, TRUE );
 		    act( "$n disappears into the void.",
 			ch, NULL, NULL, TO_ROOM );
-		    send_to_char( "You disappear into the void.\n\r", ch );
+		    printf_to_char(ch, "You disappear into the void.\n\r");
 		    if (ch->level > 1)
 		        save_char_obj( ch );
 		    char_from_room( ch );
@@ -723,8 +723,8 @@ void char_update( void )
 		{
 		    if ( paf->type > 0 && skill_table[paf->type].msg_off )
 		    {
-			send_to_char( skill_table[paf->type].msg_off, ch );
-			send_to_char( "\n\r", ch );
+			printf_to_char(ch, skill_table[paf->type].msg_off);
+			printf_to_char(ch, "\n\r");
 		    }
 		}
 	  
@@ -749,7 +749,7 @@ void char_update( void )
             
 	    act("$n writhes in agony as plague sores erupt from $s skin.",
 		ch,NULL,NULL,TO_ROOM);
-	    send_to_char("You writhe in agony from the plague.\n\r",ch);
+	    printf_to_char(ch, "You writhe in agony from the plague.\n\r");
             for ( af = ch->affected; af != NULL; af = af->next )
             {
             	if (af->type == gsn_plague)
@@ -779,7 +779,7 @@ void char_update( void )
 		&&  !IS_IMMORTAL(vch)
             	&&  !IS_AFFECTED(vch,AFF_PLAGUE) && number_range(0, 15) == 0)
             	{
-            	    send_to_char("You feel hot and feverish.\n\r",vch);
+            	    printf_to_char(vch, "You feel hot and feverish.\n\r");
             	    act("$n shivers and looks very ill.",vch,NULL,NULL,TO_ROOM);
             	    affect_join(vch,&plague);
             	}
@@ -801,7 +801,7 @@ void char_update( void )
 	    if (poison != NULL)
 	    {
 	        act( "$n shivers and suffers.", ch, NULL, NULL, TO_ROOM );
-	        send_to_char( "You shiver and suffer.\n\r", ch );
+	        printf_to_char(ch, "You shiver and suffer.\n\r");
 	        damage(ch,ch,poison->level/10 + 1,gsn_poison,
 		    DAM_POISON,FALSE);
 	    }

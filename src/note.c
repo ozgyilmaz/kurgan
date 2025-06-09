@@ -84,39 +84,39 @@ void do_unread(CHAR_DATA *ch)
 	found = TRUE;
 	sprintf(buf,"There %s %d new news article%s waiting.\n\r",
 	    count > 1 ? "are" : "is",count, count > 1 ? "s" : "");
-	send_to_char(buf,ch);
+	printf_to_char(ch, buf);
     }
     if ((count = count_spool(ch,changes_list)) > 0)
     {
 	found = TRUE;
 	sprintf(buf,"There %s %d change%s waiting to be read.\n\r",
 	    count > 1 ? "are" : "is", count, count > 1 ? "s" : "");
-        send_to_char(buf,ch);
+        printf_to_char(ch, buf);
     }
     if ((count = count_spool(ch,note_list)) > 0)
     {
 	found = TRUE;
 	sprintf(buf,"You have %d new note%s waiting.\n\r",
 	    count, count > 1 ? "s" : "");
-	send_to_char(buf,ch);
+	printf_to_char(ch, buf);
     }
     if ((count = count_spool(ch,idea_list)) > 0)
     {
 	found = TRUE;
 	sprintf(buf,"You have %d unread idea%s to peruse.\n\r",
 	    count, count > 1 ? "s" : "");
-	send_to_char(buf,ch);
+	printf_to_char(ch, buf);
     }
     if (IS_TRUSTED(ch,ANGEL) && (count = count_spool(ch,penalty_list)) > 0)
     {
 	found = TRUE;
 	sprintf(buf,"%d %s been added.\n\r",
 	    count, count > 1 ? "penalties have" : "penalty has");
-	send_to_char(buf,ch);
+	printf_to_char(ch, buf);
     }
 
     if (!found)
-	send_to_char("You have no unread notes.\n\r",ch);
+	printf_to_char(ch, "You have no unread notes.\n\r");
 }
 
 void do_note(CHAR_DATA *ch,char *argument)
@@ -604,7 +604,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
                         pnote->subject,
                         pnote->date,
                         pnote->to_list);
-                    send_to_char( buf, ch );
+                    printf_to_char(ch, buf);
                     page_to_char( pnote->text, ch );
                     update_read(ch,pnote);
                     return;
@@ -613,7 +613,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
                     vnum++;
             }
 	    sprintf(buf,"You have no unread %s.\n\r",list_name);
-	    send_to_char(buf,ch);
+	    printf_to_char(ch, buf);
             return;
         }
  
@@ -624,7 +624,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
         }
         else
         {
-            send_to_char( "Read which number?\n\r", ch );
+            printf_to_char(ch, "Read which number?\n\r");
             return;
         }
  
@@ -640,7 +640,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
                     pnote->date,
                     pnote->to_list
                     );
-                send_to_char( buf, ch );
+                printf_to_char(ch, buf);
                 page_to_char( pnote->text, ch );
 		update_read(ch,pnote);
                 return;
@@ -648,7 +648,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
         }
  
 	sprintf(buf,"There aren't that many %s.\n\r",list_name);
-	send_to_char(buf,ch);
+	printf_to_char(ch, buf);
         return;
     }
 
@@ -662,7 +662,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 		sprintf( buf, "[%3d%s] %s: %s\n\r",
 		    vnum, hide_note(ch,pnote) ? " " : "N", 
 		    pnote->sender, pnote->subject );
-		send_to_char( buf, ch );
+		printf_to_char(ch, buf);
 		vnum++;
 	    }
 	}
@@ -671,19 +671,19 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 	    switch(type)
 	    {
 		case NOTE_NOTE:	
-		    send_to_char("There are no notes for you.\n\r",ch);
+		    printf_to_char(ch, "There are no notes for you.\n\r");
 		    break;
 		case NOTE_IDEA:
-		    send_to_char("There are no ideas for you.\n\r",ch);
+		    printf_to_char(ch, "There are no ideas for you.\n\r");
 		    break;
 		case NOTE_PENALTY:
-		    send_to_char("There are no penalties for you.\n\r",ch);
+		    printf_to_char(ch, "There are no penalties for you.\n\r");
 		    break;
 		case NOTE_NEWS:
-		    send_to_char("There is no news for you.\n\r",ch);
+		    printf_to_char(ch, "There is no news for you.\n\r");
 		    break;
 		case NOTE_CHANGES:
-		    send_to_char("There are no changes for you.\n\r",ch);
+		    printf_to_char(ch, "There are no changes for you.\n\r");
 		    break;
 	    }
 	}
@@ -694,7 +694,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
     {
         if ( !is_number( argument ) )
         {
-            send_to_char( "Note remove which number?\n\r", ch );
+            printf_to_char(ch, "Note remove which number?\n\r");
             return;
         }
  
@@ -705,13 +705,13 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
             if ( is_note_to( ch, pnote ) && vnum++ == anum )
             {
                 note_remove( ch, pnote, FALSE );
-                send_to_char( "Ok.\n\r", ch );
+                printf_to_char(ch, "Ok.\n\r");
                 return;
             }
         }
  
 	sprintf(buf,"There aren't that many %s.",list_name);
-	send_to_char(buf,ch);
+	printf_to_char(ch, buf);
         return;
     }
  
@@ -719,7 +719,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
     {
         if ( !is_number( argument ) )
         {
-            send_to_char( "Note delete which number?\n\r", ch );
+            printf_to_char(ch, "Note delete which number?\n\r");
             return;
         }
  
@@ -730,13 +730,13 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
             if ( is_note_to( ch, pnote ) && vnum++ == anum )
             {
                 note_remove( ch, pnote,TRUE );
-                send_to_char( "Ok.\n\r", ch );
+                printf_to_char(ch, "Ok.\n\r");
                 return;
             }
         }
 
  	sprintf(buf,"There aren't that many %s.",list_name);
-	send_to_char(buf,ch);
+	printf_to_char(ch, buf);
         return;
     }
 
@@ -768,7 +768,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
     ||  (type == NOTE_CHANGES && !IS_TRUSTED(ch,CREATOR)))
     {
 	sprintf(buf,"You aren't high enough level to write %s.",list_name);
-	send_to_char(buf,ch);
+	printf_to_char(ch, buf);
 	return;
     }
 
@@ -777,14 +777,13 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 	note_attach( ch,type );
 	if (ch->pnote->type != type)
 	{
-	    send_to_char(
-		"You already have a different note in progress.\n\r",ch);
+	    printf_to_char(ch, "You already have a different note in progress.\n\r");
 	    return;
 	}
 
 	if (strlen(ch->pnote->text)+strlen(argument) >= 4096)
 	{
-	    send_to_char( "Note too long.\n\r", ch );
+	    printf_to_char(ch, "Note too long.\n\r");
 	    return;
 	}
 
@@ -796,7 +795,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 	free_string( ch->pnote->text );
 	ch->pnote->text = str_dup( buf_string(buffer) );
 	free_buf(buffer);
-	send_to_char( "Ok.\n\r", ch );
+	printf_to_char(ch, "Ok.\n\r");
 	return;
     }
 
@@ -808,14 +807,13 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 	note_attach(ch,type);
         if (ch->pnote->type != type)
         {
-            send_to_char(
-                "You already have a different note in progress.\n\r",ch);
+            printf_to_char(ch, "You already have a different note in progress.\n\r");
             return;
         }
 
 	if (ch->pnote->text == NULL || ch->pnote->text[0] == '\0')
 	{
-	    send_to_char("No lines left to remove.\n\r",ch);
+	    printf_to_char(ch, "No lines left to remove.\n\r");
 	    return;
 	}
 
@@ -851,14 +849,13 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 	note_attach( ch,type );
         if (ch->pnote->type != type)
         {
-            send_to_char(
-                "You already have a different note in progress.\n\r",ch);
+            printf_to_char(ch, "You already have a different note in progress.\n\r");
             return;
         }
 
 	free_string( ch->pnote->subject );
 	ch->pnote->subject = str_dup( argument );
-	send_to_char( "Ok.\n\r", ch );
+	printf_to_char(ch, "Ok.\n\r");
 	return;
     }
 
@@ -867,13 +864,12 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 	note_attach( ch,type );
         if (ch->pnote->type != type)
         {
-            send_to_char(
-                "You already have a different note in progress.\n\r",ch);
+            printf_to_char(ch, "You already have a different note in progress.\n\r");
             return;
         }
 	free_string( ch->pnote->to_list );
 	ch->pnote->to_list = str_dup( argument );
-	send_to_char( "Ok.\n\r", ch );
+	printf_to_char(ch, "Ok.\n\r");
 	return;
     }
 
@@ -885,7 +881,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 	    ch->pnote = NULL;
 	}
 
-	send_to_char( "Ok.\n\r", ch );
+	printf_to_char(ch, "Ok.\n\r");
 	return;
     }
 
@@ -893,13 +889,13 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
     {
 	if ( ch->pnote == NULL )
 	{
-	    send_to_char( "You have no note in progress.\n\r", ch );
+	    printf_to_char(ch, "You have no note in progress.\n\r");
 	    return;
 	}
 
 	if (ch->pnote->type != type)
 	{
-	    send_to_char("You aren't working on that kind of note.\n\r",ch);
+	    printf_to_char(ch, "You aren't working on that kind of note.\n\r");
 	    return;
 	}
 
@@ -908,8 +904,8 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 	    ch->pnote->subject,
 	    ch->pnote->to_list
 	    );
-	send_to_char( buf, ch );
-	send_to_char( ch->pnote->text, ch );
+	printf_to_char(ch, buf);
+	printf_to_char(ch, ch->pnote->text);
 	return;
     }
 
@@ -919,27 +915,25 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 
 	if ( ch->pnote == NULL )
 	{
-	    send_to_char( "You have no note in progress.\n\r", ch );
+	    printf_to_char(ch, "You have no note in progress.\n\r");
 	    return;
 	}
 
         if (ch->pnote->type != type)
         {
-            send_to_char("You aren't working on that kind of note.\n\r",ch);
+            printf_to_char(ch, "You aren't working on that kind of note.\n\r");
             return;
         }
 
 	if (!str_cmp(ch->pnote->to_list,""))
 	{
-	    send_to_char(
-		"You need to provide a recipient (name, all, or immortal).\n\r",
-		ch);
+	    printf_to_char(ch, "You need to provide a recipient (name, all, or immortal).\n\r");
 	    return;
 	}
 
 	if (!str_cmp(ch->pnote->subject,""))
 	{
-	    send_to_char("You need to provide a subject.\n\r",ch);
+	    printf_to_char(ch, "You need to provide a subject.\n\r");
 	    return;
 	}
 
@@ -954,7 +948,7 @@ void parse_note( CHAR_DATA *ch, char *argument, int type )
 	return;
     }
 
-    send_to_char( "You can't do that.\n\r", ch );
+    printf_to_char(ch, "You can't do that.\n\r");
     return;
 }
 

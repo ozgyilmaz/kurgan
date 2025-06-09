@@ -45,7 +45,7 @@ void spell_farsight( int sn, int level, CHAR_DATA *ch, void *vo,int target)
 {
     if (IS_AFFECTED(ch,AFF_BLIND))
     {
-        send_to_char("Maybe it would help if you could see?\n\r",ch);
+        printf_to_char(ch, "Maybe it would help if you could see?\n\r");
         return;
     }
  
@@ -73,7 +73,7 @@ void spell_portal( int sn, int level, CHAR_DATA *ch, void *vo,int target)
     ||   (IS_NPC(victim) && saves_spell( level, victim,DAM_NONE) ) 
     ||	(is_clan(victim) && !is_same_clan(ch,victim)))
     {
-        send_to_char( "You failed.\n\r", ch );
+        printf_to_char(ch, "You failed.\n\r");
         return;
     }   
 
@@ -81,7 +81,7 @@ void spell_portal( int sn, int level, CHAR_DATA *ch, void *vo,int target)
     if (!IS_IMMORTAL(ch) 
     &&  (stone == NULL || stone->item_type != ITEM_WARP_STONE))
     {
-	send_to_char("You lack the proper component for this spell.\n\r",ch);
+	printf_to_char(ch, "You lack the proper component for this spell.\n\r");
 	return;
     }
 
@@ -126,7 +126,7 @@ void spell_nexus( int sn, int level, CHAR_DATA *ch, void *vo, int target)
     ||   (IS_NPC(victim) && saves_spell( level, victim,DAM_NONE) ) 
     ||	 (is_clan(victim) && !is_same_clan(ch,victim)))
     {
-        send_to_char( "You failed.\n\r", ch );
+        printf_to_char(ch, "You failed.\n\r");
         return;
     }   
  
@@ -134,7 +134,7 @@ void spell_nexus( int sn, int level, CHAR_DATA *ch, void *vo, int target)
     if (!IS_IMMORTAL(ch)
     &&  (stone == NULL || stone->item_type != ITEM_WARP_STONE))
     {
-        send_to_char("You lack the proper component for this spell.\n\r",ch);
+        printf_to_char(ch, "You lack the proper component for this spell.\n\r");
         return;
     }
  

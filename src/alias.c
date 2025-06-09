@@ -49,7 +49,7 @@ void substitute_alias(DESCRIPTOR_DATA *d, char *argument)
     if (ch->prefix[0] != '\0' && str_prefix("prefix",argument))
     {
 	if (strlen(ch->prefix) + strlen(argument) > MAX_INPUT_LENGTH)
-	    send_to_char("Line to long, prefix not processed.\r\n",ch);
+	    printf_to_char(ch, "Line to long, prefix not processed.\r\n");
 	else
 	{
 	    sprintf(prefix,"%s %s",ch->prefix,argument);
@@ -84,9 +84,8 @@ void substitute_alias(DESCRIPTOR_DATA *d, char *argument)
 
 	        if (strlen(buf) > MAX_INPUT_LENGTH - 1)
 	        {
-		    send_to_char(
-			"Alias substitution too long. Truncated.\r\n",ch);
-		    buf[MAX_INPUT_LENGTH -1] = '\0';
+		    printf_to_char(ch, "Alias substitution too long. Truncated.\r\n");
+			buf[MAX_INPUT_LENGTH -1] = '\0';
 	        }
 		break;
 	    }
@@ -97,7 +96,7 @@ void substitute_alias(DESCRIPTOR_DATA *d, char *argument)
 
 void do_alia(CHAR_DATA *ch, char *argument)
 {
-    send_to_char("I'm sorry, alias must be entered in full.\n\r",ch);
+    printf_to_char(ch, "I'm sorry, alias must be entered in full.\n\r");
     return;
 }
 
@@ -125,10 +124,10 @@ void do_alias(CHAR_DATA *ch, char *argument)
 
 	if (rch->pcdata->alias[0] == NULL)
 	{
-	    send_to_char("You have no aliases defined.\n\r",ch);
+	    printf_to_char(ch, "You have no aliases defined.\n\r");
 	    return;
 	}
-	send_to_char("Your current aliases are:\n\r",ch);
+	printf_to_char(ch, "Your current aliases are:\n\r");
 
 	for (pos = 0; pos < MAX_ALIAS; pos++)
 	{
@@ -138,14 +137,14 @@ void do_alias(CHAR_DATA *ch, char *argument)
 
 	    sprintf(buf,"    %s:  %s\n\r",rch->pcdata->alias[pos],
 		    rch->pcdata->alias_sub[pos]);
-	    send_to_char(buf,ch);
+	    printf_to_char(ch, buf);
 	}
 	return;
     }
 
     if (!str_prefix("una",arg) || !str_cmp("alias",arg))
     {
-	send_to_char("Sorry, that word is reserved.\n\r",ch);
+	printf_to_char(ch, "Sorry, that word is reserved.\n\r");
 	return;
     }
 
@@ -161,18 +160,18 @@ void do_alias(CHAR_DATA *ch, char *argument)
 	    {
 		sprintf(buf,"%s aliases to '%s'.\n\r",rch->pcdata->alias[pos],
 			rch->pcdata->alias_sub[pos]);
-		send_to_char(buf,ch);
+		printf_to_char(ch, buf);
 		return;
 	    }
 	}
 
-	send_to_char("That alias is not defined.\n\r",ch);
+	printf_to_char(ch, "That alias is not defined.\n\r");
 	return;
     }
 
     if (!str_prefix(argument,"delete") || !str_prefix(argument,"prefix"))
     {
-	send_to_char("That shall not be done!\n\r",ch);
+	printf_to_char(ch, "That shall not be done!\n\r");
 	return;
     }
 
@@ -186,14 +185,14 @@ void do_alias(CHAR_DATA *ch, char *argument)
 	    free_string(rch->pcdata->alias_sub[pos]);
 	    rch->pcdata->alias_sub[pos] = str_dup(argument);
 	    sprintf(buf,"%s is now realiased to '%s'.\n\r",arg,argument);
-	    send_to_char(buf,ch);
+	    printf_to_char(ch, buf);
 	    return;
 	}
      }
 
      if (pos >= MAX_ALIAS)
      {
-	send_to_char("Sorry, you have reached the alias limit.\n\r",ch);
+	printf_to_char(ch, "Sorry, you have reached the alias limit.\n\r");
 	return;
      }
   
@@ -201,7 +200,7 @@ void do_alias(CHAR_DATA *ch, char *argument)
      rch->pcdata->alias[pos]		= str_dup(arg);
      rch->pcdata->alias_sub[pos]	= str_dup(argument);
      sprintf(buf,"%s is now aliased to '%s'.\n\r",arg,argument);
-     send_to_char(buf,ch);
+     printf_to_char(ch, buf);
 }
 
 
@@ -224,7 +223,7 @@ void do_unalias(CHAR_DATA *ch, char *argument)
 
     if (arg[0] == '\0')
     {
-	send_to_char("Unalias what?\n\r",ch);
+	printf_to_char(ch, "Unalias what?\n\r");
 	return;
     }
 
@@ -244,7 +243,7 @@ void do_unalias(CHAR_DATA *ch, char *argument)
 
 	if(!strcmp(arg,rch->pcdata->alias[pos]))
 	{
-	    send_to_char("Alias removed.\n\r",ch);
+	    printf_to_char(ch, "Alias removed.\n\r");
 	    free_string(rch->pcdata->alias[pos]);
 	    free_string(rch->pcdata->alias_sub[pos]);
 	    rch->pcdata->alias[pos] = NULL;
@@ -254,7 +253,7 @@ void do_unalias(CHAR_DATA *ch, char *argument)
     }
 
     if (!found)
-	send_to_char("No alias of that name to remove.\n\r",ch);
+	printf_to_char(ch, "No alias of that name to remove.\n\r");
 }
 
      

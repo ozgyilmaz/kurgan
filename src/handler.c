@@ -1449,7 +1449,7 @@ void char_to_room( CHAR_DATA *ch, ROOM_INDEX_DATA *pRoomIndex )
 	    &&  !IS_IMMORTAL(vch) &&
             	!IS_AFFECTED(vch,AFF_PLAGUE) && number_range(0, 63) == 0)
             {
-            	send_to_char("You feel hot and feverish.\n\r",vch);
+            	printf_to_char(vch, "You feel hot and feverish.\n\r");
             	act("$n shivers and looks very ill.",vch,NULL,NULL,TO_ROOM);
             	affect_join(vch,&plague);
             }

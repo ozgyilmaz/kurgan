@@ -149,7 +149,7 @@ void ban_site(CHAR_DATA *ch, char *argument, bool fPerm)
     {
 	if (ban_list == NULL)
 	{
-	    send_to_char("No sites banned at this time.\n\r",ch);
+	    printf_to_char(ch, "No sites banned at this time.\n\r");
 	    return;
   	}
 	buffer = new_buf();
@@ -190,8 +190,7 @@ void ban_site(CHAR_DATA *ch, char *argument, bool fPerm)
 	type = BAN_PERMIT;
     else
     {
-	send_to_char("Acceptable ban types are all, newbies, and permit.\n\r",
-	    ch); 
+	printf_to_char(ch, "Acceptable ban types are all, newbies, and permit.\n\r"); 
 	return;
     }
 
@@ -211,7 +210,7 @@ void ban_site(CHAR_DATA *ch, char *argument, bool fPerm)
 
     if (strlen(name) == 0)
     {
-	send_to_char("You have to ban SOMETHING.\n\r",ch);
+	printf_to_char(ch, "You have to ban SOMETHING.\n\r");
 	return;
     }
 
@@ -222,7 +221,7 @@ void ban_site(CHAR_DATA *ch, char *argument, bool fPerm)
         {
 	    if (pban->level > get_trust(ch))
 	    {
-            	send_to_char( "That ban was set by a higher power.\n\r", ch );
+            	printf_to_char(ch, "That ban was set by a higher power.\n\r");
             	return;
 	    }
 	    else
@@ -254,7 +253,7 @@ void ban_site(CHAR_DATA *ch, char *argument, bool fPerm)
     ban_list    = pban;
     save_bans();
     sprintf(buf,"%s has been banned.\n\r",pban->name);
-    send_to_char( buf, ch );
+    printf_to_char(ch, buf);
     return;
 }
 
@@ -279,7 +278,7 @@ void do_allow( CHAR_DATA *ch, char *argument )
 
     if ( arg[0] == '\0' )
     {
-        send_to_char( "Remove which site from the ban list?\n\r", ch );
+        printf_to_char(ch, "Remove which site from the ban list?\n\r");
         return;
     }
 
@@ -290,8 +289,7 @@ void do_allow( CHAR_DATA *ch, char *argument )
         {
 	    if (curr->level > get_trust(ch))
 	    {
-		send_to_char(
-		   "You are not powerful enough to lift that ban.\n\r",ch);
+		printf_to_char(ch, "You are not powerful enough to lift that ban.\n\r");
 		return;
 	    }
             if ( prev == NULL )
@@ -301,13 +299,13 @@ void do_allow( CHAR_DATA *ch, char *argument )
 
             free_ban(curr);
 	    sprintf(buf,"Ban on %s lifted.\n\r",arg);
-            send_to_char( buf, ch );
+            printf_to_char(ch, buf);
 	    save_bans();
             return;
         }
     }
 
-    send_to_char( "Site is not banned.\n\r", ch );
+    printf_to_char(ch, "Site is not banned.\n\r");
     return;
 }
 

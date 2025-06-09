@@ -16,3 +16,4 @@
 - Immortal characters can see Room, Mob, Object VNUMs when Holylight is active.
 - Autoexit setting removed. From now on exits will always be shown.
 - Compact mode (COMM_COMPACT) removed.
+- printf_to_char() implemented.

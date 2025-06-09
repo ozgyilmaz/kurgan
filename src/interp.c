@@ -388,7 +388,7 @@ void interpret( CHAR_DATA *ch, char *argument )
      */
     if ( !IS_NPC(ch) && IS_SET(ch->act, PLR_FREEZE) )
     {
-	send_to_char( "You're totally frozen!\n\r", ch );
+	printf_to_char(ch, "You're totally frozen!\n\r");
 	return;
     }
 
@@ -455,7 +455,7 @@ void interpret( CHAR_DATA *ch, char *argument )
 	 * Look for command in socials table.
 	 */
 	if ( !check_social( ch, command, argument ) )
-	    send_to_char( "Huh?\n\r", ch );
+	    printf_to_char(ch, "Huh?\n\r");
 	return;
     }
 
@@ -467,32 +467,32 @@ void interpret( CHAR_DATA *ch, char *argument )
 	switch( ch->position )
 	{
 	case POS_DEAD:
-	    send_to_char( "Lie still; you are DEAD.\n\r", ch );
+	    printf_to_char(ch, "Lie still; you are DEAD.\n\r");
 	    break;
 
 	case POS_MORTAL:
 	case POS_INCAP:
-	    send_to_char( "You are hurt far too bad for that.\n\r", ch );
+	    printf_to_char(ch, "You are hurt far too bad for that.\n\r");
 	    break;
 
 	case POS_STUNNED:
-	    send_to_char( "You are too stunned to do that.\n\r", ch );
+	    printf_to_char(ch, "You are too stunned to do that.\n\r");
 	    break;
 
 	case POS_SLEEPING:
-	    send_to_char( "In your dreams, or what?\n\r", ch );
+	    printf_to_char(ch, "In your dreams, or what?\n\r");
 	    break;
 
 	case POS_RESTING:
-	    send_to_char( "Nah... You feel too relaxed...\n\r", ch);
+	    printf_to_char(ch, "Nah... You feel too relaxed...\n\r");
 	    break;
 
 	case POS_SITTING:
-	    send_to_char( "Better stand up first.\n\r",ch);
+	    printf_to_char(ch, "Better stand up first.\n\r");
 	    break;
 
 	case POS_FIGHTING:
-	    send_to_char( "No way!  You are still fighting!\n\r", ch);
+	    printf_to_char(ch, "No way!  You are still fighting!\n\r");
 	    break;
 
 	}
@@ -546,23 +546,23 @@ bool check_social( CHAR_DATA *ch, char *command, char *argument )
 
     if ( !IS_NPC(ch) && IS_SET(ch->comm, COMM_NOEMOTE) )
     {
-	send_to_char( "You are anti-social!\n\r", ch );
+	printf_to_char(ch, "You are anti-social!\n\r");
 	return TRUE;
     }
 
     switch ( ch->position )
     {
     case POS_DEAD:
-	send_to_char( "Lie still; you are DEAD.\n\r", ch );
+	printf_to_char(ch, "Lie still; you are DEAD.\n\r");
 	return TRUE;
 
     case POS_INCAP:
     case POS_MORTAL:
-	send_to_char( "You are hurt far too bad for that.\n\r", ch );
+	printf_to_char(ch, "You are hurt far too bad for that.\n\r");
 	return TRUE;
 
     case POS_STUNNED:
-	send_to_char( "You are too stunned to do that.\n\r", ch );
+	printf_to_char(ch, "You are too stunned to do that.\n\r");
 	return TRUE;
 
     case POS_SLEEPING:
@@ -572,7 +572,7 @@ bool check_social( CHAR_DATA *ch, char *command, char *argument )
 	 */
 	if ( !str_cmp( social_table[cmd].name, "snore" ) )
 	    break;
-	send_to_char( "In your dreams, or what?\n\r", ch );
+	printf_to_char(ch, "In your dreams, or what?\n\r");
 	return TRUE;
 
     }
@@ -586,7 +586,7 @@ bool check_social( CHAR_DATA *ch, char *command, char *argument )
     }
     else if ( ( victim = get_char_room( ch, arg ) ) == NULL )
     {
-	send_to_char( "They aren't here.\n\r", ch );
+	printf_to_char(ch, "They aren't here.\n\r");
     }
     else if ( victim == ch )
     {
@@ -756,14 +756,14 @@ void do_commands( CHAR_DATA *ch, char *argument )
 	&&   cmd_table[cmd].show)
 	{
 	    sprintf( buf, "%-12s", cmd_table[cmd].name );
-	    send_to_char( buf, ch );
+	    printf_to_char(ch, buf);
 	    if ( ++col % 6 == 0 )
-		send_to_char( "\n\r", ch );
+		printf_to_char(ch, "\n\r");
 	}
     }
  
     if ( col % 6 != 0 )
-	send_to_char( "\n\r", ch );
+	printf_to_char(ch, "\n\r");
     return;
 }
 
@@ -781,14 +781,14 @@ void do_wizhelp( CHAR_DATA *ch, char *argument )
         &&   cmd_table[cmd].show)
 	{
 	    sprintf( buf, "%-12s", cmd_table[cmd].name );
-	    send_to_char( buf, ch );
+	    printf_to_char(ch, buf);
 	    if ( ++col % 6 == 0 )
-		send_to_char( "\n\r", ch );
+		printf_to_char(ch, "\n\r");
 	}
     }
  
     if ( col % 6 != 0 )
-	send_to_char( "\n\r", ch );
+	printf_to_char(ch, "\n\r");
     return;
 }
 
