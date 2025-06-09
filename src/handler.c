@@ -2689,7 +2689,6 @@ char *act_bit_name( int act_flags )
     {
 	strcat(buf," player");
 	if (act_flags & PLR_AUTOASSIST	) strcat(buf, " autoassist");
-	if (act_flags & PLR_AUTOEXIT	) strcat(buf, " autoexit");
 	if (act_flags & PLR_AUTOLOOT	) strcat(buf, " autoloot");
 	if (act_flags & PLR_AUTOSAC	) strcat(buf, " autosac");
 	if (act_flags & PLR_AUTOGOLD	) strcat(buf, " autogold");

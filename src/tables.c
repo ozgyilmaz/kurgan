@@ -114,7 +114,6 @@ const struct flag_type plr_flags[] =
 {
     {	"npc",			A,	FALSE	},
     {	"autoassist",		C,	FALSE	},
-    {	"autoexit",		D,	FALSE	},
     {	"autoloot",		E,	FALSE	},
     {	"autosac",		F,	FALSE	},
     {	"autogold",		G,	FALSE	},

@@ -1219,7 +1219,6 @@ struct	kill_data
 
 /* RT auto flags */
 #define PLR_AUTOASSIST		(C)
-#define PLR_AUTOEXIT		(D)
 #define PLR_AUTOLOOT		(E)
 #define PLR_AUTOSAC             (F)
 #define PLR_AUTOGOLD		(G)

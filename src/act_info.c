@@ -661,12 +661,6 @@ void do_autolist(CHAR_DATA *ch, char *argument)
     else
         send_to_char("OFF\n\r",ch); 
 
-    send_to_char("autoexit       ",ch);
-    if (IS_SET(ch->act,PLR_AUTOEXIT))
-        send_to_char("ON\n\r",ch);
-    else
-        send_to_char("OFF\n\r",ch);
-
     send_to_char("autogold       ",ch);
     if (IS_SET(ch->act,PLR_AUTOGOLD))
         send_to_char("ON\n\r",ch);
@@ -739,23 +733,6 @@ void do_autoassist(CHAR_DATA *ch, char *argument)
     {
       send_to_char("You will now assist when needed.\n\r",ch);
       SET_BIT(ch->act,PLR_AUTOASSIST);
-    }
-}
-
-void do_autoexit(CHAR_DATA *ch, char *argument)
-{
-    if (IS_NPC(ch))
-      return;
- 
-    if (IS_SET(ch->act,PLR_AUTOEXIT))
-    {
-      send_to_char("Exits will no longer be displayed.\n\r",ch);
-      REMOVE_BIT(ch->act,PLR_AUTOEXIT);
-    }
-    else
-    {
-      send_to_char("Exits will now be displayed.\n\r",ch);
-      SET_BIT(ch->act,PLR_AUTOEXIT);
     }
 }
 
@@ -1052,11 +1029,8 @@ void do_look( CHAR_DATA *ch, char *argument )
 	    send_to_char( ch->in_room->description, ch );
 	}
 
-        if ( !IS_NPC(ch) && IS_SET(ch->act, PLR_AUTOEXIT) )
-	{
-	    send_to_char("\n\r",ch);
-            do_function(ch, &do_exits, "auto" );
-	}
+    send_to_char("\n\r",ch);
+    do_function(ch, &do_exits, "auto" );
 
 	show_list_to_char( ch->in_room->contents, ch, FALSE, FALSE );
 	show_char_to_char( ch->in_room->people,   ch );

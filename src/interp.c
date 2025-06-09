@@ -148,7 +148,6 @@ const	struct	cmd_type	cmd_table	[] =
     { "alias",		do_alias,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "autolist",	do_autolist,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "autoassist",	do_autoassist,	POS_DEAD,        0,  LOG_NORMAL, 1 },
-    { "autoexit",	do_autoexit,	POS_DEAD,        0,  LOG_NORMAL, 1 },
     { "autogold",	do_autogold,	POS_DEAD,        0,  LOG_NORMAL, 1 },
     { "autoloot",	do_autoloot,	POS_DEAD,        0,  LOG_NORMAL, 1 },
     { "autosac",	do_autosac,	POS_DEAD,        0,  LOG_NORMAL, 1 },
