@@ -22,3 +22,4 @@
 ## 18.06.2025
 - pc_race_table struct has been removed. The data moved to race_table struct.
 - Errors corrected: printf_to_char() and bugf()
+- "dev" branch created.
