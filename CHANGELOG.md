@@ -18,3 +18,7 @@
 - Compact mode (COMM_COMPACT) removed.
 - printf_to_char() implemented.
 - bugf() implemented.
+
+## 18.06.2025
+- pc_race_table struct has been removed. The data moved to race_table struct.
+- Errors corrected: printf_to_char() and bugf()

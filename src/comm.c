@@ -1849,7 +1849,7 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
         ch->race = race;
 	/* initialize stats */
 	for (i = 0; i < MAX_STATS; i++)
-	    ch->perm_stat[i] = pc_race_table[race].stats[i];
+	    ch->perm_stat[i] = race_table[race].stats[i];
 	ch->affected_by = ch->affected_by|race_table[race].aff;
 	ch->imm_flags	= ch->imm_flags|race_table[race].imm;
 	ch->res_flags	= ch->res_flags|race_table[race].res;
@@ -1860,13 +1860,13 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
 	/* add skills */
 	for (i = 0; i < 5; i++)
 	{
-	    if (pc_race_table[race].skills[i] == NULL)
+	    if (race_table[race].skills[i] == NULL)
 	 	break;
-	    group_add(ch,pc_race_table[race].skills[i],FALSE);
+	    group_add(ch,race_table[race].skills[i],FALSE);
 	}
 	/* add cost */
-	ch->pcdata->points = pc_race_table[race].points;
-	ch->size = pc_race_table[race].size;
+	ch->pcdata->points = race_table[race].points;
+	ch->size = race_table[race].size;
 
         write_to_buffer( d, "What is your sex (M/F)? ", 0 );
         d->connected = CON_GET_NEW_SEX;
@@ -2011,17 +2011,17 @@ case CON_DEFAULT_CHOICE:
 
        	if (!str_cmp(argument,"done"))
        	{
-	    if (ch->pcdata->points == pc_race_table[ch->race].points)
+	    if (ch->pcdata->points == race_table[ch->race].points)
 	    {
 	        printf_to_char(ch, "You didn't pick anything.\n\r");
 		break;
 	    }
 
-	    if (ch->pcdata->points <= 40 + pc_race_table[ch->race].points)
+	    if (ch->pcdata->points <= 40 + race_table[ch->race].points)
 	    {
 		sprintf(buf,
 		    "You must take at least %d points of skills and groups",
-		    40 + pc_race_table[ch->race].points);
+		    40 + race_table[ch->race].points);
 		printf_to_char(ch, buf);
 		break;
 	    }
@@ -2353,7 +2353,7 @@ void printf_to_char(CHAR_DATA *ch, const char *fmt, ...)
     vsnprintf(buf, sizeof(buf), fmt, args);
     va_end(args);
 
-    printf_to_char(ch, buf);
+    send_to_char(buf, ch);
 }
 
 void bugf(char *fmt, ...)
@@ -2365,7 +2365,7 @@ void bugf(char *fmt, ...)
     vsnprintf(buf, sizeof(buf), fmt, args);
     va_end(args);
 
-    bugf(buf);
+    bug(buf, 0);
 }
 
 /*

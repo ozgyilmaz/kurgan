@@ -633,8 +633,8 @@ int exp_per_level(CHAR_DATA *ch, int points)
     inc = 500;
 
     if (points < 40)
-	return 1000 * (pc_race_table[ch->race].class_mult[ch->class] ?
-		       pc_race_table[ch->race].class_mult[ch->class]/100 : 1);
+	return 1000 * (race_table[ch->race].class_mult[ch->class] ?
+		       race_table[ch->race].class_mult[ch->class]/100 : 1);
 
     /* processing */
     points -= 40;
@@ -653,7 +653,7 @@ int exp_per_level(CHAR_DATA *ch, int points)
 
     expl += points * inc / 10;  
 
-    return expl * pc_race_table[ch->race].class_mult[ch->class]/100;
+    return expl * race_table[ch->race].class_mult[ch->class]/100;
 }
 
 /* this procedure handles the input parsing for the skill generator */

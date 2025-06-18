@@ -180,7 +180,7 @@ void fwrite_char( CHAR_DATA *ch, FILE *fp )
     	fprintf( fp, "Desc %s~\n",	ch->description	);
     if (ch->prompt != NULL || !str_cmp(ch->prompt,"<%hhp %mm %vmv> "))
         fprintf( fp, "Prom %s~\n",      ch->prompt  	);
-    fprintf( fp, "Race %s~\n", pc_race_table[ch->race].name );
+    fprintf( fp, "Race %s~\n", race_table[ch->race].name );
     if (ch->clan)
     	fprintf( fp, "Clan %s~\n",clan_table[ch->clan].name);
     fprintf( fp, "Sex  %d\n",	ch->sex			);
@@ -635,14 +635,14 @@ bool load_char_obj( DESCRIPTOR_DATA *d, char *name )
 	if (ch->race == 0)
 	    ch->race = race_lookup("human");
 
-	ch->size = pc_race_table[ch->race].size;
+	ch->size = race_table[ch->race].size;
 	ch->dam_type = 17; /*punch */
 
 	for (i = 0; i < 5; i++)
 	{
-	    if (pc_race_table[ch->race].skills[i] == NULL)
+	    if (race_table[ch->race].skills[i] == NULL)
 		break;
-	    group_add(ch,pc_race_table[ch->race].skills[i],FALSE);
+	    group_add(ch,race_table[ch->race].skills[i],FALSE);
 	}
 	ch->affected_by = ch->affected_by|race_table[ch->race].aff;
 	ch->imm_flags	= ch->imm_flags | race_table[ch->race].imm;

@@ -172,69 +172,94 @@ const 	struct	race_type	race_table	[]		=
 	form,		parts 
     },
 */
-    { "unique",		FALSE, 0, 0, 0, 0, 0, 0, 0, 0 },
+    { "unique",		FALSE, 0, 0, 0, 0, 0, 0, 0, 0,
+	"Uniq", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
+	},
 
     { 
 	"human",		TRUE, 
 	0,		0, 		0,
 	0, 		0,		0,
-	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K
+	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K,
+	"Human",	0,	{ 100, 100, 100, 100 },
+	{ "" },
+	{ 13, 13, 13, 13, 13 },	{ 18, 18, 18, 18, 18 },	SIZE_MEDIUM
     },
 
     {
 	"elf",			TRUE,
 	0,		AFF_INFRARED,	0,
 	0,		RES_CHARM,	VULN_IRON,
-	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K
+	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K,
+	" Elf ",	5,	{ 100, 125,  100, 120 }, 
+	{ "sneak", "hide" },
+	{ 12, 14, 13, 15, 11 },	{ 16, 20, 18, 21, 15 }, SIZE_SMALL
     },
 
     {
 	"dwarf",		TRUE,
 	0,		AFF_INFRARED,	0,
 	0,		RES_POISON|RES_DISEASE, VULN_DROWNING,
-	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K
+	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K,
+	"Dwarf",	8,	{ 150, 100, 125, 100 },
+	{ "berserk" },
+	{ 14, 12, 14, 10, 15 },	{ 20, 16, 19, 14, 21 }, SIZE_MEDIUM
     },
 
     {
 	"giant",		TRUE,
 	0,		0,		0,
 	0,		RES_FIRE|RES_COLD,	VULN_MENTAL|VULN_LIGHTNING,
-	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K
+	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K,
+	"Giant",	6,	{ 200, 150, 150, 105 },
+	{ "bash", "fast healing" },
+	{ 16, 11, 13, 11, 14 },	{ 22, 15, 18, 15, 20 }, SIZE_LARGE
     },
 
     {
 	"bat",			FALSE,
 	0,		AFF_FLYING|AFF_DARK_VISION,	OFF_DODGE|OFF_FAST,
 	0,		0,		VULN_LIGHT,
-	A|G|V,		A|C|D|E|F|H|J|K|P
+	A|G|V,		A|C|D|E|F|H|J|K|P,
+	"Bat", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"bear",			FALSE,
 	0,		0,		OFF_CRUSH|OFF_DISARM|OFF_BERSERK,
 	0,		RES_BASH|RES_COLD,	0,
-	A|G|V,		A|B|C|D|E|F|H|J|K|U|V
+	A|G|V,		A|B|C|D|E|F|H|J|K|U|V,
+	"Bear", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"cat",			FALSE,
 	0,		AFF_DARK_VISION,	OFF_FAST|OFF_DODGE,
 	0,		0,		0,
-	A|G|V,		A|C|D|E|F|H|J|K|Q|U|V
+	A|G|V,		A|C|D|E|F|H|J|K|Q|U|V,
+	"Cat", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"centipede",		FALSE,
 	0,		AFF_DARK_VISION,	0,
 	0,		RES_PIERCE|RES_COLD,	VULN_BASH,
- 	A|B|G|O,		A|C|K	
+ 	A|B|G|O,		A|C|K,
+	"Centi", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"dog",			FALSE,
 	0,		0,		OFF_FAST,
 	0,		0,		0,
-	A|G|V,		A|C|D|E|F|H|J|K|U|V
+	A|G|V,		A|C|D|E|F|H|J|K|U|V,
+	"Dog", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
@@ -243,56 +268,72 @@ const 	struct	race_type	race_table	[]		=
 	IMM_COLD|IMM_POISON|IMM_HOLY|IMM_NEGATIVE|IMM_MENTAL|IMM_DISEASE
 	|IMM_DROWNING,	RES_BASH|RES_LIGHT,
 	VULN_SLASH|VULN_FIRE|VULN_ACID|VULN_LIGHTNING|VULN_ENERGY,
-	E|J|M|cc,	A|B|C|G|H|K
+	E|J|M|cc,	A|B|C|G|H|K,
+	"Doll", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     { 	"dragon", 		FALSE, 
 	0, 			AFF_INFRARED|AFF_FLYING,	0,
 	0,			RES_FIRE|RES_BASH|RES_CHARM, 
 	VULN_PIERCE|VULN_COLD,
-	A|H|Z,		A|C|D|E|F|G|H|I|J|K|P|Q|U|V|X
+	A|H|Z,		A|C|D|E|F|G|H|I|J|K|P|Q|U|V|X,
+	"Drago", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"fido",			FALSE,
 	0,		0,		OFF_DODGE|ASSIST_RACE,
 	0,		0,			VULN_MAGIC,
-	A|B|G|V,	A|C|D|E|F|H|J|K|Q|V
+	A|B|G|V,	A|C|D|E|F|H|J|K|Q|V,
+	"Fido", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },		
    
     {
 	"fox",			FALSE,
 	0,		AFF_DARK_VISION,	OFF_FAST|OFF_DODGE,
 	0,		0,		0,
-	A|G|V,		A|C|D|E|F|H|J|K|Q|V
+	A|G|V,		A|C|D|E|F|H|J|K|Q|V,
+	"Fox", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"goblin",		FALSE,
 	0,		AFF_INFRARED,	0,
 	0,		RES_DISEASE,	VULN_MAGIC,
-	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K
+	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K,
+	"Gobli", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"hobgoblin",		FALSE,
 	0,		AFF_INFRARED,	0,
 	0,		RES_DISEASE|RES_POISON,	0,
-	A|H|M|V,        A|B|C|D|E|F|G|H|I|J|K|Y
+	A|H|M|V,        A|B|C|D|E|F|G|H|I|J|K|Y,
+	"Hobg", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"kobold",		FALSE,
 	0,		AFF_INFRARED,	0,
 	0,		RES_POISON,	VULN_MAGIC,
-	A|B|H|M|V,	A|B|C|D|E|F|G|H|I|J|K|Q
+	A|B|H|M|V,	A|B|C|D|E|F|G|H|I|J|K|Q,
+	"Kobo", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"lizard",		FALSE,
 	0,		0,		0,
 	0,		RES_POISON,	VULN_COLD,
-	A|G|X|cc,	A|C|D|E|F|H|K|Q|V
+	A|G|X|cc,	A|C|D|E|F|H|K|Q|V,
+	"Liz", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
@@ -300,49 +341,63 @@ const 	struct	race_type	race_table	[]		=
 	0,		AFF_INFRARED,		ASSIST_RACE|ASSIST_ALIGN,
 	IMM_CHARM|IMM_DISEASE|IMM_MENTAL|IMM_HOLY|IMM_NEGATIVE,
 			RES_FIRE|RES_COLD|RES_ACID,	0,
-	H,		A|B|C|G|H|J|K
+	H,		A|B|C|G|H|J|K,
+	"Modro", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"orc",			FALSE,
 	0,		AFF_INFRARED,	0,
 	0,		RES_DISEASE,	VULN_LIGHT,
-	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K
+	A|H|M|V,	A|B|C|D|E|F|G|H|I|J|K,
+	"Orc", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"pig",			FALSE,
 	0,		0,		0,
 	0,		0,		0,
-	A|G|V,	 	A|C|D|E|F|H|J|K
+	A|G|V,	 	A|C|D|E|F|H|J|K,
+	"Pig", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },	
 
     {
 	"rabbit",		FALSE,
 	0,		0,		OFF_DODGE|OFF_FAST,
 	0,		0,		0,
-	A|G|V,		A|C|D|E|F|H|J|K
+	A|G|V,		A|C|D|E|F|H|J|K,
+	"Rabbi", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
     
     {
 	"school monster",	FALSE,
 	ACT_NOALIGN,		0,		0,
 	IMM_CHARM|IMM_SUMMON,	0,		VULN_MAGIC,
-	A|M|V,		A|B|C|D|E|F|H|J|K|Q|U
+	A|M|V,		A|B|C|D|E|F|H|J|K|Q|U,
+	"Scho", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },	
 
     {
 	"snake",		FALSE,
 	0,		0,		0,
 	0,		RES_POISON,	VULN_COLD,
-	A|G|X|Y|cc,	A|D|E|F|K|L|Q|V|X
+	A|G|X|Y|cc,	A|D|E|F|K|L|Q|V|X,
+	"Snake", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
  
     {
 	"song bird",		FALSE,
 	0,		AFF_FLYING,		OFF_FAST|OFF_DODGE,
 	0,		0,		0,
-	A|G|W,		A|C|D|E|F|H|K|P
+	A|G|W,		A|C|D|E|F|H|K|P,
+	"Song", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
@@ -350,21 +405,27 @@ const 	struct	race_type	race_table	[]		=
 	0,		AFF_REGENERATION|AFF_INFRARED|AFF_DETECT_HIDDEN,
 	OFF_BERSERK,
  	0,	RES_CHARM|RES_BASH,	VULN_FIRE|VULN_ACID,
-	A|B|H|M|V,		A|B|C|D|E|F|G|H|I|J|K|U|V
+	A|B|H|M|V,		A|B|C|D|E|F|G|H|I|J|K|U|V,
+	"Trol", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"water fowl",		FALSE,
 	0,		AFF_SWIM|AFF_FLYING,	0,
 	0,		RES_DROWNING,		0,
-	A|G|W,		A|C|D|E|F|H|K|P
+	A|G|W,		A|C|D|E|F|H|K|P,
+	"Fowl", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },		
   
     {
 	"wolf",			FALSE,
 	0,		AFF_DARK_VISION,	OFF_FAST|OFF_DODGE,
 	0,		0,		0,	
-	A|G|V,		A|C|D|E|F|J|K|Q|V
+	A|G|V,		A|C|D|E|F|J|K|Q|V,
+	"Wolf", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
@@ -372,61 +433,30 @@ const 	struct	race_type	race_table	[]		=
 	0,		AFF_FLYING|AFF_DETECT_INVIS|AFF_DETECT_HIDDEN,
 	OFF_BASH|OFF_FAST|OFF_DODGE,
 	IMM_POISON,	0,	VULN_LIGHT,
-	A|B|G|Z,		A|C|D|E|F|H|J|K|Q|V|X
+	A|B|G|Z,		A|C|D|E|F|H|J|K|Q|V|X,
+	"Wyver", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
     {
 	"unique",		FALSE,
 	0,		0,		0,
 	0,		0,		0,		
-	0,		0
+	0,		0,
+	"Uniq", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     },
 
 
     {
-	NULL, 0, 0, 0, 0, 0, 0
+	NULL, FALSE,
+	0,		0,		0,
+	0,		0,		0,		
+	0,		0,
+	"", 0, { 100, 100, 100, 100 },
+	{ "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0
     }
-};
-
-const	struct	pc_race_type	pc_race_table	[]	=
-{
-    { "null race", "", 0, { 100, 100, 100, 100 },
-      { "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0 },
- 
-/*
-    {
-	"race name", 	short name, 	points,	{ class multipliers },
-	{ bonus skills },
-	{ base stats },		{ max stats },		size 
-    },
-*/
-    {
-	"human",	"Human",	0,	{ 100, 100, 100, 100 },
-	{ "" },
-	{ 13, 13, 13, 13, 13 },	{ 18, 18, 18, 18, 18 },	SIZE_MEDIUM
-    },
-
-    { 	
-	"elf",		" Elf ",	5,	{ 100, 125,  100, 120 }, 
-	{ "sneak", "hide" },
-	{ 12, 14, 13, 15, 11 },	{ 16, 20, 18, 21, 15 }, SIZE_SMALL
-    },
-
-    {
-	"dwarf",	"Dwarf",	8,	{ 150, 100, 125, 100 },
-	{ "berserk" },
-	{ 14, 12, 14, 10, 15 },	{ 20, 16, 19, 14, 21 }, SIZE_MEDIUM
-    },
-
-    {
-	"giant",	"Giant",	6,	{ 200, 150, 150, 105 },
-	{ "bash", "fast healing" },
-	{ 16, 11, 13, 11, 14 },	{ 22, 15, 18, 15, 20 }, SIZE_LARGE
-    }
-};
-
-	
-      	
+};	
 
 /*
  * Class table.
