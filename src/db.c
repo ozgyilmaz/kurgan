@@ -1162,17 +1162,7 @@ void reset_area( AREA_DATA *pArea )
 
 		if (pObjIndex->count < limit || number_range(0,4) == 0)
 		{
-		    obj=create_object(pObjIndex,UMIN(number_fuzzy(level),
-		    LEVEL_HERO - 1));
-		    /* error message if it is too high */
-		    if (obj->level > mob->level + 3
-		    ||  (obj->item_type == ITEM_WEAPON 
-		    &&   pReset->command == 'E' 
-		    &&   obj->level < mob->level -5 && obj->level < 45))
-			fprintf(stderr,
-			    "Err: obj %s (%d) -- %d, mob %s (%d) -- %d\n",
-			    obj->short_descr,obj->pIndexData->vnum,obj->level,
-			    mob->short_descr,mob->pIndexData->vnum,mob->level);
+		    obj=create_object(pObjIndex,UMIN(number_fuzzy(level), LEVEL_HERO - 1));
 		}
 		else
 		    break;

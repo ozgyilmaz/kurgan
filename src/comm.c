@@ -424,7 +424,7 @@ int main( int argc, char **argv )
 #if defined(unix)
     control = init_socket( port );
     boot_db( );
-    sprintf( log_buf, "ROM is ready to rock on port %d.", port );
+    sprintf( log_buf, "Kurgan is ready to rock on port %d.", port );
     log_string( log_buf );
     game_loop_unix( control );
     close (control);
