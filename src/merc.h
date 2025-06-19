@@ -2127,6 +2127,7 @@ OID *	get_obj_index	args( ( int vnum ) );
 RID *	get_room_index	args( ( int vnum ) );
 char	fread_letter	args( ( FILE *fp ) );
 int	fread_number	args( ( FILE *fp ) );
+long 	char_flag	args( ( char *flagtext, int i ) );
 long 	fread_flag	args( ( FILE *fp ) );
 char *	fread_string	args( ( FILE *fp ) );
 char *  fread_string_eol args(( FILE *fp ) );

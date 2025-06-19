@@ -96,8 +96,8 @@ room_grammar        =   Suppress(Literal("#ROOMS")) +\
                                 Suppress(Literal("S"))
                             )
                         ) + Suppress(Literal("#0"))
-                  
-object_grammar      =   Suppress(Literal("#NEW_OBJECTS")) +\
+
+object_grammar      =   Suppress(Literal("#OBJECTS")) +\
                         ZeroOrMore(
                             Group(
                                 vnum +\
@@ -126,74 +126,6 @@ object_grammar      =   Suppress(Literal("#NEW_OBJECTS")) +\
                                         Word("-"+nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('modifier') +\
                                         Word(alphanums).setResultsName('bitvector')
                                     ).setResultsName('affects_f*') |
-                                    Group(
-                                        Suppress(Literal("E")) +\
-                                        tilde_string.setResultsName('keyword') +\
-                                        tilde_string.setResultsName('description')
-                                    ).setResultsName('extra_descriptions*')
-                                )
-                            )
-                        ) + Suppress(Literal("#0"))
-
-org_object_grammar      =   Suppress(Literal("#OBJECTS")) +\
-                        ZeroOrMore(
-                            Group(
-                                vnum +\
-                                tilde_string.setResultsName('name') + Suppress(restOfLine) +\
-                                tilde_string.setResultsName('short_description') + Suppress(restOfLine) +\
-                                tilde_string.setResultsName('description') + Suppress(restOfLine) +\
-                                tilde_string.setResultsName('material') + Suppress(restOfLine) +\
-                                Word(alphanums+"_"+"-").setResultsName('type') +\
-                                Word(alphanums+"|").setResultsName('extra_flags') +\
-                                Word(alphanums+"|").setResultsName('wear_flags') + Suppress(restOfLine) +\
-                                Word(alphanums+" "+"'"+"-").setResultsName('values') +\
-                                Word("-"+nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('level') +\
-                                Word("-"+nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('weight') +\
-                                Word("-"+nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('cost') +\
-                                Word(alphanums).setResultsName('condition') + Suppress(restOfLine) +\
-                                ZeroOrMore(
-                                    Group(
-                                        Suppress(Literal("A")) +\
-                                        Word("-"+nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('location') +\
-                                        Word("-"+nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('modifier')
-                                    ).setResultsName('affects_a*') |
-                                    Group(
-                                        Suppress(Literal("F")) +\
-                                        Word(alphas).setResultsName('where') +\
-                                        Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('location') +\
-                                        Word("-"+nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('modifier') +\
-                                        Word(alphanums).setResultsName('bitvector')
-                                    ).setResultsName('affects_f*') |
-                                    Group(
-                                        Suppress(Literal("E")) +\
-                                        tilde_string.setResultsName('keyword') +\
-                                        tilde_string.setResultsName('description')
-                                    ).setResultsName('extra_descriptions*')
-                                )
-                            )
-                        ) + Suppress(Literal("#0"))
-
-old_object_grammar  =   Suppress(Literal("#NEW_OBJOLD")) +\
-                        ZeroOrMore(
-                            Group(
-                                vnum +\
-                                tilde_string.setResultsName('name') +\
-                                tilde_string.setResultsName('short_description') +\
-                                tilde_string.setResultsName('description') +\
-                                Suppress(tilde_string) +\
-                                Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('type') +\
-                                Word(alphanums+"|").setResultsName('extra_flags') +\
-                                Word(alphanums+"|").setResultsName('wear_flags') +\
-                                Word(alphanums+" "+"'"+"-").setResultsName('values') +\
-                                Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('weight') +\
-                                Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('cost') +\
-                                Suppress(Word(nums)) +\
-                                ZeroOrMore(
-                                    Group(
-                                        Suppress(Literal("A")) +\
-                                        Word("-"+nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('location') +\
-                                        Word("-"+nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('modifier')
-                                    ).setResultsName('affects_a*') |
                                     Group(
                                         Suppress(Literal("E")) +\
                                         tilde_string.setResultsName('keyword') +\
@@ -277,14 +209,6 @@ shop_grammar        =   Suppress(Literal("#SHOPS")) +\
                             )
                         ) + Suppress(Literal("0"))
 
-
-olimit_grammar      =   Suppress(Literal("#OLIMITS")) +\
-                        ZeroOrMore(
-                            Group(
-                                Suppress(Literal("O")) + Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('vnum') + Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('limit') + Suppress(restOfLine)
-                            )
-                        ) + Suppress(Literal("S"))
-
 practicer_grammar   =   Suppress(Literal("#PRACTICERS")) +\
                         ZeroOrMore(
                             Suppress(asterisk_comment) |
@@ -333,12 +257,9 @@ def parse_file(filemem):
     pattern         =   (Group(area_grammar).setResultsName("area") |\
                             Group(room_grammar).setResultsName("rooms") |\
                             Group(object_grammar).setResultsName("objects") |\
-                            Group(org_object_grammar).setResultsName("org_objects") |\
-                            Group(old_object_grammar).setResultsName("old_objects") |\
                             Group(mobile_grammar).setResultsName("mobiles") |\
                             Group(reset_grammar).setResultsName("resets") |\
                             Group(shop_grammar).setResultsName("shops") |\
-                            Group(olimit_grammar).setResultsName("olimits") |\
                             Group(practicer_grammar).setResultsName("practicers") |\
                             Group(special_grammar).setResultsName("specials") |\
                             Group(omprog_grammar).setResultsName("omprogs") |\

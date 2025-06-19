@@ -30,3 +30,4 @@
 - proto.are removed.
 - area-to-json.py script implemented to convert ROM areas to json.
 - area-to-json.sh for batch operations for all area files /area directory.
+- Area json converter improved. Json parsing code implemented.

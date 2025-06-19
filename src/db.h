@@ -25,6 +25,9 @@
 *	ROM license, in the file Rom24/doc/rom.license			   *
 ***************************************************************************/
 
+/* for parsing json area files */
+#include "cJSON.h"
+
 /* vals from db.c */
 extern bool fBootDb;
 extern int		newmobs;

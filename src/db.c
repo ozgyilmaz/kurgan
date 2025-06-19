@@ -209,17 +209,15 @@ char			strArea[MAX_INPUT_LENGTH];
  * Local booting procedures.
 */
 void    init_mm         args( ( void ) );
-void	load_area	args( ( FILE *fp ) );
-void	load_helps	args( ( FILE *fp ) );
-void	load_old_mob	args( ( FILE *fp ) );
-void 	load_mobiles	args( ( FILE *fp ) );
-void	load_old_obj	args( ( FILE *fp ) );
-void 	load_objects	args( ( FILE *fp ) );
-void	load_resets	args( ( FILE *fp ) );
-void	load_rooms	args( ( FILE *fp ) );
-void	load_shops	args( ( FILE *fp ) );
-void 	load_socials	args( ( FILE *fp ) );
-void	load_specials	args( ( FILE *fp ) );
+void	load_area	args( ( cJSON *json_data ) );
+void	load_helps	args( ( cJSON *json_data ) );
+void 	load_mobiles	args( ( cJSON *json_data ) );
+void 	load_objects	args( ( cJSON *json_data ) );
+void	load_resets	args( ( cJSON *json_data ) );
+void	load_rooms	args( ( cJSON *json_data ) );
+void	load_shops	args( ( cJSON *json_data ) );
+void 	load_socials	args( ( cJSON *json_data ) );
+void	load_specials	args( ( cJSON *json_data ) );
 void	load_notes	args( ( void ) );
 void	load_bans	args( ( void ) );
 
@@ -315,7 +313,12 @@ void boot_db( void )
 
 	for ( ; ; )
 	{
+		long len = 0;
+        char *json_byte_data = NULL;
+        cJSON *json_data = NULL;
+
 	    strcpy( strArea, fread_word( fpList ) );
+
 	    if ( strArea[0] == '$' )
 		break;
 
@@ -325,46 +328,47 @@ void boot_db( void )
 	    }
 	    else
 	    {
-		if ( ( fpArea = fopen( strArea, "r" ) ) == NULL )
-		{
-		    perror( strArea );
-		    exit( 1 );
-		}
+			/* open in read binary mode */
+			if ( ( fpArea = fopen(strArea,"rb") ) == NULL )
+			{
+				perror( strArea );
+				exit( 1 );
+			}
 	    }
 
-	    for ( ; ; )
-	    {
-		char *word;
+		/* get the length */
+        fseek(fpArea, 0, SEEK_END);
+        len = ftell(fpArea);
+        fseek(fpArea, 0, SEEK_SET);
 
-		if ( fread_letter( fpArea ) != '#' )
-		{
-		    bugf("Boot_db: # not found.");
-		    exit( 1 );
+		json_byte_data = (char*)malloc(len + 1);
+
+		size_t bytes_read = fread(json_byte_data, 1, len, fpArea);
+		if (bytes_read != len) {
+			fprintf(stderr, "Error: Incomoplete read! (%zu / %ld byte)\n", bytes_read, len);
 		}
+        json_byte_data[len] = '\0';
+        fclose(fpArea);
 
-		word = fread_word( fpArea );
+        json_data = cJSON_Parse(json_byte_data);
+        if (!json_data)
+        {
+            bugf((char*)"Error before: [%s]\n", cJSON_GetErrorPtr());
+            exit( 1 );
+        }
 
-		     if ( word[0] == '$'               )                 break;
-		else if ( !str_cmp( word, "AREA"     ) ) load_area    (fpArea);
-		else if ( !str_cmp( word, "HELPS"    ) ) load_helps   (fpArea);
-		else if ( !str_cmp( word, "MOBOLD"   ) ) load_old_mob (fpArea);
-		else if ( !str_cmp( word, "MOBILES"  ) ) load_mobiles (fpArea);
-		else if ( !str_cmp( word, "OBJOLD"   ) ) load_old_obj (fpArea);
-	  	else if ( !str_cmp( word, "OBJECTS"  ) ) load_objects (fpArea);
-		else if ( !str_cmp( word, "RESETS"   ) ) load_resets  (fpArea);
-		else if ( !str_cmp( word, "ROOMS"    ) ) load_rooms   (fpArea);
-		else if ( !str_cmp( word, "SHOPS"    ) ) load_shops   (fpArea);
-		else if ( !str_cmp( word, "SOCIALS"  ) ) load_socials (fpArea);
-		else if ( !str_cmp( word, "SPECIALS" ) ) load_specials(fpArea);
-		else
-		{
-		    bugf("Boot_db: bad section name.");
-		    exit( 1 );
-		}
-	    }
+	    load_area( json_data );
+        load_rooms( json_data );
+		load_objects( json_data );
+		load_mobiles( json_data );
+		load_shops( json_data );
+		load_specials( json_data );
+		load_resets( json_data );
+        load_helps( json_data );
+		load_socials( json_data );
 
-	    if ( fpArea != stdin )
-		fclose( fpArea );
+        cJSON_Delete(json_data);
+
 	    fpArea = NULL;
 	}
 	fclose( fpList );
@@ -393,30 +397,41 @@ void boot_db( void )
 /*
  * Snarf an 'area' header line.
  */
-void load_area( FILE *fp )
+void load_area( cJSON *json_data )
 {
-    AREA_DATA *pArea;
+    cJSON *json_areadata = NULL;
 
-    pArea		= alloc_perm( sizeof(*pArea) );
+    json_areadata = cJSON_GetObjectItemCaseSensitive(json_data, "area");
+
+    if(!json_areadata)
+        return;
+
+    AREA_DATA *pArea;
+    
+    pArea		= (AREA_DATA *)alloc_perm( sizeof(*pArea) );
+
     pArea->reset_first	= NULL;
     pArea->reset_last	= NULL;
-    pArea->file_name	= fread_string(fp);
-    pArea->name		= fread_string( fp );
-    pArea->credits	= fread_string( fp );
-    pArea->min_vnum	= fread_number(fp);
-    pArea->max_vnum	= fread_number(fp);
     pArea->age		= 15;
     pArea->nplayer	= 0;
     pArea->empty	= FALSE;
 
     if ( area_first == NULL )
-	area_first = pArea;
+        area_first = pArea;
     if ( area_last  != NULL )
-	area_last->next = pArea;
+        area_last->next = pArea;
     area_last	= pArea;
     pArea->next	= NULL;
-
     top_area++;
+
+    pArea->name             = str_dup( cJSON_GetObjectItemCaseSensitive( json_areadata, "name" )->valuestring  );
+    pArea->credits          = str_dup( cJSON_GetObjectItemCaseSensitive( json_areadata, "writer" )->valuestring );
+    pArea->file_name        = str_dup( cJSON_GetObjectItemCaseSensitive( json_areadata, "file_name" )->valuestring );
+    pArea->low_range        = cJSON_GetObjectItemCaseSensitive( json_areadata, "low_range" )->valuedouble;
+    pArea->high_range       = cJSON_GetObjectItemCaseSensitive( json_areadata, "high_range" )->valuedouble;
+    pArea->min_vnum         = cJSON_GetObjectItemCaseSensitive( json_areadata, "min_vnum" )->valuedouble;
+    pArea->max_vnum         = cJSON_GetObjectItemCaseSensitive( json_areadata, "max_vnum" )->valuedouble;
+
     return;
 }
 
@@ -425,353 +440,79 @@ void load_area( FILE *fp )
 /*
  * Snarf a help section.
  */
-void load_helps( FILE *fp )
+void load_helps( cJSON *json_data )
 {
+    cJSON *json_helps = NULL;
+
+    json_helps = cJSON_GetObjectItemCaseSensitive(json_data, "helps");
+
+    if(!json_helps)
+        return;
+    
     HELP_DATA *pHelp;
+    cJSON *json_help = NULL;
 
-    for ( ; ; )
+    cJSON_ArrayForEach(json_help, json_helps)
     {
-	pHelp		= alloc_perm( sizeof(*pHelp) );
-	pHelp->level	= fread_number( fp );
-	pHelp->keyword	= fread_string( fp );
-	if ( pHelp->keyword[0] == '$' )
-	    break;
-	pHelp->text	= fread_string( fp );
+        pHelp		= (HELP_DATA *)alloc_perm( sizeof(*pHelp) );
+        pHelp->level	= cJSON_GetObjectItemCaseSensitive( json_help, "level" )->valuedouble;
+	    pHelp->keyword	= str_dup( cJSON_GetObjectItemCaseSensitive( json_help, "keyword" )->valuestring );
+        pHelp->text	= str_dup( cJSON_GetObjectItemCaseSensitive( json_help, "text" )->valuestring );
 
-	if ( !str_cmp( pHelp->keyword, "greeting" ) )
-	    help_greeting = pHelp->text;
+        if ( !str_cmp( pHelp->keyword, "GREETING" ) )
+	        help_greeting = pHelp->text;
+        
+        if ( help_first == NULL )
+            help_first = pHelp;
+        if ( help_last  != NULL )
+            help_last->next = pHelp;
 
-	if ( help_first == NULL )
-	    help_first = pHelp;
-	if ( help_last  != NULL )
-	    help_last->next = pHelp;
-
-	help_last	= pHelp;
-	pHelp->next	= NULL;
-	top_help++;
+        help_last	= pHelp;
+        pHelp->next	= NULL;
+        top_help++;
     }
 
     return;
 }
-
-
-
-/*
- * Snarf a mob section.  old style 
- */
-void load_old_mob( FILE *fp )
-{
-    MOB_INDEX_DATA *pMobIndex;
-    /* for race updating */
-    int race;
-    char name[MAX_STRING_LENGTH];
-
-    for ( ; ; )
-    {
-	sh_int vnum;
-	char letter;
-	int iHash;
-
-	letter				= fread_letter( fp );
-	if ( letter != '#' )
-	{
-	    bugf("Load_mobiles: # not found.");
-	    exit( 1 );
-	}
-
-	vnum				= fread_number( fp );
-	if ( vnum == 0 )
-	    break;
-
-	fBootDb = FALSE;
-	if ( get_mob_index( vnum ) != NULL )
-	{
-	    bugf("Load_mobiles: vnum %d duplicated.", vnum );
-	    exit( 1 );
-	}
-	fBootDb = TRUE;
-
-	pMobIndex			= alloc_perm( sizeof(*pMobIndex) );
-	pMobIndex->vnum			= vnum;
-	pMobIndex->new_format		= FALSE;
-	pMobIndex->player_name		= fread_string( fp );
-	pMobIndex->short_descr		= fread_string( fp );
-	pMobIndex->long_descr		= fread_string( fp );
-	pMobIndex->description		= fread_string( fp );
-
-	pMobIndex->long_descr[0]	= UPPER(pMobIndex->long_descr[0]);
-	pMobIndex->description[0]	= UPPER(pMobIndex->description[0]);
-
-	pMobIndex->act			= fread_flag( fp ) | ACT_IS_NPC;
-	pMobIndex->affected_by		= fread_flag( fp );
-	pMobIndex->pShop		= NULL;
-	pMobIndex->alignment		= fread_number( fp );
-	letter				= fread_letter( fp );
-	pMobIndex->level		= fread_number( fp );
-
-	/*
-	 * The unused stuff is for imps who want to use the old-style
-	 * stats-in-files method.
-	 */
-					  fread_number( fp );	/* Unused */
-					  fread_number( fp );	/* Unused */
-					  fread_number( fp );	/* Unused */
-	/* 'd'		*/		  fread_letter( fp );	/* Unused */
-					  fread_number( fp );	/* Unused */
-	/* '+'		*/		  fread_letter( fp );	/* Unused */
-					  fread_number( fp );	/* Unused */
-					  fread_number( fp );	/* Unused */
-	/* 'd'		*/		  fread_letter( fp );	/* Unused */
-					  fread_number( fp );	/* Unused */
-	/* '+'		*/		  fread_letter( fp );	/* Unused */
-					  fread_number( fp );	/* Unused */
-        pMobIndex->wealth               = fread_number( fp )/20;	
-	/* xp can't be used! */		  fread_number( fp );	/* Unused */
-	pMobIndex->start_pos		= fread_number( fp );	/* Unused */
-	pMobIndex->default_pos		= fread_number( fp );	/* Unused */
-
-  	if (pMobIndex->start_pos < POS_SLEEPING)
-	    pMobIndex->start_pos = POS_STANDING;
-	if (pMobIndex->default_pos < POS_SLEEPING)
-	    pMobIndex->default_pos = POS_STANDING;
-
-	/*
-	 * Back to meaningful values.
-	 */
-	pMobIndex->sex			= fread_number( fp );
-
-    	/* compute the race BS */
-   	one_argument(pMobIndex->player_name,name);
- 
-   	if (name[0] == '\0' || (race =  race_lookup(name)) == 0)
-   	{
-            /* fill in with blanks */
-            pMobIndex->race = race_lookup("human");
-            pMobIndex->off_flags = OFF_DODGE|OFF_DISARM|OFF_TRIP|ASSIST_VNUM;
-            pMobIndex->imm_flags = 0;
-            pMobIndex->res_flags = 0;
-            pMobIndex->vuln_flags = 0;
-            pMobIndex->form = FORM_EDIBLE|FORM_SENTIENT|FORM_BIPED|FORM_MAMMAL;
-            pMobIndex->parts = PART_HEAD|PART_ARMS|PART_LEGS|PART_HEART|
-                               PART_BRAINS|PART_GUTS;
-    	}
-    	else
-    	{
-            pMobIndex->race = race;
-            pMobIndex->off_flags = OFF_DODGE|OFF_DISARM|OFF_TRIP|ASSIST_RACE|
-                                   race_table[race].off;
-            pMobIndex->imm_flags = race_table[race].imm;
-            pMobIndex->res_flags = race_table[race].res;
-            pMobIndex->vuln_flags = race_table[race].vuln;
-            pMobIndex->form = race_table[race].form;
-            pMobIndex->parts = race_table[race].parts;
-    	}
-
-	if ( letter != 'S' )
-	{
-	    bugf("Load_mobiles: vnum %d non-S.", vnum );
-	    exit( 1 );
-	}
-
-	iHash			= vnum % MAX_KEY_HASH;
-	pMobIndex->next		= mob_index_hash[iHash];
-	mob_index_hash[iHash]	= pMobIndex;
-	top_mob_index++;
-	kill_table[URANGE(0, pMobIndex->level, MAX_LEVEL-1)].number++;
-    }
-
-    return;
-}
-
-/*
- * Snarf an obj section.  old style 
- */
-void load_old_obj( FILE *fp )
-{
-    OBJ_INDEX_DATA *pObjIndex;
-
-    for ( ; ; )
-    {
-	sh_int vnum;
-	char letter;
-	int iHash;
-
-	letter				= fread_letter( fp );
-	if ( letter != '#' )
-	{
-	    bugf("Load_objects: # not found.");
-	    exit( 1 );
-	}
-
-	vnum				= fread_number( fp );
-	if ( vnum == 0 )
-	    break;
-
-	fBootDb = FALSE;
-	if ( get_obj_index( vnum ) != NULL )
-	{
-	    bugf("Load_objects: vnum %d duplicated.", vnum );
-	    exit( 1 );
-	}
-	fBootDb = TRUE;
-
-	pObjIndex			= alloc_perm( sizeof(*pObjIndex) );
-	pObjIndex->vnum			= vnum;
-	pObjIndex->new_format		= FALSE;
-	pObjIndex->reset_num	 	= 0;
-	pObjIndex->name			= fread_string( fp );
-	pObjIndex->short_descr		= fread_string( fp );
-	pObjIndex->description		= fread_string( fp );
-	/* Action description */	  fread_string( fp );
-
-	pObjIndex->short_descr[0]	= LOWER(pObjIndex->short_descr[0]);
-	pObjIndex->description[0]	= UPPER(pObjIndex->description[0]);
-	pObjIndex->material		= str_dup("");
-
-	pObjIndex->item_type		= fread_number( fp );
-	pObjIndex->extra_flags		= fread_flag( fp );
-	pObjIndex->wear_flags		= fread_flag( fp );
-	pObjIndex->value[0]		= fread_number( fp );
-	pObjIndex->value[1]		= fread_number( fp );
-	pObjIndex->value[2]		= fread_number( fp );
-	pObjIndex->value[3]		= fread_number( fp );
-	pObjIndex->value[4]		= 0;
-	pObjIndex->level		= 0;
-	pObjIndex->condition 		= 100;
-	pObjIndex->weight		= fread_number( fp );
-	pObjIndex->cost			= fread_number( fp );	/* Unused */
-	/* Cost per day */		  fread_number( fp );
-
-
-	if (pObjIndex->item_type == ITEM_WEAPON)
-	{
-	    if (is_name("two",pObjIndex->name) 
-	    ||  is_name("two-handed",pObjIndex->name) 
-	    ||  is_name("claymore",pObjIndex->name))
-		SET_BIT(pObjIndex->value[4],WEAPON_TWO_HANDS);
-	}
-
-	for ( ; ; )
-	{
-	    char letter;
-
-	    letter = fread_letter( fp );
-
-	    if ( letter == 'A' )
-	    {
-		AFFECT_DATA *paf;
-
-		paf			= alloc_perm( sizeof(*paf) );
-		paf->where		= TO_OBJECT;
-		paf->type		= -1;
-		paf->level		= 20; /* RT temp fix */
-		paf->duration		= -1;
-		paf->location		= fread_number( fp );
-		paf->modifier		= fread_number( fp );
-		paf->bitvector		= 0;
-		paf->next		= pObjIndex->affected;
-		pObjIndex->affected	= paf;
-		top_affect++;
-	    }
-
-	    else if ( letter == 'E' )
-	    {
-		EXTRA_DESCR_DATA *ed;
-
-		ed			= alloc_perm( sizeof(*ed) );
-		ed->keyword		= fread_string( fp );
-		ed->description		= fread_string( fp );
-		ed->next		= pObjIndex->extra_descr;
-		pObjIndex->extra_descr	= ed;
-		top_ed++;
-	    }
-
-	    else
-	    {
-		ungetc( letter, fp );
-		break;
-	    }
-	}
-
-        /* fix armors */
-        if (pObjIndex->item_type == ITEM_ARMOR)
-        {
-            pObjIndex->value[1] = pObjIndex->value[0];
-            pObjIndex->value[2] = pObjIndex->value[1];
-        }
-
-	/*
-	 * Translate spell "slot numbers" to internal "skill numbers."
-	 */
-	switch ( pObjIndex->item_type )
-	{
-	case ITEM_PILL:
-	case ITEM_POTION:
-	case ITEM_SCROLL:
-	    pObjIndex->value[1] = slot_lookup( pObjIndex->value[1] );
-	    pObjIndex->value[2] = slot_lookup( pObjIndex->value[2] );
-	    pObjIndex->value[3] = slot_lookup( pObjIndex->value[3] );
-	    pObjIndex->value[4] = slot_lookup( pObjIndex->value[4] );
-	    break;
-
-	case ITEM_STAFF:
-	case ITEM_WAND:
-	    pObjIndex->value[3] = slot_lookup( pObjIndex->value[3] );
-	    break;
-	}
-
-	iHash			= vnum % MAX_KEY_HASH;
-	pObjIndex->next		= obj_index_hash[iHash];
-	obj_index_hash[iHash]	= pObjIndex;
-	top_obj_index++;
-    }
-
-    return;
-}
-
-
-
-
 
 /*
  * Snarf a reset section.
  */
-void load_resets( FILE *fp )
+void load_resets( cJSON *json_data )
 {
+	cJSON *json_resets = NULL;
+	cJSON *json_reset = NULL;
+
+    json_resets = cJSON_GetObjectItemCaseSensitive(json_data, "resets");
+
+    if(!json_resets)
+        return;
+
     RESET_DATA *pReset;
 
     if ( area_last == NULL )
     {
-	bugf("Load_resets: no #AREA seen yet.");
+	bug( "Load_resets: no #AREA seen yet.", 0 );
 	exit( 1 );
     }
 
-    for ( ; ; )
+    cJSON_ArrayForEach(json_reset, json_resets)
     {
 	ROOM_INDEX_DATA *pRoomIndex;
 	EXIT_DATA *pexit;
 	char letter;
 	OBJ_INDEX_DATA *temp_index;
 
-	if ( ( letter = fread_letter( fp ) ) == 'S' )
-	    break;
-
-	if ( letter == '*' )
-	{
-	    fread_to_eol( fp );
-	    continue;
-	}
+	letter = (cJSON_GetObjectItemCaseSensitive( json_reset, "command" )->valuestring)[0];
 
 	pReset		= alloc_perm( sizeof(*pReset) );
 	pReset->command	= letter;
-	/* if_flag */	  fread_number( fp );
-	pReset->arg1	= fread_number( fp );
-	pReset->arg2	= fread_number( fp );
+	pReset->arg1	= cJSON_GetObjectItemCaseSensitive( json_reset, "arg1" )->valuedouble;
+	pReset->arg2	= cJSON_GetObjectItemCaseSensitive( json_reset, "arg2" )->valuedouble;
 	pReset->arg3	= (letter == 'G' || letter == 'R')
-			    ? 0 : fread_number( fp );
+			    ? 0 : cJSON_GetObjectItemCaseSensitive( json_reset, "arg3" )->valuedouble;
 	pReset->arg4	= (letter == 'P' || letter == 'M')
-			    ? fread_number(fp) : 0;
-			  fread_to_eol( fp );
+			    ? cJSON_GetObjectItemCaseSensitive( json_reset, "arg4" )->valuedouble : 0;
 
 	/*
 	 * Validate parameters.
@@ -857,159 +598,135 @@ void load_resets( FILE *fp )
 /*
  * Snarf a room section.
  */
-void load_rooms( FILE *fp )
+void load_rooms( cJSON *json_data )
 {
-    ROOM_INDEX_DATA *pRoomIndex;
+    cJSON *json_rooms = NULL;
 
-    if ( area_last == NULL )
+    json_rooms = cJSON_GetObjectItemCaseSensitive(json_data, "rooms");
+
+    if(!json_rooms)
+        return;
+
+    cJSON *json_room = NULL;
+    cJSON *json_exits = NULL;
+    cJSON *json_exit = NULL;
+    cJSON *json_extra_descriptions = NULL;
+    cJSON *json_extra_description = NULL;
+    cJSON *temp = NULL;
+
+    cJSON_ArrayForEach(json_room, json_rooms)
     {
-	bugf("Load_resets: no #AREA seen yet.");
-	exit( 1 );
+        ROOM_INDEX_DATA *pRoomIndex;
+        int vnum;
+        int door;
+        int iHash;
+
+        vnum = cJSON_GetObjectItemCaseSensitive( json_room, "vnum" )->valuedouble;
+
+        fBootDb = FALSE;
+
+        if ( get_room_index( vnum ) != NULL )
+        {
+            bug( "Load_json_rooms: vnum %d duplicated.", vnum );
+            exit( 1 );
+        }
+        fBootDb = TRUE;
+
+        pRoomIndex			= (ROOM_INDEX_DATA *)alloc_perm( sizeof(*pRoomIndex) );
+        pRoomIndex->owner		= str_dup("");
+        pRoomIndex->people		= NULL;
+        pRoomIndex->contents		= NULL;
+        pRoomIndex->extra_descr		= NULL;
+        pRoomIndex->area		= area_last;
+
+        pRoomIndex->vnum		= vnum;
+        pRoomIndex->name		= str_dup( cJSON_GetObjectItemCaseSensitive( json_room, "name" )->valuestring );
+        pRoomIndex->description		= str_dup( cJSON_GetObjectItemCaseSensitive( json_room, "description" )->valuestring );
+        pRoomIndex->room_flags		= char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_room, "flags" )->valuestring, 0 );
+
+        if ( 3000 <= vnum && vnum < 3400)
+            SET_BIT(pRoomIndex->room_flags,ROOM_LAW);
+        
+        pRoomIndex->sector_type		= cJSON_GetObjectItemCaseSensitive( json_room, "sector" )->valuedouble;
+        pRoomIndex->light		= 0;
+        for ( door = 0; door <= 5; door++ )
+            pRoomIndex->exit[door] = NULL;
+        
+        /* defaults */
+        pRoomIndex->heal_rate = 100;
+        pRoomIndex->mana_rate = 100;
+
+        temp = cJSON_GetObjectItemCaseSensitive( json_room, "heal_rate" );
+        if (cJSON_IsNumber(temp))
+            pRoomIndex->heal_rate = temp->valuedouble;
+
+        temp = cJSON_GetObjectItemCaseSensitive( json_room, "mana_rate" );
+        if (cJSON_IsNumber(temp))
+            pRoomIndex->mana_rate = temp->valuedouble;
+        
+        temp = cJSON_GetObjectItemCaseSensitive( json_room, "owner" );
+        if (cJSON_IsString(temp))
+            pRoomIndex->owner = str_dup(cJSON_Print(temp));
+
+        json_exits = cJSON_GetObjectItemCaseSensitive(json_room, "exits");
+
+        cJSON_ArrayForEach(json_exit, json_exits)
+        {
+            EXIT_DATA *pexit;
+            int locks;
+
+            door		= cJSON_GetObjectItemCaseSensitive( json_exit, "exit_door" )->valuedouble;
+
+            if ( door < 0 || door > 5 )
+            {
+                bug( "Fread_rooms: vnum %d has bad door number.", vnum );
+                exit( 1 );
+            }
+
+            pexit			= (EXIT_DATA *)alloc_perm( sizeof(*pexit) );
+            pexit->description	= str_dup( cJSON_GetObjectItemCaseSensitive( json_exit, "exit_description" )->valuestring );
+            pexit->keyword		= str_dup( cJSON_GetObjectItemCaseSensitive( json_exit, "exit_keyword" )->valuestring );
+            pexit->exit_info	= 0;
+            locks			= cJSON_GetObjectItemCaseSensitive( json_exit, "exit_locks" )->valuedouble;
+            pexit->key		= cJSON_GetObjectItemCaseSensitive( json_exit, "exit_key" )->valuedouble;
+            pexit->u1.vnum		= cJSON_GetObjectItemCaseSensitive( json_exit, "exit_u1_vnum" )->valuedouble;
+
+            switch ( locks )
+            {
+            case 1: pexit->exit_info = EX_ISDOOR;                break;
+            case 2: pexit->exit_info = EX_ISDOOR | EX_PICKPROOF; break;
+            case 3: pexit->exit_info = EX_ISDOOR | EX_NOPASS;    break;
+            case 4: pexit->exit_info = EX_ISDOOR|EX_NOPASS|EX_PICKPROOF;
+                break;
+            }
+
+            pRoomIndex->exit[door]	= pexit;
+            pRoomIndex->old_exit[door] = pexit;
+            top_exit++;
+        }
+
+        json_extra_descriptions = cJSON_GetObjectItemCaseSensitive(json_room, "extra_descriptions");
+
+        cJSON_ArrayForEach(json_extra_description, json_extra_descriptions)
+        {
+            EXTRA_DESCR_DATA *ed;
+
+            ed			= (EXTRA_DESCR_DATA *)alloc_perm( sizeof(*ed) );
+            ed->keyword		= str_dup( cJSON_GetObjectItemCaseSensitive( json_extra_description, "keyword" )->valuestring );
+            ed->description		= str_dup( cJSON_GetObjectItemCaseSensitive( json_extra_description, "description" )->valuestring );
+            ed->next		= pRoomIndex->extra_descr;
+            pRoomIndex->extra_descr	= ed;
+            top_ed++;
+        }
+
+        iHash			= vnum % MAX_KEY_HASH;
+        pRoomIndex->next	= room_index_hash[iHash];
+        room_index_hash[iHash]	= pRoomIndex;
+        top_room++;
     }
-
-    for ( ; ; )
-    {
-	sh_int vnum;
-	char letter;
-	int door;
-	int iHash;
-
-	letter				= fread_letter( fp );
-	if ( letter != '#' )
-	{
-	    bugf("Load_rooms: # not found.");
-	    exit( 1 );
-	}
-
-	vnum				= fread_number( fp );
-	if ( vnum == 0 )
-	    break;
-
-	fBootDb = FALSE;
-	if ( get_room_index( vnum ) != NULL )
-	{
-	    bugf("Load_rooms: vnum %d duplicated.", vnum );
-	    exit( 1 );
-	}
-	fBootDb = TRUE;
-
-	pRoomIndex			= alloc_perm( sizeof(*pRoomIndex) );
-	pRoomIndex->owner		= str_dup("");
-	pRoomIndex->people		= NULL;
-	pRoomIndex->contents		= NULL;
-	pRoomIndex->extra_descr		= NULL;
-	pRoomIndex->area		= area_last;
-	pRoomIndex->vnum		= vnum;
-	pRoomIndex->name		= fread_string( fp );
-	pRoomIndex->description		= fread_string( fp );
-	/* Area number */		  fread_number( fp );
-	pRoomIndex->room_flags		= fread_flag( fp );
-	/* horrible hack */
-  	if ( 3000 <= vnum && vnum < 3400)
-	   SET_BIT(pRoomIndex->room_flags,ROOM_LAW);
-	pRoomIndex->sector_type		= fread_number( fp );
-	pRoomIndex->light		= 0;
-	for ( door = 0; door <= 5; door++ )
-	    pRoomIndex->exit[door] = NULL;
-
-	/* defaults */
-	pRoomIndex->heal_rate = 100;
-	pRoomIndex->mana_rate = 100;
-
-	for ( ; ; )
-	{
-	    letter = fread_letter( fp );
-
-	    if ( letter == 'S' )
-		break;
-
-	    if ( letter == 'H') /* healing room */
-		pRoomIndex->heal_rate = fread_number(fp);
-	
-	    else if ( letter == 'M') /* mana room */
-		pRoomIndex->mana_rate = fread_number(fp);
-
-	   else if ( letter == 'C') /* clan */
-	   {
-		if (pRoomIndex->clan)
-	  	{
-		    bugf("Load_rooms: duplicate clan fields.");
-		    exit(1);
-		}
-		pRoomIndex->clan = clan_lookup(fread_string(fp));
-	    }
-	
-
-	    else if ( letter == 'D' )
-	    {
-		EXIT_DATA *pexit;
-		int locks;
-
-		door = fread_number( fp );
-		if ( door < 0 || door > 5 )
-		{
-		    bugf("Fread_rooms: vnum %d has bad door number.", vnum );
-		    exit( 1 );
-		}
-
-		pexit			= alloc_perm( sizeof(*pexit) );
-		pexit->description	= fread_string( fp );
-		pexit->keyword		= fread_string( fp );
-		pexit->exit_info	= 0;
-		locks			= fread_number( fp );
-		pexit->key		= fread_number( fp );
-		pexit->u1.vnum		= fread_number( fp );
-
-		switch ( locks )
-		{
-		case 1: pexit->exit_info = EX_ISDOOR;                break;
-		case 2: pexit->exit_info = EX_ISDOOR | EX_PICKPROOF; break;
-		case 3: pexit->exit_info = EX_ISDOOR | EX_NOPASS;    break;
-		case 4: pexit->exit_info = EX_ISDOOR|EX_NOPASS|EX_PICKPROOF;
-			break;
-		}
-
-		pRoomIndex->exit[door]	= pexit;
-		pRoomIndex->old_exit[door] = pexit;
-		top_exit++;
-	    }
-	    else if ( letter == 'E' )
-	    {
-		EXTRA_DESCR_DATA *ed;
-
-		ed			= alloc_perm( sizeof(*ed) );
-		ed->keyword		= fread_string( fp );
-		ed->description		= fread_string( fp );
-		ed->next		= pRoomIndex->extra_descr;
-		pRoomIndex->extra_descr	= ed;
-		top_ed++;
-	    }
-
-	    else if (letter == 'O')
-	    {
-		if (pRoomIndex->owner[0] != '\0')
-		{
-		    bugf("Load_rooms: duplicate owner.");
-		    exit(1);
-		}
-
-		pRoomIndex->owner = fread_string(fp);
-	    }
-
-	    else
-	    {
-		bugf("Load_rooms: vnum %d has flag not 'DES'.", vnum );
-		exit( 1 );
-	    }
-	}
-
-	iHash			= vnum % MAX_KEY_HASH;
-	pRoomIndex->next	= room_index_hash[iHash];
-	room_index_hash[iHash]	= pRoomIndex;
-	top_room++;
-    }
-
+    
     return;
+
 }
 
 
@@ -1017,37 +734,63 @@ void load_rooms( FILE *fp )
 /*
  * Snarf a shop section.
  */
-void load_shops( FILE *fp )
+void load_shops (cJSON *json_data)
 {
+	cJSON *json_shops = NULL;
+	cJSON *json_shop = NULL;
+
+    json_shops = cJSON_GetObjectItemCaseSensitive(json_data, "shops");
+
+    if(!json_shops)
+        return;
+
     SHOP_DATA *pShop;
+    int keeper = 0;
 
-    for ( ; ; )
+    cJSON_ArrayForEach(json_shop, json_shops)
     {
-	MOB_INDEX_DATA *pMobIndex;
-	int iTrade;
+        MOB_INDEX_DATA *pMobIndex;
 
-	pShop			= alloc_perm( sizeof(*pShop) );
-	pShop->keeper		= fread_number( fp );
-	if ( pShop->keeper == 0 )
-	    break;
-	for ( iTrade = 0; iTrade < MAX_TRADE; iTrade++ )
-	    pShop->buy_type[iTrade]	= fread_number( fp );
-	pShop->profit_buy	= fread_number( fp );
-	pShop->profit_sell	= fread_number( fp );
-	pShop->open_hour	= fread_number( fp );
-	pShop->close_hour	= fread_number( fp );
-				  fread_to_eol( fp );
-	pMobIndex		= get_mob_index( pShop->keeper );
-	pMobIndex->pShop	= pShop;
+        // ROM mem leak fix, check the keeper before allocating the memory
+        // to the SHOP_DATA variable.  -Rhien
+        keeper = cJSON_GetObjectItemCaseSensitive( json_shop, "keeper" )->valuedouble;
 
-	if ( shop_first == NULL )
-	    shop_first = pShop;
-	if ( shop_last  != NULL )
-	    shop_last->next = pShop;
+        if (keeper == 0)
+        {
+            break;
+        }
 
-	shop_last	= pShop;
-	pShop->next	= NULL;
-	top_shop++;
+        // Now that we have a non zero keeper number we can allocate
+        pShop = alloc_perm(sizeof(*pShop));
+        pShop->keeper = keeper;
+
+		pShop->buy_type[0] = cJSON_GetObjectItemCaseSensitive( json_shop, "buy_type_0" )->valuedouble;
+		pShop->buy_type[1] = cJSON_GetObjectItemCaseSensitive( json_shop, "buy_type_1" )->valuedouble;
+		pShop->buy_type[2] = cJSON_GetObjectItemCaseSensitive( json_shop, "buy_type_2" )->valuedouble;
+		pShop->buy_type[3] = cJSON_GetObjectItemCaseSensitive( json_shop, "buy_type_3" )->valuedouble;
+		pShop->buy_type[4] = cJSON_GetObjectItemCaseSensitive( json_shop, "buy_type_4" )->valuedouble;
+
+        pShop->profit_buy = cJSON_GetObjectItemCaseSensitive( json_shop, "profit_buy" )->valuedouble;
+        pShop->profit_sell = cJSON_GetObjectItemCaseSensitive( json_shop, "profit_sell" )->valuedouble;
+        pShop->open_hour = cJSON_GetObjectItemCaseSensitive( json_shop, "open_hour" )->valuedouble;
+        pShop->close_hour = cJSON_GetObjectItemCaseSensitive( json_shop, "close_hour" )->valuedouble;
+
+        pMobIndex = get_mob_index(pShop->keeper);
+        pMobIndex->pShop = pShop;
+
+        if (shop_first == NULL)
+        {
+            shop_first = pShop;
+        }
+
+        if (shop_last != NULL)
+        {
+            shop_last->next = pShop;
+        }
+
+        shop_last = pShop;
+        pShop->next = NULL;
+        top_shop++;
     }
 
     return;
@@ -1057,37 +800,27 @@ void load_shops( FILE *fp )
 /*
  * Snarf spec proc declarations.
  */
-void load_specials( FILE *fp )
+void load_specials( cJSON *json_data )
 {
-    for ( ; ; )
+	cJSON *json_specials = NULL;
+	cJSON *json_special = NULL;
+
+    json_specials = cJSON_GetObjectItemCaseSensitive(json_data, "specials");
+
+    if(!json_specials)
+        return;
+
+    cJSON_ArrayForEach(json_special, json_specials)
     {
-	MOB_INDEX_DATA *pMobIndex;
-	char letter;
+		MOB_INDEX_DATA *pMobIndex;
 
-	switch ( letter = fread_letter( fp ) )
-	{
-	default:
-	    bugf("Load_specials: letter '%c' not *MS.", letter );
-	    exit( 1 );
-
-	case 'S':
-	    return;
-
-	case '*':
-	    break;
-
-	case 'M':
-	    pMobIndex		= get_mob_index	( fread_number ( fp ) );
-	    pMobIndex->spec_fun	= spec_lookup	( fread_word   ( fp ) );
-	    if ( pMobIndex->spec_fun == 0 )
-	    {
-		bugf("Load_specials: 'M': vnum %d.", pMobIndex->vnum );
-		exit( 1 );
-	    }
-	    break;
-	}
-
-	fread_to_eol( fp );
+		pMobIndex		= get_mob_index	( cJSON_GetObjectItemCaseSensitive( json_special, "vnum" )->valuedouble );
+		pMobIndex->spec_fun	= spec_lookup	( cJSON_GetObjectItemCaseSensitive( json_special, "spec_fun" )->valuestring );
+		if ( pMobIndex->spec_fun == 0 )
+		{
+			bug( "Load_specials: 'M': vnum %d.", pMobIndex->vnum );
+			exit( 1 );
+		}
     }
 }
 
@@ -2206,6 +1939,61 @@ int fread_number( FILE *fp )
 	number += fread_number( fp );
     else if ( c != ' ' )
 	ungetc( c, fp );
+
+    return number;
+}
+
+long char_flag( char *flagtext, int i)
+{
+    int number;
+    char c;
+    bool negative = FALSE;
+
+	if(flagtext == 0)
+		return 0;
+
+    do
+    {
+        c = flagtext[i];
+        i++;
+
+        if (c == '-')
+        {
+        negative = TRUE;
+        c = flagtext[i];
+        i++;
+        }
+
+        number = 0;
+
+        if (!isdigit(c))
+        {
+        while (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'))
+        {
+            number += flag_convert(c);
+            c = flagtext[i];
+            i++;
+        }
+        }
+
+        while (isdigit(c))
+        {
+        number = number * 10 + c - '0';
+        c = flagtext[i];
+        i++;
+        }
+
+        if (c == '|')
+            number += char_flag(flagtext,++i);
+
+        else if  ( c != ' ')
+            i--;
+
+    }
+    while ( c != '\0');
+
+    if (negative)
+	return -1 * number;
 
     return number;
 }

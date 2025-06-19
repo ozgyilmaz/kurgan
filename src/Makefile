@@ -2,14 +2,14 @@ CC      = gcc
 PROF    = -O -g
 NOCRYPT =
 C_FLAGS = -Wall $(PROF) $(NOCRYPT)
-L_FLAGS = $(PROF)
+L_FLAGS = $(PROF) -rdynamic
 LIBS    = -lcrypt
 
 O_FILES = act_comm.o act_enter.o act_info.o act_move.o act_obj.o act_wiz.o \
-          alias.o ban.o comm.o const.o db.o db2.o effects.o fight.o flags.o \
-          handler.o healer.o interp.o note.o lookup.o magic.o magic2.o \
-          music.o recycle.o save.o scan.o skills.o special.o tables.o \
-          update.o
+          alias.o ban.o cJSON.o comm.o const.o db.o db2.o effects.o fight.o \
+          flags.o handler.o healer.o interp.o note.o lookup.o magic.o \
+          magic2.o music.o recycle.o save.o scan.o skills.o special.o \
+          tables.o update.o
 
 # Vars for dependency files
 DEP_FILES = $(O_FILES:.o=.d)
