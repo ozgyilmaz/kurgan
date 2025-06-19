@@ -1,0 +1,3943 @@
+{
+    "area": {
+        "file_name": "school.are",
+        "name": "mud school",
+        "low_range": "1",
+        "high_range": "5",
+        "writer": "Hatchet",
+        "credits": "Mud School",
+        "min_vnum": 3700,
+        "max_vnum": 3799
+    },
+    "mobiles": [
+        {
+            "vnum": 3700,
+            "name": "acolyte cleric",
+            "short_description": "the acolyte of Zump",
+            "long_description": "An acolyte of Zump welcomes you to mud school.\n",
+            "description": "He's big and bad.  Don't mess with him.\n",
+            "race": "human",
+            "act": "ABGQTV",
+            "affected_by": "CH",
+            "alignment": 1000,
+            "group": 0,
+            "level": 30,
+            "hitroll": 10,
+            "hit_dice": [
+                1,
+                1,
+                999
+            ],
+            "mana_dice": [
+                1,
+                1,
+                999
+            ],
+            "dam_dice": [
+                2,
+                4,
+                30
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -15,
+            "ac_bash": -15,
+            "ac_slash": -15,
+            "ac_exotic": -15,
+            "off_flags": "ACEFHIKN",
+            "imm_flags": "ABCD",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3701,
+            "name": "blob",
+            "short_description": "the blob",
+            "long_description": "The blob is here, waiting to eat you up.\n",
+            "description": "He is big, he is bad.  You don't want to fight him when he isn't chained up.\nPerhaps now would be a good time to flee from him!!!  If you don't flee, you\nwould really suffer the consequences.\n",
+            "race": "unique",
+            "act": "ABG",
+            "affected_by": "C",
+            "alignment": 0,
+            "group": 0,
+            "level": 5,
+            "hitroll": -5,
+            "hit_dice": [
+                1,
+                1,
+                49
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                1,
+                0
+            ],
+            "dam_type": "digestion",
+            "ac_pierce": -15,
+            "ac_bash": -15,
+            "ac_slash": -15,
+            "ac_exotic": -15,
+            "off_flags": "AN",
+            "imm_flags": "AB",
+            "res_flags": "CD",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "BSc",
+            "parts": "0",
+            "size": "large",
+            "material": "0"
+        },
+        {
+            "vnum": 3702,
+            "name": "monster",
+            "short_description": "the monster",
+            "long_description": "There is a monster leashed here.\n",
+            "description": "He looks mean, but you feel comfortable that you can kill him, especially since\nhe is leashed up, and you are not.\n",
+            "race": "school monster",
+            "act": "AB",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 1,
+            "hitroll": 0,
+            "hit_dice": [
+                1,
+                1,
+                7
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                3,
+                0
+            ],
+            "dam_type": "claw",
+            "ac_pierce": 10,
+            "ac_bash": 10,
+            "ac_slash": 10,
+            "ac_exotic": 10,
+            "off_flags": "0",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 10,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3703,
+            "name": "monster wimpy",
+            "short_description": "the wimpy monster",
+            "long_description": "There is a wimpy monster leashed here.\n",
+            "description": "He looks wimpy.  You feel comfortable that you can kill him, especially since\nhe is leashed up, and you are not.\n",
+            "race": "school monster",
+            "act": "ABH",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 1,
+            "hitroll": 0,
+            "hit_dice": [
+                1,
+                1,
+                7
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                2,
+                0
+            ],
+            "dam_type": "claw",
+            "ac_pierce": 10,
+            "ac_bash": 10,
+            "ac_slash": 10,
+            "ac_exotic": 10,
+            "off_flags": "O",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 10,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3704,
+            "name": "monster aggressive",
+            "short_description": "the aggressive monster",
+            "long_description": "There is an aggressive monster leashed here.\n",
+            "description": "He looks mean, but you feel comfortable that you can kill him, especially since\nhe is leashed up, and you are not.\n",
+            "race": "school monster",
+            "act": "ABF",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 1,
+            "hitroll": 0,
+            "hit_dice": [
+                1,
+                1,
+                7
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                4,
+                0
+            ],
+            "dam_type": "claw",
+            "ac_pierce": 10,
+            "ac_bash": 10,
+            "ac_slash": 10,
+            "ac_exotic": 10,
+            "off_flags": "EK",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 10,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3705,
+            "name": "monster wimpy aggressive",
+            "short_description": "the wimpy aggressive monster",
+            "long_description": "There is a wimpy aggressive monster leashed here.\n",
+            "description": "He looks mean, but you feel comfortable that you can kill him, especially since\nhe is leashed up, and you are not.\n",
+            "race": "school monster",
+            "act": "ABFH",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 1,
+            "hitroll": 0,
+            "hit_dice": [
+                1,
+                1,
+                7
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                3,
+                0
+            ],
+            "dam_type": "claw",
+            "ac_pierce": 10,
+            "ac_bash": 10,
+            "ac_slash": 10,
+            "ac_exotic": 10,
+            "off_flags": "J",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 10,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3706,
+            "name": "big creature",
+            "short_description": "the big creature",
+            "long_description": "There is a big creature hulking over your form.\n",
+            "description": "He looks mean, and you just might have a small problem killing him, but he\nlooks like a great prize!!!\n",
+            "race": "school monster",
+            "act": "AB",
+            "affected_by": "JZ",
+            "alignment": 0,
+            "group": 0,
+            "level": 2,
+            "hitroll": 1,
+            "hit_dice": [
+                2,
+                2,
+                20
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                4,
+                1
+            ],
+            "dam_type": "claw",
+            "ac_pierce": 8,
+            "ac_bash": 8,
+            "ac_slash": 8,
+            "ac_exotic": 10,
+            "off_flags": "FN",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 25,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3707,
+            "name": "adept cleric",
+            "short_description": "the adept of Satin",
+            "long_description": "An adept of the mighty goddess Satin is here, contemplating your progress.\n",
+            "description": "She is big and bad.  Don't mess with her.\n",
+            "race": "human",
+            "act": "ABGQTV",
+            "affected_by": "CH",
+            "alignment": 1000,
+            "group": 0,
+            "level": 30,
+            "hitroll": 10,
+            "hit_dice": [
+                1,
+                1,
+                999
+            ],
+            "mana_dice": [
+                1,
+                1,
+                999
+            ],
+            "dam_dice": [
+                2,
+                4,
+                30
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -15,
+            "ac_bash": -15,
+            "ac_slash": -15,
+            "ac_exotic": -15,
+            "off_flags": "ACEFHIKN",
+            "imm_flags": "ABCD",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "female",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3708,
+            "name": "adept",
+            "short_description": "the adept of Alander",
+            "long_description": "An adept of Alander is here, smiling at you.\n",
+            "description": "He is big and bad.  Don't mess with him.\n",
+            "race": "human",
+            "act": "ABGQTV",
+            "affected_by": "CH",
+            "alignment": 1000,
+            "group": 0,
+            "level": 30,
+            "hitroll": 10,
+            "hit_dice": [
+                1,
+                1,
+                999
+            ],
+            "mana_dice": [
+                1,
+                1,
+                999
+            ],
+            "dam_dice": [
+                2,
+                4,
+                30
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -15,
+            "ac_bash": -15,
+            "ac_slash": -15,
+            "ac_exotic": -15,
+            "off_flags": "ACEFHIKN",
+            "imm_flags": "ABCD",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3709,
+            "name": "rabbit",
+            "short_description": "the rabbit",
+            "long_description": "A rabbit is bouncing around here.\n",
+            "description": "The rabbit smiles at you, completely harmless!\n",
+            "race": "rabbit",
+            "act": "AGHU",
+            "affected_by": "0",
+            "alignment": 100,
+            "group": 0,
+            "level": 1,
+            "hitroll": 0,
+            "hit_dice": [
+                1,
+                1,
+                10
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                3,
+                0
+            ],
+            "dam_type": "bite",
+            "ac_pierce": 10,
+            "ac_bash": 10,
+            "ac_slash": 10,
+            "ac_exotic": 10,
+            "off_flags": "0",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "either",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "tiny",
+            "material": "0"
+        },
+        {
+            "vnum": 3710,
+            "name": "lizard",
+            "short_description": "the lizard",
+            "long_description": "A lizard slithers up to you.\n",
+            "description": "It smiles at you, and tries to eat your leg.\n",
+            "race": "lizard",
+            "act": "AGU",
+            "affected_by": "0",
+            "alignment": -100,
+            "group": 0,
+            "level": 2,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                2,
+                20
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                4,
+                1
+            ],
+            "dam_type": "bite",
+            "ac_pierce": 8,
+            "ac_bash": 8,
+            "ac_slash": 8,
+            "ac_exotic": 10,
+            "off_flags": "R",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "either",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "small",
+            "material": "0"
+        },
+        {
+            "vnum": 3711,
+            "name": "boar",
+            "short_description": "the boar",
+            "long_description": "A boar tries to run you over.\n",
+            "description": "It grunts at you.\n",
+            "race": "pig",
+            "act": "AGU",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 3,
+            "hitroll": 1,
+            "hit_dice": [
+                3,
+                3,
+                30
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                6,
+                1
+            ],
+            "dam_type": "charge",
+            "ac_pierce": 7,
+            "ac_bash": 7,
+            "ac_slash": 7,
+            "ac_exotic": 9,
+            "off_flags": "CDFR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "either",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3712,
+            "name": "fox",
+            "short_description": "the fox",
+            "long_description": "A fox is here staring at you.\n",
+            "description": "It's fur might be worth money.\n",
+            "race": "fox",
+            "act": "AGHU",
+            "affected_by": "0",
+            "alignment": 100,
+            "group": 0,
+            "level": 1,
+            "hitroll": 1,
+            "hit_dice": [
+                1,
+                1,
+                12
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                3,
+                1
+            ],
+            "dam_type": "bite",
+            "ac_pierce": 8,
+            "ac_bash": 8,
+            "ac_slash": 8,
+            "ac_exotic": 10,
+            "off_flags": "NR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "either",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "small",
+            "material": "0"
+        },
+        {
+            "vnum": 3713,
+            "name": "snail",
+            "short_description": "the snail",
+            "long_description": "A snail is trying to get out of your way.\n",
+            "description": "You don't see much but slime about it.\n",
+            "race": "unique",
+            "act": "AGU",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 0,
+            "hitroll": 0,
+            "hit_dice": [
+                1,
+                1,
+                0
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                1,
+                0
+            ],
+            "dam_type": "digestion",
+            "ac_pierce": 10,
+            "ac_bash": 10,
+            "ac_slash": 10,
+            "ac_exotic": 10,
+            "off_flags": "0",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "AGQc",
+            "parts": "AFHM",
+            "size": "tiny",
+            "material": "0"
+        },
+        {
+            "vnum": 3714,
+            "name": "beast",
+            "short_description": "the beast",
+            "long_description": "A beast tries to feed off of you.\n",
+            "description": "It looks mean.  You'd better run.\n",
+            "race": "school monster",
+            "act": "AFT",
+            "affected_by": "Z",
+            "alignment": 0,
+            "group": 0,
+            "level": 5,
+            "hitroll": 1,
+            "hit_dice": [
+                5,
+                5,
+                55
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                6,
+                3
+            ],
+            "dam_type": "bite",
+            "ac_pierce": 5,
+            "ac_bash": 5,
+            "ac_slash": 5,
+            "ac_exotic": 8,
+            "off_flags": "EKM",
+            "imm_flags": "0",
+            "res_flags": "HI",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 50,
+            "form": "0",
+            "parts": "0",
+            "size": "large",
+            "material": "0"
+        },
+        {
+            "vnum": 3715,
+            "name": "bear",
+            "short_description": "the bear",
+            "long_description": "A bear is here growling at you.\n",
+            "description": "The bear must be bigger than you!  It wants to rip your head off.\n",
+            "race": "bear",
+            "act": "AGU",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 4,
+            "hitroll": 1,
+            "hit_dice": [
+                4,
+                4,
+                44
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                6,
+                2
+            ],
+            "dam_type": "claw",
+            "ac_pierce": 6,
+            "ac_bash": 5,
+            "ac_slash": 6,
+            "ac_exotic": 7,
+            "off_flags": "CR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "either",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "large",
+            "material": "0"
+        },
+        {
+            "vnum": 3716,
+            "name": "wolf",
+            "short_description": "the wolf",
+            "long_description": "A wolf is here snarling at you.\n",
+            "description": "The wolf doesn't want to be bothered.\n",
+            "race": "wolf",
+            "act": "AGU",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 4,
+            "hitroll": 0,
+            "hit_dice": [
+                4,
+                4,
+                44
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                6,
+                2
+            ],
+            "dam_type": "bite",
+            "ac_pierce": 7,
+            "ac_bash": 7,
+            "ac_slash": 7,
+            "ac_exotic": 10,
+            "off_flags": "NR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "either",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3717,
+            "name": "adept cleric",
+            "short_description": "the adept of Selene",
+            "long_description": "An adept of Selene is here, grinning and selling you things.\n",
+            "description": "He is big and bad.  Don't mess with him.\n",
+            "race": "human",
+            "act": "ABCQTV",
+            "affected_by": "CH",
+            "alignment": 1000,
+            "group": 0,
+            "level": 30,
+            "hitroll": 10,
+            "hit_dice": [
+                1,
+                1,
+                999
+            ],
+            "mana_dice": [
+                1,
+                1,
+                999
+            ],
+            "dam_dice": [
+                2,
+                4,
+                30
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -15,
+            "ac_bash": -15,
+            "ac_slash": -15,
+            "ac_exotic": -15,
+            "off_flags": "ACEFHIKN",
+            "imm_flags": "ABCD",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3718,
+            "name": "adept cleric",
+            "short_description": "the adept of Furey",
+            "long_description": "An adept of Furey is here, training young students.\n",
+            "description": "He is big and bad.  Don't mess with him.\n",
+            "race": "human",
+            "act": "ABCJQTV",
+            "affected_by": "CH",
+            "alignment": 1000,
+            "group": 0,
+            "level": 30,
+            "hitroll": 10,
+            "hit_dice": [
+                1,
+                1,
+                999
+            ],
+            "mana_dice": [
+                1,
+                1,
+                999
+            ],
+            "dam_dice": [
+                2,
+                4,
+                30
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -15,
+            "ac_bash": -15,
+            "ac_slash": -15,
+            "ac_exotic": -15,
+            "off_flags": "ACEFHIKN",
+            "imm_flags": "ABCD",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3719,
+            "name": "priest cleric",
+            "short_description": "the priest of Circe",
+            "long_description": "The priest of Circe is ready to help you practice.\n",
+            "description": "He is big and bad.  Don't mess with him.\n",
+            "race": "human",
+            "act": "ABCKQTV",
+            "affected_by": "CH",
+            "alignment": 1000,
+            "group": 0,
+            "level": 30,
+            "hitroll": 10,
+            "hit_dice": [
+                1,
+                1,
+                999
+            ],
+            "mana_dice": [
+                1,
+                1,
+                999
+            ],
+            "dam_dice": [
+                2,
+                4,
+                30
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -15,
+            "ac_bash": -15,
+            "ac_slash": -15,
+            "ac_exotic": -15,
+            "off_flags": "ACEFHIKN",
+            "imm_flags": "ABCD",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3720,
+            "name": "diploma beast",
+            "short_description": "the diploma beast",
+            "long_description": "The hideous diploma beast is here, holding your graduation present!\n",
+            "description": "This horrible creature is your final test for mud school.  Kill him, and the\ndiploma is yours.\n",
+            "race": "school monster",
+            "act": "AB",
+            "affected_by": "J",
+            "alignment": 0,
+            "group": 0,
+            "level": 3,
+            "hitroll": 1,
+            "hit_dice": [
+                2,
+                4,
+                30
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                6,
+                1
+            ],
+            "dam_type": "claw",
+            "ac_pierce": 8,
+            "ac_bash": 8,
+            "ac_slash": 8,
+            "ac_exotic": 10,
+            "off_flags": "EFN",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 30,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        }
+    ],
+    "objects": [
+        {
+            "vnum": 3700,
+            "name": "mace sub merc",
+            "short_description": "a sub issue mace",
+            "description": "You see a sub issue mace here.",
+            "material": "bronze",
+            "type": "weapon",
+            "extra_flags": "U",
+            "wear_flags": "AN",
+            "values": "mace 1 6 pound 0",
+            "level": 1,
+            "weight": 60,
+            "cost": 250,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "mace",
+                    "description": "You see a mace of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3701,
+            "name": "dagger sub merc",
+            "short_description": "a sub issue dagger",
+            "description": "You see a sub issue dagger here.",
+            "material": "bronze",
+            "type": "weapon",
+            "extra_flags": "U",
+            "wear_flags": "AN",
+            "values": "dagger 1 4 pierce 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 210,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "dagger",
+                    "description": "You see a dagger of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3702,
+            "name": "sword sub merc",
+            "short_description": "a sub issue sword",
+            "description": "You see a sub issue sword here.",
+            "material": "bronze",
+            "type": "weapon",
+            "extra_flags": "U",
+            "wear_flags": "AN",
+            "values": "sword 1 6 slash 0",
+            "level": 1,
+            "weight": 30,
+            "cost": 360,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sword",
+                    "description": "You see a sword of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3703,
+            "name": "vest sub merc",
+            "short_description": "a sub issue vest",
+            "description": "You see a sub issue vest here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AD",
+            "values": "1 1 1 0 0",
+            "level": 0,
+            "weight": 50,
+            "cost": 144,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "vest",
+                    "description": "You see a vest of great but cheap craftsmanship.  Stamped on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3704,
+            "name": "shield sub merc",
+            "short_description": "a sub issue shield",
+            "description": "You see a sub issue shield here.",
+            "material": "wood",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AJ",
+            "values": "1 1 1 0 0",
+            "level": 0,
+            "weight": 30,
+            "cost": 108,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "shield",
+                    "description": "You see a shield of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3705,
+            "name": "cloak sub merc",
+            "short_description": "a sub issue cloak",
+            "description": "You see a sub issue cloak here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AC",
+            "values": "1 1 1 0 1",
+            "level": 0,
+            "weight": 40,
+            "cost": 72,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "cloak",
+                    "description": "You see a cloak of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3706,
+            "name": "helmet sub merc",
+            "short_description": "a sub issue helmet",
+            "description": "You see a sub issue helmet here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AE",
+            "values": "1 1 1 0 0",
+            "level": 0,
+            "weight": 30,
+            "cost": 72,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "helmet",
+                    "description": "You see a helmet of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3707,
+            "name": "leggings sub merc",
+            "short_description": "a pair of sub issue leggings",
+            "description": "You see a pair of sub issue leggings here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AF",
+            "values": "1 1 1 0 0",
+            "level": 0,
+            "weight": 30,
+            "cost": 72,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "leggings",
+                    "description": "You see leggings of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3708,
+            "name": "boots sub merc",
+            "short_description": "a pair of sub issue boots",
+            "description": "You see a pair of sub issue boots here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AG",
+            "values": "1 1 1 0 0",
+            "level": 0,
+            "weight": 30,
+            "cost": 72,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "boots",
+                    "description": "You see boots of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3709,
+            "name": "gloves sub merc",
+            "short_description": "a pair of sub issue gloves",
+            "description": "You see a pair of sub issue gloves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AH",
+            "values": "1 1 1 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 72,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "gloves",
+                    "description": "You see gloves of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3710,
+            "name": "sleeves sub merc",
+            "short_description": "a pair of sub issue sleeves",
+            "description": "You see a pair of sub issue sleeves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AI",
+            "values": "1 1 1 0 0",
+            "level": 0,
+            "weight": 20,
+            "cost": 72,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "sleeves",
+                    "description": "You see sleeves of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3711,
+            "name": "cape sub merc",
+            "short_description": "a sub issue cape",
+            "description": "You see a sub issue cape here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AK",
+            "values": "1 1 1 0 0",
+            "level": 0,
+            "weight": 20,
+            "cost": 72,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "cape",
+                    "description": "You see a cape of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3712,
+            "name": "belt sub merc",
+            "short_description": "a sub issue belt",
+            "description": "You see a sub issue belt here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AL",
+            "values": "1 1 1 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 72,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "belt",
+                    "description": "You see a belt of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3713,
+            "name": "bracer sub merc",
+            "short_description": "a sub issue bracer",
+            "description": "You see a sub issue bracer here.",
+            "material": "bronze",
+            "type": "armor",
+            "extra_flags": "U",
+            "wear_flags": "AM",
+            "values": "0 1 1 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 48,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "bracer",
+                    "description": "You see a bracer of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3714,
+            "name": "key",
+            "short_description": "a key",
+            "description": "You see a very important key here!",
+            "material": "brass",
+            "type": "key",
+            "extra_flags": "P",
+            "wear_flags": "A",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 0,
+            "condition": "P"
+        },
+        {
+            "vnum": 3715,
+            "name": "diploma",
+            "short_description": "a mud school diploma",
+            "description": "You see a mud school diploma here.",
+            "material": "vellum",
+            "type": "treasure",
+            "extra_flags": "GU",
+            "wear_flags": "AO",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 1140,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 4,
+                    "modifier": 1
+                },
+                {
+                    "location": 5,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "diploma",
+                    "description": "This document shows that you have graduated from Mud School.\nIt also has magical effects on your abilities if you hold it!\n\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3716,
+            "name": "banner war merc",
+            "short_description": "a war banner",
+            "description": "A war banner is on the floor here.",
+            "material": "cloth",
+            "type": "light",
+            "extra_flags": "AG",
+            "wear_flags": "A",
+            "values": "0 0 200 0 0",
+            "level": 0,
+            "weight": 20,
+            "cost": 380,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 17,
+                    "modifier": -1
+                },
+                {
+                    "location": 20,
+                    "modifier": -1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "banner",
+                    "description": "This is the official Merc war banner to see you through the darkest realm!\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3717,
+            "name": "spear sub merc",
+            "short_description": "a sub issue spear",
+            "description": "You see a sub issue spear here.",
+            "material": "wood",
+            "type": "weapon",
+            "extra_flags": "U",
+            "wear_flags": "AN",
+            "values": "staff 1 6 thrust 0",
+            "level": 1,
+            "weight": 50,
+            "cost": 111,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "spear",
+                    "description": "You see a spear of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3718,
+            "name": "staff sub merc",
+            "short_description": "a sub issue staff",
+            "description": "You see a sub issue staff here.",
+            "material": "wood",
+            "type": "weapon",
+            "extra_flags": "U",
+            "wear_flags": "AN",
+            "values": "staff 1 5 pound F",
+            "level": 1,
+            "weight": 40,
+            "cost": 290,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 2
+                },
+                {
+                    "location": 19,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "staff",
+                    "description": "You see a staff of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3719,
+            "name": "axe sub merc",
+            "short_description": "a sub issue axe",
+            "description": "You see a sub issue axe here.",
+            "material": "bronze",
+            "type": "weapon",
+            "extra_flags": "U",
+            "wear_flags": "AN",
+            "values": "axe 1 6 chop 0",
+            "level": 1,
+            "weight": 50,
+            "cost": 350,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "axe",
+                    "description": "You see an axe of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3720,
+            "name": "flail sub merc",
+            "short_description": "a sub issue flail",
+            "description": "You see a sub issue flail here.",
+            "material": "bronze",
+            "type": "weapon",
+            "extra_flags": "U",
+            "wear_flags": "AN",
+            "values": "flail 1 5 crush 0",
+            "level": 1,
+            "weight": 50,
+            "cost": 310,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "flail",
+                    "description": "You see a flail of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3721,
+            "name": "whip sub merc",
+            "short_description": "a sub issue whip",
+            "description": "You see a sub issue whip here.",
+            "material": "leather",
+            "type": "weapon",
+            "extra_flags": "U",
+            "wear_flags": "AN",
+            "values": "whip 2 2 whip 0",
+            "level": 1,
+            "weight": 20,
+            "cost": 330,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 2
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "whip",
+                    "description": "You see a whip of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3722,
+            "name": "glaive sub merc",
+            "short_description": "a sub issue glaive",
+            "description": "You see a sub issue glaive here.",
+            "material": "wood",
+            "type": "weapon",
+            "extra_flags": "U",
+            "wear_flags": "AN",
+            "values": "polearm 1 7 slash F",
+            "level": 1,
+            "weight": 80,
+            "cost": 183,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "glaive",
+                    "description": "You see a glaive of great but cheap craftsmanship.  Imprinted on the side is:\nMerc Industries\n"
+                }
+            ]
+        }
+    ],
+    "rooms": [
+        {
+            "vnum": 3700,
+            "name": "Entrance to Mud School",
+            "description": "This is the entrance to the Merc Mud School.  Go north to go through mud\nschool.  If you have been here before and want to go directly to the arena,\ngo south.\n\nA sign warns 'You may not pass these doors once you have passed level 5.'\n",
+            "flags": "CD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the doorway into the Mud School Building.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3757
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the one way door into the Arena of Mud School.\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3744
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "You see the Temple of Midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3001
+                }
+            ]
+        },
+        {
+            "vnum": 3701,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  The exits are west and south.  A small plaque is on the\nwall.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see a path into another room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3757
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see a path into another room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3702
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Equipment check time!  Type 'EQUIPMENT' to see your current equipment.  Right\nnow, you have just a vest, a shield, and a weapon.  As you go through Mud\nSchool you will acquire a complete set of equipment.\n\nTo pick up items on the ground as you see them, type 'GET item'.\nTo wear a piece of armor, type 'WEAR item'.\nTo hold a light source, type 'HOLD item'.\nTo wield a weapon, type 'WIELD weapon'.\nTo wear, hold, and wield everything you have, type 'WEAR ALL'.\nTo stop using a piece of equipment, type 'REMOVE item'.\nFinally, to see the items in your inventory, type 'INVENTORY'.\n\nWhen you are ready to continue, go west.\n"
+                },
+                {
+                    "keyword": "plaque",
+                    "description": "This zone (Mud School) is created by Hatchet for any Merc Mud.\nCopyright 1992, 1993.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3702,
+            "name": "The Center Room",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  Exits lead in ALL directions.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the room north that will lead you to the next section.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3703
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see a room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3701
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see a room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3705
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see a room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3704
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see a room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3708
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "You see a room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3707
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "This is the direction practicing room.  The directions you can go in any\nroom are: north, south, east, west, up, or down.  Of course, not all rooms\nhave all exits available.\n\nTo see the obvious exits in a room, type 'EXITS'.\n\nSometimes doors are closed, or locked, or secret.  Then you have to notice\nclues in the room description, or try going into that direction and seeing\nif you bump into a door.\n\nTry going into each direction from here.  When you are done, go NORTH.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3703,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  Exits lead north and south.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the next station ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3709
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the central room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3702
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Since you are here, let us have another lesson.  You can see the statistics on\nyourself by typing 'SCORE'.  Do that right now.  At higher levels, 'SCORE'\ngives you more information.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3704,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  The only exit is east.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the central room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3702
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Just go east to the central room.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3705,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  The only exit is north.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the central room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3702
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Just go north to the central room.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3707,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  The only exit is up.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the central room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3702
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Just go up to the central room.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3708,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  The only exit is down.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 5,
+                    "exit_description": "You see the central room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3702
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Just go down to the central room.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3709,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  Exits reach west and down.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the next station of Mud School.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3711
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "You see a cage.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3710
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Welcome to combat training.\n\nThe first lesson is knowing whom to fight.  Use the command 'CONSIDER' to\nconsider killing a monster.  Avoid fighting monsters that will kill you\neasily.\n\nThe second lesson is running away.  There is a monster in the room down.\nHe is too strong for you to kill, but he won't kill you.  So go 'DOWN' from\nhere, then 'CONSIDER' him, then 'KILL' him.  After a while, type 'FLEE' to\nescape from him.\n\nYou can also set your character to flee automatically with the 'WIMPY' command.\nType 'HELP WIMPY' to find out more about 'WIMPY'.\n\nAfter you flee, you will be back in this room.  When you are ready to go on\nto the next station, go 'WEST'.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3710,
+            "name": "The Blob Cage",
+            "description": "You are in a smelly cage.  Strangely, the walls are still clean!\nYou see a sign here.  The only exit is up.\n",
+            "flags": "DR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see a safe room up.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3709
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Remember, don't fight the blob to the finish!  Just type 'KILL BLOB', then\nwhen you are fighting, type 'FLEE', until you flee and are out of here.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3711,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the next station of Mud School.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3709
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "You see the combat hall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3712
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Welcome to the next station.  Here, you will actually fight real monsters,\nwithout fleeing!  Kill every mob, since they hold some equipment you need.\nTo start, go down.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3712,
+            "name": "The Cage Room",
+            "description": "You are in the cage room.  All around are 4 cages.  Light fluoresces off the\nceiling in soft white tones.  Of course, there is a big sign on the wall.\nExits lead into the cardinal directions plus down.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the aggressive monster inside!\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3713
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the unmodified monster inside!\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3716
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the wimpy monster inside!\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3715
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the aggressive wimpy monster inside!\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3714
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "You see the next station below.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3717
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Welcome to the cage room.  The adepts of mud school have captured some\nmonsters for you to kill.  In the four cages are four monsters of various\ntypes.  Kill them all!\n\nAfter you kill each monster, get all of the equipment from their corpses\nwith the command 'GET ALL CORPSE'.  You can then use the command 'WEAR ALL'\nto wear your newly won equipment.\n\nWhen you are done with the corpse, 'SACRIFICE CORPSE' to give it to your God.\nGod will reward you for this.\n\nBetween combat, you may need to rest or sleep to regenerate hit points.\nYou can 'REST' to regenerate hit points, or you can 'SLEEP'.  'SLEEP' will\nrefresh you faster than 'REST', but you will be less aware of your\nsurroundings.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3713,
+            "name": "A Cage",
+            "description": "You are in a cage.  Blood and gore are everywhere.  The keepers must be lax\nin the upkeep here!  There is a sign on the wall.  The only exit is south.\n",
+            "flags": "DR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the Cage Room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3712
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "There is an aggressive monster in this room.  Kill him and get out of here\nfast!  Remember to loot and sacrifice the corpse.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3714,
+            "name": "A Cage",
+            "description": "You are in a cage.  Blood and gore are everywhere.  The keepers must be lax\nin the upkeep here!  There is a sign on the wall.  The only exit is east.\n",
+            "flags": "DR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the Cage Room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3712
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "There is a wimpy, aggressive monster in this room.  Kill him and get out of\nhere fast!  Remember to loot and sacrifice the corpse.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3715,
+            "name": "A Cage",
+            "description": "You are in a cage.  Blood and gore are everywhere.  The keepers must be lax\nin the upkeep here!  There is a sign on the wall.  The only exit is north.\n",
+            "flags": "DR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the Cage Room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3712
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "There is a wimpy monster in this room.  Kill him and get out of here fast!\nRemember to loot and sacrifice the corpse.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3716,
+            "name": "A Cage",
+            "description": "You are in a cage.  Blood and gore are everywhere.  The keepers must be lax\nin the upkeep here!  There is a sign on the wall.  The only exit is west.\n",
+            "flags": "DR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the Cage Room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3712
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "There is a monster in this room.  Kill him and get out of here fast!\nRemember to loot and sacrifice the corpse.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3717,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  Find your own exit here.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the next station of Mud School.\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3719
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the Shop.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3718
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the Cage room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3712
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "By now, you must be hungry and thirsty.  Time to buy groceries!\nTo the south is a store.  Inside the store, you can use these commands:\n\n    BUY    Buy an item\n    LIST   List what is for sale\n\nAfter buying some food and drink, you can 'EAT' and 'DRINK' it.\n\nAfter that, find the next exit yourself.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3718,
+            "name": "The Store in Mud School",
+            "description": "You are in a cramped room.  Stacked neatly on shelves everywhere are items\nand packages.  Light fluoresces off the ceiling in soft white tones.  Of\ncourse, there is a sign on the wall.  The only exit is north.\n",
+            "flags": "DR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the only exit out of here.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3717
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "The sign reads:\n\n   Buy   - Buy something from the storekeeper.\n   List  - The storekeeper will tell you what's for sale.\n   Value - The storekeeper will tell you how much he will give to you for\n           that item.\n   Sell  - Sell that item to the storekeeper.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3719,
+            "name": "A Room in Mud School",
+            "description": "You are in a square white room.  The walls are all blank, with no windows.\nLight fluoresces off the ceiling in soft white tones.  Of course, there is a\nsign on the wall.  The exits are north and west, with a door to the east.\n",
+            "flags": "CDR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see a darkened room inside.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3720
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the next station of Mud School.\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": 3714,
+                    "exit_u1_vnum": 3721
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the room you just came from.\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3717
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "North of you is a dark room.  I hope you still have the lantern!  If not,\nyou have to back to the store and buy one.\n\nIn the room is a monster with a key that you need.  After killing the\nmonster and getting the key, come back here, UNLOCK EAST, OPEN EAST,\nand continue east.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3720,
+            "name": "The Darkened Room",
+            "description": "This room was purposefully darkened so that you would need to hold on to a\nlight source to go through.  The walls are, of course, blank, and white.\nThe only exit is south.\n",
+            "flags": "ADR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the room that you have come from.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3719
+                }
+            ]
+        },
+        {
+            "vnum": 3721,
+            "name": "The End of Mud School!",
+            "description": "This is a very bright room, with a marble pedestal in the center.  Behind\nthe pedestal stands a person cloaked in Silver.  Tapestries flow from every\nwall, and you feel very happy to be here right now.  There is a big sign here.\nThe only exit is on the other side of the gate north of you.\n",
+            "flags": "DR",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the Arena ahead.\n",
+                    "exit_keyword": "gate",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3722
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "You have graduated from Mud School!  Take your diploma...if you can.\nGo 'NORTH' from here to visit our arena.  There are plenty of low-level\nmonsters, but DON'T attack other players.\n\nIf you want to go directly back to the temple at any time, type 'RECALL'.\n\nDon't forget to type save to protect your character.  You won't be saved after\nquitting until you reach level 2, so also type save before you type quit.\n\nIf you need more help during the game, type 'HELP'.  If you see something\nwrong or have comments, use 'BUG', 'IDEA', or 'TYPO' to report them.\n\nMay your visit here be ... mercenary.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3722,
+            "name": "South Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3729
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3725
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3723
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3723,
+            "name": "South Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3728
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3722
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3724
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3724,
+            "name": "South West Corner of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3727
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3723
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3725,
+            "name": "South Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3730
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3726
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3722
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3726,
+            "name": "South East Corner of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3731
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3725
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3727,
+            "name": "West Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3732
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3728
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3724
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3728,
+            "name": "Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3733
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3729
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3723
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3727
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3729,
+            "name": "Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3734
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3730
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3722
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3728
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3730,
+            "name": "Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3735
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3731
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3725
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3729
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3731,
+            "name": "East Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3736
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3726
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3730
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3732,
+            "name": "West Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3737
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3733
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3727
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3733,
+            "name": "Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3738
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3734
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3728
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3732
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3734,
+            "name": "Center of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.  There is a BIG SIGN here.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3739
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3735
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3729
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3733
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "You see a dark murky dungeon below.\n",
+                    "exit_keyword": "grate",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3748
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Those with high bravery or low senses of cautiousness might wish to go below\nto the Dungeon.  However, know that there are aggressive monsters down there,\nand there is no quick escape back out of here when you are in the dungeon.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3735,
+            "name": "Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3740
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3736
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3730
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3734
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3736,
+            "name": "East Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3741
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3731
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3735
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3737,
+            "name": "West Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3742
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3738
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3732
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3738,
+            "name": "Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3743
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3739
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3733
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3737
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3739,
+            "name": "Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3744
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3740
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3734
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3738
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3740,
+            "name": "Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3745
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3741
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3735
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3739
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3741,
+            "name": "East Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3746
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3736
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3740
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3742,
+            "name": "North West Corner of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3743
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3737
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3743,
+            "name": "North Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  You can barely see the ceiling.  You feel as if you are being watched\nby some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3744
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3738
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3742
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3744,
+            "name": "North Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3745
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3739
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3743
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3745,
+            "name": "North Wall of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3746
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3740
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3744
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3746,
+            "name": "North East Corner of Arena",
+            "description": "You are in the Arena.  Remember, if you wish to get out of this Arena, just\ngo up.  Ceilings can barely be seen in this huge Arena.  You feel as if you are\nbeing watched by some divine being.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3741
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3745
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the EXIT.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3760
+                }
+            ]
+        },
+        {
+            "vnum": 3748,
+            "name": "The Center of the Dungeon",
+            "description": "You are in the center of a large room.  A faint light from above shows that\nthe floors are all covered with slime.  A feeling of dread comes over you as\nyou notice that this is NOT a great place to go.  Exits go in all directions.\nOf special note is the one that brings you back up!!!\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the north wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3750
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the east wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3753
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the south wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3755
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the west wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3752
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see safety!\n",
+                    "exit_keyword": "grate",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3734
+                }
+            ]
+        },
+        {
+            "vnum": 3749,
+            "name": "The North West Corner of the Dungeon",
+            "description": "You are against a wall in the dungeon.  It is quite dark here.  The lack of\nany windows in the area explains the smell around you.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the north wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3750
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the south wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3752
+                }
+            ]
+        },
+        {
+            "vnum": 3750,
+            "name": "The North Wall of the Dungeon",
+            "description": "You are against a wall in the dungeon.  It is quite dark here.  The lack of\nany windows in the area explains the smell around you.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the north east corner.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3751
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the center of the dungeon.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3748
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the north west corner.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3749
+                }
+            ]
+        },
+        {
+            "vnum": 3751,
+            "name": "The North East Corner of the Dungeon",
+            "description": "You are against a wall in the dungeon.  It is quite dark here.  The lack of\nany windows in the area explains the smell around you.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the east wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3753
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the north wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3750
+                }
+            ]
+        },
+        {
+            "vnum": 3752,
+            "name": "The West Wall of the Dungeon",
+            "description": "You are against a wall in the dungeon.  It is quite dark here.  The lack of\nany windows in the area explains the smell around you.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the north west corner.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3749
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the center of the dungeon.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3748
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the south west corner.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3754
+                }
+            ]
+        },
+        {
+            "vnum": 3753,
+            "name": "The East Wall of the Dungeon",
+            "description": "You are against a wall in the dungeon.  It is quite dark here.  The lack of\nany windows in the area explains the smell around you.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the north east corner.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3751
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the south east corner.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3756
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the center of the dungeon.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3748
+                }
+            ]
+        },
+        {
+            "vnum": 3754,
+            "name": "The South West Corner of the Dungeon",
+            "description": "You are against a wall in the dungeon.  It is quite dark here.  The lack of\nany windows in the area explains the smell around you.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the north wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3752
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the south wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3755
+                }
+            ]
+        },
+        {
+            "vnum": 3755,
+            "name": "The South Wall of the Dungeon",
+            "description": "You are against a wall in the dungeon.  It is quite dark here.  The lack of\nany windows in the area explains the smell around you.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the center of the dungeon.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3748
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the south east corner.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3756
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the south west corner.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3754
+                }
+            ]
+        },
+        {
+            "vnum": 3756,
+            "name": "The South East Corner of the Dungeon",
+            "description": "You are against a wall in the dungeon.  It is quite dark here.  The lack of\nany windows in the area explains the smell around you.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the east wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3753
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the south wall.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3755
+                }
+            ]
+        },
+        {
+            "vnum": 3757,
+            "name": "A Room in Mud School",
+            "description": "You are in a room in Mud School.  Paintings of the heroic graduates of mud\nschool adorn the walls. To the west is Furey's Training Room, and to the east\nis Zump's Guild Room.  North of you is the next Station of Mud School.\nThere is a sign on the wall (type 'LOOK SIGN' to read it).\n",
+            "flags": "CDR",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the next station of Mud School.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3701
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see Zump's Guild Room.  Go there to practice your skills.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3759
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the entrance to Mud School.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3700
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see Furey's Training Room.  Go there to train your attributes.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3758
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "To find out your attributes, type 'score'.  You can improve your attributes\nin Furey's Training Room to the west.  You can practice your skills and spells\nin Zump's Guild Room to the east.  You can continue through mud school by\ngoing north.\n\nIf you are a new character, you should go 'WEST' from here, train your\nabilities, and then come back here and go 'NORTH'.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3758,
+            "name": "Furey's Training Room",
+            "description": "You are in Furey's Training Room.  Around you are all sorts of physical\nand mental training tools.  The whole room is filled with magic, holiness, \nand sweat.  There is a sign on the wall.\n",
+            "flags": "CDR",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the room you came from, and the room you should go to.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3757
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Welcome to Furey's Training Room.  Here you can train your attributes.  To \ntrain an attribute, you need enough practices.  To find out how many practice\nsessions you have, type 'train' while you are in this room.  To train for a \nspecific attribute, type 'train <attr>' where attr is the first 3 letters of\nthe attribute you want increased.  Type 'help train' for more information.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3759,
+            "name": "Zump's Guild Room",
+            "description": "You are in a room filled with weapons, books, and many combat dummies, some\ncut and stabbed many times, others burnt to a crisp.  The room is filled with\nsweat and an aura of magic.  There is a sign on the wall.\n",
+            "flags": "CDR",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the room you came from and the room you should go to.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3757
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Welcome to Zump's Guild Room.  Here you will learn your skills and spells.\nTo find out what skills and spells you can practice and how many practice\nsessions you have, type 'practice'.  To practice the specific skill, type\n'practice <skill>', where 'skill' is the skill or spell you wish to practice.\nPracticing increases the amount you know of that skill or spell, up to a\ncertain maximum.  When you have practiced all you wish to practice, go west.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3760,
+            "name": "A Safe Room",
+            "description": "You are in a safe room, away from all the mean rabbits and snails of the Arena.\nYou can rest here, and go up to go back to the Temple of Midgaard.\n",
+            "flags": "CD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see the Temple of Midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3001
+                }
+            ]
+        }
+    ],
+    "resets": [
+        {
+            "command": "M",
+            "arg1": 3720,
+            "arg2": 1,
+            "arg3": 3721,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3715,
+            "arg2": -1,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 3700,
+            "arg2": 1,
+            "arg3": 3701,
+            "arg4": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3700,
+            "arg2": 2,
+            "arg3": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3701,
+            "arg2": 1,
+            "arg3": 3710,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3702,
+            "arg2": 1,
+            "arg3": 3716,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3705,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 3705,
+            "arg2": -1,
+            "arg3": 4
+        },
+        {
+            "command": "M",
+            "arg1": 3703,
+            "arg2": 1,
+            "arg3": 3715,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3706,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 3711,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "M",
+            "arg1": 3704,
+            "arg2": 1,
+            "arg3": 3713,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3707,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 3712,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "M",
+            "arg1": 3705,
+            "arg2": 1,
+            "arg3": 3714,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3708,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 3713,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "D",
+            "arg1": 3717,
+            "arg2": 1,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3719,
+            "arg2": 3,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3719,
+            "arg2": 1,
+            "arg3": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3717,
+            "arg2": 1,
+            "arg3": 3718,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 3138,
+            "arg2": -1
+        },
+        {
+            "command": "G",
+            "arg1": 3031,
+            "arg2": -1
+        },
+        {
+            "command": "M",
+            "arg1": 3706,
+            "arg2": 1,
+            "arg3": 3720,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3709,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 3710,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 3714,
+            "arg2": -1,
+            "arg3": 17
+        },
+        {
+            "command": "E",
+            "arg1": 3713,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "D",
+            "arg1": 3721,
+            "arg2": 0,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3734,
+            "arg2": 5,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3748,
+            "arg2": 4,
+            "arg3": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3709,
+            "arg2": 4,
+            "arg3": 3734,
+            "arg4": 4
+        },
+        {
+            "command": "M",
+            "arg1": 3710,
+            "arg2": 3,
+            "arg3": 3742,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 3711,
+            "arg2": 3,
+            "arg3": 3746,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 3712,
+            "arg2": 3,
+            "arg3": 3726,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 3713,
+            "arg2": 5,
+            "arg3": 3724,
+            "arg4": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3714,
+            "arg2": 1,
+            "arg3": 3749,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3715,
+            "arg2": 2,
+            "arg3": 3751,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3716,
+            "arg2": 2,
+            "arg3": 3754,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3707,
+            "arg2": 1,
+            "arg3": 3712,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3708,
+            "arg2": 1,
+            "arg3": 3721,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3718,
+            "arg2": 1,
+            "arg3": 3758,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3719,
+            "arg2": 1,
+            "arg3": 3759,
+            "arg4": 1
+        }
+    ],
+    "shops": [
+        {
+            "keeper": "3717",
+            "buy_type_0": 1,
+            "buy_type_1": 15,
+            "buy_type_2": 17,
+            "buy_type_3": 19,
+            "buy_type_4": 0,
+            "profit_buy": 100,
+            "profit_sell": 100,
+            "open_hour": 0,
+            "close_hour": 23
+        }
+    ],
+    "specials": [
+        {
+            "vnum": 3707,
+            "spec_fun": "spec_cast_adept"
+        },
+        {
+            "vnum": 3708,
+            "spec_fun": "spec_cast_adept"
+        },
+        {
+            "vnum": 3714,
+            "spec_fun": "spec_fido"
+        }
+    ]
+}

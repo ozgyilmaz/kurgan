@@ -1,0 +1,3889 @@
+{
+    "area": {
+        "file_name": "chapel.are",
+        "name": "Chapel",
+        "low_range": "15",
+        "high_range": "25",
+        "writer": "Copper",
+        "credits": "Chapel Catacombs",
+        "min_vnum": 3400,
+        "max_vnum": 3499
+    },
+    "mobiles": [
+        {
+            "vnum": 3400,
+            "name": "oldstyle skeleton bony",
+            "short_description": "the bony skeleton",
+            "long_description": "A bony skeleton is here.\n",
+            "description": "Brown bones with tufts of clothing still hanging from them.  This\nskeleton looks very mindless but still dangerous ...\n",
+            "race": "human",
+            "act": "AF",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 1,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                10
+            ],
+            "mana_dice": [
+                0,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                4,
+                0
+            ],
+            "dam_type": "none",
+            "ac_pierce": 9,
+            "ac_bash": 9,
+            "ac_slash": 9,
+            "ac_exotic": 10,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3401,
+            "name": "oldstyle undead zombie",
+            "short_description": "the undead zombie",
+            "long_description": "An undead zombie sits here munching on something ...\n",
+            "description": "His body is totally white and slowly rotting away.  Each Zombie looks\nquite different from the next because they were, of course, once alive and\nhuman.\n",
+            "race": "human",
+            "act": "ABF",
+            "affected_by": "DF",
+            "alignment": -100,
+            "group": 0,
+            "level": 4,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                46
+            ],
+            "mana_dice": [
+                2,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                5,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 6,
+            "ac_bash": 6,
+            "ac_slash": 6,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 2,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3402,
+            "name": "oldstyle undead ghoul",
+            "short_description": "The ghoul",
+            "long_description": "A ghoul is here staring at you hungrily.\n",
+            "description": "The ghoul no longer resembles the adventurer he once was.  Nonetheless\nhe looks like he hasn't forgot his fighting skills.\n",
+            "race": "human",
+            "act": "AF",
+            "affected_by": "D",
+            "alignment": -500,
+            "group": 0,
+            "level": 6,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                71
+            ],
+            "mana_dice": [
+                3,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                7,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 4,
+            "ac_bash": 4,
+            "ac_slash": 4,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 7,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3403,
+            "name": "oldstyle undead wraith",
+            "short_description": "The wraith",
+            "long_description": "You spot a wraith advancing towards you from the shadows.\n",
+            "description": "The wraith no longer has a material form.  He is wearing a tattered\nblack robe which hides all but the darkness of his face and the glimmer\nin his eyes.\n",
+            "race": "human",
+            "act": "ABF",
+            "affected_by": "BDF",
+            "alignment": -750,
+            "group": 0,
+            "level": 12,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                10,
+                150
+            ],
+            "mana_dice": [
+                6,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                10,
+                3
+            ],
+            "dam_type": "none",
+            "ac_pierce": 0,
+            "ac_bash": 0,
+            "ac_slash": 0,
+            "ac_exotic": 8,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 50,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3404,
+            "name": "oldstyle undead guardian vampire",
+            "short_description": "The guardian vampire",
+            "long_description": "A vampire is here hiding his face from your light source.\n",
+            "description": "The guardian vampire looks quite EVIL.  Just by looking at him the hair on your\narms raises. He looks mighty tough to be just a minor minion.\n",
+            "race": "human",
+            "act": "ABF",
+            "affected_by": "DF",
+            "alignment": -1000,
+            "group": 0,
+            "level": 28,
+            "hitroll": 0,
+            "hit_dice": [
+                6,
+                12,
+                703
+            ],
+            "mana_dice": [
+                14,
+                9,
+                100
+            ],
+            "dam_dice": [
+                5,
+                4,
+                8
+            ],
+            "dam_type": "none",
+            "ac_pierce": -8,
+            "ac_bash": -8,
+            "ac_slash": -8,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 750,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3405,
+            "name": "oldstyle priest",
+            "short_description": "the priest",
+            "long_description": "A priest of God stands here solemnly speaking words of praise.\n",
+            "description": "Obviously a goodly man, you feel closer to God just by gazing upon this man.\nDressed in white, fine white hair, and a soft slightly wrinkled face ...\nthis man has a sacred beauty.  You see a halo around his head.\n",
+            "race": "human",
+            "act": "ABLQ",
+            "affected_by": "DFH",
+            "alignment": 1000,
+            "group": 0,
+            "level": 15,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                208
+            ],
+            "mana_dice": [
+                15,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                5,
+                3
+            ],
+            "dam_type": "none",
+            "ac_pierce": -2,
+            "ac_bash": -2,
+            "ac_slash": -2,
+            "ac_exotic": 6,
+            "off_flags": "EIKU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 20,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3406,
+            "name": "oldstyle Mi-Go Fungi",
+            "short_description": "the Mi-Go",
+            "long_description": "A Mi-Go is crawling here.\n",
+            "description": "Mi-Go, the Fungi from Yuggoth ... it is a pinkish being about five feet long;\nwith a crustaceous body bearing a vast pair of membranous wings and several\nsets of articulate limbs, body a sort of convoluted ellipsoid, covered with\nmultitudes of very small antennae, where a head would ordinarily be.  These\nbeings sometimes walk on all their legs and sometimes on the hind pair only.\n",
+            "race": "human",
+            "act": "AF",
+            "affected_by": "0",
+            "alignment": -500,
+            "group": 0,
+            "level": 12,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                10,
+                150
+            ],
+            "mana_dice": [
+                6,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                10,
+                3
+            ],
+            "dam_type": "none",
+            "ac_pierce": 0,
+            "ac_bash": 0,
+            "ac_slash": 0,
+            "ac_exotic": 8,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 32,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3407,
+            "name": "oldstyle nightgaunt",
+            "short_description": "The nightgaunt",
+            "long_description": "A nightgaunt is standing here\n",
+            "description": "... shocking and uncouth black thing with smooth, oily, skin, unpleasant horns\nthat curve inward toward each other, bat wings whose beating make no sound,\nugly prehensile paws, and a barbed tail that lashes disquietingly.  And worst\nof all, it makes absolutely no sound or speech and smiles not at all because\nit has no face, only a suggestive blackness where a face ought to be ...\n",
+            "race": "human",
+            "act": "AFG",
+            "affected_by": "PQ",
+            "alignment": -1000,
+            "group": 0,
+            "level": 10,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                121
+            ],
+            "mana_dice": [
+                5,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                4,
+                2
+            ],
+            "dam_type": "none",
+            "ac_pierce": 1,
+            "ac_bash": 1,
+            "ac_slash": 1,
+            "ac_exotic": 8,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 7,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3408,
+            "name": "oldstyle hunting horror",
+            "short_description": "The hunting horror",
+            "long_description": "The hunting horror is here in wait of an unwary traveler.\n",
+            "description": "Serving Nyarlathotep and Roch'tar, these beings are hunting for victims.\nThey resemble enormous ropy black serpents or worms possessing bat-like or\numbrella-like wings.  Their forms continually shift and change, twitching\nand writhing, so it is hard to look at them.  They speak in great harsh\nvoices.  A hunting horror is HUGE, normally around 40 feet long.\n",
+            "race": "human",
+            "act": "AF",
+            "affected_by": "DF",
+            "alignment": -1000,
+            "group": 0,
+            "level": 20,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                333
+            ],
+            "mana_dice": [
+                10,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                8,
+                5
+            ],
+            "dam_type": "none",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": -4,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 100,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3409,
+            "name": "oldstyle weeds",
+            "short_description": "some cave weeds",
+            "long_description": "Some weeds are creeping across the floor.\n",
+            "description": "Just some unpleasant looking vine-like growths ...\n",
+            "race": "human",
+            "act": "ACF",
+            "affected_by": "DPQ",
+            "alignment": 0,
+            "group": 0,
+            "level": 6,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                71
+            ],
+            "mana_dice": [
+                3,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                7,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 4,
+            "ac_bash": 4,
+            "ac_slash": 4,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 4,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3410,
+            "name": "oldstyle snapper joe",
+            "short_description": "Snapper Joe",
+            "long_description": "Snapper Joe is standing here leering at you chillingly.\n",
+            "description": "What an ugly fiend! He is about 6'6'' and has mostly greenish skin with\nbright red hair. Half his face is burnt off and he has a perpetual smile.\nHe is called up from his service in hell in order to aid the Undying One.\n",
+            "race": "human",
+            "act": "AB",
+            "affected_by": "D",
+            "alignment": -750,
+            "group": 0,
+            "level": 20,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                333
+            ],
+            "mana_dice": [
+                10,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                8,
+                5
+            ],
+            "dam_type": "none",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": -4,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 111,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3411,
+            "name": "oldstyle X-ist eater",
+            "short_description": "The X-ist flesh eater",
+            "long_description": "An X-ist flesh eater is sitting here munching on some coffin remains\n",
+            "description": "A large hairy monstrous beast, the only LIVE thing you have seen down here.\nIt stands approximately 8 feet tall and hunches over to fit in this\nsmall room.  It has a pair of tremendous claws that it uses to rip and tear.\nIt has dog-like face except ... different.  Bright glowing eyes and a grimace\nlead you to believe that he knew that you were coming.\n",
+            "race": "human",
+            "act": "ABF",
+            "affected_by": "D",
+            "alignment": -1000,
+            "group": 0,
+            "level": 17,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                258
+            ],
+            "mana_dice": [
+                8,
+                9,
+                100
+            ],
+            "dam_dice": [
+                3,
+                4,
+                4
+            ],
+            "dam_type": "none",
+            "ac_pierce": -3,
+            "ac_bash": -3,
+            "ac_slash": -3,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 78,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3412,
+            "name": "oldstyle spirit ghost king crotus",
+            "short_description": "the spirit of King Crotus",
+            "long_description": "The spirit of King Crotus is floating lazily above the floor.\n",
+            "description": "Floating above the ground here and looking a bit dead, he whispers\nsoftly into the air:\n\n    The forces of evil have unlocked my spirit as\n    well as one other.  Free me from this misery,\n    anyone that can hear. The peace of the grave\n    calls me but I am blocked from its quiet.\n",
+            "race": "human",
+            "act": "ABR",
+            "affected_by": "DF",
+            "alignment": 350,
+            "group": 0,
+            "level": 20,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                308
+            ],
+            "mana_dice": [
+                20,
+                9,
+                100
+            ],
+            "dam_dice": [
+                3,
+                4,
+                4
+            ],
+            "dam_type": "none",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": -4,
+            "ac_exotic": 3,
+            "off_flags": "FU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 2,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3413,
+            "name": "oldstyle rock slug",
+            "short_description": "the rock slug",
+            "long_description": "A rock slug is slowly creeping along, leaving a slime trail behind it.\n",
+            "description": "It is a large brownish slug.  Got any salt?  Didn't think so ...\n",
+            "race": "human",
+            "act": "AC",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 3,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                35
+            ],
+            "mana_dice": [
+                1,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                6,
+                0
+            ],
+            "dam_type": "none",
+            "ac_pierce": 7,
+            "ac_bash": 7,
+            "ac_slash": 7,
+            "ac_exotic": 10,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3414,
+            "name": "oldstyle etcher",
+            "short_description": "The mad etcher",
+            "long_description": "The mad etcher is sitting here babbling to himself and working on the wall.\n",
+            "description": "Quite insane, the mad etcher has been here for two decades.  His hair is\nwhite; he babbles nonsense to himself; a layer of dust covers his out-of-date\nclothing; and he seems to be working on the same portion of the wall near\nthe base ... oh and he seems quite blind.\n\nHe leers insanely at you and says 'heh heh what can I do for you children?\nPlease don't mind my wife, she is always like that ... hello dear can you\nmake some tea for our company?  Oh good!  Now sit right down will you?\nWould you like hot or cold tea?  Yes the weather is ...'\n\nAnd on he babbles ...\n",
+            "race": "human",
+            "act": "AGR",
+            "affected_by": "A",
+            "alignment": 1000,
+            "group": 0,
+            "level": 5,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                46
+            ],
+            "mana_dice": [
+                5,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                5,
+                0
+            ],
+            "dam_type": "none",
+            "ac_pierce": 6,
+            "ac_bash": 6,
+            "ac_slash": 6,
+            "ac_exotic": 8,
+            "off_flags": "FU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "sit",
+            "default_pos": "sit",
+            "sex": "male",
+            "wealth": 2,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3415,
+            "name": "oldstyle wife ghost specter",
+            "short_description": "The spectral etcher's wife",
+            "long_description": "The spectral wife of the etcher is very faintly floating here.\n",
+            "description": "You can barely make her out ... though it almost makes you vomit.\nShe is missing half her head.  The remaining half is smashed in horribly like\nshe took a nasty fall.  Her one damaged eye hangs on its own.  She smiles\ninsanely at you thru a broken jaw and missing teeth.  One hand of hers is\nresting on the shoulder of the etcher ... her husband.\n",
+            "race": "human",
+            "act": "AB",
+            "affected_by": "Q",
+            "alignment": 1000,
+            "group": 0,
+            "level": 7,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                85
+            ],
+            "mana_dice": [
+                3,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                8,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 4,
+            "ac_bash": 4,
+            "ac_slash": 4,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "female",
+            "wealth": 6,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3416,
+            "name": "oldstyle body",
+            "short_description": "The half-decomposed body",
+            "long_description": "A half-decomposed body is lying in the corner here.\n",
+            "description": "YUK! It's ugly, disgusting ... it smells ... it also moves a bit!\n",
+            "race": "human",
+            "act": "ACF",
+            "affected_by": "0",
+            "alignment": -350,
+            "group": 0,
+            "level": 6,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                71
+            ],
+            "mana_dice": [
+                3,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                7,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 4,
+            "ac_bash": 4,
+            "ac_slash": 4,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 4,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        }
+    ],
+    "objects": [
+        {
+            "vnum": 3400,
+            "name": "candlestick",
+            "short_description": "a candlestick",
+            "description": "A pewter candlestick is standing here.",
+            "material": "oldstyle",
+            "type": "light",
+            "extra_flags": "0",
+            "wear_flags": "AO",
+            "values": "0 0 24 0 0",
+            "level": 0,
+            "weight": 50,
+            "cost": 50,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "candlestick",
+                    "description": "It is a rather old-looking three-armed candlestick made from pewter.  Its\ncandles are a yellowish white colour.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3402,
+            "name": "tickler",
+            "short_description": "a nightgaunt's tickler",
+            "description": "A nightgaunt's tickler has been left here.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "H",
+            "wear_flags": "AN",
+            "values": "whip 2 4 slime 0",
+            "level": 7,
+            "weight": 80,
+            "cost": 540,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 2
+                },
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "tickler",
+                    "description": "A horrid black mass of gooey tentacles obviously ripped from the corpse\nof a nightgaunt ... disgusting.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3403,
+            "name": "plasma webbing",
+            "short_description": "disgusting pinkish plasma webbing",
+            "description": "A pile of pink material is lying here",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "JL",
+            "wear_flags": "AD",
+            "values": "5 5 5 4 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 1800,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "plasma webbing",
+                    "description": "Yuck, mossy and wet.  It looks like some sort of webbing.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3410,
+            "name": "rod key",
+            "short_description": "a queerly shaped rod",
+            "description": "A queerly shaped rod is lying here.",
+            "material": "oldstyle",
+            "type": "key",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 50,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "rod key",
+                    "description": "This rod looks sort of octagonal, and sort of like a key and crowbar.  You\nrecognize that it will probably fit the lock at the entrance of the tombs.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3411,
+            "name": "large black dirty key",
+            "short_description": "a large black dirty key",
+            "description": "A large black dirty key is lying here",
+            "material": "oldstyle",
+            "type": "key",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 30,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "large black dirty key",
+                    "description": "One of those traditional old lock type keys ... except huge, black and\nfilthy ... hmm ... like it has been buried for some time ...\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3412,
+            "name": "head jubal mummy",
+            "short_description": "the mummified head of Jubal the Benevolent",
+            "description": "The mummified head of Jubal the Benevolent is lolling back and forth.",
+            "material": "oldstyle",
+            "type": "container",
+            "extra_flags": "K",
+            "wear_flags": "A",
+            "values": "3 AC -1 3 100",
+            "level": 0,
+            "weight": 200,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "head jubal mummy",
+                    "description": "ACK! It's half eaten away ... yet it is whole ... in fact I think it can be\nopened and closed ... is there something in its teeth!?!?!? ACK you do it!\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3413,
+            "name": "ring black marble",
+            "short_description": "a black marble ring",
+            "description": "A black marble ring is lying here on the ground.",
+            "material": "oldstyle",
+            "type": "treasure",
+            "extra_flags": "GK",
+            "wear_flags": "AB",
+            "values": "0 0 0 0 0",
+            "level": 3,
+            "weight": 20,
+            "cost": 26,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 20,
+                    "modifier": 1
+                },
+                {
+                    "location": 14,
+                    "modifier": 10
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "black marble ring",
+                    "description": "It is pitch black and has beautiful swirls characteristic of marble all\nthrough it.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3414,
+            "name": "rapier thin",
+            "short_description": "a whisper thin rapier",
+            "description": "A rapier is lying here.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "B",
+            "wear_flags": "AN",
+            "values": "sword 4 2 pierce 0",
+            "level": 16,
+            "weight": 40,
+            "cost": 3500,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 1
+                },
+                {
+                    "location": 2,
+                    "modifier": 2
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "thin rapier",
+                    "description": "It seems so thin that it would be useless but at the same time it looks deadly.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3415,
+            "name": "sarcophagus coffin",
+            "short_description": "a stone sarcophagus",
+            "description": "A stone sarcophagus is sitting here.",
+            "material": "oldstyle",
+            "type": "container",
+            "extra_flags": "0",
+            "wear_flags": "0",
+            "values": "400 ABCD 3416 400 100",
+            "level": 0,
+            "weight": 0,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "sarcophagus coffin",
+                    "description": "A well crafted, if dusty and ancient, home for the afterworld, it seems\nto be able to be opened but needs a key.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3416,
+            "name": "iron heavy key",
+            "short_description": "a heavy iron key",
+            "description": "A heavy iron key is lying here.",
+            "material": "oldstyle",
+            "type": "key",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 40,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "key iron heavy",
+                    "description": "It looks to be a very heavy old iron key.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3417,
+            "name": "flask wineflask",
+            "short_description": "a wineflask",
+            "description": "A wineflask has been been left here.",
+            "material": "oldstyle",
+            "type": "drink",
+            "extra_flags": "0",
+            "wear_flags": "AO",
+            "values": "30 30 'red wine' 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 400,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "wineflask flask",
+                    "description": "A nice leather wineflask that has somehow survived the ages in a coffin.\nThe wine should be nicely aged.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3418,
+            "name": "coins",
+            "short_description": "a mound of coins fit for a dead king",
+            "description": "You see a mound of coins fit for a dead king here",
+            "material": "oldstyle",
+            "type": "money",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "400 8 0 0 0",
+            "level": 0,
+            "weight": 500,
+            "cost": 0,
+            "condition": "P"
+        },
+        {
+            "vnum": 3419,
+            "name": "key",
+            "short_description": "key to the coffin",
+            "description": "The key to the coffin is lying here",
+            "material": "oldstyle",
+            "type": "key",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 30,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "key",
+                    "description": "Neat you have the key to the coffin...is is a soft orange color\nand burns in your hand a bit.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3420,
+            "name": "rathcor",
+            "short_description": "a hidden compartment in the room",
+            "description": "",
+            "material": "oldstyle",
+            "type": "container",
+            "extra_flags": "C",
+            "wear_flags": "0",
+            "values": "10 AC 0 10 100",
+            "level": 0,
+            "weight": 0,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "rathcor",
+                    "description": "Ah HA!  A hidden compartment!\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3421,
+            "name": "rusty sword curved scimitar",
+            "short_description": "a rusty curved scimitar",
+            "description": "A sword has been left lying here",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "sword 2 3 slash 0",
+            "level": 3,
+            "weight": 60,
+            "cost": 370,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "rusty sword scimitar",
+                    "description": "Very rusty and old...it has a wide blade and chunks missing from\nits cutting edge.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3422,
+            "name": "piece slime",
+            "short_description": "a piece of slime",
+            "description": "You step on a piece of slime...your foot squishes a bit",
+            "material": "oldstyle",
+            "type": "food",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "15 15 0 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "slime piece",
+                    "description": "ICK! This is a piece of slug-like brownish green slime...\nBlech!\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3423,
+            "name": "smock",
+            "short_description": "an artist's smock",
+            "description": "An artist's smock is lying here on the floor.",
+            "material": "oldstyle",
+            "type": "clothing",
+            "extra_flags": "0",
+            "wear_flags": "AD",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 70,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "smock",
+                    "description": "It has paint and little shavings of different materials all over it.\nIt is very old an smells of paint, mildew, and rot.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3424,
+            "name": "scroll tightly rolled",
+            "short_description": "a tightly rolled scroll",
+            "description": "A yellowing tightly rolled scroll is here",
+            "material": "oldstyle",
+            "type": "scroll",
+            "extra_flags": "G",
+            "wear_flags": "AO",
+            "values": "15 'colour spray' 'create food' 'magic missile' ''",
+            "level": 8,
+            "weight": 50,
+            "cost": 1070,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "scroll tightly rolled",
+                    "description": "It is tightly wound. The writing on the inside when opened up is very\nunreadable but the scroll has a seal on it with a grey :\n\n    88\n    88\n8888  8888\n    88\n    88\n\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3425,
+            "name": "auburn orb",
+            "short_description": "an auburn-colored orb",
+            "description": "An orb is here",
+            "material": "oldstyle",
+            "type": "staff",
+            "extra_flags": "BG",
+            "wear_flags": "AO",
+            "values": "10 2 2 'charm person' 0",
+            "level": 15,
+            "weight": 100,
+            "cost": 4700,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "auburn orb",
+                    "description": "You gaze into the orb and are almost lost in the swirling mists of color\ninside of this rare and beautiful object.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3426,
+            "name": "bar gold",
+            "short_description": "a bar of gold",
+            "description": "A bar of gold is lying here",
+            "material": "oldstyle",
+            "type": "treasure",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 30,
+            "cost": 1000,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "bar gold",
+                    "description": "A nice little brick of gold...very dusty and old... it has some emblem\non it...The emblem is a large 'J'\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3427,
+            "name": "cape dark black",
+            "short_description": "a dark black cape",
+            "description": "A dark black cape is lying here",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "G",
+            "wear_flags": "AK",
+            "values": "5 5 5 0 0",
+            "level": 0,
+            "weight": 100,
+            "cost": 100,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 17,
+                    "modifier": 10
+                },
+                {
+                    "location": 13,
+                    "modifier": 10
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "dark black cape",
+                    "description": "The cape is gently flows and pulls in the light so evenly and perfectly\nthat the cape seems to be simply a void of blackness. It is quite beautiful\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3428,
+            "name": "flaming black sword long longsword",
+            "short_description": "the pitch-black flaming longsword",
+            "description": "A pitch-black long swor here",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "G",
+            "wear_flags": "AN",
+            "values": "sword 2 12 slash AC",
+            "level": 28,
+            "weight": 200,
+            "cost": 2200,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "flaming sword long longsword",
+                    "description": "This sword is amazing! It almost wields itself! As you test it out, the\nflames seems to roar brighter as you go thru basic swordsman routines.\nit is obviously a great find!\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3429,
+            "name": "breast plate dented worn",
+            "short_description": "a worn and dented breast plate",
+            "description": "A piece of armour is here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AD",
+            "values": "6 6 6 0 0",
+            "level": 15,
+            "weight": 500,
+            "cost": 2100,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "breast dented plate worn",
+                    "description": "Though this piece of armour is worn and dented it looks very usable.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3430,
+            "name": "key silver",
+            "short_description": "a silver key",
+            "description": "You see a silver key here.",
+            "material": "oldstyle",
+            "type": "key",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "key silver",
+                    "description": "for the altar...\n"
+                }
+            ]
+        }
+    ],
+    "rooms": [
+        {
+            "vnum": 3405,
+            "name": "Inside the Chapel",
+            "description": "You are in a small, dark chapel.  The dark brown glass in the tiny windows\ndo not let much light through.  A few rows of worn wooden benches stand here.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The chapel door is made of dark wood.\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3604
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "altar",
+                    "exit_locks": 2,
+                    "exit_key": 3430,
+                    "exit_u1_vnum": 3421
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "benches rows",
+                    "description": "The benches are not of the comfortable kind.\n"
+                },
+                {
+                    "keyword": "glass windows",
+                    "description": "The windows must be meant to be dark.  At least they are completely clean.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3408,
+            "name": "Stairwell into Darkness",
+            "description": "You sense even more danger coming from below but are urged onward ...\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": 3411,
+                    "exit_u1_vnum": 3449
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3450
+                }
+            ]
+        },
+        {
+            "vnum": 3409,
+            "name": "The Acolyte's Bedroom",
+            "description": "This is why you were not welcomed at the entrance by the tomb's faithful\nservants ... blood and gore is ankle deep in here.\nOh NO! the door shut behind you!  It's a trap!\nA bloodied corpse of an acolyte is lying here ...\nA bloodied corpse of an acolyte is lying here ...\nA bloodied corpse of an acolyte is lying here ...\n",
+            "flags": "ACD",
+            "sector": 0,
+            "extra_descriptions": [
+                {
+                    "keyword": "corpse corpses",
+                    "description": "Mauled and torn apart ... throats were ripped out and guts spilled on the\nfloor ... you slip and land, planting yourself firmly in the slick wetness\nand splattering yourself with offal.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3410,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3415
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3411
+                }
+            ]
+        },
+        {
+            "vnum": 3411,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3410
+                }
+            ]
+        },
+        {
+            "vnum": 3412,
+            "name": "The Grand Hall of Kings",
+            "description": "You are at the west end of the Grand Hall of Kings.  There is a doorway to the\nsouth with something strange written above it.  Also on the floor are dried\nblood stains, but their color seems a little wrong.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3417
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A door to the south\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3413
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "door writing",
+                    "description": "Above the door is some strange writing!  It is worn with age, but it refers\nto an ancient ruler named 'Shohan'.\n"
+                },
+                {
+                    "keyword": "stain stains",
+                    "description": "That's odd ... they seem a little GREEN.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3413,
+            "name": "The Shrine of Shohan",
+            "description": "BLOOD EVERYWHERE!\nThe walls are coated with blood, bits of bloody flesh lie at your feet,\nand torn clothing is scattered about.  It wouldn't disturb you in the least\nexcept that it is all FRESH!  What ever used to pass as an altar here,\nlies overturned and smashed.  Doors lead to the south and to the north.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "north",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3412
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "south",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3414
+                }
+            ]
+        },
+        {
+            "vnum": 3414,
+            "name": "The Tomb of Shohan",
+            "description": "Once beautiful, this place has been turned into a slaughterhouse by the hands\nof evil beings ... even more blood and dead, rotting flesh.  This place looks\nlike the feeding grounds of beasts and monsters.  The overturned sarcophagus\nof the once powerful King Shohan lies here.  A door leads to the north and a\ndoorway has been hewn to the east.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "door north",
+                    "exit_locks": 1,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3413
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3419
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "coffin sarcophagus",
+                    "description": "Now destroyed ... there is writing on it: 'All hail the new king; we serve\nthe Roch'tar, the Undying One!  Those who decline his worship shall be\nslaughtered!'\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3415,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3420
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3416
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3410
+                }
+            ]
+        },
+        {
+            "vnum": 3416,
+            "name": "Entrance to the Lower Chambers",
+            "description": "You can tell that this area wasn't a part of the original construction.\nThe walls have been hewn by a mighty force look as though they were CLAWED.\nThe passage slopes upward here and also continues to the north.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3415
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "tunnel",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3418
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "walls",
+                    "description": "Something BIG must have done this job!  There are traces of BLOOD in the\nclaw marks.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3417,
+            "name": "The Grand Hall of Kings",
+            "description": "This is the western wing of the Grand Hall of Kings.  Your only exits are to\nthe east and west in this gloomy hallway.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3422
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3412
+                }
+            ]
+        },
+        {
+            "vnum": 3418,
+            "name": "The Shrine of Cristis",
+            "description": "Different than the rest, this place has not been desecrated.  An altar still\nstands here and the walls show scenes from the life of Cristis the Kind,\na ruler of the outlying regions west of Midgaard.  There is a stone staircase\nleading down.  The Ghost of Cristis the Kind stands here.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3419
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "staircase",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3416
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "ghost cristis",
+                    "description": "His rest has been disturbed by evil creatures who have invaded his domain\nand grave.  He holds up a parchment for you to read:\n\n     Hello stranger and last hope for Midgaard and this tomb!\n   This is a plea for aid by a man long since dead from this Earth.\n     The forces of evil have taken control of this tomb and the\n   Kings of old need your aid to free us and deliver us to peace\n   once again.  I think that I alone have been able to appear and\n   communicate with the mortal world.\n     Roch'tar, the reincarnate Vampire, now rules these tombs.\n   You must find and defeat him and his minions!\n     May God bless you on your Quest!\n"
+                },
+                {
+                    "keyword": "altar",
+                    "description": "It stands 2 feet high with the remnants of candle-wax on top.  There is\nan inscription on the side:  'Praise the almighty Cristis the bringer of\ngood and justice to the world.  He who fought the evilest finally is at\npeace.  May the Gods remember him forever ...'\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3419,
+            "name": "The Tomb of Cristis",
+            "description": "Everything here has simply been destroyed.   Exits lead north and west.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3418
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3414
+                }
+            ]
+        },
+        {
+            "vnum": 3420,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3425
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3415
+                }
+            ]
+        },
+        {
+            "vnum": 3421,
+            "name": "Entrance Chamber to the Grand Hall of Kings",
+            "description": "Whoever built this place must have been very rich indeed!  Though you did\nenter through a rather small door this place has enough room to hold several\nscore of people.  The floor has a beautifully woven carpet, and the walls are\ncovered in finely crafted tapestries. You can tell that these things must have\nbeen worth much but they have not lasted well throughout the ages.  Massive\ndoors lead off to the south and a large stone staircase leads up.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "Finely polished oak doors stand to the south.\n",
+                    "exit_keyword": "oak",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3422
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "You see a large set of stone stairs leading upwards to a small stone door at\nthe top. \n",
+                    "exit_keyword": "stone trapdoor door",
+                    "exit_locks": 2,
+                    "exit_key": 3410,
+                    "exit_u1_vnum": 3405
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "letters graffiti",
+                    "description": "'Beware here all of man, because past here lies only death.'\n\n    Insho'rkthon brsskra-lehsn Roch'tar\n\nBeneath, there are two criss-crossing scratchmarks in an X formation that\nlook like someone (or something) raked their claws across the wood.\n"
+                },
+                {
+                    "keyword": "oak",
+                    "description": "They're HUGE!  They are at least 12 feet tall and about 10 feet wide.\nIf not for one thing they would be perfectly preserved.  There appears\nto be some letters crudely scratched into the wood.\n"
+                },
+                {
+                    "keyword": "staircase stairs",
+                    "description": "Though quite cracked they do look very stable.\n"
+                },
+                {
+                    "keyword": "tapestry tapestries",
+                    "description": "The tapestries were woven into beautiful and exciting scenes of battles\nlong ago.  One on the left your shows the historic battle between Jubal the\nBenevolent and Hroth Kragen's forces that eventually Jubal's army won (of\ncourse).\n"
+                },
+                {
+                    "keyword": "stone door trapdoor",
+                    "description": "It's rather small and looks quite heavy but maybe with some kind of leverage\nyou could move it.  It has a queerly shaped hole that looks big enough\nfor an equally queerly shaped pole to fit inside.  If only you had it!\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3422,
+            "name": "The Grand Hall of Kings",
+            "description": "A long hallway stretches east and west.  On the southern side of the hall\nthere are many doors, each with the name of a king who has died and is\nentombed here.  The hallway is beautiful yet chilling.  Even though the area\nhas been kept well by acolytes, there remains a stench of the undead.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "oak",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3421
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3427
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The door has written above it: 'May all the lands thank Crotus the Victor.\nWithout his guidance this kingdom would not have stood.'\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3423
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3417
+                }
+            ]
+        },
+        {
+            "vnum": 3423,
+            "name": "The Shrine of Crotus",
+            "description": "Mostly rubble, this place used to be the shrine of the famous king Crotus,\nwho saved the northern regions from being overrun by the goblin hordes of\n100 years ago.  If not for him, Midgaard of course would have eventually been\nconquered as well.  Though Crotus was a goodly king, it was rumored that he\nturned to the dark ways in his dying years ... and died an evil man.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3422
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3424
+                }
+            ]
+        },
+        {
+            "vnum": 3424,
+            "name": "The Tomb of Crotus",
+            "description": "A sarcophagus lies in the middle of the room and seems undisturbed.\nA hole has been knocked into the east wall.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3423
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3429
+                }
+            ]
+        },
+        {
+            "vnum": 3425,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3426
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3420
+                }
+            ]
+        },
+        {
+            "vnum": 3426,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3425
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3430
+                }
+            ]
+        },
+        {
+            "vnum": 3427,
+            "name": "The Grand Hall of Kings",
+            "description": "You are in the western part of the Grand Hall of Kings.  To the south is a\ndoor and to the east and west the hall continues.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3432
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3428
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3422
+                }
+            ]
+        },
+        {
+            "vnum": 3428,
+            "name": "The Shrine of Mitnar",
+            "description": "Mitnar was a gruesome beast of a man ... he loved battle ... and nothing\nelse.  Warriors did love Mitnar, and all fighting men honored him.\nOn the wall is depicted battle after battle after battle.\nA small opening has been shaped carefully to the east.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3427
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3433
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3429
+                }
+            ]
+        },
+        {
+            "vnum": 3429,
+            "name": "The Tomb of Mitnar",
+            "description": "The wall paintings show men and women warriors alike bowing down to Mitnar,\nprisoners of war being put to the sword by Mitnar, and great heaps of gold\nand weapons under the feet of Mitnar.  Where his coffin was, there is now\nonly a rectangular blemish on the floor of the dusty room.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3428
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3424
+                }
+            ]
+        },
+        {
+            "vnum": 3430,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3435
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3431
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3426
+                }
+            ]
+        },
+        {
+            "vnum": 3431,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3430
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3436
+                }
+            ]
+        },
+        {
+            "vnum": 3432,
+            "name": "The Grand Hall of Kings",
+            "description": "You are still walking through the gloomy hallway.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3437
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3427
+                }
+            ]
+        },
+        {
+            "vnum": 3433,
+            "name": "The Shrine of Frath",
+            "description": "Little chunks of dried meat are spattered throughout this room.  The walls\nare covered in gore.  Almost as if they were painted ... ICK!  You can\nalmost make out the design!\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3438
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3428
+                }
+            ]
+        },
+        {
+            "vnum": 3434,
+            "name": "The Tomb of Frath",
+            "description": "UGH!  The sarcophagus is opened up and the mummified body lies out in the\nopen, ripped to pieces.  Gnawed pieces of flesh and bone are strewn here.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3439
+                }
+            ]
+        },
+        {
+            "vnum": 3435,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3440
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3436
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3430
+                }
+            ]
+        },
+        {
+            "vnum": 3436,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3435
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3441
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3431
+                }
+            ]
+        },
+        {
+            "vnum": 3437,
+            "name": "The Grand Hall of Kings",
+            "description": "You are at the western end of the Grand Hall of Kings.  There is a\ndoor leading north and the hallway continues west.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3409
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3432
+                }
+            ]
+        },
+        {
+            "vnum": 3438,
+            "name": "The Shrine of Jubal",
+            "description": "This was once beautiful.  Now the huge tapestries have been torn down and the\ncarpeting pulled up ... the paintings on the ceiling are unreadable and the\naltar is crumbled.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3439
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3433
+                }
+            ]
+        },
+        {
+            "vnum": 3439,
+            "name": "The Tomb of Jubal",
+            "description": "The smell coming off of the opened sarcophagus is nauseating.  The floor is\nslightly crumpled and walls are raked ... but the worst part is the mummy ...\nJubal the Benevolent is missing his head!\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3438
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3434
+                }
+            ]
+        },
+        {
+            "vnum": 3440,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3445
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3441
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3435
+                }
+            ]
+        },
+        {
+            "vnum": 3441,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3440
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3446
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3436
+                }
+            ]
+        },
+        {
+            "vnum": 3442,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3447
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3443
+                }
+            ]
+        },
+        {
+            "vnum": 3443,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3442
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3444
+                }
+            ]
+        },
+        {
+            "vnum": 3444,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3443
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3449
+                }
+            ]
+        },
+        {
+            "vnum": 3445,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3446
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3440
+                }
+            ]
+        },
+        {
+            "vnum": 3446,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3445
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3447
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3441
+                }
+            ]
+        },
+        {
+            "vnum": 3447,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3446
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3448
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3442
+                }
+            ]
+        },
+        {
+            "vnum": 3448,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "This room has been totally hollowed out and smoothed, and a pit has been\ndrilled in the center of the floor.  There are extensive gruesome paintings\nof beasts and monsters terrorizing the countryside; vampires sucking the\nblood of beasts and humans alike.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3447
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "painting paintings mural",
+                    "description": "There is a tiny painting of a vault in this mural ... and it seems to be a\nreflected picture of the vault ... the word in tiny print is 'rathcor'.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3449,
+            "name": "The Lower Chambers and Tombs of the Undead",
+            "description": "The stench of death is heavy in these caverns.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": 3411,
+                    "exit_u1_vnum": 3408
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3444
+                }
+            ]
+        },
+        {
+            "vnum": 3450,
+            "name": "Entrance to the Forbidden Catacombs",
+            "description": "You have entered the forbidden catacombs.  This cave system must have been\nbuilt long ago.  The air is dank and smells of something dead ...  or maybe\nundead.  Enter here at your own risk ... something evil abides.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3451
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3452
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3453
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3454
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3408
+                }
+            ]
+        },
+        {
+            "vnum": 3451,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3455
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3450
+                }
+            ]
+        },
+        {
+            "vnum": 3452,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3461
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3450
+                }
+            ]
+        },
+        {
+            "vnum": 3453,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3450
+                }
+            ]
+        },
+        {
+            "vnum": 3454,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3450
+                }
+            ]
+        },
+        {
+            "vnum": 3455,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3456
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3451
+                }
+            ]
+        },
+        {
+            "vnum": 3456,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3455
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3457
+                }
+            ]
+        },
+        {
+            "vnum": 3457,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3458
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3456
+                }
+            ]
+        },
+        {
+            "vnum": 3458,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3457
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see unfathomable blackness to the south ...\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3472
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3459
+                }
+            ]
+        },
+        {
+            "vnum": 3459,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3458
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see something's den.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3460
+                }
+            ]
+        },
+        {
+            "vnum": 3460,
+            "name": "Den of the Vampire",
+            "description": "Your mind whirls in the hideous madness of this place.  The stench\nis horrendous and dead bodies, sucked of life, lay all over.  One coffin\nlies in the center of the room ... waiting for YOU!\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3459
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "A jet black coffin ... who knows what lurks beneath.\n",
+                    "exit_keyword": "coffin",
+                    "exit_locks": 2,
+                    "exit_key": 3419,
+                    "exit_u1_vnum": 3475
+                }
+            ]
+        },
+        {
+            "vnum": 3461,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3462
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3452
+                }
+            ]
+        },
+        {
+            "vnum": 3462,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3463
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Too dark too tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3461
+                }
+            ]
+        },
+        {
+            "vnum": 3463,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3462
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3464
+                }
+            ]
+        },
+        {
+            "vnum": 3464,
+            "name": "The Catacombs",
+            "description": "Stone walls, musty air ... the earth seems to moan softly.\n",
+            "flags": "ADN",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "There is a secret door here.",
+                    "exit_keyword": "secret",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3470
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3465
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3463
+                }
+            ]
+        },
+        {
+            "vnum": 3465,
+            "name": "The Gilded Hallway",
+            "description": "Wow!  Although this hallway is quite filthy and dusty, it is noticeably\ndifferent than the rest of the catacombs ... but you don't feel safe yet.\nThe walls faintly show ancient detailed etchings in gold and silver of\nancient rituals ... not all of which seem pleasant.  The hallway continues\nnorth into the catacombs and further south as long as you can see.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The glow of your light reflects off the walls and you see the catacombs.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3464
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The glow of your light reflects off the walls ... the gilded hallway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3466
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "etchings",
+                    "description": "Beautiful yet disturbing, they urge you to move onward.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3466,
+            "name": "The Gilded Hallway",
+            "description": "Ancient etchings and writing in intricate gold and silver designs fill these\nwalls.  You are tempted to linger and examine them closely.  Your light source\nflickers off the walls showing you exits north and south.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Your light reveals more of the hallway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3465
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Your light reveals more of the hallway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3467
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "etchings",
+                    "description": "Beautiful yet disturbing, they urge you to move onward.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3467,
+            "name": "The Gilded Hallway",
+            "description": "Ancient etchings and writing in intricate gold and silver designs fill these\nwalls.  You are tempted to linger and examine them closely.  Your light source\nflickers off the walls showing you exits north and south.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Your light reveals more of the hallway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3466
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Your light reveals more of the hallway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3468
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "etchings",
+                    "description": "Beautiful yet disturbing, they urge you to move onward.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3468,
+            "name": "The Gilded Hallway",
+            "description": "Ancient etchings and writing in intricate gold and silver designs fill these\nwalls.  You are tempted to linger and examine them closely.  Your light source\nflickers off the walls showing you exits north and south.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Your light reveals more of the hallway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3467
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Your light reveals more of the hallway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3469
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "etchings",
+                    "description": "Beautiful yet disturbing, they urge you to move onward.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3469,
+            "name": "The Gilded Hallway",
+            "description": "Ancient etchings and writing in intricate gold and silver designs fill these\nwalls.  You are tempted to linger and examine them closely.  Your light source\nflickers off the walls showing you exits north.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Your light reveals more of the hallway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3468
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "etchings",
+                    "description": "Beautiful yet disturbing, they urge you to move onward.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3470,
+            "name": "A Secret Passageway",
+            "description": "A secret passage!  You wonder where it may lead!\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3471
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "east secret door",
+                    "description": "The door closed on you so softly that you didn't even notice!\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3471,
+            "name": "A Secret Passageway",
+            "description": "A secret passage!  You wonder where it may lead!\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Too dark to tell.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3470
+                }
+            ]
+        },
+        {
+            "vnum": 3472,
+            "name": "The Short Way to Hell ...",
+            "description": "You fall ...\n            hmm .... it's getting really HOT!\nYou fall ...\n                        you fall ...\n     Slowly you are cooking as you fall further ... your skin is burning and\nyour hair evaporates ...\n\n                                           you fall ...\n\n                 and fall ...\n\n                                     and STOP...!!\n\nWelcome to HELL!\n\nBut even in Hell we give you another chance.\n\n",
+            "flags": "CD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The fires of hell grow hotter to the north...\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 10401
+                }
+            ]
+        },
+        {
+            "vnum": 3475,
+            "name": "Inside the coffin",
+            "description": "You are inside a coffin.  It seems rather cramped in here.  You can climb\nup out of the coffin, or you can wait for here the real occupant to join you.\n",
+            "flags": "AD",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "lid coffin",
+                    "exit_locks": 1,
+                    "exit_key": 3419,
+                    "exit_u1_vnum": 3460
+                }
+            ]
+        }
+    ],
+    "resets": [
+        {
+            "command": "M",
+            "arg1": 3405,
+            "arg2": 1,
+            "arg3": 3405,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 3430,
+            "arg2": 99
+        },
+        {
+            "command": "D",
+            "arg1": 3405,
+            "arg2": 0,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 3405,
+            "arg2": 5,
+            "arg3": 2
+        },
+        {
+            "command": "O",
+            "arg1": 3400,
+            "arg2": 1,
+            "arg3": 3405
+        },
+        {
+            "command": "M",
+            "arg1": 3400,
+            "arg2": 8,
+            "arg3": 3441,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3421,
+            "arg2": 15,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3400,
+            "arg2": 8,
+            "arg3": 3430,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3421,
+            "arg2": 15,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3400,
+            "arg2": 8,
+            "arg3": 3410,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3421,
+            "arg2": 15,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3400,
+            "arg2": 8,
+            "arg3": 3419,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3421,
+            "arg2": 15,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3401,
+            "arg2": 7,
+            "arg3": 3414,
+            "arg4": 4
+        },
+        {
+            "command": "M",
+            "arg1": 3401,
+            "arg2": 7,
+            "arg3": 3414,
+            "arg4": 4
+        },
+        {
+            "command": "M",
+            "arg1": 3401,
+            "arg2": 7,
+            "arg3": 3414,
+            "arg4": 4
+        },
+        {
+            "command": "M",
+            "arg1": 3401,
+            "arg2": 7,
+            "arg3": 3414,
+            "arg4": 4
+        },
+        {
+            "command": "M",
+            "arg1": 3401,
+            "arg2": 7,
+            "arg3": 3409,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 3401,
+            "arg2": 7,
+            "arg3": 3409,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 3401,
+            "arg2": 7,
+            "arg3": 3409,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 3402,
+            "arg2": 10,
+            "arg3": 3447,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3402,
+            "arg2": 10,
+            "arg3": 3454,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3402,
+            "arg2": 10,
+            "arg3": 3462,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3402,
+            "arg2": 10,
+            "arg3": 3437,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3402,
+            "arg2": 10,
+            "arg3": 3409,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3403,
+            "arg2": 1,
+            "arg3": 3411,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3425,
+            "arg2": 3,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 3404,
+            "arg2": 1,
+            "arg3": 3460,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3428,
+            "arg2": 3,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3427,
+            "arg2": 10,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 3419,
+            "arg2": 1,
+            "arg3": 17
+        },
+        {
+            "command": "G",
+            "arg1": 3424,
+            "arg2": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3406,
+            "arg2": 3,
+            "arg3": 3466,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3403,
+            "arg2": 8,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3406,
+            "arg2": 3,
+            "arg3": 3463,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3403,
+            "arg2": 8,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3406,
+            "arg2": 3,
+            "arg3": 3455,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3403,
+            "arg2": 8,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3407,
+            "arg2": 5,
+            "arg3": 3465,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3402,
+            "arg2": 5,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3407,
+            "arg2": 5,
+            "arg3": 3465,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3402,
+            "arg2": 5,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3407,
+            "arg2": 5,
+            "arg3": 3457,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3402,
+            "arg2": 5,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3407,
+            "arg2": 5,
+            "arg3": 3452,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3402,
+            "arg2": 5,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3407,
+            "arg2": 5,
+            "arg3": 3453,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3402,
+            "arg2": 5,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3408,
+            "arg2": 1,
+            "arg3": 3471,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3425,
+            "arg2": 3,
+            "arg3": 17
+        },
+        {
+            "command": "G",
+            "arg1": 3426,
+            "arg2": 10
+        },
+        {
+            "command": "M",
+            "arg1": 3409,
+            "arg2": 4,
+            "arg3": 3444,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3409,
+            "arg2": 4,
+            "arg3": 3444,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3409,
+            "arg2": 4,
+            "arg3": 3426,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3409,
+            "arg2": 4,
+            "arg3": 3426,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3410,
+            "arg2": 1,
+            "arg3": 3449,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3414,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3429,
+            "arg2": 5,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 3411,
+            "arg2": 2,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 3411,
+            "arg2": 1,
+            "arg3": 3434,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3414,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "G",
+            "arg1": 3412,
+            "arg2": 2
+        },
+        {
+            "command": "P",
+            "arg1": 3413,
+            "arg2": 2,
+            "arg3": 3412,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3412,
+            "arg2": 1,
+            "arg3": 3424,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3416,
+            "arg2": 1,
+            "arg3": 17
+        },
+        {
+            "command": "O",
+            "arg1": 3415,
+            "arg2": 1,
+            "arg3": 3424
+        },
+        {
+            "command": "P",
+            "arg1": 3417,
+            "arg2": 5,
+            "arg3": 3415,
+            "arg4": 1
+        },
+        {
+            "command": "P",
+            "arg1": 3418,
+            "arg2": 1,
+            "arg3": 3415,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3413,
+            "arg2": 5,
+            "arg3": 3432,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 3422,
+            "arg2": 10
+        },
+        {
+            "command": "M",
+            "arg1": 3413,
+            "arg2": 5,
+            "arg3": 3417,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 3422,
+            "arg2": 10
+        },
+        {
+            "command": "M",
+            "arg1": 3413,
+            "arg2": 5,
+            "arg3": 3450,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 3422,
+            "arg2": 10
+        },
+        {
+            "command": "M",
+            "arg1": 3413,
+            "arg2": 5,
+            "arg3": 3418,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 3422,
+            "arg2": 10
+        },
+        {
+            "command": "M",
+            "arg1": 3413,
+            "arg2": 5,
+            "arg3": 3441,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 3422,
+            "arg2": 10
+        },
+        {
+            "command": "M",
+            "arg1": 3414,
+            "arg2": 1,
+            "arg3": 3468,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3423,
+            "arg2": 4,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3415,
+            "arg2": 1,
+            "arg3": 3468,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3416,
+            "arg2": 4,
+            "arg3": 3426,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3416,
+            "arg2": 4,
+            "arg3": 3442,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3416,
+            "arg2": 4,
+            "arg3": 3448,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3416,
+            "arg2": 4,
+            "arg3": 3411,
+            "arg4": 1
+        },
+        {
+            "command": "O",
+            "arg1": 3420,
+            "arg2": 1,
+            "arg3": 3448
+        },
+        {
+            "command": "P",
+            "arg1": 3410,
+            "arg2": 1,
+            "arg3": 3420,
+            "arg4": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3418,
+            "arg2": 5,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3421,
+            "arg2": 2,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3422,
+            "arg2": 0,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3421,
+            "arg2": 4,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 3412,
+            "arg2": 2,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3413,
+            "arg2": 0,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3422,
+            "arg2": 2,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3423,
+            "arg2": 0,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3427,
+            "arg2": 2,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3428,
+            "arg2": 0,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3437,
+            "arg2": 0,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 3449,
+            "arg2": 1,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 3408,
+            "arg2": 3,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 3460,
+            "arg2": 5,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 3475,
+            "arg2": 4,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 3464,
+            "arg2": 1,
+            "arg3": 1
+        }
+    ],
+    "shops": [],
+    "specials": [
+        {
+            "vnum": 3400,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3401,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3402,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3403,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3404,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3405,
+            "spec_fun": "spec_cast_cleric"
+        },
+        {
+            "vnum": 3407,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3408,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3410,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3411,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3412,
+            "spec_fun": "spec_cast_mage"
+        },
+        {
+            "vnum": 3414,
+            "spec_fun": "spec_cast_mage"
+        },
+        {
+            "vnum": 3415,
+            "spec_fun": "spec_cast_undead"
+        },
+        {
+            "vnum": 3416,
+            "spec_fun": "spec_cast_undead"
+        }
+    ]
+}

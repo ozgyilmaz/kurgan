@@ -1,0 +1,2482 @@
+{
+    "area": {
+        "file_name": "nirvana.are",
+        "name": "Nirvana",
+        "low_range": "30",
+        "high_range": "35",
+        "writer": "Fstall",
+        "credits": "Nirvana",
+        "min_vnum": 9000,
+        "max_vnum": 9099
+    },
+    "mobiles": [
+        {
+            "vnum": 9000,
+            "name": "tridrone",
+            "short_description": "the tridrone",
+            "long_description": "A tridrone is here doing a menial task.\n",
+            "description": "You see what appears to be a 3 sided pyramid with spidery arms and legs.\n",
+            "race": "modron",
+            "act": "ACG",
+            "affected_by": "0",
+            "alignment": 300,
+            "group": 0,
+            "level": 8,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                20,
+                80
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                2,
+                5,
+                3
+            ],
+            "dam_type": "pound",
+            "ac_pierce": 4,
+            "ac_bash": 3,
+            "ac_slash": 4,
+            "ac_exotic": 5,
+            "off_flags": "N",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "0",
+            "parts": "I",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9001,
+            "name": "quadrone",
+            "short_description": "the quadrone",
+            "long_description": "A quadrone is here watching for trespassers.\n",
+            "description": "A cubic creature, with spiny arms and legs.\n",
+            "race": "modron",
+            "act": "AFGT",
+            "affected_by": "D",
+            "alignment": 300,
+            "group": 0,
+            "level": 11,
+            "hitroll": 3,
+            "hit_dice": [
+                14,
+                10,
+                70
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                3,
+                4,
+                2
+            ],
+            "dam_type": "beating",
+            "ac_pierce": 1,
+            "ac_bash": 0,
+            "ac_slash": 1,
+            "ac_exotic": 2,
+            "off_flags": "CEK",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "0",
+            "parts": "I",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9002,
+            "name": "pentadrone",
+            "short_description": "the pentadrone",
+            "long_description": "The pentadrone is here policing the area.\n",
+            "description": "A five-armed creature which resembles a starfish on thin stilt-like legs.\n",
+            "race": "modron",
+            "act": "ABFGT",
+            "affected_by": "D",
+            "alignment": 300,
+            "group": 0,
+            "level": 14,
+            "hitroll": 3,
+            "hit_dice": [
+                15,
+                12,
+                110
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                4,
+                4,
+                3
+            ],
+            "dam_type": "slap",
+            "ac_pierce": -2,
+            "ac_bash": -2,
+            "ac_slash": 0,
+            "ac_exotic": -1,
+            "off_flags": "CEFLN",
+            "imm_flags": "R",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "0",
+            "parts": "N",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9003,
+            "name": "decaton",
+            "short_description": "the decaton",
+            "long_description": "A decaton is here overseeing the other modrons.\n",
+            "description": "The decaton is a large, ten-tentacled sphere on stumpy legs.\n",
+            "race": "modron",
+            "act": "ABFGQT",
+            "affected_by": "D",
+            "alignment": 300,
+            "group": 0,
+            "level": 17,
+            "hitroll": 4,
+            "hit_dice": [
+                25,
+                10,
+                70
+            ],
+            "mana_dice": [
+                17,
+                8,
+                50
+            ],
+            "dam_dice": [
+                4,
+                5,
+                3
+            ],
+            "dam_type": "pound",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": 0,
+            "ac_exotic": -2,
+            "off_flags": "ACEKN",
+            "imm_flags": "R",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "M",
+            "parts": "N",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9004,
+            "name": "nonaton",
+            "short_description": "the nonaton",
+            "long_description": "A nonaton is here preserving law and order.\n",
+            "description": "A cylidrical modron with 9 tentacles and stubby legs.\n",
+            "race": "modron",
+            "act": "ABFGQT",
+            "affected_by": "DH",
+            "alignment": 300,
+            "group": 0,
+            "level": 20,
+            "hitroll": 5,
+            "hit_dice": [
+                11,
+                8,
+                250
+            ],
+            "mana_dice": [
+                20,
+                8,
+                75
+            ],
+            "dam_dice": [
+                4,
+                6,
+                4
+            ],
+            "dam_type": "pound",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": -2,
+            "ac_exotic": -3,
+            "off_flags": "AEFN",
+            "imm_flags": "R",
+            "res_flags": "0",
+            "vuln_flags": "G",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "M",
+            "parts": "N",
+            "size": "large",
+            "material": "0"
+        },
+        {
+            "vnum": 9005,
+            "name": "octon",
+            "short_description": "the octon",
+            "long_description": "An octon is here governing his ward of responsilbility.\n",
+            "description": "The octon has a collar at shoulder level with 8 tentacled arms growing out of\nit.\n",
+            "race": "modron",
+            "act": "ABFGQ",
+            "affected_by": "D",
+            "alignment": 300,
+            "group": 0,
+            "level": 22,
+            "hitroll": 5,
+            "hit_dice": [
+                25,
+                10,
+                300
+            ],
+            "mana_dice": [
+                18,
+                10,
+                75
+            ],
+            "dam_dice": [
+                4,
+                6,
+                5
+            ],
+            "dam_type": "crush",
+            "ac_pierce": -5,
+            "ac_bash": -5,
+            "ac_slash": -3,
+            "ac_exotic": -4,
+            "off_flags": "ACEHK",
+            "imm_flags": "R",
+            "res_flags": "0",
+            "vuln_flags": "G",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "M",
+            "parts": "N",
+            "size": "large",
+            "material": "0"
+        },
+        {
+            "vnum": 9006,
+            "name": "septon",
+            "short_description": "the septon",
+            "long_description": "A septon is here preserving order.\n",
+            "description": "The septon appears as a human with a large bald head. It has a shoulder collar\nwith 7 tentacles coming from it.\n",
+            "race": "modron",
+            "act": "ABFGQR",
+            "affected_by": "D",
+            "alignment": 300,
+            "group": 0,
+            "level": 24,
+            "hitroll": 5,
+            "hit_dice": [
+                30,
+                10,
+                350
+            ],
+            "mana_dice": [
+                20,
+                10,
+                100
+            ],
+            "dam_dice": [
+                6,
+                4,
+                5
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -6,
+            "ac_bash": -6,
+            "ac_slash": -6,
+            "ac_exotic": -4,
+            "off_flags": "AFKO",
+            "imm_flags": "R",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "M",
+            "parts": "IN",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9007,
+            "name": "hexton",
+            "short_description": "the hexton",
+            "long_description": "A hexton is here watching over his armies.\n",
+            "description": "A hexton appears as a humanoid with 6 arms: 2 large human arms with 6 fingers,\nand 4 tentacles below tipped with sharp claws.\n",
+            "race": "modron",
+            "act": "ABFGQT",
+            "affected_by": "DFH",
+            "alignment": 300,
+            "group": 0,
+            "level": 26,
+            "hitroll": 7,
+            "hit_dice": [
+                35,
+                20,
+                300
+            ],
+            "mana_dice": [
+                20,
+                10,
+                75
+            ],
+            "dam_dice": [
+                4,
+                8,
+                6
+            ],
+            "dam_type": "slash",
+            "ac_pierce": -8,
+            "ac_bash": -8,
+            "ac_slash": -8,
+            "ac_exotic": -4,
+            "off_flags": "ACEFHIKLN",
+            "imm_flags": "AR",
+            "res_flags": "C",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "M",
+            "parts": "INP",
+            "size": "large",
+            "material": "0"
+        },
+        {
+            "vnum": 9008,
+            "name": "quinton",
+            "short_description": "the quinton",
+            "long_description": "A quinton is here keeping records.\n",
+            "description": "Quintons look like tall, stocky humanoids with 4 flexible arms jutting from the\nshoulders.  A prehensile tail serves as the creature's 5th arm, and they have\nfan-like wings attached to their shoulders.\n",
+            "race": "modron",
+            "act": "ABFGQ",
+            "affected_by": "D",
+            "alignment": 300,
+            "group": 0,
+            "level": 28,
+            "hitroll": 6,
+            "hit_dice": [
+                10,
+                100,
+                150
+            ],
+            "mana_dice": [
+                20,
+                12,
+                100
+            ],
+            "dam_dice": [
+                4,
+                8,
+                7
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -7,
+            "ac_bash": -8,
+            "ac_slash": -6,
+            "ac_exotic": -8,
+            "off_flags": "AKMO",
+            "imm_flags": "AR",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "M",
+            "parts": "INPQ",
+            "size": "large",
+            "material": "0"
+        },
+        {
+            "vnum": 9009,
+            "name": "tertian",
+            "short_description": "the tertian",
+            "long_description": "A tertian is here administering the law.\n",
+            "description": "Tertians look very human, save for their 12 foot size, the horns jutting from\nthe sides of their bald heads, and the long prehensile tail ending in a mace-\nlike ball.\n",
+            "race": "modron",
+            "act": "ABFGQRT",
+            "affected_by": "D",
+            "alignment": 300,
+            "group": 0,
+            "level": 33,
+            "hitroll": 12,
+            "hit_dice": [
+                1,
+                1,
+                999
+            ],
+            "mana_dice": [
+                20,
+                20,
+                50
+            ],
+            "dam_dice": [
+                8,
+                6,
+                12
+            ],
+            "dam_type": "pound",
+            "ac_pierce": -11,
+            "ac_bash": -13,
+            "ac_slash": -10,
+            "ac_exotic": -9,
+            "off_flags": "CEF",
+            "imm_flags": "AR",
+            "res_flags": "C",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "M",
+            "parts": "IW",
+            "size": "huge",
+            "material": "0"
+        },
+        {
+            "vnum": 9010,
+            "name": "secundus",
+            "short_description": "secundus",
+            "long_description": "A Secundus, one of the Viceroys of Nirvana, is here.\n",
+            "description": "The secundi is an incredibly thin, tall humanoids with long, narrow faces\nand deepset eyes. It radiates intense power.\n",
+            "race": "modron",
+            "act": "ABFGQRT",
+            "affected_by": "DFH",
+            "alignment": 0,
+            "group": 0,
+            "level": 36,
+            "hitroll": 15,
+            "hit_dice": [
+                1,
+                1,
+                1599
+            ],
+            "mana_dice": [
+                40,
+                20,
+                50
+            ],
+            "dam_dice": [
+                7,
+                8,
+                15
+            ],
+            "dam_type": "punch",
+            "ac_pierce": -11,
+            "ac_bash": -14,
+            "ac_slash": -11,
+            "ac_exotic": -12,
+            "off_flags": "EFHIKN",
+            "imm_flags": "AHIKR",
+            "res_flags": "C",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "M",
+            "parts": "I",
+            "size": "huge",
+            "material": "0"
+        },
+        {
+            "vnum": 9011,
+            "name": "Primus",
+            "short_description": "Primus",
+            "long_description": "Primus, ruler of the Plane of Nirvana, forms out of an energy pool.\n",
+            "description": "Primus is a huge being who rises out of the energy pool and glares at you with\nviolet eyes. His right hand is wreathed in darkness, his left in light, and\nhe looks very displeased to see you.\n",
+            "race": "modron",
+            "act": "ABFGQRT",
+            "affected_by": "DFH",
+            "alignment": 0,
+            "group": 0,
+            "level": 40,
+            "hitroll": 20,
+            "hit_dice": [
+                1,
+                1,
+                3999
+            ],
+            "mana_dice": [
+                1,
+                1,
+                3999
+            ],
+            "dam_dice": [
+                6,
+                10,
+                25
+            ],
+            "dam_type": "wrath",
+            "ac_pierce": -15,
+            "ac_bash": -15,
+            "ac_slash": -15,
+            "ac_exotic": -15,
+            "off_flags": "AH",
+            "imm_flags": "AHIKRS",
+            "res_flags": "C",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "M",
+            "parts": "I",
+            "size": "giant",
+            "material": "0"
+        }
+    ],
+    "objects": [
+        {
+            "vnum": 9000,
+            "name": "sword long the",
+            "short_description": "THE long sword",
+            "description": "THE long sword of Primus is here.",
+            "material": "adamantite",
+            "type": "weapon",
+            "extra_flags": "AGJK",
+            "wear_flags": "AN",
+            "values": "sword 5 6 slash EF",
+            "level": 39,
+            "weight": 400,
+            "cost": 8800,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 5
+                },
+                {
+                    "location": 18,
+                    "modifier": 5
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sword long the",
+                    "description": "This is an extremely long and heavy sword, with many magical runes inscribed\non it.  It glows with the power of Primus, Lord of the Plane of Nirvana.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 9001,
+            "name": "moonstone moon stone white",
+            "short_description": "a luminescent moonstone",
+            "description": "A softly glowing white stone rests on the floor.",
+            "material": "gem",
+            "type": "warp_stone",
+            "extra_flags": "AT",
+            "wear_flags": "AO",
+            "values": "24 0 0 0 0",
+            "level": 0,
+            "weight": 0,
+            "cost": 500,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "moonstone moon stone white",
+                    "description": "Looking into the smooth surface of this moonstone, you feel strangely at \npeace and balance with the world around you.\n"
+                }
+            ]
+        }
+    ],
+    "rooms": [
+        {
+            "vnum": 9000,
+            "name": "Entrance to the Plane of Nirvana",
+            "description": "You stand before the entrance to a plane of absolute balance and order.  It is\nequally hot and cold, equally light and dark, and made of equal parts of solid\nand liquid.\n \nThe plane extends to the west and east, while an exit lies downward.\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east, the plane extends for what seems to be forever.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9001
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "To the west, the plane extends for what seems to be forever.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9002
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "Downwards, you see the portal leading back to home.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 8905
+                }
+            ]
+        },
+        {
+            "vnum": 9001,
+            "name": "The Plane of Nirvana",
+            "description": "You are traveling the Plane of Nirvana.  It has endless boundaries to the east\nand west\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east, there seems to be a bend in direction of travel.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9003
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "To the west, the plane seems to extend forever.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9000
+                }
+            ]
+        },
+        {
+            "vnum": 9002,
+            "name": "The Plane of Nirvana",
+            "description": "You are on a western strech of the plane.  Boundaries to the east and west seem \nnonexistent.\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The plane seems to strech forever to the east\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9000
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The plane continues to the west where is appears to change direction\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9004
+                }
+            ]
+        },
+        {
+            "vnum": 9003,
+            "name": "A Change in Direction",
+            "description": "Here, the plane seems to direct you to the north.  Also, the plane continues \nto the west.\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The plane continues to the north with no end in sight\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9005
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The plane contiues to the west with no end in sight\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9001
+                }
+            ]
+        },
+        {
+            "vnum": 9004,
+            "name": "A Change in Direction",
+            "description": "Here, the plane goes to the north and bends to the east\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The vast plane seems to have no end to the north\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9006
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east, the plane has no visible end\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9002
+                }
+            ]
+        },
+        {
+            "vnum": 9005,
+            "name": "A North-South direction of the plane",
+            "description": "The plane continues to the north and south\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north, the plane stretches as far as the eye can see.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9012
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south, the plane stretches as far as the eye can see.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9003
+                }
+            ]
+        },
+        {
+            "vnum": 9006,
+            "name": "A North-South stretch of the plane",
+            "description": "The plane continues to the north and the south\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north, the plane stretches as far as the eye can see.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9013
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south, the plane stretches as far as the eye can see.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9004
+                }
+            ]
+        },
+        {
+            "vnum": 9007,
+            "name": "In the Tower of Nirvana",
+            "description": "Entering the tower, there seems to be enough light to see by, but no source is \nvisible.  The hall continues to the east, while a door lies to the west.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The hall continues east into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9010
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A great door lies to the west\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9013
+                }
+            ]
+        },
+        {
+            "vnum": 9008,
+            "name": "A hallway in the Tower of Nirvana",
+            "description": "You are in a east-west hallway in the tower.  to the west, the hall continues \nand a door lies to the east.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A great door lies to the east\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9012
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "the hallway continues west into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9009
+                }
+            ]
+        },
+        {
+            "vnum": 9009,
+            "name": "An east-west hallway in the Tower of Nirvana",
+            "description": "The hallway continues to the east, and stretches to the west.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The hallway continues east into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9008
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The Hallway continues west into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9011
+                }
+            ]
+        },
+        {
+            "vnum": 9010,
+            "name": "An east-west passage in the Tower of Nirvana",
+            "description": "",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The Hallway contiues east into oblivion\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9011
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The Hallway contiues west into oblivion\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9007
+                }
+            ]
+        },
+        {
+            "vnum": 9011,
+            "name": "An intersection in the Tower of Nirvana",
+            "description": "You are at an intersection where the east-west passage continues, but a large \npassage leads to the north.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The passage continues to the north where it seems to get wider.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9023
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The passage ontinues eastward into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9009
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The passage continues westward into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9010
+                }
+            ]
+        },
+        {
+            "vnum": 9012,
+            "name": "At the door to the Tower of Nirvana",
+            "description": "You stand on the plane where a mighty door lies to the west.\nThe plane also continues north and southward.  There is a large sign on the \ndoor.\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The plane continues northward as far as the eye can see.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9014
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The plane continues southward as far as the eye can see.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9005
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A mighty door lies to the west\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9008
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "The sign reads:\n                     WARNING\nOnly those brave of heart and high of level should\nenter the Tower of Nirvana.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 9013,
+            "name": "At the door to the Tower of Nirvana",
+            "description": "The plane continue to the north and south, while a mighty door lies to the \neast.  There is a sign on the door.\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The plane stretches to the north as far as the eye can see.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9015
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A mighty door sits to the east\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 9007
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The plane continues to the south as far as the eye can see\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9006
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "The sign reads:\n                  WARNING!\nOnly those brave of heart and high of level\nshould attempt to enter the Tower of Nirvana.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 9014,
+            "name": "A north-south area of the Plane of Nirvana",
+            "description": "The plane continues to the north and southward.\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The plane continues endlessly to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9027
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The plane continues endlessly to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9012
+                }
+            ]
+        },
+        {
+            "vnum": 9015,
+            "name": "A north-south area on the Plane of Nirvana",
+            "description": "the plane continues to the north and south\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The plane continues endlessly to the north\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9028
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The plane continues endlessly to the south\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9013
+                }
+            ]
+        },
+        {
+            "vnum": 9016,
+            "name": "Dead End",
+            "description": "You stand at a dead end where the only exit appears to be west.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "The passage continue to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9018
+                }
+            ]
+        },
+        {
+            "vnum": 9017,
+            "name": "Dead End",
+            "description": "You are at what appears to be a dead end.  The only exit is back east.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The passage continues to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9019
+                }
+            ]
+        },
+        {
+            "vnum": 9018,
+            "name": "A Tertain's lair",
+            "description": "You quite possibly have made a terrible mistake coming in here.\nExits lead east and west.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The passage continues to the east\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9016
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The passage leads west where you can see a bright light ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9020
+                }
+            ]
+        },
+        {
+            "vnum": 9019,
+            "name": "A Tertian's lair",
+            "description": "You might have made a terrible mistake coming into here.\nExits lead east and west.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The passage continues eastward where you can see a bright light.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9020
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The passage continues westward into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9017
+                }
+            ]
+        },
+        {
+            "vnum": 9020,
+            "name": "The Lair of Primus",
+            "description": "You are in a large hall, with a massive pool of what appears to be pure energy \nin the center of the room.  Exits lead in all the cardinal directions.  From \nthe pool rises the master of the Plane of Nirvana....\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A passage leads north into the unknown.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9024
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A passage leads east into the unknown.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9018
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A passage leads south into the unknown.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9021
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A passage leads west into the unknown.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9019
+                }
+            ]
+        },
+        {
+            "vnum": 9021,
+            "name": "A Tertian's lair",
+            "description": "Maybe coming here wasn't such a hot idea.  You feel very unwelcome here.  \nExits lead north and south\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The passage leads north where you can see a bright light.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9020
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The passage leads south into the unknown.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9022
+                }
+            ]
+        },
+        {
+            "vnum": 9022,
+            "name": "The office of a Quinton",
+            "description": "You have stumbled upon the office of a page to Primus.\nScrolls lie about the room along with many strange objects...you can't imagine \nwhat kind of creature would use them.  Exits lead in all the cardinal \ndirections.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The passage heads northward where you can see nothing.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9021
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The passage goes east where you feel it might be bad to go.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9046
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The passage goes south into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9023
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The passage heads westward into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9053
+                }
+            ]
+        },
+        {
+            "vnum": 9023,
+            "name": "A wide north-south passageway",
+            "description": "you find yourself in a passage where the exits are north and south\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north, you spy an intersection of tunnels.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9022
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you can barely make out a junction of passageways.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9011
+                }
+            ]
+        },
+        {
+            "vnum": 9024,
+            "name": "A Tertian's lair",
+            "description": "You find yourself in a lair of a Tertian.  Exits lead north and south.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north, you can make out a intersection of tunnels.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9025
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south, you can see a bright light.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9020
+                }
+            ]
+        },
+        {
+            "vnum": 9025,
+            "name": "A north south tunnel",
+            "description": "You are in a passage where the only exits are north and south.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Far to the north you can see a door.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9026
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you stare into darkness.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9024
+                }
+            ]
+        },
+        {
+            "vnum": 9026,
+            "name": "An intersection of passages",
+            "description": "You stand at an intersection.  Exits lead off to the east and south. \nA door lies to the north\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "you see a massive door\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 9031
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east, you spy a dark passage\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9032
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you stare into oblivion.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9025
+                }
+            ]
+        },
+        {
+            "vnum": 9027,
+            "name": "A change of direction",
+            "description": "The plane curves from the south to west\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "looking south, you see the plane extending beyond view.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9014
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "looking west, you can't fathom how far the plane extends.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9030
+                }
+            ]
+        },
+        {
+            "vnum": 9028,
+            "name": "A change of direction",
+            "description": "Here, the plane takes a turm from the south to heading east.\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The plane heads east from here. You can't see the end of it.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9029
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Looking south, you view the plane extending for miles.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9015
+                }
+            ]
+        },
+        {
+            "vnum": 9029,
+            "name": "An east-west route on the Plane of Nirvana",
+            "description": "Exits lead east and west.\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "looking east, you spy a door far off in the distance.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9031
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "looking west, in the distance you can spy a curve south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9028
+                }
+            ]
+        },
+        {
+            "vnum": 9030,
+            "name": "An east-west route on The Plane of Nirvana",
+            "description": "Exits lead east and west\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "looking east, you can see a bend in the distance.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9027
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "glancing west, you can spy a door far off in the distance.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9031
+                }
+            ]
+        },
+        {
+            "vnum": 9031,
+            "name": "A large door in the passage",
+            "description": "The passages goes east and west, with a large door to the south.\n",
+            "flags": "0",
+            "sector": 2,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "looking east, you see more of the passage.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9030
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A large door blocks the way to the south.\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 9026
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "looking west, you see more of the passage.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9029
+                }
+            ]
+        },
+        {
+            "vnum": 9032,
+            "name": "A Junction in the passage",
+            "description": "Here, passages lead off in all cardinal directions.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Looking north, you spy a small room in the distance\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9033
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Eastward, the passage continues in the darkness.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9035
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "South of here is a small room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9034
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "West, you spy an intersection.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9026
+                }
+            ]
+        },
+        {
+            "vnum": 9033,
+            "name": "The office of the Octon",
+            "description": "you are in a small room, the only exit is south.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "looking south, you see an intersection.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9032
+                }
+            ]
+        },
+        {
+            "vnum": 9034,
+            "name": "A small room",
+            "description": "The only exit is north\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Looking north, you spy an intersection.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9032
+                }
+            ]
+        },
+        {
+            "vnum": 9035,
+            "name": "A passageway",
+            "description": "Exits lead in all cardinal directions.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Looking north you spy a average sized room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9036
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Looking east, you can make out a large room\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9038
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Looking south, you can see an average room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9037
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Looking west, you can see an intersection ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9032
+                }
+            ]
+        },
+        {
+            "vnum": 9036,
+            "name": "Lair of a Hexton",
+            "description": "You are in a room that is in complete disrepair.  Items are thrown throughout \nthe room making them worthless piles of junk.\nThe only exit is back south\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "Looking south, you can make out a passage.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9035
+                }
+            ]
+        },
+        {
+            "vnum": 9037,
+            "name": "Office of a Hexton",
+            "description": "A makeshift desk forms the center of this room.  The only exit is north.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Looking north, you can make out a hallway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9035
+                }
+            ]
+        },
+        {
+            "vnum": 9038,
+            "name": "Office of a Secundus",
+            "description": "You are standing in a office of one of the Viceroys of the Plane of Nirvana.  \nThe occupant doesn't look real thrilled with your presence.  The only exits is \nwest.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "Looking west you can see a long hallway\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9035
+                }
+            ]
+        },
+        {
+            "vnum": 9039,
+            "name": "A Junction in the hallway",
+            "description": "Your are standing in a junction, exits lead in all the cardinal directions.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north, you spy a small room\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9040
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east, you see a quadruple junction\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9025
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you see a small room\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9041
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "To the west, the passageway continues\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9042
+                }
+            ]
+        },
+        {
+            "vnum": 9040,
+            "name": "Office of an Octon",
+            "description": "You see a messy room with papers scattered everywhere.\nThe only exit leads back to the south\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you can make out a junction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9039
+                }
+            ]
+        },
+        {
+            "vnum": 9041,
+            "name": "Office of a Septon",
+            "description": "A neat and tidy room, it appear to be inhabited my a neatenss freak.  The only \nexit lies to the north.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north you see a junction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9039
+                }
+            ]
+        },
+        {
+            "vnum": 9042,
+            "name": "An east-west passage",
+            "description": "In east west passage is here with exits in all of the cardinal directions.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You can see a room to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9043
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east you can see a junction\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9039
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you can make out a averaged sized room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9044
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "To the west you can see what appears to be a cavernous room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9045
+                }
+            ]
+        },
+        {
+            "vnum": 9043,
+            "name": "The Barracks",
+            "description": "A dusty room, with a almost untolerable odor, the barracks are being inspected \nby a Hexton and his personal enterage.\nThe only exit lies to the south.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you can see junction\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9042
+                }
+            ]
+        },
+        {
+            "vnum": 9044,
+            "name": "The Commander's Post",
+            "description": "You have stumbled on to the office of the Commander of the forces in the Plane \nOf Nirvana.  The room is well furnished and a sense of courage and bravery \novertakes you as you enter the room.  The only exit lies to the north.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north you can visualize a junction of passages.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9042
+                }
+            ]
+        },
+        {
+            "vnum": 9045,
+            "name": "The chamber of the second Secundus",
+            "description": "This huge room is furnished with the finest, and a personal legion guards the \nSecundus. the only exit is to the east.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east you can see a junction\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9042
+                }
+            ]
+        },
+        {
+            "vnum": 9046,
+            "name": "A Passageway",
+            "description": "You are in a well lit passage.  A sense of forboding danger envelopes you.  \nExits lead in all cardinal directions.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north you can see a small chamber\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9047
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east, the passage continues,.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9049
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south, a chamber can be seen\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9048
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "To the west, a large tunnel can be found.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9022
+                }
+            ]
+        },
+        {
+            "vnum": 9047,
+            "name": "Chamber of the Octon",
+            "description": "A small room, sparsely furnished, it leaves you with a sense of fear.  The \nonly exit is to the south\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you can see a passage.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9046
+                }
+            ]
+        },
+        {
+            "vnum": 9048,
+            "name": "Chamber of the Nonaton",
+            "description": "You have entered the chamber of the principal law and order overseers.  The \nonly exit lies to the north\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north you can see a passageway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9046
+                }
+            ]
+        },
+        {
+            "vnum": 9049,
+            "name": "End of the passageway",
+            "description": "You have reached the end of a long east-west passage.  The passage contiues to \nthe west, and rooms lie to the north, south, and east.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north you can see a room\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9050
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east you can make out a large chamber\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9052
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south, a room can be seen.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9051
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "to the west, the passageway continues\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9046
+                }
+            ]
+        },
+        {
+            "vnum": 9050,
+            "name": "Chamber of a Hexton",
+            "description": "You have entered the chamber of a Hexton.  Trophies adorn the walls, some of \nwhich are human. the only exit is to the south.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you can see a passageway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9049
+                }
+            ]
+        },
+        {
+            "vnum": 9051,
+            "name": "Chamber of a Hexton",
+            "description": "You have entered a room where you are not very popular. The only exit lies \nnorthbound.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north you can see a passage.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9049
+                }
+            ]
+        },
+        {
+            "vnum": 9052,
+            "name": "Chamber of the Secudus",
+            "description": "A large canvernous room, this chamber serves as the sleeping quarters for the \nthird Secudus, Viceroy to Primus. The only exit lies to the west.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "To the west you can see a passageway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9049
+                }
+            ]
+        },
+        {
+            "vnum": 9053,
+            "name": "A passageway",
+            "description": "You are in a passagway where you may go in any cardinal direction.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north lies a small chamber\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9054
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east, a main passage forms a junction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9022
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south, you can spot a small room\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9055
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "To the west, the passageway continues\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9059
+                }
+            ]
+        },
+        {
+            "vnum": 9054,
+            "name": "A small chamber",
+            "description": "You are in a small cramped chamber.  The only exit lies to the south.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you can see a passage\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9053
+                }
+            ]
+        },
+        {
+            "vnum": 9055,
+            "name": "A cramped room",
+            "description": "You are in a small, crowded room.  The only exit appears to lie to the north.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north, you can see a passageway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9053
+                }
+            ]
+        },
+        {
+            "vnum": 9056,
+            "name": "A large room",
+            "description": "You have entered a room where you are not wanted.  The only exit lies to the \nsouth.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south you can visualize a east-west passage.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9059
+                }
+            ]
+        },
+        {
+            "vnum": 9057,
+            "name": "A room",
+            "description": "You have entered a room where there was obviously a hurried move going on.  \nThe only exit lies to the north.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north you can make out a passageway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9059
+                }
+            ]
+        },
+        {
+            "vnum": 9058,
+            "name": "Chamber of The First Secundus",
+            "description": "You have disturbed the rest of the First Viceroy to Primus the Prime, The \nSecundus.  He does not look like a happy camper. The only exit lies to the \neast.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east you can spot a hallway\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9059
+                }
+            ]
+        },
+        {
+            "vnum": 9059,
+            "name": "Junction in the hallway",
+            "description": "Exits lead off in all of the cardinal directions\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north lies a large chamber\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9056
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "To the east , the passage continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9053
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south, a small chamber can be found.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9057
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "To the west, lies a monstrous room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9058
+                }
+            ]
+        }
+    ],
+    "resets": [
+        {
+            "command": "M",
+            "arg1": 9000,
+            "arg2": 10,
+            "arg3": 9002,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 9000,
+            "arg2": 10,
+            "arg3": 9013,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 9000,
+            "arg2": 10,
+            "arg3": 9029,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 9000,
+            "arg2": 10,
+            "arg3": 9027,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 9000,
+            "arg2": 10,
+            "arg3": 9003,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 9001,
+            "arg2": 9,
+            "arg3": 9001,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 9001,
+            "arg2": 9,
+            "arg3": 9028,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 9001,
+            "arg2": 9,
+            "arg3": 9012,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 9002,
+            "arg2": 6,
+            "arg3": 9011,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9002,
+            "arg2": 6,
+            "arg3": 9031,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9002,
+            "arg2": 6,
+            "arg3": 9038,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9002,
+            "arg2": 6,
+            "arg3": 9045,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9002,
+            "arg2": 6,
+            "arg3": 9058,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9002,
+            "arg2": 6,
+            "arg3": 9052,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9003,
+            "arg2": 1,
+            "arg3": 9055,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9004,
+            "arg2": 1,
+            "arg3": 9048,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 9001,
+            "arg2": -1
+        },
+        {
+            "command": "M",
+            "arg1": 9005,
+            "arg2": 4,
+            "arg3": 9040,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9005,
+            "arg2": 4,
+            "arg3": 9033,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9005,
+            "arg2": 4,
+            "arg3": 9054,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9005,
+            "arg2": 4,
+            "arg3": 9047,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9006,
+            "arg2": 2,
+            "arg3": 9041,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9006,
+            "arg2": 2,
+            "arg3": 9034,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9007,
+            "arg2": 8,
+            "arg3": 9043,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9007,
+            "arg2": 8,
+            "arg3": 9044,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9007,
+            "arg2": 8,
+            "arg3": 9036,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9007,
+            "arg2": 8,
+            "arg3": 9037,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9007,
+            "arg2": 8,
+            "arg3": 9050,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9007,
+            "arg2": 8,
+            "arg3": 9051,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9007,
+            "arg2": 8,
+            "arg3": 9056,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9007,
+            "arg2": 8,
+            "arg3": 9057,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9008,
+            "arg2": 4,
+            "arg3": 9022,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9008,
+            "arg2": 4,
+            "arg3": 9016,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9008,
+            "arg2": 4,
+            "arg3": 9025,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9008,
+            "arg2": 4,
+            "arg3": 9017,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9009,
+            "arg2": 4,
+            "arg3": 9019,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9009,
+            "arg2": 4,
+            "arg3": 9024,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9009,
+            "arg2": 4,
+            "arg3": 9018,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9009,
+            "arg2": 4,
+            "arg3": 9021,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9010,
+            "arg2": 4,
+            "arg3": 9038,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9010,
+            "arg2": 4,
+            "arg3": 9045,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9010,
+            "arg2": 4,
+            "arg3": 9058,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9010,
+            "arg2": 4,
+            "arg3": 9052,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 9011,
+            "arg2": 1,
+            "arg3": 9020,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9000,
+            "arg2": 2,
+            "arg3": 16
+        }
+    ],
+    "shops": [],
+    "specials": []
+}

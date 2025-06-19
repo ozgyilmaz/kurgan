@@ -1,0 +1,1856 @@
+{
+    "area": {
+        "file_name": "air.are",
+        "name": "In the Air",
+        "low_range": "5",
+        "high_range": "10",
+        "writer": "Copper",
+        "credits": "In the Air",
+        "min_vnum": 1000,
+        "max_vnum": 1099
+    },
+    "mobiles": [
+        {
+            "vnum": 1000,
+            "name": "oldstyle fairy dragon",
+            "short_description": "A fairy dragon",
+            "long_description": "A fairy dragon is fluttering around here looking for something to do...\n",
+            "description": "It's a cute little multi-colored dragon...about 2 foot long.\nIt gracefully dances around your head.\n",
+            "race": "human",
+            "act": "AGR",
+            "affected_by": "DE",
+            "alignment": 500,
+            "group": 0,
+            "level": 5,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                46
+            ],
+            "mana_dice": [
+                5,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                5,
+                0
+            ],
+            "dam_type": "none",
+            "ac_pierce": 6,
+            "ac_bash": 6,
+            "ac_slash": 6,
+            "ac_exotic": 8,
+            "off_flags": "FU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 1,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 1001,
+            "name": "oldstyle griffin",
+            "short_description": "A griffin",
+            "long_description": "A large black winged griffin swoops into an attack.\n",
+            "description": "Golden maned and black all over.  It's quite a beautiful creature if not\nfor the fact it is hungry and is attacking you!\n",
+            "race": "human",
+            "act": "AFG",
+            "affected_by": "0",
+            "alignment": 300,
+            "group": 0,
+            "level": 8,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                96
+            ],
+            "mana_dice": [
+                4,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                7,
+                2
+            ],
+            "dam_type": "none",
+            "ac_pierce": 3,
+            "ac_bash": 3,
+            "ac_slash": 3,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 25,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        }
+    ],
+    "objects": [
+        {
+            "vnum": 1001,
+            "name": "rose",
+            "short_description": "a red rose",
+            "description": "A red rose is lying on the ground.",
+            "material": "oldstyle",
+            "type": "treasure",
+            "extra_flags": "0",
+            "wear_flags": "AE",
+            "values": "6 0 0 0 0",
+            "level": 0,
+            "weight": 80,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "rose",
+                    "description": "It's a beautiful red rose, with a soft and romantic fragrance.\n"
+                }
+            ]
+        }
+    ],
+    "rooms": [
+        {
+            "vnum": 1001,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above the ground north of the city.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1006
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1002
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1021
+                }
+            ]
+        },
+        {
+            "vnum": 1002,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 20 meters above the inside wall of West Midgaard.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1001
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1007
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1003
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1022
+                }
+            ]
+        },
+        {
+            "vnum": 1003,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 20 meters above the west gate of Midgaard.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1002
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1008
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1004
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1023
+                }
+            ]
+        },
+        {
+            "vnum": 1004,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above Wall Road.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1003
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1009
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1005
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1024
+                }
+            ]
+        },
+        {
+            "vnum": 1005,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above Wall Road.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1004
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1010
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1025
+                }
+            ]
+        },
+        {
+            "vnum": 1006,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above the ground north of Midgaard.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1011
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1007
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1001
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1026
+                }
+            ]
+        },
+        {
+            "vnum": 1007,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 20 meters above the magic shop.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1006
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1012
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1008
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1002
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1027
+                }
+            ]
+        },
+        {
+            "vnum": 1008,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above Main Street.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1007
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1013
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1009
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1003
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1028
+                }
+            ]
+        },
+        {
+            "vnum": 1009,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 20 meters above the Mage Guild Hall.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1008
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1014
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1010
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1004
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1029
+                }
+            ]
+        },
+        {
+            "vnum": 1010,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above Poor Alley.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1009
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1015
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1005
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1030
+                }
+            ]
+        },
+        {
+            "vnum": 1011,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above the ground north of Midgaard.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1016
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1012
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1006
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1031
+                }
+            ]
+        },
+        {
+            "vnum": 1012,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 20 meters above the bakery.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1011
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1017
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1013
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1007
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1032
+                }
+            ]
+        },
+        {
+            "vnum": 1013,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above Main Street.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1012
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1018
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1014
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1008
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1033
+                }
+            ]
+        },
+        {
+            "vnum": 1014,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 20 meters above Armoury.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1013
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1019
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1015
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1009
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1034
+                }
+            ]
+        },
+        {
+            "vnum": 1015,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above Poor Alley.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1014
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1020
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1010
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1035
+                }
+            ]
+        },
+        {
+            "vnum": 1016,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 10 meters above the temple spire of Midgaard\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1017
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1011
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1036
+                }
+            ]
+        },
+        {
+            "vnum": 1017,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above the Temple Square.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1016
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1018
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1012
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1037
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3057
+                }
+            ]
+        },
+        {
+            "vnum": 1018,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above Market Square.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1017
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1019
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1013
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1038
+                }
+            ]
+        },
+        {
+            "vnum": 1019,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above Market and Commons.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1018
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1020
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1014
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1039
+                }
+            ]
+        },
+        {
+            "vnum": 1020,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above ground, overlooking the Common Square.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1019
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1015
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1040
+                }
+            ]
+        },
+        {
+            "vnum": 1021,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above the ground just north of Midgaard.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1026
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1022
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1001
+                }
+            ]
+        },
+        {
+            "vnum": 1022,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above the west gate of Midgaard.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1021
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1027
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1023
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1002
+                }
+            ]
+        },
+        {
+            "vnum": 1023,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above west gate of Midgaard.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1022
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1028
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1024
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1003
+                }
+            ]
+        },
+        {
+            "vnum": 1024,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above wall road.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1023
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1029
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1025
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1004
+                }
+            ]
+        },
+        {
+            "vnum": 1025,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above wall road.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1024
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1030
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1005
+                }
+            ]
+        },
+        {
+            "vnum": 1026,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above the ground north of Midgaard.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1031
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1027
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1021
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1006
+                }
+            ]
+        },
+        {
+            "vnum": 1027,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above the magic shop.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1026
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1032
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1028
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1022
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1007
+                }
+            ]
+        },
+        {
+            "vnum": 1028,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above main street.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1027
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1033
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1029
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1023
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1008
+                }
+            ]
+        },
+        {
+            "vnum": 1029,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above the mage guild.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1028
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1034
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1030
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1024
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1009
+                }
+            ]
+        },
+        {
+            "vnum": 1030,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above poor alley.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1029
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1035
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1025
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1010
+                }
+            ]
+        },
+        {
+            "vnum": 1031,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above the ground north of Midgaard.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1036
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1032
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1026
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1011
+                }
+            ]
+        },
+        {
+            "vnum": 1032,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above bakery and cleric guild.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1031
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1037
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1033
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1027
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1012
+                }
+            ]
+        },
+        {
+            "vnum": 1033,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above main street.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1032
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1038
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1034
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1028
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1013
+                }
+            ]
+        },
+        {
+            "vnum": 1034,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 40 meters above the armoury.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1033
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1039
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1035
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1029
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1014
+                }
+            ]
+        },
+        {
+            "vnum": 1035,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above poor alley.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1034
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1040
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1030
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1015
+                }
+            ]
+        },
+        {
+            "vnum": 1036,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 30 meters above the temple spire.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1037
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1031
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "The rainbow leads onward and upward into the sky.\nIt looks safe to travel on.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 7700
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1016
+                }
+            ]
+        },
+        {
+            "vnum": 1037,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above the temple square.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1036
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1038
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1032
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1017
+                }
+            ]
+        },
+        {
+            "vnum": 1038,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above market square.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1037
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1039
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1033
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1018
+                }
+            ]
+        },
+        {
+            "vnum": 1039,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above market square and commons square.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1038
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1040
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1034
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1019
+                }
+            ]
+        },
+        {
+            "vnum": 1040,
+            "name": "In the air ...",
+            "description": "You are flying!\nCurrently you are about 60 meters above commoners square and the dump.\nIt seems like you can see forever!\n",
+            "flags": "0",
+            "sector": 9,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1039
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1035
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "More of the same.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 1020
+                }
+            ]
+        }
+    ],
+    "resets": [
+        {
+            "command": "M",
+            "arg1": 1000,
+            "arg2": 10,
+            "arg3": 1005,
+            "arg4": 4
+        },
+        {
+            "command": "M",
+            "arg1": 1000,
+            "arg2": 10,
+            "arg3": 1022,
+            "arg4": 4
+        },
+        {
+            "command": "M",
+            "arg1": 1000,
+            "arg2": 10,
+            "arg3": 1019,
+            "arg4": 4
+        },
+        {
+            "command": "M",
+            "arg1": 1001,
+            "arg2": 3,
+            "arg3": 1034,
+            "arg4": 3
+        }
+    ],
+    "shops": [],
+    "specials": [
+        {
+            "vnum": 1000,
+            "spec_fun": "spec_cast_mage"
+        }
+    ]
+}
