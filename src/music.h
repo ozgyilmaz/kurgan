@@ -25,6 +25,12 @@
 *	ROM license, in the file Rom24/doc/rom.license			   *
 ***************************************************************************/
 
+/***************************************************************************
+ *   KURGAN MUD – Based on ROM 2.4, Merc 2.1, and DikuMUD                  *
+ *                                                                         *
+ *   KURGAN MUD is a customized extension by Özgür Yilmaz                  *
+ ***************************************************************************/
+
 #define MAX_SONGS	20
 #define MAX_LINES	100 /* this boils down to about 1k per song */
 #define MAX_GLOBAL	10  /* max songs the global jukebox can hold */

@@ -34,3 +34,4 @@
 - Json areas created. *.are files archived. area.lst edited.
 - UTF8 code removed.
 - Character customization removed.
+- Kurgan headers and greeting.

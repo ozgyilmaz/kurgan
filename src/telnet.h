@@ -1,3 +1,9 @@
+/***************************************************************************
+ *   KURGAN MUD – Based on ROM 2.4, Merc 2.1, and DikuMUD                  *
+ *                                                                         *
+ *   KURGAN MUD is a customized extension by Özgür Yilmaz                  *
+ ***************************************************************************/
+
 /*	@(#)telnet.h 1.7 88/08/19 SMI; from UCB 5.1 5/30/85	*/
 /*
  * Copyright (c) 1983 Regents of the University of California.
