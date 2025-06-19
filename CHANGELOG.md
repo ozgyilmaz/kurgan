@@ -35,3 +35,6 @@
 - UTF8 code removed.
 - Character customization removed.
 - Kurgan headers and greeting.
+
+## 20.06.2025
+- Greeting screen edited. Startup script implemented.

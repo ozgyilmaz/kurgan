@@ -4,3 +4,5 @@ area/kurgan
 player/Xera
 gods/Xera
 src/kurgan
+log/*.log
+nohup.out
