@@ -25,6 +25,12 @@
 *	ROM license, in the file Rom24/doc/rom.license			   *
 ***************************************************************************/
 
+/***************************************************************************
+ *   KURGAN MUD – Based on ROM 2.4, Merc 2.1, and DikuMUD                  *
+ *                                                                         *
+ *   KURGAN MUD is a customized extension by Özgür Yilmaz                  *
+ ***************************************************************************/
+
 #if defined(macintosh)
 #include <types.h>
 #include <time.h>
@@ -159,17 +165,6 @@ GEN_DATA *new_gen_data(void)
     VALIDATE(gen);
     return gen;
 }
-
-void free_gen_data(GEN_DATA *gen)
-{
-    if (!IS_VALID(gen))
-	return;
-
-    INVALIDATE(gen);
-
-    gen->next = gen_data_free;
-    gen_data_free = gen;
-} 
 
 /* stuff for recycling extended descs */
 EXTRA_DESCR_DATA *extra_descr_free;

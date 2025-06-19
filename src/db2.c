@@ -25,6 +25,12 @@
 *	ROM license, in the file Rom24/doc/rom.license			   *
 ***************************************************************************/
 
+/***************************************************************************
+ *   KURGAN MUD – Based on ROM 2.4, Merc 2.1, and DikuMUD                  *
+ *                                                                         *
+ *   KURGAN MUD is a customized extension by Özgür Yilmaz                  *
+ ***************************************************************************/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -47,133 +53,43 @@ struct		social_type	social_table		[MAX_SOCIALS];
 int		social_count;
 
 /* snarf a socials file */
-void load_socials( FILE *fp)
+void load_socials( cJSON *json_data )
 {
-    for ( ; ; ) 
+    cJSON *json_socials = NULL;
+    cJSON *json_social = NULL;
+
+    json_socials = cJSON_GetObjectItemCaseSensitive(json_data, "socials");
+
+    if(!json_socials)
+        return;
+
+    cJSON_ArrayForEach(json_social, json_socials)
     {
     	struct social_type social;
-    	char *temp;
+
         /* clear social */
-	social.char_no_arg = NULL;
-	social.others_no_arg = NULL;
-	social.char_found = NULL;
-	social.others_found = NULL;
-	social.vict_found = NULL; 
-	social.char_not_found = NULL;
-	social.char_auto = NULL;
-	social.others_auto = NULL;
+        social.char_no_arg = NULL;
+        social.others_no_arg = NULL;
+        social.char_found = NULL;
+        social.others_found = NULL;
+        social.vict_found = NULL; 
+        social.char_not_found = NULL;
+        social.char_auto = NULL;
+        social.others_auto = NULL;
 
-    	temp = fread_word(fp);
-    	if (!strcmp(temp,"#0"))
-	    return;  /* done */
-#if defined(social_debug) 
-	else 
-	    fprintf(stderr,"%s\n\r",temp);
-#endif
-
-    	strcpy(social.name,temp);
-    	fread_to_eol(fp);
-
-	temp = fread_string_eol(fp);
-	if (!strcmp(temp,"$"))
-	     social.char_no_arg = NULL;
-	else if (!strcmp(temp,"#"))
-	{
-	     social_table[social_count] = social;
-	     social_count++;
-	     continue; 
-	}
-        else
-	    social.char_no_arg = temp;
-
-        temp = fread_string_eol(fp);
-        if (!strcmp(temp,"$"))
-             social.others_no_arg = NULL;
-        else if (!strcmp(temp,"#"))
-        {
-	     social_table[social_count] = social;
-             social_count++;
-             continue;
-        }
-        else
-	    social.others_no_arg = temp;
-
-        temp = fread_string_eol(fp);
-        if (!strcmp(temp,"$"))
-             social.char_found = NULL;
-        else if (!strcmp(temp,"#"))
-        {
-	     social_table[social_count] = social;
-             social_count++;
-             continue;
-        }
-       	else
-	    social.char_found = temp;
-
-        temp = fread_string_eol(fp);
-        if (!strcmp(temp,"$"))
-             social.others_found = NULL;
-        else if (!strcmp(temp,"#"))
-        {
-	     social_table[social_count] = social;
-             social_count++;
-             continue;
-        }
-        else
-	    social.others_found = temp; 
-
-        temp = fread_string_eol(fp);
-        if (!strcmp(temp,"$"))
-             social.vict_found = NULL;
-        else if (!strcmp(temp,"#"))
-        {
-	     social_table[social_count] = social;
-             social_count++;
-             continue;
-        }
-        else
-	    social.vict_found = temp;
-
-        temp = fread_string_eol(fp);
-        if (!strcmp(temp,"$"))
-             social.char_not_found = NULL;
-        else if (!strcmp(temp,"#"))
-        {
-	     social_table[social_count] = social;
-             social_count++;
-             continue;
-        }
-        else
-	    social.char_not_found = temp;
-
-        temp = fread_string_eol(fp);
-        if (!strcmp(temp,"$"))
-             social.char_auto = NULL;
-        else if (!strcmp(temp,"#"))
-        {
-	     social_table[social_count] = social;
-             social_count++;
-             continue;
-        }
-        else
-	    social.char_auto = temp;
-         
-        temp = fread_string_eol(fp);
-        if (!strcmp(temp,"$"))
-             social.others_auto = NULL;
-        else if (!strcmp(temp,"#"))
-        {
-             social_table[social_count] = social;
-             social_count++;
-             continue;
-        }
-        else
-	    social.others_auto = temp; 
-	
-	social_table[social_count] = social;
+        strcpy(social.name, cJSON_GetObjectItemCaseSensitive( json_social, "name" )->valuestring);
+        social.char_no_arg = str_dup(cJSON_GetObjectItemCaseSensitive( json_social, "char_no_arg" )->valuestring);
+        social.others_no_arg = str_dup(cJSON_GetObjectItemCaseSensitive( json_social, "others_no_arg" )->valuestring);
+        social.char_found = str_dup(cJSON_GetObjectItemCaseSensitive( json_social, "char_found" )->valuestring);
+        social.others_found = str_dup(cJSON_GetObjectItemCaseSensitive( json_social, "others_found" )->valuestring);
+        social.vict_found = str_dup(cJSON_GetObjectItemCaseSensitive( json_social, "vict_found" )->valuestring);
+        social.char_not_found = str_dup(cJSON_GetObjectItemCaseSensitive( json_social, "char_not_found" )->valuestring);
+        social.char_auto = str_dup(cJSON_GetObjectItemCaseSensitive( json_social, "char_auto" )->valuestring);
+        social.others_auto = str_dup(cJSON_GetObjectItemCaseSensitive( json_social, "others_auto" )->valuestring);
+        
+        social_table[social_count] = social;
     	social_count++;
-   }
-   return;
+    }
 }
     
 
@@ -184,152 +100,145 @@ void load_socials( FILE *fp)
 /*
  * Snarf a mob section.  new style
  */
-void load_mobiles( FILE *fp )
+void load_mobiles( cJSON *json_data )
 {
+    cJSON *json_mobiles = NULL;
+    cJSON *json_mobile = NULL;
+    cJSON *json_mobile_affs = NULL;
+    cJSON *json_mobile_aff = NULL;
+    cJSON *value_array = NULL;
+
+    json_mobiles = cJSON_GetObjectItemCaseSensitive(json_data, "mobiles");
+
+    if(!json_mobiles)
+        return;
+
     MOB_INDEX_DATA *pMobIndex;
  
-    for ( ; ; )
+    cJSON_ArrayForEach(json_mobile, json_mobiles)
     {
         sh_int vnum;
-        char letter;
         int iHash;
  
-        letter                          = fread_letter( fp );
-        if ( letter != '#' )
-        {
-            bugf("Load_mobiles: # not found.");
-            exit( 1 );
-        }
- 
-        vnum                            = fread_number( fp );
+        vnum                            = cJSON_GetObjectItemCaseSensitive( json_mobile, "vnum" )->valuedouble;
         if ( vnum == 0 )
             break;
  
         fBootDb = FALSE;
         if ( get_mob_index( vnum ) != NULL )
         {
-            bugf("Load_mobiles: vnum %d duplicated.", vnum );
+            bug( "Load_mobiles: vnum %d duplicated.", vnum );
             exit( 1 );
         }
         fBootDb = TRUE;
  
         pMobIndex                       = alloc_perm( sizeof(*pMobIndex) );
         pMobIndex->vnum                 = vnum;
-	pMobIndex->new_format		= TRUE;
-	newmobs++;
-        pMobIndex->player_name          = fread_string( fp );
-        pMobIndex->short_descr          = fread_string( fp );
-        pMobIndex->long_descr           = fread_string( fp );
-        pMobIndex->description          = fread_string( fp );
-	pMobIndex->race		 	= race_lookup(fread_string( fp ));
+	    pMobIndex->new_format		= TRUE;
+	    newmobs++;
+        pMobIndex->player_name          = str_dup( cJSON_GetObjectItemCaseSensitive( json_mobile, "name" )->valuestring );
+        pMobIndex->short_descr          = str_dup( cJSON_GetObjectItemCaseSensitive( json_mobile, "short_description" )->valuestring );
+        pMobIndex->long_descr           = str_dup( cJSON_GetObjectItemCaseSensitive( json_mobile, "long_description" )->valuestring );
+        pMobIndex->description          = str_dup( cJSON_GetObjectItemCaseSensitive( json_mobile, "description" )->valuestring );
+	    pMobIndex->race		 	= race_lookup(cJSON_GetObjectItemCaseSensitive( json_mobile, "race" )->valuestring);
  
         pMobIndex->long_descr[0]        = UPPER(pMobIndex->long_descr[0]);
         pMobIndex->description[0]       = UPPER(pMobIndex->description[0]);
  
-        pMobIndex->act                  = fread_flag( fp ) | ACT_IS_NPC
+        pMobIndex->act                  = char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_mobile, "act" )->valuestring, 0 ) | ACT_IS_NPC
 					| race_table[pMobIndex->race].act;
-        pMobIndex->affected_by          = fread_flag( fp )
+        pMobIndex->affected_by          = char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_mobile, "affected_by" )->valuestring, 0 )
 					| race_table[pMobIndex->race].aff;
         pMobIndex->pShop                = NULL;
-        pMobIndex->alignment            = fread_number( fp );
-        pMobIndex->group                = fread_number( fp );
+        pMobIndex->alignment            = cJSON_GetObjectItemCaseSensitive( json_mobile, "alignment" )->valuedouble;
+        pMobIndex->group                = cJSON_GetObjectItemCaseSensitive( json_mobile, "group" )->valuedouble;
 
-        pMobIndex->level                = fread_number( fp );
-        pMobIndex->hitroll              = fread_number( fp );  
+        pMobIndex->level                = cJSON_GetObjectItemCaseSensitive( json_mobile, "level" )->valuedouble;
+        pMobIndex->hitroll              = cJSON_GetObjectItemCaseSensitive( json_mobile, "hitroll" )->valuedouble;
 
-	/* read hit dice */
-        pMobIndex->hit[DICE_NUMBER]     = fread_number( fp );  
-        /* 'd'          */                fread_letter( fp ); 
-        pMobIndex->hit[DICE_TYPE]   	= fread_number( fp );
-        /* '+'          */                fread_letter( fp );   
-        pMobIndex->hit[DICE_BONUS]      = fread_number( fp ); 
+        value_array = cJSON_GetObjectItem(json_mobile, "hit_dice");
+	    /* read hit dice */
+        pMobIndex->hit[DICE_NUMBER]     = cJSON_GetArrayItem(value_array, 0)->valuedouble;
+        pMobIndex->hit[DICE_TYPE]   	= cJSON_GetArrayItem(value_array, 1)->valuedouble;
+        pMobIndex->hit[DICE_BONUS]      = cJSON_GetArrayItem(value_array, 2)->valuedouble;
 
- 	/* read mana dice */
-	pMobIndex->mana[DICE_NUMBER]	= fread_number( fp );
-					  fread_letter( fp );
-	pMobIndex->mana[DICE_TYPE]	= fread_number( fp );
-					  fread_letter( fp );
-	pMobIndex->mana[DICE_BONUS]	= fread_number( fp );
+        value_array = cJSON_GetObjectItem(json_mobile, "mana_dice");
+        /* read mana dice */
+        pMobIndex->mana[DICE_NUMBER]	= cJSON_GetArrayItem(value_array, 0)->valuedouble;
+        pMobIndex->mana[DICE_TYPE]	    = cJSON_GetArrayItem(value_array, 1)->valuedouble;
+        pMobIndex->mana[DICE_BONUS]	    = cJSON_GetArrayItem(value_array, 2)->valuedouble;
 
-	/* read damage dice */
-	pMobIndex->damage[DICE_NUMBER]	= fread_number( fp );
-					  fread_letter( fp );
-	pMobIndex->damage[DICE_TYPE]	= fread_number( fp );
-					  fread_letter( fp );
-	pMobIndex->damage[DICE_BONUS]	= fread_number( fp );
-	pMobIndex->dam_type		= attack_lookup(fread_word(fp));
+        value_array = cJSON_GetObjectItem(json_mobile, "dam_dice");
+        /* read damage dice */
+        pMobIndex->damage[DICE_NUMBER]	= cJSON_GetArrayItem(value_array, 0)->valuedouble;
+        pMobIndex->damage[DICE_TYPE]	= cJSON_GetArrayItem(value_array, 1)->valuedouble;
+        pMobIndex->damage[DICE_BONUS]	= cJSON_GetArrayItem(value_array, 2)->valuedouble;
 
-	/* read armor class */
-	pMobIndex->ac[AC_PIERCE]	= fread_number( fp ) * 10;
-	pMobIndex->ac[AC_BASH]		= fread_number( fp ) * 10;
-	pMobIndex->ac[AC_SLASH]		= fread_number( fp ) * 10;
-	pMobIndex->ac[AC_EXOTIC]	= fread_number( fp ) * 10;
+        pMobIndex->dam_type		= attack_lookup(cJSON_GetObjectItemCaseSensitive( json_mobile, "dam_type" )->valuestring);
 
-	/* read flags and add in data from the race table */
-	pMobIndex->off_flags		= fread_flag( fp ) 
-					| race_table[pMobIndex->race].off;
-	pMobIndex->imm_flags		= fread_flag( fp )
-					| race_table[pMobIndex->race].imm;
-	pMobIndex->res_flags		= fread_flag( fp )
-					| race_table[pMobIndex->race].res;
-	pMobIndex->vuln_flags		= fread_flag( fp )
-					| race_table[pMobIndex->race].vuln;
+        /* read armor class */
+        pMobIndex->ac[AC_PIERCE]	= cJSON_GetObjectItemCaseSensitive( json_mobile, "ac_pierce" )->valuedouble * 10;
+        pMobIndex->ac[AC_BASH]		= cJSON_GetObjectItemCaseSensitive( json_mobile, "ac_bash" )->valuedouble * 10;
+        pMobIndex->ac[AC_SLASH]		= cJSON_GetObjectItemCaseSensitive( json_mobile, "ac_slash" )->valuedouble * 10;
+        pMobIndex->ac[AC_EXOTIC]	= cJSON_GetObjectItemCaseSensitive( json_mobile, "ac_exotic" )->valuedouble * 10;
 
-	/* vital statistics */
-	pMobIndex->start_pos		= position_lookup(fread_word(fp));
-	pMobIndex->default_pos		= position_lookup(fread_word(fp));
-	pMobIndex->sex			= sex_lookup(fread_word(fp));
+        /* read flags and add in data from the race table */
+        pMobIndex->off_flags		= char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_mobile, "off_flags" )->valuestring, 0 )
+                        | race_table[pMobIndex->race].off;
+        pMobIndex->imm_flags		= char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_mobile, "imm_flags" )->valuestring, 0 )
+                        | race_table[pMobIndex->race].imm;
+        pMobIndex->res_flags		= char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_mobile, "res_flags" )->valuestring, 0 )
+                        | race_table[pMobIndex->race].res;
+        pMobIndex->vuln_flags		= char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_mobile, "vuln_flags" )->valuestring, 0 )
+                        | race_table[pMobIndex->race].vuln;
 
-	pMobIndex->wealth		= fread_number( fp );
+        /* vital statistics */
+        pMobIndex->start_pos		= position_lookup(cJSON_GetObjectItemCaseSensitive( json_mobile, "start_pos" )->valuestring);
+        pMobIndex->default_pos		= position_lookup(cJSON_GetObjectItemCaseSensitive( json_mobile, "default_pos" )->valuestring);
+        pMobIndex->sex			= sex_lookup(cJSON_GetObjectItemCaseSensitive( json_mobile, "sex" )->valuestring);
 
-	pMobIndex->form			= fread_flag( fp )
-					| race_table[pMobIndex->race].form;
-	pMobIndex->parts		= fread_flag( fp )
-					| race_table[pMobIndex->race].parts;
-	/* size */
-	pMobIndex->size			= size_lookup(fread_word(fp));
-	pMobIndex->material		= str_dup(fread_word( fp ));
- 
-	for ( ; ; )
+        pMobIndex->wealth		= cJSON_GetObjectItemCaseSensitive( json_mobile, "wealth" )->valuedouble;
+
+        pMobIndex->form			= char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_mobile, "form" )->valuestring, 0 )
+                        | race_table[pMobIndex->race].form;
+        pMobIndex->parts		= char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_mobile, "parts" )->valuestring, 0 )
+                        | race_table[pMobIndex->race].parts;
+        /* size */
+        pMobIndex->size			= size_lookup(cJSON_GetObjectItemCaseSensitive( json_mobile, "size" )->valuestring);
+        pMobIndex->material		= str_dup(cJSON_GetObjectItemCaseSensitive( json_mobile, "material" )->valuestring);
+    
+        json_mobile_affs = cJSON_GetObjectItemCaseSensitive(json_mobile, "affects_f");
+
+        cJSON_ArrayForEach(json_mobile_aff, json_mobile_affs)
         {
-            letter = fread_letter( fp );
+            char *word;
+            long vector;
 
-            if (letter == 'F')
+            word                    = str_dup(cJSON_GetObjectItemCaseSensitive( json_mobile_aff, "word" )->valuestring);
+            vector                  = char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_mobile_aff, "flag" )->valuestring, 0 );
+
+            if (!str_prefix(word,"act"))
+                REMOVE_BIT(pMobIndex->act,vector);
+            else if (!str_prefix(word,"aff"))
+                REMOVE_BIT(pMobIndex->affected_by,vector);
+            else if (!str_prefix(word,"off"))
+                REMOVE_BIT(pMobIndex->off_flags,vector);
+            else if (!str_prefix(word,"imm"))
+                REMOVE_BIT(pMobIndex->imm_flags,vector);
+            else if (!str_prefix(word,"res"))
+                REMOVE_BIT(pMobIndex->res_flags,vector);
+            else if (!str_prefix(word,"vul"))
+                REMOVE_BIT(pMobIndex->vuln_flags,vector);
+            else if (!str_prefix(word,"for"))
+                REMOVE_BIT(pMobIndex->form,vector);
+            else if (!str_prefix(word,"par"))
+                REMOVE_BIT(pMobIndex->parts,vector);
+            else
             {
-		char *word;
-		long vector;
-
-                word                    = fread_word(fp);
-		vector			= fread_flag(fp);
-
-		if (!str_prefix(word,"act"))
-		    REMOVE_BIT(pMobIndex->act,vector);
-                else if (!str_prefix(word,"aff"))
-		    REMOVE_BIT(pMobIndex->affected_by,vector);
-		else if (!str_prefix(word,"off"))
-		    REMOVE_BIT(pMobIndex->off_flags,vector);
-		else if (!str_prefix(word,"imm"))
-		    REMOVE_BIT(pMobIndex->imm_flags,vector);
-		else if (!str_prefix(word,"res"))
-		    REMOVE_BIT(pMobIndex->res_flags,vector);
-		else if (!str_prefix(word,"vul"))
-		    REMOVE_BIT(pMobIndex->vuln_flags,vector);
-		else if (!str_prefix(word,"for"))
-		    REMOVE_BIT(pMobIndex->form,vector);
-		else if (!str_prefix(word,"par"))
-		    REMOVE_BIT(pMobIndex->parts,vector);
-		else
-		{
-		    bugf("Flag remove: flag not found.");
-		    exit(1);
-		}
-	     }
-	     else
-	     {
-		ungetc(letter,fp);
-		break;
-	     }
-	}
+                bug("Flag remove: flag not found.",0);
+                exit(1);
+            }
+        }
 
         iHash                   = vnum % MAX_KEY_HASH;
         pMobIndex->next         = mob_index_hash[iHash];
@@ -344,31 +253,33 @@ void load_mobiles( FILE *fp )
 /*
  * Snarf an obj section. new style
  */
-void load_objects( FILE *fp )
+void load_objects( cJSON *json_data )
 {
+    cJSON *json_objects = NULL;
+    cJSON *json_object = NULL;
+    char value_array[100];
+
+    json_objects = cJSON_GetObjectItemCaseSensitive(json_data, "objects");
+
+    if(!json_objects)
+        return;
+
     OBJ_INDEX_DATA *pObjIndex;
  
-    for ( ; ; )
+    cJSON_ArrayForEach(json_object, json_objects)
     {
         sh_int vnum;
-        char letter;
         int iHash;
  
-        letter                          = fread_letter( fp );
-        if ( letter != '#' )
-        {
-            bugf("Load_objects: # not found.");
-            exit( 1 );
-        }
- 
-        vnum                            = fread_number( fp );
+        vnum                            = cJSON_GetObjectItemCaseSensitive( json_object, "vnum" )->valuedouble;
+
         if ( vnum == 0 )
             break;
  
         fBootDb = FALSE;
         if ( get_obj_index( vnum ) != NULL )
         {
-            bugf("Load_objects: vnum %d duplicated.", vnum );
+            bug( "Load_objects: vnum %d duplicated.", vnum );
             exit( 1 );
         }
         fBootDb = TRUE;
@@ -376,158 +287,155 @@ void load_objects( FILE *fp )
         pObjIndex                       = alloc_perm( sizeof(*pObjIndex) );
         pObjIndex->vnum                 = vnum;
         pObjIndex->new_format           = TRUE;
-	pObjIndex->reset_num		= 0;
-	newobjs++;
-        pObjIndex->name                 = fread_string( fp );
-        pObjIndex->short_descr          = fread_string( fp );
-        pObjIndex->description          = fread_string( fp );
-        pObjIndex->material		= fread_string( fp );
+	    pObjIndex->reset_num		= 0;
+	    newobjs++;
+        pObjIndex->name                 = str_dup( cJSON_GetObjectItemCaseSensitive( json_object, "name" )->valuestring );
+        pObjIndex->short_descr          = str_dup( cJSON_GetObjectItemCaseSensitive( json_object, "short_description" )->valuestring );
+        pObjIndex->description          = str_dup( cJSON_GetObjectItemCaseSensitive( json_object, "description" )->valuestring );
+        pObjIndex->material		        = str_dup( cJSON_GetObjectItemCaseSensitive( json_object, "material" )->valuestring );
  
-        pObjIndex->item_type            = item_lookup(fread_word( fp ));
-        pObjIndex->extra_flags          = fread_flag( fp );
-        pObjIndex->wear_flags           = fread_flag( fp );
-	switch(pObjIndex->item_type)
-	{
-	case ITEM_WEAPON:
-	    pObjIndex->value[0]		= weapon_type(fread_word(fp));
-	    pObjIndex->value[1]		= fread_number(fp);
-	    pObjIndex->value[2]		= fread_number(fp);
-	    pObjIndex->value[3]		= attack_lookup(fread_word(fp));
-	    pObjIndex->value[4]		= fread_flag(fp);
-	    break;
-	case ITEM_CONTAINER:
-	    pObjIndex->value[0]		= fread_number(fp);
-	    pObjIndex->value[1]		= fread_flag(fp);
-	    pObjIndex->value[2]		= fread_number(fp);
-	    pObjIndex->value[3]		= fread_number(fp);
-	    pObjIndex->value[4]		= fread_number(fp);
-	    break;
-        case ITEM_DRINK_CON:
-	case ITEM_FOUNTAIN:
-            pObjIndex->value[0]         = fread_number(fp);
-            pObjIndex->value[1]         = fread_number(fp);
-            pObjIndex->value[2]         = liq_lookup(fread_word(fp));
-            pObjIndex->value[3]         = fread_number(fp);
-            pObjIndex->value[4]         = fread_number(fp);
-            break;
-	case ITEM_WAND:
-	case ITEM_STAFF:
-	    pObjIndex->value[0]		= fread_number(fp);
-	    pObjIndex->value[1]		= fread_number(fp);
-	    pObjIndex->value[2]		= fread_number(fp);
-	    pObjIndex->value[3]		= skill_lookup(fread_word(fp));
-	    pObjIndex->value[4]		= fread_number(fp);
-	    break;
-	case ITEM_POTION:
-	case ITEM_PILL:
-	case ITEM_SCROLL:
- 	    pObjIndex->value[0]		= fread_number(fp);
-	    pObjIndex->value[1]		= skill_lookup(fread_word(fp));
-	    pObjIndex->value[2]		= skill_lookup(fread_word(fp));
-	    pObjIndex->value[3]		= skill_lookup(fread_word(fp));
-	    pObjIndex->value[4]		= skill_lookup(fread_word(fp));
-	    break;
-	default:
-            pObjIndex->value[0]             = fread_flag( fp );
-            pObjIndex->value[1]             = fread_flag( fp );
-            pObjIndex->value[2]             = fread_flag( fp );
-            pObjIndex->value[3]             = fread_flag( fp );
-	    pObjIndex->value[4]		    = fread_flag( fp );
-	    break;
-	}
-	pObjIndex->level		= fread_number( fp );
-        pObjIndex->weight               = fread_number( fp );
-        pObjIndex->cost                 = fread_number( fp ); 
+        pObjIndex->item_type            = item_lookup(cJSON_GetObjectItemCaseSensitive( json_object, "type" )->valuestring);
+        pObjIndex->extra_flags          = char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_object, "extra_flags" )->valuestring, 0 );
+        pObjIndex->wear_flags           = char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_object, "wear_flags" )->valuestring, 0 );
 
-        /* condition */
-        letter 				= fread_letter( fp );
-	switch (letter)
- 	{
-	    case ('P') :		pObjIndex->condition = 100; break;
-	    case ('G') :		pObjIndex->condition =  90; break;
-	    case ('A') :		pObjIndex->condition =  75; break;
-	    case ('W') :		pObjIndex->condition =  50; break;
-	    case ('D') :		pObjIndex->condition =  25; break;
-	    case ('B') :		pObjIndex->condition =  10; break;
-	    case ('R') :		pObjIndex->condition =   0; break;
-	    default:			pObjIndex->condition = 100; break;
-	}
- 
-        for ( ; ; )
+        strcpy(value_array, (char *)cJSON_GetObjectItemCaseSensitive(json_object, "values")->valuestring);
+
+        switch(pObjIndex->item_type)
         {
-            char letter;
- 
-            letter = fread_letter( fp );
- 
-            if ( letter == 'A' )
-            {
-                AFFECT_DATA *paf;
- 
-                paf                     = alloc_perm( sizeof(*paf) );
-		paf->where		= TO_OBJECT;
-                paf->type               = -1;
-                paf->level              = pObjIndex->level;
-                paf->duration           = -1;
-                paf->location           = fread_number( fp );
-                paf->modifier           = fread_number( fp );
-                paf->bitvector          = 0;
-                paf->next               = pObjIndex->affected;
-                pObjIndex->affected     = paf;
-                top_affect++;
-            }
-
-	    else if (letter == 'F')
-            {
-                AFFECT_DATA *paf;
- 
-                paf                     = alloc_perm( sizeof(*paf) );
-		letter 			= fread_letter(fp);
-		switch (letter)
-	 	{
-		case 'A':
-                    paf->where          = TO_AFFECTS;
-		    break;
-		case 'I':
-		    paf->where		= TO_IMMUNE;
-		    break;
-		case 'R':
-		    paf->where		= TO_RESIST;
-		    break;
-		case 'V':
-		    paf->where		= TO_VULN;
-		    break;
-		default:
-            	    bugf("Load_objects: Bad where on flag set.");
-            	   exit( 1 );
-		}
-                paf->type               = -1;
-                paf->level              = pObjIndex->level;
-                paf->duration           = -1;
-                paf->location           = fread_number(fp);
-                paf->modifier           = fread_number(fp);
-                paf->bitvector          = fread_flag(fp);
-                paf->next               = pObjIndex->affected;
-                pObjIndex->affected     = paf;
-                top_affect++;
-            }
- 
-            else if ( letter == 'E' )
-            {
-                EXTRA_DESCR_DATA *ed;
- 
-                ed                      = alloc_perm( sizeof(*ed) );
-                ed->keyword             = fread_string( fp );
-                ed->description         = fread_string( fp );
-                ed->next                = pObjIndex->extra_descr;
-                pObjIndex->extra_descr  = ed;
-                top_ed++;
-            }
- 
-            else
-            {
-                ungetc( letter, fp );
+        case ITEM_WEAPON:
+            pObjIndex->value[0]		= weapon_type(strtok(value_array," "));
+            pObjIndex->value[1]		= atoi(strtok(NULL," "));
+            pObjIndex->value[2]		= atoi(strtok(NULL," "));
+            pObjIndex->value[3]		= attack_lookup(strtok(NULL," "));
+            pObjIndex->value[4]		= char_flag( strtok(NULL," "), 0 );
+            break;
+        case ITEM_CONTAINER:
+            pObjIndex->value[0]		= atoi(strtok(value_array," "));
+            pObjIndex->value[1]		= char_flag( strtok(NULL," "), 0 );
+            pObjIndex->value[2]		= atoi(strtok(NULL," "));
+            pObjIndex->value[3]		= atoi(strtok(NULL," "));
+            pObjIndex->value[4]		= atoi(strtok(NULL," "));
+            break;
+        case ITEM_DRINK_CON:
+        case ITEM_FOUNTAIN:
+                pObjIndex->value[0]         = atoi(strtok(value_array," "));
+                pObjIndex->value[1]         = atoi(strtok(NULL," "));
+                pObjIndex->value[2]         = liq_lookup(strtok(NULL," "));
+                pObjIndex->value[3]         = atoi(strtok(NULL," "));
+                pObjIndex->value[4]         = atoi(strtok(NULL," "));
                 break;
+        case ITEM_WAND:
+        case ITEM_STAFF:
+            pObjIndex->value[0]		= atoi(strtok(value_array," "));
+            pObjIndex->value[1]		= atoi(strtok(NULL," "));
+            pObjIndex->value[2]		= atoi(strtok(NULL," "));
+            pObjIndex->value[3]		= skill_lookup(strtok(NULL," "));
+            pObjIndex->value[4]		= atoi(strtok(NULL," "));
+            break;
+        case ITEM_POTION:
+        case ITEM_PILL:
+        case ITEM_SCROLL:
+            pObjIndex->value[0]		= atoi(strtok(value_array," "));
+            pObjIndex->value[1]		= skill_lookup(strtok(NULL," "));
+            pObjIndex->value[2]		= skill_lookup(strtok(NULL," "));
+            pObjIndex->value[3]		= skill_lookup(strtok(NULL," "));
+            pObjIndex->value[4]		= skill_lookup(strtok(NULL," "));
+            break;
+        default:
+            pObjIndex->value[0]             = char_flag( strtok(value_array," "), 0 );
+            pObjIndex->value[1]             = char_flag( strtok(NULL," "), 0 );
+            pObjIndex->value[2]             = char_flag( strtok(NULL," "), 0 );
+            pObjIndex->value[3]             = char_flag( strtok(NULL," "), 0 );
+            pObjIndex->value[4]		        = char_flag( strtok(NULL," "), 0 );
+            break;
+        }
+	    pObjIndex->level		            = cJSON_GetObjectItemCaseSensitive( json_object, "level" )->valuedouble;
+        pObjIndex->weight               = cJSON_GetObjectItemCaseSensitive( json_object, "weight" )->valuedouble;
+        pObjIndex->cost                 = cJSON_GetObjectItemCaseSensitive( json_object, "cost" )->valuedouble;
+
+        switch (cJSON_GetObjectItemCaseSensitive( json_object, "condition" )->valuestring[0])
+        {
+            case ('P') :		pObjIndex->condition = 100; break;
+            case ('G') :		pObjIndex->condition =  90; break;
+            case ('A') :		pObjIndex->condition =  75; break;
+            case ('W') :		pObjIndex->condition =  50; break;
+            case ('D') :		pObjIndex->condition =  25; break;
+            case ('B') :		pObjIndex->condition =  10; break;
+            case ('R') :		pObjIndex->condition =   0; break;
+            default:			pObjIndex->condition = 100; break;
+        }
+
+        cJSON *json_object_a_affs = NULL;
+        cJSON *json_object_a_aff = NULL;
+        cJSON *json_object_f_affs = NULL;
+        cJSON *json_object_f_aff = NULL;
+        cJSON *json_object_extra_descriptions = NULL;
+        cJSON *json_object_extra_description = NULL;
+
+        json_object_a_affs = cJSON_GetObjectItemCaseSensitive(json_object, "affects_a");
+        json_object_f_affs = cJSON_GetObjectItemCaseSensitive(json_object, "affects_f");
+        json_object_extra_descriptions = cJSON_GetObjectItemCaseSensitive(json_object, "extra_descriptions");
+ 
+        cJSON_ArrayForEach(json_object_a_aff, json_object_a_affs)
+        {
+            AFFECT_DATA *paf;
+    
+            paf = alloc_perm( sizeof(*paf) );
+            paf->where		= TO_OBJECT;
+            paf->type               = -1;
+            paf->level              = pObjIndex->level;
+            paf->duration           = -1;
+            paf->location           = cJSON_GetObjectItemCaseSensitive( json_object_a_aff, "location" )->valuedouble;
+            paf->modifier           = cJSON_GetObjectItemCaseSensitive( json_object_a_aff, "modifier" )->valuedouble;
+            paf->bitvector          = 0;
+            paf->next               = pObjIndex->affected;
+            pObjIndex->affected     = paf;
+            top_affect++;
+        }
+        cJSON_ArrayForEach(json_object_f_aff, json_object_f_affs)
+        {
+            AFFECT_DATA *paf;
+    
+            paf = alloc_perm( sizeof(*paf) );
+            switch (cJSON_GetObjectItemCaseSensitive( json_object_f_aff, "where" )->valuestring[0])
+            {
+                case 'A':
+                    paf->where          = TO_AFFECTS;
+                    break;
+                case 'I':
+                    paf->where		= TO_IMMUNE;
+                    break;
+                case 'R':
+                    paf->where		= TO_RESIST;
+                    break;
+                case 'V':
+                    paf->where		= TO_VULN;
+                    break;
+                default:
+                    bug( "Load_objects: Bad where on flag set.", 0 );
+                    exit( 1 );
             }
+            paf->type               = -1;
+            paf->level              = pObjIndex->level;
+            paf->duration           = -1;
+            paf->location           = cJSON_GetObjectItemCaseSensitive( json_object_f_aff, "location" )->valuedouble;
+            paf->modifier           = cJSON_GetObjectItemCaseSensitive( json_object_f_aff, "modifier" )->valuedouble;
+            paf->bitvector          = char_flag( (char *)cJSON_GetObjectItemCaseSensitive( json_object_f_aff, "bitvector" )->valuestring, 0 );
+            paf->next               = pObjIndex->affected;
+            pObjIndex->affected     = paf;
+            top_affect++;
+            
+        }
+        cJSON_ArrayForEach(json_object_extra_description, json_object_extra_descriptions)
+        {
+            EXTRA_DESCR_DATA *ed;
+
+            ed			= (EXTRA_DESCR_DATA *)alloc_perm( sizeof(*ed) );
+            ed->keyword		= str_dup( cJSON_GetObjectItemCaseSensitive( json_object_extra_description, "keyword" )->valuestring );
+            ed->description		= str_dup( cJSON_GetObjectItemCaseSensitive( json_object_extra_description, "description" )->valuestring );
+            ed->next		= pObjIndex->extra_descr;
+            pObjIndex->extra_descr  = ed;
+            top_ed++;
         }
  
         iHash                   = vnum % MAX_KEY_HASH;

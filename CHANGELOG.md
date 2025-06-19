@@ -22,3 +22,16 @@
 ## 18.06.2025
 - pc_race_table struct has been removed. The data moved to race_table struct.
 - Errors corrected: printf_to_char() and bugf()
+- "dev" branch created.
+
+## 19.06.2025
+- Level range info in #AREA section corrected: limbo, midgaard, ofcol, pyramid
+- Socials modified to contain 8 lines for every single social in social.are
+- proto.are removed.
+- area-to-json.py script implemented to convert ROM areas to json.
+- area-to-json.sh for batch operations for all area files /area directory.
+- Area json converter improved. Json parsing code implemented.
+- Json areas created. *.are files archived. area.lst edited.
+- UTF8 code removed.
+- Character customization removed.
+- Kurgan headers and greeting.

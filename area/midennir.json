@@ -1,0 +1,2295 @@
+{
+    "area": {
+        "file_name": "midennir.are",
+        "name": "Miden'nir",
+        "low_range": "5",
+        "high_range": "15",
+        "writer": "Copper",
+        "credits": "Miden'nir",
+        "min_vnum": 3500,
+        "max_vnum": 3599
+    },
+    "mobiles": [
+        {
+            "vnum": 3500,
+            "name": "wyvern",
+            "short_description": "the wyvern",
+            "long_description": "A monstrous wyvern slowly circles just above your head.\n",
+            "description": "This huge winged creature looks really menacing.  You are happy it doesn't\nAPPEAR to be very hungry ... yet.\n",
+            "race": "wyvern",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": -200,
+            "group": 0,
+            "level": 8,
+            "hitroll": 2,
+            "hit_dice": [
+                8,
+                8,
+                80
+            ],
+            "mana_dice": [
+                1,
+                1,
+                149
+            ],
+            "dam_dice": [
+                2,
+                6,
+                1
+            ],
+            "dam_type": "bite",
+            "ac_pierce": 5,
+            "ac_bash": 4,
+            "ac_slash": 5,
+            "ac_exotic": 6,
+            "off_flags": "DNR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "either",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "huge",
+            "material": "0"
+        },
+        {
+            "vnum": 3501,
+            "name": "goblin mountain",
+            "short_description": "the goblin",
+            "long_description": "A mountain goblin is wandering about, mumbling to himself.\n",
+            "description": "You see before you a small and twisted creature with knotted muscles.\n",
+            "race": "goblin",
+            "act": "AFGT",
+            "affected_by": "0",
+            "alignment": -500,
+            "group": 0,
+            "level": 6,
+            "hitroll": 1,
+            "hit_dice": [
+                4,
+                4,
+                65
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                2,
+                4,
+                1
+            ],
+            "dam_type": "punch",
+            "ac_pierce": 4,
+            "ac_bash": 6,
+            "ac_slash": 4,
+            "ac_exotic": 9,
+            "off_flags": "KR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 25,
+            "form": "0",
+            "parts": "0",
+            "size": "small",
+            "material": "0"
+        },
+        {
+            "vnum": 3502,
+            "name": "boy small",
+            "short_description": "the small boy",
+            "long_description": "A small boy sits here, licking his wounds.\n",
+            "description": "The poor boy has numerous cuts and scratches, but appears to be all right.\nHe is apparently the only survivor of the ambush.\n",
+            "race": "human",
+            "act": "ABH",
+            "affected_by": "0",
+            "alignment": 500,
+            "group": 0,
+            "level": 4,
+            "hitroll": 0,
+            "hit_dice": [
+                1,
+                12,
+                47
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                6,
+                0
+            ],
+            "dam_type": "beating",
+            "ac_pierce": 8,
+            "ac_bash": 8,
+            "ac_slash": 8,
+            "ac_exotic": 10,
+            "off_flags": "I",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "C",
+            "start_pos": "rest",
+            "default_pos": "rest",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "small",
+            "material": "0"
+        },
+        {
+            "vnum": 3503,
+            "name": "innkeeper",
+            "short_description": "the Innkeeper",
+            "long_description": "The Innkeeper stands here, cleaning glasses.\n",
+            "description": "The Innkeeper now spends most of his days waiting for customers, while the\nnights are spent watching out for goblins.  His inn is no longer the happy\nplace that is used to be in days past.\n",
+            "race": "human",
+            "act": "ABT",
+            "affected_by": "0",
+            "alignment": 500,
+            "group": 0,
+            "level": 10,
+            "hitroll": 1,
+            "hit_dice": [
+                1,
+                12,
+                200
+            ],
+            "mana_dice": [
+                1,
+                1,
+                149
+            ],
+            "dam_dice": [
+                2,
+                8,
+                1
+            ],
+            "dam_type": "punch",
+            "ac_pierce": 2,
+            "ac_bash": 2,
+            "ac_slash": 2,
+            "ac_exotic": 8,
+            "off_flags": "BFKQ",
+            "imm_flags": "AB",
+            "res_flags": "CD",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 350,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3504,
+            "name": "bard",
+            "short_description": "the bard",
+            "long_description": "A sullen bard is here, drinking away his problems.\n",
+            "description": "You can smell the alcohol on his breath from across the room.  This poor bard\nhas been sitting here quite a while, drinking himself into oblivion.\n",
+            "race": "human",
+            "act": "ABST",
+            "affected_by": "D",
+            "alignment": 600,
+            "group": 0,
+            "level": 8,
+            "hitroll": 3,
+            "hit_dice": [
+                1,
+                12,
+                110
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                2,
+                6,
+                0
+            ],
+            "dam_type": "punch",
+            "ac_pierce": 3,
+            "ac_bash": 5,
+            "ac_slash": 3,
+            "ac_exotic": 6,
+            "off_flags": "FIJKNQ",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "sit",
+            "default_pos": "sit",
+            "sex": "male",
+            "wealth": 260,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3505,
+            "name": "horseman dark",
+            "short_description": "the dark horseman",
+            "long_description": "A dark horseman is here, mounted on his black steed.\n",
+            "description": "The man is obviously an outlaw, and has no qualms about slashing you into\nlittle bits.\n",
+            "race": "human",
+            "act": "AGHS",
+            "affected_by": "P",
+            "alignment": -900,
+            "group": 0,
+            "level": 8,
+            "hitroll": 2,
+            "hit_dice": [
+                1,
+                12,
+                110
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                2,
+                5,
+                2
+            ],
+            "dam_type": "punch",
+            "ac_pierce": 5,
+            "ac_bash": 3,
+            "ac_slash": 3,
+            "ac_exotic": 6,
+            "off_flags": "BFJKQ",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 400,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3506,
+            "name": "goblin lieutenant",
+            "short_description": "the goblin lieutenant",
+            "long_description": "A goblin lieutenant stands here, attempting to get his men in order.\n",
+            "description": "The goblin lieutenant is rather angry, and looking for one of his men to\nbeat up upon, but maybe you will do just fine ...\n",
+            "race": "goblin",
+            "act": "AFGT",
+            "affected_by": "0",
+            "alignment": -600,
+            "group": 0,
+            "level": 7,
+            "hitroll": 1,
+            "hit_dice": [
+                1,
+                12,
+                100
+            ],
+            "mana_dice": [
+                1,
+                1,
+                149
+            ],
+            "dam_dice": [
+                1,
+                10,
+                1
+            ],
+            "dam_type": "punch",
+            "ac_pierce": 3,
+            "ac_bash": 5,
+            "ac_slash": 3,
+            "ac_exotic": 8,
+            "off_flags": "DKNR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 55,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 3507,
+            "name": "goblin leader",
+            "short_description": "the goblin leader",
+            "long_description": "The goblin leader surveys the room.\n",
+            "description": "The leader doesn't look too happy that you have found him here.  He grabs\nfor his shortsword and lunges for your neck.\n",
+            "race": "goblin",
+            "act": "ACFGT",
+            "affected_by": "0",
+            "alignment": -900,
+            "group": 0,
+            "level": 9,
+            "hitroll": 2,
+            "hit_dice": [
+                1,
+                12,
+                120
+            ],
+            "mana_dice": [
+                1,
+                1,
+                199
+            ],
+            "dam_dice": [
+                1,
+                12,
+                3
+            ],
+            "dam_type": "punch",
+            "ac_pierce": 1,
+            "ac_bash": 3,
+            "ac_slash": 1,
+            "ac_exotic": 6,
+            "off_flags": "DJKNR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 500,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        }
+    ],
+    "objects": [
+        {
+            "vnum": 3500,
+            "name": "sword short",
+            "short_description": "a goblin's short sword",
+            "description": "A rusted sword lies on the ground.",
+            "material": "iron",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "sword 2 4 stab 0",
+            "level": 5,
+            "weight": 40,
+            "cost": 460,
+            "condition": "A",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": -1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sword",
+                    "description": "It looks heavier than your average short sword, but it could use some oiling.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3501,
+            "name": "spear long",
+            "short_description": "a long spear",
+            "description": "A blackened spear with an evil-looking blade lies here.",
+            "material": "iron",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "polearm 2 7 thrust F",
+            "level": 6,
+            "weight": 80,
+            "cost": 100,
+            "condition": "A",
+            "affects_a": [
+                {
+                    "location": 17,
+                    "modifier": 2
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "spear",
+                    "description": "This used to be a boar spear, but it has been used for more dangerous game.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3502,
+            "name": "helmet horned black",
+            "short_description": "a black horned helmet",
+            "description": "A helmet with sharp black horns sits here.",
+            "material": "iron",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AE",
+            "values": "3 5 4 0 1",
+            "level": 5,
+            "weight": 30,
+            "cost": 490,
+            "condition": "A"
+        },
+        {
+            "vnum": 3503,
+            "name": "cloak stained",
+            "short_description": "a stained travelling cloak",
+            "description": "A worn and stained cloak is crumpled up on the floor.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AC",
+            "values": "2 3 4 0 1",
+            "level": 3,
+            "weight": 40,
+            "cost": 310,
+            "condition": "A"
+        },
+        {
+            "vnum": 3504,
+            "name": "bracer leather enchanted",
+            "short_description": "an enchanted leather bracer",
+            "description": "A leather bracer with mystic symbols sits here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AM",
+            "values": "2 4 4 2 0",
+            "level": 7,
+            "weight": 10,
+            "cost": 690,
+            "condition": "G",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "bracer",
+                    "description": "This bracer is covered with runes of protection and luck in combat.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3505,
+            "name": "knife dagger",
+            "short_description": "a rune-covered knife",
+            "description": "A wide-bladed knife sits undisturbed on the floor.",
+            "material": "mithril",
+            "type": "weapon",
+            "extra_flags": "GK",
+            "wear_flags": "AN",
+            "values": "dagger 2 4 stab 0",
+            "level": 5,
+            "weight": 10,
+            "cost": 420,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "knife dagger",
+                    "description": "It's very sharp, you suspect this knife is more effective than many swords.\nIt appears to be of elvish origins, and is made of finely crafted mithril,\nwith a stylized ivory hilt.\n"
+                }
+            ]
+        }
+    ],
+    "rooms": [
+        {
+            "vnum": 3500,
+            "name": "The Plains",
+            "description": "You are standing on the plains. This is a vast desolate place where the\nwind can howl undisturbed since nothing but you bars its way. However you\nare not the first to wander here. Before you somebody has left a small path.\nThe path looks rather bewildered and is not the kind of path to lead to\nanywhere significant or important but it seems to have made up its mind to\nenter the hills far away north.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 4000
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3501
+                }
+            ]
+        },
+        {
+            "vnum": 3501,
+            "name": "The Lane",
+            "description": "You are strolling along a pleasant, shady lane. The road is lined on both\nsides by tall, stately trees which lend the scene with a sense of quiet\nserenity. You can follow the road north or south.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3500
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3502
+                }
+            ]
+        },
+        {
+            "vnum": 3502,
+            "name": "The Cross Roads",
+            "description": "Here, the great eastern road intersects with an older road between the mines\nof Moria and the ruined city of Thalos.  The outskirts of Midgaard lie to your\nwest, and the highway continues the the east.  An old northern road leads to\nthe dwarven kingdom and the abandoned mines of Moria, while the southern road\nshows the scars of the war which destroyed Thalos.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "An old road leads towards the abandoned mines of Moria and the Dwarven Kingom.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3501
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The road continues east, where you hear faint singing.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3525
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A once mighty road leads through the dwarf forest towards ruined Thalos.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 5261
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The road leads west towards Midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3503
+                }
+            ]
+        },
+        {
+            "vnum": 3503,
+            "name": "City Entrance",
+            "description": "You stand on the outskirts of a large city - Midgaard; the capital of this\nland. The road leads east into the peace and quiet - and dangers - of the\nforest; and to the west it becomes the main street of the town; surrounded by\na confusion of shops, bars, and market places.\n",
+            "flags": "C",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3502
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3053
+                }
+            ]
+        },
+        {
+            "vnum": 3505,
+            "name": "The Trail to Miden'nir",
+            "description": "You are in a light forest. A path leads south, but the passage to the\neast is easy enough. To the west, smoke can be seen rising above the\ntreetops. The sprawl of Midgaard lies north of here.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "To the north, you see the southern gates of Midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3256
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More light forest.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3506
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "This path cuts through the darkness of the Miden'nir.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3507
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The Woodsman's Inn.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3570
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "credits credit author",
+                    "description": "+-------------------------------------------------+\n| This area originally written for Copper II DIKU |\n|   by ?                                          |\n| Modifications and alterations for MERCmud DIKU  |\n|   by VampLestat                        1 JAN 93 |\n+-------------------------------------------------+\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3506,
+            "name": "The Miden'nir",
+            "description": "You are in a dark forest. To the east, mountains block passage. From\nhere, only the lighter forest to the west or south offer a way to travel.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3550
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The forest is darker to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3509
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The forest gets lighter as you go west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3505
+                }
+            ]
+        },
+        {
+            "vnum": 3507,
+            "name": "The Miden'nir",
+            "description": "The forest is deep here and the wind blows through the trees and\nthrough your hair. To the north, the forest gets lighter. However, the\nsouthern and western paths place you even deeper in the wood.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The forest is lighter in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3505
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More and darker woods.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3510
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "There is a small path leading west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3508
+                }
+            ]
+        },
+        {
+            "vnum": 3508,
+            "name": "On a Small Path",
+            "description": "A path is here, leading east and south through the dark woods of\nMiden'nir. Mountains slash the scenery to the west of here.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "Wind-swept forest.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3507
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south, the trail continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3511
+                }
+            ]
+        },
+        {
+            "vnum": 3509,
+            "name": "The Miden'nir",
+            "description": "The trees of Miden'nir are lush and green, hiding the evil that lurks\nin these woods. The trees become too thick to the west, but you may go\nnorth, south or travel toward the mountains that lie east of here.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The trees lighten up a bit this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3506
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Huge grey mountains lie in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3512
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The forest continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3514
+                }
+            ]
+        },
+        {
+            "vnum": 3510,
+            "name": "A Crossroads",
+            "description": "Here footworn paths meet leading north, south and east. The trees seem to\nbe closing in on you at this point, and you can barely see the sky\nthrough the thick branches above your head.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Trees as far as the eye can see.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3507
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "There is an especially dark part of the forest this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3514
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "There is an especially dark section of forest this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3516
+                }
+            ]
+        },
+        {
+            "vnum": 3511,
+            "name": "The Trail",
+            "description": "You are on a north-south trail through the woods. To the west, impassable\nmountains glare at you, and the thick woods and undergrowth prevent any\nmovement westward.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The trail bends to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3508
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "To the south, the path re-enters the forest.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3515
+                }
+            ]
+        },
+        {
+            "vnum": 3512,
+            "name": "The Miden'nir",
+            "description": "The trees of Miden'nir are lush and green, hiding the evil that lurks\nin these woods. You can go north toward the mountains, or west to the\nforest, but the steep mountains prevent any movement east.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3550
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A light section of forest.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3513
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The forest continues here.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3509
+                }
+            ]
+        },
+        {
+            "vnum": 3513,
+            "name": "The Miden'nir",
+            "description": "The forest is dark, and becomes even darker west.  You sense\nthat there is something evil hidden in these woods.  The forest gets\nlighter to the north.  The wind kicks up as you ponder your options.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "There is a small clearing to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3512
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "It gets darker and thicker this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3514
+                }
+            ]
+        },
+        {
+            "vnum": 3514,
+            "name": "Deep Forest",
+            "description": "It is quite dark here, forest surrounds you. With each step, the forest\nseems to close around you, and get darker and more foreboding.  It might just\nbe time to head back to somewhere safe.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "More forest.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3509
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Lighter forest and mountains in the distance.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3513
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More trees.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3517
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The forest continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3510
+                }
+            ]
+        },
+        {
+            "vnum": 3515,
+            "name": "Light Forest",
+            "description": "The forest is light here and you can easily pick your way through the \ntrail.  To the east, the forest becomes thick and darker. South, the trail\ncontinues.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A trail leading north-south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3511
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The trees get thicker as you go east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3516
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "More trees and some small hills.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3518
+                }
+            ]
+        },
+        {
+            "vnum": 3516,
+            "name": "Muddy Ground",
+            "description": "The ground is quite muddy here and puddles are all around. Your boots\nmake a disgusting SQUISH as you walk here. You can go in any of the\nfour cardinal directions from here. Hopefully, it will be dryer.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The Miden'nir continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3510
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "More trees.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3517
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The trees get VERY thick to the south. You can barely see...\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3519
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Some light trees and daylight.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3515
+                }
+            ]
+        },
+        {
+            "vnum": 3517,
+            "name": "Near the Mountains",
+            "description": "The most prominent feature here is the mountains that lie to the east.\nYou can only go north and west from here as the rocks stop all other\nmovement.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Many trees to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3514
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "There is a bit of a slope downward to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3516
+                }
+            ]
+        },
+        {
+            "vnum": 3518,
+            "name": "The Fading Trail",
+            "description": "The trail becomes nearly unpassable here. You can go north\nas the forest is relatively light. To the south, you can see a path.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You can see a trail this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3515
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The trees are nearly trunk-to-trunk this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": -1
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Dark forests.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3522
+                }
+            ]
+        },
+        {
+            "vnum": 3519,
+            "name": "The Dark Path",
+            "description": "You are hemmed in by trees on either side of you.  The path\ncontinues north and south, and while is much to thick to explore west,\nyou can head off into the woods to the east.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The forest gets lighter this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3516
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The forest continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3520
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "There is a strong stench coming from this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3521
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The trees are nearly trunk-to-trunk this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": -1
+                }
+            ]
+        },
+        {
+            "vnum": 3520,
+            "name": "The Dark Forest",
+            "description": "You stomp your way through the underbrush.  The dark forest of Miden'nir\nget pretty thick here, and the branches high above your head are so thick that\nthey block out all direct sunlight.  While it is much too thick to go\nfurther east, you might be able to make your way though the forest to the\nsouth and west.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "The thick forest continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3523
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The thick forest continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3519
+                }
+            ]
+        },
+        {
+            "vnum": 3521,
+            "name": "Carnage",
+            "description": "Here, you see a gruesome sight. Blood is everywhere... on the trees and\nsoaked into the ground. Two carcasses lie in front of you, seeming to look\nup at you. The forest is impassible to the south, but the other directions\nlook ok.\n",
+            "flags": "A",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Darkness...\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3519
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Your light does not extend that far.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3523
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "More dark forest.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3522
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "carcass body corpse carcasses bodies corpses",
+                    "description": "The corpses looked as if they have been pierced by a large, jagged\nspear. The damage these people sustained is simply amazing. Worse, the\nlips on the bodies are a light shade of blue, hinting at poison in\ntheir systems.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3522,
+            "name": "Deep in the Forest of Miden'nir",
+            "description": "There is a sickening stench here. It smells of blood and death.\nTo the north, you catch glimpses of daylight. To the east, you\nsimply cannot see. The trees are close and stifling.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see daylight and a trail to follow.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3518
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The stench seems to becoming from this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3521
+                }
+            ]
+        },
+        {
+            "vnum": 3523,
+            "name": "The Dark Forest",
+            "description": "The branches above you block out all direct sunlight, making the forest\nin this area rather dark.  The forest continues east, where it meets the\nmountains. The air is still and stuffy - a stench comes from the west and an\nugly feeling causes the hair to rise on the back of your neck!\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "It appears to get much darker that direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3520
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3551
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The sky becomes lighter in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3521
+                }
+            ]
+        },
+        {
+            "vnum": 3525,
+            "name": "Along the Eastern Road",
+            "description": "You are walking along a well-travelled road between Midgaard and lands\neast.  A northern road crosses this one to the west, towards Midgaard.  You\nhear faint, happy singing to the north.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see a faint trail, covered with tiny footprints. The singing grows louder.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 101
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The road continues to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3526
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You can see the crossroads.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3502
+                }
+            ]
+        },
+        {
+            "vnum": 3526,
+            "name": "Along the Eastern Road",
+            "description": "You are travelling down the eastern road between Midgaard and the eastern\nlands.  The road back to Midgaard is west of you, and a heavily guarded\ncheckpoint is east.  A beautiful grove of trees is north, and a dirt path \nwanders off to the south.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see a beautiful, shady grove -- it looks like a peaceful place to relax.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 8950
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The road continues west towards a guarded checkpoint.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3527
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A dirt path leads to the gnome village.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 1501
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The road continues west towards midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3525
+                }
+            ]
+        },
+        {
+            "vnum": 3527,
+            "name": "The Checkpoint",
+            "description": "You are met by a group of heavily armored knights.  They check you over\nfor contraband, and then allow you to pass on.  One of the knights cautions to\nnot stray into the desert, lest you lose your way.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The continues east towards New Thalos.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3528
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The road continues west towards midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3526
+                }
+            ]
+        },
+        {
+            "vnum": 3528,
+            "name": "Along the Eastern Road",
+            "description": "You are walking along a well-travelled road, just east of a heavily \nguarded checkpoint.  You have covered about half the distance between\nthe city of Midgaard and New Thalos.  The air is getting drier and the heat\nmore oppressive as you near the the barren wastes of the Sands of Sorrow.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The road continues ahead, growing more arid as you near the desert.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3529
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see a heavily guarded checkpoint to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3527
+                }
+            ]
+        },
+        {
+            "vnum": 3529,
+            "name": "Along the Eastern Road",
+            "description": "The tempatures are climbing as you near the Sands of Sorrow, a barren\nwasteland blasted by arcane powers.  Ahead of you, the road is partially\nburied by the creeping sands, and the air grows even hotter.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the Sands of Sorrow spilling over the road.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3530
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The road continues to the west, towards distant Midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3528
+                }
+            ]
+        },
+        {
+            "vnum": 3530,
+            "name": "Near the Sands of Sorrow",
+            "description": "The eastern road is losing ground to the creeping desert here.  You stagger\nin the growing heat, and wonder if you have enough water.  The endless waste\nof the Sands of Sorrows is south, and the road continues east and west.  The \nsun paints illusions at the edge of your vision, one of them looks like a far \noff city...\n",
+            "flags": "0",
+            "sector": 10,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The road ahead is almost lost in the desert.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3531
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see a clearer section of road. \n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3529
+                }
+            ]
+        },
+        {
+            "vnum": 3531,
+            "name": "Near the Sands of Sorrow",
+            "description": "The road is almost completely swallowed by the desert here.  The heat is\nsucking the life from your body, you wonder if it will ever end.  To your\nsouth, the Sands of Sorrow stretch on for miles, and to the east you think\nyou see the towers of a magnificent city...or is it just a mirage?\n",
+            "flags": "0",
+            "sector": 10,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You can barely make out enough road to follow.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3532
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The desert thins a little to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3530
+                }
+            ]
+        },
+        {
+            "vnum": 3532,
+            "name": "On the Outskirts of New Thalos",
+            "description": "The sun is hot enough to melt your armor, but salvation is at hand.  To the\neast, you see the mighty gates of New Thalos, one of the most prosperous cities\nof all of Thera.  To the south, you see the endless wasteland of the Sands\nof Sorrows, and to the west you can barely make out a faint, but well-used,\nroad leading to the City of Midgaard. \n",
+            "flags": "0",
+            "sector": 10,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the west gate of New Thalos.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9669
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the road to Midgaard, covered with sand.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3531
+                }
+            ]
+        },
+        {
+            "vnum": 3550,
+            "name": "At The Foot of The Mountains",
+            "description": "You find yourself at the foot of the mountains, where it is much to steep\nto continue north or east.  You see the lush, green forest of Miden'nir to the\nsouth and west.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "The forest of Miden'nir spreads out before you.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3512
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The forest of Miden'nir spreads out before you.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3506
+                }
+            ]
+        },
+        {
+            "vnum": 3551,
+            "name": "The Deep in the Forest of Miden'nir",
+            "description": "The branches above you block out all direct sunlight, making the forest\nin this area very dark.  The forest continues west, but mountains block\nfurther exploration in all other directions, except south, where you notice a\nsmall tunnel dug into the mountainside.\n",
+            "flags": "A",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3552
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3523
+                }
+            ]
+        },
+        {
+            "vnum": 3552,
+            "name": "A Tunnel in the Mountains",
+            "description": "The walls of this tunnel were carved out many years ago by the goblins of\nthis forest.  The floor is well worn, and continues south, into the\nmountain, or back north out into the forest.\n",
+            "flags": "A",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Outside, you see the forest of Miden'nir.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3551
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The tunnel continues to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3553
+                }
+            ]
+        },
+        {
+            "vnum": 3553,
+            "name": "A Tunnel in the Mountains",
+            "description": "The tunnel gets lighter to the north, presumably leading out, while to\nthe south the passage gets smaller and smaller.  A small alcove has been\ncarved into the east wall.\n",
+            "flags": "A",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The tunnel gets wider in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3552
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see a small alcove.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3554
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The tunnel gets smaller in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3555
+                }
+            ]
+        },
+        {
+            "vnum": 3554,
+            "name": "A Small Alcove",
+            "description": "A small alcove has been carved out here.  There are a bunch of twigs\nand leaves thrown into a pile here, probably serving as a bed.\n",
+            "flags": "A",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "You see the main passageway.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3553
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "twigs leaves bead",
+                    "description": "The twigs and leaves have all been piled together as a makeshift bed for\nsome small humanoid.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3555,
+            "name": "A Tunnel in the Mountains",
+            "description": "As you explore further into the mountainside, the tunnel gets smaller and\nsmaller to the south.  You almost have to hunch over to make your way thru\nthis area.  A small archway to the south leads into a large chamber.\n",
+            "flags": "A",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The tunnel continues north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3553
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see a small cavern.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3556
+                }
+            ]
+        },
+        {
+            "vnum": 3556,
+            "name": "The Goblin Headquarters",
+            "description": "The tunnel widens into a large (well, large for goblins) cavern that\nserves as the living quarters for the goblins of Miden'nir.  The bones of\nnumbers woodland creatures are strewn about the room, the remanents of a\nrecent meal.\n",
+            "flags": "A",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The tunnel heads north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3555
+                }
+            ]
+        },
+        {
+            "vnum": 3570,
+            "name": "The Front of the Inn",
+            "description": "You are standing on a well-worn path which opens into a clearing.\nAn old, wooden building is here with smoke billowing from its\nchimney. A painted sign is visible on the porch to the west. You\ncould go north or south around the building or leave this place and\nreturn to the forest.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You can go north around the inn.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3571
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Back through the trees to the Miden'nir.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3505
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You can go south around the inn.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3572
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The front door of the inn beckons.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3574
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "credits credit author",
+                    "description": "+-------------------------------------------------+\n| This zone originally written for Copper II DIKU |\n|   by ?                                          |\n| Modification and alterations for MERCmud DIKU   |\n|   by VampLestat                        1 JAN 93 |\n+-------------------------------------------------+\n"
+                },
+                {
+                    "keyword": "sign",
+                    "description": "The sign reads:\n   The Woodsman\n"
+                }
+            ]
+        },
+        {
+            "vnum": 3571,
+            "name": "North of the Inn",
+            "description": "You are standing north of the inn. Things don't look much different\nfrom this angle.  The air here is filled with smells of smoke and cooking.\nSouth, the front porch is waiting for you... or you can see if there is\na back door.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the front of the Inn.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3570
+                }
+            ]
+        },
+        {
+            "vnum": 3572,
+            "name": "South of the Inn",
+            "description": "You are standing south of the inn.  You could easily go north and enter\nthrough the front door, or west and to the rear of the establishment.  You\nhere some muffled cries from a tiny trail leading south of here.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "This way leads to the front of the inn.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3570
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The trail heads south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3575
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "This way leads to the back of the inn.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3573
+                }
+            ]
+        },
+        {
+            "vnum": 3573,
+            "name": "Behind the Inn",
+            "description": "You now stand behind the inn. The smell here is not so pleasant as\nthe keeper and his help throw a good deal of garbage here. A couple of\npiles of rubbish are to the west, but you will smell the worse for\nmeddling there. As a clean alternative, you can go north or east around\nthe inn.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You can go around the inn this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3572
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Only rats and fool adventurers play in garbage.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3578
+                }
+            ]
+        },
+        {
+            "vnum": 3574,
+            "name": "The Woodsman Inn",
+            "description": "You are in the common room of the Woodsman Inn. A thin haze of smoke sits\nin the air here. The Inn is often empty, as the forest has become overrun by\ngoblins as of late, and it is no longer safe in these parts. The bar is just\nnorth of here. If you'd rather have your own table, one is empty to the\nsouth.\n",
+            "flags": "CD",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The bar is here, manned by the innkeeper.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3576
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "You can leave now and return to fresher air.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3570
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "An empty table is a rare commodity.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3579
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3577
+                }
+            ]
+        },
+        {
+            "vnum": 3575,
+            "name": "The Ambush Point",
+            "description": "This is a overgrown foot-trail south of the inn. It leads west, but you\nwould be hard pressed to follow it far. A number of bushes are trampled on\nand some medium sized branches have been knocked down.  Obviously there has\nbeen a battle here rather recently.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The inn lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3572
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A trail thru the woods.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3581
+                }
+            ]
+        },
+        {
+            "vnum": 3576,
+            "name": "The Bar",
+            "description": "This is where people use to come and enjoy the food, drink and hospitality\nof the innkeeper, but as of late, he only serves the few adventurers that\nmanage to survive a trip thru the forest. You can leave south and return to the\ncommon room.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "You may retreat south back to the common room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3574
+                }
+            ]
+        },
+        {
+            "vnum": 3577,
+            "name": "The Bard's Table",
+            "description": "You are in a darker corner in the Inn.  A large round table with a few\nwooden chairs sits here.  There is a large stain on the table, the remnants\nof a spilled drink.\n",
+            "flags": "D",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see the main floor of the Inn to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3574
+                }
+            ]
+        },
+        {
+            "vnum": 3578,
+            "name": "Garbage dump",
+            "description": "You stand knee deep in garbage.  YECCH!!! It smells terrible and who knows\nwhat vermin live in these piles of filth ...\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You can return to cleaner lands this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3573
+                }
+            ]
+        },
+        {
+            "vnum": 3579,
+            "name": "A Quieter Section of the Inn",
+            "description": "There seems to be no one in this end of the Woodsman, probably a safe place\nto rest and lick your wounds ...\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the common room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3574
+                }
+            ]
+        },
+        {
+            "vnum": 3581,
+            "name": "On the Trail of the Horsemen",
+            "description": "The path continues east and west of here.  You notice fresh tracks in\nthe soft ground that show the horsemen fled to the west.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "Back to ambush point.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3575
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The trail continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3582
+                }
+            ]
+        },
+        {
+            "vnum": 3582,
+            "name": "On the Trail of the Horsemen",
+            "description": "The path continues east and south.  You notice fresh tracks in\nthe soft ground that show the horsemen turned, and fled south.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The trail continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3581
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The tracks lead south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3583
+                }
+            ]
+        },
+        {
+            "vnum": 3583,
+            "name": "On the Trail of the Horsemen",
+            "description": "The trail of the horsemen continues east and north along this path through\nthe forest.  The tracks are still fresh, so they must be near.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The trail continues.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3582
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The tracks lead east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3584
+                }
+            ]
+        },
+        {
+            "vnum": 3584,
+            "name": "A Dead End Trail",
+            "description": "The path comes to an abrupt end here, as the trees close around you and\nmake any further exploration impossible.  Fresh tracks cover the ground, and\nend right here.  The horsemen must be nearby.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "Back to along the trail.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 3583
+                }
+            ]
+        }
+    ],
+    "resets": [
+        {
+            "command": "M",
+            "arg1": 3500,
+            "arg2": 2,
+            "arg3": 3521,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3500,
+            "arg2": 2,
+            "arg3": 3521,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 3501,
+            "arg2": 8,
+            "arg3": 3512,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3500,
+            "arg2": 18,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3045,
+            "arg2": 6,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3501,
+            "arg2": 10,
+            "arg3": 3512,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3500,
+            "arg2": 18,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3502,
+            "arg2": 6,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 3075,
+            "arg2": 6,
+            "arg3": 8
+        },
+        {
+            "command": "M",
+            "arg1": 3501,
+            "arg2": 10,
+            "arg3": 3509,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3500,
+            "arg2": 18,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3072,
+            "arg2": 6,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3501,
+            "arg2": 10,
+            "arg3": 3506,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3500,
+            "arg2": 18,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3074,
+            "arg2": 6,
+            "arg3": 7
+        },
+        {
+            "command": "M",
+            "arg1": 3501,
+            "arg2": 10,
+            "arg3": 3513,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3500,
+            "arg2": 18,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3077,
+            "arg2": 6,
+            "arg3": 10
+        },
+        {
+            "command": "M",
+            "arg1": 3501,
+            "arg2": 10,
+            "arg3": 3556,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3500,
+            "arg2": 18,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3076,
+            "arg2": 6,
+            "arg3": 9
+        },
+        {
+            "command": "M",
+            "arg1": 3506,
+            "arg2": 4,
+            "arg3": 3551,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3502,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 3500,
+            "arg2": 20,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3072,
+            "arg2": 8,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3506,
+            "arg2": 4,
+            "arg3": 3556,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3500,
+            "arg2": 20,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3502,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 3072,
+            "arg2": 8,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 3507,
+            "arg2": 1,
+            "arg3": 3556,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3072,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 3501,
+            "arg2": 6,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 3502,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "M",
+            "arg1": 3502,
+            "arg2": 1,
+            "arg3": 3575,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3503,
+            "arg2": 1,
+            "arg3": 3576,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 3504,
+            "arg2": 1,
+            "arg3": 3577,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 3505,
+            "arg2": 3,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3505,
+            "arg2": 4,
+            "arg3": 3583,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3503,
+            "arg2": 8,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 3022,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 3505,
+            "arg2": 4,
+            "arg3": 3584,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 3504,
+            "arg2": 4,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 3022,
+            "arg2": -1,
+            "arg3": 16
+        }
+    ],
+    "shops": [],
+    "specials": [
+        {
+            "vnum": 3500,
+            "spec_fun": "spec_poison"
+        }
+    ]
+}

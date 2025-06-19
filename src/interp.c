@@ -25,6 +25,12 @@
 *	ROM license, in the file Rom24/doc/rom.license			   *
 ***************************************************************************/
 
+/***************************************************************************
+ *   KURGAN MUD – Based on ROM 2.4, Merc 2.1, and DikuMUD                  *
+ *                                                                         *
+ *   KURGAN MUD is a customized extension by Özgür Yilmaz                  *
+ ***************************************************************************/
+
 #if defined(macintosh)
 #include <types.h>
 #else
@@ -398,7 +404,7 @@ void interpret( CHAR_DATA *ch, char *argument )
      *   also no spaces needed after punctuation.
      */
     strcpy( logline, argument );
-    if ( !isutf8(argument[0]) )
+    if ( !isalpha(argument[0]) && !isdigit(argument[0]) )
     {
 	command[0] = argument[0];
 	command[1] = '\0';

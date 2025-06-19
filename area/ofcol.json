@@ -1,0 +1,291 @@
+{
+    "area": {
+        "file_name": "ofcol.are",
+        "name": "Ofcol",
+        "low_range": "1",
+        "high_range": "50",
+        "writer": "Alfa",
+        "credits": "Ofcol",
+        "min_vnum": 5500,
+        "max_vnum": 5599
+    },
+    "mobiles": [],
+    "objects": [],
+    "rooms": [
+        {
+            "vnum": 5550,
+            "name": "Village street",
+            "description": "You stand at the small village street in Ofcol.\nFrom here you see small houses and only few people.\nNorth of here the village street continues up to the small\nsquare where some people are gathered as always.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You look up the village street noticing nothing special at all.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5551
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The wide road leads south here towards the T-crossing.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 314
+                }
+            ]
+        },
+        {
+            "vnum": 5551,
+            "name": "Village street",
+            "description": "You are standing on the village street of Ofcol.\nEast from here is a small alley and north you enter the village\nsquare. Towards the south you can leave Ofcol.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The village square is as usual not overcrowded.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5552
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The small alley looks relative peaceful.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5553
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the village street eventually becoming the wide road.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5550
+                }
+            ]
+        },
+        {
+            "vnum": 5552,
+            "name": "Village square",
+            "description": "The village square is a place where inhabitants of Ofcol gather\nto talk, trade and sell items and just have a good time.\nYou see a small shop to the west and the local inn to the north.\nIf you leave south you go to village street.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see a local inn called 'The Ofcol Local Inn'. Looks nice.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5556
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "You see the village street of Ofcol.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5551
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A small shop with the sign 'Luxan's Mixed goods' hanging in front of it.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5555
+                }
+            ]
+        },
+        {
+            "vnum": 5553,
+            "name": "The small alley",
+            "description": "You are in a small, quiet alley.  From here you see the village street\nto the west and a small room lies to the south.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "You see a big intersection.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 601
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "It looks like the future site of a training room.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5554
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "You notice nothing but the village street.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5551
+                }
+            ]
+        },
+        {
+            "vnum": 5554,
+            "name": "The future training room",
+            "description": "This is the future site of a training room.  The only exit is north\nleading to the small alley.\n",
+            "flags": "D",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You are able to see the small alley, really not very interesting.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5553
+                }
+            ]
+        },
+        {
+            "vnum": 5555,
+            "name": "Luxan's mixed shop",
+            "description": "You are standing in a small shop, filled with all kinds of goods.\nHere you might be able to find just the thing you're looking for.\nThe only exit is east to village square.\n",
+            "flags": "D",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "The village square is as usual not overcrowded.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5552
+                }
+            ]
+        },
+        {
+            "vnum": 5556,
+            "name": "The Local Inn",
+            "description": "You are in the local inn, where the peaceful citizens of Ofcol\ngather to have a drink or 5 if they have dry throats.\nYou can't help thinking that Ofcol is a dry city, when you see the\nmany people here.\nThe only exit is south to the village square.\n",
+            "flags": "D",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "The village square is as usual not overcrowded.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5552
+                }
+            ]
+        },
+        {
+            "vnum": 5577,
+            "name": "Ravan's hideout",
+            "description": "This place is a small, cosy place where no one disturbs you all\nthe time. The room has little decoration except for some pictures\non the wall.\nYou notice that there are no exits from this room.\n",
+            "flags": "C",
+            "sector": 0,
+            "extra_descriptions": [
+                {
+                    "keyword": "friend friends",
+                    "description": "The list include such prominent names as : God, Lottie, Kurgan,\nEzzard, Mike, Sprocket and Stormbringer.\n"
+                },
+                {
+                    "keyword": "foe foes enemies",
+                    "description": "There is only one picture yet... Dim.\nIt pictures him hanging from a gallow, north of the town.\nIt has the letters R.I.P. inscripted underneath.\n"
+                },
+                {
+                    "keyword": "pictures picture decoration",
+                    "description": "These pictures show the friend's and foe's of Ravan.\nThey are easy to separate, as most of the foe's have the letters\nR.I.P. inscripted underneath them.\n"
+                }
+            ]
+        }
+    ],
+    "resets": [
+        {
+            "command": "M",
+            "arg1": 303,
+            "arg2": 5,
+            "arg3": 5556,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 303,
+            "arg2": 5,
+            "arg3": 5550,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 304,
+            "arg2": 5,
+            "arg3": 5553,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 304,
+            "arg2": 5,
+            "arg3": 5552,
+            "arg4": 3
+        },
+        {
+            "command": "E",
+            "arg1": 3020,
+            "arg2": 99,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 306,
+            "arg2": 1,
+            "arg3": 5555,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 304,
+            "arg2": 100
+        },
+        {
+            "command": "G",
+            "arg1": 3030,
+            "arg2": 100
+        },
+        {
+            "command": "M",
+            "arg1": 308,
+            "arg2": 1,
+            "arg3": 5556,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 3000,
+            "arg2": 100
+        },
+        {
+            "command": "G",
+            "arg1": 3001,
+            "arg2": 100
+        },
+        {
+            "command": "M",
+            "arg1": 350,
+            "arg2": 1,
+            "arg3": 5577,
+            "arg4": 1
+        }
+    ],
+    "shops": [],
+    "specials": []
+}

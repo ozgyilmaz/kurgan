@@ -25,6 +25,12 @@
 *	ROM license, in the file Rom24/doc/rom.license			   *
 ***************************************************************************/
 
+/***************************************************************************
+ *   KURGAN MUD – Based on ROM 2.4, Merc 2.1, and DikuMUD                  *
+ *                                                                         *
+ *   KURGAN MUD is a customized extension by Özgür Yilmaz                  *
+ ***************************************************************************/
+
 /* externs */
 extern char str_empty[1];
 extern int mobile_count;
@@ -57,12 +63,6 @@ void	free_ban args( (BAN_DATA *ban) );
 DD	*new_descriptor args( (void) );
 void	free_descriptor args( (DESCRIPTOR_DATA *d) );
 #undef DD
-
-/* char gen data recycling */
-#define GD GEN_DATA
-GD 	*new_gen_data args( (void) );
-void	free_gen_data args( (GEN_DATA * gen) );
-#undef GD
 
 /* extra descr recycling */
 #define ED EXTRA_DESCR_DATA

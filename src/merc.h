@@ -25,6 +25,12 @@
 *	ROM license, in the file Rom24/doc/rom.license			   *
 ***************************************************************************/
 
+/***************************************************************************
+ *   KURGAN MUD – Based on ROM 2.4, Merc 2.1, and DikuMUD                  *
+ *                                                                         *
+ *   KURGAN MUD is a customized extension by Özgür Yilmaz                  *
+ ***************************************************************************/
+
 #include "color.h"
 
 /*
@@ -2097,7 +2103,6 @@ bool	check_ban	args( ( char *site, int type) );
 
 
 /* comm.c */
-int     isutf8  args((char c));
 void	show_string	args( ( struct descriptor_data *d, char *input) );
 void	close_socket	args( ( DESCRIPTOR_DATA *dclose ) );
 void	write_to_buffer	args( ( DESCRIPTOR_DATA *d, const char *txt,
@@ -2127,6 +2132,7 @@ OID *	get_obj_index	args( ( int vnum ) );
 RID *	get_room_index	args( ( int vnum ) );
 char	fread_letter	args( ( FILE *fp ) );
 int	fread_number	args( ( FILE *fp ) );
+long 	char_flag	args( ( char *flagtext, int i ) );
 long 	fread_flag	args( ( FILE *fp ) );
 char *	fread_string	args( ( FILE *fp ) );
 char *  fread_string_eol args(( FILE *fp ) );
@@ -2287,7 +2293,6 @@ bool	load_char_obj	args( ( DESCRIPTOR_DATA *d, char *name ) );
 
 /* skills.c */
 bool 	parse_gen_groups args( ( CHAR_DATA *ch,char *argument ) );
-void 	list_group_costs args( ( CHAR_DATA *ch ) );
 void    list_group_known args( ( CHAR_DATA *ch ) );
 int 	exp_per_level	args( ( CHAR_DATA *ch, int points ) );
 void 	check_improve	args( ( CHAR_DATA *ch, int sn, bool success, 

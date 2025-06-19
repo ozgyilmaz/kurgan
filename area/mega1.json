@@ -1,0 +1,2191 @@
+{
+    "area": {
+        "file_name": "mega1.are",
+        "name": "Mega City One",
+        "low_range": "5",
+        "high_range": "35",
+        "writer": "Glop",
+        "credits": "Mega-City One ",
+        "min_vnum": 8000,
+        "max_vnum": 8099
+    },
+    "mobiles": [
+        {
+            "vnum": 8000,
+            "name": "oldstyle juve",
+            "short_description": "a juve",
+            "long_description": "A juve is standing here plotting mischief.\n",
+            "description": "He is a tall, thin boy.  He is looking for his gang mates.  He and his\nmates have cost city authorities many millions of creds a week in\nvandalism repairs.\n",
+            "race": "human",
+            "act": "AC",
+            "affected_by": "0",
+            "alignment": -400,
+            "group": 0,
+            "level": 5,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                60
+            ],
+            "mana_dice": [
+                2,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                6,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 5,
+            "ac_bash": 5,
+            "ac_slash": 5,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8001,
+            "name": "oldstyle punk",
+            "short_description": "a punk",
+            "long_description": "A punk is here plotting a crime wave.\n",
+            "description": "This punk is from one of the rowdiest, scruffiest, and definitely most\nfashionable of all gangs -- the Grunge Mongers.\n",
+            "race": "human",
+            "act": "ACG",
+            "affected_by": "0",
+            "alignment": -500,
+            "group": 0,
+            "level": 10,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                121
+            ],
+            "mana_dice": [
+                5,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                4,
+                2
+            ],
+            "dam_type": "none",
+            "ac_pierce": 1,
+            "ac_bash": 1,
+            "ac_slash": 1,
+            "ac_exotic": 8,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8002,
+            "name": "oldstyle Futsie",
+            "short_description": "a Futsie",
+            "long_description": "A Futsie is here reciting Monty Python sketches.\n",
+            "description": "A sad victim of Future Shock, this man is immensely dangerous and will\nnot be stopped by anyone who tries to deter him from revenge upon the\nJustice Department.\n",
+            "race": "human",
+            "act": "ABF",
+            "affected_by": "D",
+            "alignment": 0,
+            "group": 0,
+            "level": 17,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                258
+            ],
+            "mana_dice": [
+                8,
+                9,
+                100
+            ],
+            "dam_dice": [
+                3,
+                4,
+                4
+            ],
+            "dam_type": "none",
+            "ac_pierce": -3,
+            "ac_bash": -3,
+            "ac_slash": -3,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8003,
+            "name": "oldstyle Citi-Def Militiaman",
+            "short_description": "a Citi-Def Militiaman",
+            "long_description": "A Citi-Def Militiaman is here contemplating a Block War.\n",
+            "description": "A member of a local Block's Citi-Def militia, this man is well-armed\nand undersupervised.\n",
+            "race": "human",
+            "act": "ACG",
+            "affected_by": "J",
+            "alignment": 0,
+            "group": 0,
+            "level": 16,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                233
+            ],
+            "mana_dice": [
+                8,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                6,
+                4
+            ],
+            "dam_type": "none",
+            "ac_pierce": -2,
+            "ac_bash": -2,
+            "ac_slash": -2,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8004,
+            "name": "oldstyle dunk",
+            "short_description": "a dunk",
+            "long_description": "A dunk is here blending into the crowd.\n",
+            "description": "He blends into the crowd as his hand travels into another citizen's pocket.\n",
+            "race": "human",
+            "act": "ACGHS",
+            "affected_by": "DF",
+            "alignment": -150,
+            "group": 0,
+            "level": 10,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                110
+            ],
+            "mana_dice": [
+                5,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                8,
+                2
+            ],
+            "dam_type": "none",
+            "ac_pierce": 2,
+            "ac_bash": 2,
+            "ac_slash": 2,
+            "ac_exotic": 8,
+            "off_flags": "BEFJNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8005,
+            "name": "oldstyle tap",
+            "short_description": "a tap",
+            "long_description": "A tap is here eyeing your belongings.\n",
+            "description": "A practitioner in Mega-City One's largest growth industry, mugging, is\nlooking you over for a possible business transaction.\n",
+            "race": "human",
+            "act": "ACG",
+            "affected_by": "0",
+            "alignment": -400,
+            "group": 0,
+            "level": 14,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                10,
+                190
+            ],
+            "mana_dice": [
+                7,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                12,
+                3
+            ],
+            "dam_type": "none",
+            "ac_pierce": -1,
+            "ac_bash": -1,
+            "ac_slash": -1,
+            "ac_exotic": 8,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "female",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8006,
+            "name": "oldstyle rookie judge",
+            "short_description": "a rookie judge",
+            "long_description": "A Rookie judge is on his first beat here.\n",
+            "description": "A member of Mega-City One's Justice Department is here considering what\ncrimes you have committed.  Being a rookie he will probably be easier on\nyou though.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "DF",
+            "alignment": 300,
+            "group": 0,
+            "level": 20,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                333
+            ],
+            "mana_dice": [
+                10,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                8,
+                5
+            ],
+            "dam_type": "none",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": -4,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8007,
+            "name": "oldstyle Wallaby Gleep",
+            "short_description": "Wallaby Gleep",
+            "long_description": "Mr. Gleep is here wanting to know what you want.\n",
+            "description": "Wallaby Gleep is a heavy-set man who gives you the impression that he is\nunintelligent and unimaginative, but looks can be deceiving.\n",
+            "race": "human",
+            "act": "ABC",
+            "affected_by": "DFJ",
+            "alignment": -600,
+            "group": 0,
+            "level": 22,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                10,
+                400
+            ],
+            "mana_dice": [
+                11,
+                9,
+                100
+            ],
+            "dam_dice": [
+                4,
+                4,
+                6
+            ],
+            "dam_type": "none",
+            "ac_pierce": -5,
+            "ac_bash": -5,
+            "ac_slash": -5,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8008,
+            "name": "oldstyle Pinkerton Throt",
+            "short_description": "Pinkerton Throt",
+            "long_description": "Pinky Throt is here Wringing his hands.\n",
+            "description": "He is a thin angular crook, pretty close to everyone's idea of Ebeneezer\nScrooge.  Indeed, the only thing guaranteed to bring a spark to his dead\neyes is the mention of money.\n",
+            "race": "human",
+            "act": "ABCF",
+            "affected_by": "DF",
+            "alignment": -900,
+            "group": 0,
+            "level": 25,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                10,
+                550
+            ],
+            "mana_dice": [
+                12,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                10,
+                7
+            ],
+            "dam_type": "none",
+            "ac_pierce": -7,
+            "ac_bash": -7,
+            "ac_slash": -7,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8009,
+            "name": "oldstyle Ernie Ramirez",
+            "short_description": "Ernie Ramirez",
+            "long_description": "Ernie Ramirez is here collecting for the mob.\n",
+            "description": "Ramirez is a dour man who knows that he's never going to get a better\ndeal out of life.  He is content to run the bite fights for Throt and\nGleep.\n",
+            "race": "human",
+            "act": "ABC",
+            "affected_by": "0",
+            "alignment": -400,
+            "group": 0,
+            "level": 19,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                308
+            ],
+            "mana_dice": [
+                9,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                7,
+                5
+            ],
+            "dam_type": "none",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": -4,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8010,
+            "name": "oldstyle Judge Eckersely",
+            "short_description": "Judge Eckersely",
+            "long_description": "Judge Eckersely is here shaking down a Perp.\n",
+            "description": "He is a dedicated, if somewhat pessimistic Judge.  He is the Senior Judge\nof the Downtown Quadrant.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "DFH",
+            "alignment": 300,
+            "group": 0,
+            "level": 30,
+            "hitroll": 0,
+            "hit_dice": [
+                6,
+                12,
+                853
+            ],
+            "mana_dice": [
+                15,
+                9,
+                100
+            ],
+            "dam_dice": [
+                4,
+                6,
+                8
+            ],
+            "dam_type": "none",
+            "ac_pierce": -9,
+            "ac_bash": -9,
+            "ac_slash": -9,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8011,
+            "name": "oldstyle Judge Beddows",
+            "short_description": "Judge Beddows",
+            "long_description": "Judge Beddows is here calling Resyk.\n",
+            "description": "Beddows is a clone from the same stock as the ex-Chief Judge McGruder.\nShe is fanatically dedicated to her job and has no ambitions other than\nto enforce the LAW.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "DF",
+            "alignment": 500,
+            "group": 0,
+            "level": 25,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                10,
+                550
+            ],
+            "mana_dice": [
+                12,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                10,
+                7
+            ],
+            "dam_type": "none",
+            "ac_pierce": -7,
+            "ac_bash": -7,
+            "ac_slash": -7,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "female",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 8012,
+            "name": "oldstyle bite fighter",
+            "short_description": "a bite fighter",
+            "long_description": "A bite fighter is here sharpening his teeth.\n",
+            "description": "A bite fighter is here with sharpened teeth and a bad attitude.\n",
+            "race": "human",
+            "act": "ABF",
+            "affected_by": "0",
+            "alignment": -400,
+            "group": 0,
+            "level": 20,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                333
+            ],
+            "mana_dice": [
+                10,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                8,
+                5
+            ],
+            "dam_type": "none",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": -4,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        }
+    ],
+    "objects": [
+        {
+            "vnum": 8000,
+            "name": "spitgun spit gun",
+            "short_description": "a spit gun",
+            "description": "There is a spit gun laying here.",
+            "material": "oldstyle",
+            "type": "wand",
+            "extra_flags": "0",
+            "wear_flags": "AO",
+            "values": "20 10 10 'general purpose' 0",
+            "level": 17,
+            "weight": 20,
+            "cost": 48900,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "spit gun",
+                    "description": "A standard weapon in Mega-City One.  It uses general\npurpose ammunition.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8001,
+            "name": "knee pads",
+            "short_description": "a set of knee pads",
+            "description": "There are some knee pads laying here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AF",
+            "values": "4 4 4 0 0",
+            "level": 5,
+            "weight": 30,
+            "cost": 480,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "knee pads",
+                    "description": "It is a set of Grak Brothers knee pads.  They are currently\npopular with the juve and punk gangs.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8002,
+            "name": "stooky gland",
+            "short_description": "a stooky gland",
+            "description": "There is a stooky gland laying here.",
+            "material": "oldstyle",
+            "type": "pill",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "20 '' 'cure poison' 'heal' ''",
+            "level": 13,
+            "weight": 10,
+            "cost": 1000,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "stooky gland",
+                    "description": "Stooky glands are known for the restorative properties.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8003,
+            "name": "lawgiver",
+            "short_description": "a lawgiver",
+            "description": "There is a lawgiver laying here.",
+            "material": "oldstyle",
+            "type": "wand",
+            "extra_flags": "0",
+            "wear_flags": "AO",
+            "values": "30 10 10 'high explosive' 0",
+            "level": 27,
+            "weight": 20,
+            "cost": 58000,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "lawgiver gun",
+                    "description": "The standard weapon for the city's Judges.  It uses general\nhigh explosive ammunition.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8004,
+            "name": "safe",
+            "short_description": "the magnetically shielded safe",
+            "description": "A indestructible, immobile safe is here.",
+            "material": "oldstyle",
+            "type": "container",
+            "extra_flags": "B",
+            "wear_flags": "0",
+            "values": "1005 ACD 8005 200 100",
+            "level": 0,
+            "weight": 0,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "safe",
+                    "description": "This safe looks like not even a Sov-Cit Nuke could open it.\nYou better find the code box.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8005,
+            "name": "code box",
+            "short_description": "a code box",
+            "description": "A code box of indeterminate use is here.",
+            "material": "oldstyle",
+            "type": "key",
+            "extra_flags": "B",
+            "wear_flags": "AO",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "code box",
+                    "description": "The box looks like some kind of access device.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8006,
+            "name": "bashball bat two-handed",
+            "short_description": "a bashball bat",
+            "description": "A bashball bat is laying here.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "mace 3 5 pound F",
+            "level": 14,
+            "weight": 30,
+            "cost": 870,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "bashball bat",
+                    "description": "This is the same type of bat used by the little spuggers\nto play bashball.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8007,
+            "name": "vibroblade",
+            "short_description": "the vibroblade",
+            "description": "The vibroblade is here.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "ABF",
+            "wear_flags": "AN",
+            "values": "dagger 3 5 slash 0",
+            "level": 18,
+            "weight": 20,
+            "cost": 2800,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 2,
+                    "modifier": 1
+                },
+                {
+                    "location": 5,
+                    "modifier": 1
+                },
+                {
+                    "location": 19,
+                    "modifier": 2
+                },
+                {
+                    "location": 18,
+                    "modifier": 2
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "vibroblade",
+                    "description": "Obviously of alien manufacture, this blade enhances fighting\nand survival skills.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8008,
+            "name": "vacuum cleaner two-handed",
+            "short_description": "a Hoover vacuum cleaner",
+            "description": "A Hoover vacuum cleaner is here idling.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "B",
+            "wear_flags": "AN",
+            "values": "exotic 4 4 suction F",
+            "level": 15,
+            "weight": 100,
+            "cost": 2100,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "vacuum cleaner",
+                    "description": "This vacuum looks well built and will last you many years of\ncleaning pleasure.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8009,
+            "name": "knife",
+            "short_description": "a knife",
+            "description": "A knife is sitting here...contemplating life.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "dagger 2 4 slice 0",
+            "level": 5,
+            "weight": 10,
+            "cost": 360,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "knife",
+                    "description": "It is a knife. 'Nuff said. (Marvel joke).\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8010,
+            "name": "wet noodle",
+            "short_description": "a wet noodle",
+            "description": "A wet noodle is laying here with clam sauce on it.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "whip 1 4 whip 0",
+            "level": 5,
+            "weight": 10,
+            "cost": 670,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 3,
+                    "modifier": 1
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "noodle",
+                    "description": "It looks like a noodle freshly made at the Olive Garden.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8011,
+            "name": "judge club",
+            "short_description": "a Judge's club",
+            "description": "A Judge's club is resting here.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "mace 2 8 pound 0",
+            "level": 17,
+            "weight": 30,
+            "cost": 1050,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 2
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "judge club",
+                    "description": "It is a standard Justice Hall issue club.  Many a Perp's\nhead has been bashed with this baby.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8012,
+            "name": "vault key",
+            "short_description": "a vault key",
+            "description": "A vault key is here.",
+            "material": "oldstyle",
+            "type": "key",
+            "extra_flags": "B",
+            "wear_flags": "AO",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "vault key",
+                    "description": "The key looks like it could be useful.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8013,
+            "name": "key card",
+            "short_description": "a key card",
+            "description": "A key card is laying here.",
+            "material": "oldstyle",
+            "type": "key",
+            "extra_flags": "0",
+            "wear_flags": "AO",
+            "values": "0 0 0 0 0",
+            "level": 0,
+            "weight": 10,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "key card",
+                    "description": "It looks like it fits a slot somewhere.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8014,
+            "name": "judge club",
+            "short_description": "a Judge's club",
+            "description": "A Judge's club is resting here.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "mace 2 12 pound 0",
+            "level": 26,
+            "weight": 30,
+            "cost": 1700,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 2
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "judge club",
+                    "description": "It is a head judge Justice Hall issue club.  Many a Perp's\nhead has been bashed with this baby.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8015,
+            "name": "club electric shock",
+            "short_description": "a shock club",
+            "description": "A sparking electric club is here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "A",
+            "wear_flags": "AN",
+            "values": "mace 3 5 shock 0",
+            "level": 15,
+            "weight": 30,
+            "cost": 750,
+            "condition": "P"
+        },
+        {
+            "vnum": 8016,
+            "name": "stunner police stick",
+            "short_description": "a police stun stick",
+            "description": "A police issue stunner is here, must be stolen.",
+            "material": "rubber",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "mace 2 11 pound G",
+            "level": 23,
+            "weight": 20,
+            "cost": 1160,
+            "condition": "P"
+        }
+    ],
+    "rooms": [
+        {
+            "vnum": 8001,
+            "name": "Entrance to Mega-City One",
+            "description": "A road begins here in the glowing sands.  You follow it through a gate\nin a Plasteen wall onto the Megway of Mega-City One.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "You see the glowing sand of the badlands.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 5062
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8002
+                }
+            ]
+        },
+        {
+            "vnum": 8002,
+            "name": "Mahmount Allesh Megway",
+            "description": "You are on one mile of over 13 and a half billion kilometers of\nroadway in Mega-City One.  The Megway continues north and south.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The entrance to Mega-City One is in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8001
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "There is an intersection ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8003
+                }
+            ]
+        },
+        {
+            "vnum": 8003,
+            "name": "Intersection of Junket Way and Megway",
+            "description": "The Megway intersects with Junket Way here.  Junket Way is to the east,\nthe Megway continues north and south, and the Pustule Palace Cafe is\nto the west.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8002
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Junket way continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8010
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8004
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The Pustule Palace Cafe is in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8021
+                }
+            ]
+        },
+        {
+            "vnum": 8004,
+            "name": "Mahmount Allesh Megway",
+            "description": "The traffic here is really congested due in part to the over 11 million\npeople driving Mo-Pads, the mobile homes which are constantly on the\nmove until their owners can find an apartment in one of the City-blocks.\nThe Megway continues north and south.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "An intersection lies in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8003
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8005
+                }
+            ]
+        },
+        {
+            "vnum": 8005,
+            "name": "Mahmount Allesh Megway",
+            "description": "The Megway continues north and south.  On the off-ramps here you see\nmany of the citizens of Mega-City One doing nothing.  You see of\nevery hundred citizens, it can be guaranteed that 87 of them will\nbe totally unemployed, and that a further five will not work more\nthan ten hours a week.  To the east there is a dark alley and to the\nwest is Rietzik's Shuggy Hall.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8004
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A dark alley lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8011
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A large plaza is in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8006
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A building is in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8022
+                }
+            ]
+        },
+        {
+            "vnum": 8006,
+            "name": "Central Plaza",
+            "description": "You are at the Central Plaza of the downtown district.  There are a couple\nof juves Boingging (tm) in the air above you.  Max Jaffa Boulevard goes\neast, the Megway continues north and south, and Bazza's Home for the\nTerminally Sarky is to the west.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8005
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Max Jaffa Boulevard goes in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8012
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8007
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A home for Sarky people is to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8023
+                }
+            ]
+        },
+        {
+            "vnum": 8007,
+            "name": "Corner of Ed Hilldreth Memorial Parkway and Megway",
+            "description": "Another major intersection which is being negotiated by vehicles that\nare bound to minimum speed limits.  Many Slow Driving offenses are being\nhanded out by the Judges.  The Megway goes north and south, a Parkway\ngoes east, and Nu Phisog Parlour is west.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A plaza is to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8006
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "Ed Hilldreth Mem. Parkwy is to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8013
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8008
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A City Block lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8024
+                }
+            ]
+        },
+        {
+            "vnum": 8008,
+            "name": "Mahmount Allesh Megway",
+            "description": "As you travel the Megway you notice many citizens participating in their\nfavorite hobbies such as spot welding and metalwork, scratch building\nfashion Kneepads, giving blood, or just looking out the window.  The\nMegway continues north and south.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8007
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "The Megway continues in this direction.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8009
+                }
+            ]
+        },
+        {
+            "vnum": 8009,
+            "name": "Mahmount Allesh Megway",
+            "description": "The Megway ends here.  To the west is Ziggi Piggi's Home for the\nSemi-Stiff, to the east and south are construction areas, and the\nMegway goes north.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "The Megway is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8008
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "There is construction this way.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8014
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "There is construction ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8020
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Ziggi Piggi's Home the Semi-Stiff is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8025
+                }
+            ]
+        },
+        {
+            "vnum": 8010,
+            "name": "Junket Way",
+            "description": "Junket Way a small Skedway continues east and west.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8015
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8003
+                }
+            ]
+        },
+        {
+            "vnum": 8011,
+            "name": "Davies Alley",
+            "description": "You are in a very dark and seedy alley.  This is just the right place for\na bite fight.  Bite fighting is an illegal activity where both combatants\ncan only use their sharpened teeth as weapons.\n",
+            "flags": "A",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8017
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8005
+                }
+            ]
+        },
+        {
+            "vnum": 8012,
+            "name": "Max Jaffa Boulevard",
+            "description": "Max Jaffa Boulevard continues east and west.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8018
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A large plaza is to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8006
+                }
+            ]
+        },
+        {
+            "vnum": 8013,
+            "name": "Ed Hilldreth Memorial Parkway ",
+            "description": "The Parkway goes east and west.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8019
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8007
+                }
+            ]
+        },
+        {
+            "vnum": 8014,
+            "name": "Construction site of the Harold Finkelbaum Block.",
+            "description": "A Mega-City One City Block is being constructed at this site.  A\ntypical block is from 100 to 1000 stories high with hundreds of\nthousands inhabitants.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8009
+                }
+            ]
+        },
+        {
+            "vnum": 8015,
+            "name": "Corner of Junket Way and Threep Lane",
+            "description": "There is a second-hand kneepad stall is doing a brisk business with a\ngroup of juves on their way to school.  Junket Way goes west and Threep\nLane travels south.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "Threep Lane continues ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8016
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Junket Way is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8010
+                }
+            ]
+        },
+        {
+            "vnum": 8016,
+            "name": "Threep Lane",
+            "description": "Threep Lane continues north and south.  There is a building to the east\nwith a sign next to the door.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8015
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A door to the east bodes ill.\n",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8026
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Threep Lane continues south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8017
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "Throt and Gleep's Megger Store est. 2107\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8017,
+            "name": "Threep Lane",
+            "description": "Threep Lane continues north and south.  There is a dark alley to the west.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Threep Lane continues north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8016
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "An intersection is ahead.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8018
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A dark alley is west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8011
+                }
+            ]
+        },
+        {
+            "vnum": 8018,
+            "name": "Corner of Max Jaffa Blvd and Threep Way",
+            "description": "A proprietor of Uncle Sumpty's Ugly Emporium meanders by.  Threep Lane\ncontinues north and south while Max Jaffa Boulevard goes west.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Threep Lane continues north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8017
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "Threep Lane continues south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8019
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Max Jaffa Blvd continues west\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8012
+                }
+            ]
+        },
+        {
+            "vnum": 8019,
+            "name": "Corner of Ed Hilldreth Mem. Prkwy and Threep Lane",
+            "description": "Threep Lane goes north from here while Ed Hilldreth Memorial Parkway goes\nwest.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "Threep Lane continues north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8018
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "Ed Hilldreth continues west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8013
+                }
+            ]
+        },
+        {
+            "vnum": 8020,
+            "name": "Construction Site for the Brit-Cit One tunnel.",
+            "description": "Construction is under way for the Black Atlantic Tunnel to connect\nMega-City One and Brit-Cit One.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "An intersection lies north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8009
+                }
+            ]
+        },
+        {
+            "vnum": 8021,
+            "name": "Pustule Palace Cafe",
+            "description": "A scabrous hole.  Run by Ernie Ramirez, an ex-perp, it is a meeting place\nfor the low-life in the area.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "An intersection lies east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8003
+                }
+            ]
+        },
+        {
+            "vnum": 8022,
+            "name": "Rietzik's Shuggy Hall",
+            "description": "A sleazy dive and the meeting place of a lot of perps.  Shuggy is a\ntwenty-second Century version of pool, played on a hilly table, usually\nwith large side bets.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "An intersection lies east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8005
+                }
+            ]
+        },
+        {
+            "vnum": 8023,
+            "name": "Bazza's Home for the Terminally Sarky",
+            "description": "This is an experimental psychiatric home.  Named after a 20th Century\nvid-critic, the home attempts, by various methods, to readjust the\nsocially unacceptable attitudes of the inmates.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A large plaza lies east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8006
+                }
+            ]
+        },
+        {
+            "vnum": 8024,
+            "name": "Nu Phisog Parlour",
+            "description": "Opened as a direct rival to the New You Face Parlour chain to offer quick\nand cheap face-changing facilities to the general public.  However,\nsince the closure of Sump's Ugly clinics, the craze for face-changing has\ndied down.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "An intersection lies east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8007
+                }
+            ]
+        },
+        {
+            "vnum": 8025,
+            "name": "Ziggi Piggi's Home for the Semi-Stiff",
+            "description": "The only suspended animation parlour in the area.  It has a high turnover\nrate.  It is rumored that the patrons are being used in body sharking and\norgan legging activities.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "An intersection lies east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8009
+                }
+            ]
+        },
+        {
+            "vnum": 8026,
+            "name": "Throt & Gleep's Megger Store",
+            "description": "This place promises to provide everything that the citizens don't need,\nwith the utmost discourtesy.  Of course, something as crazy as this was\nbound to succeed.  There is a door to the north with a slot next to it.\nThere is also a sign next to the slot.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": 8013,
+                    "exit_u1_vnum": 8027
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "door",
+                    "exit_locks": 1,
+                    "exit_key": 0,
+                    "exit_u1_vnum": 8016
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "sign",
+                    "description": "To open insert card.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8027,
+            "name": "Stockroom of Throt & Gleep's Megger Store",
+            "description": "Many useless items stock the shelves of this stockroom.  A door leads\nsouth and large vault door is to the north.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "vault door",
+                    "exit_locks": 2,
+                    "exit_key": 8012,
+                    "exit_u1_vnum": 8028
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "door",
+                    "exit_locks": 2,
+                    "exit_key": 8013,
+                    "exit_u1_vnum": 8026
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "vault door",
+                    "description": "This vault seems impervious to breaking.  There is a keyhole in the lock\nhowever.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 8028,
+            "name": "Throt & Gleep's Vault",
+            "description": "The vault is musty with a slight smell of ozone in the air.\n",
+            "flags": "D",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "vault door",
+                    "exit_locks": 2,
+                    "exit_key": 8012,
+                    "exit_u1_vnum": 8027
+                }
+            ]
+        }
+    ],
+    "resets": [
+        {
+            "command": "M",
+            "arg1": 8000,
+            "arg2": 4,
+            "arg3": 8004,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 8009,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8000,
+            "arg2": 4,
+            "arg3": 8004,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 8009,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8000,
+            "arg2": 4,
+            "arg3": 8006,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8009,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8000,
+            "arg2": 4,
+            "arg3": 8015,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8009,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 8001,
+            "arg2": 40,
+            "arg3": 7
+        },
+        {
+            "command": "M",
+            "arg1": 8001,
+            "arg2": 5,
+            "arg3": 8006,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 8009,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8001,
+            "arg2": 5,
+            "arg3": 8009,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8009,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 8001,
+            "arg2": 40,
+            "arg3": 7
+        },
+        {
+            "command": "M",
+            "arg1": 8001,
+            "arg2": 5,
+            "arg3": 8011,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 8009,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8003,
+            "arg2": 4,
+            "arg3": 8013,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 8001,
+            "arg2": 40,
+            "arg3": 7
+        },
+        {
+            "command": "M",
+            "arg1": 8003,
+            "arg2": 4,
+            "arg3": 8014,
+            "arg4": 2
+        },
+        {
+            "command": "G",
+            "arg1": 8000,
+            "arg2": 10
+        },
+        {
+            "command": "M",
+            "arg1": 8002,
+            "arg2": 4,
+            "arg3": 8023,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 8008,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8002,
+            "arg2": 4,
+            "arg3": 8024,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 8010,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8004,
+            "arg2": 3,
+            "arg3": 8003,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 8004,
+            "arg2": 3,
+            "arg3": 8006,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 8004,
+            "arg2": 3,
+            "arg3": 8005,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 8005,
+            "arg2": 3,
+            "arg3": 8010,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8006,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8005,
+            "arg2": 3,
+            "arg3": 8017,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8015,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8005,
+            "arg2": 3,
+            "arg3": 8019,
+            "arg4": 1
+        },
+        {
+            "command": "M",
+            "arg1": 8006,
+            "arg2": 3,
+            "arg3": 8018,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8011,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8006,
+            "arg2": 3,
+            "arg3": 8012,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8011,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8006,
+            "arg2": 3,
+            "arg3": 8025,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8011,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 8007,
+            "arg2": 1,
+            "arg3": 8027,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8016,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "G",
+            "arg1": 8012,
+            "arg2": 10
+        },
+        {
+            "command": "M",
+            "arg1": 8009,
+            "arg2": 1,
+            "arg3": 8021,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8006,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "G",
+            "arg1": 8002,
+            "arg2": 10
+        },
+        {
+            "command": "G",
+            "arg1": 8013,
+            "arg2": 5
+        },
+        {
+            "command": "M",
+            "arg1": 8010,
+            "arg2": 1,
+            "arg3": 8007,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8014,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "G",
+            "arg1": 8003,
+            "arg2": 20
+        },
+        {
+            "command": "M",
+            "arg1": 8011,
+            "arg2": 1,
+            "arg3": 8009,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8014,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "G",
+            "arg1": 8003,
+            "arg2": 20
+        },
+        {
+            "command": "M",
+            "arg1": 8012,
+            "arg2": 2,
+            "arg3": 8011,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 8012,
+            "arg2": 2,
+            "arg3": 8011,
+            "arg4": 2
+        },
+        {
+            "command": "O",
+            "arg1": 8004,
+            "arg2": 1,
+            "arg3": 8028
+        },
+        {
+            "command": "M",
+            "arg1": 8008,
+            "arg2": 1,
+            "arg3": 8028,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 8016,
+            "arg2": 40,
+            "arg3": 16
+        },
+        {
+            "command": "G",
+            "arg1": 8005,
+            "arg2": 10
+        },
+        {
+            "command": "P",
+            "arg1": 8007,
+            "arg2": 10,
+            "arg3": 8004,
+            "arg4": 1
+        },
+        {
+            "command": "D",
+            "arg1": 8016,
+            "arg2": 1,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 8026,
+            "arg2": 3,
+            "arg3": 1
+        },
+        {
+            "command": "D",
+            "arg1": 8026,
+            "arg2": 0,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 8027,
+            "arg2": 2,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 8027,
+            "arg2": 0,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 8028,
+            "arg2": 2,
+            "arg3": 2
+        }
+    ],
+    "shops": [],
+    "specials": [
+        {
+            "vnum": 8003,
+            "spec_fun": "spec_cast_judge"
+        },
+        {
+            "vnum": 8004,
+            "spec_fun": "spec_thief"
+        },
+        {
+            "vnum": 8006,
+            "spec_fun": "spec_cast_judge"
+        },
+        {
+            "vnum": 8010,
+            "spec_fun": "spec_cast_judge"
+        },
+        {
+            "vnum": 8011,
+            "spec_fun": "spec_cast_judge"
+        }
+    ]
+}

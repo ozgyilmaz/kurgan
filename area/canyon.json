@@ -1,0 +1,5194 @@
+{
+    "area": {
+        "file_name": "canyon.are",
+        "name": "Elemental Canyon",
+        "low_range": "5",
+        "high_range": "30",
+        "writer": "Raff",
+        "credits": "Elemental Canyon",
+        "min_vnum": 9200,
+        "max_vnum": 9299
+    },
+    "mobiles": [
+        {
+            "vnum": 9201,
+            "name": "mountain climber mountainclimber",
+            "short_description": "the mountain climber",
+            "long_description": "A mountain climber is making the same trek that you are.\n",
+            "description": "He wants to see what's on the other side of the mountain too.\n",
+            "race": "human",
+            "act": "ACGT",
+            "affected_by": "0",
+            "alignment": 500,
+            "group": 0,
+            "level": 3,
+            "hitroll": 1,
+            "hit_dice": [
+                10,
+                5,
+                15
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                1,
+                4,
+                1
+            ],
+            "dam_type": "punch",
+            "ac_pierce": 7,
+            "ac_bash": 7,
+            "ac_slash": 7,
+            "ac_exotic": 8,
+            "off_flags": "JN",
+            "imm_flags": "0",
+            "res_flags": "HIJR",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 30,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9202,
+            "name": "cyclops",
+            "short_description": "the cyclops",
+            "long_description": "A hungry cyclops snarls at you!\n",
+            "description": "He looks like he's about to have dinner (maybe it's you?).\n",
+            "race": "giant",
+            "act": "ABFQT",
+            "affected_by": "DF",
+            "alignment": -700,
+            "group": 0,
+            "level": 22,
+            "hitroll": 7,
+            "hit_dice": [
+                10,
+                10,
+                600
+            ],
+            "mana_dice": [
+                10,
+                10,
+                100
+            ],
+            "dam_dice": [
+                6,
+                4,
+                10
+            ],
+            "dam_type": "smash",
+            "ac_pierce": -7,
+            "ac_bash": -7,
+            "ac_slash": -7,
+            "ac_exotic": -2,
+            "off_flags": "ACDIO",
+            "imm_flags": "AB",
+            "res_flags": "CD",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 600,
+            "form": "0",
+            "parts": "0",
+            "size": "huge",
+            "material": "0"
+        },
+        {
+            "vnum": 9203,
+            "name": "oldstyle tiny elemental",
+            "short_description": "a tiny elemental",
+            "long_description": "A tiny elemental form wanders about.\n",
+            "description": "Rather small for an elemental form, looks like a reject.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 1,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                10
+            ],
+            "mana_dice": [
+                0,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                4,
+                0
+            ],
+            "dam_type": "none",
+            "ac_pierce": 9,
+            "ac_bash": 9,
+            "ac_slash": 9,
+            "ac_exotic": 10,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9204,
+            "name": "oldstyle elemental guardian",
+            "short_description": "the elemental guardian",
+            "long_description": "The elemental guardian of the canyon.\n",
+            "description": "You can't tell which kind of elemental it is, maybe it's a bit o' all of them?\n",
+            "race": "human",
+            "act": "AB",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 20,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                333
+            ],
+            "mana_dice": [
+                10,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                8,
+                5
+            ],
+            "dam_type": "none",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": -4,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 500,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9205,
+            "name": "oldstyle small elemental",
+            "short_description": "a small elemental",
+            "long_description": "A small, rather non-descript elemental.\n",
+            "description": "A small elemental, a resident of the canyon.\n",
+            "race": "human",
+            "act": "ABG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 5,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                60
+            ],
+            "mana_dice": [
+                2,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                6,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 5,
+            "ac_bash": 5,
+            "ac_slash": 5,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 12,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9206,
+            "name": "oldstyle medium elemental",
+            "short_description": "a medium elemental",
+            "long_description": "A medium-sized elemental.\n",
+            "description": "A medium elemental, a resident of the canyon.\n",
+            "race": "human",
+            "act": "ABG",
+            "affected_by": "0",
+            "alignment": 10,
+            "group": 0,
+            "level": 10,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                121
+            ],
+            "mana_dice": [
+                5,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                4,
+                2
+            ],
+            "dam_type": "none",
+            "ac_pierce": 1,
+            "ac_bash": 1,
+            "ac_slash": 1,
+            "ac_exotic": 8,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 37,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9207,
+            "name": "oldstyle large elemental",
+            "short_description": "a large elemental",
+            "long_description": "A large elemental.\n",
+            "description": "A large elemental, a resident of the canyon.",
+            "race": "human",
+            "act": "ABG",
+            "affected_by": "0",
+            "alignment": 20,
+            "group": 0,
+            "level": 15,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                208
+            ],
+            "mana_dice": [
+                7,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                6,
+                3
+            ],
+            "dam_type": "none",
+            "ac_pierce": -2,
+            "ac_bash": -2,
+            "ac_slash": -2,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 100,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9208,
+            "name": "oldstyle earth elemental ruler",
+            "short_description": "the Earth Ruler",
+            "long_description": "The Ruler of the earth elementals.\n",
+            "description": "He looks as old as the earth itself.  He seems to know all the \nsecrets and knowledge of the Earth.  You can't really tell where \nhe begins and the rock wall ends.\n",
+            "race": "human",
+            "act": "ABQ",
+            "affected_by": "H",
+            "alignment": 0,
+            "group": 0,
+            "level": 30,
+            "hitroll": 0,
+            "hit_dice": [
+                6,
+                12,
+                853
+            ],
+            "mana_dice": [
+                30,
+                9,
+                100
+            ],
+            "dam_dice": [
+                5,
+                4,
+                8
+            ],
+            "dam_type": "none",
+            "ac_pierce": -9,
+            "ac_bash": -9,
+            "ac_slash": -9,
+            "ac_exotic": 4,
+            "off_flags": "EIKU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 5000,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9209,
+            "name": "oldstyle fire elemental ruler",
+            "short_description": "the Fire Ruler",
+            "long_description": "The Ruler of the fire elementals.\n",
+            "description": "As you look at him he seems to blend in with the fire in his throne.\n",
+            "race": "human",
+            "act": "AB",
+            "affected_by": "H",
+            "alignment": 0,
+            "group": 0,
+            "level": 30,
+            "hitroll": 0,
+            "hit_dice": [
+                6,
+                12,
+                853
+            ],
+            "mana_dice": [
+                15,
+                9,
+                100
+            ],
+            "dam_dice": [
+                4,
+                6,
+                8
+            ],
+            "dam_type": "none",
+            "ac_pierce": -9,
+            "ac_bash": -9,
+            "ac_slash": -9,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 5000,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9210,
+            "name": "oldstyle air elemental ruler",
+            "short_description": "The Air Ruler",
+            "long_description": "The Ruler of the air elementals.\n",
+            "description": "As you peer at him you seem to be looking at the sky itself.\n",
+            "race": "human",
+            "act": "AB",
+            "affected_by": "H",
+            "alignment": 0,
+            "group": 0,
+            "level": 30,
+            "hitroll": 0,
+            "hit_dice": [
+                6,
+                12,
+                853
+            ],
+            "mana_dice": [
+                15,
+                9,
+                100
+            ],
+            "dam_dice": [
+                4,
+                6,
+                8
+            ],
+            "dam_type": "none",
+            "ac_pierce": -9,
+            "ac_bash": -9,
+            "ac_slash": -9,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 5000,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9211,
+            "name": "oldstyle lightning elemental ruler",
+            "short_description": "The Lightning Ruler",
+            "long_description": "The Ruler of the lightning elementals.\n",
+            "description": "As you examine him there is a blinding flash of light and a deafening boom!\nYou rub your eyes and look and the ruler is there grinning at you.\n",
+            "race": "human",
+            "act": "AB",
+            "affected_by": "H",
+            "alignment": 0,
+            "group": 0,
+            "level": 30,
+            "hitroll": 0,
+            "hit_dice": [
+                6,
+                12,
+                853
+            ],
+            "mana_dice": [
+                15,
+                9,
+                100
+            ],
+            "dam_dice": [
+                4,
+                6,
+                8
+            ],
+            "dam_type": "none",
+            "ac_pierce": -9,
+            "ac_bash": -9,
+            "ac_slash": -9,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 5000,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9212,
+            "name": "oldstyle water elemental ruler",
+            "short_description": "The Water Ruler",
+            "long_description": "The Ruler of the water elementals.\n",
+            "description": "As you look at him he changes to mist, which swirls around you.  Just\nas you get scared, it reforms in elemental form.\n",
+            "race": "water fowl",
+            "act": "AB",
+            "affected_by": "H",
+            "alignment": 0,
+            "group": 0,
+            "level": 30,
+            "hitroll": 0,
+            "hit_dice": [
+                6,
+                12,
+                853
+            ],
+            "mana_dice": [
+                15,
+                9,
+                100
+            ],
+            "dam_dice": [
+                4,
+                6,
+                8
+            ],
+            "dam_type": "none",
+            "ac_pierce": -9,
+            "ac_bash": -9,
+            "ac_slash": -9,
+            "ac_exotic": 6,
+            "off_flags": "EFNR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 5000,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9214,
+            "name": "oldstyle water puddle elemental",
+            "short_description": "a puddle",
+            "long_description": "A small puddle of water elemental.\n",
+            "description": "It trickles along the ground and gets your feet wet.\n",
+            "race": "water fowl",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 8,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                96
+            ],
+            "mana_dice": [
+                4,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                7,
+                2
+            ],
+            "dam_type": "none",
+            "ac_pierce": 3,
+            "ac_bash": 3,
+            "ac_slash": 3,
+            "ac_exotic": 9,
+            "off_flags": "EFNR",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 11,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9215,
+            "name": "oldstyle fire flame elemental",
+            "short_description": "a flame",
+            "long_description": "A small flickering flame elemental.\n",
+            "description": "It smolders along the grass aimlessly.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 4,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                46
+            ],
+            "mana_dice": [
+                2,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                5,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 6,
+            "ac_bash": 6,
+            "ac_slash": 6,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 7,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9216,
+            "name": "oldstyle snowflake snow flake ice elemental",
+            "short_description": "a small snowflake",
+            "long_description": "A frozen snowflake water elemental.\n",
+            "description": "It looks a little blue.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 520,
+            "group": 0,
+            "level": 3,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                35
+            ],
+            "mana_dice": [
+                1,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                6,
+                0
+            ],
+            "dam_type": "none",
+            "ac_pierce": 7,
+            "ac_bash": 7,
+            "ac_slash": 7,
+            "ac_exotic": 10,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9217,
+            "name": "oldstyle pebble rock earth stone elemental",
+            "short_description": "a small rock",
+            "long_description": "A small rock.\n",
+            "description": "It seems to be a small living pebble!\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 3,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                35
+            ],
+            "mana_dice": [
+                1,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                6,
+                0
+            ],
+            "dam_type": "none",
+            "ac_pierce": 7,
+            "ac_bash": 7,
+            "ac_slash": 7,
+            "ac_exotic": 10,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 4,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9218,
+            "name": "oldstyle spark lightning energy elemental",
+            "short_description": "a small spark",
+            "long_description": "A small spark of electricity fizzles here.\n",
+            "description": "Zipping from place to place at the speed of light is tough work.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 4,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                46
+            ],
+            "mana_dice": [
+                2,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                5,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 6,
+            "ac_bash": 6,
+            "ac_slash": 6,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 7,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9219,
+            "name": "oldstyle acid blob elemental",
+            "short_description": "a small blob of acid",
+            "long_description": "A small blob of acid aimlessly eats away at the stone.\n",
+            "description": "The magical blob of acid is a cross between lightning and water.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 9,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                110
+            ],
+            "mana_dice": [
+                4,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                8,
+                2
+            ],
+            "dam_type": "none",
+            "ac_pierce": 2,
+            "ac_bash": 2,
+            "ac_slash": 2,
+            "ac_exotic": 8,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 50,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9220,
+            "name": "oldstyle lava elemental",
+            "short_description": "a lava beast",
+            "long_description": "A lava beast spews from place to place.\n",
+            "description": "The magical lava beast is a cross between fire and earth.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 8,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                96
+            ],
+            "mana_dice": [
+                4,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                7,
+                2
+            ],
+            "dam_type": "none",
+            "ac_pierce": 3,
+            "ac_bash": 3,
+            "ac_slash": 3,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 15,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9221,
+            "name": "oldstyle mud elemental",
+            "short_description": "a mud monster",
+            "long_description": "A mud monster slops around.\n",
+            "description": "The magical mud monster is a cross between water and earth.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 7,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                85
+            ],
+            "mana_dice": [
+                3,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                8,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 4,
+            "ac_bash": 4,
+            "ac_slash": 4,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 20,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9222,
+            "name": "oldstyle mist elemental",
+            "short_description": "an elemental mist",
+            "long_description": "The air is magically misty here.\n",
+            "description": "The magical mist is a cross between water and air.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 6,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                71
+            ],
+            "mana_dice": [
+                3,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                7,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 4,
+            "ac_bash": 4,
+            "ac_slash": 4,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 15,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9223,
+            "name": "oldstyle particle elemental",
+            "short_description": "a particle",
+            "long_description": "A sub-atomic particle is too small for you to see.\n",
+            "description": "The magical manifestation of energy.\n",
+            "race": "human",
+            "act": "AG",
+            "affected_by": "0",
+            "alignment": 0,
+            "group": 0,
+            "level": 5,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                60
+            ],
+            "mana_dice": [
+                2,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                6,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 5,
+            "ac_bash": 5,
+            "ac_slash": 5,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9224,
+            "name": "oldstyle dust elemental",
+            "short_description": "a dust cloud",
+            "long_description": "A dust cloud blowing by makes you sneeze.\n",
+            "description": "The magical dust cloud is a cross between air and earth.\n",
+            "race": "human",
+            "act": "AGS",
+            "affected_by": "DF",
+            "alignment": 0,
+            "group": 0,
+            "level": 6,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                60
+            ],
+            "mana_dice": [
+                3,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                6,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 5,
+            "ac_bash": 5,
+            "ac_slash": 5,
+            "ac_exotic": 9,
+            "off_flags": "BEFJNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 5,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9225,
+            "name": "oldstyle eddie elemental",
+            "short_description": "an eddie",
+            "long_description": "A small eddie current swirls junk around here.\n",
+            "description": "The magical eddie current is a manifestation of an air elemental.\n",
+            "race": "human",
+            "act": "AGS",
+            "affected_by": "DF",
+            "alignment": 0,
+            "group": 0,
+            "level": 2,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                10
+            ],
+            "mana_dice": [
+                1,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                4,
+                0
+            ],
+            "dam_type": "none",
+            "ac_pierce": 9,
+            "ac_bash": 9,
+            "ac_slash": 9,
+            "ac_exotic": 10,
+            "off_flags": "BEFJNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 1,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9226,
+            "name": "oldstyle blue flame",
+            "short_description": "the Blue Flame",
+            "long_description": "The Blue Flame burns mysteriously here.\n",
+            "description": "As you look you see what seems to be a face and almost a \nhumanoid figure somehow trapped in the fire.\n",
+            "race": "human",
+            "act": "ABG",
+            "affected_by": "0",
+            "alignment": -100,
+            "group": 0,
+            "level": 26,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                10,
+                600
+            ],
+            "mana_dice": [
+                13,
+                9,
+                100
+            ],
+            "dam_dice": [
+                3,
+                7,
+                7
+            ],
+            "dam_type": "none",
+            "ac_pierce": -7,
+            "ac_bash": -7,
+            "ac_slash": -7,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 1250,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9227,
+            "name": "oldstyle magneto",
+            "short_description": "the Magneto",
+            "long_description": "The Magneto considers zapping you for the heck of it.\n",
+            "description": "A humanoid figure seems to be trapped in the field of the Magneto.\n",
+            "race": "human",
+            "act": "ABG",
+            "affected_by": "0",
+            "alignment": -150,
+            "group": 0,
+            "level": 22,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                10,
+                400
+            ],
+            "mana_dice": [
+                11,
+                9,
+                100
+            ],
+            "dam_dice": [
+                4,
+                4,
+                6
+            ],
+            "dam_type": "none",
+            "ac_pierce": -5,
+            "ac_bash": -5,
+            "ac_slash": -5,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 500,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9228,
+            "name": "oldstyle ice bandit",
+            "short_description": "the Ice Bandit",
+            "long_description": "The Ice Bandit strikes cold fear in your heart.\n",
+            "description": "A humanoid figure encased in ice but still apparently alive.\n",
+            "race": "human",
+            "act": "ABGH",
+            "affected_by": "P",
+            "alignment": -250,
+            "group": 0,
+            "level": 24,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                10,
+                500
+            ],
+            "mana_dice": [
+                12,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                10,
+                6
+            ],
+            "dam_type": "none",
+            "ac_pierce": -6,
+            "ac_bash": -6,
+            "ac_slash": -6,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 1500,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9229,
+            "name": "oldstyle rock monster",
+            "short_description": "the Rock Monster",
+            "long_description": "The Rock Monster considers you in stoney silence.\n",
+            "description": "A humanoid figure trapped in stone seems alive.\n",
+            "race": "human",
+            "act": "ABG",
+            "affected_by": "0",
+            "alignment": -310,
+            "group": 0,
+            "level": 23,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                10,
+                450
+            ],
+            "mana_dice": [
+                11,
+                9,
+                100
+            ],
+            "dam_dice": [
+                3,
+                6,
+                6
+            ],
+            "dam_type": "none",
+            "ac_pierce": -6,
+            "ac_bash": -6,
+            "ac_slash": -6,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 950,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9230,
+            "name": "oldstyle hurricane",
+            "short_description": "the Hurricane",
+            "long_description": "A Hurricane rages across the sky.\n",
+            "description": "A humanoid figure is trapped in the rushing wind.\n",
+            "race": "human",
+            "act": "ABG",
+            "affected_by": "P",
+            "alignment": -10,
+            "group": 0,
+            "level": 28,
+            "hitroll": 0,
+            "hit_dice": [
+                6,
+                12,
+                703
+            ],
+            "mana_dice": [
+                14,
+                9,
+                100
+            ],
+            "dam_dice": [
+                5,
+                4,
+                8
+            ],
+            "dam_type": "none",
+            "ac_pierce": -8,
+            "ac_bash": -8,
+            "ac_slash": -8,
+            "ac_exotic": 6,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 2054,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9231,
+            "name": "oldstyle magician",
+            "short_description": "an elemental magician",
+            "long_description": "An elemental magician seeks magical stones for a spell.\n",
+            "description": "The elemental magician has come here in search of the fabled\nStone of Surrender which can be used to render opponents senseless.\n",
+            "race": "human",
+            "act": "ABGR",
+            "affected_by": "B",
+            "alignment": -50,
+            "group": 0,
+            "level": 17,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                233
+            ],
+            "mana_dice": [
+                17,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                12,
+                3
+            ],
+            "dam_type": "none",
+            "ac_pierce": -2,
+            "ac_bash": -2,
+            "ac_slash": -2,
+            "ac_exotic": 4,
+            "off_flags": "FU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 400,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9232,
+            "name": "oldstyle rainbow warrior",
+            "short_description": "a rainbow warrior",
+            "long_description": "A warrior of the Rainbow Cult swears his loyalty.\n",
+            "description": "The Rainbow Cult has received special powers for their service to \nthe elemental forces.\n",
+            "race": "human",
+            "act": "AGQ",
+            "affected_by": "0",
+            "alignment": 150,
+            "group": 0,
+            "level": 18,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                283
+            ],
+            "mana_dice": [
+                18,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                6,
+                4
+            ],
+            "dam_type": "none",
+            "ac_pierce": -3,
+            "ac_bash": -3,
+            "ac_slash": -3,
+            "ac_exotic": 6,
+            "off_flags": "EIKU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 400,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9233,
+            "name": "oldstyle illusionist",
+            "short_description": "an illusionist",
+            "long_description": "The illusionist seeks the aid of the elemental forces.\n",
+            "description": "He seeks their aid for a powerful new spell of deception.\n\n<wielded>            The Sword of Illusions\n",
+            "race": "human",
+            "act": "ABGR",
+            "affected_by": "0",
+            "alignment": -50,
+            "group": 0,
+            "level": 12,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                8,
+                134
+            ],
+            "mana_dice": [
+                12,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                8,
+                2
+            ],
+            "dam_type": "none",
+            "ac_pierce": 1,
+            "ac_bash": 1,
+            "ac_slash": 1,
+            "ac_exotic": 6,
+            "off_flags": "FU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 95,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9234,
+            "name": "oldstyle alchemist",
+            "short_description": "an alchemist",
+            "long_description": "An alchemist wanders by in search of magical herbs.\n",
+            "description": "Rare herbs are rumored to grow only in the canyon.\n",
+            "race": "human",
+            "act": "AGS",
+            "affected_by": "DF",
+            "alignment": -50,
+            "group": 0,
+            "level": 13,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                10,
+                150
+            ],
+            "mana_dice": [
+                6,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                10,
+                3
+            ],
+            "dam_type": "none",
+            "ac_pierce": 0,
+            "ac_bash": 0,
+            "ac_slash": 0,
+            "ac_exotic": 7,
+            "off_flags": "BEFJNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 95,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9235,
+            "name": "oldstyle baby rainbow dragon",
+            "short_description": "a baby rainbow dragon",
+            "long_description": "A baby rainbow dragon plays among the elements here.\n",
+            "description": "It's only a baby by dragon standards.\n",
+            "race": "human",
+            "act": "ABG",
+            "affected_by": "DF",
+            "alignment": 0,
+            "group": 0,
+            "level": 16,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                233
+            ],
+            "mana_dice": [
+                8,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                6,
+                4
+            ],
+            "dam_type": "none",
+            "ac_pierce": -2,
+            "ac_bash": -2,
+            "ac_slash": -2,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 500,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9236,
+            "name": "oldstyle imp",
+            "short_description": "a little imp",
+            "long_description": "A little imp runs along being annoying.\n",
+            "description": "The little bugger steals stuff and is generally obnoxious.\n",
+            "race": "human",
+            "act": "ACGH",
+            "affected_by": "PQ",
+            "alignment": -500,
+            "group": 0,
+            "level": 5,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                6,
+                60
+            ],
+            "mana_dice": [
+                2,
+                9,
+                100
+            ],
+            "dam_dice": [
+                1,
+                6,
+                1
+            ],
+            "dam_type": "none",
+            "ac_pierce": 5,
+            "ac_bash": 5,
+            "ac_slash": 5,
+            "ac_exotic": 9,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9237,
+            "name": "oldstyle HUGE elemental",
+            "short_description": "a HUGE elemental",
+            "long_description": "A HUGE elemental form stands here.\n",
+            "description": "HUGE, need i say more?\n",
+            "race": "human",
+            "act": "ABG",
+            "affected_by": "0",
+            "alignment": 30,
+            "group": 0,
+            "level": 20,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                333
+            ],
+            "mana_dice": [
+                10,
+                9,
+                100
+            ],
+            "dam_dice": [
+                2,
+                8,
+                5
+            ],
+            "dam_type": "none",
+            "ac_pierce": -4,
+            "ac_bash": -4,
+            "ac_slash": -4,
+            "ac_exotic": 7,
+            "off_flags": "EFNU",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "none",
+            "wealth": 500,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 9238,
+            "name": "oldstyle vendor",
+            "short_description": "the elixir vendor",
+            "long_description": "A vendor is willing to sell you elixirs.\n",
+            "description": "I WOULD NOT suggest you attack me ...!\n",
+            "race": "human",
+            "act": "ABEGR",
+            "affected_by": "0",
+            "alignment": 900,
+            "group": 0,
+            "level": 30,
+            "hitroll": 0,
+            "hit_dice": [
+                6,
+                12,
+                778
+            ],
+            "mana_dice": [
+                30,
+                9,
+                100
+            ],
+            "dam_dice": [
+                5,
+                4,
+                7
+            ],
+            "dam_type": "none",
+            "ac_pierce": -9,
+            "ac_bash": -9,
+            "ac_slash": -9,
+            "ac_exotic": 1,
+            "off_flags": "FU",
+            "imm_flags": "ABCD",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 0,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        }
+    ],
+    "objects": [
+        {
+            "vnum": 9201,
+            "name": "ring earth",
+            "short_description": "the earth ring",
+            "description": "A dark ring which seems to absorb all the light around it lies here.",
+            "material": "oldstyle",
+            "type": "furniture",
+            "extra_flags": "I",
+            "wear_flags": "AB",
+            "values": "0 0 0 0 0",
+            "level": 7,
+            "weight": 50,
+            "cost": 1140,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 4,
+                    "modifier": 1
+                },
+                {
+                    "location": 3,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 9202,
+            "name": "breastplate stoney breast plate",
+            "short_description": "a stoney breastplate",
+            "description": "A breastplate made of the stone from deep within the earth lies here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AD",
+            "values": "10 10 10 2 0",
+            "level": 31,
+            "weight": 700,
+            "cost": 5500,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 5,
+                    "modifier": 1
+                },
+                {
+                    "location": 2,
+                    "modifier": -2
+                }
+            ]
+        },
+        {
+            "vnum": 9203,
+            "name": "dagger fiery",
+            "short_description": "a fiery dagger",
+            "description": "A dagger made of fire crackles mysteriously here.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "A",
+            "wear_flags": "AN",
+            "values": "dagger 5 4 pierce A",
+            "level": 29,
+            "weight": 20,
+            "cost": 2800,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 4
+                }
+            ]
+        },
+        {
+            "vnum": 9204,
+            "name": "cape flame flaming red",
+            "short_description": "a flame red cape",
+            "description": "A cape made of ethereal red fiber lies neatly folded on the ground here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "A",
+            "wear_flags": "AC",
+            "values": "9 9 9 3 0",
+            "level": 30,
+            "weight": 30,
+            "cost": 3100,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 9205,
+            "name": "boots wind",
+            "short_description": "the wind boots",
+            "description": "A pair of boots that look fast standing still are here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "G",
+            "wear_flags": "AG",
+            "values": "8 8 8 2 0",
+            "level": 26,
+            "weight": 10,
+            "cost": 5200,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 2,
+                    "modifier": 2
+                }
+            ]
+        },
+        {
+            "vnum": 9206,
+            "name": "helmet hurricane",
+            "short_description": "a hurricane helmet",
+            "description": "A helmet that looks like it has weathered many storms has been set here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "B",
+            "wear_flags": "AE",
+            "values": "9 9 9 3 0",
+            "level": 31,
+            "weight": 40,
+            "cost": 3800,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 20,
+                    "modifier": -2
+                }
+            ]
+        },
+        {
+            "vnum": 9207,
+            "name": "sword lightning bolt",
+            "short_description": "a sparking lightning sword",
+            "description": "A lightning bolt fashioned into a sword spits sparks here.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "AB",
+            "wear_flags": "AN",
+            "values": "sword 5 4 slash H",
+            "level": 25,
+            "weight": 100,
+            "cost": 2200,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 2
+                },
+                {
+                    "location": 18,
+                    "modifier": -1
+                }
+            ]
+        },
+        {
+            "vnum": 9208,
+            "name": "shield electric",
+            "short_description": "an electric shield",
+            "description": "A shield made entirely of energy buzzes here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "B",
+            "wear_flags": "AJ",
+            "values": "9 9 9 4 0",
+            "level": 28,
+            "weight": 80,
+            "cost": 4500,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 5,
+                    "modifier": 1
+                },
+                {
+                    "location": 1,
+                    "modifier": -1
+                }
+            ]
+        },
+        {
+            "vnum": 9209,
+            "name": "girth icy",
+            "short_description": "an icy girth",
+            "description": "A girth made of magical ice has been left here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AL",
+            "values": "10 10 10 3 0",
+            "level": 31,
+            "weight": 100,
+            "cost": 1540,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 5,
+                    "modifier": -2
+                }
+            ]
+        },
+        {
+            "vnum": 9210,
+            "name": "cloak waterfall",
+            "short_description": "a waterfall cloak",
+            "description": "A cloak fashioned from a small magical waterfall is here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AK",
+            "values": "9 9 9 2 0",
+            "level": 30,
+            "weight": 60,
+            "cost": 3000,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": -2
+                },
+                {
+                    "location": 12,
+                    "modifier": 25
+                }
+            ]
+        },
+        {
+            "vnum": 9211,
+            "name": "amulet elemental",
+            "short_description": "an elemental amulet",
+            "description": "An amulet depicting fire, water, lightning, earth, and air lies here.",
+            "material": "oldstyle",
+            "type": "jewelry",
+            "extra_flags": "A",
+            "wear_flags": "AC",
+            "values": "0 0 0 0 0",
+            "level": 20,
+            "weight": 10,
+            "cost": 860,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 20,
+                    "modifier": -2
+                }
+            ]
+        },
+        {
+            "vnum": 9212,
+            "name": "bracelet elemental",
+            "short_description": "an elemental bracelet",
+            "description": "A bracelet made of elemental magic lies here.",
+            "material": "oldstyle",
+            "type": "gem",
+            "extra_flags": "0",
+            "wear_flags": "AM",
+            "values": "0 0 0 0 0",
+            "level": 20,
+            "weight": 40,
+            "cost": 580,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 13,
+                    "modifier": 20
+                }
+            ]
+        },
+        {
+            "vnum": 9213,
+            "name": "armband platinum band",
+            "short_description": "a platinum arm band",
+            "description": "A platinum arm band, once worn by the Cyclops, lie here.",
+            "material": "platinum",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AM",
+            "values": "9 9 9 2 0",
+            "level": 26,
+            "weight": 40,
+            "cost": 1700,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 4,
+                    "modifier": -2
+                },
+                {
+                    "location": 1,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 9214,
+            "name": "legbands platinum bands",
+            "short_description": "some platinum leg bands",
+            "description": "A pair of platinum leg bands, once worn by the Cyclops, lie here.",
+            "material": "oldstyle",
+            "type": "armor",
+            "extra_flags": "0",
+            "wear_flags": "AF",
+            "values": "9 9 9 2 0",
+            "level": 26,
+            "weight": 40,
+            "cost": 1700,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 3,
+                    "modifier": -2
+                },
+                {
+                    "location": 2,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 9215,
+            "name": "wand",
+            "short_description": "elemental wand of fire",
+            "description": "A fire wand lies forgotten on the ground.",
+            "material": "oldstyle",
+            "type": "wand",
+            "extra_flags": "A",
+            "wear_flags": "AO",
+            "values": "15 3 3 'fireball' 0",
+            "level": 16,
+            "weight": 70,
+            "cost": 3900,
+            "condition": "P"
+        },
+        {
+            "vnum": 9216,
+            "name": "staff ice",
+            "short_description": "an ice staff",
+            "description": "An ice staff lies forgotten on the ground.",
+            "material": "oldstyle",
+            "type": "wand",
+            "extra_flags": "A",
+            "wear_flags": "AO",
+            "values": "12 3 3 'frost breath' 0",
+            "level": 25,
+            "weight": 70,
+            "cost": 13700,
+            "condition": "P"
+        },
+        {
+            "vnum": 9217,
+            "name": "rod earthquake",
+            "short_description": "an elemental rod of earthquake",
+            "description": "An earthquake rod lies forgotten on the ground.",
+            "material": "oldstyle",
+            "type": "wand",
+            "extra_flags": "A",
+            "wear_flags": "AO",
+            "values": "7 3 3 'earthquake' 0",
+            "level": 7,
+            "weight": 70,
+            "cost": 1000,
+            "condition": "P"
+        },
+        {
+            "vnum": 9218,
+            "name": "wand air wind",
+            "short_description": "elemental wand of wind and air",
+            "description": "An air wand lies forgotten on the ground.",
+            "material": "oldstyle",
+            "type": "wand",
+            "extra_flags": "A",
+            "wear_flags": "AO",
+            "values": "11 1 1 'gas breath' 0",
+            "level": 27,
+            "weight": 70,
+            "cost": 12600,
+            "condition": "P"
+        },
+        {
+            "vnum": 9219,
+            "name": "wand",
+            "short_description": "elemental wand of lightning",
+            "description": "A lightning wand lies forgotten on the ground.",
+            "material": "oldstyle",
+            "type": "wand",
+            "extra_flags": "A",
+            "wear_flags": "AO",
+            "values": "9 1 1 'lightning bolt' 0",
+            "level": 7,
+            "weight": 70,
+            "cost": 1420,
+            "condition": "P"
+        },
+        {
+            "vnum": 9220,
+            "name": "stone club two-handed",
+            "short_description": "a stone club",
+            "description": "A large stone club lies on the ground.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "mace 2 8 pound F",
+            "level": 13,
+            "weight": 160,
+            "cost": 730,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 1
+                },
+                {
+                    "location": 18,
+                    "modifier": -2
+                }
+            ]
+        },
+        {
+            "vnum": 9221,
+            "name": "lode load lodestone loadstone stone",
+            "short_description": "a lodestone",
+            "description": "A dull red rock lies here amid the weeds.",
+            "material": "oldstyle",
+            "type": "wand",
+            "extra_flags": "0",
+            "wear_flags": "AO",
+            "values": "19 2 2 'harm' 0",
+            "level": 13,
+            "weight": 20,
+            "cost": 2800,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 1,
+                    "modifier": -2
+                }
+            ]
+        },
+        {
+            "vnum": 9222,
+            "name": "lava lamp",
+            "short_description": "a lava lamp",
+            "description": "A lantern which glows with a red glowing light has been dumped.",
+            "material": "oldstyle",
+            "type": "light",
+            "extra_flags": "A",
+            "wear_flags": "A",
+            "values": "0 0 1000 0 0",
+            "level": 0,
+            "weight": 40,
+            "cost": 250,
+            "condition": "P"
+        },
+        {
+            "vnum": 9223,
+            "name": "energy scroll",
+            "short_description": "an energy scroll",
+            "description": "A scroll of energy replacement lies here.",
+            "material": "oldstyle",
+            "type": "scroll",
+            "extra_flags": "B",
+            "wear_flags": "A",
+            "values": "19 'cure critical' 'refresh' '' ''",
+            "level": 5,
+            "weight": 10,
+            "cost": 860,
+            "condition": "P"
+        },
+        {
+            "vnum": 9224,
+            "name": "water jug",
+            "short_description": "a water jug",
+            "description": "A large but surprisingly light jug of water stands here.",
+            "material": "oldstyle",
+            "type": "drink",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "150 150 'water' 0 0",
+            "level": 0,
+            "weight": 20,
+            "cost": 200,
+            "condition": "P"
+        },
+        {
+            "vnum": 9225,
+            "name": "dust",
+            "short_description": "magic dust",
+            "description": "A pile of dust of appearance has gathered here.",
+            "material": "oldstyle",
+            "type": "pill",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "20 'detect invis' '' '' ''",
+            "level": 0,
+            "weight": 10,
+            "cost": 300,
+            "condition": "P"
+        },
+        {
+            "vnum": 9226,
+            "name": "flame lance",
+            "short_description": "a flame lance",
+            "description": "A lance of blue flame burns the ground around it.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "A",
+            "wear_flags": "AN",
+            "values": "staff 2 15 thrust A",
+            "level": 29,
+            "weight": 140,
+            "cost": 220,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": 2
+                },
+                {
+                    "location": 13,
+                    "modifier": -20
+                }
+            ]
+        },
+        {
+            "vnum": 9227,
+            "name": "icicle dagger ice",
+            "short_description": "an icicle",
+            "description": "A glowing icicle dagger lies here amid a patch of frost.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "A",
+            "wear_flags": "AN",
+            "values": "dagger 7 3 pierce B",
+            "level": 28,
+            "weight": 10,
+            "cost": 1630,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 1,
+                    "modifier": -1
+                },
+                {
+                    "location": 19,
+                    "modifier": 2
+                }
+            ]
+        },
+        {
+            "vnum": 9228,
+            "name": "avalanche",
+            "short_description": "the avalanche",
+            "description": "An avalanche is about to crush you!",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "0",
+            "wear_flags": "AN",
+            "values": "exotic 1 25 blast 0",
+            "level": 24,
+            "weight": 160,
+            "cost": 3000,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 18,
+                    "modifier": -1
+                }
+            ]
+        },
+        {
+            "vnum": 9229,
+            "name": "star morning",
+            "short_description": "the morning star",
+            "description": "A chain with a star on the end lies here.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "A",
+            "wear_flags": "AN",
+            "values": "flail 6 3 crush 0",
+            "level": 23,
+            "weight": 110,
+            "cost": 3300,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 17,
+                    "modifier": -3
+                },
+                {
+                    "location": 20,
+                    "modifier": -2
+                }
+            ]
+        },
+        {
+            "vnum": 9230,
+            "name": "shock whip",
+            "short_description": "the Shock Whip",
+            "description": "A whip hums innocently too itself.",
+            "material": "oldstyle",
+            "type": "weapon",
+            "extra_flags": "B",
+            "wear_flags": "AN",
+            "values": "whip 4 5 stab 0",
+            "level": 20,
+            "weight": 100,
+            "cost": 64,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 1,
+                    "modifier": -2
+                },
+                {
+                    "location": 19,
+                    "modifier": 3
+                }
+            ]
+        },
+        {
+            "vnum": 9231,
+            "name": "elixir anti",
+            "short_description": "anti-cyclops elixir",
+            "description": "An elixir to ward off cyclopi has been bought then left behind here.",
+            "material": "oldstyle",
+            "type": "potion",
+            "extra_flags": "0",
+            "wear_flags": "AO",
+            "values": "15 'invisibility' '' '' ''",
+            "level": 0,
+            "weight": 10,
+            "cost": 250,
+            "condition": "P"
+        }
+    ],
+    "rooms": [
+        {
+            "vnum": 9201,
+            "name": "A Mountain Path",
+            "description": "You are on a mountain path which ascends a steep mountainside.  The trail\ncurves around the mountain so that you cannot really see what lies ahead.\nYou do sense great power though coming from the area behind the mountain.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 5267
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9202
+                }
+            ]
+        },
+        {
+            "vnum": 9202,
+            "name": "A Mountain Path",
+            "description": "You are on a rocky mountain path leading up and around a steep mountainside.\nYou sense a glow from the area beyond the mountain, which you cannot see yet.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9203
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9201
+                }
+            ]
+        },
+        {
+            "vnum": 9203,
+            "name": "Mountainside Tombs",
+            "description": "There are a few stone heaps here and there, the tombs of those who did not\nlast the arduous journey up the mountain.  Curiously you notice a few\nuncovered bodies which don't seem to have died of exhaustion.  The path curves\neast around the mountain.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9204
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9202
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "bodies body dead",
+                    "description": "They look as if their necks have been broken and their flesh, chewed.\n"
+                },
+                {
+                    "keyword": "heaps stones tombs",
+                    "description": "You are sure glad that YOU aren't under one of those piles!\nMany of the tombstones have the same name on them, 'Raff'.  He must come\nhere a lot.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 9204,
+            "name": "A Blind Curve on the Mountain Path.",
+            "description": "This looks like a normal mountain path, but it is NOT!  This section of the\npath is habitated by a huge (and of course, man-eating) Cyclops.  The path\nmakes its final ascent to an overlook.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9205
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9203
+                }
+            ]
+        },
+        {
+            "vnum": 9205,
+            "name": "Vista",
+            "description": "This is a stunning vista overlooking a canyon.  There is a sign here that says:\n\n        BEHOLD -- ELEMENTAL CANYON\n\nFire leaps up from firepits in the western part of the canyon.  The sky looks\nfunny, and the air seems hazy to the northwest.  Electricity sparks\nintermittently in the northeast.  To the east you see a strong, magic-looking\nriver flowing through the canyon.  Also to the east you spy a cave entrance\nleading into the canyon wall.  The path descends to the north to another\noverlook.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9206
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9204
+                }
+            ]
+        },
+        {
+            "vnum": 9206,
+            "name": "The Overlook",
+            "description": "You see various elemental servants wandering around the canyon.  The noise of\nhumming coming from the canyon gets louder.  The path makes a steep descent\ninto the canyon here.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9205
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9207
+                }
+            ]
+        },
+        {
+            "vnum": 9207,
+            "name": "Entrance to Elemental Canyon",
+            "description": "You are awed by the sounds and sights of great powers at works here.\nElemental servants bustle back and forth doing the biddings of the elemental\nrulers.  You see a sort of cross roads to the north, and you can climb up to\nthe overlook here.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9209
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9206
+                }
+            ]
+        },
+        {
+            "vnum": 9208,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at all.\nIn general, it is calm, yet there is always a incessant buzz of things\ngoing on about.  The canyon continues north and east.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9211
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9209
+                }
+            ]
+        },
+        {
+            "vnum": 9209,
+            "name": "Elemental Gateway",
+            "description": "To the west a path dips and winds among some flowing firepits.  To the\nnortheast a path goes toward the river.  Beyond toward the northeast and\nnorthwest are outcrops which rise up from the canyon floor. To the east there\nis a cave mouth which leads into the canyon wall.  And to the south the path\nleads up, away, and out of the canyon.  Various pure and cross-breeds of\nelemental forms wander the canyon floor, which extends in a wide swath\nnorthwards.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9212
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9210
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9207
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9208
+                }
+            ]
+        },
+        {
+            "vnum": 9210,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always a incessant buzz of\nthings going on about.  The canyon floor extends north and west.  There is a\ncave mouth set into the canyon wall to the east.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9213
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9220
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9209
+                }
+            ]
+        },
+        {
+            "vnum": 9211,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always an incessant buzz of\nthings going on about.  The canyon floor extends off to the north, east,\nand south.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9214
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9212
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9208
+                }
+            ]
+        },
+        {
+            "vnum": 9212,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always an incessant buzz of\nthings going on about.  The canyon floor extends in all directions.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9215
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9213
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9209
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9211
+                }
+            ]
+        },
+        {
+            "vnum": 9213,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always an incessant buzz of\nthings going on about.  The canyon floor extends north, south, and west.\nA path follows a stream to the east.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9216
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9228
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9210
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9212
+                }
+            ]
+        },
+        {
+            "vnum": 9214,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always an incessant buzz of\nthings going on about. The canyon floor extends north, east, and south.\nTo the west a garden is on fire.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9217
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9215
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9211
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9237
+                }
+            ]
+        },
+        {
+            "vnum": 9215,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always an incessant buzz of\nthings going on about.  The canyon floor extends in all directions.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9218
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9216
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9212
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9214
+                }
+            ]
+        },
+        {
+            "vnum": 9216,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always an incessant buzz of\nthings going on about.  The Canyon floor extends north, south and west.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9219
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9213
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9215
+                }
+            ]
+        },
+        {
+            "vnum": 9217,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always an incessant buzz of\nthings going on about. The canyon floor extends east and south.  You can\nclimb a rise in the canyon floor to the north.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9253
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9218
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9214
+                }
+            ]
+        },
+        {
+            "vnum": 9218,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always an incessant buzz of\nthings going on about.  The canyon floor extends east, south, and west.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9219
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9215
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9217
+                }
+            ]
+        },
+        {
+            "vnum": 9219,
+            "name": "The Floor of the Canyon",
+            "description": "Various elemental forms wander the floor of the canyon.  Some seem to be\ngoing about their business, while others seem to have no business at\nall.  In general, it is calm, yet there is always an incessant buzz of\nthings going on about.  The canyon floor extends south and west.  You can\nclimb a rise in the canyon floor to the north.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9254
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9216
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9218
+                }
+            ]
+        },
+        {
+            "vnum": 9220,
+            "name": "Dark Cave",
+            "description": "You notice a path winding east among some huge boulders.  You feel a powerful\nsource of energy from that direction.\n",
+            "flags": "AD",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9221
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9210
+                }
+            ]
+        },
+        {
+            "vnum": 9221,
+            "name": "Darker Caves",
+            "description": "You can barely see your way even with a light source.  The rocks of the cave\nare even darker than the darkness.  You hear a powerful humming all around\nyou.  Cave paths go south and east roughly, its hard to tell exactly when you\ncan't see where you are going.\n",
+            "flags": "AD",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9222
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9223
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9220
+                }
+            ]
+        },
+        {
+            "vnum": 9222,
+            "name": "Darker Caves",
+            "description": "You can barely see your way even with a light source.  The rocks of the cave\nare even darker than the darkness.  You hear a powerful humming all around\nyou.  Cave paths go south and west roughly; it's hard to tell exactly when you\ncan't see where you are going.\n",
+            "flags": "AD",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9224
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9221
+                }
+            ]
+        },
+        {
+            "vnum": 9223,
+            "name": "Darker Caves",
+            "description": "You can barely see your way even with a light source.  The rocks of the cave\nare even darker than the darkness.  You hear a powerful humming all around you.\nCave paths go north, south and east roughly; it's hard to tell exactly when\nyou can't see where you are going.\n",
+            "flags": "AD",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9221
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9224
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9225
+                }
+            ]
+        },
+        {
+            "vnum": 9224,
+            "name": "Darker Caves",
+            "description": "You can barely see your way even with a light source.  The rocks of the cave\nare even darker than the darkness.  You hear a powerful humming all around you.\nCave paths go north, south and west roughly, it's hard to tell exactly when you\ncan't see where you are going.\n",
+            "flags": "AD",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9222
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9226
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9223
+                }
+            ]
+        },
+        {
+            "vnum": 9225,
+            "name": "Darkest Caves",
+            "description": "Your light doesn't even seem to work here.  Even magical light sources seem\nonly to illuminate about a foot ahead of you.  You suddenly realize that the\npath has descended quite a bit but you didn't notice before because of the\ndarkness.  You sense a great presence off to the east aways.\n",
+            "flags": "AD",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9223
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9226
+                }
+            ]
+        },
+        {
+            "vnum": 9226,
+            "name": "Darkest Caves",
+            "description": "Your light doesn't even seem to work here.  Even magical light sources seem\nonly to illuminate about a foot ahead of you.  You suddenly realize that the\npath has descended quite a bit but you didn't notice before because of the\ndarkness.  You sense a great presence directly to the east.\n",
+            "flags": "AD",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9224
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9227
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9225
+                }
+            ]
+        },
+        {
+            "vnum": 9227,
+            "name": "Earth Chamber",
+            "description": "This is the abode of the Earth Ruler.  He decides about earthquakes,\nlandslides, and avalanches.  The Earth Ruler sits upon a huge marble throne\ncarved into the wall.\n",
+            "flags": "AD",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9226
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "marble throne",
+                    "description": "The ruler notices your stare, and doesn't like it one bit!  The whole\nearth seems to shake with his emotion.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 9228,
+            "name": "By the River",
+            "description": "The water in the river seems to bubble and froth with magic.  Though it\nsplashes playfully on you, it does not seem wet.  The path leads north closer\nto the water. To the west you see a T-intersection.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9229
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9213
+                }
+            ]
+        },
+        {
+            "vnum": 9229,
+            "name": "In the River",
+            "description": "To continue you had to walk right in the river.  Though you walk along in\nwater up to your knees, you do not seem to get wet.  A bay stretches out to\nthe north and the river goes south.\n",
+            "flags": "0",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9230
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9228
+                }
+            ]
+        },
+        {
+            "vnum": 9230,
+            "name": "Elemental Bay",
+            "description": "The water is crystal clear here and you can see the bottom of the bay 30 feet\nbelow you.  Then you realize you are walking on the water itself.  Truly\nmagical water indeed.  Though you splash through the bay you do not get wet.\n",
+            "flags": "0",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9233
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9231
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9229
+                }
+            ]
+        },
+        {
+            "vnum": 9231,
+            "name": "Elemental Bay",
+            "description": "The water is crystal clear here and you can see the bottom of the bay 30 feet\nbelow you.  Then you realize you are walking on the water itself.  Truly\nmagical water indeed.  Though you splash through the bay you do not get wet.\n",
+            "flags": "0",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9234
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9232
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9230
+                }
+            ]
+        },
+        {
+            "vnum": 9232,
+            "name": "Elemental Bay",
+            "description": "The water is crystal clear here and you can see the bottom of the bay 30 feet\nbelow you.  Then you realize you are walking on the water itself.  Truly\nmagical water indeed.  Though you splash through the bay you do not get wet.\n",
+            "flags": "0",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9235
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9231
+                }
+            ]
+        },
+        {
+            "vnum": 9233,
+            "name": "Elemental Bay",
+            "description": "The water is crystal clear here and you can see the bottom of the bay 30 feet\nbelow you.  Then you realize you are walking on the water itself.  Truly\nmagical water indeed.  Though you splash through the bay you do not get wet.\n",
+            "flags": "0",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9234
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9230
+                }
+            ]
+        },
+        {
+            "vnum": 9234,
+            "name": "Elemental Bay",
+            "description": "The water is crystal clear here and you can see the bottom of the bay 30 feet\nbelow you.  Then you realize you are walking on the water itself.  Truly\nmagical water indeed.  Though you splash through the bay you do not get wet.\n",
+            "flags": "0",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9235
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9231
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9233
+                }
+            ]
+        },
+        {
+            "vnum": 9235,
+            "name": "Elemental Bay",
+            "description": "The water is crystal clear here and you can see the bottom of the bay 30 feet\nbelow you.  Then you realize you are walking on the water itself.  Truly\nmagical water indeed.  Though you splash through the bay you do not get wet.\n",
+            "flags": "0",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9232
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9234
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9236
+                }
+            ]
+        },
+        {
+            "vnum": 9236,
+            "name": "Water Chamber",
+            "description": "This chamber was magically created here on the floor of the bay.  It looks\nlike it's been here for a long, long time.  Though you are 'under water' there\nis no difficulty breathing normally, and oddly you do not feel the pressure of\nthe water above you.\n",
+            "flags": "D",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9235
+                }
+            ]
+        },
+        {
+            "vnum": 9237,
+            "name": "A Fiery Pathway",
+            "description": "You tread carefully along a path which dips and turns among geysers of fire.\nMiniature volcanoes spew lava in rivers.  The fire is hot but not altogether\ndangerous.  The path extends east and south.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9214
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9238
+                }
+            ]
+        },
+        {
+            "vnum": 9238,
+            "name": "A Fiery Pathway",
+            "description": "You tread carefully along a path which dips and turns among pits of fire and\nbeds of coals.  A garden to the west glows with an everlasting fire.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9237
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9242
+                }
+            ]
+        },
+        {
+            "vnum": 9242,
+            "name": "The Burning Gardens",
+            "description": "Everywhere around you the landscape is afire; the rocks, the shrubs and even\nthe air seems to be aflame.  Curiously, the magical fire does not seem to\nconsume its hosts.  A path leads east among some fire pits.\n",
+            "flags": "0",
+            "sector": 5,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9238
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9245
+                }
+            ]
+        },
+        {
+            "vnum": 9245,
+            "name": "The Fire Chamber",
+            "description": "The fire ruler sits upon a throne made of blue flame.  Little flickers of\nflame dance to and fro for the entertainment of the ruler.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9242
+                }
+            ]
+        },
+        {
+            "vnum": 9246,
+            "name": "Electric Pathway",
+            "description": "The pathway glows and hums because of the electricity pulsing through it.\nIt seems almost soothing to your weary feet.  To the north there is a\nsunken-in area.  A path leads east also.\n",
+            "flags": "0",
+            "sector": 3,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9248
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9253
+                }
+            ]
+        },
+        {
+            "vnum": 9247,
+            "name": "The Electric Playground",
+            "description": "Though there is a seemingly carefree atmosphere here, you sense that\nsomething much more important takes place near by.  The electric playground\nextends north and east.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9249
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9248
+                }
+            ]
+        },
+        {
+            "vnum": 9248,
+            "name": "The Electric Playground",
+            "description": "Though there is a seemingly carefree atmosphere here, you sense that\nsomething much more important takes place near by.  There is an electric\npath heading away south.  The playground extends north and west.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9250
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9246
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9247
+                }
+            ]
+        },
+        {
+            "vnum": 9249,
+            "name": "The Electric Playground",
+            "description": "Though there is a seemingly carefree atmosphere here, you sense that\nsomething much more important takes place near by.  The playground continues\nsouth and east.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9250
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9247
+                }
+            ]
+        },
+        {
+            "vnum": 9250,
+            "name": "The Electric Playground",
+            "description": "Though there is a seemingly carefree atmosphere here, you sense that\nsomething much more important takes place near by.  The playground is\nsouth and west.  Something more important catches your eye to the east.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9251
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9248
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9249
+                }
+            ]
+        },
+        {
+            "vnum": 9251,
+            "name": "Lightning Causeway",
+            "description": "Up a set of stairs carved into the hill you see intermittent flashes of\nlightning.  A continuous hum also comes form that direction.  To the west\nis the electric playground.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9250
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9252
+                }
+            ]
+        },
+        {
+            "vnum": 9252,
+            "name": "Lightning Chamber",
+            "description": "There is some sort of control panel here. Apparently the Lightning Ruler\nobserves and controls electric forces from here.  A set of steps carved into\nthe hill lead down to a causeway.\n",
+            "flags": "D",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9251
+                }
+            ]
+        },
+        {
+            "vnum": 9253,
+            "name": "Mesa West",
+            "description": "An electric path starts to the west.  The mesa continues to the east.\nOr you can climb down to the canyon floor to the south.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9254
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9217
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9246
+                }
+            ]
+        },
+        {
+            "vnum": 9254,
+            "name": "Mesa East",
+            "description": "A path starts to the north.  The mesa continues to the west.\nOr you can climb down to the canyon floor to the south.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9255
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9219
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9253
+                }
+            ]
+        },
+        {
+            "vnum": 9255,
+            "name": "Floating in Air",
+            "description": "Last you knew, you were walking on the mesa.  Abruptly the path dropped\nfrom beneath your feet much to quick for you to recover.  Instead of\nplunging to your death, you seemingly miss the ground and begin walking\non air.  The space to the north and east seems just thin air, but you can\nwalk there.  The pathway you came from is to the south.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9257
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9256
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9254
+                }
+            ]
+        },
+        {
+            "vnum": 9256,
+            "name": "Floating in Air",
+            "description": "You look down and see the ground 100 feet below you.  The wind whispering\nin your ear seems to reassure you that this is fine.  To the north aways\nyou spy a portal of sorts.  To the west is more thin air.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9258
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9255
+                }
+            ]
+        },
+        {
+            "vnum": 9257,
+            "name": "Floating in Air",
+            "description": "You look down and see the ground 100 feet below you.  The wind whispering\nin your ear seems to reassure you that this is fine.  To the east aways\nyou spy a portal of sorts.  To the south is more thin air.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9258
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9255
+                }
+            ]
+        },
+        {
+            "vnum": 9258,
+            "name": "Floating in Air",
+            "description": "You look down and see the ground 100 feet below you.  The wind whispering\nin your ear seems to reassure you that this is fine. There is a portal\nhanging in midair here. It is to the east.  You can float south or west\nif you'd like.\n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9259
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9256
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9257
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "portal",
+                    "description": "Through the portal you see a tunnel.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 9259,
+            "name": "Windy Tunnel",
+            "description": "A tunnel leads east.  To the west you can enter a portal. The wind in\nthis tunnel is quite fierce, it seems as if it's forced.  \n",
+            "flags": "0",
+            "sector": 4,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9260
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9258
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "portal",
+                    "description": "Through the portal you see nothing but sky.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 9260,
+            "name": "Air Chamber",
+            "description": "Tiny tornadoes come and go and dance along the ground here.  At the back\nof the chamber you notice a huge throne made of swirling clouds.\nA tunnel leads west.\n",
+            "flags": "D",
+            "sector": 6,
+            "exits": [
+                {
+                    "exit_door": 3,
+                    "exit_description": "",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 9259
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "throne clouds",
+                    "description": "Although the cloud throne appears solid enough to sit on, I wouldn't try\nit if I were you!\n"
+                }
+            ]
+        }
+    ],
+    "resets": [
+        {
+            "command": "M",
+            "arg1": 9201,
+            "arg2": 3,
+            "arg3": 9201,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 9201,
+            "arg2": 3,
+            "arg3": 9202,
+            "arg4": 3
+        },
+        {
+            "command": "G",
+            "arg1": 9231,
+            "arg2": 30
+        },
+        {
+            "command": "M",
+            "arg1": 9201,
+            "arg2": 3,
+            "arg3": 9203,
+            "arg4": 3
+        },
+        {
+            "command": "M",
+            "arg1": 9238,
+            "arg2": 1,
+            "arg3": 9203,
+            "arg4": 1
+        },
+        {
+            "command": "G",
+            "arg1": 9231,
+            "arg2": 30
+        },
+        {
+            "command": "M",
+            "arg1": 9202,
+            "arg2": 0,
+            "arg3": 9204,
+            "arg4": 0
+        },
+        {
+            "command": "E",
+            "arg1": 9213,
+            "arg2": 10,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 9214,
+            "arg2": 10,
+            "arg3": 7
+        },
+        {
+            "command": "M",
+            "arg1": 9204,
+            "arg2": 1,
+            "arg3": 9209,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9211,
+            "arg2": 8,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 9212,
+            "arg2": 8,
+            "arg3": 14
+        },
+        {
+            "command": "M",
+            "arg1": 9208,
+            "arg2": 1,
+            "arg3": 9227,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9201,
+            "arg2": 6,
+            "arg3": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9202,
+            "arg2": 6,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 9209,
+            "arg2": 1,
+            "arg3": 9245,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9203,
+            "arg2": 6,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 9204,
+            "arg2": 6,
+            "arg3": 3
+        },
+        {
+            "command": "M",
+            "arg1": 9210,
+            "arg2": 1,
+            "arg3": 9260,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9205,
+            "arg2": 6,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 9206,
+            "arg2": 6,
+            "arg3": 6
+        },
+        {
+            "command": "M",
+            "arg1": 9211,
+            "arg2": 1,
+            "arg3": 9252,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9207,
+            "arg2": 6,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 9208,
+            "arg2": 6,
+            "arg3": 11
+        },
+        {
+            "command": "M",
+            "arg1": 9212,
+            "arg2": 1,
+            "arg3": 9236,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9209,
+            "arg2": 6,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 9210,
+            "arg2": 6,
+            "arg3": 12
+        },
+        {
+            "command": "M",
+            "arg1": 9203,
+            "arg2": 15,
+            "arg3": 9208,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9203,
+            "arg2": 15,
+            "arg3": 9210,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9203,
+            "arg2": 15,
+            "arg3": 9217,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9203,
+            "arg2": 15,
+            "arg3": 9219,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9225,
+            "arg2": 10,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9203,
+            "arg2": 15,
+            "arg3": 9215,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9203,
+            "arg2": 15,
+            "arg3": 9215,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9203,
+            "arg2": 15,
+            "arg3": 9218,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9205,
+            "arg2": 15,
+            "arg3": 9218,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9205,
+            "arg2": 12,
+            "arg3": 9207,
+            "arg4": 12
+        },
+        {
+            "command": "M",
+            "arg1": 9205,
+            "arg2": 12,
+            "arg3": 9250,
+            "arg4": 12
+        },
+        {
+            "command": "M",
+            "arg1": 9205,
+            "arg2": 12,
+            "arg3": 9209,
+            "arg4": 12
+        },
+        {
+            "command": "M",
+            "arg1": 9205,
+            "arg2": 12,
+            "arg3": 9234,
+            "arg4": 12
+        },
+        {
+            "command": "M",
+            "arg1": 9205,
+            "arg2": 12,
+            "arg3": 9222,
+            "arg4": 12
+        },
+        {
+            "command": "E",
+            "arg1": 9224,
+            "arg2": 10,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9206,
+            "arg2": 9,
+            "arg3": 9246,
+            "arg4": 9
+        },
+        {
+            "command": "M",
+            "arg1": 9206,
+            "arg2": 9,
+            "arg3": 9212,
+            "arg4": 9
+        },
+        {
+            "command": "E",
+            "arg1": 9221,
+            "arg2": 10,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9206,
+            "arg2": 9,
+            "arg3": 9254,
+            "arg4": 9
+        },
+        {
+            "command": "M",
+            "arg1": 9206,
+            "arg2": 9,
+            "arg3": 9225,
+            "arg4": 9
+        },
+        {
+            "command": "E",
+            "arg1": 9219,
+            "arg2": 7,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9207,
+            "arg2": 6,
+            "arg3": 9218,
+            "arg4": 6
+        },
+        {
+            "command": "M",
+            "arg1": 9207,
+            "arg2": 6,
+            "arg3": 9260,
+            "arg4": 6
+        },
+        {
+            "command": "E",
+            "arg1": 9220,
+            "arg2": 16,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9207,
+            "arg2": 6,
+            "arg3": 9242,
+            "arg4": 6
+        },
+        {
+            "command": "M",
+            "arg1": 9207,
+            "arg2": 6,
+            "arg3": 9209,
+            "arg4": 6
+        },
+        {
+            "command": "M",
+            "arg1": 9207,
+            "arg2": 6,
+            "arg3": 9218,
+            "arg4": 6
+        },
+        {
+            "command": "E",
+            "arg1": 9223,
+            "arg2": 10,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9226,
+            "arg2": 1,
+            "arg3": 9238,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9226,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9227,
+            "arg2": 1,
+            "arg3": 9238,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9230,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9228,
+            "arg2": 1,
+            "arg3": 9242,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9227,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9229,
+            "arg2": 1,
+            "arg3": 9242,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9228,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9230,
+            "arg2": 1,
+            "arg3": 9242,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 9229,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9231,
+            "arg2": 5,
+            "arg3": 9216,
+            "arg4": 5
+        },
+        {
+            "command": "E",
+            "arg1": 9215,
+            "arg2": 10,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9231,
+            "arg2": 5,
+            "arg3": 9211,
+            "arg4": 5
+        },
+        {
+            "command": "E",
+            "arg1": 9215,
+            "arg2": 10,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9232,
+            "arg2": 8,
+            "arg3": 9209,
+            "arg4": 8
+        },
+        {
+            "command": "E",
+            "arg1": 9220,
+            "arg2": 16,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9232,
+            "arg2": 8,
+            "arg3": 9208,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9233,
+            "arg2": 8,
+            "arg3": 9253,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9233,
+            "arg2": 7,
+            "arg3": 9218,
+            "arg4": 7
+        },
+        {
+            "command": "M",
+            "arg1": 9233,
+            "arg2": 7,
+            "arg3": 9255,
+            "arg4": 7
+        },
+        {
+            "command": "M",
+            "arg1": 9234,
+            "arg2": 6,
+            "arg3": 9230,
+            "arg4": 6
+        },
+        {
+            "command": "E",
+            "arg1": 9218,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9234,
+            "arg2": 6,
+            "arg3": 9238,
+            "arg4": 6
+        },
+        {
+            "command": "E",
+            "arg1": 9217,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9235,
+            "arg2": 2,
+            "arg3": 9249,
+            "arg4": 2
+        },
+        {
+            "command": "M",
+            "arg1": 9235,
+            "arg2": 2,
+            "arg3": 9257,
+            "arg4": 2
+        },
+        {
+            "command": "E",
+            "arg1": 9216,
+            "arg2": 10,
+            "arg3": 16
+        },
+        {
+            "command": "M",
+            "arg1": 9236,
+            "arg2": 15,
+            "arg3": 9202,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9236,
+            "arg2": 15,
+            "arg3": 9207,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9236,
+            "arg2": 15,
+            "arg3": 9237,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9236,
+            "arg2": 15,
+            "arg3": 9220,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9236,
+            "arg2": 15,
+            "arg3": 9228,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9236,
+            "arg2": 15,
+            "arg3": 9246,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9236,
+            "arg2": 15,
+            "arg3": 9255,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9214,
+            "arg2": 15,
+            "arg3": 9233,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9216,
+            "arg2": 5,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9214,
+            "arg2": 15,
+            "arg3": 9234,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9214,
+            "arg2": 15,
+            "arg3": 9235,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9224,
+            "arg2": 10,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9214,
+            "arg2": 15,
+            "arg3": 9230,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9214,
+            "arg2": 15,
+            "arg3": 9231,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9214,
+            "arg2": 15,
+            "arg3": 9232,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9214,
+            "arg2": 15,
+            "arg3": 9236,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9214,
+            "arg2": 15,
+            "arg3": 9236,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9215,
+            "arg2": 15,
+            "arg3": 9242,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9215,
+            "arg2": 15,
+            "arg3": 9245,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9215,
+            "arg2": 5,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9215,
+            "arg2": 15,
+            "arg3": 9242,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9215,
+            "arg2": 5,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9215,
+            "arg2": 15,
+            "arg3": 9242,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9215,
+            "arg2": 15,
+            "arg3": 9245,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9215,
+            "arg2": 15,
+            "arg3": 9245,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9217,
+            "arg2": 15,
+            "arg3": 9221,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9217,
+            "arg2": 15,
+            "arg3": 9222,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9217,
+            "arg2": 15,
+            "arg3": 9223,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9217,
+            "arg2": 5,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9217,
+            "arg2": 15,
+            "arg3": 9224,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9217,
+            "arg2": 15,
+            "arg3": 9225,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9217,
+            "arg2": 15,
+            "arg3": 9227,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9217,
+            "arg2": 15,
+            "arg3": 9227,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9217,
+            "arg2": 15,
+            "arg3": 9226,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9218,
+            "arg2": 15,
+            "arg3": 9247,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9218,
+            "arg2": 15,
+            "arg3": 9248,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9218,
+            "arg2": 15,
+            "arg3": 9249,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9218,
+            "arg2": 15,
+            "arg3": 9250,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9219,
+            "arg2": 7,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9218,
+            "arg2": 15,
+            "arg3": 9251,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9218,
+            "arg2": 15,
+            "arg3": 9252,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9218,
+            "arg2": 7,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9218,
+            "arg2": 15,
+            "arg3": 9252,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9218,
+            "arg2": 15,
+            "arg3": 9246,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9225,
+            "arg2": 15,
+            "arg3": 9255,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9218,
+            "arg2": 7,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9225,
+            "arg2": 15,
+            "arg3": 9256,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9225,
+            "arg2": 15,
+            "arg3": 9257,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9225,
+            "arg2": 15,
+            "arg3": 9258,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9225,
+            "arg2": 15,
+            "arg3": 9259,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9225,
+            "arg2": 15,
+            "arg3": 9260,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9225,
+            "arg2": 15,
+            "arg3": 9260,
+            "arg4": 15
+        },
+        {
+            "command": "M",
+            "arg1": 9225,
+            "arg2": 15,
+            "arg3": 9255,
+            "arg4": 15
+        },
+        {
+            "command": "E",
+            "arg1": 9225,
+            "arg2": 10,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9219,
+            "arg2": 8,
+            "arg3": 9228,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9219,
+            "arg2": 8,
+            "arg3": 9229,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9219,
+            "arg2": 8,
+            "arg3": 9238,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9219,
+            "arg2": 8,
+            "arg3": 9246,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9216,
+            "arg2": 5,
+            "arg3": 9232,
+            "arg4": 5
+        },
+        {
+            "command": "M",
+            "arg1": 9216,
+            "arg2": 5,
+            "arg3": 9232,
+            "arg4": 5
+        },
+        {
+            "command": "M",
+            "arg1": 9216,
+            "arg2": 5,
+            "arg3": 9212,
+            "arg4": 5
+        },
+        {
+            "command": "M",
+            "arg1": 9216,
+            "arg2": 5,
+            "arg3": 9225,
+            "arg4": 5
+        },
+        {
+            "command": "M",
+            "arg1": 9220,
+            "arg2": 8,
+            "arg3": 9238,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9220,
+            "arg2": 8,
+            "arg3": 9242,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9220,
+            "arg2": 8,
+            "arg3": 9220,
+            "arg4": 8
+        },
+        {
+            "command": "E",
+            "arg1": 9222,
+            "arg2": 10,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 9220,
+            "arg2": 8,
+            "arg3": 9221,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9221,
+            "arg2": 8,
+            "arg3": 9222,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9221,
+            "arg2": 8,
+            "arg3": 9222,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9221,
+            "arg2": 8,
+            "arg3": 9231,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9221,
+            "arg2": 8,
+            "arg3": 9231,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9222,
+            "arg2": 8,
+            "arg3": 9232,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9222,
+            "arg2": 8,
+            "arg3": 9213,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9222,
+            "arg2": 8,
+            "arg3": 9255,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9222,
+            "arg2": 8,
+            "arg3": 9254,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9223,
+            "arg2": 8,
+            "arg3": 9248,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9223,
+            "arg2": 8,
+            "arg3": 9253,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9223,
+            "arg2": 8,
+            "arg3": 9221,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9223,
+            "arg2": 8,
+            "arg3": 9210,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9224,
+            "arg2": 8,
+            "arg3": 9227,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9224,
+            "arg2": 8,
+            "arg3": 9222,
+            "arg4": 8
+        },
+        {
+            "command": "E",
+            "arg1": 9225,
+            "arg2": 10,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 9224,
+            "arg2": 8,
+            "arg3": 9259,
+            "arg4": 8
+        },
+        {
+            "command": "M",
+            "arg1": 9224,
+            "arg2": 8,
+            "arg3": 9257,
+            "arg4": 8
+        }
+    ],
+    "shops": [
+        {
+            "keeper": "9238",
+            "buy_type_0": 0,
+            "buy_type_1": 0,
+            "buy_type_2": 0,
+            "buy_type_3": 0,
+            "buy_type_4": 0,
+            "profit_buy": 105,
+            "profit_sell": 15,
+            "open_hour": 0,
+            "close_hour": 23
+        }
+    ],
+    "specials": [
+        {
+            "vnum": 9202,
+            "spec_fun": "spec_cast_cleric"
+        },
+        {
+            "vnum": 9204,
+            "spec_fun": "spec_breath_any"
+        },
+        {
+            "vnum": 9207,
+            "spec_fun": "spec_breath_any"
+        },
+        {
+            "vnum": 9208,
+            "spec_fun": "spec_cast_cleric"
+        },
+        {
+            "vnum": 9209,
+            "spec_fun": "spec_breath_fire"
+        },
+        {
+            "vnum": 9210,
+            "spec_fun": "spec_breath_gas"
+        },
+        {
+            "vnum": 9211,
+            "spec_fun": "spec_breath_lightning"
+        },
+        {
+            "vnum": 9212,
+            "spec_fun": "spec_breath_acid"
+        },
+        {
+            "vnum": 9219,
+            "spec_fun": "spec_breath_acid"
+        },
+        {
+            "vnum": 9223,
+            "spec_fun": "spec_breath_lightning"
+        },
+        {
+            "vnum": 9224,
+            "spec_fun": "spec_thief"
+        },
+        {
+            "vnum": 9225,
+            "spec_fun": "spec_thief"
+        },
+        {
+            "vnum": 9226,
+            "spec_fun": "spec_breath_fire"
+        },
+        {
+            "vnum": 9227,
+            "spec_fun": "spec_breath_lightning"
+        },
+        {
+            "vnum": 9228,
+            "spec_fun": "spec_breath_frost"
+        },
+        {
+            "vnum": 9230,
+            "spec_fun": "spec_breath_gas"
+        },
+        {
+            "vnum": 9231,
+            "spec_fun": "spec_cast_mage"
+        },
+        {
+            "vnum": 9232,
+            "spec_fun": "spec_cast_cleric"
+        },
+        {
+            "vnum": 9233,
+            "spec_fun": "spec_cast_mage"
+        },
+        {
+            "vnum": 9234,
+            "spec_fun": "spec_thief"
+        },
+        {
+            "vnum": 9235,
+            "spec_fun": "spec_breath_any"
+        },
+        {
+            "vnum": 9237,
+            "spec_fun": "spec_breath_any"
+        },
+        {
+            "vnum": 9238,
+            "spec_fun": "spec_cast_mage"
+        }
+    ]
+}
