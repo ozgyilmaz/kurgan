@@ -32,3 +32,5 @@
 - area-to-json.sh for batch operations for all area files /area directory.
 - Area json converter improved. Json parsing code implemented.
 - Json areas created. *.are files archived. area.lst edited.
+- UTF8 code removed.
+- Character customization removed.

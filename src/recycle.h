@@ -58,12 +58,6 @@ DD	*new_descriptor args( (void) );
 void	free_descriptor args( (DESCRIPTOR_DATA *d) );
 #undef DD
 
-/* char gen data recycling */
-#define GD GEN_DATA
-GD 	*new_gen_data args( (void) );
-void	free_gen_data args( (GEN_DATA * gen) );
-#undef GD
-
 /* extra descr recycling */
 #define ED EXTRA_DESCR_DATA
 ED	*new_extra_descr args( (void) );

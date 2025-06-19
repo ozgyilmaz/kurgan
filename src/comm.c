@@ -342,16 +342,6 @@ void	read_from_buffer	args( ( DESCRIPTOR_DATA *d ) );
 void	stop_idling		args( ( CHAR_DATA *ch ) );
 void    bust_a_prompt           args( ( CHAR_DATA *ch ) );
 
-// prool's modif for isprint
-// prool here: http://mud.kharkov.org proolix@gmail.com
-int isutf8(char c)
-{
-if ((c<32)&&(c>=0)) return 0;
-if (c==-1) return 0;
-if (c==-3) return 0;
-return 1;
-}
-
 int main( int argc, char **argv )
 {
     struct timeval now_time;
@@ -1152,7 +1142,7 @@ void read_from_buffer( DESCRIPTOR_DATA *d )
 
 	if ( d->inbuf[i] == '\b' && k > 0 )
 	    --k;
-	else if ( isutf8(d->inbuf[i]) )
+	else if ( isascii(d->inbuf[i]) && isprint(d->inbuf[i]) )
 	    d->incomm[k++] = d->inbuf[i];
     }
 
@@ -1939,27 +1929,6 @@ case CON_GET_ALIGNMENT:
         group_add(ch,"rom basics",FALSE);
         group_add(ch,class_table[ch->class].base_group,FALSE);
         ch->pcdata->learned[gsn_recall] = 50;
-	write_to_buffer(d,"Do you wish to customize this character?\n\r",0);
-	write_to_buffer(d,"Customization takes time, but allows a wider range of skills and abilities.\n\r",0);
-	write_to_buffer(d,"Customize (Y/N)? ",0);
-	d->connected = CON_DEFAULT_CHOICE;
-	break;
-
-case CON_DEFAULT_CHOICE:
-	write_to_buffer(d,"\n\r",2);
-        switch ( argument[0] )
-        {
-        case 'y': case 'Y': 
-	    ch->gen_data = new_gen_data();
-	    ch->gen_data->points_chosen = ch->pcdata->points;
-	    do_function(ch, &do_help, "group header");
-	    list_group_costs(ch);
-	    write_to_buffer(d,"You already have the following skills:\n\r",0);
-	    do_function(ch, &do_skills, "");
-	    do_function(ch, &do_help, "menu choice");
-	    d->connected = CON_GEN_GROUPS;
-	    break;
-        case 'n': case 'N': 
 	    group_add(ch,class_table[ch->class].default_group,TRUE);
             write_to_buffer( d, "\n\r", 2 );
 	    write_to_buffer(d,
@@ -1974,11 +1943,6 @@ case CON_DEFAULT_CHOICE:
 	    strcat(buf,"\n\rYour choice? ");
 	    write_to_buffer(d,buf,0);
             d->connected = CON_PICK_WEAPON;
-            break;
-        default:
-            write_to_buffer( d, "Please answer (Y/N)? ", 0 );
-            return;
-        }
 	break;
 
     case CON_PICK_WEAPON:
@@ -2005,57 +1969,6 @@ case CON_DEFAULT_CHOICE:
 	do_function(ch, &do_help, "motd");
 	d->connected = CON_READ_MOTD;
 	break;
-
-    case CON_GEN_GROUPS:
-	printf_to_char(ch, "\n\r");
-
-       	if (!str_cmp(argument,"done"))
-       	{
-	    if (ch->pcdata->points == race_table[ch->race].points)
-	    {
-	        printf_to_char(ch, "You didn't pick anything.\n\r");
-		break;
-	    }
-
-	    if (ch->pcdata->points <= 40 + race_table[ch->race].points)
-	    {
-		sprintf(buf,
-		    "You must take at least %d points of skills and groups",
-		    40 + race_table[ch->race].points);
-		printf_to_char(ch, buf);
-		break;
-	    }
-
-	    sprintf(buf,"Creation points: %d\n\r",ch->pcdata->points);
-	    printf_to_char(ch, buf);
-	    sprintf(buf,"Experience per level: %d\n\r",
-	            exp_per_level(ch,ch->gen_data->points_chosen));
-	    if (ch->pcdata->points < 40)
-		ch->train = (40 - ch->pcdata->points + 1) / 2;
-	    free_gen_data(ch->gen_data);
-	    ch->gen_data = NULL;
-	    printf_to_char(ch, buf);
-            write_to_buffer( d, "\n\r", 2 );
-            write_to_buffer(d,
-                "Please pick a weapon from the following choices:\n\r",0);
-            buf[0] = '\0';
-            for ( i = 0; weapon_table[i].name != NULL; i++)
-                if (ch->pcdata->learned[*weapon_table[i].gsn] > 0)
-                {
-                    strcat(buf,weapon_table[i].name);
-		    strcat(buf," ");
-                }
-            strcat(buf,"\n\rYour choice? ");
-            write_to_buffer(d,buf,0);
-            d->connected = CON_PICK_WEAPON;
-            break;
-        }
-
-        if (!parse_gen_groups(ch,argument))
-        printf_to_char(ch, "Choices are: list,learned,premise,add,drop,info,help, and done.\n\r");
-
-        do_function(ch, &do_help, "menu choice");
-        break;
 
     case CON_READ_IMOTD:
 	write_to_buffer(d,"\n\r",2);

@@ -2097,7 +2097,6 @@ bool	check_ban	args( ( char *site, int type) );
 
 
 /* comm.c */
-int     isutf8  args((char c));
 void	show_string	args( ( struct descriptor_data *d, char *input) );
 void	close_socket	args( ( DESCRIPTOR_DATA *dclose ) );
 void	write_to_buffer	args( ( DESCRIPTOR_DATA *d, const char *txt,
@@ -2288,7 +2287,6 @@ bool	load_char_obj	args( ( DESCRIPTOR_DATA *d, char *name ) );
 
 /* skills.c */
 bool 	parse_gen_groups args( ( CHAR_DATA *ch,char *argument ) );
-void 	list_group_costs args( ( CHAR_DATA *ch ) );
 void    list_group_known args( ( CHAR_DATA *ch ) );
 int 	exp_per_level	args( ( CHAR_DATA *ch, int points ) );
 void 	check_improve	args( ( CHAR_DATA *ch, int sn, bool success, 
