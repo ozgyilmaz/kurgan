@@ -851,8 +851,8 @@ void do_prompt(CHAR_DATA *ch, char *argument)
        return;
    }
  
-   if( !strcmp( argument, "all" ) )
-      strcpy( buf, "<%hhp %mm %vmv> ");
+   if( !strcmp( argument, "all" ) ) //"<%hhp %mm %vmv> "
+      strcpy( buf, "Hp:%h/%H Mp:%m/%M Mv:%v/%V <%o> ");
    else
    {
       if ( strlen(argument) > 50 )
@@ -998,12 +998,11 @@ void do_look( CHAR_DATA *ch, char *argument )
     if ( arg1[0] == '\0' || !str_cmp( arg1, "auto" ) )
     {
 	/* 'look' or 'look auto' */
-	printf_to_char(ch, ch->in_room->name);
+	printf_to_char(ch, "%s%s%s", CLR_ROOM_NAME, ch->in_room->name, CLR_RESET);
 
 	if (IS_IMMORTAL(ch) && !IS_NPC(ch) && IS_SET(ch->act, PLR_HOLYLIGHT))
 	{
-	    sprintf(buf," [Room %d]",ch->in_room->vnum);
-	    printf_to_char(ch, buf);
+	    printf_to_char(ch, " [Room %d]",ch->in_room->vnum);
 	}
 
 	printf_to_char(ch, "\n\r");
@@ -1345,7 +1344,7 @@ void do_exits( CHAR_DATA *ch, char *argument )
     if ( fAuto )
 	strcat( buf, "]\n\r" );
 
-    printf_to_char(ch, buf);
+    printf_to_char(ch, "%s%s%s", CLR_ROOM_EXITS, buf, CLR_RESET);
     return;
 }
 

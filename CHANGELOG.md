@@ -38,3 +38,6 @@
 
 ## 20.06.2025
 - Greeting screen edited. Startup script implemented.
+
+# 29.06.2025
+- Prompt configuration and ROOM colors (room name and exits)

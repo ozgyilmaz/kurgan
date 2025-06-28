@@ -13,6 +13,9 @@
 
 #define CLR_RESET                   "\033[0m"
 
+#define CLR_ROOM_NAME               RGB(201, 130, 75)
+#define CLR_ROOM_EXITS              RGB(109, 213, 227)
+
 /* Pink Colors */
 #define CLR_PINK                    RGB(255, 192, 203)
 #define CLR_LIGHT_PINK              RGB(255, 182, 193)

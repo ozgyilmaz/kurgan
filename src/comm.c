@@ -1328,131 +1328,211 @@ void bust_a_prompt( CHAR_DATA *ch )
     bool found;
     const char *dir_name[] = {"N","E","S","W","U","D"};
     int door;
- 
+	CHAR_DATA *victim;
+
     point = buf;
     str = ch->prompt;
+
     if (str == NULL || str[0] == '\0')
     {
-        sprintf( buf, "<%dhp %dm %dmv> %s",
-	    ch->hit,ch->mana,ch->move,ch->prefix);
-	printf_to_char(ch, buf);
-	return;
+		if( ch->fighting != NULL )
+		{
+			if ((victim = ch->fighting) != NULL)
+			{
+				if (victim->hit >= 0)
+				{
+					sprintf( buf2, "%d",((100 * victim->hit) / UMAX(1,victim->max_hit)));
+				}
+				else
+				{
+					sprintf(buf2,"0");
+				}
+			}
+		}
+		else
+		{
+			sprintf(buf2,"0");
+		}
+
+        printf_to_char(ch, "Hp:%d/%d Mp:%d/%d Mv:%d/%d <%s> ", ch->hit, ch->max_hit, ch->mana, ch->max_mana, ch->move, ch->max_move, buf2);
+        return;
     }
 
-   if (IS_SET(ch->comm,COMM_AFK))
-   {
-	printf_to_char(ch, "<AFK> ");
-	return;
-   }
+    if (IS_SET(ch->comm, COMM_AFK))
+    {
+        printf_to_char(ch, "<AFK> ");
+        return;
+    }
 
-   while( *str != '\0' )
-   {
-      if( *str != '%' )
-      {
-         *point++ = *str++;
-         continue;
-      }
-      ++str;
-      switch( *str )
-      {
-         default :
-            i = " "; break;
-	case 'e':
-	    found = FALSE;
-	    doors[0] = '\0';
-	    for (door = 0; door < 6; door++)
-	    {
-		if ((pexit = ch->in_room->exit[door]) != NULL
-		&&  pexit ->u1.to_room != NULL
-		&&  (can_see_room(ch,pexit->u1.to_room)
-		||   (IS_AFFECTED(ch,AFF_INFRARED) 
-		&&    !IS_AFFECTED(ch,AFF_BLIND)))
-		&&  !IS_SET(pexit->exit_info,EX_CLOSED))
-		{
-		    found = TRUE;
-		    strcat(doors,dir_name[door]);
-		}
-	    }
-	    if (!found)
-	 	strcat(buf,"none");
-	    sprintf(buf2,"%s",doors);
-	    i = buf2; break;
- 	 case 'c' :
-	    sprintf(buf2,"%s","\n\r");
-	    i = buf2; break;
-         case 'h' :
-            sprintf( buf2, "%d", ch->hit );
-            i = buf2; break;
-         case 'H' :
-            sprintf( buf2, "%d", ch->max_hit );
-            i = buf2; break;
-         case 'm' :
-            sprintf( buf2, "%d", ch->mana );
-            i = buf2; break;
-         case 'M' :
-            sprintf( buf2, "%d", ch->max_mana );
-            i = buf2; break;
-         case 'v' :
-            sprintf( buf2, "%d", ch->move );
-            i = buf2; break;
-         case 'V' :
-            sprintf( buf2, "%d", ch->max_move );
-            i = buf2; break;
-         case 'x' :
-            sprintf( buf2, "%d", ch->exp );
-            i = buf2; break;
-	 case 'X' :
-	    sprintf(buf2, "%d", IS_NPC(ch) ? 0 :
-	    (ch->level + 1) * exp_per_level(ch,ch->pcdata->points) - ch->exp);
-	    i = buf2; break;
-         case 'g' :
-            sprintf( buf2, "%ld", ch->gold);
-            i = buf2; break;
-	 case 's' :
-	    sprintf( buf2, "%ld", ch->silver);
-	    i = buf2; break;
-         case 'a' :
-            if( ch->level > 9 )
-               sprintf( buf2, "%d", ch->alignment );
-            else
-               sprintf( buf2, "%s", IS_GOOD(ch) ? "good" : IS_EVIL(ch) ?
-                "evil" : "neutral" );
-            i = buf2; break;
-         case 'r' :
-            if( ch->in_room != NULL )
-               sprintf( buf2, "%s", 
-		((!IS_NPC(ch) && IS_SET(ch->act,PLR_HOLYLIGHT)) ||
-		 (!IS_AFFECTED(ch,AFF_BLIND) && !room_is_dark( ch->in_room )))
-		? ch->in_room->name : "darkness");
-            else
-               sprintf( buf2, " " );
-            i = buf2; break;
-         case 'R' :
-            if( IS_IMMORTAL( ch ) && ch->in_room != NULL )
-               sprintf( buf2, "%d", ch->in_room->vnum );
-            else
-               sprintf( buf2, " " );
-            i = buf2; break;
-         case 'z' :
-            if( IS_IMMORTAL( ch ) && ch->in_room != NULL )
-               sprintf( buf2, "%s", ch->in_room->area->name );
-            else
-               sprintf( buf2, " " );
-            i = buf2; break;
-         case '%' :
-            sprintf( buf2, "%%" );
-            i = buf2; break;
-      }
-      ++str;
-      while( (*point = *i) != '\0' )
-         ++point, ++i;
-   }
-   write_to_buffer( ch->desc, buf, point - buf );
+    while (*str != '\0')
+    {
+        if (*str != '%')
+        {
+            *point++ = *str++;
+            continue;
+        }
 
-   if (ch->prefix[0] != '\0')
-        write_to_buffer(ch->desc,ch->prefix,0);
-   return;
+        ++str;
+        switch (*str)
+        {
+            default:
+                i = " ";
+                break;
+			
+			case 'o' :
+				if( ch->fighting != NULL )
+				{
+					if ((victim = ch->fighting) != NULL)
+					{
+						if (victim->hit >= 0)
+						{
+							sprintf( buf2, "%d",((100 * victim->hit) / UMAX(1,victim->max_hit)));
+						}
+						else
+						{
+							sprintf(buf2,"0");
+						}
+					}
+				}
+				else
+				{
+					sprintf(buf2,"0");
+				}
+				
+				i = buf2;
+				break;
+
+            case 'e':
+                found = FALSE;
+                doors[0] = '\0';
+                for (door = 0; door < 6; door++)
+                {
+                    if ((pexit = ch->in_room->exit[door]) != NULL
+                        && pexit->u1.to_room != NULL
+                        && (can_see_room(ch, pexit->u1.to_room)
+                            || (IS_AFFECTED(ch, AFF_INFRARED) && !IS_AFFECTED(ch, AFF_BLIND)))
+                        && !IS_SET(pexit->exit_info, EX_CLOSED))
+                    {
+                        found = TRUE;
+                        strcat(doors, dir_name[door]);
+                    }
+                }
+                if (!found)
+                    strcat(buf, "none");
+                sprintf(buf2, "%s", doors);
+                i = buf2;
+                break;
+
+            case 'c':
+                sprintf(buf2, "%s", "\n\r");
+                i = buf2;
+                break;
+
+            case 'h':
+                sprintf(buf2, "%d", ch->hit);
+                i = buf2;
+                break;
+
+            case 'H':
+                sprintf(buf2, "%d", ch->max_hit);
+                i = buf2;
+                break;
+
+            case 'm':
+                sprintf(buf2, "%d", ch->mana);
+                i = buf2;
+                break;
+
+            case 'M':
+                sprintf(buf2, "%d", ch->max_mana);
+                i = buf2;
+                break;
+
+            case 'v':
+                sprintf(buf2, "%d", ch->move);
+                i = buf2;
+                break;
+
+            case 'V':
+                sprintf(buf2, "%d", ch->max_move);
+                i = buf2;
+                break;
+
+            case 'x':
+                sprintf(buf2, "%d", ch->exp);
+                i = buf2;
+                break;
+
+            case 'X':
+                sprintf(buf2, "%d", IS_NPC(ch) ? 0 :
+                        (ch->level + 1) * exp_per_level(ch, ch->pcdata->points) - ch->exp);
+                i = buf2;
+                break;
+
+            case 'g':
+                sprintf(buf2, "%ld", ch->gold);
+                i = buf2;
+                break;
+
+            case 's':
+                sprintf(buf2, "%ld", ch->silver);
+                i = buf2;
+                break;
+
+            case 'a':
+                if (ch->level > 9)
+                    sprintf(buf2, "%d", ch->alignment);
+                else
+                    sprintf(buf2, "%s", IS_GOOD(ch) ? "good" : IS_EVIL(ch) ? "evil" : "neutral");
+                i = buf2;
+                break;
+
+            case 'r':
+                if (ch->in_room != NULL)
+                    sprintf(buf2, "%s",
+                            ((!IS_NPC(ch) && IS_SET(ch->act, PLR_HOLYLIGHT)) ||
+                             (!IS_AFFECTED(ch, AFF_BLIND) && !room_is_dark(ch->in_room)))
+                            ? ch->in_room->name : "darkness");
+                else
+                    sprintf(buf2, " ");
+                i = buf2;
+                break;
+
+            case 'R':
+                if (IS_IMMORTAL(ch) && ch->in_room != NULL)
+                    sprintf(buf2, "%d", ch->in_room->vnum);
+                else
+                    sprintf(buf2, " ");
+                i = buf2;
+                break;
+
+            case 'z':
+                if (IS_IMMORTAL(ch) && ch->in_room != NULL)
+                    sprintf(buf2, "%s", ch->in_room->area->name);
+                else
+                    sprintf(buf2, " ");
+                i = buf2;
+                break;
+
+            case '%':
+                sprintf(buf2, "%%");
+                i = buf2;
+                break;
+        }
+
+        ++str;
+        while ((*point = *i) != '\0')
+            ++point, ++i;
+    }
+
+    write_to_buffer(ch->desc, buf, point - buf);
+
+    if (ch->prefix[0] != '\0')
+        write_to_buffer(ch->desc, ch->prefix, 0);
+
+    return;
 }
+
 
 
 
