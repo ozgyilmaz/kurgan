@@ -1925,7 +1925,7 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
         ch->race = race;
 	/* initialize stats */
 	for (i = 0; i < MAX_STATS; i++)
-	    ch->perm_stat[i] = race_table[race].stats[i];
+	    ch->perm_stat[i] = pc_race_table[race].stats[i];
 	ch->affected_by = ch->affected_by|race_table[race].aff;
 	ch->imm_flags	= ch->imm_flags|race_table[race].imm;
 	ch->res_flags	= ch->res_flags|race_table[race].res;
@@ -1936,13 +1936,13 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
 	/* add skills */
 	for (i = 0; i < 5; i++)
 	{
-	    if (race_table[race].skills[i] == NULL)
+	    if (pc_race_table[race].skills[i] == NULL)
 	 	break;
-	    group_add(ch,race_table[race].skills[i],FALSE);
+	    group_add(ch,pc_race_table[race].skills[i],FALSE);
 	}
 	/* add cost */
-	ch->pcdata->points = race_table[race].points;
-	ch->size = race_table[race].size;
+	ch->pcdata->points = pc_race_table[race].points;
+	ch->size = pc_race_table[race].size;
 
         write_to_buffer( d, "What is your sex (M/F)? ", 0 );
         d->connected = CON_GET_NEW_SEX;

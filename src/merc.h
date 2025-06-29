@@ -423,7 +423,11 @@ struct race_type
     long	vuln;			/* vuln bits for the race */
     long	form;			/* default form flag for the race */
     long	parts;			/* default parts for the race */
-    // below is from old struct pc_race_type
+};
+
+struct pc_race_type  /* additional data for pc races */
+{
+    char *	name;			/* MUST be in race_type */
     char 	who_name[6];
     sh_int	points;			/* cost in points of the race */
     sh_int	class_mult[MAX_CLASS];	/* exp multiplier for class, * 100 */
@@ -1896,6 +1900,7 @@ extern  const   struct  item_type	item_table	[];
 extern	const	struct	wiznet_type	wiznet_table	[];
 extern	const	struct	attack_type	attack_table	[];
 extern  const	struct  race_type	race_table	[];
+extern	const	struct	pc_race_type	pc_race_table	[];
 extern  const	struct	spec_type	spec_table	[];
 extern	const	struct	liq_type	liq_table	[];
 extern	const	struct	skill_type	skill_table	[MAX_SKILL];

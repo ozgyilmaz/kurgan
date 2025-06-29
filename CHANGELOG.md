@@ -41,3 +41,4 @@
 
 # 29.06.2025
 - Prompt configuration and ROOM colors (room name and exits)
+- pc_race_table struct is back.

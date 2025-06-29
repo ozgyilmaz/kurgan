@@ -1833,7 +1833,7 @@ void do_whois (CHAR_DATA *ch, char *argument)
 	    /* a little formatting */
 	    sprintf(buf, "[%2d %6s %s] %s%s%s%s%s%s%s%s\n\r",
 		wch->level,
-		wch->race < MAX_PC_RACE ? race_table[wch->race].who_name
+		wch->race < MAX_PC_RACE ? pc_race_table[wch->race].who_name
 					: "     ",
 		class,
 	     wch->incog_level >= LEVEL_HERO ? "(Incog) ": "",
@@ -2030,7 +2030,7 @@ void do_who( CHAR_DATA *ch, char *argument )
 	    CLR_DARK_GOLDEN_ROD,
         wch->level,
         CLR_RESET,
-	    wch->race < MAX_PC_RACE ? race_table[wch->race].who_name 
+	    wch->race < MAX_PC_RACE ? pc_race_table[wch->race].who_name 
 				    : "     ",
 	    class,
 	    wch->incog_level >= LEVEL_HERO ? "(Incog) " : "",

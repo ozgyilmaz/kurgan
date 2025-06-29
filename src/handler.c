@@ -743,7 +743,7 @@ int get_curr_stat( CHAR_DATA *ch, int stat )
 
     else
     {
-	max = race_table[ch->race].max_stats[stat] + 4;
+	max = pc_race_table[ch->race].max_stats[stat] + 4;
 
 	if (class_table[ch->class].attr_prime == stat)
 	    max += 2;
@@ -765,7 +765,7 @@ int get_max_train( CHAR_DATA *ch, int stat )
     if (IS_NPC(ch) || ch->level > LEVEL_IMMORTAL)
 	return 25;
 
-    max = race_table[ch->race].max_stats[stat];
+    max = pc_race_table[ch->race].max_stats[stat];
     if (class_table[ch->class].attr_prime == stat)
     {
         if (ch->race == race_lookup("human"))
