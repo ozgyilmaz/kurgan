@@ -115,21 +115,7 @@ void move_char( CHAR_DATA *ch, int door, bool follow )
 
     if ( !IS_NPC(ch) )
     {
-	int iClass, iGuild;
 	int move;
-
-	for ( iClass = 0; iClass < MAX_CLASS; iClass++ )
-	{
-	    for ( iGuild = 0; iGuild < MAX_GUILD; iGuild ++)	
-	    {
-	    	if ( iClass != ch->class
-	    	&&   to_room->vnum == class_table[iClass].guild[iGuild] )
-	    	{
-		    printf_to_char(ch, "You aren't allowed in there.\n\r");
-		    return;
-		}
-	    }
-	}
 
 	if ( in_room->sector_type == SECT_AIR
 	||   to_room->sector_type == SECT_AIR )

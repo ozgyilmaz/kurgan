@@ -370,9 +370,6 @@ struct	class_type
 {
     char *	name;			/* the full name of the class */
     char 	who_name	[4];	/* Three-letter name for 'who'	*/
-    sh_int	guild[MAX_GUILD];	/* Vnum of guild rooms		*/
-    char *	base_group;		/* base skills gained		*/
-    char *	default_group;		/* default skills gained	*/
 };
 
 struct item_type

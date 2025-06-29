@@ -436,23 +436,19 @@ const	struct	pc_race_type	pc_race_table	[]	=
 const	struct	class_type	class_table	[MAX_CLASS]	=
 {
     {
-	"mage", "Mag", { 3018, 9618 },
-	"mage basics", "mage default"
+	"mage", "Mag"
     },
 
     {
-	"cleric", "Cle", { 3003, 9619 },
-	"cleric basics", "cleric default"
+	"cleric", "Cle"
     },
 
     {
-	"thief", "Thi", { 3028, 9639 },
-	"thief basics", "thief default"
+	"thief", "Thi"
     },
 
     {
-	"warrior", "War", { 3022, 9633 },
-	"warrior basics", "warrior default"
+	"warrior", "War"
     }
 };
 
