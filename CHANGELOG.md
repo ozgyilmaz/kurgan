@@ -45,3 +45,4 @@
 - These values moved from class_table to pc_race_table: sh_int attr_prime, sh_int weapon, sh_int skill_adept, sh_int	thac0_00, sh_int thac0_32, sh_int hp_min, sh_int hp_max, bool fMana
 - Skill groups and related functions removed: do_groups, group_add, group_remove, group_lookup, gn_add, gn_remove
 - class_table's guild, base_group and default_group has been removed.
+- class_table and related things removed.

@@ -1891,7 +1891,6 @@ extern	const	struct	wis_app_type	wis_app		[26];
 extern	const	struct	dex_app_type	dex_app		[26];
 extern	const	struct	con_app_type	con_app		[26];
 
-extern	const	struct	class_type	class_table	[MAX_CLASS];
 extern	const	struct	weapon_type	weapon_table	[];
 extern  const   struct  item_type	item_table	[];
 extern	const	struct	wiznet_type	wiznet_table	[];
@@ -2201,7 +2200,6 @@ char	*item_name	args( ( int item_type) );
 int	attack_lookup	args( ( const char *name) );
 int	race_lookup	args( ( const char *name) );
 long	wiznet_lookup	args( ( const char *name) );
-int	class_lookup	args( ( const char *name) );
 bool	is_clan		args( (CHAR_DATA *ch) );
 bool	is_same_clan	args( (CHAR_DATA *ch, CHAR_DATA *victim));
 bool	is_old_mob	args ( (CHAR_DATA *ch) );

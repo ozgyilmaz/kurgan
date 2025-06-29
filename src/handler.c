@@ -239,21 +239,6 @@ long wiznet_lookup (const char *name)
     return -1;
 }
 
-/* returns class number */
-int class_lookup (const char *name)
-{
-   int class;
- 
-   for ( class = 0; class < MAX_CLASS; class++)
-   {
-        if (LOWER(name[0]) == LOWER(class_table[class].name[0])
-        &&  !str_prefix( name,class_table[class].name))
-            return class;
-   }
- 
-   return -1;
-}
-
 /* for immunity, vulnerabiltiy, and resistant
    the 'globals' (magic and weapons) may be overriden
    three other cases -- wood, silver, and iron -- are checked in fight.c */

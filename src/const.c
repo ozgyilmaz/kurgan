@@ -429,31 +429,6 @@ const	struct	pc_race_type	pc_race_table	[]	=
     }
 };
 
-
-/*
- * Class table.
- */
-const	struct	class_type	class_table	[MAX_CLASS]	=
-{
-    {
-	"mage", "Mag"
-    },
-
-    {
-	"cleric", "Cle"
-    },
-
-    {
-	"thief", "Thi"
-    },
-
-    {
-	"warrior", "War"
-    }
-};
-
-
-
 /*
  * Titles.
  */
