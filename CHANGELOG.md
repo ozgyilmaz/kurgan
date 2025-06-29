@@ -49,3 +49,4 @@
 - group_table removed. list_group_chosen() removed.
 - skill_level and rating in skill_table removed.
 - pose_table and do_pose modified for a classless system.
+- new character's weapon selection removed. racial weapons implemented.

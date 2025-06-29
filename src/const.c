@@ -31,11 +31,7 @@
  *   KURGAN MUD is a customized extension by Özgür Yilmaz                  *
  ***************************************************************************/
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <stdio.h>
 #include <time.h>
 #include "merc.h"

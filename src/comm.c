@@ -1983,40 +1983,32 @@ case CON_GET_ALIGNMENT:
 
 	ch->pcdata->learned[gsn_recall] = 50;
 	write_to_buffer( d, "\n\r", 2 );
-	write_to_buffer(d,
-	"Please pick a weapon from the following choices:\n\r",0);
-	buf[0] = '\0';
-	for ( i = 0; weapon_table[i].name != NULL; i++)
-	if (ch->pcdata->learned[*weapon_table[i].gsn] > 0)
-	{
-		strcat(buf,weapon_table[i].name);
-		strcat(buf," ");
-	}
-	strcat(buf,"\n\rYour choice? ");
-	write_to_buffer(d,buf,0);
-	d->connected = CON_PICK_WEAPON;
-	break;
 
-    case CON_PICK_WEAPON:
-	write_to_buffer(d,"\n\r",2);
-	weapon = weapon_lookup(argument);
-	if (weapon == -1 || ch->pcdata->learned[*weapon_table[weapon].gsn] <= 0)
-	{
-	    write_to_buffer(d,
-		"That's not a valid selection. Choices are:\n\r",0);
-            buf[0] = '\0';
-            for ( i = 0; weapon_table[i].name != NULL; i++)
-                if (ch->pcdata->learned[*weapon_table[i].gsn] > 0)
-                {
-                    strcat(buf,weapon_table[i].name);
-		    strcat(buf," ");
-                }
-            strcat(buf,"\n\rYour choice? ");
-            write_to_buffer(d,buf,0);
-	    return;
-	}
+    int vnum;
+    OBJ_DATA *obj;
+    int sn;
+	
+    vnum = pc_race_table[ch->race].weapon;
 
-	ch->pcdata->learned[*weapon_table[weapon].gsn] = 40;
+    if ((obj = create_object(get_obj_index(vnum), 0)) != NULL)
+    {
+        obj_to_char(obj, ch);
+    }
+
+    // Learn the skill
+    for (i = 0; weapon_table[i].name != NULL; i++)
+    {
+        if (weapon_table[i].vnum == vnum && weapon_table[i].gsn != NULL)
+        {
+            sn = *weapon_table[i].gsn;
+            ch->pcdata->learned[sn] = 40;
+            break;
+        }
+    }
+
+    write_to_buffer(d, "\n\rYou have been equipped with your racial weapon.\n\r", 0);
+
+
 	write_to_buffer(d,"\n\r",2);
 	do_function(ch, &do_help, "motd");
 	d->connected = CON_READ_MOTD;
