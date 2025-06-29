@@ -190,7 +190,6 @@ void fwrite_char( CHAR_DATA *ch, FILE *fp )
     if (ch->clan)
     	fprintf( fp, "Clan %s~\n",clan_table[ch->clan].name);
     fprintf( fp, "Sex  %d\n",	ch->sex			);
-    fprintf( fp, "Cla  %d\n",	ch->class		);
     fprintf( fp, "Levl %d\n",	ch->level		);
     if (ch->trust != 0)
 	fprintf( fp, "Tru  %d\n",	ch->trust	);
@@ -869,8 +868,6 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
 	    break;
 
 	case 'C':
-	    KEY( "Class",	ch->class,		fread_number( fp ) );
-	    KEY( "Cla",		ch->class,		fread_number( fp ) );
 	    KEY( "Clan",	ch->clan,	clan_lookup(fread_string(fp)));
 
 	    if ( !str_cmp( word, "Condition" ) || !str_cmp(word,"Cond"))

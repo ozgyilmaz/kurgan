@@ -2819,14 +2819,8 @@ void do_flee( CHAR_DATA *ch, char *argument )
 	if ( !IS_NPC(ch) )
 	{
 	    printf_to_char(ch, "You flee from combat!\n\r");
-	if( (ch->class == 2) 
-	    && (number_percent() < 3*(ch->level/2) ) )
-		printf_to_char(ch, "You snuck away safely.\n\r");
-	else
-	    {
 	    printf_to_char(ch, "You lost 10 exp.\n\r"); 
 	    gain_exp( ch, -10 );
-	    }
 	}
 
 	stop_fighting( ch, TRUE );
