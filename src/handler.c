@@ -745,7 +745,7 @@ int get_curr_stat( CHAR_DATA *ch, int stat )
     {
 	max = pc_race_table[ch->race].max_stats[stat] + 4;
 
-	if (class_table[ch->class].attr_prime == stat)
+	if (pc_race_table[ch->race].attr_prime == stat)
 	    max += 2;
 
 	if ( ch->race == race_lookup("human"))
@@ -766,7 +766,7 @@ int get_max_train( CHAR_DATA *ch, int stat )
 	return 25;
 
     max = pc_race_table[ch->race].max_stats[stat];
-    if (class_table[ch->class].attr_prime == stat)
+    if (pc_race_table[ch->race].attr_prime == stat)
     {
         if (ch->race == race_lookup("human"))
             max += 3;

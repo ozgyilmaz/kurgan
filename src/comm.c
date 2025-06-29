@@ -2082,7 +2082,7 @@ case CON_GET_ALIGNMENT:
 	if ( ch->level == 0 )
 	{
 
-	    ch->perm_stat[class_table[ch->class].attr_prime] += 3;
+	    ch->perm_stat[pc_race_table[ch->race].attr_prime] += 3;
 
 	    ch->level	= 1;
 	    ch->exp	= exp_per_level(ch,ch->pcdata->points);

@@ -1511,7 +1511,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     if ( !str_cmp( argument, "str" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_STR )
+	if ( pc_race_table[ch->race].attr_prime == STAT_STR )
 	    cost    = 1;
 	stat        = STAT_STR;
 	pOutput     = "strength";
@@ -1519,7 +1519,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     else if ( !str_cmp( argument, "int" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_INT )
+	if ( pc_race_table[ch->race].attr_prime == STAT_INT )
 	    cost    = 1;
 	stat	    = STAT_INT;
 	pOutput     = "intelligence";
@@ -1527,7 +1527,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     else if ( !str_cmp( argument, "wis" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_WIS )
+	if ( pc_race_table[ch->race].attr_prime == STAT_WIS )
 	    cost    = 1;
 	stat	    = STAT_WIS;
 	pOutput     = "wisdom";
@@ -1535,7 +1535,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     else if ( !str_cmp( argument, "dex" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_DEX )
+	if ( pc_race_table[ch->race].attr_prime == STAT_DEX )
 	    cost    = 1;
 	stat  	    = STAT_DEX;
 	pOutput     = "dexterity";
@@ -1543,7 +1543,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     else if ( !str_cmp( argument, "con" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_CON )
+	if ( pc_race_table[ch->race].attr_prime == STAT_CON )
 	    cost    = 1;
 	stat	    = STAT_CON;
 	pOutput     = "constitution";

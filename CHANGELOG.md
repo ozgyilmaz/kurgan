@@ -42,3 +42,4 @@
 # 29.06.2025
 - Prompt configuration and ROOM colors (room name and exits)
 - pc_race_table struct is back.
+- These values moved from class_table to pc_race_table: sh_int attr_prime, sh_int weapon, sh_int skill_adept, sh_int	thac0_00, sh_int thac0_32, sh_int hp_min, sh_int hp_max, bool fMana

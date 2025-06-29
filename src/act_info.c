@@ -2558,7 +2558,7 @@ void do_practice( CHAR_DATA *ch, char *argument )
 	    return;
 	}
 
-	adept = IS_NPC(ch) ? 100 : class_table[ch->class].skill_adept;
+	adept = IS_NPC(ch) ? 100 : pc_race_table[ch->race].skill_adept;
 
 	if ( ch->pcdata->learned[sn] >= adept )
 	{

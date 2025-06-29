@@ -397,39 +397,38 @@ const 	struct	race_type	race_table	[]		=
 const	struct	pc_race_type	pc_race_table	[]	=
 {
     { "null race", "", 0, { 100, 100, 100, 100 },
-      { "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0 },
- 
-/*
-    {
-	"race name", 	short name, 	points,	{ class multipliers },
-	{ bonus skills },
-	{ base stats },		{ max stats },		size 
-    },
-*/
+      { "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0,
+      0, 0, 75, 20, -4, 10, 15, TRUE },
+
     {
 	"human",	"Human",	0,	{ 100, 100, 100, 100 },
 	{ "" },
-	{ 13, 13, 13, 13, 13 },	{ 18, 18, 18, 18, 18 },	SIZE_MEDIUM
+	{ 13, 13, 13, 13, 13 },	{ 18, 18, 18, 18, 18 },	SIZE_MEDIUM,
+	STAT_INT, OBJ_VNUM_SCHOOL_SWORD, 75, 20, -4,  10,  15,  TRUE
     },
 
     { 	
 	"elf",		" Elf ",	5,	{ 100, 125,  100, 120 }, 
 	{ "sneak", "hide" },
-	{ 12, 14, 13, 15, 11 },	{ 16, 20, 18, 21, 15 }, SIZE_SMALL
+	{ 12, 14, 13, 15, 11 },	{ 16, 20, 18, 21, 15 }, SIZE_SMALL,
+	STAT_DEX, OBJ_VNUM_SCHOOL_DAGGER, 75, 22, -6, 8, 12, TRUE
     },
 
     {
 	"dwarf",	"Dwarf",	8,	{ 150, 100, 125, 100 },
 	{ "berserk" },
-	{ 14, 12, 14, 10, 15 },	{ 20, 16, 19, 14, 21 }, SIZE_MEDIUM
+	{ 14, 12, 14, 10, 15 },	{ 20, 16, 19, 14, 21 }, SIZE_MEDIUM,
+	STAT_CON, OBJ_VNUM_SCHOOL_AXE, 75, 20, -3, 12, 18, FALSE
     },
 
     {
 	"giant",	"Giant",	6,	{ 200, 150, 150, 105 },
 	{ "bash", "fast healing" },
-	{ 16, 11, 13, 11, 14 },	{ 22, 15, 18, 15, 20 }, SIZE_LARGE
+	{ 16, 11, 13, 11, 14 },	{ 22, 15, 18, 15, 20 }, SIZE_LARGE,
+	STAT_STR, OBJ_VNUM_SCHOOL_MACE, 75, 18, -2, 15, 22, FALSE
     }
 };
+
 
 /*
  * Class table.
@@ -437,26 +436,22 @@ const	struct	pc_race_type	pc_race_table	[]	=
 const	struct	class_type	class_table	[MAX_CLASS]	=
 {
     {
-	"mage", "Mag",  STAT_INT,  OBJ_VNUM_SCHOOL_DAGGER,
-	{ 3018, 9618 },  75,  20, 6,  6,  8, TRUE,
+	"mage", "Mag", { 3018, 9618 },
 	"mage basics", "mage default"
     },
 
     {
-	"cleric", "Cle",  STAT_WIS,  OBJ_VNUM_SCHOOL_MACE,
-	{ 3003, 9619 },  75,  20, 2,  7, 10, TRUE,
+	"cleric", "Cle", { 3003, 9619 },
 	"cleric basics", "cleric default"
     },
 
     {
-	"thief", "Thi",  STAT_DEX,  OBJ_VNUM_SCHOOL_DAGGER,
-	{ 3028, 9639 },  75,  20,  -4,  8, 13, FALSE,
+	"thief", "Thi", { 3028, 9639 },
 	"thief basics", "thief default"
     },
 
     {
-	"warrior", "War",  STAT_STR,  OBJ_VNUM_SCHOOL_SWORD,
-	{ 3022, 9633 },  75,  20,  -10,  11, 15, FALSE,
+	"warrior", "War", { 3022, 9633 },
 	"warrior basics", "warrior default"
     }
 };

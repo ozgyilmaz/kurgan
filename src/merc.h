@@ -370,15 +370,7 @@ struct	class_type
 {
     char *	name;			/* the full name of the class */
     char 	who_name	[4];	/* Three-letter name for 'who'	*/
-    sh_int	attr_prime;		/* Prime attribute		*/
-    sh_int	weapon;			/* First weapon			*/
     sh_int	guild[MAX_GUILD];	/* Vnum of guild rooms		*/
-    sh_int	skill_adept;		/* Maximum skill level		*/
-    sh_int	thac0_00;		/* Thac0 for level  0		*/
-    sh_int	thac0_32;		/* Thac0 for level 32		*/
-    sh_int	hp_min;			/* Min hp gained on leveling	*/
-    sh_int	hp_max;			/* Max hp gained on leveling	*/
-    bool	fMana;			/* Class gains mana on level	*/
     char *	base_group;		/* base skills gained		*/
     char *	default_group;		/* default skills gained	*/
 };
@@ -435,6 +427,14 @@ struct pc_race_type  /* additional data for pc races */
     sh_int 	stats[MAX_STATS];	/* starting stats */
     sh_int	max_stats[MAX_STATS];	/* maximum stats */
     sh_int	size;			/* aff bits for the race */
+    sh_int	attr_prime;		/* Prime attribute		*/
+    sh_int	weapon;			/* First weapon			*/
+    sh_int	skill_adept;		/* Maximum skill level		*/
+    sh_int	thac0_00;		/* Thac0 for level  0		*/
+    sh_int	thac0_32;		/* Thac0 for level 32		*/
+    sh_int	hp_min;			/* Min hp gained on leveling	*/
+    sh_int	hp_max;			/* Max hp gained on leveling	*/
+    bool	fMana;			/* Class gains mana on level	*/
 };
 
 struct spec_type
