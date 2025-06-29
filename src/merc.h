@@ -386,6 +386,10 @@ struct weapon_type
     sh_int	*gsn;
 };
 
+struct title_type {
+    char *title;
+};
+
 struct wiznet_type
 {
     char *	name;
@@ -1882,6 +1886,7 @@ extern	const	struct	dex_app_type	dex_app		[26];
 extern	const	struct	con_app_type	con_app		[26];
 
 extern	const	struct	weapon_type	weapon_table	[];
+extern	const	struct	title_type	title_table	[];
 extern  const   struct  item_type	item_table	[];
 extern	const	struct	wiznet_type	wiznet_table	[];
 extern	const	struct	attack_type	attack_table	[];
@@ -1891,9 +1896,7 @@ extern  const	struct	spec_type	spec_table	[];
 extern	const	struct	liq_type	liq_table	[];
 extern	const	struct	skill_type	skill_table	[MAX_SKILL];
 extern          struct social_type      social_table	[MAX_SOCIALS];
-extern	char *	const			title_table	[MAX_CLASS]
-							[MAX_LEVEL+1]
-							[2];
+
 
 
 

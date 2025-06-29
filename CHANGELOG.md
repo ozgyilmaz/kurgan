@@ -50,3 +50,6 @@
 - skill_level and rating in skill_table removed.
 - pose_table and do_pose modified for a classless system.
 - new character's weapon selection removed. racial weapons implemented.
+
+# 30.06.2025
+- new title_table implemented.

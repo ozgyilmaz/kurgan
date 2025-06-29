@@ -1630,7 +1630,7 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
     CHAR_DATA *ch;
     char *pwdnew;
     char *p;
-    int race,i,weapon;
+    int race,i;
     bool fOld;
 
     while ( isspace(*argument) )
@@ -2049,9 +2049,8 @@ case CON_GET_ALIGNMENT:
 	    ch->move	= ch->max_move;
 	    ch->train	 = 3;
 	    ch->practice = 5;
-	    sprintf( buf, "the %s",
-		title_table [ch->class] [ch->level]
-		[ch->sex == SEX_FEMALE ? 1 : 0] );
+	    sprintf( buf, "%s",
+		title_table[ch->level].title );
 	    set_title( ch, buf );
 
 	    do_function (ch, &do_outfit,"");
