@@ -52,7 +52,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
     char buf[MAX_STRING_LENGTH];
     char arg[MAX_INPUT_LENGTH];
     CHAR_DATA *trainer;
-    int gn = 0, sn = 0;
+    int sn = 0;
 
     if (IS_NPC(ch))
 	return;
@@ -80,33 +80,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
 
     if (!str_prefix(arg,"list"))
     {
-	int col;
-	
-	col = 0;
-
-	sprintf(buf, "%-18s %-5s %-18s %-5s %-18s %-5s\n\r",
-	             "group","cost","group","cost","group","cost");
-	printf_to_char(ch, buf);
-
-	for (gn = 0; gn < MAX_GROUP; gn++)
-	{
-	    if (group_table[gn].name == NULL)
-		break;
-
-	    if (!ch->pcdata->group_known[gn]
-	    &&  group_table[gn].rating[ch->class] > 0)
-	    {
-		sprintf(buf,"%-18s %-5d ",
-		    group_table[gn].name,group_table[gn].rating[ch->class]);
-		printf_to_char(ch, buf);
-		if (++col % 3 == 0)
-		    printf_to_char(ch, "\n\r");
-	    }
-	}
-	if (col % 3 != 0)
-	    printf_to_char(ch, "\n\r");
-	
-	printf_to_char(ch, "\n\r");		
+	int col;	
 
 	col = 0;
 
@@ -461,70 +435,6 @@ void do_skills(CHAR_DATA *ch, char *argument)
     add_buf(buffer,"\n\r");
     page_to_char(buf_string(buffer),ch);
     free_buf(buffer);
-}
-
-void list_group_chosen(CHAR_DATA *ch)
-{
-    char buf[100];
-    int gn,sn,col;
- 
-    if (IS_NPC(ch))
-        return;
- 
-    col = 0;
- 
-    sprintf(buf,"%-18s %-5s %-18s %-5s %-18s %-5s","group","cp","group","cp","group","cp\n\r");
-    printf_to_char(ch, buf);
- 
-    for (gn = 0; gn < MAX_GROUP; gn++)
-    {
-        if (group_table[gn].name == NULL)
-            break;
- 
-        if (ch->gen_data->group_chosen[gn] 
-	&&  group_table[gn].rating[ch->class] > 0)
-        {
-            sprintf(buf,"%-18s %-5d ",group_table[gn].name,
-                                    group_table[gn].rating[ch->class]);
-            printf_to_char(ch, buf);
-            if (++col % 3 == 0)
-                printf_to_char(ch, "\n\r");
-        }
-    }
-    if ( col % 3 != 0 )
-        printf_to_char(ch, "\n\r");
-    printf_to_char(ch, "\n\r");
- 
-    col = 0;
- 
-    sprintf(buf,"%-18s %-5s %-18s %-5s %-18s %-5s","skill","cp","skill","cp","skill","cp\n\r");
-    printf_to_char(ch, buf);
- 
-    for (sn = 0; sn < MAX_SKILL; sn++)
-    {
-        if (skill_table[sn].name == NULL)
-            break;
- 
-        if (ch->gen_data->skill_chosen[sn] 
-	&&  skill_table[sn].rating[ch->class] > 0)
-        {
-            sprintf(buf,"%-18s %-5d ",skill_table[sn].name,
-                                    skill_table[sn].rating[ch->class]);
-            printf_to_char(ch, buf);
-            if (++col % 3 == 0)
-                printf_to_char(ch, "\n\r");
-        }
-    }
-    if ( col % 3 != 0 )
-        printf_to_char(ch, "\n\r");
-    printf_to_char(ch, "\n\r");
- 
-    sprintf(buf,"Creation points: %d\n\r",ch->gen_data->points_chosen);
-    printf_to_char(ch, buf);
-    sprintf(buf,"Experience per level: %d\n\r",
-	    exp_per_level(ch,ch->gen_data->points_chosen));
-    printf_to_char(ch, buf);
-    return;
 }
 
 int exp_per_level(CHAR_DATA *ch, int points)

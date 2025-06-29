@@ -46,3 +46,4 @@
 - Skill groups and related functions removed: do_groups, group_add, group_remove, group_lookup, gn_add, gn_remove
 - class_table's guild, base_group and default_group has been removed.
 - class_table and related things removed.
+- group_table removed. list_group_chosen() removed.

@@ -1723,14 +1723,6 @@ struct	skill_type
     char *	msg_obj;		/* Wear off message for obects	*/
 };
 
-struct  group_type
-{
-    char *	name;
-    sh_int	rating[MAX_CLASS];
-    char *	spells[MAX_IN_GROUP];
-};
-
-
 
 /*
  * These are skill_lookup return values for common skills and spells.
@@ -1900,7 +1892,6 @@ extern	const	struct	pc_race_type	pc_race_table	[];
 extern  const	struct	spec_type	spec_table	[];
 extern	const	struct	liq_type	liq_table	[];
 extern	const	struct	skill_type	skill_table	[MAX_SKILL];
-extern  const   struct  group_type      group_table	[MAX_GROUP];
 extern          struct social_type      social_table	[MAX_SOCIALS];
 extern	char *	const			title_table	[MAX_CLASS]
 							[MAX_LEVEL+1]
@@ -2292,8 +2283,6 @@ void	save_char_obj	args( ( CHAR_DATA *ch ) );
 bool	load_char_obj	args( ( DESCRIPTOR_DATA *d, char *name ) );
 
 /* skills.c */
-bool 	parse_gen_groups args( ( CHAR_DATA *ch,char *argument ) );
-void    list_group_known args( ( CHAR_DATA *ch ) );
 int 	exp_per_level	args( ( CHAR_DATA *ch, int points ) );
 void 	check_improve	args( ( CHAR_DATA *ch, int sn, bool success, int multiplier ) );
 

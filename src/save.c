@@ -170,7 +170,7 @@ void save_char_obj( CHAR_DATA *ch )
 void fwrite_char( CHAR_DATA *ch, FILE *fp )
 {
     AFFECT_DATA *paf;
-    int sn, gn, pos;
+    int sn, pos;
 
     fprintf( fp, "#%s\n", IS_NPC(ch) ? "MOB" : "PLAYER"	);
 
@@ -302,14 +302,6 @@ void fwrite_char( CHAR_DATA *ch, FILE *fp )
 		    ch->pcdata->learned[sn], skill_table[sn].name );
 	    }
 	}
-
-	for ( gn = 0; gn < MAX_GROUP; gn++ )
-        {
-            if ( group_table[gn].name != NULL && ch->pcdata->group_known[gn])
-            {
-                fprintf( fp, "Gr '%s'\n",group_table[gn].name);
-            }
-        }
     }
 
     for ( paf = ch->affected; paf != NULL; paf = paf->next )
