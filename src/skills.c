@@ -94,11 +94,10 @@ void do_gain(CHAR_DATA *ch, char *argument)
                 break;
  
             if (!ch->pcdata->learned[sn]
-            &&  skill_table[sn].rating[ch->class] > 0
-	    &&  skill_table[sn].spell_fun == spell_null)
+	    	&&  skill_table[sn].spell_fun == spell_null)
             {
                 sprintf(buf,"%-18s %-5d ",
-                    skill_table[sn].name,skill_table[sn].rating[ch->class]);
+                    skill_table[sn].name,0);
                 printf_to_char(ch, buf);
                 if (++col % 3 == 0)
                     printf_to_char(ch, "\n\r");
@@ -170,14 +169,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
             return;
         }
  
-        if (skill_table[sn].rating[ch->class] <= 0)
-        {
-            act("$N tells you 'That skill is beyond your powers.'",
-                ch,NULL,trainer,TO_CHAR);
-            return;
-        }
- 
-        if (ch->train < skill_table[sn].rating[ch->class])
+        if (ch->train < 1)
         {
             act("$N tells you 'You are not yet ready for that skill.'",
                 ch,NULL,trainer,TO_CHAR);
@@ -188,7 +180,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
 	ch->pcdata->learned[sn] = 1;
         act("$N trains you in the art of $t",
             ch,skill_table[sn].name,trainer,TO_CHAR);
-        ch->train -= skill_table[sn].rating[ch->class];
+        ch->train -= 1;
         return;
     }
 
@@ -275,14 +267,13 @@ void do_spells(CHAR_DATA *ch, char *argument)
         if (skill_table[sn].name == NULL )
 	    break;
 
-	if ((level = skill_table[sn].skill_level[ch->class]) < LEVEL_HERO + 1
-	&&  (fAll || level <= ch->level)
+	if ((fAll || level <= ch->level)
 	&&  level >= min_lev && level <= max_lev
 	&&  skill_table[sn].spell_fun != spell_null
 	&&  ch->pcdata->learned[sn] > 0)
         {
 	    found = TRUE;
-	    level = skill_table[sn].skill_level[ch->class];
+	    level = 1;
 	    if (ch->level < level)
 	    	sprintf(buf,"%-18s n/a      ", skill_table[sn].name);
 	    else
@@ -395,14 +386,13 @@ void do_skills(CHAR_DATA *ch, char *argument)
         if (skill_table[sn].name == NULL )
 	    break;
 
-	if ((level = skill_table[sn].skill_level[ch->class]) < LEVEL_HERO + 1
-	&&  (fAll || level <= ch->level)
+	if ((fAll || level <= ch->level)
 	&&  level >= min_lev && level <= max_lev
 	&&  skill_table[sn].spell_fun == spell_null
 	&&  ch->pcdata->learned[sn] > 0)
         {
 	    found = TRUE;
-	    level = skill_table[sn].skill_level[ch->class];
+	    level = 1;
 	    if (ch->level < level)
 	    	sprintf(buf,"%-18s n/a      ", skill_table[sn].name);
 	    else
@@ -480,17 +470,13 @@ void check_improve( CHAR_DATA *ch, int sn, bool success, int multiplier )
     if (IS_NPC(ch))
 	return;
 
-    if (ch->level < skill_table[sn].skill_level[ch->class]
-    ||  skill_table[sn].rating[ch->class] == 0
-    ||  ch->pcdata->learned[sn] == 0
+    if (ch->pcdata->learned[sn] == 0
     ||  ch->pcdata->learned[sn] == 100)
-	return;  /* skill is not known */ 
+	return;  /* skill is not known or fully known*/ 
 
     /* check to see if the character has a chance to learn */
     chance = 10 * int_app[get_curr_stat(ch,STAT_INT)].learn;
-    chance /= (		multiplier
-		*	skill_table[sn].rating[ch->class] 
-		*	4);
+    chance /= (		multiplier *	4);
     chance += ch->level;
 
     if (number_range(1,1000) > chance)
@@ -507,7 +493,7 @@ void check_improve( CHAR_DATA *ch, int sn, bool success, int multiplier )
 		    skill_table[sn].name);
 	    printf_to_char(ch, buf);
 	    ch->pcdata->learned[sn]++;
-	    gain_exp(ch,2 * skill_table[sn].rating[ch->class]);
+	    gain_exp(ch,2);
 	}
     }
 
@@ -522,7 +508,7 @@ void check_improve( CHAR_DATA *ch, int sn, bool success, int multiplier )
 	    printf_to_char(ch, buf);
 	    ch->pcdata->learned[sn] += number_range(1,3);
 	    ch->pcdata->learned[sn] = UMIN(ch->pcdata->learned[sn],100);
-	    gain_exp(ch,2 * skill_table[sn].rating[ch->class]);
+	    gain_exp(ch,2);
 	}
     }
 }

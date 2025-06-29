@@ -47,3 +47,4 @@
 - class_table's guild, base_group and default_group has been removed.
 - class_table and related things removed.
 - group_table removed. list_group_chosen() removed.
+- skill_level and rating in skill_table removed.

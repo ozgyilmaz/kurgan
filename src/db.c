@@ -1137,9 +1137,7 @@ void reset_area( AREA_DATA *pArea )
 			{
 		    	    for (j = 0; j < MAX_CLASS; j++)
 			    {
-				olevel = UMIN(olevel,
-				         skill_table[pObjIndex->value[i]].
-						     skill_level[j]);
+				olevel = UMIN(olevel,1);
 			    }
 			}
 		    }

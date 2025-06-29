@@ -92,8 +92,7 @@ int find_spell( CHAR_DATA *ch, const char *name )
 	{
 	    if ( found == -1)
 		found = sn;
-	    if (ch->level >= skill_table[sn].skill_level[ch->class]
-	    &&  ch->pcdata->learned[sn] > 0)
+	    if (ch->pcdata->learned[sn] > 0)
 		    return sn;
 	}
     }
@@ -328,8 +327,7 @@ void do_cast( CHAR_DATA *ch, char *argument )
 
     if ((sn = find_spell(ch,arg1)) < 1
     ||  skill_table[sn].spell_fun == spell_null
-    || (!IS_NPC(ch) && (ch->level < skill_table[sn].skill_level[ch->class]
-    ||   		 ch->pcdata->learned[sn] == 0)))
+    || (!IS_NPC(ch) && (ch->pcdata->learned[sn] == 0)))
     {
 	printf_to_char(ch, "You don't know any spells of that name.\n\r");
 	return;
@@ -341,12 +339,9 @@ void do_cast( CHAR_DATA *ch, char *argument )
 	return;
     }
 
-    if (ch->level + 2 == skill_table[sn].skill_level[ch->class])
-	mana = 50;
-    else
-    	mana = UMAX(
+    mana = UMAX(
 	    skill_table[sn].min_mana,
-	    100 / ( 2 + ch->level - skill_table[sn].skill_level[ch->class] ) );
+	    100 / ( 1 + ch->level ) );
 
     /*
      * Locate targets.

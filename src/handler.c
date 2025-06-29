@@ -357,9 +357,6 @@ int get_skill(CHAR_DATA *ch, int sn)
 
     else if (!IS_NPC(ch))
     {
-	if (ch->level < skill_table[sn].skill_level[ch->class])
-	    skill = 0;
-	else
 	    skill = ch->pcdata->learned[sn];
     }
 

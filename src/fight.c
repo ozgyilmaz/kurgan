@@ -2110,9 +2110,7 @@ void do_berserk( CHAR_DATA *ch, char *argument)
     int chance, hp_percent;
 
     if ((chance = get_skill(ch,gsn_berserk)) == 0
-    ||  (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_BERSERK))
-    ||  (!IS_NPC(ch)
-    &&   ch->level < skill_table[gsn_berserk].skill_level[ch->class]))
+    ||  (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_BERSERK)))
     {
 	printf_to_char(ch, "You turn red in the face, but nothing happens.\n\r");
 	return;
@@ -2201,9 +2199,7 @@ void do_bash( CHAR_DATA *ch, char *argument )
     one_argument(argument,arg);
  
     if ( (chance = get_skill(ch,gsn_bash)) == 0
-    ||	 (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_BASH))
-    ||	 (!IS_NPC(ch)
-    &&	  ch->level < skill_table[gsn_bash].skill_level[ch->class]))
+    ||	 (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_BASH)))
     {	
 	printf_to_char(ch, "Bashing? What's that?\n\r");
 	return;
@@ -2332,9 +2328,7 @@ void do_dirt( CHAR_DATA *ch, char *argument )
     one_argument(argument,arg);
 
     if ( (chance = get_skill(ch,gsn_dirt)) == 0
-    ||   (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_KICK_DIRT))
-    ||   (!IS_NPC(ch)
-    &&    ch->level < skill_table[gsn_dirt].skill_level[ch->class]))
+    ||   (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_KICK_DIRT)))
     {
 	printf_to_char(ch, "You get your feet dirty.\n\r");
 	return;
@@ -2465,9 +2459,7 @@ void do_trip( CHAR_DATA *ch, char *argument )
     one_argument(argument,arg);
 
     if ( (chance = get_skill(ch,gsn_trip)) == 0
-    ||   (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_TRIP))
-    ||   (!IS_NPC(ch) 
-	  && ch->level < skill_table[gsn_trip].skill_level[ch->class]))
+    ||   (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_TRIP)))
     {
 	printf_to_char(ch, "Tripping?  What's that?\n\r");
 	return;
@@ -2923,13 +2915,6 @@ void do_rescue( CHAR_DATA *ch, char *argument )
 void do_kick( CHAR_DATA *ch, char *argument )
 {
     CHAR_DATA *victim;
-
-    if ( !IS_NPC(ch)
-    &&   ch->level < skill_table[gsn_kick].skill_level[ch->class] )
-    {
-	printf_to_char(ch, "You better leave the martial arts to fighters.\n\r");
-	return;
-    }
 
     if (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_KICK))
 	return;
