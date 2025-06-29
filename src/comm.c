@@ -1933,13 +1933,6 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
 	ch->form	= race_table[race].form;
 	ch->parts	= race_table[race].parts;
 
-	/* add skills */
-	for (i = 0; i < 5; i++)
-	{
-	    if (pc_race_table[race].skills[i] == NULL)
-	 	break;
-	    group_add(ch,pc_race_table[race].skills[i],FALSE);
-	}
 	/* add cost */
 	ch->pcdata->points = pc_race_table[race].points;
 	ch->size = pc_race_table[race].size;
@@ -2012,23 +2005,20 @@ case CON_GET_ALIGNMENT:
 
 	write_to_buffer(d,"\n\r",0);
 
-        group_add(ch,"rom basics",FALSE);
-        group_add(ch,class_table[ch->class].base_group,FALSE);
-        ch->pcdata->learned[gsn_recall] = 50;
-	    group_add(ch,class_table[ch->class].default_group,TRUE);
-            write_to_buffer( d, "\n\r", 2 );
-	    write_to_buffer(d,
-		"Please pick a weapon from the following choices:\n\r",0);
-	    buf[0] = '\0';
-	    for ( i = 0; weapon_table[i].name != NULL; i++)
-		if (ch->pcdata->learned[*weapon_table[i].gsn] > 0)
-		{
-		    strcat(buf,weapon_table[i].name);
-		    strcat(buf," ");
-		}
-	    strcat(buf,"\n\rYour choice? ");
-	    write_to_buffer(d,buf,0);
-            d->connected = CON_PICK_WEAPON;
+	ch->pcdata->learned[gsn_recall] = 50;
+	write_to_buffer( d, "\n\r", 2 );
+	write_to_buffer(d,
+	"Please pick a weapon from the following choices:\n\r",0);
+	buf[0] = '\0';
+	for ( i = 0; weapon_table[i].name != NULL; i++)
+	if (ch->pcdata->learned[*weapon_table[i].gsn] > 0)
+	{
+		strcat(buf,weapon_table[i].name);
+		strcat(buf," ");
+	}
+	strcat(buf,"\n\rYour choice? ");
+	write_to_buffer(d,buf,0);
+	d->connected = CON_PICK_WEAPON;
 	break;
 
     case CON_PICK_WEAPON:

@@ -124,10 +124,8 @@ const	struct	cmd_type	cmd_table	[] =
     { "credits",	do_credits,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "equipment",	do_equipment,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "examine",	do_examine,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
-/*  { "groups",		do_groups,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 }, */
     { "help",		do_help,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "idea",		do_idea,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
-    { "info",           do_groups,      POS_SLEEPING,    0,  LOG_NORMAL, 1 },
     { "motd",		do_motd,	POS_DEAD,        0,  LOG_NORMAL, 1 },
     { "news",		do_news,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "read",		do_read,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
@@ -259,8 +257,6 @@ const	struct	cmd_type	cmd_table	[] =
     { "follow",		do_follow,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "gain",		do_gain,	POS_STANDING,	 0,  LOG_NORMAL, 1 },
     { "go",		do_enter,	POS_STANDING,	 0,  LOG_NORMAL, 0 },
-/*  { "group",		do_group,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 }, */
-    { "groups",		do_groups,	POS_SLEEPING,    0,  LOG_NORMAL, 1 },
     { "hide",		do_hide,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "play",		do_play,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
 /*  { "practice",	do_practice,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 }, */

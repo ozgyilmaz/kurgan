@@ -143,7 +143,6 @@ DECLARE_DO_FUN( do_gossip	);
 DECLARE_DO_FUN(	do_goto		);
 DECLARE_DO_FUN( do_grats	);
 DECLARE_DO_FUN(	do_group	);
-DECLARE_DO_FUN( do_groups	);
 DECLARE_DO_FUN(	do_gtell	);
 DECLARE_DO_FUN( do_guild    	);
 DECLARE_DO_FUN( do_heal		);

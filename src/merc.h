@@ -2300,13 +2300,7 @@ bool	load_char_obj	args( ( DESCRIPTOR_DATA *d, char *name ) );
 bool 	parse_gen_groups args( ( CHAR_DATA *ch,char *argument ) );
 void    list_group_known args( ( CHAR_DATA *ch ) );
 int 	exp_per_level	args( ( CHAR_DATA *ch, int points ) );
-void 	check_improve	args( ( CHAR_DATA *ch, int sn, bool success, 
-				    int multiplier ) );
-int 	group_lookup	args( (const char *name) );
-void	gn_add		args( ( CHAR_DATA *ch, int gn) );
-void 	gn_remove	args( ( CHAR_DATA *ch, int gn) );
-void 	group_add	args( ( CHAR_DATA *ch, const char *name, bool deduct) );
-void	group_remove	args( ( CHAR_DATA *ch, const char *name) );
+void 	check_improve	args( ( CHAR_DATA *ch, int sn, bool success, int multiplier ) );
 
 /* special.c */
 SF *	spec_lookup	args( ( const char *name ) );
