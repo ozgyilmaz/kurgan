@@ -681,8 +681,7 @@ void one_hit( CHAR_DATA *ch, CHAR_DATA *victim, int dt )
 /*
  * Inflict damage from a hit.
  */
-bool damage(CHAR_DATA *ch,CHAR_DATA *victim,int dam,int dt,int dam_type,
-	    bool show) 
+bool damage(CHAR_DATA *ch,CHAR_DATA *victim,int dam,int dt,int dam_type,bool show) 
 {
     OBJ_DATA *corpse;
     bool immune;

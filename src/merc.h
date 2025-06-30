@@ -139,7 +139,6 @@ typedef void SPELL_FUN	args( ( int sn, int level, CHAR_DATA *ch, void *vo,
 #define MAX_GROUP		   30
 #define MAX_IN_GROUP		   15
 #define MAX_ALIAS		    5
-#define MAX_CLASS		    4
 #define MAX_PC_RACE		    5
 #define MAX_CLAN		    3
 #define MAX_DAMAGE_MESSAGE	   41
@@ -240,7 +239,6 @@ struct	weather_data
 #define CON_CONFIRM_NEW_PASSWORD	 5
 #define CON_GET_NEW_RACE		 6
 #define CON_GET_NEW_SEX			 7
-#define CON_GET_NEW_CLASS		 8
 #define CON_GET_ALIGNMENT		 9
 #define CON_DEFAULT_CHOICE		10 
 #define CON_GEN_GROUPS			11 
@@ -366,12 +364,6 @@ struct	shop_data
 #define STAT_DEX	3
 #define STAT_CON	4
 
-struct	class_type
-{
-    char *	name;			/* the full name of the class */
-    char 	who_name	[4];	/* Three-letter name for 'who'	*/
-};
-
 struct item_type
 {
     int		type;
@@ -434,7 +426,7 @@ struct pc_race_type  /* additional data for pc races */
     sh_int	thac0_32;		/* Thac0 for level 32		*/
     sh_int	hp_min;			/* Min hp gained on leveling	*/
     sh_int	hp_max;			/* Max hp gained on leveling	*/
-    bool	fMana;			/* Class gains mana on level	*/
+    bool	fMana;			/* Race gains mana on level	*/
 };
 
 struct spec_type
@@ -1393,7 +1385,6 @@ struct	char_data
     sh_int		group;
     sh_int		clan;
     sh_int		sex;
-    sh_int		class;
     sh_int		race;
     sh_int		level;
     sh_int		trust;
@@ -2166,10 +2157,7 @@ bool 	is_safe		args( (CHAR_DATA *ch, CHAR_DATA *victim ) );
 bool 	is_safe_spell	args( (CHAR_DATA *ch, CHAR_DATA *victim, bool area ) );
 void	violence_update	args( ( void ) );
 void	multi_hit	args( ( CHAR_DATA *ch, CHAR_DATA *victim, int dt ) );
-bool	damage		args( ( CHAR_DATA *ch, CHAR_DATA *victim, int dam,
-			        int dt, int class, bool show ) );
-bool    damage_old      args( ( CHAR_DATA *ch, CHAR_DATA *victim, int dam,
-                                int dt, int class, bool show ) );
+bool	damage		args( ( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt, int damage_old, bool show ) );
 void	update_pos	args( ( CHAR_DATA *victim ) );
 void	stop_fighting	args( ( CHAR_DATA *ch, bool fBoth ) );
 void	check_killer	args( ( CHAR_DATA *ch, CHAR_DATA *victim) );

@@ -1122,7 +1122,7 @@ void reset_area( AREA_DATA *pArea )
 
 	    if ( mob->pIndexData->pShop != NULL )
 	    {
-		int olevel = 0,i,j;
+		int olevel = 0,i;
 
 		if (!pObjIndex->new_format)
 		    switch ( pObjIndex->item_type )
@@ -1132,15 +1132,12 @@ void reset_area( AREA_DATA *pArea )
 		case ITEM_SCROLL:
 		    olevel = 53;
 		    for (i = 1; i < 5; i++)
-		    {
-			if (pObjIndex->value[i] > 0)
-			{
-		    	    for (j = 0; j < MAX_CLASS; j++)
-			    {
-				olevel = UMIN(olevel,1);
-			    }
-			}
-		    }
+            {
+                if (pObjIndex->value[i] > 0)
+                {
+                    olevel = UMIN(olevel, 20);
+                }
+            }
 		   
 		    olevel = UMAX(0,(olevel * 3 / 4) - 2);
 		    break;

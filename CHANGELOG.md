@@ -55,3 +55,4 @@
 - new title_table implemented.
 - pc_race_type's "class_mult" is removed.
 - player class system is removed.
+- "class" clean-up

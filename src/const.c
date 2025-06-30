@@ -428,8 +428,6 @@ const	struct	pc_race_type	pc_race_table	[]	=
 /*
  * Titles.
  */
-//char *	const			title_table	[MAX_CLASS][MAX_LEVEL+1][2] =
-
 const struct title_type title_table[] = {
 	{ NULL }, // 0
     { "the Initiate" }, // 1
