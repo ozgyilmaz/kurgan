@@ -2353,7 +2353,7 @@ void do_practice( CHAR_DATA *ch, char *argument )
 	    if ( ch->pcdata->learned[sn] < 1 /* skill is not known */)
 		continue;
 
-	    sprintf( buf, "%-18s %3d%%  ",
+	    sprintf( buf, "{r%-18s %3d%%  {x",
 		skill_table[sn].name, ch->pcdata->learned[sn] );
 	    printf_to_char(ch, buf);
 	    if ( ++col % 3 == 0 )

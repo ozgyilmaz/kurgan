@@ -56,3 +56,4 @@
 - pc_race_type's "class_mult" is removed.
 - player class system is removed.
 - "class" clean-up
+- Lope's Color 2.0 implemented.

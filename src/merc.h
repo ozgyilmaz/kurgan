@@ -2099,6 +2099,7 @@ void	act		args( ( const char *format, CHAR_DATA *ch,
 void	act_new		args( ( const char *format, CHAR_DATA *ch, 
 			    const void *arg1, const void *arg2, int type,
 			    int min_pos) );
+void    colourconv args(( char *buffer, const char *txt, CHAR_DATA *ch ));
 
 /* db.c */
 char *	print_flags	args( ( int flag ));

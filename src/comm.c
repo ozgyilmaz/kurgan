@@ -2303,13 +2303,16 @@ void send_to_char( const char *txt, CHAR_DATA *ch )
 void printf_to_char(CHAR_DATA *ch, const char *fmt, ...)
 {
     char buf[MAX_STRING_LENGTH];
-    va_list args;
+    char colbuf[MAX_STRING_LENGTH * 2];
 
+    va_list args;
     va_start(args, fmt);
     vsnprintf(buf, sizeof(buf), fmt, args);
     va_end(args);
 
-    send_to_char(buf, ch);
+    colourconv(colbuf, buf, ch);
+
+    send_to_char(colbuf, ch);
 }
 
 void bugf(char *fmt, ...)
@@ -2420,6 +2423,8 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
  
     char buf[MAX_STRING_LENGTH];
     char fname[MAX_INPUT_LENGTH];
+	char 		*pbuff;
+	char 		buffer[ MAX_STRING_LENGTH*2 ];
     CHAR_DATA *to;
     CHAR_DATA *vch = (CHAR_DATA *) arg2;
     OBJ_DATA *obj1 = (OBJ_DATA  *) arg1;
@@ -2534,22 +2539,123 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
  
         *point++ = '\n';
         *point++ = '\r';
+		*point   = '\0';
         buf[0]   = UPPER(buf[0]);
-        write_to_buffer( to->desc, buf, point - buf );
+		if ( to->desc != NULL )
+		{
+			pbuff	 = buffer;
+			colourconv( pbuff, buf, to );
+			write_to_buffer( to->desc, buffer, 0 );
+		}
     }
  
     return;
 }
 
-
-
-/*
- * Macintosh support functions.
- */
-#if defined(macintosh)
-int gettimeofday( struct timeval *tp, void *tzp )
+int colour( char type, CHAR_DATA *ch, char *string )
 {
-    tp->tv_sec  = time( NULL );
-    tp->tv_usec = 0;
+    char	code[ 20 ];
+    char	*p = '\0';
+
+    if( IS_NPC( ch ) )
+	return( 0 );
+
+    switch( type )
+    {
+	default:
+	    sprintf( code, CLR_RESET );
+	    break;
+	case 'x':
+	    sprintf( code, CLR_RESET );
+	    break;
+	case 'b':
+	    sprintf( code, CLR_LOPES_BLUE );
+	    break;
+	case 'c':
+	    sprintf( code, CLR_LOPES_CYAN );
+	    break;
+	case 'g':
+	    sprintf( code, CLR_LOPES_GREEN );
+	    break;
+	case 'm':
+	    sprintf( code, CLR_LOPES_MAGENTA );
+	    break;
+	case 'r':
+	    sprintf( code, CLR_LOPES_RED );
+	    break;
+	case 'w':
+	    sprintf( code, CLR_LOPES_WHITE );
+	    break;
+	case 'y':
+	    sprintf( code, CLR_LOPES_YELLOW );
+	    break;
+	case 'B':
+	    sprintf( code, CLR_LOPES_B_BLUE );
+	    break;
+	case 'C':
+	    sprintf( code, CLR_LOPES_B_CYAN );
+	    break;
+	case 'G':
+	    sprintf( code, CLR_LOPES_B_GREEN );
+	    break;
+	case 'M':
+	    sprintf( code, CLR_LOPES_B_MAGENTA );
+	    break;
+	case 'R':
+	    sprintf( code, CLR_LOPES_B_RED );
+	    break;
+	case 'W':
+	    sprintf( code, CLR_LOPES_B_WHITE );
+	    break;
+	case 'Y':
+	    sprintf( code, CLR_LOPES_B_YELLOW );
+	    break;
+	case 'D':
+	    sprintf( code, CLR_LOPES_GREY );
+	    break;
+	case '*':
+	    sprintf( code, "%c", 007 );
+	    break;
+	case '/':
+	    sprintf( code, "%c", 012 );
+	    break;
+	case '{':
+	    sprintf( code, "%c", '{' );
+	    break;
+    }
+
+    p = code;
+    while( *p != '\0' )
+    {
+	*string = *p++;
+	*++string = '\0';
+    }
+
+    return( strlen( code ) );
 }
-#endif
+
+
+void colourconv( char *buffer, const char *txt, CHAR_DATA *ch )
+{
+    const	char	*point;
+		int	skip = 0;
+
+    if( ch->desc && txt )
+    {
+	    for( point = txt ; *point ; point++ )
+	    {
+		if( *point == '{' )
+		{
+		    point++;
+		    skip = colour( *point, ch, buffer );
+		    while( skip-- > 0 )
+			++buffer;
+		    continue;
+		}
+		*buffer = *point;
+		*++buffer = '\0';
+	    }			
+	    *buffer = '\0';
+    }
+    return;
+}
