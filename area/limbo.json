@@ -280,6 +280,21 @@
             "weight": 0,
             "cost": 0,
             "condition": "P"
+        },
+        {
+            "vnum": 26,
+            "name": "%s",
+            "short_description": "%s",
+            "description": "A book has carelessly been left here.",
+            "material": "paper",
+            "type": "book",
+            "extra_flags": "G",
+            "wear_flags": "AO",
+            "values": "%d '%s' '' '' ''",
+            "level": 1,
+            "weight": 10,
+            "cost": 220,
+            "condition": "P"
         }
     ],
     "rooms": [

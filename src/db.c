@@ -1012,6 +1012,59 @@ void reset_area( AREA_DATA *pArea )
 
 	    mob = create_mobile( pMobIndex );
 
+        /*
+         * Create random book
+         */
+        if (IS_NPC(mob) && number_percent() < 10)
+        {
+            OBJ_DATA *book;
+            OBJ_INDEX_DATA *template = get_obj_index(26);
+
+            book = create_object(template, 0);
+
+            int sn = number_range(1, MAX_SKILL-1);
+            int roll = number_percent();
+            int tier;
+
+            if (roll <= 88)
+                tier = 1;
+            else if (roll <= 98)
+                tier = 2;
+            else
+                tier = 3;
+
+            book->value[0] = tier;
+            book->value[1] = sn;
+
+            char buf_book_name[MAX_STRING_LENGTH];
+            char buf_book_short[MAX_STRING_LENGTH];
+
+            snprintf(buf_book_name, sizeof(buf_book_name), "book %s", skill_table[sn].name);
+            switch (tier)
+            {
+                case 1:
+                    snprintf(buf_book_short, sizeof(buf_book_short), "Book of %s: Introduction", capitalize(skill_table[sn].name));
+                    break;
+                case 2:
+                    snprintf(buf_book_short, sizeof(buf_book_short), "Book of %s: Intermediate", capitalize(skill_table[sn].name));
+                    break;
+                case 3:
+                    snprintf(buf_book_short, sizeof(buf_book_short), "Book of %s: Mastering", capitalize(skill_table[sn].name));
+                    break;
+                default:
+                    book->value[1] = 0;
+                    snprintf(buf_book_short, sizeof(buf_book_short), "Book of Unknown");
+                    break;
+            }
+
+            free_string(book->name);
+            free_string(book->short_descr);
+            book->name = str_dup(buf_book_name);
+            book->short_descr = str_dup(buf_book_short);
+
+            obj_to_char(book, mob);
+        }
+
 	    /*
 	     * Check for pet shop.
 	     */
@@ -1623,6 +1676,7 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
     case ITEM_ROOM_KEY:
     case ITEM_GEM:
     case ITEM_JEWELRY:
+    case ITEM_BOOK:
 	break;
 
     case ITEM_JUKEBOX:

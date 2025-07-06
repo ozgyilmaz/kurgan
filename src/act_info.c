@@ -1210,11 +1210,72 @@ void do_look( CHAR_DATA *ch, char *argument )
     return;
 }
 
-/* RT added back for the hell of it */
-void do_read (CHAR_DATA *ch, char *argument )
+void do_read(CHAR_DATA *ch, char *argument)
 {
-    do_function(ch, &do_look, argument);
+    OBJ_DATA *book;
+    int sn, tier;
+
+    if (argument[0] == '\0')
+    {
+        printf_to_char(ch, "Read what?\n\r");
+        return;
+    }
+
+    if ((book = get_obj_carry(ch, argument, ch)) == NULL)
+    {
+        send_to_char("You aren't carrying that.\n\r", ch);
+        return;
+    }
+
+    if (book->item_type != ITEM_BOOK)
+    {
+        send_to_char("That doesn't look like something you can read.\n\r", ch);
+        return;
+    }
+
+    tier = book->value[0]; // Skill level/tier: 1, 2, 3
+    sn = book->value[1];   // Skill number
+
+    if (sn <= 0 || sn >= MAX_SKILL || skill_table[sn].name == NULL)
+    {
+        send_to_char("You can't make sense of this book.\n\r", ch);
+        return;
+    }
+
+    // oyuncu daha önce bu skillin bu seviyesini öğrenmişse
+    if (ch->pcdata->skill_tier[sn] >= tier)
+    {
+        send_to_char("You have already learned what this book can teach.\n\r", ch);
+        return;
+    }
+
+    // daha düşük seviye kitapları okumamışsa
+    if (tier > 1 && ch->pcdata->skill_tier[sn] < tier - 1)
+    {
+        send_to_char("This book is too advanced for you. You need to study the earlier volume first.\n\r", ch);
+        return;
+    }
+
+    // Öğrenme başarılı
+    ch->pcdata->skill_tier[sn] = tier;
+    if(ch->pcdata->learned[sn] == 0)
+    {
+        ch->pcdata->learned[sn] = 1;
+    }
+
+    char buf[MAX_STRING_LENGTH];
+    snprintf(buf, sizeof(buf), "You read '%s' and gain knowledge of %s (tier %d).\n\r",
+             book->short_descr,
+             skill_table[sn].name,
+             tier);
+    send_to_char(buf, ch);
+
+    act("$n studies $p carefully.", ch, book, NULL, TO_ROOM);
+
+    // Kitap yok edilsin
+    extract_obj(book);
 }
+
 
 void do_examine( CHAR_DATA *ch, char *argument )
 {
@@ -2343,95 +2404,114 @@ void do_practice( CHAR_DATA *ch, char *argument )
 
     if ( argument[0] == '\0' )
     {
-	int col;
+        int col;
 
-	col    = 0;
-	for ( sn = 0; sn < MAX_SKILL; sn++ )
-	{
-	    if ( skill_table[sn].name == NULL )
-		break;
-	    if ( ch->pcdata->learned[sn] < 1 /* skill is not known */)
-		continue;
+        col    = 0;
+        for ( sn = 0; sn < MAX_SKILL; sn++ )
+        {
+            if ( skill_table[sn].name == NULL )
+            break;
+            if ( ch->pcdata->learned[sn] < 1 /* skill is not known */)
+            continue;
 
-	    sprintf( buf, "{r%-18s %3d%%  {x",
-		skill_table[sn].name, ch->pcdata->learned[sn] );
-	    printf_to_char(ch, buf);
-	    if ( ++col % 3 == 0 )
-		printf_to_char(ch, "\n\r");
-	}
+            sprintf( buf, "{r(%d)%-18s %3d%%  {x",
+            ch->pcdata->skill_tier[sn],
+            skill_table[sn].name, ch->pcdata->learned[sn] );
+            printf_to_char(ch, buf);
+            if ( ++col % 3 == 0 )
+            printf_to_char(ch, "\n\r");
+        }
 
-	if ( col % 3 != 0 )
-	    printf_to_char(ch, "\n\r");
+        if ( col % 3 != 0 )
+            printf_to_char(ch, "\n\r");
 
-	sprintf( buf, "You have %d practice sessions left.\n\r",
-	    ch->practice );
-	printf_to_char(ch, buf);
+        sprintf( buf, "You have %d practice sessions left.\n\r",
+            ch->practice );
+        printf_to_char(ch, buf);
     }
     else
     {
-	CHAR_DATA *mob;
-	int adept;
+        CHAR_DATA *mob;
+        int adept;
 
-	if ( !IS_AWAKE(ch) )
-	{
-	    printf_to_char(ch, "In your dreams, or what?\n\r");
-	    return;
-	}
+        if ( !IS_AWAKE(ch) )
+        {
+            printf_to_char(ch, "In your dreams, or what?\n\r");
+            return;
+        }
 
-	for ( mob = ch->in_room->people; mob != NULL; mob = mob->next_in_room )
-	{
-	    if ( IS_NPC(mob) && IS_SET(mob->act, ACT_PRACTICE) )
-		break;
-	}
+        for ( mob = ch->in_room->people; mob != NULL; mob = mob->next_in_room )
+        {
+            if ( IS_NPC(mob) && IS_SET(mob->act, ACT_PRACTICE) )
+            break;
+        }
 
-	if ( mob == NULL )
-	{
-	    printf_to_char(ch, "You can't do that here.\n\r");
-	    return;
-	}
+        if ( mob == NULL )
+        {
+            printf_to_char(ch, "You can't do that here.\n\r");
+            return;
+        }
 
-	if ( ch->practice <= 0 )
-	{
-	    printf_to_char(ch, "You have no practice sessions left.\n\r");
-	    return;
-	}
+        if ( ch->practice <= 0 )
+        {
+            printf_to_char(ch, "You have no practice sessions left.\n\r");
+            return;
+        }
 
-	if ( ( sn = find_spell( ch,argument ) ) < 0
-	|| ( !IS_NPC(ch)
-	&&   (ch->pcdata->learned[sn] < 1 /* skill is not known */)))
-	{
-	    printf_to_char(ch, "You can't practice that.\n\r");
-	    return;
-	}
+        if ( ( sn = find_spell( ch,argument ) ) < 0
+        || ( !IS_NPC(ch)
+        &&   (ch->pcdata->learned[sn] < 1 /* skill is not known */)))
+        {
+            printf_to_char(ch, "You can't practice that.\n\r");
+            return;
+        }
 
-	adept = IS_NPC(ch) ? 100 : pc_race_table[ch->race].skill_adept;
+        adept = IS_NPC(ch) ? 100 : pc_race_table[ch->race].skill_adept;
 
-	if ( ch->pcdata->learned[sn] >= adept )
-	{
-	    sprintf( buf, "You are already learned at %s.\n\r",
-		skill_table[sn].name );
-	    printf_to_char(ch, buf);
-	}
-	else
-	{
-	    ch->practice--;
-	    ch->pcdata->learned[sn] += int_app[get_curr_stat(ch,STAT_INT)].learn;
-	    if ( ch->pcdata->learned[sn] < adept )
-	    {
-		act( "You practice $T.",
-		    ch, NULL, skill_table[sn].name, TO_CHAR );
-		act( "$n practices $T.",
-		    ch, NULL, skill_table[sn].name, TO_ROOM );
-	    }
-	    else
-	    {
-		ch->pcdata->learned[sn] = adept;
-		act( "You are now learned at $T.",
-		    ch, NULL, skill_table[sn].name, TO_CHAR );
-		act( "$n is now learned at $T.",
-		    ch, NULL, skill_table[sn].name, TO_ROOM );
-	    }
-	}
+        if ( ch->pcdata->learned[sn] >= adept )
+        {
+            sprintf( buf, "You are already learned at %s.\n\r",
+            skill_table[sn].name );
+            printf_to_char(ch, buf);
+        }
+        else
+        {
+            int max_percent = 0;
+
+            switch (ch->pcdata->skill_tier[sn])
+            {
+                case 1: max_percent = 25; break;
+                case 2: max_percent = 50; break;
+                case 3: max_percent = 75; break;
+                default: max_percent = 0; break;
+            }
+
+            if (ch->pcdata->learned[sn] >= max_percent)
+            {
+                printf_to_char(ch, "You need to study it before practicing.\n\r");
+                return;
+            }
+
+            ch->practice--;
+
+            ch->pcdata->learned[sn] = UMIN(ch->pcdata->learned[sn] + int_app[get_curr_stat(ch,STAT_INT)].learn, max_percent);
+
+            if ( ch->pcdata->learned[sn] < adept )
+            {
+            act( "You practice $T.",
+                ch, NULL, skill_table[sn].name, TO_CHAR );
+            act( "$n practices $T.",
+                ch, NULL, skill_table[sn].name, TO_ROOM );
+            }
+            else
+            {
+            ch->pcdata->learned[sn] = adept;
+            act( "You are now learned at $T.",
+                ch, NULL, skill_table[sn].name, TO_CHAR );
+            act( "$n is now learned at $T.",
+                ch, NULL, skill_table[sn].name, TO_ROOM );
+            }
+        }
     }
     return;
 }

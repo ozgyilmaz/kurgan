@@ -297,8 +297,7 @@ void fwrite_char( CHAR_DATA *ch, FILE *fp )
 	{
 	    if ( skill_table[sn].name != NULL && ch->pcdata->learned[sn] > 0 )
 	    {
-		fprintf( fp, "Sk %d '%s'\n",
-		    ch->pcdata->learned[sn], skill_table[sn].name );
+		fprintf( fp, "Sk %d %d '%s'\n",ch->pcdata->learned[sn], ch->pcdata->skill_tier[sn], skill_table[sn].name );
 	    }
 	}
     }
@@ -1026,9 +1025,11 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
 	    {
 		int sn;
 		int value;
+		int tier;
 		char *temp;
 
 		value = fread_number( fp );
+		tier = fread_number( fp );
 		temp = fread_word( fp ) ;
 		sn = skill_lookup(temp);
 		/* sn    = skill_lookup( fread_word( fp ) ); */
@@ -1038,7 +1039,10 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
 		    bugf("Fread_char: unknown skill. ");
 		}
 		else
+		{
 		    ch->pcdata->learned[sn] = value;
+			ch->pcdata->skill_tier[sn] = tier;
+		}
 		fMatch = TRUE;
 	    }
 

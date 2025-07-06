@@ -57,3 +57,6 @@
 - player class system is removed.
 - "class" clean-up
 - Lope's Color 2.0 implemented.
+
+# 06.07.2025
+- book system added.

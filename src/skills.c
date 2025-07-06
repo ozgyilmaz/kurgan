@@ -473,6 +473,21 @@ void check_improve( CHAR_DATA *ch, int sn, bool success, int multiplier )
     ||  ch->pcdata->learned[sn] == 100)
 	return;  /* skill is not known or fully known*/ 
 
+	int max_percent = 0;
+
+	switch (ch->pcdata->skill_tier[sn])
+	{
+		case 1: max_percent = 25; break;
+		case 2: max_percent = 50; break;
+		case 3: max_percent = 100; break; // if all books are read then skill can improves to 100%.
+		default: max_percent = 0; break;
+	}
+
+	if (ch->pcdata->learned[sn] >= max_percent)
+	{
+		return; // no improve
+	}
+
     /* check to see if the character has a chance to learn */
     chance = 10 * int_app[get_curr_stat(ch,STAT_INT)].learn;
     chance /= (		multiplier *	4);

@@ -135,7 +135,7 @@ typedef void SPELL_FUN	args( ( int sn, int level, CHAR_DATA *ch, void *vo,
  * Adjust the pulse numbers to suit yourself.
  */
 #define MAX_SOCIALS		  256
-#define MAX_SKILL		  150
+#define MAX_SKILL		  135
 #define MAX_GROUP		   30
 #define MAX_IN_GROUP		   15
 #define MAX_ALIAS		    5
@@ -913,6 +913,7 @@ struct	kill_data
 #define ITEM_GEM		     32
 #define ITEM_JEWELRY		     33
 #define ITEM_JUKEBOX		     34
+#define ITEM_BOOK		     35
 
 
 
@@ -1465,9 +1466,10 @@ struct	pc_data
     int			last_level;
     sh_int		condition	[4];
     sh_int		learned		[MAX_SKILL];
+    sh_int		skill_tier	[MAX_SKILL];
     bool		group_known	[MAX_GROUP];
     sh_int		points;
-    bool              	confirm_delete;
+    bool        confirm_delete;
     char *		alias[MAX_ALIAS];
     char * 		alias_sub[MAX_ALIAS];
 };

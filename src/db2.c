@@ -335,6 +335,7 @@ void load_objects( cJSON *json_data )
         case ITEM_POTION:
         case ITEM_PILL:
         case ITEM_SCROLL:
+        case ITEM_BOOK:
             pObjIndex->value[0]		= atoi(strtok(value_array," "));
             pObjIndex->value[1]		= skill_lookup(strtok(NULL," "));
             pObjIndex->value[2]		= skill_lookup(strtok(NULL," "));

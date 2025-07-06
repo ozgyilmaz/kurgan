@@ -1982,6 +1982,7 @@ case CON_GET_ALIGNMENT:
 	write_to_buffer(d,"\n\r",0);
 
 	ch->pcdata->learned[gsn_recall] = 50;
+	ch->pcdata->skill_tier[gsn_recall] = 2;
 	write_to_buffer( d, "\n\r", 2 );
 
     int vnum;
@@ -2001,7 +2002,8 @@ case CON_GET_ALIGNMENT:
         if (weapon_table[i].vnum == vnum && weapon_table[i].gsn != NULL)
         {
             sn = *weapon_table[i].gsn;
-            ch->pcdata->learned[sn] = 40;
+            ch->pcdata->learned[sn] = 25;
+			ch->pcdata->skill_tier[sn] = 2;
             break;
         }
     }
