@@ -257,7 +257,7 @@ void load_objects( cJSON *json_data )
 {
     cJSON *json_objects = NULL;
     cJSON *json_object = NULL;
-    char value_array[100];
+    char value_array[MAX_STRING_LENGTH];
 
     json_objects = cJSON_GetObjectItemCaseSensitive(json_data, "objects");
 

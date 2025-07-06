@@ -60,3 +60,5 @@
 
 # 06.07.2025
 - book system added.
+- function backtrace for bugf().
+- strdup() added strings in create_mobile(), clone_mobile() and create_object().

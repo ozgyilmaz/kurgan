@@ -56,6 +56,8 @@
 #include <sys/time.h>
 #endif
 
+#include <execinfo.h>
+#include <unistd.h>
 #include <ctype.h>
 #include <errno.h>
 #include <stdio.h>
@@ -179,11 +181,11 @@ int	listen		args( ( int s, int backlog ) );
 */
 
 int	close		args( ( int fd ) );
-int	read		args( ( int fd, char *buf, int nbyte ) );
+
 int	select		args( ( int width, fd_set *readfds, fd_set *writefds,
 			    fd_set *exceptfds, struct timeval *timeout ) );
 int	socket		args( ( int domain, int type, int protocol ) );
-int	write		args( ( int fd, char *buf, int nbyte ) );
+
 #endif
 
 #if	defined(macintosh)
@@ -2327,6 +2329,11 @@ void bugf(char *fmt, ...)
     va_end(args);
 
     bug(buf, 0);
+
+	// Terminale stack trace bas
+    void *array[10];
+    size_t size = backtrace(array, 10);
+    backtrace_symbols_fd(array, size, STDERR_FILENO);
 }
 
 /*

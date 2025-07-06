@@ -1307,11 +1307,11 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 
     mob->pIndexData	= pMobIndex;
 
-    mob->name		= pMobIndex->player_name;
+    mob->name          = str_dup(pMobIndex->player_name);
     mob->id		= get_mob_id();
-    mob->short_descr	= pMobIndex->short_descr;
-    mob->long_descr	= pMobIndex->long_descr;
-    mob->description	= pMobIndex->description;
+    mob->short_descr   = str_dup(pMobIndex->short_descr);
+    mob->long_descr    = str_dup(pMobIndex->long_descr);
+    mob->description   = str_dup(pMobIndex->description);
     mob->spec_fun	= pMobIndex->spec_fun;
     mob->prompt		= NULL;
 
@@ -1500,7 +1500,7 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 	mob->form		= pMobIndex->form;
 	mob->parts		= pMobIndex->parts;
 	mob->size		= SIZE_MEDIUM;
-	mob->material		= "";
+	mob->material		= str_dup("");
 
         for (i = 0; i < MAX_STATS; i ++)
             mob->perm_stat[i] = 11 + mob->level/4;
@@ -1620,9 +1620,9 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
 	obj->level		= UMAX(0,level);
     obj->wear_loc	= -1;
 
-    obj->name		= pObjIndex->name;
-    obj->short_descr	= pObjIndex->short_descr;
-    obj->description	= pObjIndex->description;
+    obj->name          = str_dup(pObjIndex->name);
+    obj->short_descr   = str_dup(pObjIndex->short_descr);
+    obj->description   = str_dup(pObjIndex->description);
     obj->material	= str_dup(pObjIndex->material);
     obj->item_type	= pObjIndex->item_type;
     obj->extra_flags	= pObjIndex->extra_flags;
