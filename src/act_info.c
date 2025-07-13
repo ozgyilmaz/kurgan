@@ -999,6 +999,44 @@ void do_look( CHAR_DATA *ch, char *argument )
     {
 	/* 'look' or 'look auto' */
 	printf_to_char(ch, "%s%s%s", CLR_ROOM_NAME, ch->in_room->name, CLR_RESET);
+    switch(ch->in_room->sector_type)
+    {
+      case SECT_INSIDE:
+      printf_to_char(ch," [Inside]");
+      break;
+      case SECT_CITY:
+      printf_to_char(ch," [City]");
+      break;
+      case SECT_FIELD:
+      printf_to_char(ch," [Field]");
+      break;
+      case SECT_FOREST:
+      printf_to_char(ch," [Forest]");
+      break;
+      case SECT_HILLS:
+      printf_to_char(ch," [Hill]");
+      break;
+      case SECT_MOUNTAIN:
+      printf_to_char(ch," [Mountain]");
+      break;
+      case SECT_WATER_SWIM:
+      case SECT_WATER_NOSWIM:
+      printf_to_char(ch," [Water]");
+      break;
+      case SECT_AIR:
+      printf_to_char(ch," [Air]");
+      break;
+      case SECT_DESERT:
+      printf_to_char(ch," [Desert]");
+      break;
+      case SECT_MAX:
+      printf_to_char(ch," [Hard]");
+      break;
+      default:
+      printf_to_char(ch," [*Unknown*]");
+      break;
+    }
+    printf_to_char(ch," [{y%s{x]",ch->in_room->area->name);
 
 	if (IS_IMMORTAL(ch) && !IS_NPC(ch) && IS_SET(ch->act, PLR_HOLYLIGHT))
 	{
