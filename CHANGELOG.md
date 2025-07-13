@@ -62,3 +62,6 @@
 - book system added.
 - function backtrace for bugf().
 - strdup() added strings in create_mobile(), clone_mobile() and create_object().
+
+# 13.07.2025
+- book_rarity added to skill_table. it's used during book creation in db.c file.

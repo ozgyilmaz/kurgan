@@ -1,10 +1,11 @@
 src/*.d
 src/*.o
 area/kurgan
-player/Xera
-gods/Xera
+player/
+gods/
 src/kurgan
 log/*.log
 nohup.out
+.vscode/
 .vscode/c_cpp_properties.json
 .vscode/settings.json

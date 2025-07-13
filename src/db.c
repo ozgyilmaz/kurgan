@@ -944,6 +944,26 @@ void area_update( void )
     return;
 }
 
+int random_skill_by_rarity(int rarity) {
+    int matching_skills[MAX_SKILL];
+    int count = 0;
+
+    for (int sn = 0; sn < MAX_SKILL; sn++) {
+        if (skill_table[sn].name == NULL) // skip empty
+            continue;
+
+        if (skill_table[sn].book_rarity == rarity)
+            matching_skills[count++] = sn;
+    }
+
+    if (count == 0) {
+        bugf("No skill found with rarity %d", rarity);
+        return -1; // not found
+    }
+
+    int chosen_index = number_range(0, count - 1);
+    return matching_skills[chosen_index];
+}
 
 
 /*
@@ -1015,23 +1035,32 @@ void reset_area( AREA_DATA *pArea )
         /*
          * Create random book
          */
-        if (IS_NPC(mob) && number_percent() < 10)
+        if (IS_NPC(mob) && number_percent() < 2)
         {
+            int skill_chance = number_range(1,100);
+            int tier_chance = number_range(1,100);
+            int sn = 0;
+            int tier = 1;
+            
+            if(skill_chance < 90)
+                sn = random_skill_by_rarity(1);
+            else if(skill_chance <98)
+                sn = random_skill_by_rarity(2);
+            else
+                sn = random_skill_by_rarity(3);
+            
+            if (tier_chance <= 88)
+                tier = 1;
+            else if (tier_chance <= 98)
+                tier = 2;
+            else
+                tier = 3;
+
+
             OBJ_DATA *book;
             OBJ_INDEX_DATA *template = get_obj_index(26);
 
             book = create_object(template, 0);
-
-            int sn = number_range(1, MAX_SKILL-1);
-            int roll = number_percent();
-            int tier;
-
-            if (roll <= 88)
-                tier = 1;
-            else if (roll <= 98)
-                tier = 2;
-            else
-                tier = 3;
 
             book->value[0] = tier;
             book->value[1] = sn;

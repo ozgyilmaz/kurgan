@@ -1715,6 +1715,7 @@ struct	skill_type
     char *	noun_damage;		/* Damage message		*/
     char *	msg_off;		/* Wear off message		*/
     char *	msg_obj;		/* Wear off message for obects	*/
+    sh_int	book_rarity;			/* How possible to find the book	*/
 };
 
 
