@@ -2426,14 +2426,19 @@ void fix_sex(CHAR_DATA *ch)
 void act_new( const char *format, CHAR_DATA *ch, const void *arg1, 
 	      const void *arg2, int type, int min_pos)
 {
+    act_color(format,ch,arg1,arg2,type,min_pos);
+	return;
+}
+
+void act_color( const char *format, CHAR_DATA *ch, const void *arg1, 
+	      const void *arg2, int type, int min_pos, ... )
+{
     static char * const he_she  [] = { "it",  "he",  "she" };
     static char * const him_her [] = { "it",  "him", "her" };
     static char * const his_her [] = { "its", "his", "her" };
  
     char buf[MAX_STRING_LENGTH];
     char fname[MAX_INPUT_LENGTH];
-	char 		*pbuff;
-	char 		buffer[ MAX_STRING_LENGTH*2 ];
     CHAR_DATA *to;
     CHAR_DATA *vch = (CHAR_DATA *) arg2;
     OBJ_DATA *obj1 = (OBJ_DATA  *) arg1;
@@ -2441,7 +2446,10 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
     const char *str;
     const char *i;
     char *point;
+    int n;
+    va_list colors; 
  
+
     /*
      * Discard null and zero-length messages.
      */
@@ -2457,7 +2465,7 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
     {
         if ( vch == NULL )
         {
-            bugf("Act: null vch with TO_VICT.");
+            bug( "Act: null vch with TO_VICT.", 0 );
             return;
         }
 
@@ -2469,10 +2477,12 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
  
     for ( ; to != NULL; to = to->next_in_room )
     {
+      va_start(colors,min_pos); 
+
         if ( to->desc == NULL || to->position < min_pos )
             continue;
  
-        if ( (type == TO_CHAR) && to != ch )
+        if ( type == TO_CHAR && to != ch )
             continue;
         if ( type == TO_VICT && ( to != vch || to == ch ) )
             continue;
@@ -2491,17 +2501,10 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
                 continue;
             }
             ++str;
- 
-            if ( arg2 == NULL && *str >= 'A' && *str <= 'Z' )
-            {
-                bugf("Act: missing arg2 for code %d.", *str );
-                i = " <@@@> ";
-            }
-            else
-            {
+
                 switch ( *str )
                 {
-                default:  bugf("Act: bad code %d.", *str );
+                default:  bug( "Act: bad code %d.", *str );
                           i = " <@@@> ";                                break;
                 /* Thx alex for 't' idea */
                 case 't': i = (char *) arg1;                            break;
@@ -2514,6 +2517,8 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
                 case 'M': i = him_her [URANGE(0, vch ->sex, 2)];        break;
                 case 's': i = his_her [URANGE(0, ch  ->sex, 2)];        break;
                 case 'S': i = his_her [URANGE(0, vch ->sex, 2)];        break;
+				case 'C': i = va_arg(colors,char *); 					break;
+				case 'c': i = CLR_RESET ; 								break;
  
                 case 'p':
                     i = can_see_obj( to, obj1 )
@@ -2539,7 +2544,6 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
                     }
                     break;
                 }
-            }
  
             ++str;
             while ( ( *point = *i ) != '\0' )
@@ -2548,16 +2552,16 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
  
         *point++ = '\n';
         *point++ = '\r';
-		*point   = '\0';
-        buf[0]   = UPPER(buf[0]);
-		if ( to->desc != NULL )
-		{
-			pbuff	 = buffer;
-			colourconv( pbuff, buf, to );
-			write_to_buffer( to->desc, buffer, 0 );
-		}
+        /* fix for color prefix and capitalization */
+        if (buf[0] == '')
+	  {
+	    for(n = 1;buf[n] != 'm';n++) ;
+	    buf[n+1] = UPPER(buf[n+1]);
+	  }
+        else buf[0]   = UPPER(buf[0]);
+        write_to_buffer( to->desc, buf, point - buf );
     }
- 
+    va_end(colors); 
     return;
 }
 

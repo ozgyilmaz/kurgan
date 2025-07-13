@@ -65,3 +65,5 @@
 
 # 13.07.2025
 - book_rarity added to skill_table. it's used during book creation in db.c file.
+- act_color() implemented, now act_new() calls act_color().
+- fight messages colored and dam count is given for each hit.

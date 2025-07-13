@@ -1995,14 +1995,14 @@ void dam_message( CHAR_DATA *ch, CHAR_DATA *victim,int dam,int dt,bool immune )
     {
 	if (ch  == victim)
 	{
-	    sprintf( buf1, "$n %s $melf%c",vp,punct);
-	    sprintf( buf2, "You %s yourself%c",vs,punct);
+	    sprintf( buf1, "$n $C%s$c $melf%c [%d]",vp,punct, dam);
+	    sprintf( buf2, "You $C%s$c yourself%c [%d]",vs,punct, dam);
 	}
 	else
 	{
-	    sprintf( buf1, "$n %s $N%c",  vp, punct );
-	    sprintf( buf2, "You %s $N%c", vs, punct );
-	    sprintf( buf3, "$n %s you%c", vp, punct );
+	    sprintf( buf1, "$n $C%s$c $N%c [%d]",  vp, punct, dam );
+	    sprintf( buf2, "You $C%s$c $N%c [%d]", vs, punct, dam );
+	    sprintf( buf3, "$n $C%s$c you%c [%d]", vp, punct, dam );
 	}
     }
     else
@@ -2037,28 +2037,28 @@ void dam_message( CHAR_DATA *ch, CHAR_DATA *victim,int dam,int dt,bool immune )
 	{
 	    if (ch == victim)
 	    {
-		sprintf( buf1, "$n's %s %s $m%c",attack,vp,punct);
-		sprintf( buf2, "Your %s %s you%c",attack,vp,punct);
+		sprintf( buf1, "$n's %s $C%s$c $m%c [%d]",attack,vp,punct, dam);
+		sprintf( buf2, "Your %s $C%s$c you%c [%d]",attack,vp,punct, dam);
 	    }
 	    else
 	    {
-	    	sprintf( buf1, "$n's %s %s $N%c",  attack, vp, punct );
-	    	sprintf( buf2, "Your %s %s $N%c",  attack, vp, punct );
-	    	sprintf( buf3, "$n's %s %s you%c", attack, vp, punct );
+	    	sprintf( buf1, "$n's %s $C%s$c $N%c [%d]",  attack, vp, punct, dam );
+	    	sprintf( buf2, "Your %s $C%s$c $N%c [%d]",  attack, vp, punct, dam );
+	    	sprintf( buf3, "$n's %s $C%s$c you%c [%d]", attack, vp, punct, dam );
 	    }
 	}
     }
 
     if (ch == victim)
     {
-	act(buf1,ch,NULL,NULL,TO_ROOM);
-	act(buf2,ch,NULL,NULL,TO_CHAR);
+	act_color(buf1,ch,NULL,NULL,TO_ROOM,POS_RESTING,CLR_LOPES_YELLOW);
+	act_color(buf2,ch,NULL,NULL,TO_CHAR,POS_RESTING,CLR_LOPES_B_RED);
     }
     else
     {
-    	act( buf1, ch, NULL, victim, TO_NOTVICT );
-    	act( buf2, ch, NULL, victim, TO_CHAR );
-    	act( buf3, ch, NULL, victim, TO_VICT );
+		act_color( buf1, ch, NULL, victim, TO_NOTVICT,POS_RESTING,CLR_LOPES_YELLOW );
+    	act_color( buf2, ch, NULL, victim, TO_CHAR,POS_RESTING,CLR_LOPES_B_GREEN );
+    	act_color( buf3, ch, NULL, victim, TO_VICT,POS_RESTING,CLR_LOPES_B_RED );
     }
 
     return;
