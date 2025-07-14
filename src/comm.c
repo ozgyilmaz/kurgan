@@ -1429,6 +1429,11 @@ void bust_a_prompt( CHAR_DATA *ch )
                 sprintf(buf2, "%s", "\n\r");
                 i = buf2;
                 break;
+			
+			case 'n' :
+				sprintf( buf2, "%s", ch->name );
+				i = buf2;
+				break;
 
             case 'h':
                 sprintf(buf2, "%d", ch->hit);

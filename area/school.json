@@ -3914,7 +3914,7 @@
     ],
     "shops": [
         {
-            "keeper": "3717",
+            "keeper": 3717,
             "buy_type_0": 1,
             "buy_type_1": 15,
             "buy_type_2": 17,

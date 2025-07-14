@@ -5085,7 +5085,7 @@
     ],
     "shops": [
         {
-            "keeper": "9238",
+            "keeper": 9238,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,

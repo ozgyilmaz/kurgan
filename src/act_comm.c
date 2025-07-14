@@ -1505,7 +1505,7 @@ void do_save( CHAR_DATA *ch, char *argument )
 	return;
 
     save_char_obj( ch );
-    printf_to_char(ch, "Saving. Remember that ROM has automatic saving now.\n\r");
+    printf_to_char(ch, "Saving. Remember that Kurgan has also automatic saving.\n\r");
     WAIT_STATE(ch,4 * PULSE_VIOLENCE);
     return;
 }

@@ -7398,7 +7398,7 @@
     ],
     "shops": [
         {
-            "keeper": "604",
+            "keeper": 604,
             "buy_type_0": 5,
             "buy_type_1": 9,
             "buy_type_2": 15,
@@ -7410,7 +7410,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "605",
+            "keeper": 605,
             "buy_type_0": 9,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -7422,7 +7422,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "606",
+            "keeper": 606,
             "buy_type_0": 8,
             "buy_type_1": 12,
             "buy_type_2": 13,
@@ -7434,7 +7434,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "607",
+            "keeper": 607,
             "buy_type_0": 0,
             "buy_type_1": 19,
             "buy_type_2": 0,
@@ -7446,7 +7446,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "608",
+            "keeper": 608,
             "buy_type_0": 0,
             "buy_type_1": 17,
             "buy_type_2": 19,
@@ -7458,7 +7458,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "622",
+            "keeper": 622,
             "buy_type_0": 0,
             "buy_type_1": 17,
             "buy_type_2": 0,

@@ -195,7 +195,7 @@ reset_grammar       =   Suppress(Literal("#RESETS")) +\
 shop_grammar        =   Suppress(Literal("#SHOPS")) +\
                         ZeroOrMore(
                             Group(
-                                Word(nums).setResultsName('keeper') +\
+                                Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('keeper') +\
                                 Word("-" + nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('buy_type_0') +\
                                 Word("-" + nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('buy_type_1') +\
                                 Word("-" + nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('buy_type_2') +\

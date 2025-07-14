@@ -9299,7 +9299,7 @@
     ],
     "shops": [
         {
-            "keeper": "10451",
+            "keeper": 10451,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -9311,7 +9311,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "10454",
+            "keeper": 10454,
             "buy_type_0": 2,
             "buy_type_1": 3,
             "buy_type_2": 4,

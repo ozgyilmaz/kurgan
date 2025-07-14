@@ -15776,7 +15776,7 @@
     ],
     "shops": [
         {
-            "keeper": "9505",
+            "keeper": 9505,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -15788,7 +15788,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9510",
+            "keeper": 9510,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -15800,7 +15800,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9511",
+            "keeper": 9511,
             "buy_type_0": 1,
             "buy_type_1": 8,
             "buy_type_2": 12,
@@ -15812,7 +15812,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9513",
+            "keeper": 9513,
             "buy_type_0": 8,
             "buy_type_1": 11,
             "buy_type_2": 9,
@@ -15824,7 +15824,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9514",
+            "keeper": 9514,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -15836,7 +15836,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9515",
+            "keeper": 9515,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -15848,7 +15848,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9516",
+            "keeper": 9516,
             "buy_type_0": 9,
             "buy_type_1": 11,
             "buy_type_2": 0,
@@ -15860,7 +15860,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9517",
+            "keeper": 9517,
             "buy_type_0": 5,
             "buy_type_1": 6,
             "buy_type_2": 7,
@@ -15872,7 +15872,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9518",
+            "keeper": 9518,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -15884,7 +15884,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9565",
+            "keeper": 9565,
             "buy_type_0": 22,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -15896,7 +15896,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9566",
+            "keeper": 9566,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -15908,7 +15908,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9579",
+            "keeper": 9579,
             "buy_type_0": 10,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -15920,7 +15920,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9580",
+            "keeper": 9580,
             "buy_type_0": 2,
             "buy_type_1": 3,
             "buy_type_2": 4,
@@ -15932,7 +15932,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9583",
+            "keeper": 9583,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -15944,7 +15944,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "9584",
+            "keeper": 9584,
             "buy_type_0": 9,
             "buy_type_1": 11,
             "buy_type_2": 0,

@@ -68,3 +68,6 @@
 - act_color() implemented, now act_new() calls act_color().
 - fight messages colored and dam count is given for each hit.
 - sector and area info added to room name. (A Room in Mud School [City] [mud school])
+
+# 14.07.2025
+- "n" added to prompt. shop keeper info were string, converted to int with area-to-json.py script.
