@@ -71,3 +71,6 @@
 
 # 14.07.2025
 - "n" added to prompt. shop keeper info were string, converted to int with area-to-json.py script.
+
+# 17.07.2025
+- "new_format" variable removed. all objects and mobs are already new format.

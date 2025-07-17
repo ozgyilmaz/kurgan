@@ -467,12 +467,15 @@ void check_improve( CHAR_DATA *ch, int sn, bool success, int multiplier )
     char buf[100];
 
     if (IS_NPC(ch))
+	{
 	return;
+	}
 
-    if (ch->pcdata->learned[sn] == 0
-    ||  ch->pcdata->learned[sn] == 100)
+    if (ch->pcdata->learned[sn] == 0 ||  ch->pcdata->learned[sn] == 100)
+	{
 	return;  /* skill is not known or fully known*/ 
-
+	}
+	
 	int max_percent = 0;
 
 	switch (ch->pcdata->skill_tier[sn])

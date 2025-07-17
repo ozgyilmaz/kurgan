@@ -1204,31 +1204,7 @@ void reset_area( AREA_DATA *pArea )
 
 	    if ( mob->pIndexData->pShop != NULL )
 	    {
-		int olevel = 0,i;
-
-		if (!pObjIndex->new_format)
-		    switch ( pObjIndex->item_type )
-		{
-		case ITEM_PILL:
-		case ITEM_POTION:
-		case ITEM_SCROLL:
-		    olevel = 53;
-		    for (i = 1; i < 5; i++)
-            {
-                if (pObjIndex->value[i] > 0)
-                {
-                    olevel = UMIN(olevel, 20);
-                }
-            }
-		   
-		    olevel = UMAX(0,(olevel * 3 / 4) - 2);
-		    break;
-		case ITEM_WAND:		olevel = number_range( 10, 20 ); break;
-		case ITEM_STAFF:	olevel = number_range( 15, 25 ); break;
-		case ITEM_ARMOR:	olevel = number_range(  5, 15 ); break;
-		case ITEM_WEAPON:	olevel = number_range(  5, 15 ); break;
-		case ITEM_TREASURE:	olevel = number_range( 10, 20 ); break;
-		}
+		int olevel = 0;
 
 		obj = create_object( pObjIndex, olevel );
 		SET_BIT( obj->extra_flags, ITEM_INVENTORY );
@@ -1358,9 +1334,6 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 	mob->silver = wealth - (mob->gold * 100);
     } 
 
-    if (pMobIndex->new_format)
-    /* load in new style */
-    {
 	/* read from prototype */
  	mob->group		= pMobIndex->group;
 	mob->act 		= pMobIndex->act;
@@ -1482,57 +1455,16 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 	    affect_to_char(mob,&af);
 	}
 
-        if (IS_AFFECTED(mob,AFF_PROTECT_GOOD))
-        {
-	    af.where	 = TO_AFFECTS;
-            af.type      = skill_lookup("protection good");
-            af.level     = mob->level;
-            af.duration  = -1;
-            af.location  = APPLY_SAVES;
-            af.modifier  = -1;
-            af.bitvector = AFF_PROTECT_GOOD;
-            affect_to_char(mob,&af);
-        }
-    }
-    else /* read in old format and convert */
+    if (IS_AFFECTED(mob,AFF_PROTECT_GOOD))
     {
-	mob->act		= pMobIndex->act;
-	mob->affected_by	= pMobIndex->affected_by;
-	mob->alignment		= pMobIndex->alignment;
-	mob->level		= pMobIndex->level;
-	mob->hitroll		= pMobIndex->hitroll;
-	mob->damroll		= 0;
-	mob->max_hit		= mob->level * 8 + number_range(
-					mob->level * mob->level/4,
-					mob->level * mob->level);
-	mob->max_hit *= .9;
-	mob->hit		= mob->max_hit;
-	mob->max_mana		= 100 + dice(mob->level,10);
-	mob->mana		= mob->max_mana;
-	switch(number_range(1,3))
-	{
-	    case (1): mob->dam_type = 3; 	break;  /* slash */
-	    case (2): mob->dam_type = 7;	break;  /* pound */
-	    case (3): mob->dam_type = 11;	break;  /* pierce */
-	}
-	for (i = 0; i < 3; i++)
-	    mob->armor[i]	= interpolate(mob->level,100,-100);
-	mob->armor[3]		= interpolate(mob->level,100,0);
-	mob->race		= pMobIndex->race;
-	mob->off_flags		= pMobIndex->off_flags;
-	mob->imm_flags		= pMobIndex->imm_flags;
-	mob->res_flags		= pMobIndex->res_flags;
-	mob->vuln_flags		= pMobIndex->vuln_flags;
-	mob->start_pos		= pMobIndex->start_pos;
-	mob->default_pos	= pMobIndex->default_pos;
-	mob->sex		= pMobIndex->sex;
-	mob->form		= pMobIndex->form;
-	mob->parts		= pMobIndex->parts;
-	mob->size		= SIZE_MEDIUM;
-	mob->material		= str_dup("");
-
-        for (i = 0; i < MAX_STATS; i ++)
-            mob->perm_stat[i] = 11 + mob->level/4;
+    af.where	 = TO_AFFECTS;
+        af.type      = skill_lookup("protection good");
+        af.level     = mob->level;
+        af.duration  = -1;
+        af.location  = APPLY_SAVES;
+        af.modifier  = -1;
+        af.bitvector = AFF_PROTECT_GOOD;
+        affect_to_char(mob,&af);
     }
 
     mob->position = mob->start_pos;
@@ -1643,10 +1575,8 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
     obj->in_room	= NULL;
     obj->enchanted	= FALSE;
 
-    if (pObjIndex->new_format)
 	obj->level = pObjIndex->level;
-    else
-	obj->level		= UMAX(0,level);
+
     obj->wear_loc	= -1;
 
     obj->name          = str_dup(pObjIndex->name);
@@ -1663,11 +1593,7 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
     obj->value[4]	= pObjIndex->value[4];
     obj->weight		= pObjIndex->weight;
 
-    if (level == -1 || pObjIndex->new_format)
 	obj->cost	= pObjIndex->cost;
-    else
-    	obj->cost	= number_fuzzy( 10 )
-			* number_fuzzy( level ) * number_fuzzy( level );
 
     /*
      * Mess with object properties.
@@ -1696,8 +1622,6 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
     case ITEM_MAP:
     case ITEM_CLOTHING:
     case ITEM_PORTAL:
-	if (!pObjIndex->new_format)
-	    obj->cost /= 5;
 	break;
 
     case ITEM_TREASURE:
@@ -1714,48 +1638,23 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
 	break;
 
     case ITEM_SCROLL:
-	if (level != -1 && !pObjIndex->new_format)
-	    obj->value[0]	= number_fuzzy( obj->value[0] );
 	break;
 
     case ITEM_WAND:
     case ITEM_STAFF:
-	if (level != -1 && !pObjIndex->new_format)
-	{
-	    obj->value[0]	= number_fuzzy( obj->value[0] );
-	    obj->value[1]	= number_fuzzy( obj->value[1] );
-	    obj->value[2]	= obj->value[1];
-	}
-	if (!pObjIndex->new_format)
-	    obj->cost *= 2;
 	break;
 
     case ITEM_WEAPON:
-	if (level != -1 && !pObjIndex->new_format)
-	{
-	    obj->value[1] = number_fuzzy( number_fuzzy( 1 * level / 4 + 2 ) );
-	    obj->value[2] = number_fuzzy( number_fuzzy( 3 * level / 4 + 6 ) );
-	}
 	break;
 
     case ITEM_ARMOR:
-	if (level != -1 && !pObjIndex->new_format)
-	{
-	    obj->value[0]	= number_fuzzy( level / 5 + 3 );
-	    obj->value[1]	= number_fuzzy( level / 5 + 3 );
-	    obj->value[2]	= number_fuzzy( level / 5 + 3 );
-	}
 	break;
 
     case ITEM_POTION:
     case ITEM_PILL:
-	if (level != -1 && !pObjIndex->new_format)
-	    obj->value[0] = number_fuzzy( number_fuzzy( obj->value[0] ) );
 	break;
 
     case ITEM_MONEY:
-	if (!pObjIndex->new_format)
-	    obj->value[0]	= obj->cost;
 	break;
     }
   

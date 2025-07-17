@@ -3340,14 +3340,9 @@ void spell_identify( int sn, int level, CHAR_DATA *ch, void *vo,int target )
 	    case(WEAPON_POLEARM): printf_to_char(ch, "polearm.\n\r");	break;
 	    default		: printf_to_char(ch, "unknown.\n\r");	break;
  	}
-	if (obj->pIndexData->new_format)
-	    sprintf(buf,"Damage is %dd%d (average %d).\n\r",
+	sprintf(buf,"Damage is %dd%d (average %d).\n\r",
 		obj->value[1],obj->value[2],
 		(1 + obj->value[2]) * obj->value[1] / 2);
-	else
-	    sprintf( buf, "Damage is %d to %d (average %d).\n\r",
-	    	obj->value[1], obj->value[2],
-	    	( obj->value[1] + obj->value[2] ) / 2 );
 	printf_to_char(ch, buf);
         if (obj->value[4])  /* weapon flags */
         {

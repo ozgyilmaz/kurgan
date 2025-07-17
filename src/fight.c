@@ -516,27 +516,15 @@ void one_hit( CHAR_DATA *ch, CHAR_DATA *victim, int dt )
      * Hit.
      * Calc damage.
      */
-    if ( IS_NPC(ch) && (!ch->pIndexData->new_format || wield == NULL))
-	if (!ch->pIndexData->new_format)
-	{
-	    dam = number_range( ch->level / 2, ch->level * 3 / 2 );
-	    if ( wield != NULL )
-	    	dam += dam / 2;
-	}
-	else
-	    dam = dice(ch->damage[DICE_NUMBER],ch->damage[DICE_TYPE]);
-	
+    if ( IS_NPC(ch) && (wield == NULL))
+		dam = dice(ch->damage[DICE_NUMBER],ch->damage[DICE_TYPE]);
     else
     {
 	if (sn != -1)
 	    check_improve(ch,sn,TRUE,5);
 	if ( wield != NULL )
 	{
-	    if (wield->pIndexData->new_format)
 		dam = dice(wield->value[1],wield->value[2]) * skill/100;
-	    else
-	    	dam = number_range( wield->value[1] * skill/100, 
-				wield->value[2] * skill/100);
 
 	    if (get_eq_char(ch,WEAR_SHIELD) == NULL)  /* no shield = more */
 		dam = dam * 11/10;

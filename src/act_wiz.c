@@ -1230,8 +1230,8 @@ void do_ostat( CHAR_DATA *ch, char *argument )
 	obj->name );
     printf_to_char(ch, buf);
 
-    sprintf( buf, "Vnum: %d  Format: %s  Type: %s  Resets: %d\n\r",
-	obj->pIndexData->vnum, obj->pIndexData->new_format ? "new" : "old",
+    sprintf( buf, "Vnum: %d  Type: %s  Resets: %d\n\r",
+	obj->pIndexData->vnum,
 	item_name(obj->item_type), obj->pIndexData->reset_num );
     printf_to_char(ch, buf);
 
@@ -1367,14 +1367,9 @@ void do_ostat( CHAR_DATA *ch, char *argument )
 		    printf_to_char(ch, "unknown\n\r");
 		    break;
  	    }
-	    if (obj->pIndexData->new_format)
-	    	sprintf(buf,"Damage is %dd%d (average %d)\n\r",
+	    sprintf(buf,"Damage is %dd%d (average %d)\n\r",
 		    obj->value[1],obj->value[2],
 		    (1 + obj->value[2]) * obj->value[1] / 2);
-	    else
-	    	sprintf( buf, "Damage is %d to %d (average %d)\n\r",
-	    	    obj->value[1], obj->value[2],
-	    	    ( obj->value[1] + obj->value[2] ) / 2 );
 	    printf_to_char(ch, buf);
 
 	    sprintf(buf,"Damage noun is %s.\n\r",
@@ -1551,9 +1546,8 @@ void do_mstat( CHAR_DATA *ch, char *argument )
     printf_to_char(ch, buf);
 
     sprintf( buf, 
-	"Vnum: %d  Format: %s  Race: %s  Group: %d  Sex: %s  Room: %d\n\r",
+	"Vnum: %d  Race: %s  Group: %d  Sex: %s  Room: %d\n\r",
 	IS_NPC(victim) ? victim->pIndexData->vnum : 0,
-	IS_NPC(victim) ? victim->pIndexData->new_format ? "new" : "old" : "pc",
 	race_table[victim->race].name,
 	IS_NPC(victim) ? victim->group : 0, sex_table[victim->sex].name,
 	victim->in_room == NULL    ?        0 : victim->in_room->vnum
@@ -1607,7 +1601,7 @@ void do_mstat( CHAR_DATA *ch, char *argument )
 	victim->wimpy );
     printf_to_char(ch, buf);
 
-    if (IS_NPC(victim) && victim->pIndexData->new_format)
+    if (IS_NPC(victim))
     {
 	sprintf(buf, "Damage: %dd%d  Message:  %s\n\r",
 	    victim->damage[DICE_NUMBER],victim->damage[DICE_TYPE],

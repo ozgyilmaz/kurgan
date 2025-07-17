@@ -328,16 +328,6 @@ bool is_same_clan(CHAR_DATA *ch, CHAR_DATA *victim)
     else 
 	return (ch->clan == victim->clan);
 }
-
-/* checks mob format */
-bool is_old_mob(CHAR_DATA *ch)
-{
-    if (ch->pIndexData == NULL)
-	return FALSE;
-    else if (ch->pIndexData->new_format)
-	return FALSE;
-    return TRUE;
-}
  
 /* for returning skill information */
 int get_skill(CHAR_DATA *ch, int sn)

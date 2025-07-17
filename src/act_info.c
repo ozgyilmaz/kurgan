@@ -2140,16 +2140,8 @@ void do_compare( CHAR_DATA *ch, char *argument )
 	    break;
 
 	case ITEM_WEAPON:
-	    if (obj1->pIndexData->new_format)
 		value1 = (1 + obj1->value[2]) * obj1->value[1];
-	    else
-	    	value1 = obj1->value[1] + obj1->value[2];
-
-	    if (obj2->pIndexData->new_format)
 		value2 = (1 + obj2->value[2]) * obj2->value[1];
-	    else
-	    	value2 = obj2->value[1] + obj2->value[2];
-	    break;
 	}
     }
 
