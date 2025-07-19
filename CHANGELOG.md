@@ -80,3 +80,4 @@
 
 # 20.07.2025
 - strrep() added. Weapon objects are now randomized.
+- Armor objects are randomized.

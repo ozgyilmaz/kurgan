@@ -1688,6 +1688,17 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level, bool randomize )
 	break;
 
     case ITEM_ARMOR:
+        if(randomize == TRUE)
+        {
+            int ac_min = UMAX(1, (obj->level + 4) / 5);
+            int ac_max = UMAX(1, (obj->level + 3) / 2);
+
+            obj->value[0] = number_range(ac_min, ac_max);
+            obj->value[1] = number_range(ac_min, ac_max);
+            obj->value[2] = number_range(ac_min, ac_max);
+            obj->value[3] = number_range(ac_min, ac_max);
+            obj->value[4] = 0;
+        }
 	break;
 
     case ITEM_POTION:
