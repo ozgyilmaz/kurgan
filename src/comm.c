@@ -1944,7 +1944,13 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
 	ch->pcdata->points = pc_race_table[race].points;
 	ch->size = pc_race_table[race].size;
 
-        write_to_buffer( d, "What is your sex (M/F)? ", 0 );
+        write_to_buffer( d, "Here are available genders:\n\r", 0 );
+		write_to_buffer( d, "N - Nonbinary\n\r", 0 );
+		write_to_buffer( d, "A - Androgynous\n\r", 0 );
+		write_to_buffer( d, "G - Agender\n\r", 0 );
+		write_to_buffer( d, "F - Female\n\r", 0 );
+		write_to_buffer( d, "M - Male\n\r", 0 );
+		write_to_buffer( d, "What is your gender? ", 0 );
         d->connected = CON_GET_NEW_SEX;
         break;
         
@@ -1952,11 +1958,20 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
     case CON_GET_NEW_SEX:
 	switch ( argument[0] )
 	{
-	case 'm': case 'M': ch->sex = SEX_MALE;    
-			    ch->pcdata->true_sex = SEX_MALE;
+	case 'n': case 'N': ch->sex = SEX_NONBINARY;    
+			    ch->pcdata->true_sex = SEX_NONBINARY;
+			    break;
+	case 'a': case 'A': ch->sex = SEX_ANDROGYNOUS;    
+			    ch->pcdata->true_sex = SEX_ANDROGYNOUS;
+			    break;
+	case 'g': case 'G': ch->sex = SEX_AGENDER;    
+			    ch->pcdata->true_sex = SEX_AGENDER;
 			    break;
 	case 'f': case 'F': ch->sex = SEX_FEMALE; 
 			    ch->pcdata->true_sex = SEX_FEMALE;
+			    break;
+	case 'm': case 'M': ch->sex = SEX_MALE;    
+			    ch->pcdata->true_sex = SEX_MALE;
 			    break;
 	default:
 	    write_to_buffer( d, "That's not a sex.\n\rWhat IS your sex? ", 0 );
@@ -2424,7 +2439,7 @@ void show_string(struct descriptor_data *d, char *input)
 /* quick sex fixer */
 void fix_sex(CHAR_DATA *ch)
 {
-    if (ch->sex < 0 || ch->sex > 2)
+    if (ch->sex < 0 || ch->sex > 5)
     	ch->sex = IS_NPC(ch) ? 0 : ch->pcdata->true_sex;
 }
 
@@ -2438,10 +2453,6 @@ void act_new( const char *format, CHAR_DATA *ch, const void *arg1,
 void act_color( const char *format, CHAR_DATA *ch, const void *arg1, 
 	      const void *arg2, int type, int min_pos, ... )
 {
-    static char * const he_she  [] = { "it",  "he",  "she" };
-    static char * const him_her [] = { "it",  "him", "her" };
-    static char * const his_her [] = { "its", "his", "her" };
- 
     char buf[MAX_STRING_LENGTH];
     char fname[MAX_INPUT_LENGTH];
     CHAR_DATA *to;
@@ -2516,12 +2527,12 @@ void act_color( const char *format, CHAR_DATA *ch, const void *arg1,
                 case 'T': i = (char *) arg2;                            break;
                 case 'n': i = PERS( ch,  to  );                         break;
                 case 'N': i = PERS( vch, to  );                         break;
-                case 'e': i = he_she  [URANGE(0, ch  ->sex, 2)];        break;
-                case 'E': i = he_she  [URANGE(0, vch ->sex, 2)];        break;
-                case 'm': i = him_her [URANGE(0, ch  ->sex, 2)];        break;
-                case 'M': i = him_her [URANGE(0, vch ->sex, 2)];        break;
-                case 's': i = his_her [URANGE(0, ch  ->sex, 2)];        break;
-                case 'S': i = his_her [URANGE(0, vch ->sex, 2)];        break;
+                case 'e': i = sex_table[URANGE(0, ch  ->sex, 5)].sub_pronoun;        break;
+                case 'E': i = sex_table[URANGE(0, vch ->sex, 5)].sub_pronoun;        break;
+                case 'm': i = sex_table[URANGE(0, ch  ->sex, 5)].obj_pronoun;        break;
+                case 'M': i = sex_table[URANGE(0, vch ->sex, 5)].obj_pronoun;        break;
+                case 's': i = sex_table[URANGE(0, ch  ->sex, 5)].pos_adjective;      break;
+                case 'S': i = sex_table[URANGE(0, vch ->sex, 5)].pos_adjective;      break;
 				case 'C': i = va_arg(colors,char *); 					break;
 				case 'c': i = CLR_RESET ; 								break;
  

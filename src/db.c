@@ -1370,8 +1370,10 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 	mob->start_pos		= pMobIndex->start_pos;
 	mob->default_pos	= pMobIndex->default_pos;
 	mob->sex		= pMobIndex->sex;
-        if (mob->sex == 3) /* random sex */
-            mob->sex = number_range(1,2);
+    if (mob->sex < 0 || mob->sex > 5)
+    {
+        mob->sex = number_range(1,5);
+    }
 	mob->race		= pMobIndex->race;
 	mob->form		= pMobIndex->form;
 	mob->parts		= pMobIndex->parts;

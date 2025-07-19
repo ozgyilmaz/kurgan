@@ -42,6 +42,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "merc.h"
+#include "tables.h"
 #include "interp.h"
 
 /*
@@ -2207,7 +2208,7 @@ void do_steal( CHAR_DATA *ch, char *argument )
 	   break;
         case 1 :
 	   sprintf( buf, "%s couldn't rob %s way out of a paper bag!",
-		    ch->name,(ch->sex == 2) ? "her" : "his");
+		    ch->name,sex_table[ch->sex].pos_adjective);
 	   break;
 	case 2 :
 	    sprintf( buf,"%s tried to rob me!",ch->name );

@@ -3432,9 +3432,9 @@ void do_mset( CHAR_DATA *ch, char *argument )
 
     if ( !str_prefix( arg2, "sex" ) )
     {
-	if ( value < 0 || value > 2 )
+	if ( value < 0 || value > 5 )
 	{
-	    printf_to_char(ch, "Sex range is 0 to 2.\n\r");
+	    printf_to_char(ch, "Sex range is 0 to 5.\n\r");
 	    return;
 	}
 	victim->sex = value;

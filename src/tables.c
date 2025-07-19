@@ -69,11 +69,13 @@ const struct position_type position_table[] =
 /* for sex */
 const struct sex_type sex_table[] =
 {
-   {	"none"		},
-   {	"male"		},
-   {	"female"	},
-   {	"either"	},
-   {	NULL		}
+   {	"sexless",      "it",     "it",   "its",      "wild thing"		}, // SEX_NONE
+   {	"nonbinary",    "they",   "them", "their",    "beautiful soul"	}, // SEX_NONBINARY
+   {	"androgynous",  "they",   "them", "their",    "mysterious charm"  }, // SEX_ANDROGYNOUS
+   {	"agender",      "they",   "them", "their",    "enigmatic force"	}, // SEX_AGENDER
+   {	"female",       "she",    "her",  "her",      "hot babe"	        },
+   {	"male",         "he",     "him",  "his",      "big stud"	        },
+   {	NULL,           "",       "",     "",         ""                    }
 };
 
 /* for sizes */

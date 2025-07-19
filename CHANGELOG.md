@@ -74,3 +74,6 @@
 
 # 17.07.2025
 - "new_format" variable removed. all objects and mobs are already new format.
+
+# 19.07.2025
+- new genders added: nonbinary, androgynous and agender

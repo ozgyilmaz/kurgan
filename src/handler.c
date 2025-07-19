@@ -512,11 +512,9 @@ void reset_char(CHAR_DATA *ch)
 		switch(af->location)
 		{
 		    case APPLY_SEX:	ch->sex		-= mod;
-					if (ch->sex < 0 || ch->sex >2)
-					    ch->sex = IS_NPC(ch) ?
-						0 :
-						ch->pcdata->true_sex;
-									break;
+					if (ch->sex < 0 || ch->sex > 5 )
+					    ch->sex = IS_NPC(ch) ? 0 : ch->pcdata->true_sex;
+			break;
 		    case APPLY_MANA:	ch->max_mana	-= mod;		break;
 		    case APPLY_HIT:	ch->max_hit	-= mod;		break;
 		    case APPLY_MOVE:	ch->max_move	-= mod;		break;
@@ -540,9 +538,9 @@ void reset_char(CHAR_DATA *ch)
 	ch->pcdata->perm_mana 	= ch->max_mana;
 	ch->pcdata->perm_move	= ch->max_move;
 	ch->pcdata->last_level	= ch->played/3600;
-	if (ch->pcdata->true_sex < 0 || ch->pcdata->true_sex > 2)
+	if (ch->pcdata->true_sex < 0 || ch->pcdata->true_sex > 5)
 	{
-		if (ch->sex >= 1 && ch->sex <= 2)
+		if (ch->sex >= 1 && ch->sex <= 5)
 			ch->pcdata->true_sex = ch->sex;
 		else
 			ch->pcdata->true_sex = 0;
@@ -554,8 +552,10 @@ void reset_char(CHAR_DATA *ch)
     for (stat = 0; stat < MAX_STATS; stat++)
 	ch->mod_stat[stat] = 0;
 
-    if (ch->pcdata->true_sex < 0 || ch->pcdata->true_sex > 2)
-	ch->pcdata->true_sex = 0; 
+    if (ch->pcdata->true_sex < 0 || ch->pcdata->true_sex > 5 )
+    {
+	    ch->pcdata->true_sex = 0; 
+    }
     ch->sex		= ch->pcdata->true_sex;
     ch->max_hit 	= ch->pcdata->perm_hit;
     ch->max_mana	= ch->pcdata->perm_mana;
@@ -674,8 +674,8 @@ void reset_char(CHAR_DATA *ch)
     }
 
     /* make sure sex is RIGHT!!!! */
-    if (ch->sex < 0 || ch->sex > 2)
-	ch->sex = ch->pcdata->true_sex;
+    if (ch->sex < 0 || ch->sex > 5)
+	    ch->sex = ch->pcdata->true_sex;
 }
 
 

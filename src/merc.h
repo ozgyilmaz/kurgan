@@ -808,8 +808,11 @@ struct	kill_data
  * Used in #MOBILES.
  */
 #define SEX_NEUTRAL		      0
-#define SEX_MALE		      1
-#define SEX_FEMALE		      2
+#define SEX_NONBINARY         1
+#define SEX_ANDROGYNOUS       2
+#define SEX_AGENDER           3
+#define SEX_FEMALE		      4
+#define SEX_MALE		      5
 
 /* AC types */
 #define AC_PIERCE			0

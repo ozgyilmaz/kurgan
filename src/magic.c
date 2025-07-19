@@ -1300,7 +1300,7 @@ void spell_change_sex( int sn, int level, CHAR_DATA *ch, void *vo,int target )
     af.location  = APPLY_SEX;
     do
     {
-	af.modifier  = number_range( 0, 2 ) - victim->sex;
+	af.modifier = UMAX(0, number_range(0, 5) - victim->sex);
     }
     while ( af.modifier == 0 );
     af.bitvector = 0;

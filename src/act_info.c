@@ -1492,7 +1492,7 @@ void do_score( CHAR_DATA *ch, char *argument )
 
     sprintf(buf, "Race: %s  Sex: %s\n\r",
 	race_table[ch->race].name,
-	ch->sex == 0 ? "sexless" : ch->sex == 1 ? "male" : "female");
+	sex_table[ch->sex].name);
     printf_to_char(ch, buf);
 	
 

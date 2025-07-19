@@ -41,6 +41,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "merc.h"
+#include "tables.h"
 #include "interp.h"
 
 char *	const	dir_name	[]		=
@@ -1566,12 +1567,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 	    /*
 	     * This message dedicated to Jordan ... you big stud!
 	     */
-	    act( "You have nothing left to train, you $T!",
-		ch, NULL,
-		ch->sex == SEX_MALE   ? "big stud" :
-		ch->sex == SEX_FEMALE ? "hot babe" :
-					"wild thing",
-		TO_CHAR );
+	    act( "You have nothing left to train, you $T!",ch, NULL,sex_table[ch->sex].title,TO_CHAR );
 	}
 
 	return;
