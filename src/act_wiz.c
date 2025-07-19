@@ -248,7 +248,7 @@ void do_outfit ( CHAR_DATA *ch, char *argument )
 
     if ( ( obj = get_eq_char( ch, WEAR_LIGHT ) ) == NULL )
     {
-        obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_BANNER), 0 );
+        obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_BANNER), 0, FALSE );
 	obj->cost = 0;
         obj_to_char( obj, ch );
         equip_char( ch, obj, WEAR_LIGHT );
@@ -256,7 +256,7 @@ void do_outfit ( CHAR_DATA *ch, char *argument )
  
     if ( ( obj = get_eq_char( ch, WEAR_BODY ) ) == NULL )
     {
-	obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_VEST), 0 );
+	obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_VEST), 0, FALSE );
 	obj->cost = 0;
         obj_to_char( obj, ch );
         equip_char( ch, obj, WEAR_BODY );
@@ -278,7 +278,7 @@ void do_outfit ( CHAR_DATA *ch, char *argument )
 	    }
     	}
 
-    	obj = create_object(get_obj_index(vnum),0);
+    	obj = create_object(get_obj_index(vnum),0, FALSE);
      	obj_to_char(obj,ch);
     	equip_char(ch,obj,WEAR_WIELD);
     }
@@ -287,7 +287,7 @@ void do_outfit ( CHAR_DATA *ch, char *argument )
     ||   !IS_WEAPON_STAT(obj,WEAPON_TWO_HANDS)) 
     &&  (obj = get_eq_char( ch, WEAR_SHIELD ) ) == NULL )
     {
-        obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_SHIELD), 0 );
+        obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_SHIELD), 0, FALSE );
 	obj->cost = 0;
         obj_to_char( obj, ch );
         equip_char( ch, obj, WEAR_SHIELD );
@@ -2295,7 +2295,7 @@ void recursive_clone(CHAR_DATA *ch, OBJ_DATA *obj, OBJ_DATA *clone)
     {
 	if (obj_check(ch,c_obj))
 	{
-	    t_obj = create_object(c_obj->pIndexData,0);
+	    t_obj = create_object(c_obj->pIndexData,0, FALSE);
 	    clone_object(c_obj,t_obj);
 	    obj_to_obj(t_obj,clone);
 	    recursive_clone(ch,c_obj,t_obj);
@@ -2361,7 +2361,7 @@ void do_clone(CHAR_DATA *ch, char *argument )
 	    return;
 	}
 
-	clone = create_object(obj->pIndexData,0); 
+	clone = create_object(obj->pIndexData,0, FALSE); 
 	clone_object(obj,clone);
 	if (obj->carried_by != NULL)
 	    obj_to_char(clone,ch);
@@ -2403,7 +2403,7 @@ void do_clone(CHAR_DATA *ch, char *argument )
 	{
 	    if (obj_check(ch,obj))
 	    {
-		new_obj = create_object(obj->pIndexData,0);
+		new_obj = create_object(obj->pIndexData,0, FALSE);
 		clone_object(obj,new_obj);
 		recursive_clone(ch,obj,new_obj);
 		obj_to_char(new_obj,clone);
@@ -2522,7 +2522,7 @@ void do_oload( CHAR_DATA *ch, char *argument )
 	return;
     }
 
-    obj = create_object( pObjIndex, level );
+    obj = create_object( pObjIndex, level, FALSE );
     if ( CAN_WEAR(obj, ITEM_TAKE) )
 	obj_to_char( obj, ch );
     else

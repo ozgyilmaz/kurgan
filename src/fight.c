@@ -1426,7 +1426,7 @@ void make_corpse( CHAR_DATA *ch )
     if ( IS_NPC(ch) )
     {
 	name		= ch->short_descr;
-	corpse		= create_object(get_obj_index(OBJ_VNUM_CORPSE_NPC), 0);
+	corpse		= create_object(get_obj_index(OBJ_VNUM_CORPSE_NPC), 0, FALSE);
 	corpse->timer	= number_range( 3, 6 );
 	if ( ch->gold > 0 )
 	{
@@ -1439,7 +1439,7 @@ void make_corpse( CHAR_DATA *ch )
     else
     {
 	name		= ch->name;
-	corpse		= create_object(get_obj_index(OBJ_VNUM_CORPSE_PC), 0);
+	corpse		= create_object(get_obj_index(OBJ_VNUM_CORPSE_PC), 0, FALSE);
 	corpse->timer	= number_range( 25, 40 );
 	REMOVE_BIT(ch->act,PLR_CANLOOT);
 	if (!is_clan(ch))
@@ -1601,7 +1601,7 @@ void death_cry( CHAR_DATA *ch )
 	char *name;
 
 	name		= IS_NPC(ch) ? ch->short_descr : ch->name;
-	obj		= create_object( get_obj_index( vnum ), 0 );
+	obj		= create_object( get_obj_index( vnum ), 0, FALSE );
 	obj->timer	= number_range( 4, 7 );
 
 	sprintf( buf, obj->short_descr, name );

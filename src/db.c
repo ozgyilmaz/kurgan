@@ -49,6 +49,7 @@
 #include "recycle.h"
 #include "music.h"
 #include "lookup.h"
+#include "strrep.h"
 
 
 #if !defined(macintosh)
@@ -1060,7 +1061,7 @@ void reset_area( AREA_DATA *pArea )
             OBJ_DATA *book;
             OBJ_INDEX_DATA *template = get_obj_index(26);
 
-            book = create_object(template, 0);
+            book = create_object(template, 0, FALSE);
 
             book->value[0] = tier;
             book->value[1] = sn;
@@ -1133,8 +1134,7 @@ void reset_area( AREA_DATA *pArea )
 		break;
 	    }
 
-	    obj       = create_object( pObjIndex, UMIN(number_fuzzy(level),
-						       LEVEL_HERO - 1) );
+	    obj       = create_object( pObjIndex, UMIN(number_fuzzy(level),LEVEL_HERO - 1), TRUE );
 	    obj->cost = 0;
 	    obj_to_room( obj, pRoomIndex );
 	    last = TRUE;
@@ -1173,7 +1173,7 @@ void reset_area( AREA_DATA *pArea )
 
 	    while (count < pReset->arg4)
 	    {
-	        obj = create_object( pObjIndex, number_fuzzy(obj_to->level) );
+	        obj = create_object( pObjIndex, number_fuzzy(obj_to->level), TRUE );
 	    	obj_to_obj( obj, obj_to );
 		count++;
 		if (pObjIndex->count >= limit)
@@ -1206,7 +1206,7 @@ void reset_area( AREA_DATA *pArea )
 	    {
 		int olevel = 0;
 
-		obj = create_object( pObjIndex, olevel );
+		obj = create_object( pObjIndex, olevel, TRUE );
 		SET_BIT( obj->extra_flags, ITEM_INVENTORY );
 	    }
 
@@ -1221,7 +1221,7 @@ void reset_area( AREA_DATA *pArea )
 
 		if (pObjIndex->count < limit || number_range(0,4) == 0)
 		{
-		    obj=create_object(pObjIndex,UMIN(number_fuzzy(level), LEVEL_HERO - 1));
+		    obj=create_object(pObjIndex,UMIN(number_fuzzy(level), LEVEL_HERO - 1), TRUE);
 		}
 		else
 		    break;
@@ -1559,7 +1559,7 @@ void clone_mobile(CHAR_DATA *parent, CHAR_DATA *clone)
 /*
  * Create an instance of an object.
  */
-OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
+OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level, bool randomize )
 {
     AFFECT_DATA *paf;
     OBJ_DATA *obj;
@@ -1647,6 +1647,44 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
 	break;
 
     case ITEM_WEAPON:
+        if(randomize == TRUE)
+        {
+            char *new_name;
+            int old_weapon_type = obj->value[0];
+
+            /* change weapon type randomly */
+            obj->value[0]	= number_range(0,weapon_table_count()-1);
+
+            /* change weapon name according to weapon type */
+            new_name = strrep(obj->name, weapon_name(old_weapon_type), weapon_name(obj->value[0]));
+            free_string(obj->name);
+            obj->name = str_dup(new_name);
+            free(new_name);
+
+            /* change weapon short_descr according to weapon type */
+            new_name = strrep(obj->short_descr, weapon_name(old_weapon_type), weapon_name(obj->value[0]));
+            free_string(obj->short_descr);
+            obj->short_descr = str_dup(new_name);
+            free(new_name);
+
+            /* change weapon description according to weapon type */
+            new_name = strrep(obj->description, weapon_name(old_weapon_type), weapon_name(obj->value[0]));
+            free_string(obj->description);
+            obj->description = str_dup(new_name);
+            free(new_name);
+
+            /* change dice count */
+            obj->value[1] = UMAX(1,number_range(level/11,level/9)+3);
+
+            /* change dice type */
+            obj->value[2] = UMAX(1,number_range(level/8,level/6));
+
+            /* change dice extra */
+            obj->value[3] = random_damage_type_for_weapon(obj->value[0]);
+
+            /* add random flags to weapon */
+            obj->value[4] = obj_random_weapon_flag();
+        }
 	break;
 
     case ITEM_ARMOR:

@@ -161,6 +161,14 @@ int weapon_lookup (const char *name)
     return -1;
 }
 
+int weapon_table_count()
+{
+    int count = 0;
+    while (weapon_table[count].name != NULL)
+        count++;
+    return count;
+}
+
 int weapon_type (const char *name)
 {
     int type;
@@ -208,6 +216,14 @@ char *weapon_name( int weapon_type)
         if (weapon_type == weapon_table[type].type)
             return weapon_table[type].name;
     return "exotic";
+}
+
+int attack_table_count()
+{
+    int count = 0;
+    while (attack_table[count].name != NULL)
+        count++;
+    return count;
 }
 
 int attack_lookup  (const char *name)
@@ -2244,15 +2260,15 @@ OBJ_DATA *create_money( int gold, int silver )
 
     if (gold == 0 && silver == 1)
     {
-	obj = create_object( get_obj_index( OBJ_VNUM_SILVER_ONE ), 0 );
+	obj = create_object( get_obj_index( OBJ_VNUM_SILVER_ONE ), 0,FALSE );
     }
     else if (gold == 1 && silver == 0)
     {
-	obj = create_object( get_obj_index( OBJ_VNUM_GOLD_ONE), 0 );
+	obj = create_object( get_obj_index( OBJ_VNUM_GOLD_ONE), 0, FALSE );
     }
     else if (silver == 0)
     {
-        obj = create_object( get_obj_index( OBJ_VNUM_GOLD_SOME ), 0 );
+        obj = create_object( get_obj_index( OBJ_VNUM_GOLD_SOME ), 0, FALSE);
         sprintf( buf, obj->short_descr, gold );
         free_string( obj->short_descr );
         obj->short_descr        = str_dup( buf );
@@ -2262,7 +2278,7 @@ OBJ_DATA *create_money( int gold, int silver )
     }
     else if (gold == 0)
     {
-        obj = create_object( get_obj_index( OBJ_VNUM_SILVER_SOME ), 0 );
+        obj = create_object( get_obj_index( OBJ_VNUM_SILVER_SOME ), 0, FALSE );
         sprintf( buf, obj->short_descr, silver );
         free_string( obj->short_descr );
         obj->short_descr        = str_dup( buf );
@@ -2273,7 +2289,7 @@ OBJ_DATA *create_money( int gold, int silver )
  
     else
     {
-	obj = create_object( get_obj_index( OBJ_VNUM_COINS ), 0 );
+	obj = create_object( get_obj_index( OBJ_VNUM_COINS ), 0, FALSE );
 	sprintf( buf, obj->short_descr, silver, gold );
 	free_string( obj->short_descr );
 	obj->short_descr	= str_dup( buf );

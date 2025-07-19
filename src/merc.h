@@ -2114,7 +2114,7 @@ void	boot_db		args( ( void ) );
 void	area_update	args( ( void ) );
 CD *	create_mobile	args( ( MOB_INDEX_DATA *pMobIndex ) );
 void	clone_mobile	args( ( CHAR_DATA *parent, CHAR_DATA *clone) );
-OD *	create_object	args( ( OBJ_INDEX_DATA *pObjIndex, int level ) );
+OD *	create_object	args( ( OBJ_INDEX_DATA *pObjIndex, int level, bool randomize ) );
 void	clone_object	args( ( OBJ_DATA *parent, OBJ_DATA *clone ) );
 void	clear_char	args( ( CHAR_DATA *ch ) );
 char *	get_extra_descr	args( ( const char *name, EXTRA_DESCR_DATA *ed ) );
@@ -2180,6 +2180,7 @@ int 	check_immune	args( (CHAR_DATA *ch, int dam_type) );
 int	liq_lookup	args( ( const char *name) );
 int 	material_lookup args( ( const char *name) );
 int	weapon_lookup	args( ( const char *name) );
+int	weapon_table_count	args( () );
 int	weapon_type	args( ( const char *name) );
 char 	*weapon_name	args( ( int weapon_Type) );
 int	item_lookup	args( ( const char *name) );
@@ -2257,6 +2258,9 @@ char *	weapon_bit_name	args( ( int weapon_flags ) );
 char *  comm_bit_name	args( ( int comm_flags ) );
 char *	cont_bit_name	args( ( int cont_flags) );
 
+/* handler_random.c */
+int	random_damage_type_for_weapon	args( ( int weapon_type ) );
+int obj_random_weapon_flag args( () );
 
 /* interp.c */
 void	interpret	args( ( CHAR_DATA *ch, char *argument ) );
@@ -2273,6 +2277,7 @@ int	slot_lookup	args( ( int slot ) );
 bool	saves_spell	args( ( int level, CHAR_DATA *victim, int dam_type ) );
 void	obj_cast_spell	args( ( int sn, int level, CHAR_DATA *ch,
 				    CHAR_DATA *victim, OBJ_DATA *obj ) );
+
 /* save.c */
 void	save_char_obj	args( ( CHAR_DATA *ch ) );
 bool	load_char_obj	args( ( DESCRIPTOR_DATA *d, char *name ) );

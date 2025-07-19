@@ -2726,7 +2726,7 @@ void do_buy( CHAR_DATA *ch, char *argument )
 	for (count = 0; count < number; count++)
 	{
 	    if ( IS_SET( obj->extra_flags, ITEM_INVENTORY ) )
-	    	t_obj = create_object( obj->pIndexData, obj->level );
+	    	t_obj = create_object( obj->pIndexData, obj->level, FALSE );
 	    else
 	    {
 		t_obj = obj;

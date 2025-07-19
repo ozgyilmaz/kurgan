@@ -77,3 +77,6 @@
 
 # 19.07.2025
 - new genders added: nonbinary, androgynous and agender
+
+# 20.07.2025
+- strrep() added. Weapon objects are now randomized.

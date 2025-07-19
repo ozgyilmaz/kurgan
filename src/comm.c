@@ -2013,7 +2013,7 @@ case CON_GET_ALIGNMENT:
 	
     vnum = pc_race_table[ch->race].weapon;
 
-    if ((obj = create_object(get_obj_index(vnum), 0)) != NULL)
+    if ((obj = create_object(get_obj_index(vnum), 0, FALSE)) != NULL)
     {
         obj_to_char(obj, ch);
     }
@@ -2078,7 +2078,7 @@ case CON_GET_ALIGNMENT:
 	    set_title( ch, buf );
 
 	    do_function (ch, &do_outfit,"");
-	    obj_to_char(create_object(get_obj_index(OBJ_VNUM_MAP),0),ch);
+	    obj_to_char(create_object(get_obj_index(OBJ_VNUM_MAP),0, FALSE),ch);
 
 	    char_to_room( ch, get_room_index( ROOM_VNUM_SCHOOL ) );
 	    printf_to_char(ch, "\n\r");
