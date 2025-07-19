@@ -1607,16 +1607,34 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level, bool randomize )
 	break;
 
     case ITEM_LIGHT:
-	if (obj->value[2] == 999)
-		obj->value[2] = -1;
+        if (obj->value[2] == 999)
+            obj->value[2] = -1;
+        if(randomize == TRUE)
+        {
+            obj->value[0]	= 0;								// unused
+            obj->value[1]	= 0;								// unused
+            obj->value[2]	= (number_percent()<20)?-1:number_range(5,500); // light duration in game hours (-1 unlimited)
+            obj->value[3]	= 0;								// unused
+            obj->value[4]	= 0;								// unused
+        }
 	break;
+
+    case ITEM_FOOD:
+        if(randomize == TRUE)
+        {
+            obj->value[0]	= number_range(5,40);				// number of game hours the food will keep the person who eats it full
+            obj->value[1]	= number_range(5,70);				// number of hours it will keep the person from getting hungry
+            obj->value[2]	= 0;								// unused
+            obj->value[3]	= (number_percent()<95)?0:1;		// nonpoisoned:0,poisoned:1
+            obj->value[4]	= 0;								// unused
+        }
+    break;
 
     case ITEM_FURNITURE:
     case ITEM_TRASH:
     case ITEM_CONTAINER:
     case ITEM_DRINK_CON:
     case ITEM_KEY:
-    case ITEM_FOOD:
     case ITEM_BOAT:
     case ITEM_CORPSE_NPC:
     case ITEM_CORPSE_PC:
