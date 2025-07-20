@@ -83,3 +83,4 @@
 - Armor objects are randomized.
 - Light and food objects are randomized.
 - Wands, staffs, potions, pills and scrolls are randomized.
+- BUGFIX: Welcome screen's unreadable chars corrected.
