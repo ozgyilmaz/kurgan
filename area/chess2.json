@@ -1,0 +1,6156 @@
+{
+    "area": {
+        "file_name": "chess2.are",
+        "name": "Chessboard of Midgaard",
+        "low_range": "10",
+        "high_range": "35",
+        "writer": "Exxon",
+        "credits": "Chessboard of Midgaard",
+        "min_vnum": 4200,
+        "max_vnum": 4299
+    },
+    "helps": [
+        {
+            "level": -1,
+            "keyword": "chess chessboard",
+            "text": "Converted to standard Envy 1.x by Jason Huang (god@sure.net)\nFurther conversion to Rom 2.4 by Jaceks and Chicken's Den Staff"
+        }
+    ],
+    "mobiles": [
+        {
+            "vnum": 4200,
+            "name": "black pawn",
+            "short_description": "the Pawn of the Black Court",
+            "long_description": "You see a pawn standing here waiting for orders.\n",
+            "description": "The Black Pawn looks quite like a small knight without his powerful steed.\nHis armor is shiny and black. He stands ready to give his life for the Crown.\n",
+            "race": "human",
+            "act": "ACF",
+            "affected_by": "D",
+            "alignment": -400,
+            "group": 4200,
+            "level": 10,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                121
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                2,
+                4,
+                1
+            ],
+            "dam_type": "beating",
+            "ac_pierce": 1,
+            "ac_bash": 1,
+            "ac_slash": 1,
+            "ac_exotic": 8,
+            "off_flags": "EG",
+            "imm_flags": "A",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 60,
+            "form": "B",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4201,
+            "name": "white pawn",
+            "short_description": "the Pawn of the White Court",
+            "long_description": "You see a pawn standing here waiting for orders.\n",
+            "description": "The White Pawn looks quite like a small knight without his powerful steed.\nHis armor is spotless and white. He stands ready to give his life for the \nCrown.\n",
+            "race": "human",
+            "act": "AC",
+            "affected_by": "D",
+            "alignment": 400,
+            "group": 4201,
+            "level": 10,
+            "hitroll": 0,
+            "hit_dice": [
+                2,
+                7,
+                121
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                2,
+                4,
+                1
+            ],
+            "dam_type": "beating",
+            "ac_pierce": 1,
+            "ac_bash": 1,
+            "ac_slash": 1,
+            "ac_exotic": 8,
+            "off_flags": "EG",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 55,
+            "form": "A",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4202,
+            "name": "black rook castle",
+            "short_description": "the Black Rook",
+            "long_description": "In the corner you see a large, black, stone castle on wheels.\n",
+            "description": "The Black Rook is a very large man-made tomb on wheels.  Just\nfrom the looks of it, it will probably be YOUR tomb.\n",
+            "race": "human",
+            "act": "AFH",
+            "affected_by": "0",
+            "alignment": -600,
+            "group": 0,
+            "level": 27,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                10,
+                650
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                5,
+                4,
+                7
+            ],
+            "dam_type": "punch",
+            "ac_pierce": -8,
+            "ac_bash": -8,
+            "ac_slash": -8,
+            "ac_exotic": 6,
+            "off_flags": "CEI",
+            "imm_flags": "A",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 480,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4203,
+            "name": "white rook castle",
+            "short_description": "the White Rook",
+            "long_description": "In the corner you see a large, white, stone castle on wheels.\n",
+            "description": "The White Rook is a very large man-made tomb on wheels.  Just\nfrom the looks of it, it will probably be YOUR tomb.\n",
+            "race": "human",
+            "act": "AH",
+            "affected_by": "D",
+            "alignment": 600,
+            "group": 0,
+            "level": 27,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                10,
+                650
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                5,
+                4,
+                7
+            ],
+            "dam_type": "punch",
+            "ac_pierce": -8,
+            "ac_bash": -8,
+            "ac_slash": -8,
+            "ac_exotic": 6,
+            "off_flags": "CEI",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 470,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4204,
+            "name": "black knight",
+            "short_description": "the Black Knight",
+            "long_description": "Here stands a magnificent knight of the dark realm.\n",
+            "description": "The Black Knight is here, riding his ebony black war horse.  His eyes\nflash behind his visor in vengence.\n",
+            "race": "human",
+            "act": "AH",
+            "affected_by": "0",
+            "alignment": -400,
+            "group": 0,
+            "level": 18,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                283
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                2,
+                7,
+                4
+            ],
+            "dam_type": "pierce",
+            "ac_pierce": -3,
+            "ac_bash": -3,
+            "ac_slash": -3,
+            "ac_exotic": 7,
+            "off_flags": "EF",
+            "imm_flags": "A",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 266,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4205,
+            "name": "white knight",
+            "short_description": "the White Knight",
+            "long_description": "Here stands a magnificent knight of the light realm.\n",
+            "description": "The White Knight is here, riding his ivory white war horse.  His eyes\ngleam behind his visor in joy.\n",
+            "race": "human",
+            "act": "AH",
+            "affected_by": "0",
+            "alignment": 400,
+            "group": 0,
+            "level": 18,
+            "hitroll": 0,
+            "hit_dice": [
+                3,
+                9,
+                283
+            ],
+            "mana_dice": [
+                1,
+                1,
+                99
+            ],
+            "dam_dice": [
+                2,
+                7,
+                4
+            ],
+            "dam_type": "pierce",
+            "ac_pierce": -3,
+            "ac_bash": -3,
+            "ac_slash": -3,
+            "ac_exotic": 7,
+            "off_flags": "EF",
+            "imm_flags": "A",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 256,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4206,
+            "name": "black bishop priest",
+            "short_description": "the Black Bishop",
+            "long_description": "A dark priest stands here.\n",
+            "description": "The Black Bishop seems willing to help you straight into your grave so\nhe can bless you properly.\n",
+            "race": "human",
+            "act": "AH",
+            "affected_by": "0",
+            "alignment": -500,
+            "group": 0,
+            "level": 24,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                15,
+                500
+            ],
+            "mana_dice": [
+                1,
+                1,
+                239
+            ],
+            "dam_dice": [
+                2,
+                10,
+                6
+            ],
+            "dam_type": "punch",
+            "ac_pierce": -6,
+            "ac_bash": -6,
+            "ac_slash": -6,
+            "ac_exotic": 6,
+            "off_flags": "CDEF",
+            "imm_flags": "A",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 540,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4207,
+            "name": "white bishop priest",
+            "short_description": "the White Bishop",
+            "long_description": "A light priest stands here.\n",
+            "description": "The White Bishop seems willing to help you in any possible so that he can\nattain a higher spirituality.\n",
+            "race": "human",
+            "act": "A",
+            "affected_by": "DN",
+            "alignment": 500,
+            "group": 0,
+            "level": 24,
+            "hitroll": 0,
+            "hit_dice": [
+                5,
+                15,
+                500
+            ],
+            "mana_dice": [
+                1,
+                1,
+                239
+            ],
+            "dam_dice": [
+                2,
+                10,
+                6
+            ],
+            "dam_type": "punch",
+            "ac_pierce": -6,
+            "ac_bash": -6,
+            "ac_slash": -6,
+            "ac_exotic": 6,
+            "off_flags": "CDEF",
+            "imm_flags": "A",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 590,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4208,
+            "name": "black queen",
+            "short_description": "the Black Queen",
+            "long_description": "The Black Queen stands here.\n",
+            "description": "The Black Queen is a strikingly beautiful woman with pale skin and a mass of\ndark hair that crowns her head like a black cloud.  If looks could kill, you\nwould already be dead.\n",
+            "race": "human",
+            "act": "ABFH",
+            "affected_by": "DFH",
+            "alignment": -750,
+            "group": 4210,
+            "level": 32,
+            "hitroll": 0,
+            "hit_dice": [
+                10,
+                10,
+                1000
+            ],
+            "mana_dice": [
+                1,
+                1,
+                319
+            ],
+            "dam_dice": [
+                6,
+                4,
+                9
+            ],
+            "dam_type": "magic",
+            "ac_pierce": -10,
+            "ac_bash": -10,
+            "ac_slash": -10,
+            "ac_exotic": 5,
+            "off_flags": "AFJK",
+            "imm_flags": "A",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "female",
+            "wealth": 856,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4209,
+            "name": "white queen",
+            "short_description": "the White Queen",
+            "long_description": "The White Queen stands here.\n",
+            "description": "The White Queen is a stunningly beautiful woman with dark skin and a mass\nof light hair that frames her head like the sun.  This is surely love at\nfirst sight for you.\n",
+            "race": "human",
+            "act": "ABH",
+            "affected_by": "DFHN",
+            "alignment": 750,
+            "group": 2411,
+            "level": 32,
+            "hitroll": 0,
+            "hit_dice": [
+                10,
+                10,
+                1000
+            ],
+            "mana_dice": [
+                1,
+                1,
+                319
+            ],
+            "dam_dice": [
+                6,
+                4,
+                9
+            ],
+            "dam_type": "magic",
+            "ac_pierce": -10,
+            "ac_bash": -10,
+            "ac_slash": -10,
+            "ac_exotic": 5,
+            "off_flags": "AFJK",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "female",
+            "wealth": 854,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4210,
+            "name": "black king",
+            "short_description": "the Black King",
+            "long_description": "The Black King stands here.\n",
+            "description": "The Black King is a menacing figure.  You can easily understand why he\nis the king and you are not.\n",
+            "race": "human",
+            "act": "ABH",
+            "affected_by": "DFHU",
+            "alignment": -999,
+            "group": 0,
+            "level": 36,
+            "hitroll": 0,
+            "hit_dice": [
+                10,
+                10,
+                1400
+            ],
+            "mana_dice": [
+                1,
+                35,
+                99
+            ],
+            "dam_dice": [
+                3,
+                10,
+                12
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -12,
+            "ac_bash": -12,
+            "ac_slash": -12,
+            "ac_exotic": 4,
+            "off_flags": "BCDEF",
+            "imm_flags": "A",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 984,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4211,
+            "name": "white king",
+            "short_description": "the White King",
+            "long_description": "The White King stands here.\n",
+            "description": "The White King is a stately figure.  You can easily understand why he\nis the king and you are not.\n",
+            "race": "human",
+            "act": "ABH",
+            "affected_by": "DFHNU",
+            "alignment": 999,
+            "group": 0,
+            "level": 36,
+            "hitroll": 0,
+            "hit_dice": [
+                10,
+                10,
+                1400
+            ],
+            "mana_dice": [
+                1,
+                1,
+                359
+            ],
+            "dam_dice": [
+                3,
+                10,
+                12
+            ],
+            "dam_type": "beating",
+            "ac_pierce": -12,
+            "ac_bash": -12,
+            "ac_slash": -12,
+            "ac_exotic": 4,
+            "off_flags": "BCDEF",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "0",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 988,
+            "form": "0",
+            "parts": "0",
+            "size": "medium",
+            "material": "0"
+        },
+        {
+            "vnum": 4212,
+            "name": "caliph omar ghost",
+            "short_description": "the Ghost of Caliph Omar",
+            "long_description": "The Ghost of Caliph Omar is floating here.\n",
+            "description": "Caliph Omar was person who sanctions chess for islamic people. \nHis ghost is here small, and looks like made from smoke.\n",
+            "race": "human",
+            "act": "AHT",
+            "affected_by": "BDFHPQTUV",
+            "alignment": 0,
+            "group": 0,
+            "level": 60,
+            "hitroll": 0,
+            "hit_dice": [
+                50,
+                10,
+                9500
+            ],
+            "mana_dice": [
+                599,
+                1,
+                1
+            ],
+            "dam_dice": [
+                8,
+                6,
+                28
+            ],
+            "dam_type": "wrath",
+            "ac_pierce": -30,
+            "ac_bash": -30,
+            "ac_slash": -30,
+            "ac_exotic": 0,
+            "off_flags": "FGK",
+            "imm_flags": "0",
+            "res_flags": "0",
+            "vuln_flags": "HIJK",
+            "start_pos": "stand",
+            "default_pos": "stand",
+            "sex": "male",
+            "wealth": 14999,
+            "form": "0",
+            "parts": "0",
+            "size": "small",
+            "material": "0"
+        }
+    ],
+    "objects": [
+        {
+            "vnum": 4200,
+            "name": "armour black pawn",
+            "short_description": "some Black Pawn Armour",
+            "description": "A pile of black armour is here.",
+            "material": "steel",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AD",
+            "values": "5 5 5 0 2",
+            "level": 10,
+            "weight": 75,
+            "cost": 600,
+            "condition": "G"
+        },
+        {
+            "vnum": 4201,
+            "name": "armour white pawn",
+            "short_description": "some White Pawn Armour",
+            "description": "A pile of white armour is here.",
+            "material": "steel",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AD",
+            "values": "5 5 5 0 2",
+            "level": 10,
+            "weight": 75,
+            "cost": 600,
+            "condition": "G"
+        },
+        {
+            "vnum": 4202,
+            "name": "axe black pawn",
+            "short_description": "a Black Pawn's Axe",
+            "description": "The axe of a Black Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "J",
+            "wear_flags": "AN",
+            "values": "axe 2 6 chomp 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4203,
+            "name": "axe white pawn",
+            "short_description": "a White Pawn's Axe",
+            "description": "The axe of a White Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "K",
+            "wear_flags": "AN",
+            "values": "axe 2 6 chomp 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4204,
+            "name": "armour black rook",
+            "short_description": "some Black Rook Armour",
+            "description": "Some armour made from the remains of a black rook lies heaped on the floor.",
+            "material": "stone",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AD",
+            "values": "8 8 8 0 5",
+            "level": 25,
+            "weight": 70,
+            "cost": 1250,
+            "condition": "G",
+            "affects_a": [
+                {
+                    "location": 17,
+                    "modifier": 2
+                },
+                {
+                    "location": 5,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 4205,
+            "name": "armour white rook",
+            "short_description": "some White Rook Armour",
+            "description": "Some armour made from the remains of a white rook lies heaped on the floor.",
+            "material": "stone",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AD",
+            "values": "8 8 8 0 5",
+            "level": 25,
+            "weight": 70,
+            "cost": 1250,
+            "condition": "G",
+            "affects_a": [
+                {
+                    "location": 17,
+                    "modifier": 2
+                },
+                {
+                    "location": 5,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 4206,
+            "name": "lance black knight",
+            "short_description": "the Lance of the Black Knight",
+            "description": "The Lance of the Black Knight lies here, waiting to rust.",
+            "material": "bronze",
+            "type": "weapon",
+            "extra_flags": "BJ",
+            "wear_flags": "AN",
+            "values": "spear 5 5 pierce D",
+            "level": 17,
+            "weight": 50,
+            "cost": 2250,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 2
+                },
+                {
+                    "location": 23,
+                    "modifier": 5
+                }
+            ]
+        },
+        {
+            "vnum": 4207,
+            "name": "lance white knight",
+            "short_description": "the Lance of the White Knight",
+            "description": "The Lance of the White Knight lies here, waiting to rust.",
+            "material": "bronze",
+            "type": "weapon",
+            "extra_flags": "BK",
+            "wear_flags": "AN",
+            "values": "spear 5 5 pierce D",
+            "level": 17,
+            "weight": 50,
+            "cost": 2300,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 19,
+                    "modifier": 2
+                },
+                {
+                    "location": 23,
+                    "modifier": 5
+                }
+            ]
+        },
+        {
+            "vnum": 4208,
+            "name": "staff black bishop",
+            "short_description": "the Staff of the Black Bishop",
+            "description": "The Black Bishop's Staff is lying here.",
+            "material": "wood",
+            "type": "staff",
+            "extra_flags": "GJL",
+            "wear_flags": "AO",
+            "values": "20 5 5 'energy drain' 0",
+            "level": 23,
+            "weight": 20,
+            "cost": 3523,
+            "condition": "P"
+        },
+        {
+            "vnum": 4209,
+            "name": "staff white bishop",
+            "short_description": "the Staff of the White Bishop",
+            "description": "The White Bishop's Staff is lying here.",
+            "material": "wood",
+            "type": "staff",
+            "extra_flags": "GKL",
+            "wear_flags": "AO",
+            "values": "20 5 5 'sanctuary' 0",
+            "level": 23,
+            "weight": 20,
+            "cost": 3879,
+            "condition": "P"
+        },
+        {
+            "vnum": 4210,
+            "name": "crown black queen",
+            "short_description": "the Crown of the Black Queen",
+            "description": "The Crown of the Black Queen lies here, looking neglected.",
+            "material": "gold",
+            "type": "armor",
+            "extra_flags": "AGJL",
+            "wear_flags": "AE",
+            "values": "9 9 9 1 1",
+            "level": 32,
+            "weight": 50,
+            "cost": 5000,
+            "condition": "G",
+            "affects_a": [
+                {
+                    "location": 3,
+                    "modifier": 1
+                },
+                {
+                    "location": 4,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 4211,
+            "name": "crown white queen",
+            "short_description": "the Crown of the White Queen",
+            "description": "The Crown of the White Queen lies here, looking neglected.",
+            "material": "gold",
+            "type": "armor",
+            "extra_flags": "AGKL",
+            "wear_flags": "AE",
+            "values": "9 9 9 1 1",
+            "level": 32,
+            "weight": 50,
+            "cost": 5000,
+            "condition": "G",
+            "affects_a": [
+                {
+                    "location": 3,
+                    "modifier": 1
+                },
+                {
+                    "location": 4,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 4212,
+            "name": "sceptre black king",
+            "short_description": "the Black King's Sceptre",
+            "description": "The Sceptre of the Black King lies here, collecting dust.",
+            "material": "gold",
+            "type": "treasure",
+            "extra_flags": "JL",
+            "wear_flags": "AO",
+            "values": "0 0 0 0 0",
+            "level": 32,
+            "weight": 10,
+            "cost": 7900,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 1,
+                    "modifier": 1
+                },
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 4213,
+            "name": "sceptre white king",
+            "short_description": "the White King's Sceptre",
+            "description": "The Sceptre of the White King lies here, collecting dust.",
+            "material": "gold",
+            "type": "treasure",
+            "extra_flags": "KL",
+            "wear_flags": "AO",
+            "values": "0 0 0 0 0",
+            "level": 32,
+            "weight": 10,
+            "cost": 7900,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 1,
+                    "modifier": 1
+                },
+                {
+                    "location": 18,
+                    "modifier": 1
+                }
+            ]
+        },
+        {
+            "vnum": 4214,
+            "name": "key black treasury",
+            "short_description": "the Key to the Black Treasury",
+            "description": "There is a sinister black key lying here.",
+            "material": "metal",
+            "type": "key",
+            "extra_flags": "FH",
+            "wear_flags": "AO",
+            "values": "0 0 0 0 0",
+            "level": 6,
+            "weight": 20,
+            "cost": 1,
+            "condition": "G"
+        },
+        {
+            "vnum": 4215,
+            "name": "key white treasury",
+            "short_description": "the Key to the White Treasury",
+            "description": "There is a bright white key lying here.",
+            "material": "metal",
+            "type": "key",
+            "extra_flags": "FH",
+            "wear_flags": "AO",
+            "values": "0 0 0 0 0",
+            "level": 6,
+            "weight": 20,
+            "cost": 1,
+            "condition": "G"
+        },
+        {
+            "vnum": 4216,
+            "name": "coins gold black royal treasure",
+            "short_description": "the Black Royal Treasure",
+            "description": "There are a LOT of coins here.",
+            "material": "silver",
+            "type": "money",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "10000 0 0 0 0",
+            "level": 0,
+            "weight": 0,
+            "cost": 0,
+            "condition": "P"
+        },
+        {
+            "vnum": 4217,
+            "name": "coins gold white royal treasure",
+            "short_description": "the White Royal Treasure",
+            "description": "There are a LOT of coins here.",
+            "material": "silver",
+            "type": "money",
+            "extra_flags": "0",
+            "wear_flags": "A",
+            "values": "10000 0 0 0 0",
+            "level": 0,
+            "weight": 0,
+            "cost": 0,
+            "condition": "P"
+        },
+        {
+            "vnum": 4218,
+            "name": "flail black pawn",
+            "short_description": "a Black Pawn's Flail",
+            "description": "The flail of a Black Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "J",
+            "wear_flags": "AN",
+            "values": "flail 2 6 blast 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4219,
+            "name": "flail white pawn",
+            "short_description": "a White Pawn's Flail",
+            "description": "The flail of a White Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "K",
+            "wear_flags": "AN",
+            "values": "flail 2 6 blast 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4220,
+            "name": "whip black pawn",
+            "short_description": "a Black Pawn's Whip",
+            "description": "The whip of a Black Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "J",
+            "wear_flags": "AN",
+            "values": "whip 2 6 whip 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4221,
+            "name": "whip white pawn",
+            "short_description": "a White Pawn's Whip",
+            "description": "The whip of a White Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "K",
+            "wear_flags": "AN",
+            "values": "whip 2 6 whip 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4222,
+            "name": "spear black pawn",
+            "short_description": "a Black Pawn's Spear",
+            "description": "The spear of a Black Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "J",
+            "wear_flags": "AN",
+            "values": "staff 2 6 thrust 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4223,
+            "name": "spear white pawn",
+            "short_description": "a White Pawn's Spear",
+            "description": "The spear of a White Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "K",
+            "wear_flags": "AN",
+            "values": "staff 2 6 thrust 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4224,
+            "name": "halberd black pawn",
+            "short_description": "a Black Pawn's Halberd",
+            "description": "The halberd of a Black Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "J",
+            "wear_flags": "AN",
+            "values": "polear 2 6 pierce 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4225,
+            "name": "halberd white pawn",
+            "short_description": "a White Pawn's Halberd",
+            "description": "The halberd of a White Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "K",
+            "wear_flags": "AN",
+            "values": "polearm 2 6 pierce 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4226,
+            "name": "rapier black pawn",
+            "short_description": "a Black Pawn's Rapier",
+            "description": "The rapier of a Black Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "J",
+            "wear_flags": "AN",
+            "values": "sword 2 6 pierce 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4227,
+            "name": "rapier white pawn",
+            "short_description": "a White Pawn's Rapier",
+            "description": "The rapier of a White Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "K",
+            "wear_flags": "AN",
+            "values": "sword 2 6 pierce 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4228,
+            "name": "kris black pawn",
+            "short_description": "a Black Pawn's Kris",
+            "description": "The kris of a Black Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "J",
+            "wear_flags": "AN",
+            "values": "dagger 2 6 pierce 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4229,
+            "name": "kris white pawn",
+            "short_description": "a White Pawn's Kris",
+            "description": "The kris of a White Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "K",
+            "wear_flags": "AN",
+            "values": "dagger 2 6 pierce 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4230,
+            "name": "crossbow black pawn",
+            "short_description": "a Black Pawn's Crossbow",
+            "description": "The crossbow of a Black Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "J",
+            "wear_flags": "AN",
+            "values": "exotic 2 6 blast 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4231,
+            "name": "crossbow white pawn",
+            "short_description": "a White Pawn's Crossbow",
+            "description": "The crossbow of a White Pawn lies here.",
+            "material": "steel",
+            "type": "weapon",
+            "extra_flags": "K",
+            "wear_flags": "AN",
+            "values": "exotic 2 6 blast 0",
+            "level": 10,
+            "weight": 100,
+            "cost": 750,
+            "condition": "G"
+        },
+        {
+            "vnum": 4232,
+            "name": "shield black pawn",
+            "short_description": "a Black Pawn's Shield ",
+            "description": "You see a Black Pawn's shield here.",
+            "material": "steel",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AJ",
+            "values": "8 7 7 2 2",
+            "level": 10,
+            "weight": 30,
+            "cost": 1210,
+            "condition": "P"
+        },
+        {
+            "vnum": 4233,
+            "name": "shield white pawn",
+            "short_description": "a White Pawn's Shield ",
+            "description": "You see a White Pawn's shield here.",
+            "material": "steel",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AJ",
+            "values": "8 7 7 2 2",
+            "level": 10,
+            "weight": 30,
+            "cost": 1210,
+            "condition": "P"
+        },
+        {
+            "vnum": 4234,
+            "name": "cloak black pawn",
+            "short_description": "a Black Pawn's Cloak",
+            "description": "You see a Black Pawn's cloak here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AC",
+            "values": "5 7 7 1 1",
+            "level": 10,
+            "weight": 40,
+            "cost": 1510,
+            "condition": "P"
+        },
+        {
+            "vnum": 4235,
+            "name": "cloak white pawn",
+            "short_description": "a White Pawn's Cloak",
+            "description": "You see a White Pawn's cloak here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AC",
+            "values": "5 7 7 1 1",
+            "level": 10,
+            "weight": 40,
+            "cost": 1510,
+            "condition": "P"
+        },
+        {
+            "vnum": 4236,
+            "name": "helmet black pawn",
+            "short_description": "a Black Pawn's Helmet",
+            "description": "You see a Black Pawn's helmet here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AE",
+            "values": "6 6 7 1 1",
+            "level": 10,
+            "weight": 50,
+            "cost": 1150,
+            "condition": "P"
+        },
+        {
+            "vnum": 4237,
+            "name": "helmet white pawn",
+            "short_description": "a White Pawn's Helmet",
+            "description": "You see a White Pawn's helmet here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AE",
+            "values": "6 6 7 1 1",
+            "level": 10,
+            "weight": 50,
+            "cost": 1150,
+            "condition": "P"
+        },
+        {
+            "vnum": 4238,
+            "name": "leggings black pawn",
+            "short_description": "a pair of Black Pawn's Leggings",
+            "description": "You see a pair of Black Pawn's leggings here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AF",
+            "values": "6 6 6 1 1",
+            "level": 10,
+            "weight": 30,
+            "cost": 1350,
+            "condition": "P"
+        },
+        {
+            "vnum": 4239,
+            "name": "leggings white pawn",
+            "short_description": "a pair of White Pawn's Leggings",
+            "description": "You see a pair of White Pawn's leggings here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AF",
+            "values": "6 6 6 1 1",
+            "level": 10,
+            "weight": 30,
+            "cost": 1350,
+            "condition": "P"
+        },
+        {
+            "vnum": 4240,
+            "name": "boots black pawn",
+            "short_description": "a pair of Black Pawn's Boots",
+            "description": "You see a pair of Black Pawn's boots here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AG",
+            "values": "7 6 7 1 1",
+            "level": 10,
+            "weight": 130,
+            "cost": 1450,
+            "condition": "P"
+        },
+        {
+            "vnum": 4241,
+            "name": "boots white pawn",
+            "short_description": "a pair of White Pawn's Boots",
+            "description": "You see a pair of Black Pawn's boots here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AG",
+            "values": "7 6 7 1 1",
+            "level": 10,
+            "weight": 130,
+            "cost": 1450,
+            "condition": "P"
+        },
+        {
+            "vnum": 4242,
+            "name": "gloves black pawn",
+            "short_description": "a pair of Black Pawn's Gloves",
+            "description": "You see a pair of Black Pawn's Gloves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AH",
+            "values": "6 6 5 1 1",
+            "level": 10,
+            "weight": 80,
+            "cost": 950,
+            "condition": "P"
+        },
+        {
+            "vnum": 4243,
+            "name": "gloves white pawn",
+            "short_description": "a pair of White Pawn's Gloves",
+            "description": "You see a pair of White Pawn's Gloves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AH",
+            "values": "6 6 5 1 1",
+            "level": 10,
+            "weight": 80,
+            "cost": 950,
+            "condition": "P"
+        },
+        {
+            "vnum": 4244,
+            "name": "sleeves black pawn",
+            "short_description": "a pair of Black Pawn's Sleeves",
+            "description": "You see a pair of Black Pawn's Sleeves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AI",
+            "values": "6 5 6 1 1",
+            "level": 10,
+            "weight": 90,
+            "cost": 1150,
+            "condition": "P"
+        },
+        {
+            "vnum": 4245,
+            "name": "sleeves white pawn",
+            "short_description": "a pair of White Pawn's Sleeves",
+            "description": "You see a pair of White Pawn's Sleeves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AI",
+            "values": "6 5 6 1 1",
+            "level": 10,
+            "weight": 90,
+            "cost": 1150,
+            "condition": "P"
+        },
+        {
+            "vnum": 4246,
+            "name": "cape black pawn",
+            "short_description": "a Black Pawn's Cape",
+            "description": "You see a Black Pawn's Cape here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AK",
+            "values": "7 5 7 1 1",
+            "level": 10,
+            "weight": 80,
+            "cost": 1380,
+            "condition": "P"
+        },
+        {
+            "vnum": 4247,
+            "name": "cape white pawn",
+            "short_description": "a White Pawn's Cape",
+            "description": "You see a White Pawn's Cape here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AK",
+            "values": "7 5 7 1 1",
+            "level": 10,
+            "weight": 80,
+            "cost": 1380,
+            "condition": "P"
+        },
+        {
+            "vnum": 4248,
+            "name": "belt black pawn",
+            "short_description": "a Black Pawn's Belt",
+            "description": "You see a Black Pawn's Belt here.",
+            "material": "bronze",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AL",
+            "values": "4 6 6 1 1",
+            "level": 10,
+            "weight": 70,
+            "cost": 990,
+            "condition": "P"
+        },
+        {
+            "vnum": 4249,
+            "name": "belt white pawn",
+            "short_description": "a White Pawn's Belt",
+            "description": "You see a White Pawn's Belt here.",
+            "material": "bronze",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AL",
+            "values": "4 6 6 1 1",
+            "level": 10,
+            "weight": 20,
+            "cost": 990,
+            "condition": "P"
+        },
+        {
+            "vnum": 4250,
+            "name": "bracer black pawn",
+            "short_description": "a Black Pawn's Bracer",
+            "description": "You see a Black Pawn's Bracer here.",
+            "material": "bronze",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AM",
+            "values": "7 5 5 1 0",
+            "level": 10,
+            "weight": 60,
+            "cost": 1390,
+            "condition": "P"
+        },
+        {
+            "vnum": 4251,
+            "name": "bracer white pawn",
+            "short_description": "a White Pawn's Bracer",
+            "description": "You see a White Pawn's Bracer here.",
+            "material": "bronze",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AM",
+            "values": "7 5 5 1 0",
+            "level": 10,
+            "weight": 60,
+            "cost": 1390,
+            "condition": "P"
+        },
+        {
+            "vnum": 4260,
+            "name": "small chessboard",
+            "short_description": "the Magic Chessboard",
+            "description": "You see small chessboard floating here.",
+            "material": "wood",
+            "type": "armor",
+            "extra_flags": "ABFJK",
+            "wear_flags": "AQ",
+            "values": "17 17 17 33 0",
+            "level": 51,
+            "weight": 60,
+            "cost": 55390,
+            "condition": "P",
+            "affects_f": [
+                {
+                    "where": "A",
+                    "location": 13,
+                    "modifier": 95,
+                    "bitvector": "AT"
+                }
+            ]
+        },
+        {
+            "vnum": 4261,
+            "name": "shield black pawn",
+            "short_description": "a Black Knight's Shield ",
+            "description": "You see a Black Knight's shield here.",
+            "material": "steel",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AJ",
+            "values": "8 9 9 2 2",
+            "level": 18,
+            "weight": 90,
+            "cost": 2210,
+            "condition": "P"
+        },
+        {
+            "vnum": 4262,
+            "name": "shield white pawn",
+            "short_description": "a White Knight's Shield ",
+            "description": "You see a White Knight's shield here.",
+            "material": "steel",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AJ",
+            "values": "8 9 9 2 2",
+            "level": 18,
+            "weight": 90,
+            "cost": 2210,
+            "condition": "P"
+        },
+        {
+            "vnum": 4263,
+            "name": "cloak black pawn",
+            "short_description": "a Black Knight's Cloak",
+            "description": "You see a Black Knight's cloak here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AC",
+            "values": "6 8 7 1 1",
+            "level": 18,
+            "weight": 70,
+            "cost": 2610,
+            "condition": "P"
+        },
+        {
+            "vnum": 4264,
+            "name": "cloak white pawn",
+            "short_description": "a White Knight's Cloak",
+            "description": "You see a White Knight's cloak here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AC",
+            "values": "6 8 7 1 1",
+            "level": 18,
+            "weight": 70,
+            "cost": 2610,
+            "condition": "P"
+        },
+        {
+            "vnum": 4265,
+            "name": "helmet black pawn",
+            "short_description": "a Black Knight's Helmet",
+            "description": "You see a Black Knight's helmet here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AE",
+            "values": "7 7 8 1 1",
+            "level": 18,
+            "weight": 70,
+            "cost": 1950,
+            "condition": "P"
+        },
+        {
+            "vnum": 4266,
+            "name": "helmet white pawn",
+            "short_description": "a White Knight's Helmet",
+            "description": "You see a White Knight's helmet here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AE",
+            "values": "7 7 8 1 1",
+            "level": 18,
+            "weight": 70,
+            "cost": 1950,
+            "condition": "P"
+        },
+        {
+            "vnum": 4267,
+            "name": "leggings black pawn",
+            "short_description": "a pair of Black Knight's Leggings",
+            "description": "You see a pair of Black Knight's leggings here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AF",
+            "values": "7 7 7 1 1",
+            "level": 18,
+            "weight": 80,
+            "cost": 1350,
+            "condition": "P"
+        },
+        {
+            "vnum": 4268,
+            "name": "leggings white pawn",
+            "short_description": "a pair of White Knight's Leggings",
+            "description": "You see a pair of White Knight's leggings here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AF",
+            "values": "7 7 7 1 1",
+            "level": 18,
+            "weight": 80,
+            "cost": 1350,
+            "condition": "P"
+        },
+        {
+            "vnum": 4269,
+            "name": "boots black pawn",
+            "short_description": "a pair of Black Knight's Boots",
+            "description": "You see a pair of Black Knight's boots here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AG",
+            "values": "8 7 7 1 1",
+            "level": 18,
+            "weight": 110,
+            "cost": 2850,
+            "condition": "P"
+        },
+        {
+            "vnum": 4270,
+            "name": "boots white pawn",
+            "short_description": "a pair of White Knight's Boots",
+            "description": "You see a pair of Black Knight's boots here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AG",
+            "values": "8 7 7 1 1",
+            "level": 18,
+            "weight": 110,
+            "cost": 2850,
+            "condition": "P"
+        },
+        {
+            "vnum": 4271,
+            "name": "gloves black pawn",
+            "short_description": "a pair of Black Knight's Gloves",
+            "description": "You see a pair of Black Knight's Gloves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AH",
+            "values": "6 7 6 1 1",
+            "level": 18,
+            "weight": 80,
+            "cost": 2250,
+            "condition": "P"
+        },
+        {
+            "vnum": 4272,
+            "name": "gloves white pawn",
+            "short_description": "a pair of White Knight's Gloves",
+            "description": "You see a pair of White Knight's Gloves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AH",
+            "values": "6 7 6 1 1",
+            "level": 18,
+            "weight": 80,
+            "cost": 2250,
+            "condition": "P"
+        },
+        {
+            "vnum": 4273,
+            "name": "sleeves black pawn",
+            "short_description": "a pair of Black Knight's Sleeves",
+            "description": "You see a pair of Black Knight's Sleeves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AI",
+            "values": "7 6 7 1 1",
+            "level": 18,
+            "weight": 100,
+            "cost": 2150,
+            "condition": "P"
+        },
+        {
+            "vnum": 4274,
+            "name": "sleeves white pawn",
+            "short_description": "a pair of White Knight's Sleeves",
+            "description": "You see a pair of White Knight's Sleeves here.",
+            "material": "leather",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AI",
+            "values": "7 6 7 1 1",
+            "level": 18,
+            "weight": 100,
+            "cost": 2150,
+            "condition": "P"
+        },
+        {
+            "vnum": 4275,
+            "name": "cape black pawn",
+            "short_description": "a Black Knight's Cape",
+            "description": "You see a Black Knight's Cape here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AK",
+            "values": "7 7 7 1 1",
+            "level": 18,
+            "weight": 70,
+            "cost": 1380,
+            "condition": "P"
+        },
+        {
+            "vnum": 4276,
+            "name": "cape white pawn",
+            "short_description": "a White Knight's Cape",
+            "description": "You see a White Knight's Cape here.",
+            "material": "cloth",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AK",
+            "values": "7 7 7 1 1",
+            "level": 18,
+            "weight": 70,
+            "cost": 1380,
+            "condition": "P"
+        },
+        {
+            "vnum": 4277,
+            "name": "belt black pawn",
+            "short_description": "a Black Knight's Belt",
+            "description": "You see a Black Knight's Belt here.",
+            "material": "bronze",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AL",
+            "values": "6 6 6 1 1",
+            "level": 18,
+            "weight": 60,
+            "cost": 1990,
+            "condition": "P"
+        },
+        {
+            "vnum": 4278,
+            "name": "belt white pawn",
+            "short_description": "a White Knight's Belt",
+            "description": "You see a White Knight's Belt here.",
+            "material": "bronze",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AL",
+            "values": "6 6 6 1 1",
+            "level": 18,
+            "weight": 60,
+            "cost": 1990,
+            "condition": "P"
+        },
+        {
+            "vnum": 4279,
+            "name": "bracer black pawn",
+            "short_description": "a Black Knight's Bracer",
+            "description": "You see a Black Knight's Bracer here.",
+            "material": "bronze",
+            "type": "armor",
+            "extra_flags": "J",
+            "wear_flags": "AM",
+            "values": "7 7 6 1 0",
+            "level": 18,
+            "weight": 40,
+            "cost": 2390,
+            "condition": "P"
+        },
+        {
+            "vnum": 4280,
+            "name": "bracer white pawn",
+            "short_description": "a White Knight's Bracer",
+            "description": "You see a White Knight's Bracer here.",
+            "material": "bronze",
+            "type": "armor",
+            "extra_flags": "K",
+            "wear_flags": "AM",
+            "values": "7 7 6 1 0",
+            "level": 18,
+            "weight": 40,
+            "cost": 2390,
+            "condition": "P"
+        }
+    ],
+    "rooms": [
+        {
+            "vnum": 4200,
+            "name": "The Great Chessboard Of Midgaard",
+            "description": "You stand in the archway of the Chessboard of Midgaard.  The giant\nwooden gate is rusted open.\n   A narrow dirt path leads eastwards into the thick grass and the\nchessboard opens up to the west.\n     There is a small (Glowing) (Huming) tablet.\n",
+            "flags": "C",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A dirt path leads away through the great field north of Midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3043
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The huge chessboard opens up to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4232
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "small tablet",
+                    "description": "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n+                                                                  +\n+            This area has been converted and adapted by           +\n+                              Kane                                +\n+                                                                  +\n+                               &                                  +\n+                                                                  +\n+    modified, debugged (?:), strongly enhanced and balanced by    +\n+                             jaceks                               +\n+                                                          july'96 +\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
+                }
+            ]
+        },
+        {
+            "vnum": 4201,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof the Black Queen's Rook.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4202
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4209
+                }
+            ]
+        },
+        {
+            "vnum": 4202,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof the Black Queen's Knight.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4203
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4210
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4201
+                }
+            ]
+        },
+        {
+            "vnum": 4203,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof the Black Queen's Bishop.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4204
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4211
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4202
+                }
+            ]
+        },
+        {
+            "vnum": 4204,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof the Black Queen.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4205
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4212
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4203
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "marble square",
+                    "exit_locks": 2,
+                    "exit_key": 4214,
+                    "exit_u1_vnum": 4265
+                }
+            ]
+        },
+        {
+            "vnum": 4205,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof the Black King.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4206
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4213
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4204
+                }
+            ]
+        },
+        {
+            "vnum": 4206,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof the Black King's Bishop.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4207
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4214
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4205
+                }
+            ]
+        },
+        {
+            "vnum": 4207,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof the Black King's Knight.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4208
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4213
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4206
+                }
+            ]
+        },
+        {
+            "vnum": 4208,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof the Black King's Rook.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4216
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4207
+                }
+            ]
+        },
+        {
+            "vnum": 4209,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof one of the Black Queen's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4201
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4210
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4217
+                }
+            ]
+        },
+        {
+            "vnum": 4210,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof one of the Black Queen's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4202
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4211
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4218
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4209
+                }
+            ]
+        },
+        {
+            "vnum": 4211,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof one of the Black Queen's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4203
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4212
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4219
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4210
+                }
+            ]
+        },
+        {
+            "vnum": 4212,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof one of the Black Queen's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4204
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4213
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4220
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4211
+                }
+            ]
+        },
+        {
+            "vnum": 4213,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof one of the Black King's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4205
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4214
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4221
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4212
+                }
+            ]
+        },
+        {
+            "vnum": 4214,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof one of the Black King's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4206
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4215
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4222
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4213
+                }
+            ]
+        },
+        {
+            "vnum": 4215,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof one of the Black King's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4207
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4216
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4223
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4214
+                }
+            ]
+        },
+        {
+            "vnum": 4216,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof one of the Black King's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4208
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4224
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4215
+                }
+            ]
+        },
+        {
+            "vnum": 4217,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4209
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4218
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4225
+                }
+            ]
+        },
+        {
+            "vnum": 4218,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4210
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4219
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4226
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4217
+                }
+            ]
+        },
+        {
+            "vnum": 4219,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4211
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4220
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4227
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4218
+                }
+            ]
+        },
+        {
+            "vnum": 4220,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4212
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4221
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4228
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4219
+                }
+            ]
+        },
+        {
+            "vnum": 4221,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4213
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4222
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4229
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4220
+                }
+            ]
+        },
+        {
+            "vnum": 4222,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4214
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4223
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4230
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4221
+                }
+            ]
+        },
+        {
+            "vnum": 4223,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4215
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4224
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4231
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4222
+                }
+            ]
+        },
+        {
+            "vnum": 4224,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  You can see a rusty gate\nto the south.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4216
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4232
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4223
+                }
+            ]
+        },
+        {
+            "vnum": 4225,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4217
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4226
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4233
+                }
+            ]
+        },
+        {
+            "vnum": 4226,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4218
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4227
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4234
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4225
+                }
+            ]
+        },
+        {
+            "vnum": 4227,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4219
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4228
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4235
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4226
+                }
+            ]
+        },
+        {
+            "vnum": 4228,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4220
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4229
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4236
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4227
+                }
+            ]
+        },
+        {
+            "vnum": 4229,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4221
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4230
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4237
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4228
+                }
+            ]
+        },
+        {
+            "vnum": 4230,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4222
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4231
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4238
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4229
+                }
+            ]
+        },
+        {
+            "vnum": 4231,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  There is a rusty gate\na short distance to the east.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4223
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4232
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4239
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4230
+                }
+            ]
+        },
+        {
+            "vnum": 4232,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  There is a large rusty\ngate to the east.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4224
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "The gate to the chessboard is just to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4200
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4240
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4231
+                }
+            ]
+        },
+        {
+            "vnum": 4233,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4225
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4234
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4241
+                }
+            ]
+        },
+        {
+            "vnum": 4234,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4226
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4235
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4242
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4233
+                }
+            ]
+        },
+        {
+            "vnum": 4235,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4227
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4236
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4243
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4234
+                }
+            ]
+        },
+        {
+            "vnum": 4236,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4228
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4237
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4244
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4235
+                }
+            ]
+        },
+        {
+            "vnum": 4237,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4229
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4238
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4245
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4236
+                }
+            ]
+        },
+        {
+            "vnum": 4238,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4230
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4239
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4246
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4237
+                }
+            ]
+        },
+        {
+            "vnum": 4239,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4231
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4240
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4247
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4238
+                }
+            ]
+        },
+        {
+            "vnum": 4240,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  There is a rusty gate\nto the north.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4232
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4248
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4239
+                }
+            ]
+        },
+        {
+            "vnum": 4241,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4233
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4242
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4249
+                }
+            ]
+        },
+        {
+            "vnum": 4242,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4234
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4243
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4250
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4241
+                }
+            ]
+        },
+        {
+            "vnum": 4243,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4235
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4244
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4251
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4242
+                }
+            ]
+        },
+        {
+            "vnum": 4244,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4236
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4245
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4252
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4243
+                }
+            ]
+        },
+        {
+            "vnum": 4245,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4237
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4246
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4253
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4244
+                }
+            ]
+        },
+        {
+            "vnum": 4246,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4238
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4247
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4254
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4245
+                }
+            ]
+        },
+        {
+            "vnum": 4247,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4239
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4248
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4255
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4246
+                }
+            ]
+        },
+        {
+            "vnum": 4248,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4240
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4256
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4247
+                }
+            ]
+        },
+        {
+            "vnum": 4249,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof one of the White Queen's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4241
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4250
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4257
+                }
+            ]
+        },
+        {
+            "vnum": 4250,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof one of the White Queen's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4242
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4251
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4258
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4249
+                }
+            ]
+        },
+        {
+            "vnum": 4251,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof one of the White Queen's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4243
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4252
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4259
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4250
+                }
+            ]
+        },
+        {
+            "vnum": 4252,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof one of the White Queen's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4244
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4253
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4260
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4251
+                }
+            ]
+        },
+        {
+            "vnum": 4253,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof one of the White King's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4245
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4254
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4261
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4252
+                }
+            ]
+        },
+        {
+            "vnum": 4254,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof one of the White King's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4246
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4255
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4262
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4253
+                }
+            ]
+        },
+        {
+            "vnum": 4255,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof one of the White King's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4247
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4256
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A black square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4263
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4254
+                }
+            ]
+        },
+        {
+            "vnum": 4256,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof one of the White King's Pawns.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4248
+                },
+                {
+                    "exit_door": 2,
+                    "exit_description": "A white square lies to the south.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4264
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4255
+                }
+            ]
+        },
+        {
+            "vnum": 4257,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof the White Queen's Rook.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4249
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4258
+                }
+            ]
+        },
+        {
+            "vnum": 4258,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof the White Queen's Knight.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4250
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4259
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4257
+                }
+            ]
+        },
+        {
+            "vnum": 4259,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof the White Queen's Bishop.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4251
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4260
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4258
+                }
+            ]
+        },
+        {
+            "vnum": 4260,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof the White Queen.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4252
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4261
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4259
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "marble square",
+                    "exit_locks": 2,
+                    "exit_key": 4215,
+                    "exit_u1_vnum": 4266
+                }
+            ]
+        },
+        {
+            "vnum": 4261,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof the White King.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4253
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4262
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4260
+                }
+            ]
+        },
+        {
+            "vnum": 4262,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof the White King's Bishop.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4254
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A black square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4263
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4261
+                }
+            ]
+        },
+        {
+            "vnum": 4263,
+            "name": "A Black Square",
+            "description": "You are standing on a black marble square.  This is usually the home\nof the White King's Knight.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A white square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4255
+                },
+                {
+                    "exit_door": 1,
+                    "exit_description": "A white square lies to the east.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4264
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A white square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4262
+                }
+            ]
+        },
+        {
+            "vnum": 4264,
+            "name": "A White Square",
+            "description": "You are standing on a white marble square.  This is usually the home\nof the White King's Rook.\n",
+            "flags": "0",
+            "sector": 1,
+            "exits": [
+                {
+                    "exit_door": 0,
+                    "exit_description": "A black square lies to the north.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4256
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "A black square lies to the west.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4263
+                }
+            ]
+        },
+        {
+            "vnum": 4265,
+            "name": "The Black Treasury",
+            "description": "You are standing in the treasury of the Black Court.  Hopefully no one\nhas looted the Crown's treasure.\n",
+            "flags": "ADJ",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "A small staircase rises above you.\n",
+                    "exit_keyword": "marble square",
+                    "exit_locks": 2,
+                    "exit_key": 4214,
+                    "exit_u1_vnum": 4204
+                }
+            ]
+        },
+        {
+            "vnum": 4266,
+            "name": "The White Treasury",
+            "description": "You are standing in the treasury of the White Court.  Hopefully no one \nhas looted the Crown's treasure.\n",
+            "flags": "ADJ",
+            "sector": 0,
+            "exits": [
+                {
+                    "exit_door": 4,
+                    "exit_description": "A small staircase rises above you.\n",
+                    "exit_keyword": "marble square",
+                    "exit_locks": 2,
+                    "exit_key": 4215,
+                    "exit_u1_vnum": 4260
+                }
+            ]
+        }
+    ],
+    "resets": [
+        {
+            "command": "M",
+            "arg1": 4200,
+            "arg2": 8,
+            "arg3": 4209,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4200,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4202,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4232,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4234,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4236,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4238,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4240,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4242,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4244,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4246,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4248,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4200,
+            "arg2": 8,
+            "arg3": 4210,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4200,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4230,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4232,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4234,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4236,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4238,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4240,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4242,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4244,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4246,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4248,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4200,
+            "arg2": 8,
+            "arg3": 4211,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4200,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4218,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4232,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4234,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4236,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4238,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4240,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4242,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4244,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4246,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4248,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4200,
+            "arg2": 8,
+            "arg3": 4212,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4200,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4226,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4232,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4234,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4236,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4238,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4240,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4242,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4244,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4246,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4248,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4200,
+            "arg2": 8,
+            "arg3": 4213,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4200,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4220,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4232,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4234,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4236,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4238,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4240,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4242,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4244,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4246,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4248,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4200,
+            "arg2": 8,
+            "arg3": 4214,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4200,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4228,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4232,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4234,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4236,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4238,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4240,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4242,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4244,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4246,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4248,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4200,
+            "arg2": 8,
+            "arg3": 4215,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4200,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4222,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4232,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4234,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4236,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4238,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4240,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4242,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4244,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4246,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4248,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4200,
+            "arg2": 8,
+            "arg3": 4216,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4200,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4224,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4232,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4234,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4236,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4238,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4240,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4242,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4244,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4246,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4248,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4250,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4201,
+            "arg2": 8,
+            "arg3": 4249,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4201,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4203,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4233,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4235,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4237,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4239,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4241,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4243,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4245,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4247,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4249,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4201,
+            "arg2": 8,
+            "arg3": 4250,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4201,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4231,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4233,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4235,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4237,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4239,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4241,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4243,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4245,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4247,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4249,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4201,
+            "arg2": 8,
+            "arg3": 4251,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4201,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4227,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4233,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4235,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4237,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4239,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4241,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4243,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4245,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4247,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4249,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4201,
+            "arg2": 8,
+            "arg3": 4252,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4201,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4219,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4233,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4235,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4237,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4239,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4241,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4243,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4245,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4247,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4249,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4201,
+            "arg2": 8,
+            "arg3": 4253,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4201,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4221,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4233,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4235,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4237,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4239,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4241,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4243,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4245,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4247,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4249,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4201,
+            "arg2": 8,
+            "arg3": 4254,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4201,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4229,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4233,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4235,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4237,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4239,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4241,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4243,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4245,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4247,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4249,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4201,
+            "arg2": 8,
+            "arg3": 4255,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4201,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4223,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4233,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4235,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4237,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4239,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4241,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4243,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4245,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4247,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4249,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4201,
+            "arg2": 8,
+            "arg3": 4256,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4201,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "E",
+            "arg1": 4225,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4233,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4235,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4237,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4239,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4241,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4243,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4245,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4247,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4249,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4251,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4202,
+            "arg2": 2,
+            "arg3": 4201,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4204,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 4202,
+            "arg2": 2,
+            "arg3": 4208,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4204,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 4203,
+            "arg2": 2,
+            "arg3": 4257,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4205,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 4203,
+            "arg2": 2,
+            "arg3": 4264,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4205,
+            "arg2": -1,
+            "arg3": 5
+        },
+        {
+            "command": "M",
+            "arg1": 4204,
+            "arg2": 2,
+            "arg3": 4202,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4206,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4261,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4263,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4265,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4267,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4269,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4271,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4273,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4275,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4277,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4279,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4279,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4204,
+            "arg2": 2,
+            "arg3": 4207,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4206,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4261,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4263,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4265,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4267,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4269,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4271,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4273,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4275,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4277,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4279,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4279,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4205,
+            "arg2": 2,
+            "arg3": 4258,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4207,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4262,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4264,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4266,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4268,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4270,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4272,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4274,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4276,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4278,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4280,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4280,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4205,
+            "arg2": 2,
+            "arg3": 4263,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4207,
+            "arg2": -1,
+            "arg3": 16
+        },
+        {
+            "command": "E",
+            "arg1": 4262,
+            "arg2": -1,
+            "arg3": 11
+        },
+        {
+            "command": "E",
+            "arg1": 4264,
+            "arg2": -1,
+            "arg3": 3
+        },
+        {
+            "command": "E",
+            "arg1": 4266,
+            "arg2": -1,
+            "arg3": 6
+        },
+        {
+            "command": "E",
+            "arg1": 4268,
+            "arg2": -1,
+            "arg3": 7
+        },
+        {
+            "command": "E",
+            "arg1": 4270,
+            "arg2": -1,
+            "arg3": 8
+        },
+        {
+            "command": "E",
+            "arg1": 4272,
+            "arg2": -1,
+            "arg3": 9
+        },
+        {
+            "command": "E",
+            "arg1": 4274,
+            "arg2": -1,
+            "arg3": 10
+        },
+        {
+            "command": "E",
+            "arg1": 4276,
+            "arg2": -1,
+            "arg3": 12
+        },
+        {
+            "command": "E",
+            "arg1": 4278,
+            "arg2": -1,
+            "arg3": 13
+        },
+        {
+            "command": "E",
+            "arg1": 4280,
+            "arg2": -1,
+            "arg3": 14
+        },
+        {
+            "command": "E",
+            "arg1": 4280,
+            "arg2": -1,
+            "arg3": 15
+        },
+        {
+            "command": "M",
+            "arg1": 4206,
+            "arg2": 2,
+            "arg3": 4203,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4208,
+            "arg2": -1,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 4206,
+            "arg2": 2,
+            "arg3": 4206,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4208,
+            "arg2": -1,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 4207,
+            "arg2": 2,
+            "arg3": 4259,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4209,
+            "arg2": -1,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 4207,
+            "arg2": 2,
+            "arg3": 4262,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4209,
+            "arg2": -1,
+            "arg3": 17
+        },
+        {
+            "command": "M",
+            "arg1": 4208,
+            "arg2": 1,
+            "arg3": 4204,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4210,
+            "arg2": 99,
+            "arg3": 6
+        },
+        {
+            "command": "M",
+            "arg1": 4209,
+            "arg2": 1,
+            "arg3": 4260,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4211,
+            "arg2": 99,
+            "arg3": 6
+        },
+        {
+            "command": "M",
+            "arg1": 4210,
+            "arg2": 1,
+            "arg3": 4205,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4212,
+            "arg2": -1,
+            "arg3": 17
+        },
+        {
+            "command": "G",
+            "arg1": 4214,
+            "arg2": -1
+        },
+        {
+            "command": "M",
+            "arg1": 4211,
+            "arg2": 1,
+            "arg3": 4261,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4213,
+            "arg2": -1,
+            "arg3": 17
+        },
+        {
+            "command": "G",
+            "arg1": 4215,
+            "arg2": -1
+        },
+        {
+            "command": "M",
+            "arg1": 4212,
+            "arg2": 1,
+            "arg3": 4233,
+            "arg4": 1
+        },
+        {
+            "command": "E",
+            "arg1": 4260,
+            "arg2": 16,
+            "arg3": 18
+        },
+        {
+            "command": "O",
+            "arg1": 4216,
+            "arg2": 1,
+            "arg3": 4265
+        },
+        {
+            "command": "O",
+            "arg1": 4217,
+            "arg2": 1,
+            "arg3": 4266
+        },
+        {
+            "command": "D",
+            "arg1": 4204,
+            "arg2": 5,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 4265,
+            "arg2": 4,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 4260,
+            "arg2": 5,
+            "arg3": 2
+        },
+        {
+            "command": "D",
+            "arg1": 4266,
+            "arg2": 4,
+            "arg3": 2
+        }
+    ]
+}

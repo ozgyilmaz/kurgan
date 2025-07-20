@@ -7136,6 +7136,14 @@
                     "exit_locks": 0,
                     "exit_key": -1,
                     "exit_u1_vnum": 3047
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The Great Chessboard of Midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4200
                 }
             ],
             "extra_descriptions": [
