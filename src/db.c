@@ -49,6 +49,7 @@
 #include "recycle.h"
 #include "music.h"
 #include "lookup.h"
+#include "magic.h"
 #include "strrep.h"
 
 
@@ -1657,13 +1658,6 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level, bool randomize )
 	   obj->value[i] = -1;
 	break;
 
-    case ITEM_SCROLL:
-	break;
-
-    case ITEM_WAND:
-    case ITEM_STAFF:
-	break;
-
     case ITEM_WEAPON:
         if(randomize == TRUE)
         {
@@ -1719,8 +1713,71 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level, bool randomize )
         }
 	break;
 
+    case ITEM_WAND:
+    case ITEM_STAFF:
+        if(randomize == TRUE)
+        {
+            obj->value[0]	= (number_percent()<95)?(obj->level):(number_range(5,LEVEL_IMMORTAL)); // spell level
+            obj->value[1]	= number_range( UMAX(1,(int)((obj->level+4)/5)) , UMAX(1,(int)((obj->level+3)/2)) );	// maximum number of charges
+            obj->value[2]	= obj->value[1];	// current number of charges
+            int valid_spells[1000];
+            int count = 0;
+
+            for (int i = 0; skill_table[i].name != NULL; i++) {
+                if (skill_table[i].spell_fun != spell_null)
+                    valid_spells[count++] = i;
+            }
+            if (count > 0)
+            {
+                obj->value[3] = valid_spells[number_range(0, count - 1)];
+            }
+            else
+            {
+                obj->value[3] = 0;
+            }
+            obj->value[4]	= 0;					// unused
+        }
+	break;
+
     case ITEM_POTION:
     case ITEM_PILL:
+    case ITEM_SCROLL:
+        if(randomize == TRUE)
+        {
+            int valid_spells[1000];
+            int count = 0;
+
+            for (int i = 0; skill_table[i].name != NULL; i++) {
+                if (skill_table[i].spell_fun != spell_null)
+                    valid_spells[count++] = i;
+            }
+
+            if (count > 0)
+            {
+                if(obj->value[2] == 0)
+                {
+                    if(number_range(1,100) == 1)
+                    {
+                        obj->value[2] = valid_spells[number_range(0, count - 1)];
+                    }
+                }
+                if(obj->value[2] == 0)
+                {
+                    if(number_range(1,100) == 1)
+                    {
+                        obj->value[3] = valid_spells[number_range(0, count - 1)];
+                    }
+                }
+                if(obj->value[2] == 0)
+                {
+                    if(number_range(1,100) == 1)
+                    {
+                        obj->value[4] = valid_spells[number_range(0, count - 1)];
+                    }
+                }
+            }
+            obj->cost = number_range( UMAX(1,obj->level) , UMAX(2,obj->level*3) );
+        }
 	break;
 
     case ITEM_MONEY:

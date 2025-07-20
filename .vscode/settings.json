@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "merc.h": "c",
-        "magic.h": "c"
+        "magic.h": "c",
+        "interp.h": "c"
     }
 }

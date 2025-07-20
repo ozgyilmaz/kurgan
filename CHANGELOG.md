@@ -82,3 +82,4 @@
 - strrep() added. Weapon objects are now randomized.
 - Armor objects are randomized.
 - Light and food objects are randomized.
+- Wands, staffs, potions, pills and scrolls are randomized.
