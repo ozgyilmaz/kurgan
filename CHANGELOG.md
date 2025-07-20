@@ -85,3 +85,4 @@
 - Wands, staffs, potions, pills and scrolls are randomized.
 - BUGFIX: Welcome screen's unreadable chars corrected.
 - Area chess2 added.
+- automated quest system implemented. (Vassago and Anatolia mud)

@@ -283,18 +283,328 @@
         },
         {
             "vnum": 26,
-            "name": "%s",
-            "short_description": "%s",
+            "name": "a book",
+            "short_description": "a book",
             "description": "A book has carelessly been left here.",
             "material": "paper",
             "type": "book",
             "extra_flags": "G",
             "wear_flags": "AO",
-            "values": "%d '%s' '' '' ''",
+            "values": "1 'sword' '' '' ''",
             "level": 1,
             "weight": 10,
             "cost": 220,
             "condition": "P"
+        },
+        {
+            "vnum": 27,
+            "name": "quest jai",
+            "short_description": "quest staff of Jai",
+            "description": "A quest obj flying in the air.",
+            "material": "energy",
+            "type": "treasure",
+            "extra_flags": "ATY",
+            "wear_flags": "A",
+            "values": "0 0 -1 0 0",
+            "level": 0,
+            "weight": 0,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "quest jai",
+                    "description": "The letters '%s' is carved on the staff.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 28,
+            "name": "quest maru",
+            "short_description": "quest staff of Maru",
+            "description": "A quest obj flying in the air.",
+            "material": "energy",
+            "type": "treasure",
+            "extra_flags": "ATY",
+            "wear_flags": "A",
+            "values": "0 0 -1 0 0",
+            "level": 0,
+            "weight": 0,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "quest maru",
+                    "description": "The letters '%s' is carved on the staff.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 29,
+            "name": "quest randalin",
+            "short_description": "quest staff of Randalin",
+            "description": "A quest obj flying in the air.",
+            "material": "energy",
+            "type": "treasure",
+            "extra_flags": "ATY",
+            "wear_flags": "A",
+            "values": "0 0 -1 0 0",
+            "level": 0,
+            "weight": 0,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "quest randalin",
+                    "description": "The letters '%s' is carved on the staff.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 30,
+            "name": "quest nir",
+            "short_description": "quest staff of Nir",
+            "description": "A quest obj flying in the air.",
+            "material": "energy",
+            "type": "treasure",
+            "extra_flags": "ATY",
+            "wear_flags": "A",
+            "values": "0 0 -1 0 0",
+            "level": 0,
+            "weight": 0,
+            "cost": 0,
+            "condition": "P",
+            "extra_descriptions": [
+                {
+                    "keyword": "quest nir",
+                    "description": "The letters '%s' is carved on the staff.\n"
+                }
+            ]
+        },
+        {
+            "vnum": 31,
+            "name": "ring hero",
+            "short_description": "the %s Ring of %s",
+            "description": "An enormous, RING lies here, filling the room with its power.",
+            "material": "platinum",
+            "type": "armor",
+            "extra_flags": "AGIOY",
+            "wear_flags": "ABP",
+            "values": "12 12 12 9 1",
+            "level": 21,
+            "weight": 300,
+            "cost": 100000,
+            "condition": "G",
+            "affects_a": [
+                {
+                    "location": 6,
+                    "modifier": 1
+                },
+                {
+                    "location": 17,
+                    "modifier": -20
+                },
+                {
+                    "location": 18,
+                    "modifier": 10
+                },
+                {
+                    "location": 12,
+                    "modifier": 150
+                },
+                {
+                    "location": 13,
+                    "modifier": 150
+                }
+            ],
+            "affects_f": [
+                {
+                    "where": "A",
+                    "location": 14,
+                    "modifier": 500,
+                    "bitvector": "TU"
+                }
+            ]
+        },
+        {
+            "vnum": 32,
+            "name": "girth hero",
+            "short_description": "the %s Girth of %s",
+            "description": "An enormous, huge GIRTH lies here, filling the room with its power.",
+            "material": "platinum",
+            "type": "armor",
+            "extra_flags": "AGIOY",
+            "wear_flags": "ALP",
+            "values": "12 12 12 9 2",
+            "level": 21,
+            "weight": 300,
+            "cost": 100000,
+            "condition": "G",
+            "affects_a": [
+                {
+                    "location": 1,
+                    "modifier": 2
+                },
+                {
+                    "location": 4,
+                    "modifier": 2
+                },
+                {
+                    "location": 5,
+                    "modifier": 3
+                },
+                {
+                    "location": 3,
+                    "modifier": 3
+                },
+                {
+                    "location": 6,
+                    "modifier": 1
+                },
+                {
+                    "location": 12,
+                    "modifier": 200
+                },
+                {
+                    "location": 13,
+                    "modifier": 200
+                },
+                {
+                    "location": 14,
+                    "modifier": 500
+                },
+                {
+                    "location": 18,
+                    "modifier": 10
+                },
+                {
+                    "location": 19,
+                    "modifier": 10
+                }
+            ],
+            "affects_f": [
+                {
+                    "where": "A",
+                    "location": 17,
+                    "modifier": -30,
+                    "bitvector": "J"
+                }
+            ]
+        },
+        {
+            "vnum": 33,
+            "name": "weapon hero",
+            "short_description": "the %s Weapon of %s",
+            "description": "An enormous, huge WEAPON lies here, filling the room with its power.",
+            "material": "platinum",
+            "type": "weapon",
+            "extra_flags": "AGIOY",
+            "wear_flags": "ANP",
+            "values": "exotic 10 4 slash D",
+            "level": 21,
+            "weight": 100,
+            "cost": 100000,
+            "condition": "G",
+            "affects_a": [
+                {
+                    "location": 1,
+                    "modifier": 2
+                },
+                {
+                    "location": 2,
+                    "modifier": 2
+                },
+                {
+                    "location": 4,
+                    "modifier": 2
+                },
+                {
+                    "location": 6,
+                    "modifier": 1
+                },
+                {
+                    "location": 19,
+                    "modifier": 25
+                },
+                {
+                    "location": 18,
+                    "modifier": 25
+                },
+                {
+                    "location": 12,
+                    "modifier": 200
+                },
+                {
+                    "location": 13,
+                    "modifier": 200
+                },
+                {
+                    "location": 14,
+                    "modifier": 500
+                }
+            ]
+        },
+        {
+            "vnum": 34,
+            "name": "silk adamantite backpack",
+            "short_description": "the silk-adamantite backpack",
+            "description": "A very very shiny backpack is here.",
+            "material": "silk",
+            "type": "container",
+            "extra_flags": "AGIOY",
+            "wear_flags": "AKOP",
+            "values": "500 64 0 100 10",
+            "level": 21,
+            "weight": 30,
+            "cost": 99900,
+            "condition": "P",
+            "affects_a": [
+                {
+                    "location": 3,
+                    "modifier": 5
+                },
+                {
+                    "location": 5,
+                    "modifier": 5
+                },
+                {
+                    "location": 6,
+                    "modifier": 5
+                },
+                {
+                    "location": 12,
+                    "modifier": 200
+                },
+                {
+                    "location": 13,
+                    "modifier": 200
+                },
+                {
+                    "location": 17,
+                    "modifier": -200
+                },
+                {
+                    "location": 14,
+                    "modifier": 500
+                },
+                {
+                    "location": 18,
+                    "modifier": 20
+                },
+                {
+                    "location": 19,
+                    "modifier": 20
+                },
+                {
+                    "location": 24,
+                    "modifier": -20
+                }
+            ],
+            "extra_descriptions": [
+                {
+                    "keyword": "backpack",
+                    "description": "The golden letters '%s' is carved on the side of the backpack.\n"
+                }
+            ]
         }
     ],
     "rooms": [

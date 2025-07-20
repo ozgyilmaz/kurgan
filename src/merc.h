@@ -881,7 +881,11 @@ struct	kill_data
 
 #define OBJ_VNUM_WHISTLE	   2116
 
-
+/* quest rewards */
+#define QUEST_ITEM1 31	
+#define QUEST_ITEM2 32	
+#define QUEST_ITEM3 33
+#define QUEST_ITEM4 34
 
 /*
  * Item types.
@@ -1217,6 +1221,9 @@ struct	kill_data
  */
 #define PLR_IS_NPC		(A)		/* Don't EVER set.	*/
 
+/* questor */
+#define PLR_QUESTOR 	(B)
+
 /* RT auto flags */
 #define PLR_AUTOASSIST		(C)
 #define PLR_AUTOLOOT		(E)
@@ -1238,6 +1245,7 @@ struct	kill_data
 #define PLR_FREEZE		(Y)
 #define PLR_THIEF		(Z)
 #define PLR_KILLER		(aa)
+
 
 
 /* RT comm flags -- may be used on both mobs and chars */
@@ -1474,6 +1482,13 @@ struct	pc_data
     bool        confirm_delete;
     char *		alias[MAX_ALIAS];
     char * 		alias_sub[MAX_ALIAS];
+    /* quest things */
+    CHAR_DATA *         questgiver; /* Vassago */
+    int                 questpoints;  /* Vassago */
+    sh_int              nextquest; /* Vassago */
+    sh_int              countdown; /* Vassago */
+    sh_int              questobj; /* Vassago */
+    sh_int              questmob; /* Vassago */
 };
 
 /* Data for generating characters -- only used during generation */
@@ -1805,6 +1820,9 @@ extern sh_int  gsn_recall;
 #define IS_HERO(ch)		(get_trust(ch) >= LEVEL_HERO)
 #define IS_TRUSTED(ch,level)	(get_trust((ch)) >= (level))
 #define IS_AFFECTED(ch, sn)	(IS_SET((ch)->affected_by, (sn)))
+/* Quest staff begin */
+#define IS_QUESTOR(ch)     (IS_SET((ch)->act, PLR_QUESTOR))
+/* Quest staff end */
 
 #define GET_AGE(ch)		((int) (17 + ((ch)->played \
 				    + current_time - (ch)->logon )/72000))

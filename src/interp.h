@@ -211,6 +211,7 @@ DECLARE_DO_FUN( do_protect	);
 DECLARE_DO_FUN(	do_purge	);
 DECLARE_DO_FUN(	do_put		);
 DECLARE_DO_FUN(	do_quaff	);
+DECLARE_DO_FUN( do_quest    );
 DECLARE_DO_FUN( do_question	);
 DECLARE_DO_FUN(	do_qui		);
 DECLARE_DO_FUN( do_quiet	);

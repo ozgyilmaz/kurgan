@@ -3855,6 +3855,11 @@ The road continues further south.
 ~
 ~
 0 -1 3047
+D3
+The Great Chessboard of Midgaard.
+~
+~
+0 -1 4200
 E
 wall~
 It is built from large grey rocks that have been fastened to each other with
@@ -6478,6 +6483,7 @@ M 3100 spec_cast_cleric    	* the maid
 M 3120 spec_cast_cleric    	* the sexton
 M 3143 spec_mayor          	* the mayor
 M 3163 spec_nasty          	* the thief
+M 3011 spec_questmaster     * hassan 
 S
 
 #$

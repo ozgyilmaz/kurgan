@@ -12657,6 +12657,10 @@
         {
             "vnum": 3163,
             "spec_fun": "spec_nasty"
+        },
+        {
+            "vnum": 3011,
+            "spec_fun": "spec_questmaster"
         }
     ]
 }

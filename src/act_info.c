@@ -259,8 +259,15 @@ void show_char_to_char_0( CHAR_DATA *victim, CHAR_DATA *ch )
 
     if (IS_IMMORTAL(ch) && !IS_NPC(ch) && IS_SET(ch->act, PLR_HOLYLIGHT) && IS_NPC(victim))
     {
-        sprintf(buf, " [Mob %d]", victim->pIndexData->vnum);
+        sprintf(buf, " [Mob %d] ", victim->pIndexData->vnum);
     }
+
+    /* Quest staff begin */
+    if (!IS_NPC(ch) && IS_NPC(victim) && ch->pcdata->questmob > 0 && victim->pIndexData->vnum == ch->pcdata->questmob)
+    {
+        strcat( buf, "{R[TARGET]{x ");
+    }
+    /* Quest staff end */
 
     if ( IS_SET(victim->comm,COMM_AFK	  )   ) strcat( buf, "[AFK] "	     );
     if ( IS_AFFECTED(victim, AFF_INVISIBLE)   ) strcat( buf, "(Invis) "      );
@@ -1536,10 +1543,18 @@ void do_score( CHAR_DATA *ch, char *argument )
     /* RT shows exp to level */
     if (!IS_NPC(ch) && ch->level < LEVEL_HERO)
     {
-      sprintf (buf, 
-	"You need %d exp to level.\n\r",
-	((ch->level + 1) * exp_per_level(ch,ch->pcdata->points) - ch->exp));
-      printf_to_char(ch, buf);
+        sprintf (buf, 
+        "You need %d exp to level.\n\r",
+        ((ch->level + 1) * exp_per_level(ch,ch->pcdata->points) - ch->exp));
+        printf_to_char(ch, buf);
+    }
+
+    if (!IS_NPC(ch))
+    {
+        sprintf (buf, 
+        "You have %d quest points and %d minutes to request a new one.\n\r",
+        ch->pcdata->questpoints, ch->pcdata->nextquest);
+        printf_to_char(ch, buf);
      }
 
     sprintf( buf, "Wimpy set to %d hit points.\n\r", ch->wimpy );

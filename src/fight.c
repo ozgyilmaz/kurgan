@@ -1694,7 +1694,21 @@ void group_gain( CHAR_DATA *ch, CHAR_DATA *victim )
      * Dying of mortal wounds or poison doesn't give xp to anyone!
      */
     if ( victim == ch )
-	return;
+	{
+		return;
+	}
+
+	/* Quest staff begin */
+	if (!IS_NPC(ch) && IS_QUESTOR(ch) && IS_NPC(victim))
+	{
+		if (ch->pcdata->questmob == victim->pIndexData->vnum)
+		{
+			send_to_char("You have almost completed your QUEST!\n\r",ch);
+			send_to_char("Return to the questmaster before your time runs out!\n\r",ch);
+			ch->pcdata->questmob = -1;
+		}
+	}
+	/* Quest staff end */
     
     members = 0;
     group_levels = 0;

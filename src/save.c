@@ -243,7 +243,17 @@ void fwrite_char( CHAR_DATA *ch, FILE *fp )
     fprintf( fp, "ACs %d %d %d %d\n",	
 	ch->armor[0],ch->armor[1],ch->armor[2],ch->armor[3]);
     if (ch->wimpy !=0 )
-	fprintf( fp, "Wimp  %d\n",	ch->wimpy	);
+	{
+		fprintf( fp, "Wimp  %d\n",	ch->wimpy	);
+	}
+	/* Quest staff begin */
+	if (ch->pcdata->questpoints != 0)
+        fprintf( fp, "QuestPnts %d\n",  ch->pcdata->questpoints );
+    if (ch->pcdata->nextquest != 0)
+        fprintf( fp, "QuestNext %d\n",  ch->pcdata->nextquest   );
+    else if (ch->pcdata->countdown != 0)
+        fprintf( fp, "QuestNext %d\n",  10              );
+	/* Quest staff end */
     fprintf( fp, "Attr %d %d %d %d %d\n",
 	ch->perm_stat[STAT_STR],
 	ch->perm_stat[STAT_INT],
@@ -993,6 +1003,13 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
             KEYS( "Prompt",      ch->prompt,             fread_string( fp ) );
  	    KEY( "Prom",	ch->prompt,		fread_string( fp ) );
 	    break;
+		
+	/* Quest staff begin */
+	case 'Q':
+		KEY( "QuestPnts",   ch->pcdata->questpoints,        fread_number( fp ) );
+		KEY( "QuestNext",   ch->pcdata->nextquest,          fread_number( fp ) );
+		break;
+	/* Quest staff end */
 
 	case 'R':
 	    KEY( "Race",        ch->race,	
