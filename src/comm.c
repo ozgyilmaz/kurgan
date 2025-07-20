@@ -1981,28 +1981,9 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
 	sprintf( log_buf, "%s@%s new player.", ch->name, d->host );
 	log_string( log_buf );
 	wiznet("Newbie alert!  $N sighted.",ch,NULL,WIZ_NEWBIE,0,0);
-        wiznet(log_buf,NULL,NULL,WIZ_SITES,0,get_trust(ch));
-
-	write_to_buffer( d, "\n\r", 2 );
-	write_to_buffer( d, "You may be good, neutral, or evil.\n\r",0);
-	write_to_buffer( d, "Which alignment (G/N/E)? ",0);
-	d->connected = CON_GET_ALIGNMENT;
-	break;
-
-case CON_GET_ALIGNMENT:
-	switch( argument[0])
-	{
-	    case 'g' : case 'G' : ch->alignment = 750;  break;
-	    case 'n' : case 'N' : ch->alignment = 0;	break;
-	    case 'e' : case 'E' : ch->alignment = -750; break;
-	    default:
-		write_to_buffer(d,"That's not a valid alignment.\n\r",0);
-		write_to_buffer(d,"Which alignment (G/N/E)? ",0);
-		return;
-	}
-
-	write_to_buffer(d,"\n\r",0);
-
+    wiznet(log_buf,NULL,NULL,WIZ_SITES,0,get_trust(ch));
+	
+	ch->alignment = 0;
 	ch->pcdata->learned[gsn_recall] = 50;
 	ch->pcdata->skill_tier[gsn_recall] = 2;
 	write_to_buffer( d, "\n\r", 2 );

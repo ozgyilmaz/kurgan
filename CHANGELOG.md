@@ -86,3 +86,4 @@
 - BUGFIX: Welcome screen's unreadable chars corrected.
 - Area chess2 added.
 - automated quest system implemented. (Vassago and Anatolia mud)
+- char creation screen: alignment selection removed

@@ -239,7 +239,6 @@ struct	weather_data
 #define CON_CONFIRM_NEW_PASSWORD	 5
 #define CON_GET_NEW_RACE		 6
 #define CON_GET_NEW_SEX			 7
-#define CON_GET_ALIGNMENT		 9
 #define CON_DEFAULT_CHOICE		10 
 #define CON_GEN_GROUPS			11 
 #define CON_PICK_WEAPON			12
