@@ -90,3 +90,4 @@
 
 # 22.07.2025
 - do_scan() added to available commands.
+- MAX_ALIAS increase from 5 to 25.
