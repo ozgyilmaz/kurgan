@@ -57,8 +57,8 @@ area_grammar = Suppress(Literal("#AREA")) +\
     tilde_string.setResultsName('name') + Suppress(restOfLine) +\
     Suppress("{") +\
     ZeroOrMore(Suppress(space)) +\
-    Word(alphanums).setResultsName('low_range') +\
-    Word(alphanums).setResultsName('high_range') +\
+    Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('low_range') +\
+    Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('high_range') +\
     ZeroOrMore(Suppress(space)) +\
     Suppress("}") +\
     Word(alphanums).setResultsName('writer') +\

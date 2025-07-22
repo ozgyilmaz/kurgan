@@ -2,8 +2,8 @@
     "area": {
         "file_name": "chess2.are",
         "name": "Chessboard of Midgaard",
-        "low_range": "10",
-        "high_range": "35",
+        "low_range": 10,
+        "high_range": 35,
         "writer": "Exxon",
         "credits": "Chessboard of Midgaard",
         "min_vnum": 4200,

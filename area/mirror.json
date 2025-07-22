@@ -2,8 +2,8 @@
     "area": {
         "file_name": "mirror.are",
         "name": "Old Thalos",
-        "low_range": "1",
-        "high_range": "30",
+        "low_range": 1,
+        "high_range": 30,
         "writer": "Kahn",
         "credits": "Old Thalos",
         "min_vnum": 5300,

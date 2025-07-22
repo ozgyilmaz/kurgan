@@ -2,8 +2,8 @@
     "area": {
         "file_name": "dream.are",
         "name": "Machine Dreams",
-        "low_range": "1",
-        "high_range": "5",
+        "low_range": 1,
+        "high_range": 5,
         "writer": "Furey",
         "credits": "Machine Dreams",
         "min_vnum": 8600,

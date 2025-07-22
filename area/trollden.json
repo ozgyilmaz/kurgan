@@ -2,8 +2,8 @@
     "area": {
         "file_name": "trollden.are",
         "name": "Troll Den",
-        "low_range": "10",
-        "high_range": "15",
+        "low_range": 10,
+        "high_range": 15,
         "writer": "Merc",
         "credits": "Troll Den",
         "min_vnum": 2800,

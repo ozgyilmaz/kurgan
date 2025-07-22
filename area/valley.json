@@ -2,8 +2,8 @@
     "area": {
         "file_name": "valley.are",
         "name": "Valley of the Elves",
-        "low_range": "5",
-        "high_range": "20",
+        "low_range": 5,
+        "high_range": 20,
         "writer": "Hatchet",
         "credits": "Valley of the Elves",
         "min_vnum": 7800,

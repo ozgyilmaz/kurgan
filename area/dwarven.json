@@ -2,8 +2,8 @@
     "area": {
         "file_name": "dwarven.are",
         "name": "Dwarven Kingdom",
-        "low_range": "10",
-        "high_range": "25",
+        "low_range": 10,
+        "high_range": 25,
         "writer": "Anon",
         "credits": "Dwarven Kingdom",
         "min_vnum": 6500,

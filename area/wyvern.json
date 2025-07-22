@@ -2,8 +2,8 @@
     "area": {
         "file_name": "wyvern.are",
         "name": "Wyvern's Tower",
-        "low_range": "5",
-        "high_range": "30",
+        "low_range": 5,
+        "high_range": 30,
         "writer": "Tyrst",
         "credits": "Wyvern's Tower",
         "min_vnum": 1600,

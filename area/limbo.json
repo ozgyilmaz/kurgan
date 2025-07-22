@@ -2,8 +2,8 @@
     "area": {
         "file_name": "limbo.are",
         "name": "Limbo",
-        "low_range": "1",
-        "high_range": "50",
+        "low_range": 1,
+        "high_range": 50,
         "writer": "Diku",
         "credits": "Limbo",
         "min_vnum": 0,

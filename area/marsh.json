@@ -2,8 +2,8 @@
     "area": {
         "file_name": "marsh.are",
         "name": "Marsh",
-        "low_range": "15",
-        "high_range": "25",
+        "low_range": 15,
+        "high_range": 25,
         "writer": "Generic",
         "credits": "Old Marsh",
         "min_vnum": 8300,

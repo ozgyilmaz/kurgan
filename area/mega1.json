@@ -2,8 +2,8 @@
     "area": {
         "file_name": "mega1.are",
         "name": "Mega City One",
-        "low_range": "5",
-        "high_range": "35",
+        "low_range": 5,
+        "high_range": 35,
         "writer": "Glop",
         "credits": "Mega-City One ",
         "min_vnum": 8000,

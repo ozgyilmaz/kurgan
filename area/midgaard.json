@@ -2,8 +2,8 @@
     "area": {
         "file_name": "midgaard.are",
         "name": "Midgaard",
-        "low_range": "1",
-        "high_range": "50",
+        "low_range": 1,
+        "high_range": 50,
         "writer": "Diku",
         "credits": "Midgaard",
         "min_vnum": 3000,

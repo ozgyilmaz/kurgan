@@ -2,8 +2,8 @@
     "area": {
         "file_name": "mobfact.are",
         "name": "Mob Factory",
-        "low_range": "5",
-        "high_range": "15",
+        "low_range": 5,
+        "high_range": 15,
         "writer": "PinkF",
         "credits": "Mob Factory",
         "min_vnum": 9400,

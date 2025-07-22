@@ -2,8 +2,8 @@
     "area": {
         "file_name": "shire.are",
         "name": "Shire",
-        "low_range": "5",
-        "high_range": "35",
+        "low_range": 5,
+        "high_range": 35,
         "writer": "Poohb",
         "credits": "The Shire",
         "min_vnum": 1100,

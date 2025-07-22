@@ -2,8 +2,8 @@
     "area": {
         "file_name": "school.are",
         "name": "mud school",
-        "low_range": "1",
-        "high_range": "5",
+        "low_range": 1,
+        "high_range": 5,
         "writer": "Hatchet",
         "credits": "Mud School",
         "min_vnum": 3700,

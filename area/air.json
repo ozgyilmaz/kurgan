@@ -2,8 +2,8 @@
     "area": {
         "file_name": "air.are",
         "name": "In the Air",
-        "low_range": "5",
-        "high_range": "10",
+        "low_range": 5,
+        "high_range": 10,
         "writer": "Copper",
         "credits": "In the Air",
         "min_vnum": 1000,

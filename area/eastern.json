@@ -2,8 +2,8 @@
     "area": {
         "file_name": "eastern.are",
         "name": "Sands of Sorrow",
-        "low_range": "10",
-        "high_range": "20",
+        "low_range": 10,
+        "high_range": 20,
         "writer": "Anon",
         "credits": "Sands of Sorrow",
         "min_vnum": 5000,

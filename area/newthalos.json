@@ -2,8 +2,8 @@
     "area": {
         "file_name": "newthalos.are",
         "name": "New Thalos",
-        "low_range": "10",
-        "high_range": "35",
+        "low_range": 10,
+        "high_range": 35,
         "writer": "Conner",
         "credits": "New Thalos",
         "min_vnum": 9500,

@@ -2,8 +2,8 @@
     "area": {
         "file_name": "hitower.are",
         "name": "High Tower",
-        "low_range": "10",
-        "high_range": "30",
+        "low_range": 10,
+        "high_range": 30,
         "writer": "Skylar",
         "credits": "High Tower of Sorcery",
         "min_vnum": 1300,

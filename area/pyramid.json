@@ -2,8 +2,8 @@
     "area": {
         "file_name": "pyramid.are",
         "name": "Pyramid",
-        "low_range": "5",
-        "high_range": "50",
+        "low_range": 5,
+        "high_range": 50,
         "writer": "Andersen",
         "credits": "The Great Pyramid",
         "min_vnum": 8700,

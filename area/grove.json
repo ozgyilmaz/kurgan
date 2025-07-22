@@ -2,8 +2,8 @@
     "area": {
         "file_name": "grove.are",
         "name": "Holy Grove",
-        "low_range": "5",
-        "high_range": "20",
+        "low_range": 5,
+        "high_range": 20,
         "writer": "Alfa",
         "credits": "Holy Grove",
         "min_vnum": 8900,

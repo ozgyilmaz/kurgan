@@ -2,8 +2,8 @@
     "area": {
         "file_name": "plains.are",
         "name": "Plains",
-        "low_range": "1",
-        "high_range": "20",
+        "low_range": 1,
+        "high_range": 20,
         "writer": "Copper",
         "credits": "Plains of the North",
         "min_vnum": 300,

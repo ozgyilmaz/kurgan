@@ -2,8 +2,8 @@
     "area": {
         "file_name": "sewer.are",
         "name": "Sewers",
-        "low_range": "5",
-        "high_range": "30",
+        "low_range": 5,
+        "high_range": 30,
         "writer": "Diku",
         "credits": "Sewer",
         "min_vnum": 7000,

@@ -2,8 +2,8 @@
     "area": {
         "file_name": "tohell.are",
         "name": "Hell",
-        "low_range": "32",
-        "high_range": "51",
+        "low_range": 32,
+        "high_range": 51,
         "writer": "Strahd",
         "credits": "Descent to Hell",
         "min_vnum": 10400,

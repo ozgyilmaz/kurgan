@@ -2,8 +2,8 @@
     "area": {
         "file_name": "hood.are",
         "name": "Gangland",
-        "low_range": "5",
-        "high_range": "15",
+        "low_range": 5,
+        "high_range": 15,
         "writer": "Raff",
         "credits": "Dangerous Neighborhood",
         "min_vnum": 2100,
