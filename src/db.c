@@ -2605,36 +2605,20 @@ void free_string( char *pstr )
     return;
 }
 
-
-
 void do_areas( CHAR_DATA *ch, char *argument )
 {
-    char buf[MAX_STRING_LENGTH];
-    AREA_DATA *pArea1;
-    AREA_DATA *pArea2;
-    int iArea;
-    int iAreaHalf;
+    AREA_DATA *pArea;
 
     if (argument[0] != '\0')
     {
-	printf_to_char(ch, "No argument is used with this command.\n\r");
-	return;
+        printf_to_char(ch, "No argument is used with this command.\n\r");
+        return;
     }
 
-    iAreaHalf = (top_area + 1) / 2;
-    pArea1    = area_first;
-    pArea2    = area_first;
-    for ( iArea = 0; iArea < iAreaHalf; iArea++ )
-	pArea2 = pArea2->next;
-
-    for ( iArea = 0; iArea < iAreaHalf; iArea++ )
+    printf_to_char(ch,"Bölgeler:\n\r\n\r");
+    for ( pArea = area_first; pArea != NULL; pArea = pArea->next )
     {
-	sprintf( buf, "%-39s%-39s\n\r",
-	    pArea1->credits, (pArea2 != NULL) ? pArea2->credits : "" );
-	printf_to_char(ch, buf);
-	pArea1 = pArea1->next;
-	if ( pArea2 != NULL )
-	    pArea2 = pArea2->next;
+        printf_to_char(ch,"[{W%2d %3d{x] {c%35s{x\n\r",pArea->low_range,pArea->high_range,pArea->name);
     }
 
     return;
