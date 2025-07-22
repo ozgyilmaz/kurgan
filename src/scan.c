@@ -85,6 +85,7 @@ void do_scan(CHAR_DATA *ch, char *argument)
    act("You peer intently $T.", ch, NULL, dir_name[door], TO_CHAR);
    act("$n peers intently $T.", ch, NULL, dir_name[door], TO_ROOM);
    sprintf(buf, "Looking %s you see:\n\r", dir_name[door]);
+   printf_to_char(ch, buf);
                                                                                   
    scan_room = ch->in_room;
 

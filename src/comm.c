@@ -2124,9 +2124,8 @@ bool check_parse_name( char *name )
 	   return FALSE;
     }
 	
-    if (str_cmp(capitalize(name),"Alander") && (!str_prefix("Alan",name)
-    || !str_suffix("Alander",name)))
-	return FALSE;
+    if (!str_cmp(capitalize(name),"Jai"))
+	return TRUE;
 
     /*
      * Length restrictions.

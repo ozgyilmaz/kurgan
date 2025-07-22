@@ -87,3 +87,6 @@
 - Area chess2 added.
 - automated quest system implemented. (Vassago and Anatolia mud)
 - char creation screen: alignment selection removed
+
+# 22.07.2025
+- do_scan() added to available commands.
