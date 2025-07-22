@@ -415,14 +415,14 @@ const	struct	pc_race_type	pc_race_table	[]	=
 	"dwarf",	"Dwarf",	8,
 	{ "berserk" },
 	{ 14, 12, 14, 10, 15 },	{ 20, 16, 19, 14, 21 }, SIZE_MEDIUM,
-	STAT_CON, OBJ_VNUM_SCHOOL_AXE, 75, 20, -3, 12, 18, FALSE
+	STAT_CON, OBJ_VNUM_SCHOOL_AXE, 75, 20, -3, 12, 18, TRUE
     },
 
     {
 	"giant",	"Giant",	6,
 	{ "bash", "fast healing" },
 	{ 16, 11, 13, 11, 14 },	{ 22, 15, 18, 15, 20 }, SIZE_LARGE,
-	STAT_STR, OBJ_VNUM_SCHOOL_MACE, 75, 18, -2, 15, 22, FALSE
+	STAT_STR, OBJ_VNUM_SCHOOL_MACE, 75, 18, -2, 15, 22, TRUE
     }
 };
 

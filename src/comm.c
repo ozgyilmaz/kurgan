@@ -1997,6 +1997,7 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
     if ((obj = create_object(get_obj_index(vnum), 0, FALSE)) != NULL)
     {
         obj_to_char(obj, ch);
+    	equip_char(ch,obj,WEAR_WIELD);
     }
 
     // Learn the skill
@@ -2052,8 +2053,8 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
 	    ch->hit	= ch->max_hit;
 	    ch->mana	= ch->max_mana;
 	    ch->move	= ch->max_move;
-	    ch->train	 = 3;
-	    ch->practice = 5;
+	    ch->train	 = 6;
+	    ch->practice = 2;
 	    sprintf( buf, "%s",
 		title_table[ch->level].title );
 	    set_title( ch, buf );

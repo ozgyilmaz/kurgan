@@ -1923,7 +1923,7 @@ int xp_compute( CHAR_DATA *gch, CHAR_DATA *victim, int total_levels )
     /* more exp at the low levels */
     if (gch->level < 10)
 	{
-		double scale = 1.0 + (10 - gch->level) * 0.1;  // level 1 → x2.0, level 9 → x1.1
+		double scale = 1.0 + (10 - gch->level) * 0.2;  // her seviye için %20 ek XP
 		xp = (int)(xp * scale);
 	}
 

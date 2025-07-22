@@ -1914,6 +1914,14 @@
                     "exit_u1_vnum": 3714
                 },
                 {
+                    "exit_door": 4,
+                    "exit_description": "A Room in Mud School.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3711
+                },
+                {
                     "exit_door": 5,
                     "exit_description": "You see the next station below.\n",
                     "exit_keyword": "",
