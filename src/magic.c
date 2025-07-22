@@ -232,7 +232,6 @@ bool saves_spell( int level, CHAR_DATA *victim, int dam_type )
 	case IS_VULNERABLE:	save -= 2;	break;
     }
 
-    if (!IS_NPC(victim) && pc_race_table[victim->race].fMana)
 	save = 9 * save / 10;
     save = URANGE( 5, save, 95 );
     return number_percent( ) < save;
@@ -543,11 +542,7 @@ void do_cast( CHAR_DATA *ch, char *argument )
     else
     {
         ch->mana -= mana;
-        if (IS_NPC(ch) || pc_race_table[ch->race].fMana) 
-	/* class has spells */
-            (*skill_table[sn].spell_fun) ( sn, ch->level, ch, vo,target);
-        else
-            (*skill_table[sn].spell_fun) (sn, 3 * ch->level/4, ch, vo,target);
+        (*skill_table[sn].spell_fun) ( sn, ch->level, ch, vo,target);
         check_improve(ch,sn,TRUE,1);
     }
 

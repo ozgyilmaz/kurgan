@@ -395,34 +395,34 @@ const	struct	pc_race_type	pc_race_table	[]	=
 {
     { "null race", "", 0,
       { "" }, { 13, 13, 13, 13, 13 }, { 18, 18, 18, 18, 18 }, 0,
-      0, 0, 75, 20, -4, 10, 15, TRUE },
+      0, 0, 75, 20, -4, 10, 15 },
 
     {
 	"human",	"Human",	0,
 	{ "" },
 	{ 13, 13, 13, 13, 13 },	{ 18, 18, 18, 18, 18 },	SIZE_MEDIUM,
-	STAT_INT, OBJ_VNUM_SCHOOL_SWORD, 75, 20, -4,  10,  15,  TRUE
+	STAT_INT, OBJ_VNUM_SCHOOL_SWORD, 75, 20, -4,  10,  15
     },
 
     { 	
 	"elf",		" Elf ",	5,
 	{ "sneak", "hide" },
 	{ 12, 14, 13, 15, 11 },	{ 16, 20, 18, 21, 15 }, SIZE_SMALL,
-	STAT_DEX, OBJ_VNUM_SCHOOL_DAGGER, 75, 22, -6, 8, 12, TRUE
+	STAT_DEX, OBJ_VNUM_SCHOOL_DAGGER, 75, 22, -6, 8, 12
     },
 
     {
 	"dwarf",	"Dwarf",	8,
 	{ "berserk" },
 	{ 14, 12, 14, 10, 15 },	{ 20, 16, 19, 14, 21 }, SIZE_MEDIUM,
-	STAT_CON, OBJ_VNUM_SCHOOL_AXE, 75, 20, -3, 12, 18, TRUE
+	STAT_CON, OBJ_VNUM_SCHOOL_AXE, 75, 20, -3, 12, 18
     },
 
     {
 	"giant",	"Giant",	6,
 	{ "bash", "fast healing" },
 	{ 16, 11, 13, 11, 14 },	{ 22, 15, 18, 15, 20 }, SIZE_LARGE,
-	STAT_STR, OBJ_VNUM_SCHOOL_MACE, 75, 18, -2, 15, 22, TRUE
+	STAT_STR, OBJ_VNUM_SCHOOL_MACE, 75, 18, -2, 15, 22
     }
 };
 

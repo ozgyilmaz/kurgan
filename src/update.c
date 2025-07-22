@@ -85,8 +85,6 @@ void advance_level( CHAR_DATA *ch, bool hide )
 		    pc_race_table[ch->race].hp_max );
     add_mana 	= number_range(2,(2*get_curr_stat(ch,STAT_INT)
 				  + get_curr_stat(ch,STAT_WIS))/5);
-    if (!pc_race_table[ch->race].fMana)
-	add_mana /= 2;
     add_move	= number_range( 1, (get_curr_stat(ch,STAT_CON)
 				  + get_curr_stat(ch,STAT_DEX))/6 );
     add_prac	= wis_app[get_curr_stat(ch,STAT_WIS)].practice;
@@ -252,8 +250,6 @@ int mana_gain( CHAR_DATA *ch )
 	    if (ch->mana < ch->max_mana)
 	        check_improve(ch,gsn_meditation,TRUE,8);
 	}
-	if (!pc_race_table[ch->race].fMana)
-	    gain /= 2;
 
 	switch ( ch->position )
 	{

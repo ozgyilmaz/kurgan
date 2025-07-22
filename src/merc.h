@@ -425,7 +425,6 @@ struct pc_race_type  /* additional data for pc races */
     sh_int	thac0_32;		/* Thac0 for level 32		*/
     sh_int	hp_min;			/* Min hp gained on leveling	*/
     sh_int	hp_max;			/* Max hp gained on leveling	*/
-    bool	fMana;			/* Race gains mana on level	*/
 };
 
 struct spec_type
