@@ -94,3 +94,4 @@
 - BUGFIX: do_areas() was not working properly, repaired.
 - BUGFIX: in json areas, area low_range and high_range were string. converter script repaired, now the values are int.
 - send_to_char() remaining instances replaced with printf_to_char().
+- xp compute for levels lower than 10 edited. also xp randomization is reconfigured.

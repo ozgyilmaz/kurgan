@@ -1921,8 +1921,11 @@ int xp_compute( CHAR_DATA *gch, CHAR_DATA *victim, int total_levels )
     }
 
     /* more exp at the low levels */
-    if (gch->level < 6)
-    	xp = 10 * xp / (gch->level + 4);
+    if (gch->level < 10)
+	{
+		double scale = 1.0 + (10 - gch->level) * 0.1;  // level 1 → x2.0, level 9 → x1.1
+		xp = (int)(xp * scale);
+	}
 
     /* less at high */
     if (gch->level > 35 )
@@ -1943,7 +1946,7 @@ int xp_compute( CHAR_DATA *gch, CHAR_DATA *victim, int total_levels )
     }
    
     /* randomize the rewards */
-    xp = number_range (xp * 3/4, xp * 5/4);
+	xp = number_range ((int)((float)xp * 0.8), (int)((float)xp * 1.2));
 
     /* adjust for grouping */
     xp = xp * gch->level/( UMAX(1,total_levels -1) );
