@@ -1703,8 +1703,8 @@ void group_gain( CHAR_DATA *ch, CHAR_DATA *victim )
 	{
 		if (ch->pcdata->questmob == victim->pIndexData->vnum)
 		{
-			send_to_char("You have almost completed your QUEST!\n\r",ch);
-			send_to_char("Return to the questmaster before your time runs out!\n\r",ch);
+			printf_to_char(ch,"You have almost completed your QUEST!\n\r");
+			printf_to_char(ch,"Return to the questmaster before your time runs out!\n\r");
 			ch->pcdata->questmob = -1;
 		}
 	}

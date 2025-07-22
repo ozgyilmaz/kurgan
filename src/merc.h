@@ -2111,7 +2111,6 @@ void	show_string	args( ( struct descriptor_data *d, char *input) );
 void	close_socket	args( ( DESCRIPTOR_DATA *dclose ) );
 void	write_to_buffer	args( ( DESCRIPTOR_DATA *d, const char *txt,
 			    int length ) );
-void	send_to_char	args( ( const char *txt, CHAR_DATA *ch ) );
 void    printf_to_char  args((CHAR_DATA *ch, const char *fmt, ...));
 void    bugf args((char *fmt, ...));
 void	page_to_char	args( ( const char *txt, CHAR_DATA *ch ) );

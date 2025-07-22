@@ -1268,13 +1268,13 @@ void do_read(CHAR_DATA *ch, char *argument)
 
     if ((book = get_obj_carry(ch, argument, ch)) == NULL)
     {
-        send_to_char("You aren't carrying that.\n\r", ch);
+        printf_to_char(ch,"You aren't carrying that.\n\r");
         return;
     }
 
     if (book->item_type != ITEM_BOOK)
     {
-        send_to_char("That doesn't look like something you can read.\n\r", ch);
+        printf_to_char(ch,"That doesn't look like something you can read.\n\r");
         return;
     }
 
@@ -1283,21 +1283,21 @@ void do_read(CHAR_DATA *ch, char *argument)
 
     if (sn <= 0 || sn >= MAX_SKILL || skill_table[sn].name == NULL)
     {
-        send_to_char("You can't make sense of this book.\n\r", ch);
+        printf_to_char(ch,"You can't make sense of this book.\n\r");
         return;
     }
 
     // oyuncu daha önce bu skillin bu seviyesini öğrenmişse
     if (ch->pcdata->skill_tier[sn] >= tier)
     {
-        send_to_char("You have already learned what this book can teach.\n\r", ch);
+        printf_to_char(ch,"You have already learned what this book can teach.\n\r");
         return;
     }
 
     // daha düşük seviye kitapları okumamışsa
     if (tier > 1 && ch->pcdata->skill_tier[sn] < tier - 1)
     {
-        send_to_char("This book is too advanced for you. You need to study the earlier volume first.\n\r", ch);
+        printf_to_char(ch,"This book is too advanced for you. You need to study the earlier volume first.\n\r");
         return;
     }
 
@@ -1313,7 +1313,7 @@ void do_read(CHAR_DATA *ch, char *argument)
              book->short_descr,
              skill_table[sn].name,
              tier);
-    send_to_char(buf, ch);
+    printf_to_char(ch,buf);
 
     act("$n studies $p carefully.", ch, book, NULL, TO_ROOM);
 

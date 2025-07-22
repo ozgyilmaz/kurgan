@@ -93,3 +93,4 @@
 - MAX_ALIAS increase from 5 to 25.
 - BUGFIX: do_areas() was not working properly, repaired.
 - BUGFIX: in json areas, area low_range and high_range were string. converter script repaired, now the values are int.
+- send_to_char() remaining instances replaced with printf_to_char().

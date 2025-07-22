@@ -2297,12 +2297,6 @@ void stop_idling( CHAR_DATA *ch )
 /*
  * Write to one char.
  */
-void send_to_char( const char *txt, CHAR_DATA *ch )
-{
-    if ( txt != NULL && ch->desc != NULL )
-        write_to_buffer( ch->desc, txt, strlen(txt) );
-    return;
-}
 
 void printf_to_char(CHAR_DATA *ch, const char *fmt, ...)
 {
@@ -2316,7 +2310,11 @@ void printf_to_char(CHAR_DATA *ch, const char *fmt, ...)
 
     colourconv(colbuf, buf, ch);
 
-    send_to_char(colbuf, ch);
+	if ( colbuf != NULL && ch->desc != NULL )
+	{
+        write_to_buffer( ch->desc, colbuf, strlen(colbuf) );
+	}
+    return;
 }
 
 void bugf(char *fmt, ...)
