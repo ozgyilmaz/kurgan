@@ -101,3 +101,4 @@
 - "giant" is not a pc race anymore.
 - README.md updated.
 - started to configure github pages.
+- github pages file ".nojekyll" for "no jekyll".
