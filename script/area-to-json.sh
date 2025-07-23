@@ -4,7 +4,7 @@ import os
 import subprocess
 from pathlib import Path
 
-AREA_DIR = Path("../archived_area")
+AREA_DIR = Path("../archive/area")
 SCRIPT_PATH = Path(__file__).resolve().parent / "area-to-json.py"
 
 def is_valid_area_file(filename):
