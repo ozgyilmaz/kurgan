@@ -100,3 +100,4 @@
 # 23.07.2025
 - "giant" is not a pc race anymore.
 - README.md updated.
+- started to configure github pages.
