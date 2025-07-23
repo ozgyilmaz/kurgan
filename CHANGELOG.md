@@ -96,3 +96,4 @@
 - send_to_char() remaining instances replaced with printf_to_char().
 - xp compute for levels lower than 10 edited. also xp randomization is reconfigured.
 - bool fMana (Race gains mana on level) has been removed from game.
+- "giant" is not a pc race anymore.
