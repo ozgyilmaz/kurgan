@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kurgan MUD</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="https://ozgyilmaz.github.io/kurgan/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg> <span class="fs-4">Kurgan MUD</span>
+        </a>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>&nbsp;
+            <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>&nbsp;
+            <li class="nav-item"><a href="download.html" class="nav-link active" aria-current="page">Download</a></li>&nbsp;
+            <li class="nav-item"><a href="play.html" class="nav-link">Play</a></li>&nbsp;
+            <li class="nav-item"><a href="#" class="nav-link">Help</a></li>&nbsp;
+        </ul>
+    </header>
+</div>
+
+  <div class="container mt-5">
+    <h1>Download & Installation</h1>
+
+    <p class="lead">
+    Welcome to the download section of <strong>Kurgan MUD</strong>. This guide explains how to obtain, compile, and run the MUD server on a modern Linux system. The current codebase has been tested with <strong>GCC 11.4.0</strong> on Ubuntu 22.04 LTS.
+    </p>
+
+    <p>
+    To get started, you can clone the repository using <code>git</code>:
+    </p>
+
+    <pre><code>git clone https://github.com/ozgyilmaz/kurgan-mud.git
+    cd kurgan-mud/src
+    make</code></pre>
+
+    <p>
+    The compiled binary will be named <code>rom</code> and placed in the <code>src</code> directory. Make sure you have the following packages installed before compiling:
+    </p>
+
+    <ul>
+      <li><code>build-essential</code> (includes GCC and Make)</li>
+      <li><code>libcrypt-dev</code> (for password encryption support)</li>
+      <li><code>pkg-config</code> (optional, if you plan to use external libraries)</li>
+    </ul>
+
+    <p>
+    To run the game server, navigate to the <code>area</code> directory and execute the binary with a desired port number:
+    </p>
+
+    <pre><code>cd ../area
+    ../src/rom 4000</code></pre>
+
+    <p>
+    Alternatively, you may use the <code>startup.sh</code> script located in the <code>area</code> directory to launch and log the server automatically:
+    </p>
+
+    <pre><code>./startup.sh 4000</code></pre>
+
+    <p>
+    Once the server is running, you can connect to it using any MUD client such as <a href="https://www.mudlet.org/">Mudlet</a> or <a href="https://www.zuggsoft.com/">CMUD</a>, or simply by using <code>telnet</code>:
+    </p>
+
+    <pre><code>telnet 127.0.0.1 4000</code></pre>
+
+    <p>
+    Enjoy building your own fantasy world!
+    </p>
+  </div>
+
+  <!-- Bootstrap JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
