@@ -152,6 +152,170 @@ shadow~
 portal GOT 0
 0 0 0 0 0
 0 0 0 P
+#26
+a book~
+a book~
+A book has carelessly been left here.~
+paper~
+book G AO
+1 'sword' '' '' ''
+1 10 220 P
+#27
+quest jai~
+quest staff of Jai~
+A quest obj flying in the air.~
+energy~
+treasure ATY A
+0 0 -1 0 0
+0 0 0 P
+E
+quest jai~
+The letters '%s' is carved on the staff.
+~
+#28
+quest maru~
+quest staff of Maru~
+A quest obj flying in the air.~
+energy~
+treasure ATY A
+0 0 -1 0 0
+0 0 0 P
+E
+quest maru~
+The letters '%s' is carved on the staff.
+~
+#29
+quest randalin~
+quest staff of Randalin~
+A quest obj flying in the air.~
+energy~
+treasure ATY A
+0 0 -1 0 0
+0 0 0 P
+E
+quest randalin~
+The letters '%s' is carved on the staff.
+~
+#30
+quest nir~
+quest staff of Nir~
+A quest obj flying in the air.~
+energy~
+treasure ATY A
+0 0 -1 0 0
+0 0 0 P
+E
+quest nir~
+The letters '%s' is carved on the staff.
+~
+#31
+ring hero~
+the %s Ring of %s~
+An enormous, RING lies here, filling the room with its power.~
+platinum~
+armor AGIOY ABP
+12 12 12 9 1
+21 300 100000 G
+A
+6 1
+A
+17 -20
+A
+18 10
+A
+12 150
+A
+13 150
+F
+A 14 500 TU
+#32
+girth hero~
+the %s Girth of %s~
+An enormous, huge GIRTH lies here, filling the room with its power.~
+platinum~
+armor AGIOY ALP
+12 12 12 9 2
+21 300 100000 G
+A
+1 2
+A
+4 2
+A
+5 3
+A
+3 3
+A
+6 1
+A
+12 200
+A
+13 200
+A
+14 500
+A
+18 10
+A
+19 10
+F
+A 17 -30 J
+#33
+weapon hero~
+the %s Weapon of %s~
+An enormous, huge WEAPON lies here, filling the room with its power.~
+platinum~
+weapon AGIOY ANP
+exotic 10 4 slash D
+21 100 100000 G
+A
+1 2
+A
+2 2
+A
+4 2
+A
+6 1
+A
+19 25
+A
+18 25
+A
+12 200
+A
+13 200
+A
+14 500
+#34
+silk adamantite backpack~
+the silk-adamantite backpack~
+A very very shiny backpack is here.~
+silk~
+container AGIOY AKOP
+500 64 0 100 10
+21 30 99900 P
+A
+3 5
+A
+5 5
+A
+6 5
+A
+12 200
+A
+13 200
+A
+17 -200
+A
+14 500
+A
+18 20
+A
+19 20
+A
+24 -20
+E
+backpack~
+The golden letters '%s' is carved on the side of the backpack.
+~
 #0
 
 #ROOMS

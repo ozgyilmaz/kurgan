@@ -2,8 +2,8 @@
     "area": {
         "file_name": "drow.are",
         "name": "Drow City",
-        "low_range": "15",
-        "high_range": "25",
+        "low_range": 15,
+        "high_range": 25,
         "writer": "Drkside",
         "credits": "Drow City",
         "min_vnum": 5100,

@@ -2,8 +2,8 @@
     "area": {
         "file_name": "midgaard.are",
         "name": "Midgaard",
-        "low_range": "1",
-        "high_range": "50",
+        "low_range": 1,
+        "high_range": 50,
         "writer": "Diku",
         "credits": "Midgaard",
         "min_vnum": 3000,
@@ -7136,6 +7136,14 @@
                     "exit_locks": 0,
                     "exit_key": -1,
                     "exit_u1_vnum": 3047
+                },
+                {
+                    "exit_door": 3,
+                    "exit_description": "The Great Chessboard of Midgaard.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 4200
                 }
             ],
             "extra_descriptions": [
@@ -12345,7 +12353,7 @@
     ],
     "shops": [
         {
-            "keeper": "3000",
+            "keeper": 3000,
             "buy_type_0": 2,
             "buy_type_1": 3,
             "buy_type_2": 4,
@@ -12357,7 +12365,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3001",
+            "keeper": 3001,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12369,7 +12377,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3002",
+            "keeper": 3002,
             "buy_type_0": 1,
             "buy_type_1": 8,
             "buy_type_2": 13,
@@ -12381,7 +12389,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3003",
+            "keeper": 3003,
             "buy_type_0": 5,
             "buy_type_1": 6,
             "buy_type_2": 7,
@@ -12393,7 +12401,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3004",
+            "keeper": 3004,
             "buy_type_0": 9,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12405,7 +12413,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3006",
+            "keeper": 3006,
             "buy_type_0": 22,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12417,7 +12425,7 @@
             "close_hour": 22
         },
         {
-            "keeper": "3008",
+            "keeper": 3008,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12429,7 +12437,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3009",
+            "keeper": 3009,
             "buy_type_0": 8,
             "buy_type_1": 30,
             "buy_type_2": 32,
@@ -12441,7 +12449,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3010",
+            "keeper": 3010,
             "buy_type_0": 9,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12453,7 +12461,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3040",
+            "keeper": 3040,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12465,7 +12473,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3042",
+            "keeper": 3042,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12477,7 +12485,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3043",
+            "keeper": 3043,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12489,7 +12497,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3044",
+            "keeper": 3044,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12501,7 +12509,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3045",
+            "keeper": 3045,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12513,7 +12521,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3046",
+            "keeper": 3046,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12525,7 +12533,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3070",
+            "keeper": 3070,
             "buy_type_0": 10,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12537,7 +12545,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3100",
+            "keeper": 3100,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12549,7 +12557,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3150",
+            "keeper": 3150,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12561,7 +12569,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "3160",
+            "keeper": 3160,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -12649,6 +12657,10 @@
         {
             "vnum": 3163,
             "spec_fun": "spec_nasty"
+        },
+        {
+            "vnum": 3011,
+            "spec_fun": "spec_questmaster"
         }
     ]
 }

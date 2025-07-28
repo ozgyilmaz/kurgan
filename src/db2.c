@@ -134,7 +134,6 @@ void load_mobiles( cJSON *json_data )
  
         pMobIndex                       = alloc_perm( sizeof(*pMobIndex) );
         pMobIndex->vnum                 = vnum;
-	    pMobIndex->new_format		= TRUE;
 	    newmobs++;
         pMobIndex->player_name          = str_dup( cJSON_GetObjectItemCaseSensitive( json_mobile, "name" )->valuestring );
         pMobIndex->short_descr          = str_dup( cJSON_GetObjectItemCaseSensitive( json_mobile, "short_description" )->valuestring );
@@ -257,7 +256,7 @@ void load_objects( cJSON *json_data )
 {
     cJSON *json_objects = NULL;
     cJSON *json_object = NULL;
-    char value_array[100];
+    char value_array[MAX_STRING_LENGTH];
 
     json_objects = cJSON_GetObjectItemCaseSensitive(json_data, "objects");
 
@@ -286,7 +285,6 @@ void load_objects( cJSON *json_data )
  
         pObjIndex                       = alloc_perm( sizeof(*pObjIndex) );
         pObjIndex->vnum                 = vnum;
-        pObjIndex->new_format           = TRUE;
 	    pObjIndex->reset_num		= 0;
 	    newobjs++;
         pObjIndex->name                 = str_dup( cJSON_GetObjectItemCaseSensitive( json_object, "name" )->valuestring );
@@ -335,6 +333,7 @@ void load_objects( cJSON *json_data )
         case ITEM_POTION:
         case ITEM_PILL:
         case ITEM_SCROLL:
+        case ITEM_BOOK:
             pObjIndex->value[0]		= atoi(strtok(value_array," "));
             pObjIndex->value[1]		= skill_lookup(strtok(NULL," "));
             pObjIndex->value[2]		= skill_lookup(strtok(NULL," "));

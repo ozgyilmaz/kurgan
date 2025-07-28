@@ -170,7 +170,7 @@ void save_char_obj( CHAR_DATA *ch )
 void fwrite_char( CHAR_DATA *ch, FILE *fp )
 {
     AFFECT_DATA *paf;
-    int sn, gn, pos;
+    int sn, pos;
 
     fprintf( fp, "#%s\n", IS_NPC(ch) ? "MOB" : "PLAYER"	);
 
@@ -186,11 +186,10 @@ void fwrite_char( CHAR_DATA *ch, FILE *fp )
     	fprintf( fp, "Desc %s~\n",	ch->description	);
     if (ch->prompt != NULL || !str_cmp(ch->prompt,"<%hhp %mm %vmv> "))
         fprintf( fp, "Prom %s~\n",      ch->prompt  	);
-    fprintf( fp, "Race %s~\n", race_table[ch->race].name );
+    fprintf( fp, "Race %s~\n", pc_race_table[ch->race].name );
     if (ch->clan)
     	fprintf( fp, "Clan %s~\n",clan_table[ch->clan].name);
     fprintf( fp, "Sex  %d\n",	ch->sex			);
-    fprintf( fp, "Cla  %d\n",	ch->class		);
     fprintf( fp, "Levl %d\n",	ch->level		);
     if (ch->trust != 0)
 	fprintf( fp, "Tru  %d\n",	ch->trust	);
@@ -244,7 +243,17 @@ void fwrite_char( CHAR_DATA *ch, FILE *fp )
     fprintf( fp, "ACs %d %d %d %d\n",	
 	ch->armor[0],ch->armor[1],ch->armor[2],ch->armor[3]);
     if (ch->wimpy !=0 )
-	fprintf( fp, "Wimp  %d\n",	ch->wimpy	);
+	{
+		fprintf( fp, "Wimp  %d\n",	ch->wimpy	);
+	}
+	/* Quest staff begin */
+	if (ch->pcdata->questpoints != 0)
+        fprintf( fp, "QuestPnts %d\n",  ch->pcdata->questpoints );
+    if (ch->pcdata->nextquest != 0)
+        fprintf( fp, "QuestNext %d\n",  ch->pcdata->nextquest   );
+    else if (ch->pcdata->countdown != 0)
+        fprintf( fp, "QuestNext %d\n",  10              );
+	/* Quest staff end */
     fprintf( fp, "Attr %d %d %d %d %d\n",
 	ch->perm_stat[STAT_STR],
 	ch->perm_stat[STAT_INT],
@@ -298,18 +307,9 @@ void fwrite_char( CHAR_DATA *ch, FILE *fp )
 	{
 	    if ( skill_table[sn].name != NULL && ch->pcdata->learned[sn] > 0 )
 	    {
-		fprintf( fp, "Sk %d '%s'\n",
-		    ch->pcdata->learned[sn], skill_table[sn].name );
+		fprintf( fp, "Sk %d %d '%s'\n",ch->pcdata->learned[sn], ch->pcdata->skill_tier[sn], skill_table[sn].name );
 	    }
 	}
-
-	for ( gn = 0; gn < MAX_GROUP; gn++ )
-        {
-            if ( group_table[gn].name != NULL && ch->pcdata->group_known[gn])
-            {
-                fprintf( fp, "Gr '%s'\n",group_table[gn].name);
-            }
-        }
     }
 
     for ( paf = ch->affected; paf != NULL; paf = paf->next )
@@ -430,8 +430,6 @@ void fwrite_obj( CHAR_DATA *ch, OBJ_DATA *obj, FILE *fp, int iNest )
 
     fprintf( fp, "#O\n" );
     fprintf( fp, "Vnum %d\n",   obj->pIndexData->vnum        );
-    if (!obj->pIndexData->new_format)
-	fprintf( fp, "Oldstyle\n");
     if (obj->enchanted)
 	fprintf( fp,"Enchanted\n");
     fprintf( fp, "Nest %d\n",	iNest	  	     );
@@ -562,7 +560,7 @@ bool load_char_obj( DESCRIPTOR_DATA *d, char *name )
     ch->act				= PLR_NOSUMMON;
     ch->comm				= COMM_COMBINE 
 					| COMM_PROMPT;
-    ch->prompt 				= str_dup("<%hhp %mm %vmv> ");
+    ch->prompt 				= str_dup("<%n: %hhp %mm %vmv Opp:<%o>> ");
     ch->pcdata->confirm_delete		= FALSE;
     ch->pcdata->pwd			= str_dup( "" );
     ch->pcdata->bamfin			= str_dup( "" );
@@ -636,20 +634,13 @@ bool load_char_obj( DESCRIPTOR_DATA *d, char *name )
     /* initialize race */
     if (found)
     {
-	int i;
 
 	if (ch->race == 0)
 	    ch->race = race_lookup("human");
 
-	ch->size = race_table[ch->race].size;
+	ch->size = pc_race_table[ch->race].size;
 	ch->dam_type = 17; /*punch */
 
-	for (i = 0; i < 5; i++)
-	{
-	    if (race_table[ch->race].skills[i] == NULL)
-		break;
-	    group_add(ch,race_table[ch->race].skills[i],FALSE);
-	}
 	ch->affected_by = ch->affected_by|race_table[ch->race].aff;
 	ch->imm_flags	= ch->imm_flags | race_table[ch->race].imm;
 	ch->res_flags	= ch->res_flags | race_table[ch->race].res;
@@ -663,9 +654,6 @@ bool load_char_obj( DESCRIPTOR_DATA *d, char *name )
 
     if (found && ch->version < 2)  /* need to add the new skills */
     {
-	group_add(ch,"rom basics",FALSE);
-	group_add(ch,class_table[ch->class].base_group,FALSE);
-	group_add(ch,class_table[ch->class].default_group,TRUE);
 	ch->pcdata->learned[gsn_recall] = 50;
     }
  
@@ -887,8 +875,6 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
 	    break;
 
 	case 'C':
-	    KEY( "Class",	ch->class,		fread_number( fp ) );
-	    KEY( "Cla",		ch->class,		fread_number( fp ) );
 	    KEY( "Clan",	ch->clan,	clan_lookup(fread_string(fp)));
 
 	    if ( !str_cmp( word, "Condition" ) || !str_cmp(word,"Cond"))
@@ -941,23 +927,6 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
 
 	case 'G':
 	    KEY( "Gold",	ch->gold,		fread_number( fp ) );
-            if ( !str_cmp( word, "Group" )  || !str_cmp(word,"Gr"))
-            {
-                int gn;
-                char *temp;
- 
-                temp = fread_word( fp ) ;
-                gn = group_lookup(temp);
-                /* gn    = group_lookup( fread_word( fp ) ); */
-                if ( gn < 0 )
-                {
-                    fprintf(stderr,"%s",temp);
-                    bugf("Fread_char: unknown group. ");
-                }
-                else
-		    gn_add(ch,gn);
-                fMatch = TRUE;
-            }
 	    break;
 
 	case 'H':
@@ -1034,6 +1003,13 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
             KEYS( "Prompt",      ch->prompt,             fread_string( fp ) );
  	    KEY( "Prom",	ch->prompt,		fread_string( fp ) );
 	    break;
+		
+	/* Quest staff begin */
+	case 'Q':
+		KEY( "QuestPnts",   ch->pcdata->questpoints,        fread_number( fp ) );
+		KEY( "QuestNext",   ch->pcdata->nextquest,          fread_number( fp ) );
+		break;
+	/* Quest staff end */
 
 	case 'R':
 	    KEY( "Race",        ch->race,	
@@ -1064,9 +1040,11 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
 	    {
 		int sn;
 		int value;
+		int tier;
 		char *temp;
 
 		value = fread_number( fp );
+		tier = fread_number( fp );
 		temp = fread_word( fp ) ;
 		sn = skill_lookup(temp);
 		/* sn    = skill_lookup( fread_word( fp ) ); */
@@ -1076,7 +1054,10 @@ void fread_char( CHAR_DATA *ch, FILE *fp )
 		    bugf("Fread_char: unknown skill. ");
 		}
 		else
+		{
 		    ch->pcdata->learned[sn] = value;
+			ch->pcdata->skill_tier[sn] = tier;
+		}
 		fMatch = TRUE;
 	    }
 
@@ -1356,13 +1337,11 @@ void fread_obj( CHAR_DATA *ch, FILE *fp )
     bool fNest;
     bool fVnum;
     bool first;
-    bool new_format;  /* to prevent errors */
     bool make_new;    /* update object */
     
     fVnum = FALSE;
     obj = NULL;
     first = TRUE;  /* used to counter fp offset */
-    new_format = FALSE;
     make_new = FALSE;
 
     word   = feof( fp ) ? "End" : fread_word( fp );
@@ -1378,8 +1357,7 @@ void fread_obj( CHAR_DATA *ch, FILE *fp )
 	}
         else
 	{
-	    obj = create_object(get_obj_index(vnum),-1);
-	    new_format = TRUE;
+	    obj = create_object(get_obj_index(vnum),-1, FALSE);
 	}
 	    
     }
@@ -1506,20 +1484,7 @@ void fread_obj( CHAR_DATA *ch, FILE *fp )
 		}
 		else
 		{
-		    if (!new_format)
-		    {
-		    	obj->next	= object_list;
-		    	object_list	= obj;
-		    	obj->pIndexData->count++;
-		    }
 
-		    if (!obj->pIndexData->new_format 
-		    && obj->item_type == ITEM_ARMOR
-		    &&  obj->value[1] == 0)
-		    {
-			obj->value[1] = obj->value[0];
-			obj->value[2] = obj->value[0];
-		    }
 		    if (make_new)
 		    {
 			int wear;
@@ -1527,7 +1492,7 @@ void fread_obj( CHAR_DATA *ch, FILE *fp )
 			wear = obj->wear_loc;
 			extract_obj(obj);
 
-			obj = create_object(obj->pIndexData,0);
+			obj = create_object(obj->pIndexData,0, FALSE);
 			obj->wear_loc = wear;
 		    }
 		    if ( iNest == 0 || rgObjNest[iNest] == NULL )
@@ -1564,15 +1529,6 @@ void fread_obj( CHAR_DATA *ch, FILE *fp )
 		    rgObjNest[iNest] = obj;
 		    fNest = TRUE;
 		}
-		fMatch = TRUE;
-	    }
-	    break;
-
-   	case 'O':
-	    if ( !str_cmp( word,"Oldstyle" ) )
-	    {
-		if (obj->pIndexData != NULL && obj->pIndexData->new_format)
-		    make_new = TRUE;
 		fMatch = TRUE;
 	    }
 	    break;

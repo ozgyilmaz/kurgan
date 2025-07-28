@@ -2,8 +2,8 @@
     "area": {
         "file_name": "catacomb.are",
         "name": "Catacombs",
-        "low_range": "10",
-        "high_range": "20",
+        "low_range": 10,
+        "high_range": 20,
         "writer": "Raff",
         "credits": "Dwarven Catacombs",
         "min_vnum": 2000,

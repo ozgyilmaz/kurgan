@@ -2,8 +2,8 @@
     "area": {
         "file_name": "hitower.are",
         "name": "High Tower",
-        "low_range": "10",
-        "high_range": "30",
+        "low_range": 10,
+        "high_range": 30,
         "writer": "Skylar",
         "credits": "High Tower of Sorcery",
         "min_vnum": 1300,
@@ -11765,7 +11765,7 @@
     ],
     "shops": [
         {
-            "keeper": "1305",
+            "keeper": 1305,
             "buy_type_0": 17,
             "buy_type_1": 19,
             "buy_type_2": 0,
@@ -11777,7 +11777,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "1306",
+            "keeper": 1306,
             "buy_type_0": 2,
             "buy_type_1": 3,
             "buy_type_2": 4,

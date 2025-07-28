@@ -2,8 +2,8 @@
     "area": {
         "file_name": "mahntor.are",
         "name": "Mahn-Tor",
-        "low_range": "5",
-        "high_range": "35",
+        "low_range": 5,
+        "high_range": 35,
         "writer": "Chris",
         "credits": "The Keep of Mahn-Tor",
         "min_vnum": 2300,

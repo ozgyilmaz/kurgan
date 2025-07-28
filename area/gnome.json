@@ -2,8 +2,8 @@
     "area": {
         "file_name": "gnome.are",
         "name": "Gnome Village",
-        "low_range": "5",
-        "high_range": "15",
+        "low_range": 5,
+        "high_range": 15,
         "writer": "Vougon",
         "credits": "Gnome Village",
         "min_vnum": 1500,

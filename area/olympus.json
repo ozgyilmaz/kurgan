@@ -2,8 +2,8 @@
     "area": {
         "file_name": "olympus.are",
         "name": "Olympus",
-        "low_range": "5",
-        "high_range": "50",
+        "low_range": 5,
+        "high_range": 50,
         "writer": "Generic",
         "credits": "Olympus",
         "min_vnum": 900,
@@ -3686,7 +3686,7 @@
     ],
     "shops": [
         {
-            "keeper": "915",
+            "keeper": 915,
             "buy_type_0": 1,
             "buy_type_1": 8,
             "buy_type_2": 13,

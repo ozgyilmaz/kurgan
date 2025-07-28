@@ -54,6 +54,7 @@ void	weather_update	args( ( void ) );
 void	char_update	args( ( void ) );
 void	obj_update	args( ( void ) );
 void	aggr_update	args( ( void ) );
+void    quest_update    args( ( void ) ); /* Vassago - quest.c */
 
 /* used for saving */
 
@@ -76,16 +77,14 @@ void advance_level( CHAR_DATA *ch, bool hide )
 	( ch->played + (int) (current_time - ch->logon) ) / 3600;
 
     sprintf( buf, "the %s",
-	title_table [ch->class] [ch->level] [ch->sex == SEX_FEMALE ? 1 : 0] );
+	title_table[ch->level].title );
     set_title( ch, buf );
 
     add_hp	= con_app[get_curr_stat(ch,STAT_CON)].hitp + number_range(
-		    class_table[ch->class].hp_min,
-		    class_table[ch->class].hp_max );
+		    pc_race_table[ch->race].hp_min,
+		    pc_race_table[ch->race].hp_max );
     add_mana 	= number_range(2,(2*get_curr_stat(ch,STAT_INT)
 				  + get_curr_stat(ch,STAT_WIS))/5);
-    if (!class_table[ch->class].fMana)
-	add_mana /= 2;
     add_move	= number_range( 1, (get_curr_stat(ch,STAT_CON)
 				  + get_curr_stat(ch,STAT_DEX))/6 );
     add_prac	= wis_app[get_curr_stat(ch,STAT_WIS)].practice;
@@ -177,7 +176,7 @@ int hit_gain( CHAR_DATA *ch )
     else
     {
 	gain = UMAX(3,get_curr_stat(ch,STAT_CON) - 3 + ch->level/2); 
-	gain += class_table[ch->class].hp_max - 10;
+	gain += pc_race_table[ch->race].hp_max - 10;
  	number = number_percent();
 	if (number < get_skill(ch,gsn_fast_healing))
 	{
@@ -251,8 +250,6 @@ int mana_gain( CHAR_DATA *ch )
 	    if (ch->mana < ch->max_mana)
 	        check_improve(ch,gsn_meditation,TRUE,8);
 	}
-	if (!class_table[ch->class].fMana)
-	    gain /= 2;
 
 	switch ( ch->position )
 	{
@@ -1094,37 +1091,38 @@ void update_handler( void )
 
     if ( --pulse_area     <= 0 )
     {
-	pulse_area	= PULSE_AREA;
-	/* number_range( PULSE_AREA / 2, 3 * PULSE_AREA / 2 ); */
-	area_update	( );
+		pulse_area	= PULSE_AREA;
+		/* number_range( PULSE_AREA / 2, 3 * PULSE_AREA / 2 ); */
+		area_update	( );
     }
 
     if ( --pulse_music	  <= 0 )
     {
-	pulse_music	= PULSE_MUSIC;
-	song_update();
+		pulse_music	= PULSE_MUSIC;
+		song_update();
     }
 
     if ( --pulse_mobile   <= 0 )
     {
-	pulse_mobile	= PULSE_MOBILE;
-	mobile_update	( );
+		pulse_mobile	= PULSE_MOBILE;
+		mobile_update	( );
     }
 
     if ( --pulse_violence <= 0 )
     {
-	pulse_violence	= PULSE_VIOLENCE;
-	violence_update	( );
+		pulse_violence	= PULSE_VIOLENCE;
+		violence_update	( );
     }
 
     if ( --pulse_point    <= 0 )
     {
-	wiznet("TICK!",NULL,NULL,WIZ_TICKS,0,0);
-	pulse_point     = PULSE_TICK;
-/* number_range( PULSE_TICK / 2, 3 * PULSE_TICK / 2 ); */
-	weather_update	( );
-	char_update	( );
-	obj_update	( );
+		wiznet("TICK!",NULL,NULL,WIZ_TICKS,0,0);
+		pulse_point     = PULSE_TICK;
+	/* number_range( PULSE_TICK / 2, 3 * PULSE_TICK / 2 ); */
+		weather_update	( );
+		char_update	( );
+		quest_update( );
+		obj_update	( );
     }
 
     aggr_update( );

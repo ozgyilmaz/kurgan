@@ -460,8 +460,8 @@ void one_hit( CHAR_DATA *ch, CHAR_DATA *victim, int dt )
     }
     else
     {
-	thac0_00 = class_table[ch->class].thac0_00;
-	thac0_32 = class_table[ch->class].thac0_32;
+	thac0_00 = pc_race_table[ch->race].thac0_00;
+	thac0_32 = pc_race_table[ch->race].thac0_32;
     }
     thac0  = interpolate( ch->level, thac0_00, thac0_32 );
 
@@ -516,27 +516,15 @@ void one_hit( CHAR_DATA *ch, CHAR_DATA *victim, int dt )
      * Hit.
      * Calc damage.
      */
-    if ( IS_NPC(ch) && (!ch->pIndexData->new_format || wield == NULL))
-	if (!ch->pIndexData->new_format)
-	{
-	    dam = number_range( ch->level / 2, ch->level * 3 / 2 );
-	    if ( wield != NULL )
-	    	dam += dam / 2;
-	}
-	else
-	    dam = dice(ch->damage[DICE_NUMBER],ch->damage[DICE_TYPE]);
-	
+    if ( IS_NPC(ch) && (wield == NULL))
+		dam = dice(ch->damage[DICE_NUMBER],ch->damage[DICE_TYPE]);
     else
     {
 	if (sn != -1)
 	    check_improve(ch,sn,TRUE,5);
 	if ( wield != NULL )
 	{
-	    if (wield->pIndexData->new_format)
 		dam = dice(wield->value[1],wield->value[2]) * skill/100;
-	    else
-	    	dam = number_range( wield->value[1] * skill/100, 
-				wield->value[2] * skill/100);
 
 	    if (get_eq_char(ch,WEAR_SHIELD) == NULL)  /* no shield = more */
 		dam = dam * 11/10;
@@ -681,8 +669,7 @@ void one_hit( CHAR_DATA *ch, CHAR_DATA *victim, int dt )
 /*
  * Inflict damage from a hit.
  */
-bool damage(CHAR_DATA *ch,CHAR_DATA *victim,int dam,int dt,int dam_type,
-	    bool show) 
+bool damage(CHAR_DATA *ch,CHAR_DATA *victim,int dam,int dt,int dam_type,bool show) 
 {
     OBJ_DATA *corpse;
     bool immune;
@@ -1439,7 +1426,7 @@ void make_corpse( CHAR_DATA *ch )
     if ( IS_NPC(ch) )
     {
 	name		= ch->short_descr;
-	corpse		= create_object(get_obj_index(OBJ_VNUM_CORPSE_NPC), 0);
+	corpse		= create_object(get_obj_index(OBJ_VNUM_CORPSE_NPC), 0, FALSE);
 	corpse->timer	= number_range( 3, 6 );
 	if ( ch->gold > 0 )
 	{
@@ -1452,7 +1439,7 @@ void make_corpse( CHAR_DATA *ch )
     else
     {
 	name		= ch->name;
-	corpse		= create_object(get_obj_index(OBJ_VNUM_CORPSE_PC), 0);
+	corpse		= create_object(get_obj_index(OBJ_VNUM_CORPSE_PC), 0, FALSE);
 	corpse->timer	= number_range( 25, 40 );
 	REMOVE_BIT(ch->act,PLR_CANLOOT);
 	if (!is_clan(ch))
@@ -1614,7 +1601,7 @@ void death_cry( CHAR_DATA *ch )
 	char *name;
 
 	name		= IS_NPC(ch) ? ch->short_descr : ch->name;
-	obj		= create_object( get_obj_index( vnum ), 0 );
+	obj		= create_object( get_obj_index( vnum ), 0, FALSE );
 	obj->timer	= number_range( 4, 7 );
 
 	sprintf( buf, obj->short_descr, name );
@@ -1707,7 +1694,21 @@ void group_gain( CHAR_DATA *ch, CHAR_DATA *victim )
      * Dying of mortal wounds or poison doesn't give xp to anyone!
      */
     if ( victim == ch )
-	return;
+	{
+		return;
+	}
+
+	/* Quest staff begin */
+	if (!IS_NPC(ch) && IS_QUESTOR(ch) && IS_NPC(victim))
+	{
+		if (ch->pcdata->questmob == victim->pIndexData->vnum)
+		{
+			printf_to_char(ch,"You have almost completed your QUEST!\n\r");
+			printf_to_char(ch,"Return to the questmaster before your time runs out!\n\r");
+			ch->pcdata->questmob = -1;
+		}
+	}
+	/* Quest staff end */
     
     members = 0;
     group_levels = 0;
@@ -1920,8 +1921,11 @@ int xp_compute( CHAR_DATA *gch, CHAR_DATA *victim, int total_levels )
     }
 
     /* more exp at the low levels */
-    if (gch->level < 6)
-    	xp = 10 * xp / (gch->level + 4);
+    if (gch->level < 10)
+	{
+		double scale = 1.0 + (10 - gch->level) * 0.2;  // her seviye için %20 ek XP
+		xp = (int)(xp * scale);
+	}
 
     /* less at high */
     if (gch->level > 35 )
@@ -1942,7 +1946,7 @@ int xp_compute( CHAR_DATA *gch, CHAR_DATA *victim, int total_levels )
     }
    
     /* randomize the rewards */
-    xp = number_range (xp * 3/4, xp * 5/4);
+	xp = number_range ((int)((float)xp * 0.8), (int)((float)xp * 1.2));
 
     /* adjust for grouping */
     xp = xp * gch->level/( UMAX(1,total_levels -1) );
@@ -1996,14 +2000,14 @@ void dam_message( CHAR_DATA *ch, CHAR_DATA *victim,int dam,int dt,bool immune )
     {
 	if (ch  == victim)
 	{
-	    sprintf( buf1, "$n %s $melf%c",vp,punct);
-	    sprintf( buf2, "You %s yourself%c",vs,punct);
+	    sprintf( buf1, "$n $C%s$c $melf%c [%d]",vp,punct, dam);
+	    sprintf( buf2, "You $C%s$c yourself%c [%d]",vs,punct, dam);
 	}
 	else
 	{
-	    sprintf( buf1, "$n %s $N%c",  vp, punct );
-	    sprintf( buf2, "You %s $N%c", vs, punct );
-	    sprintf( buf3, "$n %s you%c", vp, punct );
+	    sprintf( buf1, "$n $C%s$c $N%c [%d]",  vp, punct, dam );
+	    sprintf( buf2, "You $C%s$c $N%c [%d]", vs, punct, dam );
+	    sprintf( buf3, "$n $C%s$c you%c [%d]", vp, punct, dam );
 	}
     }
     else
@@ -2038,28 +2042,28 @@ void dam_message( CHAR_DATA *ch, CHAR_DATA *victim,int dam,int dt,bool immune )
 	{
 	    if (ch == victim)
 	    {
-		sprintf( buf1, "$n's %s %s $m%c",attack,vp,punct);
-		sprintf( buf2, "Your %s %s you%c",attack,vp,punct);
+		sprintf( buf1, "$n's %s $C%s$c $m%c [%d]",attack,vp,punct, dam);
+		sprintf( buf2, "Your %s $C%s$c you%c [%d]",attack,vp,punct, dam);
 	    }
 	    else
 	    {
-	    	sprintf( buf1, "$n's %s %s $N%c",  attack, vp, punct );
-	    	sprintf( buf2, "Your %s %s $N%c",  attack, vp, punct );
-	    	sprintf( buf3, "$n's %s %s you%c", attack, vp, punct );
+	    	sprintf( buf1, "$n's %s $C%s$c $N%c [%d]",  attack, vp, punct, dam );
+	    	sprintf( buf2, "Your %s $C%s$c $N%c [%d]",  attack, vp, punct, dam );
+	    	sprintf( buf3, "$n's %s $C%s$c you%c [%d]", attack, vp, punct, dam );
 	    }
 	}
     }
 
     if (ch == victim)
     {
-	act(buf1,ch,NULL,NULL,TO_ROOM);
-	act(buf2,ch,NULL,NULL,TO_CHAR);
+	act_color(buf1,ch,NULL,NULL,TO_ROOM,POS_RESTING,CLR_LOPES_YELLOW);
+	act_color(buf2,ch,NULL,NULL,TO_CHAR,POS_RESTING,CLR_LOPES_B_RED);
     }
     else
     {
-    	act( buf1, ch, NULL, victim, TO_NOTVICT );
-    	act( buf2, ch, NULL, victim, TO_CHAR );
-    	act( buf3, ch, NULL, victim, TO_VICT );
+		act_color( buf1, ch, NULL, victim, TO_NOTVICT,POS_RESTING,CLR_LOPES_YELLOW );
+    	act_color( buf2, ch, NULL, victim, TO_CHAR,POS_RESTING,CLR_LOPES_B_GREEN );
+    	act_color( buf3, ch, NULL, victim, TO_VICT,POS_RESTING,CLR_LOPES_B_RED );
     }
 
     return;
@@ -2110,9 +2114,7 @@ void do_berserk( CHAR_DATA *ch, char *argument)
     int chance, hp_percent;
 
     if ((chance = get_skill(ch,gsn_berserk)) == 0
-    ||  (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_BERSERK))
-    ||  (!IS_NPC(ch)
-    &&   ch->level < skill_table[gsn_berserk].skill_level[ch->class]))
+    ||  (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_BERSERK)))
     {
 	printf_to_char(ch, "You turn red in the face, but nothing happens.\n\r");
 	return;
@@ -2201,9 +2203,7 @@ void do_bash( CHAR_DATA *ch, char *argument )
     one_argument(argument,arg);
  
     if ( (chance = get_skill(ch,gsn_bash)) == 0
-    ||	 (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_BASH))
-    ||	 (!IS_NPC(ch)
-    &&	  ch->level < skill_table[gsn_bash].skill_level[ch->class]))
+    ||	 (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_BASH)))
     {	
 	printf_to_char(ch, "Bashing? What's that?\n\r");
 	return;
@@ -2332,9 +2332,7 @@ void do_dirt( CHAR_DATA *ch, char *argument )
     one_argument(argument,arg);
 
     if ( (chance = get_skill(ch,gsn_dirt)) == 0
-    ||   (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_KICK_DIRT))
-    ||   (!IS_NPC(ch)
-    &&    ch->level < skill_table[gsn_dirt].skill_level[ch->class]))
+    ||   (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_KICK_DIRT)))
     {
 	printf_to_char(ch, "You get your feet dirty.\n\r");
 	return;
@@ -2465,9 +2463,7 @@ void do_trip( CHAR_DATA *ch, char *argument )
     one_argument(argument,arg);
 
     if ( (chance = get_skill(ch,gsn_trip)) == 0
-    ||   (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_TRIP))
-    ||   (!IS_NPC(ch) 
-	  && ch->level < skill_table[gsn_trip].skill_level[ch->class]))
+    ||   (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_TRIP)))
     {
 	printf_to_char(ch, "Tripping?  What's that?\n\r");
 	return;
@@ -2827,14 +2823,8 @@ void do_flee( CHAR_DATA *ch, char *argument )
 	if ( !IS_NPC(ch) )
 	{
 	    printf_to_char(ch, "You flee from combat!\n\r");
-	if( (ch->class == 2) 
-	    && (number_percent() < 3*(ch->level/2) ) )
-		printf_to_char(ch, "You snuck away safely.\n\r");
-	else
-	    {
 	    printf_to_char(ch, "You lost 10 exp.\n\r"); 
 	    gain_exp( ch, -10 );
-	    }
 	}
 
 	stop_fighting( ch, TRUE );
@@ -2923,13 +2913,6 @@ void do_rescue( CHAR_DATA *ch, char *argument )
 void do_kick( CHAR_DATA *ch, char *argument )
 {
     CHAR_DATA *victim;
-
-    if ( !IS_NPC(ch)
-    &&   ch->level < skill_table[gsn_kick].skill_level[ch->class] )
-    {
-	printf_to_char(ch, "You better leave the martial arts to fighters.\n\r");
-	return;
-    }
 
     if (IS_NPC(ch) && !IS_SET(ch->off_flags,OFF_KICK))
 	return;

@@ -2,8 +2,8 @@
     "area": {
         "file_name": "redferne.are",
         "name": "Redferne's",
-        "low_range": "20",
-        "high_range": "30",
+        "low_range": 20,
+        "high_range": 30,
         "writer": "Diku",
         "credits": "Redferne's Residence",
         "min_vnum": 7900,

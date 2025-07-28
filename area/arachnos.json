@@ -2,8 +2,8 @@
     "area": {
         "file_name": "arachnos.are",
         "name": "Arachnos",
-        "low_range": "5",
-        "high_range": "20",
+        "low_range": 5,
+        "high_range": 20,
         "writer": "Mahatma",
         "credits": "Arachnos",
         "min_vnum": 6200,

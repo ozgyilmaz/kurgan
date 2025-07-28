@@ -2,8 +2,8 @@
     "area": {
         "file_name": "thalos.are",
         "name": "Thalos",
-        "low_range": "10",
-        "high_range": "25",
+        "low_range": 10,
+        "high_range": 25,
         "writer": "Drkside",
         "credits": "Thalos",
         "min_vnum": 5200,

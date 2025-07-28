@@ -98,7 +98,7 @@ void spell_portal( int sn, int level, CHAR_DATA *ch, void *vo,int target)
      	extract_obj(stone);
     }
 
-    portal = create_object(get_obj_index(OBJ_VNUM_PORTAL),0);
+    portal = create_object(get_obj_index(OBJ_VNUM_PORTAL),0, FALSE);
     portal->timer = 2 + level / 25; 
     portal->value[3] = victim->in_room->vnum;
 
@@ -152,7 +152,7 @@ void spell_nexus( int sn, int level, CHAR_DATA *ch, void *vo, int target)
     }
 
     /* portal one */ 
-    portal = create_object(get_obj_index(OBJ_VNUM_PORTAL),0);
+    portal = create_object(get_obj_index(OBJ_VNUM_PORTAL),0, FALSE);
     portal->timer = 1 + level / 10;
     portal->value[3] = to_room->vnum;
  
@@ -166,7 +166,7 @@ void spell_nexus( int sn, int level, CHAR_DATA *ch, void *vo, int target)
 	return;
 
     /* portal two */
-    portal = create_object(get_obj_index(OBJ_VNUM_PORTAL),0);
+    portal = create_object(get_obj_index(OBJ_VNUM_PORTAL),0, FALSE);
     portal->timer = 1 + level/10;
     portal->value[3] = from_room->vnum;
 

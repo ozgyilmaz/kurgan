@@ -2,8 +2,8 @@
     "area": {
         "file_name": "galaxy.are",
         "name": "Galaxy",
-        "low_range": "20",
-        "high_range": "30",
+        "low_range": 20,
+        "high_range": 30,
         "writer": "Doctor",
         "credits": "Galaxy",
         "min_vnum": 9300,

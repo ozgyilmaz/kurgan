@@ -2,8 +2,8 @@
     "area": {
         "file_name": "astral.are",
         "name": "Astral Plane",
-        "low_range": "10",
-        "high_range": "35",
+        "low_range": 10,
+        "high_range": 35,
         "writer": "Andersen",
         "credits": "Astral/Githyanki",
         "min_vnum": 7700,

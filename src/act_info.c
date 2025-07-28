@@ -259,8 +259,15 @@ void show_char_to_char_0( CHAR_DATA *victim, CHAR_DATA *ch )
 
     if (IS_IMMORTAL(ch) && !IS_NPC(ch) && IS_SET(ch->act, PLR_HOLYLIGHT) && IS_NPC(victim))
     {
-        sprintf(buf, " [Mob %d]", victim->pIndexData->vnum);
+        sprintf(buf, " [Mob %d] ", victim->pIndexData->vnum);
     }
+
+    /* Quest staff begin */
+    if (!IS_NPC(ch) && IS_NPC(victim) && ch->pcdata->questmob > 0 && victim->pIndexData->vnum == ch->pcdata->questmob)
+    {
+        strcat( buf, "{R[TARGET]{x ");
+    }
+    /* Quest staff end */
 
     if ( IS_SET(victim->comm,COMM_AFK	  )   ) strcat( buf, "[AFK] "	     );
     if ( IS_AFFECTED(victim, AFF_INVISIBLE)   ) strcat( buf, "(Invis) "      );
@@ -851,8 +858,8 @@ void do_prompt(CHAR_DATA *ch, char *argument)
        return;
    }
  
-   if( !strcmp( argument, "all" ) )
-      strcpy( buf, "<%hhp %mm %vmv> ");
+   if( !strcmp( argument, "all" ) ) //"<%hhp %mm %vmv> "
+      strcpy( buf, "Hp:%h/%H Mp:%m/%M Mv:%v/%V <%o> ");
    else
    {
       if ( strlen(argument) > 50 )
@@ -998,12 +1005,49 @@ void do_look( CHAR_DATA *ch, char *argument )
     if ( arg1[0] == '\0' || !str_cmp( arg1, "auto" ) )
     {
 	/* 'look' or 'look auto' */
-	printf_to_char(ch, ch->in_room->name);
+	printf_to_char(ch, "%s%s%s", CLR_ROOM_NAME, ch->in_room->name, CLR_RESET);
+    switch(ch->in_room->sector_type)
+    {
+      case SECT_INSIDE:
+      printf_to_char(ch," [Inside]");
+      break;
+      case SECT_CITY:
+      printf_to_char(ch," [City]");
+      break;
+      case SECT_FIELD:
+      printf_to_char(ch," [Field]");
+      break;
+      case SECT_FOREST:
+      printf_to_char(ch," [Forest]");
+      break;
+      case SECT_HILLS:
+      printf_to_char(ch," [Hill]");
+      break;
+      case SECT_MOUNTAIN:
+      printf_to_char(ch," [Mountain]");
+      break;
+      case SECT_WATER_SWIM:
+      case SECT_WATER_NOSWIM:
+      printf_to_char(ch," [Water]");
+      break;
+      case SECT_AIR:
+      printf_to_char(ch," [Air]");
+      break;
+      case SECT_DESERT:
+      printf_to_char(ch," [Desert]");
+      break;
+      case SECT_MAX:
+      printf_to_char(ch," [Hard]");
+      break;
+      default:
+      printf_to_char(ch," [*Unknown*]");
+      break;
+    }
+    printf_to_char(ch," [{y%s{x]",ch->in_room->area->name);
 
 	if (IS_IMMORTAL(ch) && !IS_NPC(ch) && IS_SET(ch->act, PLR_HOLYLIGHT))
 	{
-	    sprintf(buf," [Room %d]",ch->in_room->vnum);
-	    printf_to_char(ch, buf);
+	    printf_to_char(ch, " [Room %d]",ch->in_room->vnum);
 	}
 
 	printf_to_char(ch, "\n\r");
@@ -1211,11 +1255,72 @@ void do_look( CHAR_DATA *ch, char *argument )
     return;
 }
 
-/* RT added back for the hell of it */
-void do_read (CHAR_DATA *ch, char *argument )
+void do_read(CHAR_DATA *ch, char *argument)
 {
-    do_function(ch, &do_look, argument);
+    OBJ_DATA *book;
+    int sn, tier;
+
+    if (argument[0] == '\0')
+    {
+        printf_to_char(ch, "Read what?\n\r");
+        return;
+    }
+
+    if ((book = get_obj_carry(ch, argument, ch)) == NULL)
+    {
+        printf_to_char(ch,"You aren't carrying that.\n\r");
+        return;
+    }
+
+    if (book->item_type != ITEM_BOOK)
+    {
+        printf_to_char(ch,"That doesn't look like something you can read.\n\r");
+        return;
+    }
+
+    tier = book->value[0]; // Skill level/tier: 1, 2, 3
+    sn = book->value[1];   // Skill number
+
+    if (sn <= 0 || sn >= MAX_SKILL || skill_table[sn].name == NULL)
+    {
+        printf_to_char(ch,"You can't make sense of this book.\n\r");
+        return;
+    }
+
+    // oyuncu daha önce bu skillin bu seviyesini öğrenmişse
+    if (ch->pcdata->skill_tier[sn] >= tier)
+    {
+        printf_to_char(ch,"You have already learned what this book can teach.\n\r");
+        return;
+    }
+
+    // daha düşük seviye kitapları okumamışsa
+    if (tier > 1 && ch->pcdata->skill_tier[sn] < tier - 1)
+    {
+        printf_to_char(ch,"This book is too advanced for you. You need to study the earlier volume first.\n\r");
+        return;
+    }
+
+    // Öğrenme başarılı
+    ch->pcdata->skill_tier[sn] = tier;
+    if(ch->pcdata->learned[sn] == 0)
+    {
+        ch->pcdata->learned[sn] = 1;
+    }
+
+    char buf[MAX_STRING_LENGTH];
+    snprintf(buf, sizeof(buf), "You read '%s' and gain knowledge of %s (tier %d).\n\r",
+             book->short_descr,
+             skill_table[sn].name,
+             tier);
+    printf_to_char(ch,buf);
+
+    act("$n studies $p carefully.", ch, book, NULL, TO_ROOM);
+
+    // Kitap yok edilsin
+    extract_obj(book);
 }
+
 
 void do_examine( CHAR_DATA *ch, char *argument )
 {
@@ -1345,7 +1450,7 @@ void do_exits( CHAR_DATA *ch, char *argument )
     if ( fAuto )
 	strcat( buf, "]\n\r" );
 
-    printf_to_char(ch, buf);
+    printf_to_char(ch, "%s%s%s", CLR_ROOM_EXITS, buf, CLR_RESET);
     return;
 }
 
@@ -1392,10 +1497,9 @@ void do_score( CHAR_DATA *ch, char *argument )
 	printf_to_char(ch, buf);
     }
 
-    sprintf(buf, "Race: %s  Sex: %s  Class: %s\n\r",
+    sprintf(buf, "Race: %s  Sex: %s\n\r",
 	race_table[ch->race].name,
-	ch->sex == 0 ? "sexless" : ch->sex == 1 ? "male" : "female",
- 	IS_NPC(ch) ? "mobile" : class_table[ch->class].name);
+	sex_table[ch->sex].name);
     printf_to_char(ch, buf);
 	
 
@@ -1439,10 +1543,18 @@ void do_score( CHAR_DATA *ch, char *argument )
     /* RT shows exp to level */
     if (!IS_NPC(ch) && ch->level < LEVEL_HERO)
     {
-      sprintf (buf, 
-	"You need %d exp to level.\n\r",
-	((ch->level + 1) * exp_per_level(ch,ch->pcdata->points) - ch->exp));
-      printf_to_char(ch, buf);
+        sprintf (buf, 
+        "You need %d exp to level.\n\r",
+        ((ch->level + 1) * exp_per_level(ch,ch->pcdata->points) - ch->exp));
+        printf_to_char(ch, buf);
+    }
+
+    if (!IS_NPC(ch))
+    {
+        sprintf (buf, 
+        "You have %d quest points and %d minutes to request a new one.\n\r",
+        ch->pcdata->questpoints, ch->pcdata->nextquest);
+        printf_to_char(ch, buf);
      }
 
     sprintf( buf, "Wimpy set to %d hit points.\n\r", ch->wimpy );
@@ -1802,7 +1914,6 @@ void do_whois (CHAR_DATA *ch, char *argument)
     for (d = descriptor_list; d != NULL; d = d->next)
     {
 	CHAR_DATA *wch;
-	char const *class;
 
  	if (d->connected != CON_PLAYING || !can_see(ch,d->character))
 	    continue;
@@ -1815,28 +1926,11 @@ void do_whois (CHAR_DATA *ch, char *argument)
 	if (!str_prefix(arg,wch->name))
 	{
 	    found = TRUE;
-	    
-	    /* work out the printing */
-	    class = class_table[wch->class].who_name;
-	    switch(wch->level)
-	    {
-		case MAX_LEVEL - 0 : class = "IMP"; 	break;
-		case MAX_LEVEL - 1 : class = "CRE";	break;
-		case MAX_LEVEL - 2 : class = "SUP";	break;
-		case MAX_LEVEL - 3 : class = "DEI";	break;
-		case MAX_LEVEL - 4 : class = "GOD";	break;
-		case MAX_LEVEL - 5 : class = "IMM";	break;
-		case MAX_LEVEL - 6 : class = "DEM";	break;
-		case MAX_LEVEL - 7 : class = "ANG";	break;
-		case MAX_LEVEL - 8 : class = "AVA";	break;
-	    }
     
 	    /* a little formatting */
-	    sprintf(buf, "[%2d %6s %s] %s%s%s%s%s%s%s%s\n\r",
+	    sprintf(buf, "[%2d %6s] %s%s%s%s%s%s%s%s\n\r",
 		wch->level,
-		wch->race < MAX_PC_RACE ? race_table[wch->race].who_name
-					: "     ",
-		class,
+		wch->race < MAX_PC_RACE ? pc_race_table[wch->race].who_name : "     ",
 	     wch->incog_level >= LEVEL_HERO ? "(Incog) ": "",
  	     wch->invis_level >= LEVEL_HERO ? "(Wizi) " : "",
 	     clan_table[wch->clan].who_name,
@@ -1867,108 +1961,8 @@ void do_who( CHAR_DATA *ch, char *argument )
     char buf[MAX_STRING_LENGTH];
     char buf2[MAX_STRING_LENGTH];
     BUFFER *output;
-    DESCRIPTOR_DATA *d;
-    int iClass;
-    int iRace;
-    int iClan;
-    int iLevelLower;
-    int iLevelUpper;
-    int nNumber;
+    DESCRIPTOR_DATA *d; 
     int nMatch;
-    bool rgfClass[MAX_CLASS];
-    bool rgfRace[MAX_PC_RACE];
-    bool rgfClan[MAX_CLAN];
-    bool fClassRestrict = FALSE;
-    bool fClanRestrict = FALSE;
-    bool fClan = FALSE;
-    bool fRaceRestrict = FALSE;
-    bool fImmortalOnly = FALSE;
- 
-    /*
-     * Set default arguments.
-     */
-    iLevelLower    = 0;
-    iLevelUpper    = MAX_LEVEL;
-    for ( iClass = 0; iClass < MAX_CLASS; iClass++ )
-        rgfClass[iClass] = FALSE;
-    for ( iRace = 0; iRace < MAX_PC_RACE; iRace++ )
-        rgfRace[iRace] = FALSE;
-    for (iClan = 0; iClan < MAX_CLAN; iClan++)
-	rgfClan[iClan] = FALSE;
- 
-    /*
-     * Parse arguments.
-     */
-    nNumber = 0;
-    for ( ;; )
-    {
-        char arg[MAX_STRING_LENGTH];
- 
-        argument = one_argument( argument, arg );
-        if ( arg[0] == '\0' )
-            break;
- 
-        if ( is_number( arg ) )
-        {
-            switch ( ++nNumber )
-            {
-            case 1: iLevelLower = atoi( arg ); break;
-            case 2: iLevelUpper = atoi( arg ); break;
-            default:
-                printf_to_char(ch, "Only two level numbers allowed.\n\r");
-                return;
-            }
-        }
-        else
-        {
- 
-            /*
-             * Look for classes to turn on.
-             */
-            if (!str_prefix(arg,"immortals"))
-            {
-                fImmortalOnly = TRUE;
-            }
-            else
-            {
-                iClass = class_lookup(arg);
-                if (iClass == -1)
-                {
-                    iRace = race_lookup(arg);
- 
-                    if (iRace == 0 || iRace >= MAX_PC_RACE)
-		    {
-			if (!str_prefix(arg,"clan"))
-			    fClan = TRUE;
-			else
-		        {
-			    iClan = clan_lookup(arg);
-			    if (iClan)
-			    {
-				fClanRestrict = TRUE;
-			   	rgfClan[iClan] = TRUE;
-			    }
-			    else
-			    {
-                        	printf_to_char(ch, "That's not a valid race, class, or clan.\n\r");
-                            	return;
-			    }
-                        }
-		    }
-                    else
-                    {
-                        fRaceRestrict = TRUE;
-                        rgfRace[iRace] = TRUE;
-                    }
-                }
-                else
-                {
-                    fClassRestrict = TRUE;
-                    rgfClass[iClass] = TRUE;
-                }
-            }
-        }
-    }
  
     /*
      * Now show matching chars.
@@ -1979,7 +1973,6 @@ void do_who( CHAR_DATA *ch, char *argument )
     for ( d = descriptor_list; d != NULL; d = d->next )
     {
         CHAR_DATA *wch;
-        char const *class;
  
         /*
          * Check for match against restrictions.
@@ -1992,48 +1985,17 @@ void do_who( CHAR_DATA *ch, char *argument )
 
 	if (!can_see(ch,wch))
 	    continue;
-
-        if ( wch->level < iLevelLower
-        ||   wch->level > iLevelUpper
-        || ( fImmortalOnly  && wch->level < LEVEL_IMMORTAL )
-        || ( fClassRestrict && !rgfClass[wch->class] )
-        || ( fRaceRestrict && !rgfRace[wch->race])
- 	|| ( fClan && !is_clan(wch))
-	|| ( fClanRestrict && !rgfClan[wch->clan]))
-            continue;
  
         nMatch++;
- 
-        /*
-         * Figure out what to print for class.
-	 */
-	class = class_table[wch->class].who_name;
-	switch ( wch->level )
-	{
-	default: break;
-            {
-                case MAX_LEVEL - 0 : class = "IMP";     break;
-                case MAX_LEVEL - 1 : class = "CRE";     break;
-                case MAX_LEVEL - 2 : class = "SUP";     break;
-                case MAX_LEVEL - 3 : class = "DEI";     break;
-                case MAX_LEVEL - 4 : class = "GOD";     break;
-                case MAX_LEVEL - 5 : class = "IMM";     break;
-                case MAX_LEVEL - 6 : class = "DEM";     break;
-                case MAX_LEVEL - 7 : class = "ANG";     break;
-                case MAX_LEVEL - 8 : class = "AVA";     break;
-            }
-	}
 
 	/*
 	 * Format it up.
 	 */
-	sprintf( buf, "[%s%2d%s %6s %s] %s%s%s%s%s%s%s%s\n\r",
+	sprintf( buf, "[%s%2d%s %6s] %s%s%s%s%s%s%s%s\n\r",
 	    CLR_DARK_GOLDEN_ROD,
         wch->level,
         CLR_RESET,
-	    wch->race < MAX_PC_RACE ? race_table[wch->race].who_name 
-				    : "     ",
-	    class,
+	    wch->race < MAX_PC_RACE ? pc_race_table[wch->race].who_name : "     ",
 	    wch->incog_level >= LEVEL_HERO ? "(Incog) " : "",
 	    wch->invis_level >= LEVEL_HERO ? "(Wizi) " : "",
 	    clan_table[wch->clan].who_name,
@@ -2193,16 +2155,8 @@ void do_compare( CHAR_DATA *ch, char *argument )
 	    break;
 
 	case ITEM_WEAPON:
-	    if (obj1->pIndexData->new_format)
 		value1 = (1 + obj1->value[2]) * obj1->value[1];
-	    else
-	    	value1 = obj1->value[1] + obj1->value[2];
-
-	    if (obj2->pIndexData->new_format)
 		value2 = (1 + obj2->value[2]) * obj2->value[1];
-	    else
-	    	value2 = obj2->value[1] + obj2->value[2];
-	    break;
 	}
     }
 
@@ -2495,100 +2449,114 @@ void do_practice( CHAR_DATA *ch, char *argument )
 
     if ( argument[0] == '\0' )
     {
-	int col;
+        int col;
 
-	col    = 0;
-	for ( sn = 0; sn < MAX_SKILL; sn++ )
-	{
-	    if ( skill_table[sn].name == NULL )
-		break;
-	    if ( ch->level < skill_table[sn].skill_level[ch->class] 
-	      || ch->pcdata->learned[sn] < 1 /* skill is not known */)
-		continue;
+        col    = 0;
+        for ( sn = 0; sn < MAX_SKILL; sn++ )
+        {
+            if ( skill_table[sn].name == NULL )
+            break;
+            if ( ch->pcdata->learned[sn] < 1 /* skill is not known */)
+            continue;
 
-	    sprintf( buf, "%-18s %3d%%  ",
-		skill_table[sn].name, ch->pcdata->learned[sn] );
-	    printf_to_char(ch, buf);
-	    if ( ++col % 3 == 0 )
-		printf_to_char(ch, "\n\r");
-	}
+            sprintf( buf, "{r(%d)%-18s %3d%%  {x",
+            ch->pcdata->skill_tier[sn],
+            skill_table[sn].name, ch->pcdata->learned[sn] );
+            printf_to_char(ch, buf);
+            if ( ++col % 3 == 0 )
+            printf_to_char(ch, "\n\r");
+        }
 
-	if ( col % 3 != 0 )
-	    printf_to_char(ch, "\n\r");
+        if ( col % 3 != 0 )
+            printf_to_char(ch, "\n\r");
 
-	sprintf( buf, "You have %d practice sessions left.\n\r",
-	    ch->practice );
-	printf_to_char(ch, buf);
+        sprintf( buf, "You have %d practice sessions left.\n\r",
+            ch->practice );
+        printf_to_char(ch, buf);
     }
     else
     {
-	CHAR_DATA *mob;
-	int adept;
+        CHAR_DATA *mob;
+        int adept;
 
-	if ( !IS_AWAKE(ch) )
-	{
-	    printf_to_char(ch, "In your dreams, or what?\n\r");
-	    return;
-	}
+        if ( !IS_AWAKE(ch) )
+        {
+            printf_to_char(ch, "In your dreams, or what?\n\r");
+            return;
+        }
 
-	for ( mob = ch->in_room->people; mob != NULL; mob = mob->next_in_room )
-	{
-	    if ( IS_NPC(mob) && IS_SET(mob->act, ACT_PRACTICE) )
-		break;
-	}
+        for ( mob = ch->in_room->people; mob != NULL; mob = mob->next_in_room )
+        {
+            if ( IS_NPC(mob) && IS_SET(mob->act, ACT_PRACTICE) )
+            break;
+        }
 
-	if ( mob == NULL )
-	{
-	    printf_to_char(ch, "You can't do that here.\n\r");
-	    return;
-	}
+        if ( mob == NULL )
+        {
+            printf_to_char(ch, "You can't do that here.\n\r");
+            return;
+        }
 
-	if ( ch->practice <= 0 )
-	{
-	    printf_to_char(ch, "You have no practice sessions left.\n\r");
-	    return;
-	}
+        if ( ch->practice <= 0 )
+        {
+            printf_to_char(ch, "You have no practice sessions left.\n\r");
+            return;
+        }
 
-	if ( ( sn = find_spell( ch,argument ) ) < 0
-	|| ( !IS_NPC(ch)
-	&&   (ch->level < skill_table[sn].skill_level[ch->class] 
- 	||    ch->pcdata->learned[sn] < 1 /* skill is not known */
-	||    skill_table[sn].rating[ch->class] == 0)))
-	{
-	    printf_to_char(ch, "You can't practice that.\n\r");
-	    return;
-	}
+        if ( ( sn = find_spell( ch,argument ) ) < 0
+        || ( !IS_NPC(ch)
+        &&   (ch->pcdata->learned[sn] < 1 /* skill is not known */)))
+        {
+            printf_to_char(ch, "You can't practice that.\n\r");
+            return;
+        }
 
-	adept = IS_NPC(ch) ? 100 : class_table[ch->class].skill_adept;
+        adept = IS_NPC(ch) ? 100 : pc_race_table[ch->race].skill_adept;
 
-	if ( ch->pcdata->learned[sn] >= adept )
-	{
-	    sprintf( buf, "You are already learned at %s.\n\r",
-		skill_table[sn].name );
-	    printf_to_char(ch, buf);
-	}
-	else
-	{
-	    ch->practice--;
-	    ch->pcdata->learned[sn] += 
-		int_app[get_curr_stat(ch,STAT_INT)].learn / 
-	        skill_table[sn].rating[ch->class];
-	    if ( ch->pcdata->learned[sn] < adept )
-	    {
-		act( "You practice $T.",
-		    ch, NULL, skill_table[sn].name, TO_CHAR );
-		act( "$n practices $T.",
-		    ch, NULL, skill_table[sn].name, TO_ROOM );
-	    }
-	    else
-	    {
-		ch->pcdata->learned[sn] = adept;
-		act( "You are now learned at $T.",
-		    ch, NULL, skill_table[sn].name, TO_CHAR );
-		act( "$n is now learned at $T.",
-		    ch, NULL, skill_table[sn].name, TO_ROOM );
-	    }
-	}
+        if ( ch->pcdata->learned[sn] >= adept )
+        {
+            sprintf( buf, "You are already learned at %s.\n\r",
+            skill_table[sn].name );
+            printf_to_char(ch, buf);
+        }
+        else
+        {
+            int max_percent = 0;
+
+            switch (ch->pcdata->skill_tier[sn])
+            {
+                case 1: max_percent = 25; break;
+                case 2: max_percent = 50; break;
+                case 3: max_percent = 75; break;
+                default: max_percent = 0; break;
+            }
+
+            if (ch->pcdata->learned[sn] >= max_percent)
+            {
+                printf_to_char(ch, "You need to study it before practicing.\n\r");
+                return;
+            }
+
+            ch->practice--;
+
+            ch->pcdata->learned[sn] = UMIN(ch->pcdata->learned[sn] + int_app[get_curr_stat(ch,STAT_INT)].learn, max_percent);
+
+            if ( ch->pcdata->learned[sn] < adept )
+            {
+            act( "You practice $T.",
+                ch, NULL, skill_table[sn].name, TO_CHAR );
+            act( "$n practices $T.",
+                ch, NULL, skill_table[sn].name, TO_ROOM );
+            }
+            else
+            {
+            ch->pcdata->learned[sn] = adept;
+            act( "You are now learned at $T.",
+                ch, NULL, skill_table[sn].name, TO_CHAR );
+            act( "$n is now learned at $T.",
+                ch, NULL, skill_table[sn].name, TO_ROOM );
+            }
+        }
     }
     return;
 }

@@ -92,8 +92,7 @@ int find_spell( CHAR_DATA *ch, const char *name )
 	{
 	    if ( found == -1)
 		found = sn;
-	    if (ch->level >= skill_table[sn].skill_level[ch->class]
-	    &&  ch->pcdata->learned[sn] > 0)
+	    if (ch->pcdata->learned[sn] > 0)
 		    return sn;
 	}
     }
@@ -206,8 +205,7 @@ void say_spell( CHAR_DATA *ch, int sn )
     for ( rch = ch->in_room->people; rch; rch = rch->next_in_room )
     {
 	if ( rch != ch )
-	    act((!IS_NPC(rch) && ch->class==rch->class) ? buf : buf2,
-	        ch, NULL, rch, TO_VICT );
+	    act(buf2, ch, NULL, rch, TO_VICT );
     }
 
     return;
@@ -234,7 +232,6 @@ bool saves_spell( int level, CHAR_DATA *victim, int dam_type )
 	case IS_VULNERABLE:	save -= 2;	break;
     }
 
-    if (!IS_NPC(victim) && class_table[victim->class].fMana)
 	save = 9 * save / 10;
     save = URANGE( 5, save, 95 );
     return number_percent( ) < save;
@@ -328,8 +325,7 @@ void do_cast( CHAR_DATA *ch, char *argument )
 
     if ((sn = find_spell(ch,arg1)) < 1
     ||  skill_table[sn].spell_fun == spell_null
-    || (!IS_NPC(ch) && (ch->level < skill_table[sn].skill_level[ch->class]
-    ||   		 ch->pcdata->learned[sn] == 0)))
+    || (!IS_NPC(ch) && (ch->pcdata->learned[sn] == 0)))
     {
 	printf_to_char(ch, "You don't know any spells of that name.\n\r");
 	return;
@@ -341,12 +337,9 @@ void do_cast( CHAR_DATA *ch, char *argument )
 	return;
     }
 
-    if (ch->level + 2 == skill_table[sn].skill_level[ch->class])
-	mana = 50;
-    else
-    	mana = UMAX(
+    mana = UMAX(
 	    skill_table[sn].min_mana,
-	    100 / ( 2 + ch->level - skill_table[sn].skill_level[ch->class] ) );
+	    100 / ( 1 + ch->level ) );
 
     /*
      * Locate targets.
@@ -549,11 +542,7 @@ void do_cast( CHAR_DATA *ch, char *argument )
     else
     {
         ch->mana -= mana;
-        if (IS_NPC(ch) || class_table[ch->class].fMana) 
-	/* class has spells */
-            (*skill_table[sn].spell_fun) ( sn, ch->level, ch, vo,target);
-        else
-            (*skill_table[sn].spell_fun) (sn, 3 * ch->level/4, ch, vo,target);
+        (*skill_table[sn].spell_fun) ( sn, ch->level, ch, vo,target);
         check_improve(ch,sn,TRUE,1);
     }
 
@@ -1306,7 +1295,7 @@ void spell_change_sex( int sn, int level, CHAR_DATA *ch, void *vo,int target )
     af.location  = APPLY_SEX;
     do
     {
-	af.modifier  = number_range( 0, 2 ) - victim->sex;
+	af.modifier = UMAX(0, number_range(0, 5) - victim->sex);
     }
     while ( af.modifier == 0 );
     af.bitvector = 0;
@@ -1460,7 +1449,7 @@ void spell_continual_light(int sn,int level,CHAR_DATA *ch,void *vo,int target)
 	return;
     }
 
-    light = create_object( get_obj_index( OBJ_VNUM_LIGHT_BALL ), 0 );
+    light = create_object( get_obj_index( OBJ_VNUM_LIGHT_BALL ), 0, FALSE );
     obj_to_room( light, ch->in_room );
     act( "$n twiddles $s thumbs and $p appears.",   ch, light, NULL, TO_ROOM );
     act( "You twiddle your thumbs and $p appears.", ch, light, NULL, TO_CHAR );
@@ -1488,7 +1477,7 @@ void spell_create_food( int sn, int level, CHAR_DATA *ch, void *vo,int target)
 {
     OBJ_DATA *mushroom;
 
-    mushroom = create_object( get_obj_index( OBJ_VNUM_MUSHROOM ), 0 );
+    mushroom = create_object( get_obj_index( OBJ_VNUM_MUSHROOM ), 0, FALSE );
     mushroom->value[0] = level / 2;
     mushroom->value[1] = level;
     obj_to_room( mushroom, ch->in_room );
@@ -1500,7 +1489,7 @@ void spell_create_food( int sn, int level, CHAR_DATA *ch, void *vo,int target)
 void spell_create_rose( int sn, int level, CHAR_DATA *ch, void *vo,int target )
 {
     OBJ_DATA *rose;
-    rose = create_object(get_obj_index(OBJ_VNUM_ROSE), 0);
+    rose = create_object(get_obj_index(OBJ_VNUM_ROSE), 0, FALSE);
     act("$n has created a beautiful red rose.",ch,rose,NULL,TO_ROOM);
     printf_to_char(ch, "You create a beautiful red rose.\n\r");
     obj_to_char(rose,ch);
@@ -1511,7 +1500,7 @@ void spell_create_spring(int sn,int level,CHAR_DATA *ch,void *vo,int target)
 {
     OBJ_DATA *spring;
 
-    spring = create_object( get_obj_index( OBJ_VNUM_SPRING ), 0 );
+    spring = create_object( get_obj_index( OBJ_VNUM_SPRING ), 0, FALSE );
     spring->timer = level;
     obj_to_room( spring, ch->in_room );
     act( "$p flows from the ground.", ch, spring, NULL, TO_ROOM );
@@ -2799,7 +2788,7 @@ void spell_floating_disc( int sn, int level,CHAR_DATA *ch,void *vo,int target )
 	return;
     }
 
-    disc = create_object(get_obj_index(OBJ_VNUM_DISC), 0);
+    disc = create_object(get_obj_index(OBJ_VNUM_DISC), 0, FALSE);
     disc->value[0]	= ch->level * 10; /* 10 pounds per level capacity */
     disc->value[3]	= ch->level * 5; /* 5 pounds per level max per item */
     disc->timer		= ch->level * 2 - number_range(0,level / 2); 
@@ -3346,14 +3335,9 @@ void spell_identify( int sn, int level, CHAR_DATA *ch, void *vo,int target )
 	    case(WEAPON_POLEARM): printf_to_char(ch, "polearm.\n\r");	break;
 	    default		: printf_to_char(ch, "unknown.\n\r");	break;
  	}
-	if (obj->pIndexData->new_format)
-	    sprintf(buf,"Damage is %dd%d (average %d).\n\r",
+	sprintf(buf,"Damage is %dd%d (average %d).\n\r",
 		obj->value[1],obj->value[2],
 		(1 + obj->value[2]) * obj->value[1] / 2);
-	else
-	    sprintf( buf, "Damage is %d to %d (average %d).\n\r",
-	    	obj->value[1], obj->value[2],
-	    	( obj->value[1] + obj->value[2] ) / 2 );
 	printf_to_char(ch, buf);
         if (obj->value[4])  /* weapon flags */
         {

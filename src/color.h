@@ -6,12 +6,36 @@
 
 #define RGB(a,b,c) "\033[38;2;" #a ";" #b ";" #c "m"
 
+// Lope's colors
+
+#define CLR_LOPES_RED               RGB(170,0,0)
+#define CLR_LOPES_B_RED             RGB(255,85,85)
+#define CLR_LOPES_GREEN             RGB(0,170,0)
+#define CLR_LOPES_B_GREEN             RGB(85,255,85)
+#define CLR_LOPES_YELLOW                RGB(170,85,0)
+#define CLR_LOPES_B_YELLOW                RGB(255,255,85)
+#define CLR_LOPES_BLUE              RGB(0,0,170)
+#define CLR_LOPES_B_BLUE              RGB(85,85,255)
+#define CLR_LOPES_MAGENTA           RGB(170,0,170)
+#define CLR_LOPES_B_MAGENTA           RGB(255,85,255)
+#define CLR_LOPES_CYAN              RGB(0,170,170)
+#define CLR_LOPES_B_CYAN              RGB(85,255,255)
+#define CLR_LOPES_WHITE             RGB(170,170,170)
+#define CLR_LOPES_B_WHITE             RGB(255,255,255)
+#define CLR_LOPES_GREY              RGB(80, 80, 80)
+
+
+
+
 /*
 * HTML Color Groups
 * https://www.w3schools.com/colors/colors_groups.asp
 */
 
 #define CLR_RESET                   "\033[0m"
+
+#define CLR_ROOM_NAME               RGB(201, 130, 75)
+#define CLR_ROOM_EXITS              RGB(109, 213, 227)
 
 /* Pink Colors */
 #define CLR_PINK                    RGB(255, 192, 203)

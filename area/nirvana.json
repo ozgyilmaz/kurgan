@@ -2,8 +2,8 @@
     "area": {
         "file_name": "nirvana.are",
         "name": "Nirvana",
-        "low_range": "30",
-        "high_range": "35",
+        "low_range": 30,
+        "high_range": 35,
         "writer": "Fstall",
         "credits": "Nirvana",
         "min_vnum": 9000,

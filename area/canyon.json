@@ -2,8 +2,8 @@
     "area": {
         "file_name": "canyon.are",
         "name": "Elemental Canyon",
-        "low_range": "5",
-        "high_range": "30",
+        "low_range": 5,
+        "high_range": 30,
         "writer": "Raff",
         "credits": "Elemental Canyon",
         "min_vnum": 9200,
@@ -5085,7 +5085,7 @@
     ],
     "shops": [
         {
-            "keeper": "9238",
+            "keeper": 9238,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,

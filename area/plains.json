@@ -2,8 +2,8 @@
     "area": {
         "file_name": "plains.are",
         "name": "Plains",
-        "low_range": "1",
-        "high_range": "20",
+        "low_range": 1,
+        "high_range": 20,
         "writer": "Copper",
         "credits": "Plains of the North",
         "min_vnum": 300,
@@ -2143,7 +2143,7 @@
     ],
     "shops": [
         {
-            "keeper": "306",
+            "keeper": 306,
             "buy_type_0": 1,
             "buy_type_1": 10,
             "buy_type_2": 11,
@@ -2155,7 +2155,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "308",
+            "keeper": 308,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,

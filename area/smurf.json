@@ -2,8 +2,8 @@
     "area": {
         "file_name": "smurf.are",
         "name": "Smurfville",
-        "low_range": "1",
-        "high_range": "10",
+        "low_range": 1,
+        "high_range": 10,
         "writer": "Generic",
         "credits": "Smurf Village",
         "min_vnum": 100,

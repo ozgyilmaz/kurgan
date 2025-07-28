@@ -2,8 +2,8 @@
     "area": {
         "file_name": "haon.are",
         "name": "Haon Dor",
-        "low_range": "5",
-        "high_range": "10",
+        "low_range": 5,
+        "high_range": 10,
         "writer": "Diku",
         "credits": "Haon Dor",
         "min_vnum": 6000,

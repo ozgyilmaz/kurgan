@@ -135,12 +135,11 @@ typedef void SPELL_FUN	args( ( int sn, int level, CHAR_DATA *ch, void *vo,
  * Adjust the pulse numbers to suit yourself.
  */
 #define MAX_SOCIALS		  256
-#define MAX_SKILL		  150
+#define MAX_SKILL		  135
 #define MAX_GROUP		   30
 #define MAX_IN_GROUP		   15
-#define MAX_ALIAS		    5
-#define MAX_CLASS		    4
-#define MAX_PC_RACE		    5
+#define MAX_ALIAS		    25
+#define MAX_PC_RACE		    4
 #define MAX_CLAN		    3
 #define MAX_DAMAGE_MESSAGE	   41
 #define MAX_LEVEL		   60
@@ -240,8 +239,6 @@ struct	weather_data
 #define CON_CONFIRM_NEW_PASSWORD	 5
 #define CON_GET_NEW_RACE		 6
 #define CON_GET_NEW_SEX			 7
-#define CON_GET_NEW_CLASS		 8
-#define CON_GET_ALIGNMENT		 9
 #define CON_DEFAULT_CHOICE		10 
 #define CON_GEN_GROUPS			11 
 #define CON_PICK_WEAPON			12
@@ -366,23 +363,6 @@ struct	shop_data
 #define STAT_DEX	3
 #define STAT_CON	4
 
-struct	class_type
-{
-    char *	name;			/* the full name of the class */
-    char 	who_name	[4];	/* Three-letter name for 'who'	*/
-    sh_int	attr_prime;		/* Prime attribute		*/
-    sh_int	weapon;			/* First weapon			*/
-    sh_int	guild[MAX_GUILD];	/* Vnum of guild rooms		*/
-    sh_int	skill_adept;		/* Maximum skill level		*/
-    sh_int	thac0_00;		/* Thac0 for level  0		*/
-    sh_int	thac0_32;		/* Thac0 for level 32		*/
-    sh_int	hp_min;			/* Min hp gained on leveling	*/
-    sh_int	hp_max;			/* Max hp gained on leveling	*/
-    bool	fMana;			/* Class gains mana on level	*/
-    char *	base_group;		/* base skills gained		*/
-    char *	default_group;		/* default skills gained	*/
-};
-
 struct item_type
 {
     int		type;
@@ -395,6 +375,10 @@ struct weapon_type
     sh_int	vnum;
     sh_int	type;
     sh_int	*gsn;
+};
+
+struct title_type {
+    char *title;
 };
 
 struct wiznet_type
@@ -423,14 +407,24 @@ struct race_type
     long	vuln;			/* vuln bits for the race */
     long	form;			/* default form flag for the race */
     long	parts;			/* default parts for the race */
-    // below is from old struct pc_race_type
+};
+
+struct pc_race_type  /* additional data for pc races */
+{
+    char *	name;			/* MUST be in race_type */
     char 	who_name[6];
     sh_int	points;			/* cost in points of the race */
-    sh_int	class_mult[MAX_CLASS];	/* exp multiplier for class, * 100 */
     char *	skills[5];		/* bonus skills for the race */
     sh_int 	stats[MAX_STATS];	/* starting stats */
     sh_int	max_stats[MAX_STATS];	/* maximum stats */
     sh_int	size;			/* aff bits for the race */
+    sh_int	attr_prime;		/* Prime attribute		*/
+    sh_int	weapon;			/* First weapon			*/
+    sh_int	skill_adept;		/* Maximum skill level		*/
+    sh_int	thac0_00;		/* Thac0 for level  0		*/
+    sh_int	thac0_32;		/* Thac0 for level 32		*/
+    sh_int	hp_min;			/* Min hp gained on leveling	*/
+    sh_int	hp_max;			/* Max hp gained on leveling	*/
 };
 
 struct spec_type
@@ -812,8 +806,11 @@ struct	kill_data
  * Used in #MOBILES.
  */
 #define SEX_NEUTRAL		      0
-#define SEX_MALE		      1
-#define SEX_FEMALE		      2
+#define SEX_NONBINARY         1
+#define SEX_ANDROGYNOUS       2
+#define SEX_AGENDER           3
+#define SEX_FEMALE		      4
+#define SEX_MALE		      5
 
 /* AC types */
 #define AC_PIERCE			0
@@ -882,7 +879,11 @@ struct	kill_data
 
 #define OBJ_VNUM_WHISTLE	   2116
 
-
+/* quest rewards */
+#define QUEST_ITEM1 31	
+#define QUEST_ITEM2 32	
+#define QUEST_ITEM3 33
+#define QUEST_ITEM4 34
 
 /*
  * Item types.
@@ -917,6 +918,7 @@ struct	kill_data
 #define ITEM_GEM		     32
 #define ITEM_JEWELRY		     33
 #define ITEM_JUKEBOX		     34
+#define ITEM_BOOK		     35
 
 
 
@@ -1217,6 +1219,9 @@ struct	kill_data
  */
 #define PLR_IS_NPC		(A)		/* Don't EVER set.	*/
 
+/* questor */
+#define PLR_QUESTOR 	(B)
+
 /* RT auto flags */
 #define PLR_AUTOASSIST		(C)
 #define PLR_AUTOLOOT		(E)
@@ -1238,6 +1243,7 @@ struct	kill_data
 #define PLR_FREEZE		(Y)
 #define PLR_THIEF		(Z)
 #define PLR_KILLER		(aa)
+
 
 
 /* RT comm flags -- may be used on both mobs and chars */
@@ -1301,7 +1307,6 @@ struct	mob_index_data
     SHOP_DATA *		pShop;
     sh_int		vnum;
     sh_int		group;
-    bool		new_format;
     sh_int		count;
     sh_int		killed;
     char *		player_name;
@@ -1389,7 +1394,6 @@ struct	char_data
     sh_int		group;
     sh_int		clan;
     sh_int		sex;
-    sh_int		class;
     sh_int		race;
     sh_int		level;
     sh_int		trust;
@@ -1470,11 +1474,19 @@ struct	pc_data
     int			last_level;
     sh_int		condition	[4];
     sh_int		learned		[MAX_SKILL];
+    sh_int		skill_tier	[MAX_SKILL];
     bool		group_known	[MAX_GROUP];
     sh_int		points;
-    bool              	confirm_delete;
+    bool        confirm_delete;
     char *		alias[MAX_ALIAS];
     char * 		alias_sub[MAX_ALIAS];
+    /* quest things */
+    CHAR_DATA *         questgiver; /* Vassago */
+    int                 questpoints;  /* Vassago */
+    sh_int              nextquest; /* Vassago */
+    sh_int              countdown; /* Vassago */
+    sh_int              questobj; /* Vassago */
+    sh_int              questmob; /* Vassago */
 };
 
 /* Data for generating characters -- only used during generation */
@@ -1524,7 +1536,6 @@ struct	obj_index_data
     OBJ_INDEX_DATA *	next;
     EXTRA_DESCR_DATA *	extra_descr;
     AFFECT_DATA *	affected;
-    bool		new_format;
     char *		name;
     char *		short_descr;
     char *		description;
@@ -1708,8 +1719,6 @@ struct	room_index_data
 struct	skill_type
 {
     char *	name;			/* Name of skill		*/
-    sh_int	skill_level[MAX_CLASS];	/* Level needed by class	*/
-    sh_int	rating[MAX_CLASS];	/* How hard it is to learn	*/	
     SPELL_FUN *	spell_fun;		/* Spell pointer (for spells)	*/
     sh_int	target;			/* Legal targets		*/
     sh_int	minimum_position;	/* Position for caster / user	*/
@@ -1720,15 +1729,8 @@ struct	skill_type
     char *	noun_damage;		/* Damage message		*/
     char *	msg_off;		/* Wear off message		*/
     char *	msg_obj;		/* Wear off message for obects	*/
+    sh_int	book_rarity;			/* How possible to find the book	*/
 };
-
-struct  group_type
-{
-    char *	name;
-    sh_int	rating[MAX_CLASS];
-    char *	spells[MAX_IN_GROUP];
-};
-
 
 
 /*
@@ -1816,6 +1818,9 @@ extern sh_int  gsn_recall;
 #define IS_HERO(ch)		(get_trust(ch) >= LEVEL_HERO)
 #define IS_TRUSTED(ch,level)	(get_trust((ch)) >= (level))
 #define IS_AFFECTED(ch, sn)	(IS_SET((ch)->affected_by, (sn)))
+/* Quest staff begin */
+#define IS_QUESTOR(ch)     (IS_SET((ch)->act, PLR_QUESTOR))
+/* Quest staff end */
 
 #define GET_AGE(ch)		((int) (17 + ((ch)->played \
 				    + current_time - (ch)->logon )/72000))
@@ -1890,20 +1895,18 @@ extern	const	struct	wis_app_type	wis_app		[26];
 extern	const	struct	dex_app_type	dex_app		[26];
 extern	const	struct	con_app_type	con_app		[26];
 
-extern	const	struct	class_type	class_table	[MAX_CLASS];
 extern	const	struct	weapon_type	weapon_table	[];
+extern	const	struct	title_type	title_table	[];
 extern  const   struct  item_type	item_table	[];
 extern	const	struct	wiznet_type	wiznet_table	[];
 extern	const	struct	attack_type	attack_table	[];
 extern  const	struct  race_type	race_table	[];
+extern	const	struct	pc_race_type	pc_race_table	[];
 extern  const	struct	spec_type	spec_table	[];
 extern	const	struct	liq_type	liq_table	[];
 extern	const	struct	skill_type	skill_table	[MAX_SKILL];
-extern  const   struct  group_type      group_table	[MAX_GROUP];
 extern          struct social_type      social_table	[MAX_SOCIALS];
-extern	char *	const			title_table	[MAX_CLASS]
-							[MAX_LEVEL+1]
-							[2];
+
 
 
 
@@ -2107,7 +2110,6 @@ void	show_string	args( ( struct descriptor_data *d, char *input) );
 void	close_socket	args( ( DESCRIPTOR_DATA *dclose ) );
 void	write_to_buffer	args( ( DESCRIPTOR_DATA *d, const char *txt,
 			    int length ) );
-void	send_to_char	args( ( const char *txt, CHAR_DATA *ch ) );
 void    printf_to_char  args((CHAR_DATA *ch, const char *fmt, ...));
 void    bugf args((char *fmt, ...));
 void	page_to_char	args( ( const char *txt, CHAR_DATA *ch ) );
@@ -2116,6 +2118,10 @@ void	act		args( ( const char *format, CHAR_DATA *ch,
 void	act_new		args( ( const char *format, CHAR_DATA *ch, 
 			    const void *arg1, const void *arg2, int type,
 			    int min_pos) );
+void    act_color       args( ( const char *format, CHAR_DATA *ch,
+                            const void *arg1, const void *arg2, int type,
+                            int min_pos, ...) );
+void    colourconv args(( char *buffer, const char *txt, CHAR_DATA *ch ));
 
 /* db.c */
 char *	print_flags	args( ( int flag ));
@@ -2123,7 +2129,7 @@ void	boot_db		args( ( void ) );
 void	area_update	args( ( void ) );
 CD *	create_mobile	args( ( MOB_INDEX_DATA *pMobIndex ) );
 void	clone_mobile	args( ( CHAR_DATA *parent, CHAR_DATA *clone) );
-OD *	create_object	args( ( OBJ_INDEX_DATA *pObjIndex, int level ) );
+OD *	create_object	args( ( OBJ_INDEX_DATA *pObjIndex, int level, bool randomize ) );
 void	clone_object	args( ( OBJ_DATA *parent, OBJ_DATA *clone ) );
 void	clear_char	args( ( CHAR_DATA *ch ) );
 char *	get_extra_descr	args( ( const char *name, EXTRA_DESCR_DATA *ed ) );
@@ -2174,10 +2180,7 @@ bool 	is_safe		args( (CHAR_DATA *ch, CHAR_DATA *victim ) );
 bool 	is_safe_spell	args( (CHAR_DATA *ch, CHAR_DATA *victim, bool area ) );
 void	violence_update	args( ( void ) );
 void	multi_hit	args( ( CHAR_DATA *ch, CHAR_DATA *victim, int dt ) );
-bool	damage		args( ( CHAR_DATA *ch, CHAR_DATA *victim, int dam,
-			        int dt, int class, bool show ) );
-bool    damage_old      args( ( CHAR_DATA *ch, CHAR_DATA *victim, int dam,
-                                int dt, int class, bool show ) );
+bool	damage		args( ( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt, int damage_old, bool show ) );
 void	update_pos	args( ( CHAR_DATA *victim ) );
 void	stop_fighting	args( ( CHAR_DATA *ch, bool fBoth ) );
 void	check_killer	args( ( CHAR_DATA *ch, CHAR_DATA *victim) );
@@ -2192,6 +2195,7 @@ int 	check_immune	args( (CHAR_DATA *ch, int dam_type) );
 int	liq_lookup	args( ( const char *name) );
 int 	material_lookup args( ( const char *name) );
 int	weapon_lookup	args( ( const char *name) );
+int	weapon_table_count	args( () );
 int	weapon_type	args( ( const char *name) );
 char 	*weapon_name	args( ( int weapon_Type) );
 int	item_lookup	args( ( const char *name) );
@@ -2199,10 +2203,8 @@ char	*item_name	args( ( int item_type) );
 int	attack_lookup	args( ( const char *name) );
 int	race_lookup	args( ( const char *name) );
 long	wiznet_lookup	args( ( const char *name) );
-int	class_lookup	args( ( const char *name) );
 bool	is_clan		args( (CHAR_DATA *ch) );
 bool	is_same_clan	args( (CHAR_DATA *ch, CHAR_DATA *victim));
-bool	is_old_mob	args ( (CHAR_DATA *ch) );
 int	get_skill	args( ( CHAR_DATA *ch, int sn ) );
 int	get_weapon_sn	args( ( CHAR_DATA *ch ) );
 int	get_weapon_skill args(( CHAR_DATA *ch, int sn ) );
@@ -2271,6 +2273,9 @@ char *	weapon_bit_name	args( ( int weapon_flags ) );
 char *  comm_bit_name	args( ( int comm_flags ) );
 char *	cont_bit_name	args( ( int cont_flags) );
 
+/* handler_random.c */
+int	random_damage_type_for_weapon	args( ( int weapon_type ) );
+int obj_random_weapon_flag args( () );
 
 /* interp.c */
 void	interpret	args( ( CHAR_DATA *ch, char *argument ) );
@@ -2287,21 +2292,14 @@ int	slot_lookup	args( ( int slot ) );
 bool	saves_spell	args( ( int level, CHAR_DATA *victim, int dam_type ) );
 void	obj_cast_spell	args( ( int sn, int level, CHAR_DATA *ch,
 				    CHAR_DATA *victim, OBJ_DATA *obj ) );
+
 /* save.c */
 void	save_char_obj	args( ( CHAR_DATA *ch ) );
 bool	load_char_obj	args( ( DESCRIPTOR_DATA *d, char *name ) );
 
 /* skills.c */
-bool 	parse_gen_groups args( ( CHAR_DATA *ch,char *argument ) );
-void    list_group_known args( ( CHAR_DATA *ch ) );
 int 	exp_per_level	args( ( CHAR_DATA *ch, int points ) );
-void 	check_improve	args( ( CHAR_DATA *ch, int sn, bool success, 
-				    int multiplier ) );
-int 	group_lookup	args( (const char *name) );
-void	gn_add		args( ( CHAR_DATA *ch, int gn) );
-void 	gn_remove	args( ( CHAR_DATA *ch, int gn) );
-void 	group_add	args( ( CHAR_DATA *ch, const char *name, bool deduct) );
-void	group_remove	args( ( CHAR_DATA *ch, const char *name) );
+void 	check_improve	args( ( CHAR_DATA *ch, int sn, bool success, int multiplier ) );
 
 /* special.c */
 SF *	spec_lookup	args( ( const char *name ) );

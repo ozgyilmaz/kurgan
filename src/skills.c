@@ -52,7 +52,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
     char buf[MAX_STRING_LENGTH];
     char arg[MAX_INPUT_LENGTH];
     CHAR_DATA *trainer;
-    int gn = 0, sn = 0;
+    int sn = 0;
 
     if (IS_NPC(ch))
 	return;
@@ -80,33 +80,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
 
     if (!str_prefix(arg,"list"))
     {
-	int col;
-	
-	col = 0;
-
-	sprintf(buf, "%-18s %-5s %-18s %-5s %-18s %-5s\n\r",
-	             "group","cost","group","cost","group","cost");
-	printf_to_char(ch, buf);
-
-	for (gn = 0; gn < MAX_GROUP; gn++)
-	{
-	    if (group_table[gn].name == NULL)
-		break;
-
-	    if (!ch->pcdata->group_known[gn]
-	    &&  group_table[gn].rating[ch->class] > 0)
-	    {
-		sprintf(buf,"%-18s %-5d ",
-		    group_table[gn].name,group_table[gn].rating[ch->class]);
-		printf_to_char(ch, buf);
-		if (++col % 3 == 0)
-		    printf_to_char(ch, "\n\r");
-	    }
-	}
-	if (col % 3 != 0)
-	    printf_to_char(ch, "\n\r");
-	
-	printf_to_char(ch, "\n\r");		
+	int col;	
 
 	col = 0;
 
@@ -120,11 +94,10 @@ void do_gain(CHAR_DATA *ch, char *argument)
                 break;
  
             if (!ch->pcdata->learned[sn]
-            &&  skill_table[sn].rating[ch->class] > 0
-	    &&  skill_table[sn].spell_fun == spell_null)
+	    	&&  skill_table[sn].spell_fun == spell_null)
             {
                 sprintf(buf,"%-18s %-5d ",
-                    skill_table[sn].name,skill_table[sn].rating[ch->class]);
+                    skill_table[sn].name,0);
                 printf_to_char(ch, buf);
                 if (++col % 3 == 0)
                     printf_to_char(ch, "\n\r");
@@ -176,39 +149,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
 	return;
     }
 
-    /* else add a group/skill */
-
-    gn = group_lookup(argument);
-    if (gn > 0)
-    {
-	if (ch->pcdata->group_known[gn])
-	{
-	    act("$N tells you 'You already know that group!'",
-		ch,NULL,trainer,TO_CHAR);
-	    return;
-	}
-
-	if (group_table[gn].rating[ch->class] <= 0)
-	{
-	    act("$N tells you 'That group is beyond your powers.'",
-		ch,NULL,trainer,TO_CHAR);
-	    return;
-	}
-
-	if (ch->train < group_table[gn].rating[ch->class])
-	{
-	    act("$N tells you 'You are not yet ready for that group.'",
-		ch,NULL,trainer,TO_CHAR);
-	    return;
-	}
-
-	/* add the group */
-	gn_add(ch,gn);
-	act("$N trains you in the art of $t",
-	    ch,group_table[gn].name,trainer,TO_CHAR);
-	ch->train -= group_table[gn].rating[ch->class];
-	return;
-    }
+    /* else add a skill */
 
     sn = skill_lookup(argument);
     if (sn > -1)
@@ -228,14 +169,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
             return;
         }
  
-        if (skill_table[sn].rating[ch->class] <= 0)
-        {
-            act("$N tells you 'That skill is beyond your powers.'",
-                ch,NULL,trainer,TO_CHAR);
-            return;
-        }
- 
-        if (ch->train < skill_table[sn].rating[ch->class])
+        if (ch->train < 1)
         {
             act("$N tells you 'You are not yet ready for that skill.'",
                 ch,NULL,trainer,TO_CHAR);
@@ -246,7 +180,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
 	ch->pcdata->learned[sn] = 1;
         act("$N trains you in the art of $t",
             ch,skill_table[sn].name,trainer,TO_CHAR);
-        ch->train -= skill_table[sn].rating[ch->class];
+        ch->train -= 1;
         return;
     }
 
@@ -333,14 +267,13 @@ void do_spells(CHAR_DATA *ch, char *argument)
         if (skill_table[sn].name == NULL )
 	    break;
 
-	if ((level = skill_table[sn].skill_level[ch->class]) < LEVEL_HERO + 1
-	&&  (fAll || level <= ch->level)
+	if ((fAll || level <= ch->level)
 	&&  level >= min_lev && level <= max_lev
 	&&  skill_table[sn].spell_fun != spell_null
 	&&  ch->pcdata->learned[sn] > 0)
         {
 	    found = TRUE;
-	    level = skill_table[sn].skill_level[ch->class];
+	    level = 1;
 	    if (ch->level < level)
 	    	sprintf(buf,"%-18s n/a      ", skill_table[sn].name);
 	    else
@@ -453,14 +386,13 @@ void do_skills(CHAR_DATA *ch, char *argument)
         if (skill_table[sn].name == NULL )
 	    break;
 
-	if ((level = skill_table[sn].skill_level[ch->class]) < LEVEL_HERO + 1
-	&&  (fAll || level <= ch->level)
+	if ((fAll || level <= ch->level)
 	&&  level >= min_lev && level <= max_lev
 	&&  skill_table[sn].spell_fun == spell_null
 	&&  ch->pcdata->learned[sn] > 0)
         {
 	    found = TRUE;
-	    level = skill_table[sn].skill_level[ch->class];
+	    level = 1;
 	    if (ch->level < level)
 	    	sprintf(buf,"%-18s n/a      ", skill_table[sn].name);
 	    else
@@ -495,70 +427,6 @@ void do_skills(CHAR_DATA *ch, char *argument)
     free_buf(buffer);
 }
 
-void list_group_chosen(CHAR_DATA *ch)
-{
-    char buf[100];
-    int gn,sn,col;
- 
-    if (IS_NPC(ch))
-        return;
- 
-    col = 0;
- 
-    sprintf(buf,"%-18s %-5s %-18s %-5s %-18s %-5s","group","cp","group","cp","group","cp\n\r");
-    printf_to_char(ch, buf);
- 
-    for (gn = 0; gn < MAX_GROUP; gn++)
-    {
-        if (group_table[gn].name == NULL)
-            break;
- 
-        if (ch->gen_data->group_chosen[gn] 
-	&&  group_table[gn].rating[ch->class] > 0)
-        {
-            sprintf(buf,"%-18s %-5d ",group_table[gn].name,
-                                    group_table[gn].rating[ch->class]);
-            printf_to_char(ch, buf);
-            if (++col % 3 == 0)
-                printf_to_char(ch, "\n\r");
-        }
-    }
-    if ( col % 3 != 0 )
-        printf_to_char(ch, "\n\r");
-    printf_to_char(ch, "\n\r");
- 
-    col = 0;
- 
-    sprintf(buf,"%-18s %-5s %-18s %-5s %-18s %-5s","skill","cp","skill","cp","skill","cp\n\r");
-    printf_to_char(ch, buf);
- 
-    for (sn = 0; sn < MAX_SKILL; sn++)
-    {
-        if (skill_table[sn].name == NULL)
-            break;
- 
-        if (ch->gen_data->skill_chosen[sn] 
-	&&  skill_table[sn].rating[ch->class] > 0)
-        {
-            sprintf(buf,"%-18s %-5d ",skill_table[sn].name,
-                                    skill_table[sn].rating[ch->class]);
-            printf_to_char(ch, buf);
-            if (++col % 3 == 0)
-                printf_to_char(ch, "\n\r");
-        }
-    }
-    if ( col % 3 != 0 )
-        printf_to_char(ch, "\n\r");
-    printf_to_char(ch, "\n\r");
- 
-    sprintf(buf,"Creation points: %d\n\r",ch->gen_data->points_chosen);
-    printf_to_char(ch, buf);
-    sprintf(buf,"Experience per level: %d\n\r",
-	    exp_per_level(ch,ch->gen_data->points_chosen));
-    printf_to_char(ch, buf);
-    return;
-}
-
 int exp_per_level(CHAR_DATA *ch, int points)
 {
     int expl,inc;
@@ -570,8 +438,7 @@ int exp_per_level(CHAR_DATA *ch, int points)
     inc = 500;
 
     if (points < 40)
-	return 1000 * (race_table[ch->race].class_mult[ch->class] ?
-		       race_table[ch->race].class_mult[ch->class]/100 : 1);
+	return 1000;
 
     /* processing */
     points -= 40;
@@ -590,79 +457,7 @@ int exp_per_level(CHAR_DATA *ch, int points)
 
     expl += points * inc / 10;  
 
-    return expl * race_table[ch->race].class_mult[ch->class]/100;
-}
-
-/* shows all groups, or the sub-members of a group */
-void do_groups(CHAR_DATA *ch, char *argument)
-{
-    char buf[100];
-    int gn,sn,col;
-
-    if (IS_NPC(ch))
-	return;
-
-    col = 0;
-
-    if (argument[0] == '\0')
-    {   /* show all groups */
-	
-	for (gn = 0; gn < MAX_GROUP; gn++)
-        {
-	    if (group_table[gn].name == NULL)
-		break;
-	    if (ch->pcdata->group_known[gn])
-	    {
-		sprintf(buf,"%-20s ",group_table[gn].name);
-		printf_to_char(ch, buf);
-		if (++col % 3 == 0)
-		    printf_to_char(ch, "\n\r");
-	    }
-        }
-        if ( col % 3 != 0 )
-            printf_to_char(ch, "\n\r");
-        sprintf(buf,"Creation points: %d\n\r",ch->pcdata->points);
-	printf_to_char(ch, buf);
-	return;
-     }
-
-     if (!str_cmp(argument,"all"))    /* show all groups */
-     {
-        for (gn = 0; gn < MAX_GROUP; gn++)
-        {
-            if (group_table[gn].name == NULL)
-                break;
-	    sprintf(buf,"%-20s ",group_table[gn].name);
-            printf_to_char(ch, buf);
-	    if (++col % 3 == 0)
-            	printf_to_char(ch, "\n\r");
-        }
-        if ( col % 3 != 0 )
-            printf_to_char(ch, "\n\r");
-	return;
-     }
-	
-     
-     /* show the sub-members of a group */
-     gn = group_lookup(argument);
-     if (gn == -1)
-     {
-	printf_to_char(ch, "No group of that name exist.\n\r");
-	printf_to_char(ch, "Type 'groups all' or 'info all' for a full listing.\n\r");
-	return;
-     }
-
-     for (sn = 0; sn < MAX_IN_GROUP; sn++)
-     {
-	if (group_table[gn].spells[sn] == NULL)
-	    break;
-	sprintf(buf,"%-20s ",group_table[gn].spells[sn]);
-	printf_to_char(ch, buf);
-	if (++col % 3 == 0)
-	    printf_to_char(ch, "\n\r");
-     }
-    if ( col % 3 != 0 )
-        printf_to_char(ch, "\n\r");
+    return expl;
 }
 
 /* checks for skill improvement */
@@ -672,19 +467,33 @@ void check_improve( CHAR_DATA *ch, int sn, bool success, int multiplier )
     char buf[100];
 
     if (IS_NPC(ch))
+	{
 	return;
+	}
 
-    if (ch->level < skill_table[sn].skill_level[ch->class]
-    ||  skill_table[sn].rating[ch->class] == 0
-    ||  ch->pcdata->learned[sn] == 0
-    ||  ch->pcdata->learned[sn] == 100)
-	return;  /* skill is not known */ 
+    if (ch->pcdata->learned[sn] == 0 ||  ch->pcdata->learned[sn] == 100)
+	{
+	return;  /* skill is not known or fully known*/ 
+	}
+	
+	int max_percent = 0;
+
+	switch (ch->pcdata->skill_tier[sn])
+	{
+		case 1: max_percent = 25; break;
+		case 2: max_percent = 50; break;
+		case 3: max_percent = 100; break; // if all books are read then skill can improves to 100%.
+		default: max_percent = 0; break;
+	}
+
+	if (ch->pcdata->learned[sn] >= max_percent)
+	{
+		return; // no improve
+	}
 
     /* check to see if the character has a chance to learn */
     chance = 10 * int_app[get_curr_stat(ch,STAT_INT)].learn;
-    chance /= (		multiplier
-		*	skill_table[sn].rating[ch->class] 
-		*	4);
+    chance /= (		multiplier *	4);
     chance += ch->level;
 
     if (number_range(1,1000) > chance)
@@ -701,7 +510,7 @@ void check_improve( CHAR_DATA *ch, int sn, bool success, int multiplier )
 		    skill_table[sn].name);
 	    printf_to_char(ch, buf);
 	    ch->pcdata->learned[sn]++;
-	    gain_exp(ch,2 * skill_table[sn].rating[ch->class]);
+	    gain_exp(ch,2);
 	}
     }
 
@@ -716,115 +525,7 @@ void check_improve( CHAR_DATA *ch, int sn, bool success, int multiplier )
 	    printf_to_char(ch, buf);
 	    ch->pcdata->learned[sn] += number_range(1,3);
 	    ch->pcdata->learned[sn] = UMIN(ch->pcdata->learned[sn],100);
-	    gain_exp(ch,2 * skill_table[sn].rating[ch->class]);
+	    gain_exp(ch,2);
 	}
-    }
-}
-
-/* returns a group index number given the name */
-int group_lookup( const char *name )
-{
-    int gn;
- 
-    for ( gn = 0; gn < MAX_GROUP; gn++ )
-    {
-        if ( group_table[gn].name == NULL )
-            break;
-        if ( LOWER(name[0]) == LOWER(group_table[gn].name[0])
-        &&   !str_prefix( name, group_table[gn].name ) )
-            return gn;
-    }
- 
-    return -1;
-}
-
-/* recursively adds a group given its number -- uses group_add */
-void gn_add( CHAR_DATA *ch, int gn)
-{
-    int i;
-    
-    ch->pcdata->group_known[gn] = TRUE;
-    for ( i = 0; i < MAX_IN_GROUP; i++)
-    {
-        if (group_table[gn].spells[i] == NULL)
-            break;
-        group_add(ch,group_table[gn].spells[i],FALSE);
-    }
-}
-
-/* recusively removes a group given its number -- uses group_remove */
-void gn_remove( CHAR_DATA *ch, int gn)
-{
-    int i;
-
-    ch->pcdata->group_known[gn] = FALSE;
-
-    for ( i = 0; i < MAX_IN_GROUP; i ++)
-    {
-	if (group_table[gn].spells[i] == NULL)
-	    break;
-	group_remove(ch,group_table[gn].spells[i]);
-    }
-}
-	
-/* use for processing a skill or group for addition  */
-void group_add( CHAR_DATA *ch, const char *name, bool deduct)
-{
-    int sn,gn;
-
-    if (IS_NPC(ch)) /* NPCs do not have skills */
-	return;
-
-    sn = skill_lookup(name);
-
-    if (sn != -1)
-    {
-	if (ch->pcdata->learned[sn] == 0) /* i.e. not known */
-	{
-	    ch->pcdata->learned[sn] = 1;
-	    if (deduct)
-	   	ch->pcdata->points += skill_table[sn].rating[ch->class]; 
-	}
-	return;
-    }
-	
-    /* now check groups */
-
-    gn = group_lookup(name);
-
-    if (gn != -1)
-    {
-	if (ch->pcdata->group_known[gn] == FALSE)  
-	{
-	    ch->pcdata->group_known[gn] = TRUE;
-	    if (deduct)
-		ch->pcdata->points += group_table[gn].rating[ch->class];
-	}
-	gn_add(ch,gn); /* make sure all skills in the group are known */
-    }
-}
-
-/* used for processing a skill or group for deletion -- no points back! */
-
-void group_remove(CHAR_DATA *ch, const char *name)
-{
-    int sn, gn;
-    
-     sn = skill_lookup(name);
-
-    if (sn != -1)
-    {
-	ch->pcdata->learned[sn] = 0;
-	return;
-    }
- 
-    /* now check groups */
- 
-    gn = group_lookup(name);
- 
-    if (gn != -1 && ch->pcdata->group_known[gn] == TRUE)
-    {
-	ch->pcdata->group_known[gn] = FALSE;
-	gn_remove(ch,gn);  /* be sure to call gn_add on all remaining groups */
     }
 }

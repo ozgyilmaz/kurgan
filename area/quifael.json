@@ -2,8 +2,8 @@
     "area": {
         "file_name": "quifael.are",
         "name": "Quifael's",
-        "low_range": "31",
-        "high_range": "35",
+        "low_range": 31,
+        "high_range": 35,
         "writer": "Quifael",
         "credits": "Quifael's Area",
         "min_vnum": 6900,

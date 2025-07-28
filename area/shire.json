@@ -2,8 +2,8 @@
     "area": {
         "file_name": "shire.are",
         "name": "Shire",
-        "low_range": "5",
-        "high_range": "35",
+        "low_range": 5,
+        "high_range": 35,
         "writer": "Poohb",
         "credits": "The Shire",
         "min_vnum": 1100,
@@ -4228,7 +4228,7 @@
     ],
     "shops": [
         {
-            "keeper": "1113",
+            "keeper": 1113,
             "buy_type_0": 17,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -4240,7 +4240,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "1118",
+            "keeper": 1118,
             "buy_type_0": 13,
             "buy_type_1": 5,
             "buy_type_2": 15,
@@ -4252,7 +4252,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "1119",
+            "keeper": 1119,
             "buy_type_0": 13,
             "buy_type_1": 5,
             "buy_type_2": 15,
@@ -4264,7 +4264,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "1120",
+            "keeper": 1120,
             "buy_type_0": 9,
             "buy_type_1": 5,
             "buy_type_2": 0,
@@ -4276,7 +4276,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "1130",
+            "keeper": 1130,
             "buy_type_0": 17,
             "buy_type_1": 0,
             "buy_type_2": 0,

@@ -32,6 +32,26 @@
         },
         {
             "level": -1,
+            "keyword": "'GROUP HEADER'",
+            "text": "The following skills and groups are available to your chacter:\n(this list may be seen again by typing list)\n"
+        },
+        {
+            "level": -1,
+            "keyword": "'GROUP HELP'",
+            "text": "The following commands are available:\nlist         display all groups and skills not yet bought\nlearned      show all groups and skills bought \npremise      brief explanation of creation points and skill groups\nadd <name>   buy a skill or group\ndrop <name>  discard a skill or group\ninfo <name>  list the skills or spells contained within a group\nhelp <name>  help on skills and groups, or other help topics\ndone         exit the character generation process\n"
+        },
+        {
+            "level": -1,
+            "keyword": "'MENU CHOICE'",
+            "text": "Choice (add,drop,list,help)?"
+        },
+        {
+            "level": -1,
+            "keyword": "'GROUPS' 'INFO' 'PREMISE'",
+            "text": "The ROM skill system allows you to fully customize your new character, making\nhim or her skilled in the skills you choose.  But beware, the skills you pick\nat character creation are the only skills you will ever learn.  Skills are \npaid for with creation points, and the more creation points you have, the\nharder it is to gain a level.  Furthermore, higher-cost skills are harder to\npractice.\n\nSkill groups are like package deals for characters -- sets of skills or spells\nthat are closely related, and hence can be learned as a unit.  There is a \ndefault skill group for each class, which can be selected for a balanced \nselection of skills at a somewhat reduced cost.\n\nThe experience breakdown is as follows: \npoints   exp/level     points   exp/level\n40        1000         90        6000\n50        1500         100       8000\n60        2000         110      12000\n70        3000         120      16000 \n80        4000         130      24000\nThe table continues in a similar manner for higher point totals.\n"
+        },
+        {
+            "level": -1,
             "keyword": "BASICS 'ROM BASICS'",
             "text": "The basic skills:\n\nEvery character starts with two skill groups, one for their class and a default\nset that all characters receive.  The default skills are:\n\nrecall          essential escape skill (see help recall)\nscrolls         reading of scrolls and other magical volumes\nstaves          use of magical staves\nwands           use of magical wands\n\nfor class defaults, check the classes themselves.\n"
         },

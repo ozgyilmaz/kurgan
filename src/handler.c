@@ -161,6 +161,14 @@ int weapon_lookup (const char *name)
     return -1;
 }
 
+int weapon_table_count()
+{
+    int count = 0;
+    while (weapon_table[count].name != NULL)
+        count++;
+    return count;
+}
+
 int weapon_type (const char *name)
 {
     int type;
@@ -210,6 +218,14 @@ char *weapon_name( int weapon_type)
     return "exotic";
 }
 
+int attack_table_count()
+{
+    int count = 0;
+    while (attack_table[count].name != NULL)
+        count++;
+    return count;
+}
+
 int attack_lookup  (const char *name)
 {
     int att;
@@ -237,21 +253,6 @@ long wiznet_lookup (const char *name)
     }
 
     return -1;
-}
-
-/* returns class number */
-int class_lookup (const char *name)
-{
-   int class;
- 
-   for ( class = 0; class < MAX_CLASS; class++)
-   {
-        if (LOWER(name[0]) == LOWER(class_table[class].name[0])
-        &&  !str_prefix( name,class_table[class].name))
-            return class;
-   }
- 
-   return -1;
 }
 
 /* for immunity, vulnerabiltiy, and resistant
@@ -343,16 +344,6 @@ bool is_same_clan(CHAR_DATA *ch, CHAR_DATA *victim)
     else 
 	return (ch->clan == victim->clan);
 }
-
-/* checks mob format */
-bool is_old_mob(CHAR_DATA *ch)
-{
-    if (ch->pIndexData == NULL)
-	return FALSE;
-    else if (ch->pIndexData->new_format)
-	return FALSE;
-    return TRUE;
-}
  
 /* for returning skill information */
 int get_skill(CHAR_DATA *ch, int sn)
@@ -372,9 +363,6 @@ int get_skill(CHAR_DATA *ch, int sn)
 
     else if (!IS_NPC(ch))
     {
-	if (ch->level < skill_table[sn].skill_level[ch->class])
-	    skill = 0;
-	else
 	    skill = ch->pcdata->learned[sn];
     }
 
@@ -540,11 +528,9 @@ void reset_char(CHAR_DATA *ch)
 		switch(af->location)
 		{
 		    case APPLY_SEX:	ch->sex		-= mod;
-					if (ch->sex < 0 || ch->sex >2)
-					    ch->sex = IS_NPC(ch) ?
-						0 :
-						ch->pcdata->true_sex;
-									break;
+					if (ch->sex < 0 || ch->sex > 5 )
+					    ch->sex = IS_NPC(ch) ? 0 : ch->pcdata->true_sex;
+			break;
 		    case APPLY_MANA:	ch->max_mana	-= mod;		break;
 		    case APPLY_HIT:	ch->max_hit	-= mod;		break;
 		    case APPLY_MOVE:	ch->max_move	-= mod;		break;
@@ -568,9 +554,9 @@ void reset_char(CHAR_DATA *ch)
 	ch->pcdata->perm_mana 	= ch->max_mana;
 	ch->pcdata->perm_move	= ch->max_move;
 	ch->pcdata->last_level	= ch->played/3600;
-	if (ch->pcdata->true_sex < 0 || ch->pcdata->true_sex > 2)
+	if (ch->pcdata->true_sex < 0 || ch->pcdata->true_sex > 5)
 	{
-		if (ch->sex >= 1 && ch->sex <= 2)
+		if (ch->sex >= 1 && ch->sex <= 5)
 			ch->pcdata->true_sex = ch->sex;
 		else
 			ch->pcdata->true_sex = 0;
@@ -582,8 +568,10 @@ void reset_char(CHAR_DATA *ch)
     for (stat = 0; stat < MAX_STATS; stat++)
 	ch->mod_stat[stat] = 0;
 
-    if (ch->pcdata->true_sex < 0 || ch->pcdata->true_sex > 2)
-	ch->pcdata->true_sex = 0; 
+    if (ch->pcdata->true_sex < 0 || ch->pcdata->true_sex > 5 )
+    {
+	    ch->pcdata->true_sex = 0; 
+    }
     ch->sex		= ch->pcdata->true_sex;
     ch->max_hit 	= ch->pcdata->perm_hit;
     ch->max_mana	= ch->pcdata->perm_mana;
@@ -702,8 +690,8 @@ void reset_char(CHAR_DATA *ch)
     }
 
     /* make sure sex is RIGHT!!!! */
-    if (ch->sex < 0 || ch->sex > 2)
-	ch->sex = ch->pcdata->true_sex;
+    if (ch->sex < 0 || ch->sex > 5)
+	    ch->sex = ch->pcdata->true_sex;
 }
 
 
@@ -743,9 +731,9 @@ int get_curr_stat( CHAR_DATA *ch, int stat )
 
     else
     {
-	max = race_table[ch->race].max_stats[stat] + 4;
+	max = pc_race_table[ch->race].max_stats[stat] + 4;
 
-	if (class_table[ch->class].attr_prime == stat)
+	if (pc_race_table[ch->race].attr_prime == stat)
 	    max += 2;
 
 	if ( ch->race == race_lookup("human"))
@@ -765,8 +753,8 @@ int get_max_train( CHAR_DATA *ch, int stat )
     if (IS_NPC(ch) || ch->level > LEVEL_IMMORTAL)
 	return 25;
 
-    max = race_table[ch->race].max_stats[stat];
-    if (class_table[ch->class].attr_prime == stat)
+    max = pc_race_table[ch->race].max_stats[stat];
+    if (pc_race_table[ch->race].attr_prime == stat)
     {
         if (ch->race == race_lookup("human"))
             max += 3;
@@ -2272,15 +2260,15 @@ OBJ_DATA *create_money( int gold, int silver )
 
     if (gold == 0 && silver == 1)
     {
-	obj = create_object( get_obj_index( OBJ_VNUM_SILVER_ONE ), 0 );
+	obj = create_object( get_obj_index( OBJ_VNUM_SILVER_ONE ), 0,FALSE );
     }
     else if (gold == 1 && silver == 0)
     {
-	obj = create_object( get_obj_index( OBJ_VNUM_GOLD_ONE), 0 );
+	obj = create_object( get_obj_index( OBJ_VNUM_GOLD_ONE), 0, FALSE );
     }
     else if (silver == 0)
     {
-        obj = create_object( get_obj_index( OBJ_VNUM_GOLD_SOME ), 0 );
+        obj = create_object( get_obj_index( OBJ_VNUM_GOLD_SOME ), 0, FALSE);
         sprintf( buf, obj->short_descr, gold );
         free_string( obj->short_descr );
         obj->short_descr        = str_dup( buf );
@@ -2290,7 +2278,7 @@ OBJ_DATA *create_money( int gold, int silver )
     }
     else if (gold == 0)
     {
-        obj = create_object( get_obj_index( OBJ_VNUM_SILVER_SOME ), 0 );
+        obj = create_object( get_obj_index( OBJ_VNUM_SILVER_SOME ), 0, FALSE );
         sprintf( buf, obj->short_descr, silver );
         free_string( obj->short_descr );
         obj->short_descr        = str_dup( buf );
@@ -2301,7 +2289,7 @@ OBJ_DATA *create_money( int gold, int silver )
  
     else
     {
-	obj = create_object( get_obj_index( OBJ_VNUM_COINS ), 0 );
+	obj = create_object( get_obj_index( OBJ_VNUM_COINS ), 0, FALSE );
 	sprintf( buf, obj->short_descr, silver, gold );
 	free_string( obj->short_descr );
 	obj->short_descr	= str_dup( buf );

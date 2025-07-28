@@ -2,8 +2,8 @@
     "area": {
         "file_name": "draconia.are",
         "name": "Dragon Tower",
-        "low_range": "5",
-        "high_range": "30",
+        "low_range": 5,
+        "high_range": 30,
         "writer": "Wench",
         "credits": "Dragon Tower",
         "min_vnum": 2200,

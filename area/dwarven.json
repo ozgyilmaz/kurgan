@@ -2,8 +2,8 @@
     "area": {
         "file_name": "dwarven.are",
         "name": "Dwarven Kingdom",
-        "low_range": "10",
-        "high_range": "25",
+        "low_range": 10,
+        "high_range": 25,
         "writer": "Anon",
         "credits": "Dwarven Kingdom",
         "min_vnum": 6500,
@@ -3172,7 +3172,7 @@
     ],
     "shops": [
         {
-            "keeper": "6503",
+            "keeper": 6503,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -3184,7 +3184,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "6504",
+            "keeper": 6504,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,

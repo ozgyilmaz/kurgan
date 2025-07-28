@@ -55,6 +55,10 @@ struct position_type
 struct sex_type
 {
     char *name;
+    char *sub_pronoun;
+    char *obj_pronoun;
+    char *pos_adjective;
+    char *title;
 };
 
 struct size_type

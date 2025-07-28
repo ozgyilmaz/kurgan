@@ -2,8 +2,8 @@
     "area": {
         "file_name": "school.are",
         "name": "mud school",
-        "low_range": "1",
-        "high_range": "5",
+        "low_range": 1,
+        "high_range": 5,
         "writer": "Hatchet",
         "credits": "Mud School",
         "min_vnum": 3700,
@@ -1912,6 +1912,14 @@
                     "exit_locks": 0,
                     "exit_key": -1,
                     "exit_u1_vnum": 3714
+                },
+                {
+                    "exit_door": 4,
+                    "exit_description": "A Room in Mud School.\n",
+                    "exit_keyword": "",
+                    "exit_locks": 0,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 3711
                 },
                 {
                     "exit_door": 5,
@@ -3914,7 +3922,7 @@
     ],
     "shops": [
         {
-            "keeper": "3717",
+            "keeper": 3717,
             "buy_type_0": 1,
             "buy_type_1": 15,
             "buy_type_2": 17,

@@ -2,8 +2,8 @@
     "area": {
         "file_name": "dylan.are",
         "name": "Dylan's Area",
-        "low_range": "15",
-        "high_range": "25",
+        "low_range": 15,
+        "high_range": 25,
         "writer": "Dylan",
         "credits": "Dylan's Area",
         "min_vnum": 9100,

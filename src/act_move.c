@@ -41,6 +41,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "merc.h"
+#include "tables.h"
 #include "interp.h"
 
 char *	const	dir_name	[]		=
@@ -115,21 +116,7 @@ void move_char( CHAR_DATA *ch, int door, bool follow )
 
     if ( !IS_NPC(ch) )
     {
-	int iClass, iGuild;
 	int move;
-
-	for ( iClass = 0; iClass < MAX_CLASS; iClass++ )
-	{
-	    for ( iGuild = 0; iGuild < MAX_GUILD; iGuild ++)	
-	    {
-	    	if ( iClass != ch->class
-	    	&&   to_room->vnum == class_table[iClass].guild[iGuild] )
-	    	{
-		    printf_to_char(ch, "You aren't allowed in there.\n\r");
-		    return;
-		}
-	    }
-	}
 
 	if ( in_room->sector_type == SECT_AIR
 	||   to_room->sector_type == SECT_AIR )
@@ -1511,7 +1498,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     if ( !str_cmp( argument, "str" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_STR )
+	if ( pc_race_table[ch->race].attr_prime == STAT_STR )
 	    cost    = 1;
 	stat        = STAT_STR;
 	pOutput     = "strength";
@@ -1519,7 +1506,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     else if ( !str_cmp( argument, "int" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_INT )
+	if ( pc_race_table[ch->race].attr_prime == STAT_INT )
 	    cost    = 1;
 	stat	    = STAT_INT;
 	pOutput     = "intelligence";
@@ -1527,7 +1514,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     else if ( !str_cmp( argument, "wis" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_WIS )
+	if ( pc_race_table[ch->race].attr_prime == STAT_WIS )
 	    cost    = 1;
 	stat	    = STAT_WIS;
 	pOutput     = "wisdom";
@@ -1535,7 +1522,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     else if ( !str_cmp( argument, "dex" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_DEX )
+	if ( pc_race_table[ch->race].attr_prime == STAT_DEX )
 	    cost    = 1;
 	stat  	    = STAT_DEX;
 	pOutput     = "dexterity";
@@ -1543,7 +1530,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 
     else if ( !str_cmp( argument, "con" ) )
     {
-	if ( class_table[ch->class].attr_prime == STAT_CON )
+	if ( pc_race_table[ch->race].attr_prime == STAT_CON )
 	    cost    = 1;
 	stat	    = STAT_CON;
 	pOutput     = "constitution";
@@ -1580,12 +1567,7 @@ void do_train( CHAR_DATA *ch, char *argument )
 	    /*
 	     * This message dedicated to Jordan ... you big stud!
 	     */
-	    act( "You have nothing left to train, you $T!",
-		ch, NULL,
-		ch->sex == SEX_MALE   ? "big stud" :
-		ch->sex == SEX_FEMALE ? "hot babe" :
-					"wild thing",
-		TO_CHAR );
+	    act( "You have nothing left to train, you $T!",ch, NULL,sex_table[ch->sex].title,TO_CHAR );
 	}
 
 	return;

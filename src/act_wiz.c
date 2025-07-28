@@ -248,7 +248,7 @@ void do_outfit ( CHAR_DATA *ch, char *argument )
 
     if ( ( obj = get_eq_char( ch, WEAR_LIGHT ) ) == NULL )
     {
-        obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_BANNER), 0 );
+        obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_BANNER), 0, FALSE );
 	obj->cost = 0;
         obj_to_char( obj, ch );
         equip_char( ch, obj, WEAR_LIGHT );
@@ -256,7 +256,7 @@ void do_outfit ( CHAR_DATA *ch, char *argument )
  
     if ( ( obj = get_eq_char( ch, WEAR_BODY ) ) == NULL )
     {
-	obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_VEST), 0 );
+	obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_VEST), 0, FALSE );
 	obj->cost = 0;
         obj_to_char( obj, ch );
         equip_char( ch, obj, WEAR_BODY );
@@ -278,7 +278,7 @@ void do_outfit ( CHAR_DATA *ch, char *argument )
 	    }
     	}
 
-    	obj = create_object(get_obj_index(vnum),0);
+    	obj = create_object(get_obj_index(vnum),0, FALSE);
      	obj_to_char(obj,ch);
     	equip_char(ch,obj,WEAR_WIELD);
     }
@@ -287,7 +287,7 @@ void do_outfit ( CHAR_DATA *ch, char *argument )
     ||   !IS_WEAPON_STAT(obj,WEAPON_TWO_HANDS)) 
     &&  (obj = get_eq_char( ch, WEAR_SHIELD ) ) == NULL )
     {
-        obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_SHIELD), 0 );
+        obj = create_object( get_obj_index(OBJ_VNUM_SCHOOL_SHIELD), 0, FALSE );
 	obj->cost = 0;
         obj_to_char( obj, ch );
         equip_char( ch, obj, WEAR_SHIELD );
@@ -1230,8 +1230,8 @@ void do_ostat( CHAR_DATA *ch, char *argument )
 	obj->name );
     printf_to_char(ch, buf);
 
-    sprintf( buf, "Vnum: %d  Format: %s  Type: %s  Resets: %d\n\r",
-	obj->pIndexData->vnum, obj->pIndexData->new_format ? "new" : "old",
+    sprintf( buf, "Vnum: %d  Type: %s  Resets: %d\n\r",
+	obj->pIndexData->vnum,
 	item_name(obj->item_type), obj->pIndexData->reset_num );
     printf_to_char(ch, buf);
 
@@ -1367,14 +1367,9 @@ void do_ostat( CHAR_DATA *ch, char *argument )
 		    printf_to_char(ch, "unknown\n\r");
 		    break;
  	    }
-	    if (obj->pIndexData->new_format)
-	    	sprintf(buf,"Damage is %dd%d (average %d)\n\r",
+	    sprintf(buf,"Damage is %dd%d (average %d)\n\r",
 		    obj->value[1],obj->value[2],
 		    (1 + obj->value[2]) * obj->value[1] / 2);
-	    else
-	    	sprintf( buf, "Damage is %d to %d (average %d)\n\r",
-	    	    obj->value[1], obj->value[2],
-	    	    ( obj->value[1] + obj->value[2] ) / 2 );
 	    printf_to_char(ch, buf);
 
 	    sprintf(buf,"Damage noun is %s.\n\r",
@@ -1551,9 +1546,8 @@ void do_mstat( CHAR_DATA *ch, char *argument )
     printf_to_char(ch, buf);
 
     sprintf( buf, 
-	"Vnum: %d  Format: %s  Race: %s  Group: %d  Sex: %s  Room: %d\n\r",
+	"Vnum: %d  Race: %s  Group: %d  Sex: %s  Room: %d\n\r",
 	IS_NPC(victim) ? victim->pIndexData->vnum : 0,
-	IS_NPC(victim) ? victim->pIndexData->new_format ? "new" : "old" : "pc",
 	race_table[victim->race].name,
 	IS_NPC(victim) ? victim->group : 0, sex_table[victim->sex].name,
 	victim->in_room == NULL    ?        0 : victim->in_room->vnum
@@ -1589,9 +1583,8 @@ void do_mstat( CHAR_DATA *ch, char *argument )
     printf_to_char(ch, buf);
 	
     sprintf( buf,
-	"Lv: %d  Class: %s  Align: %d  Gold: %ld  Silver: %ld  Exp: %d\n\r",
-	victim->level,       
-	IS_NPC(victim) ? "mobile" : class_table[victim->class].name,            
+	"Lv: %d  Align: %d  Gold: %ld  Silver: %ld  Exp: %d\n\r",
+	victim->level,          
 	victim->alignment,
 	victim->gold, victim->silver, victim->exp );
     printf_to_char(ch, buf);
@@ -1608,7 +1601,7 @@ void do_mstat( CHAR_DATA *ch, char *argument )
 	victim->wimpy );
     printf_to_char(ch, buf);
 
-    if (IS_NPC(victim) && victim->pIndexData->new_format)
+    if (IS_NPC(victim))
     {
 	sprintf(buf, "Damage: %dd%d  Message:  %s\n\r",
 	    victim->damage[DICE_NUMBER],victim->damage[DICE_TYPE],
@@ -2302,7 +2295,7 @@ void recursive_clone(CHAR_DATA *ch, OBJ_DATA *obj, OBJ_DATA *clone)
     {
 	if (obj_check(ch,c_obj))
 	{
-	    t_obj = create_object(c_obj->pIndexData,0);
+	    t_obj = create_object(c_obj->pIndexData,0, FALSE);
 	    clone_object(c_obj,t_obj);
 	    obj_to_obj(t_obj,clone);
 	    recursive_clone(ch,c_obj,t_obj);
@@ -2368,7 +2361,7 @@ void do_clone(CHAR_DATA *ch, char *argument )
 	    return;
 	}
 
-	clone = create_object(obj->pIndexData,0); 
+	clone = create_object(obj->pIndexData,0, FALSE); 
 	clone_object(obj,clone);
 	if (obj->carried_by != NULL)
 	    obj_to_char(clone,ch);
@@ -2410,7 +2403,7 @@ void do_clone(CHAR_DATA *ch, char *argument )
 	{
 	    if (obj_check(ch,obj))
 	    {
-		new_obj = create_object(obj->pIndexData,0);
+		new_obj = create_object(obj->pIndexData,0, FALSE);
 		clone_object(obj,new_obj);
 		recursive_clone(ch,obj,new_obj);
 		obj_to_char(new_obj,clone);
@@ -2529,7 +2522,7 @@ void do_oload( CHAR_DATA *ch, char *argument )
 	return;
     }
 
-    obj = create_object( pObjIndex, level );
+    obj = create_object( pObjIndex, level, FALSE );
     if ( CAN_WEAR(obj, ITEM_TAKE) )
 	obj_to_char( obj, ch );
     else
@@ -3340,7 +3333,7 @@ void do_mset( CHAR_DATA *ch, char *argument )
 	printf_to_char(ch, "Syntax:\n\r");
 	printf_to_char(ch, "  set char <name> <field> <value>\n\r"); 
 	printf_to_char(ch, "  Field being one of:\n\r");
-	printf_to_char(ch, "    str int wis dex con sex class level\n\r");
+	printf_to_char(ch, "    str int wis dex con sex level\n\r");
 	printf_to_char(ch, "    race group gold silver hp mana move prac\n\r");
 	printf_to_char(ch, "    align train thirst hunger drunk full\n\r");
 	return;
@@ -3439,46 +3432,14 @@ void do_mset( CHAR_DATA *ch, char *argument )
 
     if ( !str_prefix( arg2, "sex" ) )
     {
-	if ( value < 0 || value > 2 )
+	if ( value < 0 || value > 5 )
 	{
-	    printf_to_char(ch, "Sex range is 0 to 2.\n\r");
+	    printf_to_char(ch, "Sex range is 0 to 5.\n\r");
 	    return;
 	}
 	victim->sex = value;
 	if (!IS_NPC(victim))
 	    victim->pcdata->true_sex = value;
-	return;
-    }
-
-    if ( !str_prefix( arg2, "class" ) )
-    {
-	int class;
-
-	if (IS_NPC(victim))
-	{
-	    printf_to_char(ch, "Mobiles have no class.\n\r");
-	    return;
-	}
-
-	class = class_lookup(arg3);
-	if ( class == -1 )
-	{
-	    char buf[MAX_STRING_LENGTH];
-
-        	strcpy( buf, "Possible classes are: " );
-        	for ( class = 0; class < MAX_CLASS; class++ )
-        	{
-            	    if ( class > 0 )
-                    	strcat( buf, " " );
-            	    strcat( buf, class_table[class].name );
-        	}
-            strcat( buf, ".\n\r" );
-
-	    printf_to_char(ch, buf);
-	    return;
-	}
-
-	victim->class = class;
 	return;
     }
 

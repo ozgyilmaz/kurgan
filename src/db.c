@@ -49,6 +49,8 @@
 #include "recycle.h"
 #include "music.h"
 #include "lookup.h"
+#include "magic.h"
+#include "strrep.h"
 
 
 #if !defined(macintosh)
@@ -944,6 +946,26 @@ void area_update( void )
     return;
 }
 
+int random_skill_by_rarity(int rarity) {
+    int matching_skills[MAX_SKILL];
+    int count = 0;
+
+    for (int sn = 0; sn < MAX_SKILL; sn++) {
+        if (skill_table[sn].name == NULL) // skip empty
+            continue;
+
+        if (skill_table[sn].book_rarity == rarity)
+            matching_skills[count++] = sn;
+    }
+
+    if (count == 0) {
+        bugf("No skill found with rarity %d", rarity);
+        return -1; // not found
+    }
+
+    int chosen_index = number_range(0, count - 1);
+    return matching_skills[chosen_index];
+}
 
 
 /*
@@ -1012,6 +1034,68 @@ void reset_area( AREA_DATA *pArea )
 
 	    mob = create_mobile( pMobIndex );
 
+        /*
+         * Create random book
+         */
+        if (IS_NPC(mob) && number_percent() < 2)
+        {
+            int skill_chance = number_range(1,100);
+            int tier_chance = number_range(1,100);
+            int sn = 0;
+            int tier = 1;
+            
+            if(skill_chance < 90)
+                sn = random_skill_by_rarity(1);
+            else if(skill_chance <98)
+                sn = random_skill_by_rarity(2);
+            else
+                sn = random_skill_by_rarity(3);
+            
+            if (tier_chance <= 88)
+                tier = 1;
+            else if (tier_chance <= 98)
+                tier = 2;
+            else
+                tier = 3;
+
+
+            OBJ_DATA *book;
+            OBJ_INDEX_DATA *template = get_obj_index(26);
+
+            book = create_object(template, 0, FALSE);
+
+            book->value[0] = tier;
+            book->value[1] = sn;
+
+            char buf_book_name[MAX_STRING_LENGTH];
+            char buf_book_short[MAX_STRING_LENGTH];
+
+            snprintf(buf_book_name, sizeof(buf_book_name), "book %s", skill_table[sn].name);
+            switch (tier)
+            {
+                case 1:
+                    snprintf(buf_book_short, sizeof(buf_book_short), "Book of %s: Introduction", capitalize(skill_table[sn].name));
+                    break;
+                case 2:
+                    snprintf(buf_book_short, sizeof(buf_book_short), "Book of %s: Intermediate", capitalize(skill_table[sn].name));
+                    break;
+                case 3:
+                    snprintf(buf_book_short, sizeof(buf_book_short), "Book of %s: Mastering", capitalize(skill_table[sn].name));
+                    break;
+                default:
+                    book->value[1] = 0;
+                    snprintf(buf_book_short, sizeof(buf_book_short), "Book of Unknown");
+                    break;
+            }
+
+            free_string(book->name);
+            free_string(book->short_descr);
+            book->name = str_dup(buf_book_name);
+            book->short_descr = str_dup(buf_book_short);
+
+            obj_to_char(book, mob);
+        }
+
 	    /*
 	     * Check for pet shop.
 	     */
@@ -1051,8 +1135,7 @@ void reset_area( AREA_DATA *pArea )
 		break;
 	    }
 
-	    obj       = create_object( pObjIndex, UMIN(number_fuzzy(level),
-						       LEVEL_HERO - 1) );
+	    obj       = create_object( pObjIndex, UMIN(number_fuzzy(level),LEVEL_HERO - 1), TRUE );
 	    obj->cost = 0;
 	    obj_to_room( obj, pRoomIndex );
 	    last = TRUE;
@@ -1091,7 +1174,7 @@ void reset_area( AREA_DATA *pArea )
 
 	    while (count < pReset->arg4)
 	    {
-	        obj = create_object( pObjIndex, number_fuzzy(obj_to->level) );
+	        obj = create_object( pObjIndex, number_fuzzy(obj_to->level), TRUE );
 	    	obj_to_obj( obj, obj_to );
 		count++;
 		if (pObjIndex->count >= limit)
@@ -1122,38 +1205,9 @@ void reset_area( AREA_DATA *pArea )
 
 	    if ( mob->pIndexData->pShop != NULL )
 	    {
-		int olevel = 0,i,j;
+		int olevel = 0;
 
-		if (!pObjIndex->new_format)
-		    switch ( pObjIndex->item_type )
-		{
-		case ITEM_PILL:
-		case ITEM_POTION:
-		case ITEM_SCROLL:
-		    olevel = 53;
-		    for (i = 1; i < 5; i++)
-		    {
-			if (pObjIndex->value[i] > 0)
-			{
-		    	    for (j = 0; j < MAX_CLASS; j++)
-			    {
-				olevel = UMIN(olevel,
-				         skill_table[pObjIndex->value[i]].
-						     skill_level[j]);
-			    }
-			}
-		    }
-		   
-		    olevel = UMAX(0,(olevel * 3 / 4) - 2);
-		    break;
-		case ITEM_WAND:		olevel = number_range( 10, 20 ); break;
-		case ITEM_STAFF:	olevel = number_range( 15, 25 ); break;
-		case ITEM_ARMOR:	olevel = number_range(  5, 15 ); break;
-		case ITEM_WEAPON:	olevel = number_range(  5, 15 ); break;
-		case ITEM_TREASURE:	olevel = number_range( 10, 20 ); break;
-		}
-
-		obj = create_object( pObjIndex, olevel );
+		obj = create_object( pObjIndex, olevel, TRUE );
 		SET_BIT( obj->extra_flags, ITEM_INVENTORY );
 	    }
 
@@ -1168,7 +1222,7 @@ void reset_area( AREA_DATA *pArea )
 
 		if (pObjIndex->count < limit || number_range(0,4) == 0)
 		{
-		    obj=create_object(pObjIndex,UMIN(number_fuzzy(level), LEVEL_HERO - 1));
+		    obj=create_object(pObjIndex,UMIN(number_fuzzy(level), LEVEL_HERO - 1), TRUE);
 		}
 		else
 		    break;
@@ -1259,11 +1313,11 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 
     mob->pIndexData	= pMobIndex;
 
-    mob->name		= pMobIndex->player_name;
+    mob->name          = str_dup(pMobIndex->player_name);
     mob->id		= get_mob_id();
-    mob->short_descr	= pMobIndex->short_descr;
-    mob->long_descr	= pMobIndex->long_descr;
-    mob->description	= pMobIndex->description;
+    mob->short_descr   = str_dup(pMobIndex->short_descr);
+    mob->long_descr    = str_dup(pMobIndex->long_descr);
+    mob->description   = str_dup(pMobIndex->description);
     mob->spec_fun	= pMobIndex->spec_fun;
     mob->prompt		= NULL;
 
@@ -1281,9 +1335,6 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 	mob->silver = wealth - (mob->gold * 100);
     } 
 
-    if (pMobIndex->new_format)
-    /* load in new style */
-    {
 	/* read from prototype */
  	mob->group		= pMobIndex->group;
 	mob->act 		= pMobIndex->act;
@@ -1320,8 +1371,10 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 	mob->start_pos		= pMobIndex->start_pos;
 	mob->default_pos	= pMobIndex->default_pos;
 	mob->sex		= pMobIndex->sex;
-        if (mob->sex == 3) /* random sex */
-            mob->sex = number_range(1,2);
+    if (mob->sex < 0 || mob->sex > 5)
+    {
+        mob->sex = number_range(1,5);
+    }
 	mob->race		= pMobIndex->race;
 	mob->form		= pMobIndex->form;
 	mob->parts		= pMobIndex->parts;
@@ -1405,57 +1458,16 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 	    affect_to_char(mob,&af);
 	}
 
-        if (IS_AFFECTED(mob,AFF_PROTECT_GOOD))
-        {
-	    af.where	 = TO_AFFECTS;
-            af.type      = skill_lookup("protection good");
-            af.level     = mob->level;
-            af.duration  = -1;
-            af.location  = APPLY_SAVES;
-            af.modifier  = -1;
-            af.bitvector = AFF_PROTECT_GOOD;
-            affect_to_char(mob,&af);
-        }
-    }
-    else /* read in old format and convert */
+    if (IS_AFFECTED(mob,AFF_PROTECT_GOOD))
     {
-	mob->act		= pMobIndex->act;
-	mob->affected_by	= pMobIndex->affected_by;
-	mob->alignment		= pMobIndex->alignment;
-	mob->level		= pMobIndex->level;
-	mob->hitroll		= pMobIndex->hitroll;
-	mob->damroll		= 0;
-	mob->max_hit		= mob->level * 8 + number_range(
-					mob->level * mob->level/4,
-					mob->level * mob->level);
-	mob->max_hit *= .9;
-	mob->hit		= mob->max_hit;
-	mob->max_mana		= 100 + dice(mob->level,10);
-	mob->mana		= mob->max_mana;
-	switch(number_range(1,3))
-	{
-	    case (1): mob->dam_type = 3; 	break;  /* slash */
-	    case (2): mob->dam_type = 7;	break;  /* pound */
-	    case (3): mob->dam_type = 11;	break;  /* pierce */
-	}
-	for (i = 0; i < 3; i++)
-	    mob->armor[i]	= interpolate(mob->level,100,-100);
-	mob->armor[3]		= interpolate(mob->level,100,0);
-	mob->race		= pMobIndex->race;
-	mob->off_flags		= pMobIndex->off_flags;
-	mob->imm_flags		= pMobIndex->imm_flags;
-	mob->res_flags		= pMobIndex->res_flags;
-	mob->vuln_flags		= pMobIndex->vuln_flags;
-	mob->start_pos		= pMobIndex->start_pos;
-	mob->default_pos	= pMobIndex->default_pos;
-	mob->sex		= pMobIndex->sex;
-	mob->form		= pMobIndex->form;
-	mob->parts		= pMobIndex->parts;
-	mob->size		= SIZE_MEDIUM;
-	mob->material		= "";
-
-        for (i = 0; i < MAX_STATS; i ++)
-            mob->perm_stat[i] = 11 + mob->level/4;
+    af.where	 = TO_AFFECTS;
+        af.type      = skill_lookup("protection good");
+        af.level     = mob->level;
+        af.duration  = -1;
+        af.location  = APPLY_SAVES;
+        af.modifier  = -1;
+        af.bitvector = AFF_PROTECT_GOOD;
+        affect_to_char(mob,&af);
     }
 
     mob->position = mob->start_pos;
@@ -1485,7 +1497,6 @@ void clone_mobile(CHAR_DATA *parent, CHAR_DATA *clone)
     clone->description	= str_dup(parent->description);
     clone->group	= parent->group;
     clone->sex		= parent->sex;
-    clone->class	= parent->class;
     clone->race		= parent->race;
     clone->level	= parent->level;
     clone->trust	= 0;
@@ -1549,7 +1560,7 @@ void clone_mobile(CHAR_DATA *parent, CHAR_DATA *clone)
 /*
  * Create an instance of an object.
  */
-OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
+OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level, bool randomize )
 {
     AFFECT_DATA *paf;
     OBJ_DATA *obj;
@@ -1567,15 +1578,13 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
     obj->in_room	= NULL;
     obj->enchanted	= FALSE;
 
-    if (pObjIndex->new_format)
 	obj->level = pObjIndex->level;
-    else
-	obj->level		= UMAX(0,level);
+
     obj->wear_loc	= -1;
 
-    obj->name		= pObjIndex->name;
-    obj->short_descr	= pObjIndex->short_descr;
-    obj->description	= pObjIndex->description;
+    obj->name          = str_dup(pObjIndex->name);
+    obj->short_descr   = str_dup(pObjIndex->short_descr);
+    obj->description   = str_dup(pObjIndex->description);
     obj->material	= str_dup(pObjIndex->material);
     obj->item_type	= pObjIndex->item_type;
     obj->extra_flags	= pObjIndex->extra_flags;
@@ -1587,11 +1596,7 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
     obj->value[4]	= pObjIndex->value[4];
     obj->weight		= pObjIndex->weight;
 
-    if (level == -1 || pObjIndex->new_format)
 	obj->cost	= pObjIndex->cost;
-    else
-    	obj->cost	= number_fuzzy( 10 )
-			* number_fuzzy( level ) * number_fuzzy( level );
 
     /*
      * Mess with object properties.
@@ -1603,16 +1608,34 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
 	break;
 
     case ITEM_LIGHT:
-	if (obj->value[2] == 999)
-		obj->value[2] = -1;
+        if (obj->value[2] == 999)
+            obj->value[2] = -1;
+        if(randomize == TRUE)
+        {
+            obj->value[0]	= 0;								// unused
+            obj->value[1]	= 0;								// unused
+            obj->value[2]	= (number_percent()<20)?-1:number_range(5,500); // light duration in game hours (-1 unlimited)
+            obj->value[3]	= 0;								// unused
+            obj->value[4]	= 0;								// unused
+        }
 	break;
+
+    case ITEM_FOOD:
+        if(randomize == TRUE)
+        {
+            obj->value[0]	= number_range(5,40);				// number of game hours the food will keep the person who eats it full
+            obj->value[1]	= number_range(5,70);				// number of hours it will keep the person from getting hungry
+            obj->value[2]	= 0;								// unused
+            obj->value[3]	= (number_percent()<95)?0:1;		// nonpoisoned:0,poisoned:1
+            obj->value[4]	= 0;								// unused
+        }
+    break;
 
     case ITEM_FURNITURE:
     case ITEM_TRASH:
     case ITEM_CONTAINER:
     case ITEM_DRINK_CON:
     case ITEM_KEY:
-    case ITEM_FOOD:
     case ITEM_BOAT:
     case ITEM_CORPSE_NPC:
     case ITEM_CORPSE_PC:
@@ -1620,8 +1643,6 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
     case ITEM_MAP:
     case ITEM_CLOTHING:
     case ITEM_PORTAL:
-	if (!pObjIndex->new_format)
-	    obj->cost /= 5;
 	break;
 
     case ITEM_TREASURE:
@@ -1629,6 +1650,7 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
     case ITEM_ROOM_KEY:
     case ITEM_GEM:
     case ITEM_JEWELRY:
+    case ITEM_BOOK:
 	break;
 
     case ITEM_JUKEBOX:
@@ -1636,49 +1658,129 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA *pObjIndex, int level )
 	   obj->value[i] = -1;
 	break;
 
-    case ITEM_SCROLL:
-	if (level != -1 && !pObjIndex->new_format)
-	    obj->value[0]	= number_fuzzy( obj->value[0] );
+    case ITEM_WEAPON:
+        if(randomize == TRUE)
+        {
+            char *new_name;
+            int old_weapon_type = obj->value[0];
+
+            /* change weapon type randomly */
+            obj->value[0]	= number_range(0,weapon_table_count()-1);
+
+            /* change weapon name according to weapon type */
+            new_name = strrep(obj->name, weapon_name(old_weapon_type), weapon_name(obj->value[0]));
+            free_string(obj->name);
+            obj->name = str_dup(new_name);
+            free(new_name);
+
+            /* change weapon short_descr according to weapon type */
+            new_name = strrep(obj->short_descr, weapon_name(old_weapon_type), weapon_name(obj->value[0]));
+            free_string(obj->short_descr);
+            obj->short_descr = str_dup(new_name);
+            free(new_name);
+
+            /* change weapon description according to weapon type */
+            new_name = strrep(obj->description, weapon_name(old_weapon_type), weapon_name(obj->value[0]));
+            free_string(obj->description);
+            obj->description = str_dup(new_name);
+            free(new_name);
+
+            /* change dice count */
+            obj->value[1] = UMAX(1,number_range(level/11,level/9)+3);
+
+            /* change dice type */
+            obj->value[2] = UMAX(1,number_range(level/8,level/6));
+
+            /* change dice extra */
+            obj->value[3] = random_damage_type_for_weapon(obj->value[0]);
+
+            /* add random flags to weapon */
+            obj->value[4] = obj_random_weapon_flag();
+        }
+	break;
+
+    case ITEM_ARMOR:
+        if(randomize == TRUE)
+        {
+            int ac_min = UMAX(1, (obj->level + 4) / 5);
+            int ac_max = UMAX(1, (obj->level + 3) / 2);
+
+            obj->value[0] = number_range(ac_min, ac_max);
+            obj->value[1] = number_range(ac_min, ac_max);
+            obj->value[2] = number_range(ac_min, ac_max);
+            obj->value[3] = number_range(ac_min, ac_max);
+            obj->value[4] = 0;
+        }
 	break;
 
     case ITEM_WAND:
     case ITEM_STAFF:
-	if (level != -1 && !pObjIndex->new_format)
-	{
-	    obj->value[0]	= number_fuzzy( obj->value[0] );
-	    obj->value[1]	= number_fuzzy( obj->value[1] );
-	    obj->value[2]	= obj->value[1];
-	}
-	if (!pObjIndex->new_format)
-	    obj->cost *= 2;
-	break;
+        if(randomize == TRUE)
+        {
+            obj->value[0]	= (number_percent()<95)?(obj->level):(number_range(5,LEVEL_IMMORTAL)); // spell level
+            obj->value[1]	= number_range( UMAX(1,(int)((obj->level+4)/5)) , UMAX(1,(int)((obj->level+3)/2)) );	// maximum number of charges
+            obj->value[2]	= obj->value[1];	// current number of charges
+            int valid_spells[1000];
+            int count = 0;
 
-    case ITEM_WEAPON:
-	if (level != -1 && !pObjIndex->new_format)
-	{
-	    obj->value[1] = number_fuzzy( number_fuzzy( 1 * level / 4 + 2 ) );
-	    obj->value[2] = number_fuzzy( number_fuzzy( 3 * level / 4 + 6 ) );
-	}
-	break;
-
-    case ITEM_ARMOR:
-	if (level != -1 && !pObjIndex->new_format)
-	{
-	    obj->value[0]	= number_fuzzy( level / 5 + 3 );
-	    obj->value[1]	= number_fuzzy( level / 5 + 3 );
-	    obj->value[2]	= number_fuzzy( level / 5 + 3 );
-	}
+            for (int i = 0; skill_table[i].name != NULL; i++) {
+                if (skill_table[i].spell_fun != spell_null)
+                    valid_spells[count++] = i;
+            }
+            if (count > 0)
+            {
+                obj->value[3] = valid_spells[number_range(0, count - 1)];
+            }
+            else
+            {
+                obj->value[3] = 0;
+            }
+            obj->value[4]	= 0;					// unused
+        }
 	break;
 
     case ITEM_POTION:
     case ITEM_PILL:
-	if (level != -1 && !pObjIndex->new_format)
-	    obj->value[0] = number_fuzzy( number_fuzzy( obj->value[0] ) );
+    case ITEM_SCROLL:
+        if(randomize == TRUE)
+        {
+            int valid_spells[1000];
+            int count = 0;
+
+            for (int i = 0; skill_table[i].name != NULL; i++) {
+                if (skill_table[i].spell_fun != spell_null)
+                    valid_spells[count++] = i;
+            }
+
+            if (count > 0)
+            {
+                if(obj->value[2] == 0)
+                {
+                    if(number_range(1,100) == 1)
+                    {
+                        obj->value[2] = valid_spells[number_range(0, count - 1)];
+                    }
+                }
+                if(obj->value[2] == 0)
+                {
+                    if(number_range(1,100) == 1)
+                    {
+                        obj->value[3] = valid_spells[number_range(0, count - 1)];
+                    }
+                }
+                if(obj->value[2] == 0)
+                {
+                    if(number_range(1,100) == 1)
+                    {
+                        obj->value[4] = valid_spells[number_range(0, count - 1)];
+                    }
+                }
+            }
+            obj->cost = number_range( UMAX(1,obj->level) , UMAX(2,obj->level*3) );
+        }
 	break;
 
     case ITEM_MONEY:
-	if (!pObjIndex->new_format)
-	    obj->value[0]	= obj->cost;
 	break;
     }
   
@@ -2503,36 +2605,20 @@ void free_string( char *pstr )
     return;
 }
 
-
-
 void do_areas( CHAR_DATA *ch, char *argument )
 {
-    char buf[MAX_STRING_LENGTH];
-    AREA_DATA *pArea1;
-    AREA_DATA *pArea2;
-    int iArea;
-    int iAreaHalf;
+    AREA_DATA *pArea;
 
     if (argument[0] != '\0')
     {
-	printf_to_char(ch, "No argument is used with this command.\n\r");
-	return;
+        printf_to_char(ch, "No argument is used with this command.\n\r");
+        return;
     }
 
-    iAreaHalf = (top_area + 1) / 2;
-    pArea1    = area_first;
-    pArea2    = area_first;
-    for ( iArea = 0; iArea < iAreaHalf; iArea++ )
-	pArea2 = pArea2->next;
-
-    for ( iArea = 0; iArea < iAreaHalf; iArea++ )
+    printf_to_char(ch,"Bölgeler:\n\r\n\r");
+    for ( pArea = area_first; pArea != NULL; pArea = pArea->next )
     {
-	sprintf( buf, "%-39s%-39s\n\r",
-	    pArea1->credits, (pArea2 != NULL) ? pArea2->credits : "" );
-	printf_to_char(ch, buf);
-	pArea1 = pArea1->next;
-	if ( pArea2 != NULL )
-	    pArea2 = pArea2->next;
+        printf_to_char(ch,"[{W%2d %3d{x] {c%35s{x\n\r",pArea->low_range,pArea->high_range,pArea->name);
     }
 
     return;

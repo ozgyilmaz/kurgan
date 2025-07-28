@@ -124,15 +124,14 @@ const	struct	cmd_type	cmd_table	[] =
     { "credits",	do_credits,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "equipment",	do_equipment,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "examine",	do_examine,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
-/*  { "groups",		do_groups,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 }, */
     { "help",		do_help,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "idea",		do_idea,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
-    { "info",           do_groups,      POS_SLEEPING,    0,  LOG_NORMAL, 1 },
     { "motd",		do_motd,	POS_DEAD,        0,  LOG_NORMAL, 1 },
     { "news",		do_news,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "read",		do_read,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "report",		do_report,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "rules",		do_rules,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
+    { "scan",		do_scan,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "score",		do_score,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "skills",		do_skills,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "socials",	do_socials,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
@@ -193,6 +192,7 @@ const	struct	cmd_type	cmd_table	[] =
 /*  { "music",		do_music,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 }, */
     { "note",		do_note,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 },
     { "pose",		do_pose,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
+    { "quest",      do_quest,       POS_RESTING,     0,  LOG_NORMAL, 1 },
     { "question",	do_question,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 },
     { "quote",		do_quote,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 },
     { "quiet",		do_quiet,	POS_SLEEPING, 	 0,  LOG_NORMAL, 1 },
@@ -259,11 +259,8 @@ const	struct	cmd_type	cmd_table	[] =
     { "follow",		do_follow,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "gain",		do_gain,	POS_STANDING,	 0,  LOG_NORMAL, 1 },
     { "go",		do_enter,	POS_STANDING,	 0,  LOG_NORMAL, 0 },
-/*  { "group",		do_group,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 }, */
-    { "groups",		do_groups,	POS_SLEEPING,    0,  LOG_NORMAL, 1 },
     { "hide",		do_hide,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "play",		do_play,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
-/*  { "practice",	do_practice,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 }, */
     { "qui",		do_qui,		POS_DEAD,	 0,  LOG_NORMAL, 0 },
     { "quit",		do_quit,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "recall",		do_recall,	POS_FIGHTING,	 0,  LOG_NORMAL, 1 },

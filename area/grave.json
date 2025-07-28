@@ -2,8 +2,8 @@
     "area": {
         "file_name": "grave.are",
         "name": "Graveyard",
-        "low_range": "5",
-        "high_range": "10",
+        "low_range": 5,
+        "high_range": 10,
         "writer": "Alfa",
         "credits": "Graveyard",
         "min_vnum": 3600,

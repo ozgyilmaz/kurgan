@@ -2,8 +2,8 @@
     "area": {
         "file_name": "ofcol.are",
         "name": "Ofcol",
-        "low_range": "1",
-        "high_range": "50",
+        "low_range": 1,
+        "high_range": 50,
         "writer": "Alfa",
         "credits": "Ofcol",
         "min_vnum": 5500,

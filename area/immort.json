@@ -2,8 +2,8 @@
     "area": {
         "file_name": "immort.are",
         "name": "Valhalla",
-        "low_range": "51",
-        "high_range": "60",
+        "low_range": 51,
+        "high_range": 60,
         "writer": "ROM",
         "credits": "Immortal Zone",
         "min_vnum": 1200,

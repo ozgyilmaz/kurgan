@@ -2,8 +2,8 @@
     "area": {
         "file_name": "mirror.are",
         "name": "Old Thalos",
-        "low_range": "1",
-        "high_range": "30",
+        "low_range": 1,
+        "high_range": 30,
         "writer": "Kahn",
         "credits": "Old Thalos",
         "min_vnum": 5300,
@@ -6483,7 +6483,7 @@
     ],
     "shops": [
         {
-            "keeper": "5310",
+            "keeper": 5310,
             "buy_type_0": 0,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -6495,7 +6495,7 @@
             "close_hour": 23
         },
         {
-            "keeper": "5311",
+            "keeper": 5311,
             "buy_type_0": 5,
             "buy_type_1": 17,
             "buy_type_2": 19,
@@ -6507,7 +6507,7 @@
             "close_hour": 20
         },
         {
-            "keeper": "5312",
+            "keeper": 5312,
             "buy_type_0": 19,
             "buy_type_1": 0,
             "buy_type_2": 0,
@@ -6519,7 +6519,7 @@
             "close_hour": 19
         },
         {
-            "keeper": "5313",
+            "keeper": 5313,
             "buy_type_0": 5,
             "buy_type_1": 9,
             "buy_type_2": 0,
@@ -6531,7 +6531,7 @@
             "close_hour": 21
         },
         {
-            "keeper": "5314",
+            "keeper": 5314,
             "buy_type_0": 1,
             "buy_type_1": 8,
             "buy_type_2": 12,
@@ -6543,7 +6543,7 @@
             "close_hour": 18
         },
         {
-            "keeper": "5317",
+            "keeper": 5317,
             "buy_type_0": 2,
             "buy_type_1": 3,
             "buy_type_2": 4,

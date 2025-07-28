@@ -2,8 +2,8 @@
     "area": {
         "file_name": "chapel.are",
         "name": "Chapel",
-        "low_range": "15",
-        "high_range": "25",
+        "low_range": 15,
+        "high_range": 25,
         "writer": "Copper",
         "credits": "Chapel Catacombs",
         "min_vnum": 3400,

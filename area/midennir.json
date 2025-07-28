@@ -2,8 +2,8 @@
     "area": {
         "file_name": "midennir.are",
         "name": "Miden'nir",
-        "low_range": "5",
-        "high_range": "15",
+        "low_range": 5,
+        "high_range": 15,
         "writer": "Copper",
         "credits": "Miden'nir",
         "min_vnum": 3500,

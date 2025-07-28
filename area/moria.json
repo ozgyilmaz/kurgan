@@ -2,8 +2,8 @@
     "area": {
         "file_name": "moria.are",
         "name": "Moria",
-        "low_range": "5",
-        "high_range": "15",
+        "low_range": 5,
+        "high_range": 15,
         "writer": "Alfa",
         "credits": "Moria",
         "min_vnum": 3900,
