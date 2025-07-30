@@ -1101,6 +1101,7 @@ struct	kill_data
 #define ROOM_NEWBIES_ONLY	(R)
 #define ROOM_LAW		(S)
 #define ROOM_NOWHERE		(T)
+#define ROOM_BANK               (U)
 
 
 
@@ -1478,6 +1479,8 @@ struct	pc_data
     bool        confirm_delete;
     char *		alias[MAX_ALIAS];
     char * 		alias_sub[MAX_ALIAS];
+    long		bank_s;
+    long		bank_g;
     /* quest things */
     CHAR_DATA *         questgiver; /* Vassago */
     int                 questpoints;  /* Vassago */

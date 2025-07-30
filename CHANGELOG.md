@@ -109,3 +109,4 @@
 - Midgaard's sailor is now a gain converter.
 - GEN_DATA removed. we dont use Groups anymore.
 - Otho from Midgaard can identify objects. The command is "identify".
+- Bank system implemented. (Anatolia MUD)

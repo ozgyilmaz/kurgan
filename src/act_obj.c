@@ -2992,3 +2992,192 @@ void do_value( CHAR_DATA *ch, char *argument )
 
     return;
 }
+
+void do_balance(CHAR_DATA *ch, char *argument)
+{
+  char buf[160];
+  char buf2[100];
+  long bank_g;
+  long bank_s;
+
+  if (IS_NPC(ch))
+    {
+      printf_to_char(ch,"You don't have a bank account.\n\r");
+      return;
+    }
+  
+  if (!IS_SET(ch->in_room->room_flags, ROOM_BANK))
+    {
+      printf_to_char(ch,"You are not in a bank.\n\r");
+      return;
+    }
+
+
+  if ( ch->pcdata->bank_s + ch->pcdata->bank_g == 0 )  {
+    printf_to_char(ch,"You don't have any money in the bank.\n\r" );
+    return;
+  }
+
+  bank_g = ch->pcdata->bank_g;
+  bank_s = ch->pcdata->bank_s;
+  sprintf( buf, "You have %s%s%s coin%s in the bank.\n\r",
+    bank_g!=0?"%ld gold":"",
+    (bank_g!=0)&&(bank_s!=0)?" and ":"",
+    bank_s!=0?"%ld silver":"",
+    bank_s+bank_g>1?"s":"" );
+  if (bank_g == 0)
+    sprintf( buf2, buf, bank_s );
+  else
+    sprintf( buf2, buf, bank_g, bank_s );
+
+  printf_to_char(ch,buf2);
+}
+
+void do_withdraw(CHAR_DATA *ch, char *argument)
+{
+  long  amount_s;
+  long  amount_g;
+  char arg[MAX_INPUT_LENGTH];
+  char buf[100];
+  int weight;
+
+  if (IS_NPC(ch))
+    {
+      printf_to_char(ch,"You don't have a bank account.\n\r");
+      return;
+    }
+  
+  if (!IS_SET(ch->in_room->room_flags, ROOM_BANK))
+    {
+      printf_to_char(ch,"The mosquito by your feet will not give you any money.\n\r");
+      return;
+    }  
+
+  argument = one_argument( argument, arg );
+  if ( arg[0] == '\0' )  {
+    printf_to_char(ch, "Withdraw how much?\n\r" );
+    return;
+  }
+    
+  amount_s = labs (atol(arg));
+  if ( !str_cmp( argument, "silver") || argument[0] == '\0' )
+    amount_g = 0;
+  else if ( !str_cmp( argument, "gold" ) )  {
+    amount_g = amount_s;
+    amount_s = 0;
+  }
+  else {
+    printf_to_char(ch, "You can withdraw gold and silver coins only." );
+    return;
+  }
+
+  if ( amount_g > ch->pcdata->bank_g)
+  {
+      printf_to_char(ch,"Sorry, we don't give loans.\n\r");
+      return;
+  }
+
+  if ( amount_s > ch->pcdata->bank_s)
+  {
+      printf_to_char(ch,"Sorry, we don't give loans.\n\r");
+      return;
+  }
+
+  weight = amount_g * 2 / 5;
+  weight += amount_s / 10;
+
+  if ( get_carry_weight(ch) + weight > can_carry_w(ch) )
+  {
+     act( "You can't carry that much weight.", ch,NULL,NULL, TO_CHAR);
+     return;
+  }
+
+  ch->pcdata->bank_g -= amount_g;
+  ch->pcdata->bank_s -= amount_s;
+  ch->gold += 0.98 * amount_g;
+  ch->silver += 0.90 * amount_s;
+  if (amount_s > 0  && amount_s < 10 )  {
+    if ( amount_s == 1 )
+      sprintf(buf, "One coin??!!! You cheapskate!\n\r");
+    else
+      sprintf(buf, "%ld coins??!!! You cheapskate!\n\r", amount_s);
+  }
+  else 
+    sprintf(buf, 
+	    "Here are your %ld %s coins, minus a %ld coin withdrawal fee.\n\r",
+	    amount_s!=0?amount_s:amount_g, 
+	    amount_s!=0?"silver":"gold",
+	    amount_s!=0?(long) UMAX(1, (0.10 * amount_s)):
+                        (long) UMAX(1, (0.02 * amount_g)) );
+  printf_to_char(ch,buf);
+  act("$n steps up to the teller window.",ch,NULL,NULL,TO_ROOM);
+}
+
+void do_deposit(CHAR_DATA *ch, char *argument)
+{
+  long amount_s;
+  long amount_g;
+  char buf[100];
+  char arg[200];
+
+  if (IS_NPC(ch))
+    {
+      printf_to_char(ch,"You don't have a bank account.\n\r");
+      return;
+    }
+  
+  if (!IS_SET(ch->in_room->room_flags, ROOM_BANK))
+    {
+      printf_to_char(ch,"The ant by your feet can't carry your gold.\n\r");
+      return;
+    }  
+
+  argument = one_argument( argument, arg );
+  if ( arg[0] == '\0' )  {
+    printf_to_char(ch, "Deposit how much?\n\r" );
+    return;
+  }
+  amount_s = labs (atol(arg));
+  if ( !str_cmp( argument, "silver" ) || argument[0] == '\0' )
+    amount_g = 0;
+  else if ( !str_cmp( argument, "gold" ) )  {
+    amount_g = amount_s;
+    amount_s = 0;
+  }
+  else {
+    printf_to_char(ch, "You can deposit gold and silver coins only." );
+    return;
+  }
+  
+  if (amount_g > ch->gold)
+    {
+      printf_to_char(ch,"That's more than you've got.\n\r");
+      return;
+    }
+  if (amount_s > ch->silver)
+    {
+      printf_to_char(ch,"That's more than you've got.\n\r");
+      return;
+    }
+
+  if ( (amount_g + ch->pcdata->bank_g) > 400000 )
+    {
+      printf_to_char(ch,"Bank cannot accept more than 400,000 gold.\n\r");
+      return;
+    }
+	
+  ch->pcdata->bank_s += amount_s;
+  ch->pcdata->bank_g += amount_g;
+  ch->gold -= amount_g;
+  ch->silver -= amount_s;
+
+  if (amount_s == 1)
+    sprintf(buf, "Oh boy! One gold coin!\n\r");
+  else sprintf(buf, "%ld %s coins deposited. Come again soon!\n\r",
+                amount_s!=0?amount_s:amount_g,
+                amount_s!=0?"silver":"gold" );
+
+  printf_to_char(ch,buf);
+  act("$n steps up to the teller window.",ch,NULL,NULL,TO_ROOM);
+}
+

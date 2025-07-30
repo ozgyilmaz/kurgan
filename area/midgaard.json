@@ -10080,7 +10080,7 @@
             "vnum": 3334,
             "name": "A Money Changer's Room",
             "description": "A few strategically placed lanterns keep this place well-lit in the \nabsence of any windows.  The room is surprisingly well appointed with  \ntapestries hanging on the walls.  You'd wager your life the moneylender's\nguards are behind them, as there are none here.  The moneylender himself\nworks from behind a large desk, no doubt holding a fortune in gold and silver.\nA smallish sign hangs on the wall, lettered in common.\n",
-            "flags": "DS",
+            "flags": "UDS",
             "sector": 0,
             "exits": [
                 {

@@ -115,6 +115,7 @@ const	struct	cmd_type	cmd_table	[] =
      */
     { "affects",	do_affects,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "areas",		do_areas,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
+    { "balance",	do_balance,	POS_STANDING,	 0,  LOG_NORMAL, 1 },
     { "bug",		do_bug,		POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "changes",	do_changes,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "commands",	do_commands,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
@@ -122,6 +123,7 @@ const	struct	cmd_type	cmd_table	[] =
     { "consider",	do_consider,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "count",		do_count,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 },
     { "credits",	do_credits,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
+    { "deposit",	do_deposit,	POS_STANDING,	 0,  LOG_NORMAL, 1},
     { "equipment",	do_equipment,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "examine",	do_examine,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "help",		do_help,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
@@ -144,6 +146,7 @@ const	struct	cmd_type	cmd_table	[] =
     { "weather",	do_weather,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "who",		do_who,		POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "whois",		do_whois,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
+    { "withdraw",	do_withdraw,	POS_STANDING,    0,  LOG_NORMAL, 1},
     { "wizlist",	do_wizlist,	POS_DEAD,        0,  LOG_NORMAL, 1 },
     { "worth",		do_worth,	POS_SLEEPING,	 0,  LOG_NORMAL, 1 },
 
