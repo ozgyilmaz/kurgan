@@ -3098,9 +3098,9 @@ void do_withdraw(CHAR_DATA *ch, char *argument)
   ch->silver += 0.90 * amount_s;
   if (amount_s > 0  && amount_s < 10 )  {
     if ( amount_s == 1 )
-      sprintf(buf, "One coin??!!! You cheapskate!\n\r");
+      sprintf(buf, "One coin?! You cheapskate!\n\r");
     else
-      sprintf(buf, "%ld coins??!!! You cheapskate!\n\r", amount_s);
+      sprintf(buf, "%ld coins?! You cheapskate!\n\r", amount_s);
   }
   else 
     sprintf(buf, 

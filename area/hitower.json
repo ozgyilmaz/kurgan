@@ -6,7 +6,7 @@
         "high_range": 30,
         "writer": "Skylar",
         "credits": "High Tower of Sorcery",
-        "path": "s 2e 2s 6w n w n 3w n w n",
+        "path": "s 2e 2s 6w n w n 3w n w n... (after Edgar) w s w",
         "min_vnum": 1300,
         "max_vnum": 1499
     },
