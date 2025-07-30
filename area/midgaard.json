@@ -339,7 +339,7 @@
             "long_description": "A sailor stands here, waiting to train you.\n",
             "description": "He looks like a strong, fit sailor.\n",
             "race": "human",
-            "act": "ABJTV",
+            "act": "ABJTVb",
             "affected_by": "0",
             "alignment": 900,
             "group": 0,

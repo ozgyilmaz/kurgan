@@ -106,3 +106,4 @@
 
 # 30.07.2025
 - BUGFIX: "reserved" skill was possible for books. corrected.
+- Midgaard's sailor is now a gain converter.
