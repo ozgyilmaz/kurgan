@@ -953,6 +953,9 @@ int random_skill_by_rarity(int rarity) {
     for (int sn = 0; sn < MAX_SKILL; sn++) {
         if (skill_table[sn].name == NULL) // skip empty
             continue;
+        
+        if (skill_table[sn].spell_fun == 0) // skip reserved
+            continue;
 
         if (skill_table[sn].book_rarity == rarity)
             matching_skills[count++] = sn;
@@ -2163,8 +2166,6 @@ long flag_convert(char letter )
 
     return bitsum;
 }
-
-
 
 
 /*

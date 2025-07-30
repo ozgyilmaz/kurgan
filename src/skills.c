@@ -58,11 +58,13 @@ void do_gain(CHAR_DATA *ch, char *argument)
 	return;
 
     /* find a trainer */
-    for ( trainer = ch->in_room->people; 
-	  trainer != NULL; 
-	  trainer = trainer->next_in_room)
-	if (IS_NPC(trainer) && IS_SET(trainer->act,ACT_GAIN))
-	    break;
+    for ( trainer = ch->in_room->people;trainer != NULL; trainer = trainer->next_in_room)
+	{
+		if (IS_NPC(trainer) && IS_SET(trainer->act,ACT_GAIN))
+		{
+			break;
+		}
+	}
 
     if (trainer == NULL || !can_see(ch,trainer))
     {
@@ -117,7 +119,7 @@ void do_gain(CHAR_DATA *ch, char *argument)
 	    return;
 	}
 
-	act("$N helps you apply your practice to training",
+	act("$N helps you apply your practice to training.",
 		ch,NULL,trainer,TO_CHAR);
 	ch->practice -= 10;
 	ch->train +=1 ;

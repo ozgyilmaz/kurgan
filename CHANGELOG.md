@@ -103,3 +103,6 @@
 - started to configure github pages.
 - github pages file ".nojekyll" for "no jekyll".
 - first site update.
+
+# 30.07.2025
+- BUGFIX: "reserved" skill was possible for books. corrected.
