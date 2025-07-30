@@ -111,3 +111,4 @@
 - Otho from Midgaard can identify objects. The command is "identify".
 - Bank system implemented. (Anatolia MUD)
 - Paths added to area files.
+- First mob prog implemented: greet_prog_baker (Anatolia MUD)

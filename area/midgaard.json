@@ -12663,5 +12663,13 @@
             "vnum": 3011,
             "spec_fun": "spec_questmaster"
         }
+    ],
+    "omprogs": [
+        {
+            "command": "M",
+            "vnum": 3001,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_baker"
+        }
     ]
 }

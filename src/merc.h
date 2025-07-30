@@ -48,6 +48,7 @@
 #define DECLARE_SPEC_FUN( fun )		SPEC_FUN  fun
 #define DECLARE_SPELL_FUN( fun )	SPELL_FUN fun
 #endif
+#define DECLARE_MPROG_FUN_GREET( fun )      MPROG_FUN_GREET fun
 
 /* system calls */
 int unlink();
@@ -126,6 +127,7 @@ typedef void SPELL_FUN	args( ( int sn, int level, CHAR_DATA *ch, void *vo,
 #define MAX_INPUT_LENGTH	  256
 #define PAGELEN			   22
 
+#define MPROG_GREET               (C)
 
 
 /*
@@ -1296,6 +1298,15 @@ struct	kill_data
 #define WIZ_PREFIX		(S)
 #define WIZ_SPAM		(T)
 
+typedef void MPROG_FUN_GREET args( ( CHAR_DATA *mob, CHAR_DATA *ch ) );
+struct mprog_data
+{
+  MPROG_FUN_GREET * greet_prog;
+
+};
+typedef struct  mprog_data              MPROG_DATA;
+
+
 /*
  * Prototype for a mob.
  * This is the in-memory version of #MOBILES.
@@ -1304,6 +1315,8 @@ struct	mob_index_data
 {
     MOB_INDEX_DATA *	next;
     SPEC_FUN *		spec_fun;
+    MPROG_DATA *        mprogs;
+    int                 progtypes;
     SHOP_DATA *		pShop;
     sh_int		vnum;
     sh_int		group;
@@ -2283,6 +2296,9 @@ int	slot_lookup	args( ( int slot ) );
 bool	saves_spell	args( ( int level, CHAR_DATA *victim, int dam_type ) );
 void	obj_cast_spell	args( ( int sn, int level, CHAR_DATA *ch,
 				    CHAR_DATA *victim, OBJ_DATA *obj ) );
+
+/* mob_prog.c */
+void mprog_set(MOB_INDEX_DATA *, const char *, const char *);
 
 /* save.c */
 void	save_char_obj	args( ( CHAR_DATA *ch ) );

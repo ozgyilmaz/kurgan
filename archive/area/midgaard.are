@@ -6487,4 +6487,8 @@ M 3163 spec_nasty          	* the thief
 M 3011 spec_questmaster     * hassan 
 S
 
+#OMPROGS
+M 3001 greet_prog greet_prog_baker
+S
+
 #$

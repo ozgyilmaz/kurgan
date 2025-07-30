@@ -76,6 +76,7 @@ void move_char( CHAR_DATA *ch, int door, bool follow )
     ROOM_INDEX_DATA *in_room;
     ROOM_INDEX_DATA *to_room;
     EXIT_DATA *pexit;
+	bool room_has_pc = FALSE;
 
     if ( door < 0 || door > 5 )
     {
@@ -195,7 +196,28 @@ void move_char( CHAR_DATA *ch, int door, bool follow )
     do_function(ch, &do_look, "auto" );
 
     if (in_room == to_room) /* no circular follows */
-	return;
+	{
+		return;
+	}
+
+	for (fch = to_room->people,room_has_pc = FALSE;fch != NULL; fch = fch_next)
+	{
+		fch_next = fch->next_in_room;
+		if (!IS_NPC(fch))
+		{
+			room_has_pc = TRUE;
+		}
+	}
+
+	for (fch = to_room->people;fch!=NULL;fch = fch_next) {
+		fch_next = fch->next_in_room;
+
+		/* greet programs for npcs  */
+		if (room_has_pc && IS_NPC(fch) && IS_SET(fch->pIndexData->progtypes,MPROG_GREET))
+		{
+			(fch->pIndexData->mprogs->greet_prog) (fch,ch);
+		}
+    }
 
     for ( fch = in_room->people; fch != NULL; fch = fch_next )
     {

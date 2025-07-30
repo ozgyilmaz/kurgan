@@ -1701,6 +1701,17 @@ void do_mstat( CHAR_DATA *ch, char *argument )
 	printf_to_char(ch, buf);
     }
 
+    if ( IS_NPC(victim) && victim->pIndexData->progtypes != 0  )
+    {
+        sprintf( buf, "Mobile progs: " );
+        if ( IS_SET( victim->pIndexData->progtypes, MPROG_GREET ) )
+        {
+            strcat( buf, "greet " );
+        }
+        strcat( buf, "\n\r" );
+        printf_to_char( ch, buf );
+    }	
+
     for ( paf = victim->affected; paf != NULL; paf = paf->next )
     {
 	sprintf( buf,

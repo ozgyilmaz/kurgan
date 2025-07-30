@@ -226,6 +226,7 @@ void	load_rooms	args( ( cJSON *json_data ) );
 void	load_shops	args( ( cJSON *json_data ) );
 void 	load_socials	args( ( cJSON *json_data ) );
 void	load_specials	args( ( cJSON *json_data ) );
+void	load_omprogs	args( ( cJSON *json_data ) );
 void	load_notes	args( ( void ) );
 void	load_bans	args( ( void ) );
 
@@ -371,6 +372,7 @@ void boot_db( void )
 		load_mobiles( json_data );
 		load_shops( json_data );
 		load_specials( json_data );
+        load_omprogs( json_data );
 		load_resets( json_data );
         load_helps( json_data );
 		load_socials( json_data );
@@ -830,6 +832,43 @@ void load_specials( cJSON *json_data )
 			bug( "Load_specials: 'M': vnum %d.", pMobIndex->vnum );
 			exit( 1 );
 		}
+    }
+}
+
+void load_omprogs( cJSON *json_data )
+{
+	cJSON *json_omprogs = NULL;
+	cJSON *json_omprog = NULL;
+
+    char progtype[MAX_INPUT_LENGTH];
+    char progname[MAX_INPUT_LENGTH];
+
+    json_omprogs = cJSON_GetObjectItemCaseSensitive(json_data, "omprogs");
+
+    if(!json_omprogs)
+        return;
+
+    cJSON_ArrayForEach(json_omprog, json_omprogs)
+    {
+        char letter;
+		MOB_INDEX_DATA *pMobIndex;
+
+        letter = (cJSON_GetObjectItemCaseSensitive( json_omprog, "command" )->valuestring)[0];
+
+        switch ( letter )
+        {
+            case 'M':
+                pMobIndex		= get_mob_index	( (int)(cJSON_GetObjectItemCaseSensitive( json_omprog, "vnum" )->valuedouble) );
+                if (pMobIndex->mprogs == NULL)
+	                pMobIndex->mprogs = alloc_perm(sizeof(MPROG_DATA));
+                strcpy(progtype,cJSON_GetObjectItemCaseSensitive( json_omprog, "progtype" )->valuestring);
+                strcpy(progname,cJSON_GetObjectItemCaseSensitive( json_omprog, "progname" )->valuestring);
+                mprog_set( pMobIndex,progtype,progname);
+                break;
+            default:
+                fprintf(stderr, "Load omprog error for vnum %d.", (int)(cJSON_GetObjectItemCaseSensitive( json_omprog, "vnum" )->valuedouble) );
+                break;
+        }
     }
 }
 
