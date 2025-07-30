@@ -126,6 +126,7 @@ const	struct	cmd_type	cmd_table	[] =
     { "examine",	do_examine,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "help",		do_help,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "idea",		do_idea,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
+    { "identify",		do_identify,	POS_RESTING,	 0,  LOG_NORMAL, 1 },
     { "motd",		do_motd,	POS_DEAD,        0,  LOG_NORMAL, 1 },
     { "news",		do_news,	POS_DEAD,	 0,  LOG_NORMAL, 1 },
     { "read",		do_read,	POS_RESTING,	 0,  LOG_NORMAL, 1 },

@@ -150,6 +150,7 @@ DECLARE_DO_FUN(	do_help		);
 DECLARE_DO_FUN(	do_hide		);
 DECLARE_DO_FUN(	do_holylight	);
 DECLARE_DO_FUN(	do_idea		);
+DECLARE_DO_FUN(	do_identify		);
 DECLARE_DO_FUN(	do_immtalk	);
 DECLARE_DO_FUN( do_incognito	);
 DECLARE_DO_FUN( do_clantalk	);

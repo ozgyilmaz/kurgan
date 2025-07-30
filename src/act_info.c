@@ -2691,3 +2691,46 @@ void do_password( CHAR_DATA *ch, char *argument )
     printf_to_char(ch, "Ok.\n\r");
     return;
 }
+
+void do_identify( CHAR_DATA *ch, char *argument )
+{
+    OBJ_DATA *obj;
+    CHAR_DATA *rch;
+
+    if ( ( obj = get_obj_carry( ch, argument, ch ) ) == NULL )
+    {
+        printf_to_char(ch,  "You are not carrying that.\n\r" );
+        return;
+    }
+
+    for ( rch = ch->in_room->people; rch != NULL; rch = rch->next_in_room )
+    {
+        if (IS_NPC(rch) && rch->pIndexData->vnum == MOB_VNUM_SAGE)
+            break;
+    }
+
+    if (!rch)
+    {
+        printf_to_char(ch, "No one here seems to know much about that.\n\r");
+        return;
+    }
+
+    if (IS_IMMORTAL(ch))
+    {
+        act( "$n looks at you!\n\r", rch, obj, ch, TO_VICT );
+    }
+    else if (ch->gold < 1)
+    {
+        act( "$n resumes to identify by looking at $p.",rch, obj, 0, TO_ROOM );
+        printf_to_char(ch, " You need at least 1 gold.\n\r");
+        return;
+    }
+    else
+    {
+        ch->gold -= 1;
+        printf_to_char(ch, "Your purse feels lighter.\n\r");
+    }
+
+    act( "$n gives a wise look at $p.", rch, obj, 0, TO_ROOM );
+    spell_identify( 0, 0, ch, obj ,0);
+}
