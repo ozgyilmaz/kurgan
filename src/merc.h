@@ -100,7 +100,6 @@ typedef struct	note_data		NOTE_DATA;
 typedef struct	obj_data		OBJ_DATA;
 typedef struct	obj_index_data		OBJ_INDEX_DATA;
 typedef struct	pc_data			PC_DATA;
-typedef struct  gen_data		GEN_DATA;
 typedef struct	reset_data		RESET_DATA;
 typedef struct	room_index_data		ROOM_INDEX_DATA;
 typedef struct	shop_data		SHOP_DATA;
@@ -1381,7 +1380,6 @@ struct	char_data
     ROOM_INDEX_DATA *	was_in_room;
     AREA_DATA *		zone;
     PC_DATA *		pcdata;
-    GEN_DATA *		gen_data;
     bool		valid;
     char *		name;
     long		id;
@@ -1488,17 +1486,6 @@ struct	pc_data
     sh_int              questobj; /* Vassago */
     sh_int              questmob; /* Vassago */
 };
-
-/* Data for generating characters -- only used during generation */
-struct gen_data
-{
-    GEN_DATA	*next;
-    bool	valid;
-    bool	skill_chosen[MAX_SKILL];
-    bool	group_chosen[MAX_GROUP];
-    int		points_chosen;
-};
-
 
 
 /*

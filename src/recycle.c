@@ -146,26 +146,6 @@ void free_descriptor(DESCRIPTOR_DATA *d)
     descriptor_free = d;
 }
 
-/* stuff for recycling gen_data */
-GEN_DATA *gen_data_free;
-
-GEN_DATA *new_gen_data(void)
-{
-    static GEN_DATA gen_zero;
-    GEN_DATA *gen;
-
-    if (gen_data_free == NULL)
-	gen = alloc_perm(sizeof(*gen));
-    else
-    {
-	gen = gen_data_free;
-	gen_data_free = gen_data_free->next;
-    }
-    *gen = gen_zero;
-    VALIDATE(gen);
-    return gen;
-}
-
 /* stuff for recycling extended descs */
 EXTRA_DESCR_DATA *extra_descr_free;
 
