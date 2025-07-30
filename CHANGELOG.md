@@ -110,3 +110,4 @@
 - GEN_DATA removed. we dont use Groups anymore.
 - Otho from Midgaard can identify objects. The command is "identify".
 - Bank system implemented. (Anatolia MUD)
+- Paths added to area files.

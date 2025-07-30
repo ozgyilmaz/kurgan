@@ -6,6 +6,7 @@
         "high_range": 35,
         "writer": "Exxon",
         "credits": "Chessboard of Midgaard",
+        "path": "s 4w",
         "min_vnum": 4200,
         "max_vnum": 4299
     },

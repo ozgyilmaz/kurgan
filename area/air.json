@@ -6,6 +6,7 @@
         "high_range": 10,
         "writer": "Copper",
         "credits": "In the Air",
+        "path": "n 2u",
         "min_vnum": 1000,
         "max_vnum": 1099
     },

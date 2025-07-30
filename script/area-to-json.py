@@ -63,6 +63,7 @@ area_grammar = Suppress(Literal("#AREA")) +\
     Suppress("}") +\
     Word(alphanums).setResultsName('writer') +\
     tilde_string.setResultsName('credits') + Suppress(restOfLine) +\
+    tilde_string.setResultsName('path') + Suppress(restOfLine) +\
     Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('min_vnum') +\
     Word(nums).setParseAction(lambda s, l, t: [int(t[0])]).setResultsName('max_vnum') + Suppress(restOfLine)
 

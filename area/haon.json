@@ -6,6 +6,7 @@
         "high_range": 10,
         "writer": "Diku",
         "credits": "Haon Dor",
+        "path": "5w",
         "min_vnum": 6000,
         "max_vnum": 6199
     },

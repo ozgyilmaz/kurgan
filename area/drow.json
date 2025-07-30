@@ -6,6 +6,7 @@
         "high_range": 25,
         "writer": "Drkside",
         "credits": "Drow City",
+        "path": "6e 4s 2e s 2e d w s 2d",
         "min_vnum": 5100,
         "max_vnum": 5199
     },

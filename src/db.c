@@ -437,6 +437,7 @@ void load_area( cJSON *json_data )
     pArea->file_name        = str_dup( cJSON_GetObjectItemCaseSensitive( json_areadata, "file_name" )->valuestring );
     pArea->low_range        = cJSON_GetObjectItemCaseSensitive( json_areadata, "low_range" )->valuedouble;
     pArea->high_range       = cJSON_GetObjectItemCaseSensitive( json_areadata, "high_range" )->valuedouble;
+    pArea->path             = str_dup( cJSON_GetObjectItemCaseSensitive( json_areadata, "path" )->valuestring  );
     pArea->min_vnum         = cJSON_GetObjectItemCaseSensitive( json_areadata, "min_vnum" )->valuedouble;
     pArea->max_vnum         = cJSON_GetObjectItemCaseSensitive( json_areadata, "max_vnum" )->valuedouble;
 
@@ -2616,10 +2617,10 @@ void do_areas( CHAR_DATA *ch, char *argument )
         return;
     }
 
-    printf_to_char(ch,"Bölgeler:\n\r\n\r");
+    printf_to_char(ch,"Areas:\n\r\n\r");
     for ( pArea = area_first; pArea != NULL; pArea = pArea->next )
     {
-        printf_to_char(ch,"[{W%2d %3d{x] {c%35s{x\n\r",pArea->low_range,pArea->high_range,pArea->name);
+        printf_to_char(ch,"[{W%2d %3d{x] {c%25s{x - {c%s{x\n\r",pArea->low_range,pArea->high_range,pArea->name,pArea->path);
     }
 
     return;

@@ -6,6 +6,7 @@
         "high_range": 25,
         "writer": "Generic",
         "credits": "Old Marsh",
+        "path": "13w s 2w 2s w 3s",
         "min_vnum": 8300,
         "max_vnum": 8399
     },

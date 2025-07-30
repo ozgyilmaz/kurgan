@@ -6,6 +6,7 @@
         "high_range": 30,
         "writer": "Diku",
         "credits": "Sewer",
+        "path": "2s d",
         "min_vnum": 7000,
         "max_vnum": 7499
     },

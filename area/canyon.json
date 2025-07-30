@@ -6,6 +6,7 @@
         "high_range": 30,
         "writer": "Raff",
         "credits": "Elemental Canyon",
+        "path": "6e 4s 2e s 2e d s",
         "min_vnum": 9200,
         "max_vnum": 9299
     },

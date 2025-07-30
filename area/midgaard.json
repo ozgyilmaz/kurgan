@@ -6,6 +6,7 @@
         "high_range": 50,
         "writer": "Diku",
         "credits": "Midgaard",
+        "path": "",
         "min_vnum": 3000,
         "max_vnum": 3399
     },

@@ -6,6 +6,7 @@
         "high_range": 20,
         "writer": "Raff",
         "credits": "Dwarven Catacombs",
+        "path": "6e 3n 2e 3n 3w 2d",
         "min_vnum": 2000,
         "max_vnum": 2099
     },

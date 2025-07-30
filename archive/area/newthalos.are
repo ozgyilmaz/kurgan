@@ -2,6 +2,7 @@
 newthalos.are~
 New Thalos~
 {10 35} Conner  New Thalos~
+15e~
 9500 9799
 
 #MOBILES
@@ -5859,7 +5860,8 @@ door~
 D2
 ~
 secret door
-~
+
+~
 1 -1 9688
 S
 #9690
@@ -6070,7 +6072,8 @@ You are in a cold, cramped chamber with only one exit.
 D0
 ~
 cell
-cell~
+
+cell~
 2 9593 9694
 S
 #9704
@@ -6081,7 +6084,8 @@ You are in a cold, cramped chamber with only one exit.
 D0
 ~
 cell
-cell~
+
+cell~
 2 9593 9695
 S
 #9705

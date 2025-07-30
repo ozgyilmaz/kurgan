@@ -6,6 +6,7 @@
         "high_range": 15,
         "writer": "Copper",
         "credits": "Miden'nir",
+        "path": "4s 1e 3s 1w 2s 1w 2s 1e 2s",
         "min_vnum": 3500,
         "max_vnum": 3599
     },

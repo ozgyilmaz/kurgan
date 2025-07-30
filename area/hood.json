@@ -6,6 +6,7 @@
         "high_range": 15,
         "writer": "Raff",
         "credits": "Dangerous Neighborhood",
+        "path": "4s e 3s e",
         "min_vnum": 2100,
         "max_vnum": 2199
     },

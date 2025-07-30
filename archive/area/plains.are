@@ -2,6 +2,7 @@
 plains.are~
 Plains~
 { 1 20} Copper  Plains of the North~
+4e 3n 2w n~
 300 399
 
 #MOBILES
@@ -163,7 +164,8 @@ This herb smells rather spicy; maybe you should try it?
 herbs herb gyvel~
 a small dusk of black gyvel~
 Some black gyvel is lying here, dark green with black leaves and tiny
-blood red flowers.~
+
+blood red flowers.~
 oldstyle~
 food 0 A
 1 1 0 0 0

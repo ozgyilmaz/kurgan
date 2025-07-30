@@ -6,6 +6,7 @@
         "high_range": 30,
         "writer": "Tyrst",
         "credits": "Wyvern's Tower",
+        "path": "6e 4s 2e s 2e d e",
         "min_vnum": 1600,
         "max_vnum": 1799
     },

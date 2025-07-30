@@ -1642,6 +1642,7 @@ struct	area_data
     sh_int		nplayer;
     sh_int		low_range;
     sh_int		high_range;
+    char *		path;
     sh_int 		min_vnum;
     sh_int		max_vnum;
     bool		empty;

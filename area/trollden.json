@@ -6,6 +6,7 @@
         "high_range": 15,
         "writer": "Merc",
         "credits": "Troll Den",
+        "path": "s 2e 2s 6w n e s",
         "min_vnum": 2800,
         "max_vnum": 2899
     },

@@ -6,6 +6,7 @@
         "high_range": 30,
         "writer": "Diku",
         "credits": "Redferne's Residence",
+        "path": "4s e 3s w s u",
         "min_vnum": 7900,
         "max_vnum": 7999
     },

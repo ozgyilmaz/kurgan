@@ -6,6 +6,7 @@
         "high_range": 50,
         "writer": "Diku",
         "credits": "Limbo",
+        "path": "",
         "min_vnum": 0,
         "max_vnum": 99
     },

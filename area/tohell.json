@@ -6,6 +6,7 @@
         "high_range": 51,
         "writer": "Strahd",
         "credits": "Descent to Hell",
+        "path": "6e 4s 2e s 2e d 3n e 4s 4w s w 2s d 2s d e 2s d e 2s w s w s w d 2e d s e 3s",
         "min_vnum": 10400,
         "max_vnum": 10599
     },

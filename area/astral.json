@@ -6,6 +6,7 @@
         "high_range": 35,
         "writer": "Andersen",
         "credits": "Astral/Githyanki",
+        "path": "n 2u n 2u",
         "min_vnum": 7700,
         "max_vnum": 7799
     },

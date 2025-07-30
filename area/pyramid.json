@@ -6,6 +6,7 @@
         "high_range": 50,
         "writer": "Andersen",
         "credits": "The Great Pyramid",
+        "path": "s 2e 2s 11e 2n 2e",
         "min_vnum": 8700,
         "max_vnum": 8799
     },

@@ -6,6 +6,7 @@
         "high_range": 25,
         "writer": "Copper",
         "credits": "Chapel Catacombs",
+        "path": "3e 7s w 6s",
         "min_vnum": 3400,
         "max_vnum": 3499
     },

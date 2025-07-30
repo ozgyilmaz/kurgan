@@ -6,6 +6,7 @@
         "high_range": 15,
         "writer": "PinkF",
         "credits": "Mob Factory",
+        "path": "s 3w s e",
         "min_vnum": 9400,
         "max_vnum": 9499
     },
