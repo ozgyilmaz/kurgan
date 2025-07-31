@@ -12669,7 +12669,61 @@
             "command": "M",
             "vnum": 3001,
             "progtype": "greet_prog",
-            "progname": "greet_prog_baker"
+            "progname": "greet_prog_food_shop"
+        },
+        {
+            "command": "M",
+            "vnum": 3012,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_healer"
+        },
+        {
+            "command": "M",
+            "vnum": 3011,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_questor"
+        },
+        {
+            "command": "M",
+            "vnum": 3004,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_armoury"
+        },
+        {
+            "command": "M",
+            "vnum": 3003,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_weapon_shop"
+        },
+        {
+            "command": "M",
+            "vnum": 3009,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_jewelery"
+        },
+        {
+            "command": "M",
+            "vnum": 3002,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_store"
+        },
+        {
+            "command": "M",
+            "vnum": 3000,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_magic_shop"
+        },
+        {
+            "command": "M",
+            "vnum": 3162,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_bank_identifier"
+        },
+        {
+            "command": "M",
+            "vnum": 3160,
+            "progtype": "greet_prog",
+            "progname": "greet_prog_map_shop"
         }
     ]
 }

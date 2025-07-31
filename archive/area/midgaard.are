@@ -6488,7 +6488,16 @@ M 3011 spec_questmaster     * hassan
 S
 
 #OMPROGS
-M 3001 greet_prog greet_prog_baker
+M 3001 greet_prog greet_prog_food_shop
+M 3012 greet_prog greet_prog_healer
+M 3011 greet_prog greet_prog_questor
+M 3004 greet_prog greet_prog_armoury
+M 3003 greet_prog greet_prog_weapon_shop
+M 3009 greet_prog greet_prog_jewelery
+M 3002 greet_prog greet_prog_store
+M 3000 greet_prog greet_prog_magic_shop
+M 3162 greet_prog greet_prog_bank_identifier
+M 3160 greet_prog greet_prog_map_shop
 S
 
 #$

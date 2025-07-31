@@ -112,3 +112,6 @@
 - Bank system implemented. (Anatolia MUD)
 - Paths added to area files.
 - First mob prog implemented: greet_prog_baker (Anatolia MUD)
+
+# 01.08.2025
+- New greet progs added for NPCs.
