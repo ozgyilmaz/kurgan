@@ -756,8 +756,8 @@ void do_say( CHAR_DATA *ch, char *argument )
 	return;
     }
 
-    act( "$n says '$T'", ch, NULL, argument, TO_ROOM );
-    act( "You say '$T'", ch, NULL, argument, TO_CHAR );
+    act_color( "$C$n says '$T'.$c", ch, NULL, argument, TO_ROOM, POS_RESTING, CLR_LOPES_GREEN);
+    act_color( "$CYou say '$T'.$c", ch, NULL, argument, TO_CHAR , POS_RESTING, CLR_LOPES_B_GREEN);
     return;
 }
 
@@ -792,7 +792,8 @@ void do_shout( CHAR_DATA *ch, char *argument )
 
     WAIT_STATE( ch, 12 );
 
-    act( "You shout '$T'", ch, NULL, argument, TO_CHAR );
+    act_color( "$CYou shout '$T'.$c", ch, NULL, argument, TO_CHAR, POS_RESTING, CLR_LOPES_B_YELLOW );
+    
     for ( d = descriptor_list; d != NULL; d = d->next )
     {
 	CHAR_DATA *victim;
@@ -804,7 +805,7 @@ void do_shout( CHAR_DATA *ch, char *argument )
 	     !IS_SET(victim->comm, COMM_SHOUTSOFF) &&
 	     !IS_SET(victim->comm, COMM_QUIET) ) 
 	{
-	    act("$n shouts '$t'",ch,argument,d->character,TO_VICT);
+	    act_color("$C$n shouts '$t'.$c",ch,argument,d->character,TO_VICT, POS_RESTING, CLR_LOPES_YELLOW );
 	}
     }
 
@@ -894,8 +895,8 @@ void do_tell( CHAR_DATA *ch, char *argument )
 	return;
     }
 
-    act( "You tell $N '$t'", ch, argument, victim, TO_CHAR );
-    act_new("$n tells you '$t'",ch,argument,victim,TO_VICT,POS_DEAD);
+    act_color( "$CYou tell $N '$t'.$c", ch, argument, victim, TO_CHAR, POS_DEAD, CLR_LOPES_B_RED );
+    act_color("$C$n tells you '$t'.$c",ch,argument,victim,TO_VICT,POS_DEAD, CLR_LOPES_B_RED);
     victim->reply	= ch;
 
     return;

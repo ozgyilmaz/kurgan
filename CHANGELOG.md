@@ -115,3 +115,4 @@
 
 # 01.08.2025
 - New greet progs added for NPCs.
+- say, shout and tell are colorized.
