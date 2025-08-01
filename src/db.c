@@ -2863,24 +2863,30 @@ int number_fuzzy( int number )
  * New number_range() function.
  * Resolves modula problem.
  */
-int number_range( int from, int to )
+int number_range(int from, int to)
 {
+    int x;
+    int difference;
 
-  int x;
-  int difference;
+    if (from > to) {
+        bugf("number_range: arguments reversed (from=%d, to=%d)", from, to);
+        int temp = from;
+        from = to;
+        to = temp;
+    }
 
-  difference = to - from;
-  if( difference == 0 ) {
-    return from;
-  }
+    difference = to - from;
 
-  do {
-    x = random();
-  } while (x >= (RAND_MAX - (RAND_MAX % (difference + 1))));
+    if (difference == 0)
+        return from;
 
-  x %= (difference + 1);
+    do {
+        x = random();
+    } while (x >= (RAND_MAX - (RAND_MAX % (difference + 1))));
 
-  return x + from;
+    x %= (difference + 1);
+
+    return from + x;
 }
 
 

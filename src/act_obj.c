@@ -1751,6 +1751,7 @@ void do_sacrifice( CHAR_DATA *ch, char *argument )
     char arg[MAX_INPUT_LENGTH];
     char buf[MAX_STRING_LENGTH];
     OBJ_DATA *obj;
+	OBJ_DATA *obj_next;
     int silver;
     
     /* variables for AUTOSPLIT */
@@ -1768,6 +1769,32 @@ void do_sacrifice( CHAR_DATA *ch, char *argument )
 	printf_to_char(ch, "Mota appreciates your offer and may accept it later.\n\r");
 	return;
     }
+
+	/* sacrifise all */
+	int count=0;
+	int sum_silver=0;
+	if ( !str_cmp( arg, "all" ) )
+	{
+		for ( obj = ch->in_room->contents; obj != NULL; obj = obj_next )
+		{
+			obj_next = obj->next_content;
+			if ( can_see_obj( ch, obj ) && !IS_OBJ_STAT(obj,ITEM_NOPURGE) && obj->item_type != ITEM_CORPSE_PC  && CAN_WEAR(obj, ITEM_TAKE) && !CAN_WEAR(obj, ITEM_NO_SAC) )
+			{
+				silver = number_range(1,obj->cost);
+				if (obj->item_type != ITEM_CORPSE_NPC && obj->item_type != ITEM_CORPSE_PC)
+				silver = number_range(1,100);
+				count++;//count of sacrifised items
+				sum_silver+=silver;
+				extract_obj( obj );
+			}
+		}
+		if (count>0)
+		{
+			printf_to_char(ch,"Mota gives you %d silver coins for your %d sacrifice.\n\r",sum_silver,count);
+			ch->silver += sum_silver;
+		}
+		return;
+	}
 
     obj = get_obj_list( ch, arg, ch->in_room->contents );
     if ( obj == NULL )
