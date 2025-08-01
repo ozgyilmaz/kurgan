@@ -118,3 +118,4 @@
 - say, shout and tell are colorized.
 - "all" added to do_sacrifice() and number_range() improved.
 - "score" output renewed.
+- spec_cast_beholder() (SPECIAL) and Underdark (AREA) have been added.

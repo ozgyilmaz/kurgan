@@ -59,6 +59,7 @@ DECLARE_SPEC_FUN(	spec_cast_cleric	);
 DECLARE_SPEC_FUN(	spec_cast_judge		);
 DECLARE_SPEC_FUN(	spec_cast_mage		);
 DECLARE_SPEC_FUN(	spec_cast_undead	);
+DECLARE_SPEC_FUN(	spec_cast_beholder	);
 DECLARE_SPEC_FUN(	spec_executioner	);
 DECLARE_SPEC_FUN(	spec_fido		);
 DECLARE_SPEC_FUN(	spec_guard		);
@@ -98,6 +99,7 @@ const   struct  spec_type    spec_table[] =
     {	"spec_ogre_member",		spec_ogre_member	},
     {	"spec_patrolman",		spec_patrolman		},
     {   "spec_questmaster",       spec_questmaster        }, /* Vassago */
+    {   "spec_cast_beholder",       spec_cast_beholder        },
     {	NULL,				NULL			}
 };
 
@@ -1052,4 +1054,45 @@ bool spec_questmaster (CHAR_DATA *ch)
 {
     if (ch->fighting != NULL) return spec_cast_mage( ch );
     return FALSE;
+}
+
+bool spec_cast_beholder( CHAR_DATA *ch )
+{
+    CHAR_DATA *victim;
+    CHAR_DATA *v_next;
+    char *spell;
+    int sn;
+
+    if ( ch->position != POS_FIGHTING )
+	return FALSE;
+
+    for ( victim = ch->in_room->people; victim != NULL; victim = v_next )
+    {
+	v_next = victim->next_in_room;
+	if ( victim->fighting == ch && number_range(0,1) == 0 )
+	    break;
+    }
+
+
+    if ( victim == NULL )
+	return FALSE;
+
+        switch ( dice(1,16) )
+	{
+	case  0: spell = "slow";    break; 
+	case  1: spell = "slow";    break;
+	case  2: spell = "slow";    break; 
+	case  3: spell = "cause serious";       break; 
+	case  4: spell = "cause critical";      break; 
+	case  5: spell = "harm";   break; 
+	case  6: spell = "harm";   break; 
+	case  7: spell = "dispel magic";   break; 
+	case  8: spell = "dispel magic";   break; 
+	default: spell = "";     break;
+	}
+
+    if ( ( sn = skill_lookup( spell ) ) < 0 )
+	return FALSE;
+    (*skill_table[sn].spell_fun) ( sn, ch->level, ch, victim,TARGET_CHAR);
+    return TRUE;
 }

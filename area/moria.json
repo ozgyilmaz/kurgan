@@ -3051,6 +3051,14 @@
                     "exit_locks": 0,
                     "exit_key": 0,
                     "exit_u1_vnum": 4018
+                },
+                {
+                    "exit_door": 5,
+                    "exit_description": "",
+                    "exit_keyword": "hatch",
+                    "exit_locks": 1,
+                    "exit_key": -1,
+                    "exit_u1_vnum": 16000
                 }
             ]
         },
