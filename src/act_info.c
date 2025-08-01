@@ -1480,6 +1480,74 @@ void do_worth( CHAR_DATA *ch, char *argument )
 void do_score( CHAR_DATA *ch, char *argument )
 {
     char buf[MAX_STRING_LENGTH];
+
+        switch ( ch->position )
+    {
+    case POS_DEAD:     
+    sprintf( buf, "You are DEAD!!\n\r");
+	break;
+    case POS_MORTAL:
+    sprintf( buf, "You are mortally wounded.\n\r");
+	break;
+    case POS_INCAP:
+    sprintf( buf, "You are incapacitated.\n\r");
+	break;
+    case POS_STUNNED:
+    sprintf( buf, "You are stunned.\n\r");
+	break;
+    case POS_SLEEPING:
+    sprintf( buf, "You are sleeping.\n\r");
+	break;
+    case POS_RESTING:
+    sprintf( buf, "You are resting.\n\r");
+	break;
+    case POS_SITTING:
+    sprintf( buf, "You are sitting!!\n\r");
+	break;
+    case POS_STANDING:
+    sprintf( buf, "You are standing!!\n\r");
+	break;
+    case POS_FIGHTING:
+    sprintf( buf, "You are fighting!!\n\r");
+	break;
+    }
+
+    printf_to_char(ch,"{c,----------------------------------------------------------------------,{w\n\r");
+    printf_to_char(ch,"{c|{w %-12s,%-30s{c                          |\n\r",ch->name,IS_NPC(ch) ? "" : ch->pcdata->title);
+    printf_to_char(ch,"{c|-------------------------,--------------,-----------------------------,{w\n\r");
+    printf_to_char(ch,"{c| Race    : {w%-11s{c   | ARMOR        | MONEY                       |\n\r",race_table[ch->race].name);
+    printf_to_char(ch,"{c| Age     : {w%-11d{c   | Pierce : {w%-4d{c| Silver      : {w%-7ld{c       |\n\r",get_age(ch),GET_AC(ch,AC_PIERCE),ch->silver);
+    printf_to_char(ch,"{c| Gender  : {w%-11s{c   | Slash  : {w%-4d{c| Gold        : {w%-7ld{c       |\n\r",sex_table[ch->sex].name,GET_AC(ch,AC_SLASH),ch->gold);
+    printf_to_char(ch,"{c| Align   : {w%-11d{c   | Bash   : {w%-4d{c| Silver-Bank : {w%-7ld{c       |\n\r",ch->alignment,GET_AC(ch,AC_BASH),ch->pcdata->bank_s);
+    printf_to_char(ch,"{c| Hungry  : {w%-11s{c   | Exotic : {w%-4d{c| Gold-Bank   : {w%-7ld{c       |\n\r",( !IS_NPC(ch) && ch->pcdata->condition[COND_HUNGER] == 0 )?"Yes":"No",GET_AC(ch,AC_EXOTIC),ch->pcdata->bank_g);
+    printf_to_char(ch,"{c| Thirsty : {w%-11s{c   | MagcSav: {w%-4d{c|                             |\n\r",( !IS_NPC(ch) && ch->pcdata->condition[COND_THIRST] ==  0 )?"Yes":"No",ch->saving_throw);
+    printf_to_char(ch,"{c| Drunk   : {w%-11s{c   |              |                             |\n\r",( !IS_NPC(ch) && ch->pcdata->condition[COND_DRUNK]   > 10 )?"Yes":"No");
+    printf_to_char(ch,"{c|-------------------------'--------------|-----------------------------,{w\n\r");
+    printf_to_char(ch,"{c| Hp      : {w%-6d/%-6d{c | Str: {w%-2d(%-2d){c  | Practice: {w%-3d{c               |\n\r",ch->hit,ch->max_hit,ch->perm_stat[STAT_STR],get_curr_stat(ch,STAT_STR),(ch->practice));
+    printf_to_char(ch,"{c| Mana    : {w%-6d/%-6d{c | Int: {w%-2d(%-2d){c  | Train   : {w%-3d{c               |\n\r",ch->mana, ch->max_mana,ch->perm_stat[STAT_INT],get_curr_stat(ch,STAT_INT),ch->train);
+    printf_to_char(ch,"{c| Move    : {w%-6d/%-6d{c | Wis: {w%-2d(%-2d){c  | Item    : {w%-3d / %-4d{c        |\n\r",ch->move, ch->max_move,ch->perm_stat[STAT_WIS],get_curr_stat(ch,STAT_WIS),ch->carry_number, can_carry_n(ch));
+    printf_to_char(ch,"{c| Level   : {w%-9d{c     | Dex: {w%-2d(%-2d){c  | Weight  : {w%-6ld / %-8d{c |\n\r",ch->level,ch->perm_stat[STAT_DEX],get_curr_stat(ch,STAT_DEX),get_carry_weight(ch), can_carry_w(ch));
+    printf_to_char(ch,"{c| EXP Nx  : {w%-9d{c     | Con: {w%-2d(%-2d){c  | QuestP  : {w%-5d{c             |\n\r",(ch->level + 1) * exp_per_level(ch,ch->pcdata->points) - ch->exp,ch->perm_stat[STAT_CON],get_curr_stat(ch,STAT_CON),ch->pcdata->questpoints);
+    printf_to_char(ch,"{c| EXP     : {w%-10ld{c    |              | QuestT  : {w%-2d{c                |\n\r",ch->exp,((IS_SET(ch->act, PLR_QUESTOR))?(ch->pcdata->countdown):(ch->pcdata->nextquest)));
+    printf_to_char(ch,"{c| Wimpy   : {w%-9d{c     | DmR: {w%-3d{c     |                             |\n\r",ch->wimpy,GET_DAMROLL(ch));
+    printf_to_char(ch,"{c|                         | HtR: {w%-3d{c     |                             |\n\r",GET_HITROLL(ch));
+    printf_to_char(ch,"{c'-------------------------'--------------'-----------------------------'{w\n\r");
+    if ( IS_IMMORTAL(ch))
+    {
+    printf_to_char(ch,"{c| Holy Lg : {w%-11s{c   | Invis L: {w%-4d{c| Incog L: {w%-11d{c        |\n\r",(IS_SET(ch->act,PLR_HOLYLIGHT))?"On":"Off",(ch->invis_level)?ch->invis_level:0,(ch->incog_level)?ch->incog_level:0);
+    printf_to_char(ch,"{c'----------------------------------------------------------------------'{x\n\r");
+    }
+
+
+
+
+    if (IS_SET(ch->comm,COMM_SHOW_AFFECTS))
+	do_function(ch, &do_affects, "");
+}
+
+void do_score_old( CHAR_DATA *ch, char *argument )
+{
+    char buf[MAX_STRING_LENGTH];
     int i;
 
     sprintf( buf,
@@ -1488,38 +1556,37 @@ void do_score( CHAR_DATA *ch, char *argument )
 	IS_NPC(ch) ? "" : ch->pcdata->title,
 	ch->level, get_age(ch),
         ( ch->played + (int) (current_time - ch->logon) ) / 3600);
-    printf_to_char(ch, buf);
+    printf_to_char(ch, buf );
 
     if ( get_trust( ch ) != ch->level )
     {
 	sprintf( buf, "You are trusted at level %d.\n\r",
 	    get_trust( ch ) );
-	printf_to_char(ch, buf);
+	printf_to_char(ch, buf );
     }
 
     sprintf(buf, "Race: %s  Sex: %s\n\r",
-	race_table[ch->race].name,
-	sex_table[ch->sex].name);
-    printf_to_char(ch, buf);
-	
+	race_table[ch->race].name,sex_table[ch->sex].name);
+    printf_to_char(ch,buf);
+
 
     sprintf( buf,
 	"You have %d/%d hit, %d/%d mana, %d/%d movement.\n\r",
 	ch->hit,  ch->max_hit,
 	ch->mana, ch->max_mana,
 	ch->move, ch->max_move);
-    printf_to_char(ch, buf);
+    printf_to_char(ch, buf );
 
     sprintf( buf,
 	"You have %d practices and %d training sessions.\n\r",
 	ch->practice, ch->train);
-    printf_to_char(ch, buf);
+    printf_to_char(ch, buf );
 
     sprintf( buf,
 	"You are carrying %d/%d items with weight %ld/%d pounds.\n\r",
 	ch->carry_number, can_carry_n(ch),
 	get_carry_weight(ch) / 10, can_carry_w(ch) /10 );
-    printf_to_char(ch, buf);
+    printf_to_char(ch, buf );
 
     sprintf( buf,
 	"Str: %d(%d)  Int: %d(%d)  Wis: %d(%d)  Dex: %d(%d)  Con: %d(%d)\n\r",
@@ -1533,86 +1600,78 @@ void do_score( CHAR_DATA *ch, char *argument )
 	get_curr_stat(ch,STAT_DEX),
 	ch->perm_stat[STAT_CON],
 	get_curr_stat(ch,STAT_CON) );
-    printf_to_char(ch, buf);
+    printf_to_char(ch, buf );
 
     sprintf( buf,
 	"You have scored %d exp, and have %ld gold and %ld silver coins.\n\r",
 	ch->exp,  ch->gold, ch->silver );
-    printf_to_char(ch, buf);
+    printf_to_char(ch, buf );
 
     /* RT shows exp to level */
     if (!IS_NPC(ch) && ch->level < LEVEL_HERO)
     {
-        sprintf (buf, 
-        "You need %d exp to level.\n\r",
-        ((ch->level + 1) * exp_per_level(ch,ch->pcdata->points) - ch->exp));
-        printf_to_char(ch, buf);
-    }
-
-    if (!IS_NPC(ch))
-    {
-        sprintf (buf, 
-        "You have %d quest points and %d minutes to request a new one.\n\r",
-        ch->pcdata->questpoints, ch->pcdata->nextquest);
-        printf_to_char(ch, buf);
+      sprintf (buf,
+	"You need %d exp to level.\n\r",
+	((ch->level + 1) * exp_per_level(ch,ch->pcdata->points) - ch->exp));
+      printf_to_char(ch, buf );
      }
 
     sprintf( buf, "Wimpy set to %d hit points.\n\r", ch->wimpy );
-    printf_to_char(ch, buf);
+    printf_to_char(ch, buf );
 
     if ( !IS_NPC(ch) && ch->pcdata->condition[COND_DRUNK]   > 10 )
-	printf_to_char(ch, "You are drunk.\n\r");
+	printf_to_char(ch, "You are drunk.\n\r" );
     if ( !IS_NPC(ch) && ch->pcdata->condition[COND_THIRST] ==  0 )
-	printf_to_char(ch, "You are thirsty.\n\r");
+	printf_to_char(ch, "You are thirsty.\n\r" );
     if ( !IS_NPC(ch) && ch->pcdata->condition[COND_HUNGER]   ==  0 )
 	printf_to_char(ch, "You are hungry.\n\r");
 
     switch ( ch->position )
     {
-    case POS_DEAD:     
+    case POS_DEAD:
 	printf_to_char(ch, "You are DEAD!!\n\r");
 	break;
     case POS_MORTAL:
-	printf_to_char(ch, "You are mortally wounded.\n\r");
+	printf_to_char(ch, "You are mortally wounded.\n\r" );
 	break;
     case POS_INCAP:
-	printf_to_char(ch, "You are incapacitated.\n\r");
+	printf_to_char(ch, "You are incapacitated.\n\r" );
 	break;
     case POS_STUNNED:
-	printf_to_char(ch, "You are stunned.\n\r");
+	printf_to_char(ch, "You are stunned.\n\r" );
 	break;
     case POS_SLEEPING:
-	printf_to_char(ch, "You are sleeping.\n\r");
+	printf_to_char(ch, "You are sleeping.\n\r" );
 	break;
     case POS_RESTING:
-	printf_to_char(ch, "You are resting.\n\r");
+	printf_to_char(ch, "You are resting.\n\r" );
 	break;
     case POS_SITTING:
-	printf_to_char(ch, "You are sitting.\n\r");
+	printf_to_char(ch, "You are sitting.\n\r" );
 	break;
     case POS_STANDING:
-	printf_to_char(ch, "You are standing.\n\r");
+	printf_to_char(ch, "You are standing.\n\r" );
 	break;
     case POS_FIGHTING:
-	printf_to_char(ch, "You are fighting.\n\r");
+	printf_to_char(ch, "You are fighting.\n\r" );
 	break;
     }
 
 
     /* print AC values */
     if (ch->level >= 25)
-    {	
+    {
 	sprintf( buf,"Armor: pierce: %d  bash: %d  slash: %d  magic: %d\n\r",
 		 GET_AC(ch,AC_PIERCE),
 		 GET_AC(ch,AC_BASH),
 		 GET_AC(ch,AC_SLASH),
 		 GET_AC(ch,AC_EXOTIC));
-    	printf_to_char(ch, buf);
+    	printf_to_char(ch,buf);
     }
 
     for (i = 0; i < 4; i++)
     {
-	char * temp;
+	const char * temp;
 
 	switch(i)
 	{
@@ -1622,12 +1681,12 @@ void do_score( CHAR_DATA *ch, char *argument )
 	    case(AC_EXOTIC):	temp = "magic";		break;
 	    default:		temp = "error";		break;
 	}
-	
-	printf_to_char(ch, "You are ");
 
-	if      (GET_AC(ch,i) >=  101 ) 
+	printf_to_char(ch,"You are ");
+
+	if      (GET_AC(ch,i) >=  101 )
 	    sprintf(buf,"hopelessly vulnerable to %s.\n\r",temp);
-	else if (GET_AC(ch,i) >= 80) 
+	else if (GET_AC(ch,i) >= 80)
 	    sprintf(buf,"defenseless against %s.\n\r",temp);
 	else if (GET_AC(ch,i) >= 60)
 	    sprintf(buf,"barely protected from %s.\n\r",temp);
@@ -1650,59 +1709,59 @@ void do_score( CHAR_DATA *ch, char *argument )
 	else
 	    sprintf(buf,"divinely armored against %s.\n\r",temp);
 
-	printf_to_char(ch, buf);
+	printf_to_char(ch,buf);
     }
 
 
     /* RT wizinvis and holy light */
     if ( IS_IMMORTAL(ch))
     {
-      printf_to_char(ch, "Holy Light: ");
+      printf_to_char(ch,"Holy Light: ");
       if (IS_SET(ch->act,PLR_HOLYLIGHT))
-        printf_to_char(ch, "on");
+        printf_to_char(ch,"on");
       else
-        printf_to_char(ch, "off");
- 
+        printf_to_char(ch,"off");
+
       if (ch->invis_level)
       {
         sprintf( buf, "  Invisible: level %d",ch->invis_level);
-        printf_to_char(ch, buf);
+        printf_to_char(ch,buf);
       }
 
       if (ch->incog_level)
       {
 	sprintf(buf,"  Incognito: level %d",ch->incog_level);
-	printf_to_char(ch, buf);
+	printf_to_char(ch,buf);
       }
-      printf_to_char(ch, "\n\r");
+      printf_to_char(ch,"\n\r");
     }
 
     if ( ch->level >= 15 )
     {
 	sprintf( buf, "Hitroll: %d  Damroll: %d.\n\r",
 	    GET_HITROLL(ch), GET_DAMROLL(ch) );
-	printf_to_char(ch, buf);
+	printf_to_char(ch, buf );
     }
-    
+
     if ( ch->level >= 10 )
     {
 	sprintf( buf, "Alignment: %d.  ", ch->alignment );
-	printf_to_char(ch, buf);
+	printf_to_char(ch, buf );
     }
 
-    printf_to_char(ch, "You are ");
-         if ( ch->alignment >  900 ) printf_to_char(ch, "angelic.\n\r");
-    else if ( ch->alignment >  700 ) printf_to_char(ch, "saintly.\n\r");
-    else if ( ch->alignment >  350 ) printf_to_char(ch, "good.\n\r");
-    else if ( ch->alignment >  100 ) printf_to_char(ch, "kind.\n\r");
-    else if ( ch->alignment > -100 ) printf_to_char(ch, "neutral.\n\r");
-    else if ( ch->alignment > -350 ) printf_to_char(ch, "mean.\n\r");
-    else if ( ch->alignment > -700 ) printf_to_char(ch, "evil.\n\r");
-    else if ( ch->alignment > -900 ) printf_to_char(ch, "demonic.\n\r");
-    else                             printf_to_char(ch, "satanic.\n\r");
+    printf_to_char(ch, "You are ", ch );
+         if ( ch->alignment >  900 ) printf_to_char(ch, "angelic.\n\r", ch );
+    else if ( ch->alignment >  700 ) printf_to_char(ch, "saintly.\n\r", ch );
+    else if ( ch->alignment >  350 ) printf_to_char(ch, "good.\n\r",    ch );
+    else if ( ch->alignment >  100 ) printf_to_char(ch, "kind.\n\r",    ch );
+    else if ( ch->alignment > -100 ) printf_to_char(ch, "neutral.\n\r", ch );
+    else if ( ch->alignment > -350 ) printf_to_char(ch, "mean.\n\r",    ch );
+    else if ( ch->alignment > -700 ) printf_to_char(ch, "evil.\n\r",    ch );
+    else if ( ch->alignment > -900 ) printf_to_char(ch, "demonic.\n\r", ch );
+    else                             printf_to_char(ch, "satanic.\n\r", ch );
 
     if (IS_SET(ch->comm,COMM_SHOW_AFFECTS))
-	do_function(ch, &do_affects, "");
+	do_function(ch, &do_affects, (char*)"");
 }
 
 void do_affects(CHAR_DATA *ch, char *argument )
